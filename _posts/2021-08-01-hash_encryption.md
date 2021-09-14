@@ -2,7 +2,7 @@
 title: Hash & Encryption
 tags: hash encryption
 key: page-hash_encryption
-cover: /assets/cover/metasploit.png
+cover: /assets/cover/cyber_security.png
 mathjax: true
 mathjax_autoNumber: true
 ---
