@@ -1,7 +1,7 @@
 ---
-title: Metasploit2
-tags: metasploit hacking
-key: page-metasploit
+title: XML JSON YAML
+tags: xml json yaml
+key: page-xml_json_yaml
 cover: /assets/cover/cyber_security.png
 mathjax: true
 mathjax_autoNumber: true

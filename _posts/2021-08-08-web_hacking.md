@@ -1,7 +1,7 @@
 ---
-title: Metasploit2
-tags: metasploit hacking
-key: page-metasploit
+title: Web hacking
+tags: web hacking
+key: page-web_hacking
 cover: /assets/cover/cyber_security.png
 mathjax: true
 mathjax_autoNumber: true

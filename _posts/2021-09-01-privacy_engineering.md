@@ -1,7 +1,7 @@
 ---
-title: Metasploit2
-tags: metasploit hacking
-key: page-metasploit
+title: Privacy engineering
+tags: privacy
+key: page-privacy_engineering
 cover: /assets/cover/cyber_security.png
 mathjax: true
 mathjax_autoNumber: true

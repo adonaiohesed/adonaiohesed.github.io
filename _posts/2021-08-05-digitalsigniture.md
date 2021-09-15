@@ -1,12 +1,11 @@
 ---
-title: Metasploit2
-tags: metasploit hacking
-key: page-metasploit
+title: Digital Signiture
+tags: digitalsigniture
+key: page-digitalsigniture
 cover: /assets/cover/cyber_security.png
 mathjax: true
 mathjax_autoNumber: true
 ---
-
 
 ## 전자서명 방식
 1. 보내는 사람이 메시지를 자신의 private key로 해시한 digest를 message와 함께 보낸다. (message + H(message + key))
@@ -34,14 +33,13 @@ mathjax_autoNumber: true
 * root CA로써 Verisign, Geotrust 등의 회사가 있다.
 
 ### X.509
-* 
+* [X.509](https://adonaiohesed.github.io/2019/05/18/certificates.html)
 
 ## PKI(Public Key Infrastructure)
 * 공개키에서 가장 중요한 역할이 신뢰할만한 곳에서 발급되고 관리되는 키가 맞느냐이다. 이러한 것을 보장해주는 인프라가 PKI이다.
 * 디지털 증명서의 생성, 관리, 배포, 사용, 저장 및 파기, 공개키 암호화의 관리에 필요한 역할, 정책 등 일련의 절차들을 집합한 것이다.
 * CA(Certification Authority)는 인증기관으로 공개키가 진짜라는 것을 보증해주는 곳이다.
 * 여러 인증기관들이 있는데 인증기관끼리 서로 신뢰하며 인증서 체인을 구성한다.
-* 
 
 ## Reference
 * https://m.blog.naver.com/alice_k106/221468341565
