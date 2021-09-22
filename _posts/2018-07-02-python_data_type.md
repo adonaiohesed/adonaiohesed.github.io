@@ -243,3 +243,24 @@ s2 = set([1,'a','ab']) # s2 == {'ab', 1, 'a'}
 ```python
 print(type(whatever))
 ```
+
+## Mutable / Immutable
+### List of mutable types:
+* list, dict, set, bytearray, user-defined classes
+
+### List of immutable types:
+* int, float, decimal, complex, bool, string, tuple, range, frozenset, bytes
+
+### Hashable
+```python
+x = hash(frozenset([1,2]))
+x = hash((1,2,3))
+```
+
+### Unhashable(Not working)
+```python
+x = hash(set([1,2]))
+x = hash(([1,2], [2,3]))
+x = hash({1,2})
+x = hash([1,2,3])
+```
