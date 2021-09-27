@@ -7,11 +7,13 @@ mathjax: true
 mathjax_autoNumber: true
 ---
 
-## 
-* Data privacy란 개인정보 Personal Identifiable Information (PII)
+## Basic of privacy engineering
+* 데이터 보안과 데이터 프라이버시에 대해 차이를 둬야한다. 보안이란 내외부에서 발생하는 해킹으로부터 데이터를 보호하는 것을 뜻하고 프라이버시는 개인정보에 관한 데이터를 어떤 식으로 수집하고, 다루고, 활용하고 처리하는지에 관한 문제이다.
+* Data Privacy is the fair and authorized processing of personal information or PII.
 * Privacy considerations to think about: differential privacy, user consent, user transparency, federated learning, data retention, minimization, end-to-end encryption, user data flow, anonymization, access control, data protection
 * GDPR(General Data Protection Regulation) - 유렵연합의 법이며 유렵경제지역에 속해있는 모든 인구들의 사생활 보호와 개인정보들을 보호해주는 규제이다.
 * CCPA(California Consumer Privacy Act) - 최근 켈리포니아에서 나온 법이며 정보를 알 권리, 지울 권리, 접근 할 수 있는 권리, 공유 선택에 관한 권리가 있다.
+
 
 ### 질문
 * How would you explain privacy to a normal developer?

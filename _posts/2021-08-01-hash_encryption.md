@@ -14,6 +14,13 @@ mathjax_autoNumber: true
 * 좋은 Hash 함수란 simple uniform hasihng을 만족하는 함수인데 중복이 없이 확률적으로 슬롯에 골고루 나눠지는 것이다.
 * Hash는 encryption에 비해 연산이 빠르다.
 
+## Encryption
+### Symmetric
+* DES, 3DES, AES
+
+### Asymmetric
+* RSA, ElGamal, DSS
+
 ## HMAC
 * 인증에 관해 key가 필요한 keyed-hashing이라고 할 수 있다.
 * MD5, SHA-1과 같은 해시기반 함수를 이용해서 만든다.
