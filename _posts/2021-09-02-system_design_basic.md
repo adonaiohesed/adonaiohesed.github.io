@@ -23,7 +23,8 @@ mathjax_autoNumber: true
 ## Distributed Systems
 * 다음과 같은 개념들이 핵심 개념입니다.
 ### Scalability
-* 
+* It is the capability of a system, process, or a network to manage increased demand. 증가하는 수요를 위해 evolve할 수 있는 시스템은 scalable하다고 말할 수 있습니다.
+* 증가의 이유는 증가된 트랜젝션과 같은 이유로 확장을 할텐데 이때 성능 손실 없이 확장을 해야 합니다. 일반적으로 확장 가능한 시스템 디자인을 했어도 management or environment cost때문에 그런 시스템 확장에 제약이 있는데 예를들면 컴퓨터가 물리적으로 멀리 떨어져 있어서 네트워ㅓ크 속도가 느려질 수 있습니다. 
 
 ### Reliability
 

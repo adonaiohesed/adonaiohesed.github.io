@@ -46,4 +46,8 @@ cover: /assets/cover/sql_injection.jpg
 ## ASCII CODE
 <img src="/assets/images/asciicode.jpg">
 
+## 했던 공격 예시
+* username=sadcowboy&password=' +OR '1'='1
+
+
 

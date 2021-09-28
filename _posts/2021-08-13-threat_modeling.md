@@ -18,11 +18,6 @@ mathjax_autoNumber: true
 * Threat modeling을 위해서 Architecture, secure status, identify valueable assests, identify possible threat type을 알고 있어야 된다.
 * 한번 하고 끝나는 것이 아니라 지속적으로 관리해야하고 코드에 관한 것만이 아닌 모든 것에 관한 것이다.
 * Data Flow Diagrame으로 시작을 할 수 있고 화이트 보드도 좋지만 지속적으로 관리해야 함을 잊어서는 안 된다.
-* 
-
-
-파이
-
 
 ## 주로 언급되는 4가지 방법론
 ### STRIDE(Based on type of threat)
