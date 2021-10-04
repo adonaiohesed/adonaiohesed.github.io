@@ -14,7 +14,6 @@ mathjax_autoNumber: true
 * GDPR(General Data Protection Regulation) - 유렵연합의 법이며 유렵경제지역에 속해있는 모든 인구들의 사생활 보호와 개인정보들을 보호해주는 규제이다.
 * CCPA(California Consumer Privacy Act) - 최근 켈리포니아에서 나온 법이며 정보를 알 권리, 지울 권리, 접근 할 수 있는 권리, 공유 선택에 관한 권리가 있다.
 
-
 ### 질문
 * How would you explain privacy to a normal developer?
 How did you get interested in the field of privacy?
