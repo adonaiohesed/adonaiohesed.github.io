@@ -69,6 +69,29 @@ class 이름(<super class name>):
       return self.result
 ```
 * init는 constructor이다. self는 계속 붙이는거라 생각하면 된다.
+```python
+class Vehical(self, wheel):
+  def __init__(self, wheel):
+    self.wheel = wheel
+
+  def show(self):
+    print("This is vehical with " + self.wheel + "wheels")
+
+class Car(Vehical):
+  def __init__(self, wheel, capacity:
+    super().__init__(self, wheel)
+    self.capacity = capacity
+
+  def show(self):
+    super().show(self)
+    print("This is a car")
+
+class Ford(Car):
+  def __init__(self, wheel, capacity, model_name):
+    super().__init__(self, wheel, capacity)
+
+x = Ford(4,6,'a1')
+```
 * class이름으로 상속을 받는다.
 * 이름.skip(instance_name,a,b)와 같이 className을 이용해서도 쓸 수 있다.
 * method overriding도 가능하다.

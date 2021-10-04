@@ -1,0 +1,164 @@
+---
+title: Behavior Interview
+tags: interview
+key: page-behavior_interview
+cover: /assets/cover/developer.png
+mathjax: true
+mathjax_autoNumber: true
+---
+
+## STAR Method
+* Situation: 과거에 했던 일을 나열하는 식이 아니라 a specific한 상황을 묘사하면서 인터뷰어가 충분히 그 사실을 이해할 수 있도록 디테일한 맥락을 같이 전달해야한다.
+* Task: 상황 이후에 너가 그 일에 대한 목표, goal을 설명해야한다. 무엇을 성취하려고 했는지, 무엇을 향해 나가고 있었는지.
+* Action: 주어진 상황에서 내가 했던 액션들에 대해 디테일과 함께 말해야 한다. 개인적으로는 어떤 것을 했는지, 조직적으로는 어떤 것을 했는지에 대한 설명이 필요하다.
+* Result: 액션에 대한 결과와 성취를 말해야한다. 어떤 식으로 끝났고 내가 배운 것은 무엇인지 무엇을 성취했는지 어떤 영향을 미쳤는지 얘기해야한다. 프로젝트가 성공했다고 말할때 어떤 기준으로 성공이라는 표현을 쓰며 어떻게 성공했는지 알았는지에 대한 디테일이 필요하다.
+
+## Sources from my stories
+### 군대 이야기
+1. 전구 설치에 실패를 했고 조언을 얻는 생활화를 배움
+
+### 세계 일주 이야기
+1. 도전에 대한 무서움과 그것이 주는 희열을 느낌. 모르는 곳에 첫 발을 내딛을때의 무서움. 친구로부터 벗어났을 때의 무서움. 후에는 괜찮고 성취감도 얻었다.
+
+### 호주 바리스타 이야기
+1. 나의 일에 대한 열정과 성실, 그리고 기대 이상의 결과 - 사장님이 좋아했고 매출이 증가했고 손님들이 늘어났다.
+1. 시키지 않았지만 주인 의식을 가지고 했다.
+
+### 아이택시
+1. 열정 - 내 아이와 같은 산물이다. 진짜 밥만 먹고 코딩을 하고 목이 아파서 잠을 잤지 하기 싫어서 잔게 아니다. 일어나서 다시 코딩을 했다.
+1. 성취 - 많은 학생들이 이용했고 학생들 사이에서 회자되면서 일을 함에 있어 자신감이 생김
+
+### 인트라넷 i7
+1. 리더쉽 - 10명에 대해 동기부여를 하고 모아서 완성함.
+1. 빨리 배움 - 다 처음 했지만 결국 완성했다.
+1. 팀원 간의 갈등 - 몇명은 자기가 하고 싶은 다른게 생겼다. 하지만 그것을 포용해서 하나로 뭉쳤다.
+1. 어려움 봉착 - 기술력의 부족함으로 멈췄고 외부 도움을 받아 해결해나갔따. 그리고 그게 내가 더 배워야 겠다고 생각한 이유다.
+
+### 엘로이 큐브
+1. 엘로이 큐브는 회사이면서 하나의 팀으로보고 내가 새로운 사업에 대한 테스트와 투자를 이끌었다고 하자.
+
+### 시스코, 케이블랩스
+1. 혼자서 프로젝트를 성공시켰고 보안 경력이 많으며 학교 대포로 많은 것을 했다.
+
+### 학교 합격
+1. 두려움 극복, 노력 - 외국어를 배우고 외국어로 수업을 듣는다는 것은 보통 일이 아니다. 그것을 해냈다.
+
+### 투자 이야기
+1. 내가 받은 평가. 3억, 5억, 전액 장학금의 투자를 받을 만큼 가치 있는 사람.
+
+### 무전 여행, 샘물 호스피스 봉사
+1. 도전 정신 및 삶에 대한 깨달음
+
+### 아프리카 봉사
+1. 나눔에 대한 깨달음과 비전에 대한 생각
+
+## Questions
+1. Tell me about yourself.
+  * A lot of jobs require someone who can think on their feet or present ideas with crispness and clarity. This question provides employers with an early preview of your core skills, your personality and your ability to respond to an unstructured question.
+  * 테크니컬한 부분에 있어서는 persistent, detail-oriented, and a hands-on security engineer라고 표현 할 수 있고 non-tech한 부분에서는 relation building and good listener입니다.
+  <br><br>
+  내가 Trick bot이라는 malware를 수업의 프로젝트로 팀으로써 조사를 할때 자주 많은 시간을 할애해 리버스 엔지니어링을 했던 기억이 납니다. 리버스 엔지니어링을 할때에는 기본적으로 detail한 부분을 잘 잡아야 된다 생각합니다. 그 프로젝트 기간에 나는 매일 같이 내가 발견하지 못했던 취약점에 대해서 로직을 파악하기 위해 하나하나 알아봤고 각 함수들의 이름을 최대한 쉽게 새로이 바꾸면서 원리들을 찾아나가기 시작했습니다. 이런 면들이 두가지 속성을 보여주는 것 같고 나머지는 내가 이론적으로 배울때 그것에 관한 실습 문제를 꼭 implement하거나 ctf문제를 풀었는 것이었습니다. 단순히 이론적으로 배우는것에서 그치지 않고 hands-on을 실천해왔던 엔지니어입니다.
+  <br><br>
+  삶에서는 사교적으로 여러 모임에 참석하는 것을 좋아하고 네트워크가 넓은 편입니다. 늘 내 친구들은 나의 네트워크에 대해 놀라곤합니다. cs 엔지니어로써 지내고 있지만 인류학 박사와도 친하고 음대생이랑도 연락을하며 체육인, 광고 업종, 심리학, 연예인 등 여러 분야의 사람들과 네트워크를 형성하고 있습니다. 새로운 사람을 만날 수 있는 자리를 좋아하고 그곳에 가면 처음 봐도 마치 예전부터 봐왔던 것 같은 편안함으로 대화를 이끌어 갈 수 있습니다. 또한 그들과 대화를 할 때 좋은 listener로써 그들의 말을 귀담아 듣고 공감을 불러일으킵니다. 이러한 점에서 그들은 자신들의 이야기를 더 많이 함으로써 좋아하고 편안하게 함으로써 금방 친해질 수 있었습니다.
+  <br><br>
+  약간의 단점이라고 하면 아직까지는 한국어에 국한되어 이런 장점을 발휘할 수 있어서 아쉽긴한데 한국인이라면 정말 저를 모를 수 없을 것입니다.(유머코드))
+1. Tell me about a time you failed or made a mistake.(Tell me about a decision at work that you made but later regretted).
+  * Being able to admit to a mistake shows maturity and personal accountability. Employers want to know you're self-aware and that you learn from past experiences. Errors are inevitable in any job - it's how you handle them that matters.
+  * 내가 군인이었을 때의 일입니다. 나의 역할은 전쟁 시에는 통신을 담당하는 병사였고 일상 부대 생활을 할 동안에는 부대 전기 시설에 관한 모든 담당을 맡았습니다. 한국은 특이하게 모든 병사들이 랜덤하게 자신의 일에 대해 배정을 받고 의무로 해야 하는 나라입니다. 나는 전기에 대해 아는 것이 없었습니다. 
+  <br><br>
+  어느 날, 나의 commander가 나에게 새로 지어진 건물의 전등들을 부대에 있는 새로운 전등으로 교환을 하라고 했습니다. 나는 한 번도 단순한 저구 교체가 아닌 전등 전체를 교체한 적은 한 번도 없어서 할 수 있을지 의문이었지만 내 책임은 모든 부대의 전기를 책임지는 역할이기 때문에 용기를 가지고 한 번 시도해보려고 했습니다.
+  <br><br>
+  나는 electrical breaker를 일단 끄고 단순히 이전 전등을 뽑아서 그 자리에 새로운 전등을 다시 교체하면 될줄 알았습니다. 그리고 테스트로 하나의 전등을 교환한 후 전기 차단을 다시 올리니 펑 소리를 내면서 전등이 폭발했습니다. 그때 엄청 놀랐었고 무슨일이지 검색을 해보고 전화로 외부에 물어보니 ballast가 없어서 그런 일이 벌어졌던 것입니다. 이후 ballast(안정기, stabilizer)를 구해서 그것과 함께 설치를 하니 아무 문제 없이 잘 작동하게 되었습니다.
+  <br><br>
+  이 일 후에는 내가 해보지 않았던 일을 시작할 때에는 아무리 자신감이 충분히 있다고 하더라도 조언을 구하기 시작했습니다. 결국 나는 목표를 달성하고 이뤘지만 만약 조언을 미리 구했더라면 폭발한 전기로 인해 잃은 비용과 위험 할 수 있었던 moment를 피할 수 있었을 것입니다. 이후 지금가지 내가 해보지 않은 일을 하려고 할 때 조언을 미리구해 많은 비용과 위험을 줄여 나가고 있습니다.
+1. Why do you want to work here? what excites you about X? what interests you about the team you're interviewing for?
+  * Interviewers want to understand what prompted you to apply for this job. They don't want candidates who are indifferent to where they work. Instead, they want someone who offers very specific reasons for why tehy want this job.
+  * 내가 일하고 싶은 곳은 내가 성장 할 수 있으면서 동시에 내가 도움을 줄 수 있는 곳이다. 나는 미국에 온지 2년이 되었고 아직까지 처음 들어보는 회사가 많다. 심지어 대학을 선택할 때에도 나는 카네기 멜론 대학, 얼반 샴페인, 코넬과 같은 대학을 전혀 몰랐다. 나는 많은 좋은 기업들을 여전히 다 모르지만 내 학교 친구들로부터 정보를 듣곤 한다.
+  <br><br>
+  이 포지션도 친구의 추천을 받았다. 내가 JD을 읽어 봤을 때에는 Twilio가 unique하고 committed to my growth, my learning, my development, and my entire employee experience를 해준다는 사실에 엄청 매력을 느꼈다. 내가 알기로 OWASP chapter를 돕는 멤버2명이 있고 regular meetup과 blog post를 열심히 하는 동료들이 있기에 충분히 내가 배울 수 있는 것이 많고 서포팅 해주는 문화가 정말 매력적이라 생각한다. 
+  <br><br>
+  내가 threat model, pen test, buuilding automation, make a document for educating software engineer의 경험들도 이 포지션에 충분히 도움을 줄 수 있어서 더욱이 좋았다. 내가 성장하고 있는 회사에 value를 contribute할 수 있다는 일은 정말 의미 있는 일이다. 나는 그런 의미 있는 일을 할 때 내 삶이 fulfill 되는 것 같다.
+1. Describe your most challenging project.(Tell me a time when you overcame a big problem.)
+  * Employers want to get a sense of what 'challenging' means to you. They also want to know how you nadled the situation in a calm way. They're looking for a storyline to prove that you can turn a bad story into a good story.
+  * 인트라넷을 만들때였습니다. 그리고 그 때 내가 경험했던 큰 문제도 있었습니다.
+  <br><br>
+  내가 대학교 junior시절, 우리 학교에 인트라넷이 있었습니다. 그리고 그것은 내가 속했던 cra에서 senior들이 5년전에 만들어서 지금까지 써오던 인트라넷이었습니다. 거의 학생 100%가 모두 사용했던 커뮤니케이션 시스템이었고 디자인과 보안에 관한 것들은 낙후되어 있었습니다. 정부에서 대학교내 웹 서버들에 대한 새로운 지침이 내려왔고 기존 인트라넷은 그 standard에 미치지 못해 폐쇄 위기에 처해 있었습니다.
+  <br><br>
+  나는 동아리의 회장이었고 그것은 우리 동아리의 중요한 자산이기도 했기에 사람을 모아 새로운 인트라넷을 만들려고 했습니다. 나는 웹 사이트를 만들어 본 적이 없지만 방학동안 같이 만들어볼 친구를 모집하였고 모집할 때 내가 이 프로젝트를 통해 이루고자 하는 비전과 이후 우리가 얻을 수 있는 benefit에 관해 말을 해서 그들을 설득(persuade)시켰습니다.
+  <br><br>
+  그렇게 방학 여름 방학동안 우리는 동아리실에서 살다시피 일을 하며 매일 회의와 코딩으로 하루하루를 지냈습니다. 모두가 처음 해보는 웹 사이트 만들기로 한 달 정도 게시판을 만들고 디비 연결을 한 후 게시판의 특정 기능인 에디터를 넣는 작업을 했는데 거기서 서로 할 수 없어 막히기 시작했습니다. 그리고 거기서 막힌지 일주일이 다되어가자 팀원들의 사기가 떨어지기 시작했습니다.
+  <br><br>
+  내가 말로써 잘 할 수 있다 계속 격려도 해보았고 지금까지 잘한 것과 앞으로 우리가 할 수 있는 미래에 대해 상기시켜 보았습니다. 그리고 나도 밤새 남몰래 더 그 문제를 해결하기위해 여러가지 웹 사이트를 보고 시도해보았습니다. 하지만 그때에는 실패했었습니다. 결국 내가 했던 것은 외부의 도움을 구하는 것이었습니다. 친구 중 회사에서 일하는 친구가 있었는데 그 친구에게 도움을 구해서 결국은 그 문제를 해결했습니다.
+  <br><br>
+  이후에도 유사한 일들이 몇번 있었고 도움을 거쳐가면서 우리들 스스로가 성장하면서 1년이 지난 시점에 겨우 완성을 할 수 있었습니다. 가장 큰 문제였었고 지금까지 생생히 기억나는 순간들이며 그 순간들이 나로 하여금 더 많은 것을 배우는데 모티베이션을 주기도 했습니다. 프로젝트를 더 잘 리드하기 위해서는 내가 더 많은 것을 알아야 됨을 깨달았습니다.
+1. What is your greatest weakness
+  * The interviewer is assessing whether your weaknesses will get in the way of doing the job, Employers are looking for humility and whether you're committed to learning and growing. This is a place you can showcase what you're doing to improve.
+  * 나는 평소에 질문이 많은 편이다. 예전부터 철학공부를 해서인지 모든 일들에 대해 궁금증이 많고 질문을 하게 된다. 처음 만난 사람이 있을때 나는 그 사람이 하던 것에 대해 많을 질문을 하게 된다. 특히 한국어로 얘기할때는 어느 누구와도 끊임없이 얘기 할 수 있다.
+  <br><br>
+  하지만 처음 보는 사람들 중 some people은 많은 질문에 부담스러워한다. It can makes uncomfortable to them. 서로 관계를 맺을때에는 내가 아는 것에 대한 만족감을 충족하는 것 보다 그 사람이 편안하게 느끼는 것이 중요하다고 생각했다. 그래서 나는 모두에게 항상 질문을 하는 습관을 줄여나가기 시작했다.
+  <br><br>
+  하지만 이런 질문을 하는 습관은 무언가를 배울때 있어서 큰 도움이 된다. 군인이었을때 전기에 관해 책임을 맡았는데 그 누구도 나에게 많은 것을 알려주진 않았지만 스스로 궁금했던 점들을 질문하고 답을 찾아가면서 군 생활 끝에는 전화기의 원리도 몰랐던 내가 각 부대의 전화기 설치를 직접 하고 전화선 관리를 했으며 cctv 설치 및 부대에 통신, 전기 문제가 있을때 내가 해결을 다 하여서 외부 도움 없이도 부대 내에서 모든 전기 관련 문제들을 하나씩 다 고쳐나갔었다. 그리하여 평소 전기 문제가 생길때 외부 도움을 받을때까지 1주일 이상의 시간이 소요되었는데 내가 있을 당시에는 모든 일들이 2-3일 안에 처리 할 수 있었다.
+1. Tell me about something you've accomplished that you are proud of.(Tell me about an accomplishment in your life.)
+  * This question assesses how you define a professional success. If the story resonates, the employer will want you to do similar things at his or her company. You should focus on the impact and output.
+  * Non-tech한 것과 tech에 관한 두가지 성취가 있는데 무슨 이야기를 듣고 싶은가?
+  <br><br>
+  Tech - 아이택시라고 taxi riding sharing service mobile and web application이 나의 자랑할만한 accomplishment이다. 이 프로젝트는 내가 다니던 학교의 특수성 때문에 시작한 프로젝트 입니다. 우리 학교는 시골에 있었고 대다수의 한국 학생들은 차가 없습니다. 1시간 간격으로 다니는 버스를 타야지만 학교 밖을 갈 수 있었고 혹은 택시를 불러서 가야지 밖으로 나갈 수 있었습니다. 학생들의 주머니 사정은 좋지 않았고 택시비가 꽤나 부담이 되었습니다. 하지만 학교에서 밖으로 갈 곳은 한정적이라서 같은 시간에 같은 장소로 가고 싶은 학생들은 거의 항상 있었습니다. 혹은 외부에서 학교로 들어올때에도 버스를 놓친 학생들은 택시를 타고 학교에 와야만 했습니다.
+  <br><br>
+  이때 출발 시간과 목적지와 출발지가 동일한 학생들을 묶어주면 비용을 아낄 수 있다는 아이디어가 있었고 그것에 관해 개발에 들어갔습니다.
+  <br><br>
+  이 개발을 할때 밤낮으로 코딩을 해가면서 진짜 밥만 먹고 컴퓨터 앞에 앉아 코딩만 했던 기억이 있습니다. 내가 생각하던 기능을 하나하나 구현할 때 그 짜릿함은 그 구현 직전까지 들어갔던 모든 힘든 것들을 잊게 만들었습니다. 목이 아파 어쩔 수 없이 잠이 들면서 결국은 그 서비스를 런칭 시켰고 그 결과 90% 이상의 학생들이 가입을 했고 4000명의 총 학생 중 MAU가 1000명에 가까웠습니다. 학교를 다니면서 주변 학생들이 내 서비스를 사용하고 만족하는 모습을 뽈때면 그만큼 자랑스럽고 성취감이 좋았던 것도 잘 없습니다.
+  <br><br>
+  Non-tech - 나는 커피 회사를 차릴 수 있게 3억과 5억의 투자를 받아본 경험이 있습니다. 그리고 대학원을 지원해줄 전액 장학금도 받았습니다. 이러한 투자 경험이 나에게 있어서는 가장 큰 성취감입니다.
+  <br><br>
+  나는 호주에서 바리스타로 일을 6개월간 했었습니다. 그리고 그 전부터 나는 항상 사업을 한 번 해보면 어떨까 하여 사업에 관한 공부도 해보고 직접 사업 계획 구상도 해보았습니다. 시장 조사도 했었지만 늘 생각이 들었던 것이 사업보다 공부를 해야지라는 생각이 컸습니다. 내가 바리스타로 호주에서 일을 했을때 사장님은 내가 일 하는 것에 대해 엄청 만족해하고 있었습니다. 나는 20% 이상의 매출을 증가시켰고 손님과 사장님의 마음을 훔쳤습니다. 
+  <br><br>  
+  나는 일을 하면서 호주의 인건비는 한국에 비해 3배이상 높은데 커피 가격은 낮은 점에 대해 놀라곤 했습니다. 그리고 평소에 만약 한국에서 이 맛있는 커피 사업을 한다면 돈을 얼마나 벌 수 있을까라는 생각도 해왔었습니다. 나는 한국에서 성공할만한 커피 스팟을 알고 있었습니다. 그것은 바로 우리 대학교 안에 있는 지점이었습니다. 우리 대학교는 특수성이 있는데 학생들이 학교 밖을 잘 나갈 수 없는 구조였습니다. 따라서 학교에 오는 배달 음식업체들은 하나같이 큰 돈을 벌고 사업을 확장하는 것을 학생때부터 지켜봐왔습니다.
+  <br><br>
+  호주 사장님과 얘기를 하다가 나는 한국 사업에 관한 이야기를 했고 학교측과 연락을 하면서 서로가 윈윈 될 수 있는 전략을 구상했습니다. 학교에 있는 문제 중 하나는 학생들이 공부할 공간이 늘 부족했습니다. 그래서 학생들의 불만은 커져갔지만 학교는 공간 부족으로 그 문제를 해결하지 못하고 있었습니다. 그래서 나는 학교에 내가 사업을 하는 대신 학생들이 공부할 수 있는 공간을 마련하겠다고 제안을 했고 학교측은 그것에 대해 긍정적으로 검토하겠다고 말하고 공개 입찰에 대한 일정을 알려주었습니다. 나는 사장님께 이 기회에 대한 이야기를 해주고 내가 사업을 한다면 얼마의 수입을 보장할 것이며 위험요소는 무엇이고 법적으로 검토할 수 있는 것들에 대해 알려주었습니다. 그리고 나는 3억의 투자금에 대해 오퍼를 받았습니다.
+  <br><br>
+  결국 나는 그 오퍼를 거절했지만 그것도 나의 성공중에 일부이고 이후 비슷한 사례로 한국에서 5억의 투자 제안을 받았고 마찬가지의 이유로 또 거절했습니다. 나는 커피 사업을 하면 돈을 벌 자신은 있었지만 행복할 자신은 없었습니다. 내가 하고 싶은 공부를 택해야 겠다는 생각을 했고 이러한 생각에 투자를 해주는 곳이 있어 전액 장학금을 받을 수 있었습니다. 이것이 나에게 가장 큰 성취입니다. 나의 비전중 그들이 반한 것은 내가 한국에 기여하고 싶은 미래가 있기 때문이기도 했습니다.
+1. Tell me about a time you were successful on a team.(How do you work with a team and also cross functional.)
+  * If you can show that you've helped a team move through a challenge, you probably have strong communication and interpersonal skills. These kinds of "soft" skills are in high demand and make people successful in their jobs.
+  * 내가 엘로이큐브라는 회사에 들어갈때 회사의 새로운 사업에 관한 프로젝트를 맡은 팀에 들어갔습니다. 내가 들어가기전 회사는 보안장비에 관한 rule base automate account management나 contract management와 같은 solution으로 benefit을 만들었습니다. 회사의 대표는 새로운 사업 solution을 통해 다양한 수입원을 보장하고 싶었지만 시도할 인력이 없었고 내가 그 인력으로 뽑혔습니다.
+  <br><br>
+  회사 그 누구도 사용하지 않았던 ELK스택을 혼자서 배워서 solution을 planning하기 시작했고 대표님과 3rd party helper와 지속적으로 만나면서 새로운 solution을 구축해나가기 시작했고 그 과정에서 firewall에서 오는 log들을 elastic search enigner으로 저장시키고 그 E(xtractor)T(ransformer)L(oalder)를 .net Core로 작성하면서 데이터를 모아 kibana를 통해 visualization을 시켜 client가 좀 더 쉽게 로그들을 관리 할 수 있게 해주었습니다. 내가 일 하는 동안에 빠르게 prototype을 만들어 그 solution이 시장에서 먹힐지에 대해 확인 할 수 있게 되었고 이것을 바탕으로 대표님은 새로운 client와 계약을 맺을 수 있었습니다. 정확한 이익에 대한 수치는 산출 할 수 없었지만 내가 일하는 동안 2개의 계약을 채결한 것으로 알고 있습니다.
+1. Tell me about a time you surpassed people's expectations.
+  * Employers want to know they are hiring high quality people. If you have a story about surpassing an expectation, you've probably gone above and beyond the call of duty and that's great thing!
+  * 내가 호주에서 워킹홀리데이 비자를 가지고 바리스타로 일을 했을 때이다. 매일 아침 5:30분에 매장 오픈을 준비하고 6시에 매장을 오픈하면 아침 노동자들이 커피집에 와서 커피와 호주 파이를 사서 가는게 일상이었다. 아침 7시부터 9시까지 엄청 바쁘고 출근하는 사람들로 벅차서 그 시간대에는 정신없이 커피를 만들어야 했다. 내 일은 빠른 시간내에 주어진 퀄리티의 커피를 만들어 내는 일이었다. 나의 퇴근 시간은 오후 3시였고 오후 시간대에는 to go 손님보다 dine in 손님이 많았다.
+  <br><br>
+  사장님은 내가 업무 시간동안 맛있는 커피를 빠르게 만드는 것을 기대했고 나는 이미 그 기대를 충족하고 있었다. 매일 아침 사장님은 나의 커피를 2잔 이상씩 마시면서 그 날 그날의 커피 맛을 평가했고 음미하셨다.
+  <br><br>
+  일이 어느정도 익숙해지기 시작하면서 나는 라떼 아트를 연습하기 시작했다. to go 손님들은 사실 라떼 아트를 해도 뚜껑을 덮고, 설탕을 추가했을때 휘저어서 가기 때문에 의미가 없지만 dine in 손님들을 위해서 라떼 아트를 하면 어떨까 생각을 했다. 그들의 컵 위에는 항상 오픈되어 있기 때문에 예쁜 커피를 받는다면 손님들이 더 좋아할 것이라 생각했다. 그리고 매일 to go 커피 위에다가 라떼 아트가 익숙해질때까지 한가한 시간에 연습을 했고 어느 정도 연습이 충분히 되고 예쁜 모습이 나오기 시작할때 직원들에게 커피를 먼저 선보였다. 같은 동료들은 한가한 시간에 자신의 커피를 만들어달라고 나에게 부탁하곤 했었다.
+  <br><br>
+  직원들이 나의 라떼 아트를 보고 매우 좋아했다. 그리고 그것을 사장님도 보시고 매우 행복해하셨다. 나는 자신감을 얻어서 손님들 커피에 라떼 아트를 선보이기 시작했다. 결과는 매우 성공적이었다. 그 라떼 아트를 먹기 위해 매일 오는 손님들이 생기기 시작했고 마을에서 내 커피가 유명세를 타기 시작했다. 매출도 지난해에 비해 20% 가까이 늘었다고 사장님이 나에게 말했다. 그 누구도 나에게 시킨적도 없고 나의 주어진 업무에도 속하지 않았지만 내가 하고 싶어서 했고 그 결과 모드의 예상을 벗어나 좋은 효과를 만들었던 경험이 있다.
+1. What would your co-workers say about you?
+  * Interviewer want to know if you'll fit in with the team. This question can also help you highlight your strengths without feeling like you're bragging.
+  * 내 생각에는 동료는 나에게 genuine passtion for cybersecurity and dedicated, hardworking, and sincere라고 해줄 것 같다.
+  <br><br>
+  최근 친구의 회사에 추천서를 부탁했는데 친구의 추천서를 나에게 공유해주어 나도 그 친구가 나를 어떻게 생각하는지 알 수 있는 기회가 있었다. 그 친구의 추천서에는 그 친구가 나와 함께 했던 수업과 ctf에서 그러한 것들을 느꼈다고 적었다. 나는 학교를 선택한 이유도 10년간 내가 품어왔던 꿈을 실현시키기 위해서였고 계속해서 ctf에 참가하고 (지난주에도 참가했다) 공부를 하는 모습을 본 친구가 genuine passtion for cybersecurity라 할만하다고 생각한다.
+  <br><br>
+  dedicated and hardworking은 나와 같이 일해본 사람이라면 내가 주어진 목표가 있을때 팀의 동료로써 얼마나 많이 기여를 하는지 느낄 수 있다. 지난번 회사에서 일을 할 때, 숙제를 할 때에도 항상 나는 그들의 기대치보다 많은 일을 해갔었다. 그러한 결과로 일을 9개월 더 늘릴 수도 있었고 내 친구들은 나와 숙제하는 것을 선호해 항상 나에게 먼저 연락이 와서 팀을 맺기도 했다.
+1. Give me an example of a time you remedied a problem. What did you learn?
+  * 
+1. What is your greatest strength?
+  * Employers want to see if you can strike the right balance between confidence and humility. Hiring managers also want to get a sense for how self-aware and honest you are and align your strengths to the role at hand.
+  * 나의 가장 큰 장점은 리더십이라고 생각합니다. 나는 군대에서 리더였고, 동아리 회장이었으며, 각종 모임에서 늘 리더의 자리를 도맡았습니다.
+  <br><br>
+
+1. Describe your leadership style.
+  * Good leaders can explain their values and priorities in a few words. This is a test to see if you can explain yourself. It also helps to determine whether your approach meshes with the company's own culture.
+  * strategic thinking based on realistic 와 listener의 기반을 둔 리더십입니다.
+1. Tell me about a time you showed leadership
+  * Employers want to understand your capacity to step up and handle tough situations that undoubtedly arise in the workplace. They want to know when you've seen an opening to lean in and lead with good judgment.
+1. Be an owner - Owners know their business, embracing the good news and the bad. Owners sweat the details and "pick up trash." Owners think logn term, and spend money wisely.
+  * 바리스타 이야기. Tell me about a time you surpassed people's expectations.
+1. Empower others - We believe that unleashing human potential - both inside and outside our company - is the key to our success. Be humble and realize it's not just about us. Invest in each other.
+  * 아프리카 이야기 
+1. No shenanigans - Always act in an honest, direct, and transparent way.
+  * 나는 늘 honest한 방식으로 해왔지만 하나의 가정을 들고 그것에 대한 제 가치관에 대해서 이야기해보겠습니다.
+  <br><br>
+  만약에 내가 금융회사에서 일하는 보안 직원이라고 가정을하고 data breach가 일어났으면 어떻게 할까요? 솔직히 이 사실을 말하게 되면 나는 책임을 지게 될 것이고 회사에서 짤릴지도 모를 두려움에 떨 수 있을 것입니다. 하지만 말하지 않는다면 그 누구도 모르게 넘어 갈 수 있을 수 있습니다.
+  <br><br>
+  이러한 경우에 처한다면 저는 이 사건에 대해 report를 하고 솔직히 알릴 것입니다. 왜냐하면 
+1. Wear the customer's shoes - Spend the time to deeply understand customers, and solve problems from their perspective. Earn trust through every interaction.
+  * 

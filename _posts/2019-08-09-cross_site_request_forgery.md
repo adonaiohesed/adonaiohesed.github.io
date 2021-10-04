@@ -45,7 +45,12 @@ mathjax_autoNumber: true
   * 서버측에서 자기만 아는 비밀 토큰을 부여해서 same-site request에서 이 토큰을 가지고 있지 않다면 cross-site request라고 판단하면 되는 것이다.
   * page를 initiated하는 request에다가 랜덤 넘버를 부여하는 방법이 있다.
   * 또 다른 방법으로는 쿠키 안에 secret value를 넣는 방법이다.
-
+### Same-Origin Policy
+  * 프로토콜, 호스트, 포트가 동일한 서버로만 ajax 요청을 주고 받을 수 있도록 제한 하는 정책이다. 이러한 제한으로 CSRF 공격을 막을 수도 있을 것이다.
+  * 하지만 외부 API를 사용하는 경우도 많고 클라이언트와 서버를 분리하여 개발하는 경우도 많은데 이 정책으로 불편함을 겪어 CORS정책을 이용하기도 한다.
+### Cross-Origin Resoures Sharing(CORS)
+  * SOP의 불편함을 해소하기 위한 것으로 HTTP 헤더 베이스 메커니즘으로 다른 도메인, scheme, or port에서 온 것(browser가 resource를 loading하기 위해 permit해야 하는 것들)을 서버에 허용해주는 메커니즘이다.
+  * 이것은 사실상 CSRF를 막는것과 상관이 없다. SOP와 연관이 있어 가져왔다.
 
 ## Refrence
 

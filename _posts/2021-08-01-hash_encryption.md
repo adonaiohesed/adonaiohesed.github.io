@@ -30,7 +30,12 @@ mathjax_autoNumber: true
 * 취약점으로는 메시지를 가로채서 목적지로 다시 보내는 reply 공격에 취약하다. 이런 공격은 차량에서 unlock신호를 캡쳐했다가 나중에 다시 보내서 unlock을 시켜버릴 수도 있는 공격이다.
 * 취약점을 보안하기 위해 timestamp를 메시지 안에 넣고 HMAC 알고리즘을 진행한뒤 마지막에 verficiation을 통과하면 시간이 지금 초과한건지 아닌지 체크해서 reply attack을 막는다.
 
-## Salted Password Hashing
+## Encryption and compression
+* 압축을 하고 암호화를 해버리면 side channel attack에 취약해진다. 이 공격은 JS 코드를 이용하여 victim's browser에 brute force공격을 하는 것인데 이것은 공격자가 암호화된 사이즈를 근간해서 transmitted data가 무엇인지 infer할 수 있게 해준다. compression oracle이라고도 알려져있고 CRIME과 BREACH와 같은 SSL/TLS 공격에도 취약해진다.
+* 그런데 암호화를 하고 압축을 하면 더 많은 issues가 생긴다. 암호화를 해버리면 데이터의 패턴이 사라지고 이럴 경우 압축 자체가 힘들어 질 수 있다. 암호화는 패턴에 의존해서 사이즈를 줄여나가는 방식인데 암호화를 먼저 해버리면 압축을 제대로 할 수가 없게 되는 것이다.
+* 사실 둘다 하지 않는게 좋다.
+
+# Salted Password Hashing
 
 ## Creak Hash
 * 이것은 결국 비밀번호를 어떻게 관리하냐에 관한 이야기이고 data breached를 막는것이 아닌 breach가 일어났을때 비밀번호만은 지킬 수 있는 방법들이다.

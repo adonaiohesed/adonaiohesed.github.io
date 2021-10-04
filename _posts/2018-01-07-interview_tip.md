@@ -2,7 +2,7 @@
 title: Interview Tip
 tags: interview
 key: page-interview_tip
-cover: /assets/cover/metasploit.png
+cover: /assets/cover/developer.png
 mathjax: true
 mathjax_autoNumber: true
 ---
@@ -18,6 +18,7 @@ mathjax_autoNumber: true
 1. 지원하는 포지션에 맞는 이야기들로만 구성을 해서 얘기해라. 약한 얘기는 안 하는게 전략적으로 좋다. 강조점을 스스로 찾아라.
 1. 해봤던 기술들에 대해 장황하게 설명하지마라. 당연하게 써야되는것들인데 무슨 그리 장황하게 적는거는 지루할 수 있다. 많은 것을 썼다는 것은 내가 패스트 러너인것을 강조할때만 이용하라. 혹은 특별한 근거를 가지고 썼던 경험이 있을때 나의 선택 방식(행동 방식)에 관해 말할때 근거로 써라.
 1. 천천히 말해라.
+1. 좋은 사람들이 있는 곳이라서 좋다라는 말은 하지 마라. 내가 좋아하는 이유를 명확히 들어라.
 
 ## Question to interview
 ### Recruitor phone call
@@ -38,6 +39,13 @@ mathjax_autoNumber: true
 1. Why did you come to this team?
 1. What's different about working here than anywhere else you've worked?
 1. How would you describe the work environment here-is the work typically collaborative or more independent?
+1. Are there oppotunities for professional development?
+1. What metrics or goals will my performance be evaluated against?
+1. What can you tell me about your plans for growth?
+1. What are the current goals that <the company> is focused on, and how does this team work to support hitting those goals?
+1. What gets you most excited about the company's future?
+1. What are the common carrer paths in this department?
+1. How has the company changed since you joined?
 
 ## 인터뷰의 특성
 1. 인터뷰는 점수가 매겨지지만 그것이 전부가 아니다. 주관적인 요소가 많다. 그리고 상대적이다. 절대적인 답이 있는 것이 아닌 내가 상대보다 잘하면 뽑힌다.
@@ -46,7 +54,7 @@ mathjax_autoNumber: true
 ## 인터뷰 혹은 Resume 요령
 1. 최대한 디테일은 살리되 그것을 모르는 사람들이 있을 수 있으니 너무 살리면 안 된다. 적당한 디테일이 필요하다.
 1. 팀이 아닌 본인을 포커싱해서 자신이 해왔던 기술적인 것들을 설명해야한다. We, us, the team과 같은 얘기는 쓰지말자.
-1. 모든 말과 문장에는 구조가 있어야된다. Situation, Action, Result.
+1. 모든 말과 문장에는 구조가 있어야된다. Situation, Task, Action, Result.
 1. Initiative/Leadership, Empathy(사람에게 생긴 일에 대해 신경쓰는 공감), Compassion(동료들이 잘 못해도 그것에 분노하지 않는 동정심), Humility(자신의 flaw를 인정하는), Teamwork/Helpfulness의 관점으로 나를 드러내면 좋다.
 1. 자기소개 구조
   * Current Role \[Headline Only\]
@@ -55,8 +63,5 @@ mathjax_autoNumber: true
   * Current Role \[Details\]
   * Outside of Work - such as CTF
   * Warp Up - I'm looking now for something new, and your company caught my eye. I've always loved the connection with the user, and I really want to get back to a smaller environmnet too.
-1. 
-
-
-1. 대화가 잘 듣고 잘 얘기가 잘 하는 사람은 기억에 좋다
-1. 자기만의 방법을 고유하는 사람은 별로 안 좋다. 거만한 사람 안 좋다. 질문
+1. 인터뷰를 할 때 잘 듣고 대화가 잘 통하는 사람이 기억에 남는다.
+1. 거만한 사람은 모두가 싫어한다. 자신만의 방법을 고집하는 사람도 좋아할 사람이 별로 없을 것이다.
