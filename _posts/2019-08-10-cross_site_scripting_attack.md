@@ -76,13 +76,20 @@ mathjax_autoNumber: true
 * XSS가 생기는 이유는 data와 code를 분리하지 않아서이다.
 * 하지만 HTML markup을 지원하는 입장에서 분리하는게 결코 쉬운일은 아니다.
 * user input으로 부터 코드를 없애거나 가능하면 그것을 ineffective하게 바꾸는 2가지의 방식이 있다. 보통 아래 2가지 방법을 섞어서 XSS를 예방한다.
+* IPS, IDS, 방화벽으로도 방지할 수 없기 때문에 단순히 문자를 필터링 하는 것과 같은 방법만이 존재한다.
+
 ### Filter Approach
-  * user input으로 부터 코드를 지운다는 것인데 이게 쉽지 않다.
-  * script 태그 외에 여러가지 방법으로 javascript를 작동시킬 수 있는 방법들이 존재한다.
-  * 이건 만드는게 쉽지 않기 때문에 jsoup와 같은 오픈소스 코드를 사용해도 좋다.
+* user input으로 부터 코드를 지운다는 것인데 이게 쉽지 않다.
+* script 태그 외에 여러가지 방법으로 javascript를 작동시킬 수 있는 방법들이 존재한다.
+* 이건 만드는게 쉽지 않기 때문에 jsoup와 같은 오픈소스 코드를 사용해도 좋다.
+
 ### Encoding Approach
-  * Code들을 브라우저가 볼 수 있는 방식(\&\lt; 같이 < 대신에 보여지는 방식)으로 바꾸는 것이다.
-  * 브라우저가 representations하는 방식이 된다는 것은 코드는 실행되지 않는다는 것을 의미한다.
+* Code들을 브라우저가 볼 수 있는 방식(\&\lt; 같이 < 대신에 보여지는 방식)으로 바꾸는 것이다.
+* 브라우저가 representations하는 방식이 된다는 것은 코드는 실행되지 않는다는 것을 의미한다.
+
+### Content Security Policy(CSP) 사용
+* 스크립트 실행에 대한 정책을 설정해 예방하는 방법. 어떤 웹 리소스만 허용할지 정의.
+* 출처가 자기 서버인 스크립트만 실행 될 수 있도록 한다.  
 
 ## Refrence
 * [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)

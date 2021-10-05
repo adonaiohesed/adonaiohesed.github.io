@@ -82,7 +82,7 @@ mathjax_autoNumber: true
   * Employers want to get a sense of what 'challenging' means to you. They also want to know how you nadled the situation in a calm way. They're looking for a storyline to prove that you can turn a bad story into a good story.
   * 인트라넷을 만들때였습니다. 그리고 그 때 내가 경험했던 큰 문제도 있었습니다.
   <br><br>
-  내가 대학교 junior시절, 우리 학교에 인트라넷이 있었습니다. 그리고 그것은 내가 속했던 cra에서 senior들이 5년전에 만들어서 지금까지 써오던 인트라넷이었습니다. 거의 학생 100%가 모두 사용했던 커뮤니케이션 시스템이었고 디자인과 보안에 관한 것들은 낙후되어 있었습니다. 정부에서 대학교내 웹 서버들에 대한 새로운 지침이 내려왔고 기존 인트라넷은 그 standard에 미치지 못해 폐쇄 위기에 처해 있었습니다.
+  내가 대학교 junior시절, 우리 학교에 인트라넷이 있었습니다. 그리고 그것은 내가 속했던 cra에서 senior들이 5년전에 만들어서 지금까지 써오던 인트라넷이었습니다. 거의 학생 100%가 모두 사용했던 커뮤니케이션 시스템이었고 디자인과 보안에 관한 것들은 낙후되어 있었습니다. 정부에서 대학교내 웹 서버들에 대한 새로운 지침이 내려왔고 기존 인트라넷은 그 standard에 미치지 못해 폐쇄 위기에 처해 있었습니다. 그리고 그 말인즉슨 기존 웹사이트는 유저들에게 잠재적인 위험이 있다는 것을 의미했습니다.
   <br><br>
   나는 동아리의 회장이었고 그것은 우리 동아리의 중요한 자산이기도 했기에 사람을 모아 새로운 인트라넷을 만들려고 했습니다. 나는 웹 사이트를 만들어 본 적이 없지만 방학동안 같이 만들어볼 친구를 모집하였고 모집할 때 내가 이 프로젝트를 통해 이루고자 하는 비전과 이후 우리가 얻을 수 있는 benefit에 관해 말을 해서 그들을 설득(persuade)시켰습니다.
   <br><br>
@@ -142,14 +142,25 @@ mathjax_autoNumber: true
   * 
 1. What is your greatest strength?
   * Employers want to see if you can strike the right balance between confidence and humility. Hiring managers also want to get a sense for how self-aware and honest you are and align your strengths to the role at hand.
-  * 나의 가장 큰 장점은 리더십이라고 생각합니다. 나는 군대에서 리더였고, 동아리 회장이었으며, 각종 모임에서 늘 리더의 자리를 도맡았습니다.
+  * 나의 가장 큰 장점은 끊임 없는 도전 정신(constand challenge spirit)입니다. 내가 이 자리에 있는 것이 바로 그 결과입니다.
   <br><br>
-
+  나는 초등학교때 컴퓨터를 처음 접했고 게임을 좋아했습니다. 그리고 온라인 게임에서 해킹이라는 것을 처음 접했었죠. 그게 너무 흥미로워서 혼자서 공부를 하려고 했었요. 하지만 저희 집안에서는 제가 의사가 되면 좋겠다는 생각을 심어주었고 대학교까지 의대를 가기위한 공부를 했었죠. 그리고 수학 점수는 늘 만점이었지만 영어점수가 낮아서 의대에 들어가지 못했습니다. 그리고 대학생 시절을 보냈죠. 문득 어린 시절의 내가 되고 싶어했던 해커가 생각이 나더라구요. 그리고 컴퓨터 공부를 했고 생명학부에서 CS 학부로 전과를 했습니다. 해커가 되고 싶었어요. 한국은 미국과 다르게 사이버 보안에 관한 문화가 현저하게 차이가 있고 수준이 낮습니다. 인력도 낮고 시장도 낮고 자금도 낮죠. 그렇게 사이버 보안에 대해 잘 아는 사람도, 커리큘럼도, 뭐 아무것도 없었어요.
+  <br><br>
+  나는 혼자서 해킹 공부를 하기 위해서 인터넷 검색을 시작했죠. 거기서 나오는 말은 c언어를 공부해라. DS를 공부해라. 네트워크를 공부해라. 이런 기초적인 것들을 알려주었습니다. 그래서 대학교 내내 공부를 했죠. 하지만 뭔가 본질적인 해킹 공부를 하는 방법은 인터넷에 없었습니다. 대학교 교수님을 찾아서 해킹 공부법을 물어봐도 교수님 조차 잘 알지 못했습니다. 그리고 한국에 카이스트라는 대학교에 정보보안학과가 생겨 거기에 있는 사람들과 연락해서 컴퓨터 보안 공부 하는 법을 물어봤습니다. 하지만 제가 원하는 것들이 아니었습니다. 새로운 암호학을 연구하는 집단이었죠. 저는 실질적인 펜 테스트 같은 것을 하고 싶었습니다. 그리고 알아본 결과 미국 대학교에는 컴퓨터 보안 관련된 과가 많고 제가 듣고 싶은 것들이 많더군요.
+  <br><br>
+  거기에는 여전히 또 다른 장벽이 있었습니다. 영어라는 문제가 있었고 심지어 gre라는 무시무시한 시험도 있었죠. 정말 해킹 공부를 하고 여기 이 자리에 서기까지 끊임 없이 도전하고 도전해서 조금씩 성취해냈습니다. 영어 때문에 의대를 못갔던 내가 그리고 영어로 3살보다 말을 더 못했던 제가 gre 시험을 치고 2년간 학교에서 남들보다 더 힘들게 영어로 수업을 듣고 영어로 숙제를 하고 영어로 의사소통하며 지금 이 자리에 당신 앞에 서있습니다. 내가 하고 싶은 공부 하나만을 바라보며 지금까지 끊임없이 항상 어려움이 있었던 곳에서 도전을 해오며 왔고 저는 이 회사에 들어온다고 하더라도 멈출 생각이 없습니다.
 1. Describe your leadership style.
   * Good leaders can explain their values and priorities in a few words. This is a test to see if you can explain yourself. It also helps to determine whether your approach meshes with the company's own culture.
-  * strategic thinking based on realistic 와 listener의 기반을 둔 리더십입니다.
+  * strategic thinking based on realistic 와 listener의 기반을 둔 리더십입니다. 
 1. Tell me about a time you showed leadership
   * Employers want to understand your capacity to step up and handle tough situations that undoubtedly arise in the workplace. They want to know when you've seen an opening to lean in and lead with good judgment.
+  * 대학교 다니던 시절 나는 CRA라는 동아리에서 회장을 맡고 있었습니다. 우리 동아리에서는 전교생이 쓸 수 있는 커뮤니티를 만들었고 그것을 관리하고 있었습니다. 하지만 기존에 쓰던 것이 보안상에 문제가 많았고 오래된 프레임워크를 써서 자체적인 보안 디자인도 잘 되지 않았습니다. 이것을 쓰는 학생 유저들은 개인정보에 대한 보호 조치가 없어서 회장인 나는 그 문제를 해결하려 같이 최신 프레임워크를 사용해 새로운 웹 애플리케이션을 만들 사람을 모집했습니다.
+  <br><br>
+  10명의 개발자를 모았고 우리의 목표는 좀 더 보안이 강화되고 새로운 디자인의 새로운 니즈가 추가된 인트라넷을 만드는 것이었습니다.
+  <br><br>
+  나는 먼저 우리가 이것을 통해 이루고자 하는 비전을 제시했습니다. 단순히 좀 더 보안이 강화되고 예쁜 웹 애플리케이션이 아니라 이 애플리케이션을 통해 학교 구성원이  익명이 유지된 채로 토론을 할 수 있는 공간을 만들고 그러한 일들은 학교에서 투명한 토론 문화를 양성하는데 이바지가 될 것이고 그것은 곧 실력있는 학생들을 길러내고 그 학생들이 세상을 바꾸는데 이바지 할 것이라는 비전을 제시했습니다. 우리 학교의 슬로건은 why not change the world입니다. 비전과 함께 현실적으로 그들이 성장 할 수 있는 기회라는 사실을 알려주고 우리 사이에서 있어야 할 룰, 작업하는 스타일, 웹 애플리케이션에 관한 디자인을 잡아가면서 서로 해야 할 일들에 대해 역할을 분담했습니다.
+  <br><br>
+  그 결과 1년이 지난 시점에 우리는 결국 우리가 원하는 것을 만들 수 있었고 제가 처음에 제시한 비전처럼 이후 학생들 사이의 토론 문화가 증진되어 실질적으로 청소 노동력자에 대한 토론이 활발했고 모임이 생기며 그들의 인권을 보호해주어 이전보다 학교에서 더 나은 조건으로 일 할 수 있는 일까지 이어질 수 있었습니다.
 1. Be an owner - Owners know their business, embracing the good news and the bad. Owners sweat the details and "pick up trash." Owners think logn term, and spend money wisely.
   * 바리스타 이야기. Tell me about a time you surpassed people's expectations.
 1. Empower others - We believe that unleashing human potential - both inside and outside our company - is the key to our success. Be humble and realize it's not just about us. Invest in each other.
@@ -162,3 +173,94 @@ mathjax_autoNumber: true
   이러한 경우에 처한다면 저는 이 사건에 대해 report를 하고 솔직히 알릴 것입니다. 왜냐하면 
 1. Wear the customer's shoes - Spend the time to deeply understand customers, and solve problems from their perspective. Earn trust through every interaction.
   * 
+1. Write it down - Our business is complex, so take the time to express yourself in prose - for your sake, and for the folks with whom you're collaborating.
+  * 지금까지 블로그 써온 이야기. 면접 중에 쓰면서 듣기.
+1. Ruthlessly prioritize - Prioritization helps break down complex problems, and provides clarity in the face of uncertainty. Decisions are progress, so make decisions with available information and keep leanring.
+  * 
+1. Don't settle - Expect the best from yourself and others, because there's no feeling greater than being proud of our work. HIre the best people for every role.
+  * 나의 강점 이야기. 해킹 공부를 위해 면접자 앞에까지 온 이야기.
+
+
+구글
+
+리더쉽과 
+technical leadership, people leadership에 대해 묻는다
+불분명할때 나는 빛을 발한다.
+know / know
+내가 모르는 것을 모를 때가 있다.
+내가 뭘 모른다는 것을 알 때.
+달에다가 서버를 짓고 달에다가 지메일 서비스를 할꺼야. 이때 어떤식으로 이것을 해결하는지.
+
+다른 사람이 나한테 조언해준 것을 존중한다.(선배님께서 피드백에서 나의 장점을 이것으로 보여줬다.)
+
+나는 지금까지 피드백이 어떤식으로 왔고 어떻게 존중했는지 표현 잘해봐야한다.
+
+솔직하게 얘기하되 결말이 안 좋았던가 결론적으로는 잘못했다라는 식으로 끝나지 말고 모든 것을 얘기하면 안 된다.
+배우고 그것을 이후에 사용했는 맥락이 나오는 것이 좋다. 그리고 그 결과에 대한 구체적인 증명으로 보여주는게 좋다.
+배워서 같은 팀 내에서 적용하는 것이 좋았다.
+
+현재 상황에서 효과적으로 도전을 한다.effectively challenging 
+
+성장하는 것에 있어서 거스러움을 받아들이는 것에 두려움을 느끼지 않지만 지혜롭게 해야한다.
+
+유저를 우선순위에 둔다.
+
+올바른 것을 한다.
+
+팀 멤버들을 생각한다.
+
+
+못푸는 문제가 나올 수 있을때까지 계속 물어본다.
+문제는 보통 40분에서 2,3개가 나온다. 첫번째는 쉬웠다가 이후에는 어려운 것 계속 나온다.
+2번째 문제까지만 잘 풀어도 좋은 점수를 준다. 완벽하게 풀지 못해도 젤 중요한 부분만 옵티마이제이션을 잘 하면 점수를 잘 준다.
+
+이전 인터뷰와 이후 인터뷰는 아무 관련이 없다. 인터뷰 하나 망했다고 최선을 다 하는게 중요하다. 모든 인터뷰는 독립적이다.
+
+캐미가 좋은 사람이 있어서 끝까지 나를 끌고 가는 사람이 있어주면 뽑힐 수 있다.
+
+6단계가 있다.
+꼭 봅아야되 1,2명이 있으면 뽑힐 확률이 높다.
+뽑아야되
+뽑으면 좋아
+안 뽑으면 좋아
+절대 뽑으면 안 되에 뽑히면 다른 사람이 아무리 좋아도 안 뽑힐 수 있다.
+
+하나하나에 집중을 해서 하나라도 좋은 점수를 받는게 좋다.
+태도도 정말 중요하다.
+
+지적을 해줄때에는 항상 고맙다고 얘기하고 존중을 표현해라.
+해쉬테이블은 무조건 언급하는 것이 좋다. O(1)으로 만드는 마법이니깐 binary search 정도 생각해봐라.
+
+남들이 쿨하게 생각하는 라이브러리를 쓰면 쿨하게 본다.
+
+디폴트 딕셔너리를 자주 사용하셨다. 이것을 모르는 사람들이 많았는데 디폴트 딕셔너리를 네스트리로 재정의 해서 다시 사용하시면 좋아한다.
+디폴트 벨류가 정의된 딕셔너리.
+그것을 네스티드로 바꿔서 쓸 수 있다.
+딕셔너리를 x에 키가 10인데 10에 대한 벨류가 네스트로 정의 할 수 있는데 그것을 알아보면된다.
+
+일관성이 필요하다. 코드를 짤 때에는 일관성이 있어야 한다.
+코드가 안 읽히면 점수가 깎인다.
+
+이름이 길더라도 의미가 있는 변수명으로 짜는 것이 좋다.
+
+work throgth 하는 연습도 많이 해라. 이 예시를 가지고 워크트루 할 수 있니라고 물어볼 수도 있고
+내가 먼저 발렌티어로 예시에 관해서 work thorough를 하는게 좋다. 코너 케이스를 생각해서 3가지 예시를 가지고
+work thorugh를 해볼께라고 하면 좋은 점수를 줄 수 있다.
+
+수도 코드가 아니라 바로 돌아가는 코딩을 써야된다. 진짜 코드를 바로 돌릴 수 있는 것을 해야 한다.
+
+
+
+
+문제가 어려우면 어려울수록 나는 내 재능을 더욱 돋보일 수 있다.
+문제조차 파악이 안 될 수 있을때 빛을 발 할 수 있는 사람이다. 그런 예를 들어야 한다.
+경험 위주로 대답해야 한다.
+
+user respect를 해야한다.
+인트라넷에 대해서 얘기를 하면 된다. 리스펙트를 했는 것에 대해서 이야기해야 한다.
+인트라넷 시큐리티 보안할때 학생들의 존중하기 위해 이걸 보강했다.
+고객들을 보강해아한다.
+주어진 문제에 대해서 더욱 포커스 해야하는게 좋다.
+
+리쿠루터한테 최대한 이야기해서 정보를 긁어내라.
+swe로 가는지 아니면 
