@@ -36,4 +36,4 @@ mathjax_autoNumber: true
 1. Exploitability cost - 공격을 하기 위해 얼마나 비용이 드는지(비용이 적게 들수록 위험한거다)
 1. Affected users - 몇명의 사용자가 피해를 입을지
 1. Discoverability - 얼마나 찾기 쉬운 공격일지
-* Risk value = (Damage + Affected users) * (Reproducibility + Exploitability + discoverability)
+* $$ Risk value = {(Damage + Affected users) * (Reproducibility + Exploitability + discoverability)} $$
