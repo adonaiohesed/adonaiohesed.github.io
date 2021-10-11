@@ -139,3 +139,63 @@ mathjax_autoNumber: true
 ### Reverse Proxy
 * 클라이언트가 특정 웹사이트 혹은 서버에 리퀘스트를 날릴때 서버에 직접 가지 않고 리버스 프록시가 대신 회사 내의 서버에 요청을 한 후 그 resource를 받아 다시 client에게 전달하게 도와주는 것입니다. 이렇게 하면 client는 마치 reverse proxy가 서버인 것으로 알게되고 회사 내의 네트워크 자체를 숨길 수 있습니다. 보안이 더 강해지며 우리가 WEB(Apache, nginx)를 DMZ에 두고 WAS(Tomcat)을 분리하여 내부망에 분리하는 형태를 reverse proxy라고 볼 수 있다. 이때, WEB이 reverse proxy이다.
 
+## Redundancy and Replication
+* Redundancy는 일반적으로 백업 또는 fail-safe 형태로 시스템의 reliability를 높이기 위해 시스템의 중요한 구성 요소 또는 기능을 복제하는 것입니다.
+* Single points of failure을 제거하는데 중요한 역할을 하며 필요한 경우 백업을 제공합니다. 서비스 인스턴트가 두개 있고 하나가 실패했을시 시스템은 다른 인스턴스로 장애 조치를 할 수 있습니다.
+* Replication은 reliability, fault-tolerance, or accessibility를 높이기 위해 중복된 리소스들간에 일관성을 유지하기 위해 정보공유를 하는 것을 의미합니다. 이때 리소스들이란 소프트웨어나 하드웨어 컴퍼넌트를 의미합니다.
+* 주로 DBMS에 사용되며 오리진과 카피사이의 primary-replica관계로 사용합니다. The primary 서버는 모든 업데이트를 받아들이고 이후 복제 서버로 ripple합니다. 각 replica들은 모든 업데이트가 성공적으로 수신 받은 후에 이후 업데이트를 보낼 수 있도록 허용합니다.
+
+## SQL vs NoSQL
+* 데이터베이스 기술과 관련해서는 만능 솔루션(one-size-fits-all solution)은 없습니다. 각각의 상황에 따라 달려있습니다.
+### SQL
+* 관계형 데이터베이스는 행과 열로 되어 있다. 각 row는 information을 담고 있고 각 column은 각 데이터의 속성을 담고 있다.
+
+### NoSQL
+* 대표적인 4가지 타입이 있습니다.
+  * Key-Value Stores: 데이터가 key-value pairs로 저장이 됩니다. Redis, Voldemort, Dynamo와 같은 것이 있습니다.
+  * Document Databases: 데이터들이 다큐먼트 안에 저장이 되어 있고 다큐먼트는 콜렉션으로 그룹지어져 있습니다. 각각의 다큐먼트들은 서로 다른 구조를 지닐 수 있습니다. CouchDB, MongoDB가 대표적인 유형입니다.
+  * Wide-Column Databases: 테이블 대신 columnar 데이터베이스에 column families가 있다. 관계형 데이터베이스와는 다르게 우리가 모든 columns에 관한 것을 알 필요가 없고 같은 수의 columns들이 각 row마다 같지도 않다. 이것은 large datasets을 분석하는데 적합하고 Cassandra, HBase가 있다.
+  * Graph Database: 이 데이터 베이스는 관계가 가장 잘 표현되는 데이터를 저장하는데 사용된다. 데이터는 그래프의 구조 형태인 노드(entities), 속성(information about the entities), 관계(connection between the entities)의 형태로 저장된다. Neo4J, InfiniteGraph가 대표적인 데이터베이스이다.
+
+### SQL과 NoSQL의 차이점
+* Storage: SQL은 테이블안에 저장되는 형태이지만 NoSQL은 각각 다른 형태의 모델들로써 저장되고 위에 말한 4가지의 다른 타입의 데이터베이스가 있다.
+* Schema: SQL은 고정된 형태의 schema를 가지고 있어서 데이터를 넣기 전에 이미 columns에 관한 것이 정의되어야 하고 만약 수정했을 시에는 DB가 offline으로 되어 다시 적용해야하는데 NoSQL의 경우에는 dynmic하게 바꿀 수 있고 각 column에 대한 데이터가 들어가지 않아도 되며 순간순간 새롭게 columns을 추가할 수도 있다.
+* Querying: SQL은 SQL 쿼리를 사용하여 매우 강력하게 데이터를 조작할 수 있는 반면에 NoSQL은 데이터를 모으는데 쿼리가 집중되어 있고 UnQL(Unstrucutred Query Language라고 부릅니다. 각각의 데이터베이스마다 서로 다른 문법의 UnQL를 가지고 있습니다.
+* Scalability: 대다수의 경우 SQL DB가 vertically(CPU, memory 증가 등) scalable합니다. 여러 서버에 걸쳐 확장은 가능하지만 어려우면서 시간도 많이 소요됩니다. 이에 반해 NoSQL은 horizontally scalable하고 그 과정또한 쉬운 편이다. Vertical scaling에 비해 cost-effective하고 많은 NoSQL들은 데이터를 여러 서버에 자동적으로 distribute한다.
+* Relability or ACID Compliancy(Atomicity, Consistency, Isolation, Durability): SQL은 ACID를 만족시키면서 작동합니다. 따라서 데이터의 reliability와 transaction을 실행함에 있어서 safe가 중요하다 여전히 SQL이 나은 선택입니다. 이에 반해 NoSQL은 ACID를 희생하면서 퍼포먼스와 scalability를 높이는데 초점이 맞춰져 있습니다.
+
+### Reasons to use SQL DB
+1. ACID가 보장되어야 할때. 전자 상거래 및 금융 애플리케이션 경우 ACID 준수가 선호되어 SQL을 사용하는 편입니다.
+1. 데이터 자체가 strucutred되어 있고 unchanging할때. 더불어 비즈니스 자체가 massive growth하지 않고 일관성을 유지할때.
+
+### Reasons to use NoSQL DB
+1. 대다수의 빅데이터는 관계형 데이터베이스와 다르게 데이터를 처리해서 NoSQL이 크게 성공적이다. 구조가 거의 없는 대용량 데이터를 저장할때 사용 하면 된다.
+1. 클라우드 컴퓨팅 및 스토리지를 최대한 활용해야 할 때. 클라우드 스토리지는 비용절감면에서는 탁월한 선택이지만 스케일 업을 할 때에는 여러 서버에 데이털르 분산해야한다. 이 때 Cassandra와 같은 NoSQL데이터 베이스가 쉽게 확장 할 수 있도록 도와준다.
+1. Rapid development 환경. 빠른 개발과 데이터 구조를 자주 업데이트 해야 하는 시스템에서 NoSQL은 탁월하다.
+
+## CAP Theorem
+### Background
+* 분산 시스템에서는 다양한 오류가 발생할 수 있는데 예를 들어 서버가 충돌하거나, 영구적 오류가 발생하거나, 디스크 손상 혹은 데이터 손실이 발생하거나 네트워크 연결이 끊어져서 일부 시스템에 액세스 할 수 없게 되는 경우들이 있습니다. 분산 시스템이 다양한 리소스를 최대한 활용하기 위해서는 어떻게 자체 모델을 구현할 수 있을까? 라는 질문에서 시작되었습니다.
+
+### Solution
+* CAP theroem은 분산 시스템이 다음 3가지 속성을 모두 동시에 제공하는 것은 불가능하다고 말합니다.
+* Consistency(C): 모든 노드가 모든 데이터를 동시에 봅니다. 이것은 유저가 시스템의 모든 노드에서 read or write를 할 수 있고 동일한 데이터를 받을 수 있음을 의미합니다. 이것은 최신 버전의 데이터를 카피하는 것과 동일한 의미입니다.
+* Availability(A): A non-failing node에 의해서 수신한 모든 요청이 응답을 받는 것을 의미합니다. 심각한 네트워크 장애가 발생하더라도 모든 request는 반드시 terminate되어야 합니다. 간단한 말로, 시스템의 하나 이상의 노드가 다운되더라도 시스템에 액세스 할 수 있는 능력을 의미합니다.
+* Partition tolerance(P): 파티션은 시스템의 두 노드 간의 communication break(or a network failure)를 의미합니다. 즉, 두 노드가 모두 작동은 하지만 서로 통신을 할 수 없습니다. A partition-tolerant 시스템은 시스템에 파티션이 있어도 계속 작동합니다. 이러한 시스템은 전체 네트워크의 장애를 초래하지 않는 모든 네트워크 장애를 견딜 수 있습니다. 데이터는 노드와 네트워크의 조합에 걸쳐 충분히 복제되어 간헐적인 중단이 발생해도 시스템을 계속 돌릴 수 있습니다.
+* CAP theorem에 따르면 모든 분산 시스템은 세가지 속성 중 두가지를 선택해야 합니다. 그러나 not partition-tolerant system은 C나 A중에 무조건 포기해야 되는 시스템임으로 CA는 고려할 수 있는 옵션이 아닐 것입니다. 따라서 네트워크 파티션이 존재할 수 밖에 없는 시스템에서는 Consistency나 Availability 중에서 선택을 해야만 합니다.
+* Consistent를 유지하고 싶을때 모든 노드는 다른한 순서로 동일한 업데이트를 확인해야 합니다. 하지만 네트워크가 파티션을 잃어버렸을 때에는 다른 노드에게 업데이를 할 수 없게 되고 최신 정보를 가질 수 없게 됩니다. 이때 할 수 있는 것은 파티션 request serving을 중단해야하는데 이러면 서비스가 100% available하지 않게 됩니다. 따라서 파티션이 생길때에는(P가 충족되지 못할때) CA가 존재 할 수 없고 분산시스템에서 가능한 경우는 CP, AP중 하나를 선택해야 하는 것입니다.
+
+## PACELC Theorem
+### Background
+* CPA theorem에 의하면 결국 분산시스템은 파티션을 피할 수 없으므로 Consistency or availability를 선택해야만 합니다. ACID를 만족하는 관계형 데이터베이스에서는 consistency를 선택했지만(상대 피어에서 확인 할 수 없을시 응답 거부의 방법으로 일관성 유지) NoSQL 기반의 BASE(Basically Available, Soft-state, Eventually consistent) DB의 경우들은최신 데이터인지 확인하지 않고 로컬 데이터를 응답함으로써 availability를 선택했습니다. 만약 네트워크에 파티션이 없다면 무슨 선택 할 수 있을지?라는 CPA에서 말하지 않는 부분에 대해 설명하기 위해 탄생했습니다.
+
+### Solution
+* 파티션이 있는 경우 C와 A 사이에서 절충할 수 있습니다.
+* 파티션이 없는 경우 시스템은 L과 C사이에서 tradeoff 관계가 형성됩니다.
+* <img src="/assets/images/pacelc_theorem.jpeg" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
+* PAC는 CAP theorem과 동일하며 ELC가 추가된 것입니다. 여기에서는 우리가 high availability를 복제를 통해 유지한다는 가정이 있습니다. 그래서 만약 failure가 일어났을때 CAP theorem이 우세합니다. 하지만 그렇지 않을 경우에는 우리는 여전히 consistency와 latency 사이의 tradeoff를 고려할 수 있습니다.
+
+### Example
+* Dynamo와 Cassandra는 PA/EL 시스템입니다. 파티션이 발생할 때 Availability를 선택하고 파티션이 없을때에는 Latency를 선택합니다.
+* BigTable과 HBase는 PC/EC 시스템 입니다. 항상 Consistency를 선택합니다.
+* MongoDB는 PA/EC로 간주 될 수 있습니다. primary와 secondaries가 있는데 모든 읽기 쓰기는 primary에서 일어나고 비동기식으로 레플리카가 일어납니다. 만약 파티션이 생기는 경우에는 secondaries로 복제가 되지 않는 경우가 생겨 데이터가 손실 될 수 있습니다. 따라서 파티션 동안에는 consistency가 잃는다고 볼 수 있습니다.
