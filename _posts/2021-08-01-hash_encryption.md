@@ -1,6 +1,6 @@
 ---
 title: Hash & Encryption
-tags: hash encryption
+tags: hash encryption salted_password
 key: page-hash_encryption
 cover: /assets/cover/cyber_security.png
 mathjax: true

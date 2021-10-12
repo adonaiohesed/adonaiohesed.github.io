@@ -1,6 +1,6 @@
 ---
 title: Authentication and Authorization - JWT
-tags: authentication authorization jwt
+tags: authentication authorization jwt yubikey u2f
 key: page-authentication_authorization
 cover: /assets/cover/cyber_security.png
 mathjax: true
@@ -13,6 +13,11 @@ mathjax_autoNumber: true
 * 가장 일반적인 인증 방법으로는 비밀번호가 있고 API 인증, 생체 인증 등이 있습니다.
 * 지식기반(비밀번호, 주민번호 등), 소유기반(인증서, OTP, 휴대폰 인증, USB 토큰 인증 등), 속성기반(지문, 홍체, 얼굴 등) factor가 있습니다.
 * 2개 이상의 인증 방식을 사용하는 경우 Multi Factor Authentication이라고 합니다.
+
+### YubiKey
+* 하드웨어 보안 키이다. 
+* U2F(Universal Second Factor)로 사용되며 아이디 비밀번호 방식으로 1차 인증 한 뒤 보안키를 저장한 dongle을 USB 포트에 꽂아 2차 인증을 하는 방식이다.
+* 하드웨어 방식이라서 소프트웨어방식의 취약점에 강한 면이 있다. 키 관리가 물리적인 방식으로 바뀜으로 취약 방식 자체가 달라졌다고 보면 된다.
 
 ## Authorization
 * 권한
