@@ -9,7 +9,7 @@ mathjax_autoNumber: true
 
 ## Basic of privacy engineering
 * 데이터 보안과 데이터 프라이버시에 대해 차이를 둬야한다. 보안이란 내외부에서 발생하는 해킹으로부터 데이터를 보호하는 것을 뜻하고 프라이버시는 개인정보에 관한 데이터를 어떤 식으로 수집하고, 다루고, 활용하고 처리하는지에 관한 문제이다.
-* Data Privacy is the fair and authorized processing of personal information or PII.
+* Data Privacy is the fair and authorized processing of personal information or PII(Personally Identifiable Information).
 * Privacy considerations to think about: differential privacy, user consent, user transparency, federated learning, data retention, minimization, end-to-end encryption, user data flow, anonymization, access control, data protection
 * GDPR(General Data Protection Regulation) - 유렵연합의 법이며 유렵경제지역에 속해있는 모든 인구들의 사생활 보호와 개인정보들을 보호해주는 규제이다.
 * CCPA(California Consumer Privacy Act) - 최근 켈리포니아에서 나온 법이며 정보를 알 권리, 지울 권리, 접근 할 수 있는 권리, 공유 선택에 관한 권리가 있다.
@@ -47,7 +47,7 @@ mathjax_autoNumber: true
 * 저장된 데이터 중, 개인 정보와 직접적으로 연관된 데이터에 식별자를 삭제하거나 인코딩하여 개인 정보를 preserving하는 방법.
 * 데이터를 수집하거나 교환할때에도 기밀성이 보존됩니다.
 * Data masking: 수정된 값을 공개하는 것이다. *, x와 같은 것으로 의미있는 값들을 수정하여 db에 저장하며 리버스 엔지니어가 힘들게 만든다.
-* Pseudonymization: 이름을 완전 다른 사람의 이름으로 바꾸는 것으로 통계쩍 정확성, 데이터 기밀성을 유지하면서 변경된 데이터 프라이버시를 유지 ㅎㄹ 수 있도록 하는 툴입니다.
+* Pseudonymization: 이름을 완전 다른 사람의 이름으로 바꾸는 것으로 통계쩍 정확성, 데이터 기밀성을 유지하면서 변경된 데이터 프라이버시를 유지 할 수 있도록 하는 툴입니다.
 * Generalization: 일부 정보를 일부러 빼서 덜 indentifiable하게 데이터를 만드는 방식. 집 주소의 경우 유닛 번호를 지우는 방식이다. 데이터의 정확성을 유지하면서 특정한 indentifiers를 지우는 작업이다.
 * Data swapping: Permutation and shuffling을 통해 기본 데이터를 알 수 없도록 rearrange를 하는 것.
 * Data perturbation: Random noise를 추가하고 반올림하는 등의 방식으로 초기 데이터를 변경합니다.

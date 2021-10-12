@@ -7,7 +7,7 @@ mathjax: true
 mathjax_autoNumber: true
 ---
 
-## 시스템 디자인 인튜비 단계
+## 시스템 디자인 인터뷰 단계
 1. Clarificiations을 제대로 해야한다. SDI(System Design Interview)는 정해진 답이 없기 때문에 주어진 시간안에 큰 설계를 끝내야 함으로 항상 명확한 범위를 설정해야 합니다. 트위터의 디자인을 설계할때 트윗에 사진과 비디오가 포함되는지, 핫 트렌드 주제를 표시할것인지, 푸시 알림이 있는지, 검색 기능이 있는지 등을 고려해야 합니다.
 1. 시스템 설계시 규모도 생각해야 합니다. 나중에 확장, 로드 밸런싱 및 캐싱에 집중할 때에도 도움이 됩니다. 트윗의 수, 트윗 보기 수, 초당 타임라인 생성 수과 같은규모를 고려해야 하고 얼마나 많은 스토리지가 필요한지, 네트워크 대역폭 사용량은 어느정도인지 생각해야 합나디.
 1. 시스템에 예상되는 API를 정의합니다.
@@ -26,7 +26,7 @@ mathjax_autoNumber: true
 * It is the capability of a system, process, or a network to manage increased demand. 증가하는 수요를 위해 evolve할 수 있는 시스템은 scalable하다고 말할 수 있습니다.
 * 증가의 이유는 증가된 트랜젝션과 같은 이유로 확장을 할텐데 이때 성능 손실 없이 확장을 해야 합니다. 일반적으로 확장 가능한 시스템 디자인을 했어도 management or environment cost때문에 그런 시스템 확장에 제약이 있는데 예를들면 컴퓨터가 물리적으로 멀리 떨어져 있어서 네트워워크 속도가 느려질 수 있습니다.
 * 일부 작업은 atomic한 특성이나 시스템 디자인의 flaw로 인해 분산처리를 할 수 없을텐데 scalable한 아키텍처는 가능한 이러한 상황을 피하고 참여하는 모든 노드의 부하를 균등하게 분산하려고 시도합니다.
-* Horizontal scaling은 더 많은 서버를 붙여서 source를 늘리는 것이고 vertical scaling은 기존 서버에 더 많은 전력(CPU, RAM, storage, etc)를 늘리는 것입니다. 수평확장은 동적으로 확장하는 것이 더 쉬운반면 수직 확장은 단일 서버의 capacity에 제한이 되고 해당 용량을 초과할때에는 종종 가동 중지 시간이 포함됩니다. 수평 확장에 좋은 예는 MongoDB이고 수직 확장에 좋은 예는 MySQL입니다.ㅁㅁ
+* Horizontal scaling은 더 많은 서버를 붙여서 source를 늘리는 것이고 vertical scaling은 기존 서버에 더 많은 전력(CPU, RAM, storage, etc)를 늘리는 것입니다. 수평확장은 동적으로 확장하는 것이 더 쉬운반면 수직 확장은 단일 서버의 capacity에 제한이 되고 해당 용량을 초과할때에는 종종 가동 중지 시간이 포함됩니다. 수평 확장에 좋은 예는 MongoDB이고 수직 확장에 좋은 예는 MySQL입니다.
 
 ### Reliability
 * Reliability is the probability a system will fail in a given period. 분산 시스템은 소프트웨어 또는 하드웨어 구성 요소 중 하나이상의 장애가 발생하더라도 서비스를 계속 제공하는 경우 안정적으로 간주됩니다. redundancy를 통해 하나의 서버에 장애가 생겼을때 바로 다른 정상적인 서버로 서비스를 재개할 수 있는데 이는 비용이 따릅니다.
@@ -147,6 +147,7 @@ mathjax_autoNumber: true
 
 ## SQL vs NoSQL
 * 데이터베이스 기술과 관련해서는 만능 솔루션(one-size-fits-all solution)은 없습니다. 각각의 상황에 따라 달려있습니다.
+
 ### SQL
 * 관계형 데이터베이스는 행과 열로 되어 있다. 각 row는 information을 담고 있고 각 column은 각 데이터의 속성을 담고 있다.
 
