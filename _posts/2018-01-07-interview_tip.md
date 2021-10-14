@@ -28,7 +28,7 @@ mathjax_autoNumber: true
 1. Is there anything about my background or resume that makes you question wheter I am a good fit for this role?
 
 ### Team technical interview
-1. How will I be trained?
+1. Are there oppotunities for professional development?
 1. What are the performance expectations of this position over the first year?
 1. What's your favorite part about working here?
 1. What are the skills and experiences you're looking for in an ideal candidate?
@@ -39,7 +39,6 @@ mathjax_autoNumber: true
 1. Why did you come to this team?
 1. What's different about working here than anywhere else you've worked?
 1. How would you describe the work environment here-is the work typically collaborative or more independent?
-1. Are there oppotunities for professional development?
 1. What metrics or goals will my performance be evaluated against?
 1. What can you tell me about your plans for growth?
 1. What are the current goals that <the company> is focused on, and how does this team work to support hitting those goals?
