@@ -46,6 +46,21 @@ mathjax_autoNumber: true
 1. What are the common carrer paths in this department?
 1. How has the company changed since you joined?
 
+## 연봉 협상 방법
+1. 절대 숫자를 먼저 말하지 마라. 희망 연봉을 적는 곳이 나온다면 Negotiable or 000을 적어라.
+1. This could be a little bit personal... but how much would someone in this career path expect to make at each stage? Just want to take it as a future reference. 를 말하면서 간접적으로 상대방이 숫자를 먼저 말하도록 하라.
+1. 회사들은 연봉을 책정할때 한 숫자로 측정하는 것이 아니라 보통 5-10% 여유를 두고 Range를 책정하기 때문에 그 안에서 연봉 협상의 여지가 남아 있다.
+1. 최종면접까지 합격했다는 것은 내가 가치 있는 인재이기에 좀 더 연봉을 부른다고 바로 자르는 회사는 흔치 않다.
+1. 상대방이 오퍼에 대해 어떻게 생각하냐는 투의 말을 하면 "ABC company sounds great! I really thought this was a good fit, and I'm glad that you guys agree. Right now I'm taking with a few other companies so I can't speak to the specific details of the offer until I'm done with the process and get closer to making a decision. But I'm sure we'll be able to find a package that we're both happy with, because I really would love to be a part of the team."이라고 얘기한다.
+1. 어떠한 부정적인 제안이라도 일단 긍정적으로 생각하고 흥분되지 않는 상태를 유지하는 것이 중요하다. 흥분을 해버리면 회사의 흥미를 잃어버릴 수 있다는 신호라서 투자를 하는 인재로써의 가치를 잃어버리게 됩니다. 덜 흥분하는 것이 더 당신의 가치를 올려줄 것입니다.
+1. 협상에서 무슨 일이 생기더라도 회사를 여전히 좋아하고 숫자나 돈 또는 타이밍이 맞지 않더라도 여전히 그곳에서 일하고 싶다는 인상을 줘야한다.
+1. 오퍼를 받기전 들은 사항은 모두 기록해라. 기록된 정보를 바탕으로 협상을 시작해야한다.
+1. 상대방이 숫자를 물어볼때는 I don't have any particular numbers in mind. I'm more interested in learning whether this will be a good mutual fit. If it is, I'm open to exploring any offer so long as it's competitive. -> I completetly hear you, and I agree it's important that we're on the same page. I really have no particular numbers in my head, it all depends on the fit and the composition of the offer. Once we decide we want to work together, I think that's the best time to figure out a compensation package that makes sense. 이렇게 해도 또 푸쉬를 해오면 Well, okay. I know that the average security engineer in Silicon Valley makes roughly 130K a year salary. So I think that's a good place to start. 여기에서 우리가 이제 협상을 시작하는 지점이라는 것을 강조해야한다.
+1. 제안이 불만족 스러울때는 다음과 같은 표현을 쓴다. I appreciate the work you guys put into constructing this offer. But there were a couple things I was unsatisfied with. 혹은 The offer you guys extended was strong. Right now my decision is bascially between you and ABC company. It's a genuinely difficult decision for me, but there are a couple of dimensions where, if this offer improved, it would be much more compelling.
+1. 협상을 할 때 이유를 만들어줘야 한다.
+
+
+
 ## 인터뷰의 특성
 1. 인터뷰는 점수가 매겨지지만 그것이 전부가 아니다. 주관적인 요소가 많다. 그리고 상대적이다. 절대적인 답이 있는 것이 아닌 내가 상대보다 잘하면 뽑힌다.
 1. 기업입장에서는 인터뷰는 잘하지만 일을 못하는 사람을 뽑는것에 경계해야한다. 인터뷰는 못했지만 실제 일 잘하는 사람을 탈락시키는 것은 acceptable하다.
