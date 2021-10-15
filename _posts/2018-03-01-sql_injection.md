@@ -48,6 +48,9 @@ cover: /assets/cover/sql_injection.jpg
 
 ## 했던 공격 예시
 * username=sadcowboy&password=' +OR '1'='1
+* name=' OR '1'='1&password=' OR '2'>'1
+  * => SELECT * FROM users WHERE login = '' OR '1'='1' AND password ='' OR '2'>'1' LIMIT 1
+  * 위의 경우에 데이터 베이스에 있는 첫 번째 유저로 로그인이 가능하게 될 것이다.
 
 
 
