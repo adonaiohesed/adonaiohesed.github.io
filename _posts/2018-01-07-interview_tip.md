@@ -46,6 +46,15 @@ mathjax_autoNumber: true
 1. What are the common carrer paths in this department?
 1. How has the company changed since you joined?
 
+## 전화 오퍼 받을 때
+1. Really excited about the team! Thank you for the offer. I'll need time to review this, can we speak in a few days? In the meantime, I have a few questions for you.
+1. What’s your favorite part about working here? What’s the Team Culture like?
+1. What are some of the problems facing the product security team today during this current pandemic? You joined the firm right around the peak of the pandemic (he joined Twilio in August 2020).
+1. Twilio already has a Bug bounty program managed via BugCrowd. Do you envision a bug bounty program evolving at Twilio over the next couple of years? How can someone in this role help you achieve that vision?
+1. What are the most important things you’d like to see someone accomplish in the first 30, 60, and 90 days on the job?
+1. What are the next steps left in the process?
+1. Are there any other questions I can answer for you?
+
 ## 연봉 협상 방법
 1. 절대 숫자를 먼저 말하지 마라. 희망 연봉을 적는 곳이 나온다면 Negotiable or 000을 적어라.
 1. This could be a little bit personal... but how much would someone in this career path expect to make at each stage? Just want to take it as a future reference. 를 말하면서 간접적으로 상대방이 숫자를 먼저 말하도록 하라.
@@ -58,8 +67,6 @@ mathjax_autoNumber: true
 1. 상대방이 숫자를 물어볼때는 I don't have any particular numbers in mind. I'm more interested in learning whether this will be a good mutual fit. If it is, I'm open to exploring any offer so long as it's competitive. -> I completetly hear you, and I agree it's important that we're on the same page. I really have no particular numbers in my head, it all depends on the fit and the composition of the offer. Once we decide we want to work together, I think that's the best time to figure out a compensation package that makes sense. 이렇게 해도 또 푸쉬를 해오면 Well, okay. I know that the average security engineer in Silicon Valley makes roughly 130K a year salary. So I think that's a good place to start. 여기에서 우리가 이제 협상을 시작하는 지점이라는 것을 강조해야한다.
 1. 제안이 불만족 스러울때는 다음과 같은 표현을 쓴다. I appreciate the work you guys put into constructing this offer. But there were a couple things I was unsatisfied with. 혹은 The offer you guys extended was strong. Right now my decision is bascially between you and ABC company. It's a genuinely difficult decision for me, but there are a couple of dimensions where, if this offer improved, it would be much more compelling.
 1. 협상을 할 때 이유를 만들어줘야 한다.
-
-
 
 ## 인터뷰의 특성
 1. 인터뷰는 점수가 매겨지지만 그것이 전부가 아니다. 주관적인 요소가 많다. 그리고 상대적이다. 절대적인 답이 있는 것이 아닌 내가 상대보다 잘하면 뽑힌다.
@@ -79,3 +86,6 @@ mathjax_autoNumber: true
   * Warp Up - I'm looking now for something new, and your company caught my eye. I've always loved the connection with the user, and I really want to get back to a smaller environmnet too.
 1. 인터뷰를 할 때 잘 듣고 대화가 잘 통하는 사람이 기억에 남는다.
 1. 거만한 사람은 모두가 싫어한다. 자신만의 방법을 고집하는 사람도 좋아할 사람이 별로 없을 것이다.
+
+## Reference
+* https://candor.co/guides/salary-negotiation[https://candor.co/guides/salary-negotiation]
