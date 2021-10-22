@@ -207,13 +207,16 @@ mathjax_autoNumber: true
 ## My history of employment and what the role had to offer
 * 가장 최근에 일했던 곳은 CableLabs입니다. 제가 맡은 프로젝트는 BGP hijacking 공격을 탐지하는 IDS를 만드는 것이었습니다. 일을 시작하기전 BGP가 뭔지도 몰랐지만 일을 제대로 맡기 전 미리 공부를 많이 했었고 일을 하는 동안에도 주어진 업무 외에 이것에 대해 더 알기 위해 따로 시간을 들여 공부를 했습니다. 그 결과 3개월만에 가시적인 성과를 보여줄 수 있었고 저희 팀 보스에게 프로젝트의 결과를 보여주면서 9개월간 더 일할 수 있는 계약을 체결했습니다. BGP hijacking model에 관한 것을 디자인 한 것 뿐만 아니라 비쥬얼라이제이션을 하여 간단한 웹 서버를 만들어 앞으로 이 프로젝트가 확장 되었을 시 API를 통해 지속적인 개발이 가능한 것을 보여주었고 그래프를 통해 한눈에 어디서부터 어디까지 propagate가 시간대별로 진행되고 있는지를 보여줄 수 있어 단순히 텍스트를 보는 것 보다 모니터링 하는 것이 훨씬 효과적이었습니다. 
 
-* 이전에는 CISCO에서 소프트웨어 엔지너어들을 교육하는 오픈 소스 프로젝트를 맡았습니다. 암호학에 관해서 MD5, SH!은 왜 쓰면 안 되는지 어떤 해시 알고리즘을 써야 하는지, TLS를 implementation 하는 방법은 무엇인지와 같은 것을 문서화하여 교육하는 역할을 맡았습니다.
+* 이전에는 CISCO에서 소프트웨어 엔지너어들을 교육하는 오픈 소스 프로젝트를 맡았습니다. 암호학에 관해서 MD5, SHA1은 왜 쓰면 안 되는지 어떤 해시 알고리즘을 써야 하는지, TLS를 implementation 하는 방법은 무엇인지와 같은 것을 문서화하여 교육하는 역할을 맡았습니다.
 
-* ... 방화벽을 만들었을 당시에도 개념을 몰랐지만 항상 내가 모르는 것에 관한 프로젝트를 맡았을 때에는 업무 시간 외에도 그것을 지속적으로 빨리 공부를 하여 주어진 시간 보다 더 빠른 시간내에 팀읨 목표를 달 성 할 수 있었습니다. 
+* When I was working at eloicube in Korea, I developed a firewall management solution. My solution helped people to efficiently manage all the firewalls. It helps to manage a history of settings/rule changes of all firewalls, detects expired policies, over-permitted policies, and long-term non-use policies for optimization to easy to manage the firewalls. As a result, effective management can be achieved with fewer network managers. 방화벽을 만들었을 당시에도 개념을 몰랐지만 항상 내가 모르는 것에 관한 프로젝트를 맡았을 때에는 업무 시간 외에도 그것을 지속적으로 빨리 공부를 하여 주어진 시간 보다 더 빠른 시간내에 팀읨 목표를 달 성 할 수 있었습니다. 
 
-? 당신의 커리어 패스를 봤을때 내가 가고 싶은 길을 먼저 걸으신 것 같아 질문드리고 싶습니다. 저는 시큐어 아키텍트가 되고 싶고 CISO에 관한 꿈도 있습니다. 현재 제가 해온 것은 방화벽과 탐지에 관련된 블루팀 잡을 했지만 간간히 핵더박스를 풀거나 CTF에 참여하여 레드팀 잡도 해오고 있는데 당신과 같은 커리어 패스를 걷기 위해서 제가 갖추어야 될 것은 무엇이고 어떤 챌린징이 기다리고 있을지 물어봐도 될까요? 그리고 그 챌린징을 극복할 수 있는 길에 대해 조언을 주실 수 있나요?
-
-? 내가 생각할때는 내가 이루고자 하는 목표에 이 역할이 굉장히 많은 도움을 줄것이라 생각하여 이 역할에 올인을 하고 싶은데 혹시 당신이 생각할때에는 이 역할에 출실하는 것 외에 제가 더 공부를 하거나 시간을 들여야 하는 것들이 어떤 것이 있을까요?
+## Question
+1. What’s your favorite part about working here at AppFolio? What’s the Team Culture like? How's your journey and transition been starting from A to B and now to C. When I look at your carrier path, you also started to blue team jobs which I've some sort of experience. So I was curious to know more about your journey so far.
+1. What's the single biggest challenge you're facing today during this current pandemic from a security standpoint. Taking into account that COVID-19 crisis have shifted cybersecurity priorities and budgets, and also with the rise in the supply chain attacks, the focus of the CISO's is to prioritize situations related to remote work and business continuity.
+1. Do you envision a bug bounty program evolving at AppFolio over the next couple of years?
+1. What are the most important things you’d like to see someone accomplish in the first 30, 60, and 90 days on the job?
+1. Are there any questions I can answer for you?
 
 
 구글
