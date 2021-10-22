@@ -26,3 +26,19 @@ s=[{5,2,7,1,8}]
 s.sort()
 print(s) => [{1, 2, 5, 7, 8}]
 ```
+
+## For range 역순
+* reversed()함수를 이용 할 수 있다.
+```python
+for i in reversed(range(5)):
+  print(i)
+=> 4,3,2,1,0 이 각각 엔터와 함께 출력
+```
+
+* range(start,stop,step) 이용하기
+```python
+for i in range(4,-1,-1):
+  print(i)
+=> 위와 같은 결과가 출력이 됨
+```
+

@@ -30,6 +30,12 @@ mathjax_autoNumber: true
 * 취약점으로는 메시지를 가로채서 목적지로 다시 보내는 reply 공격에 취약하다. 이런 공격은 차량에서 unlock신호를 캡쳐했다가 나중에 다시 보내서 unlock을 시켜버릴 수도 있는 공격이다.
 * 취약점을 보안하기 위해 timestamp를 메시지 안에 넣고 HMAC 알고리즘을 진행한뒤 마지막에 verficiation을 통과하면 시간이 지금 초과한건지 아닌지 체크해서 reply attack을 막는다.
 
+## MAC(Message Authentication Code)
+* MAC은 메시지가 외부에 노출되어도 상관없고 인증만 필요할 경우 암호화 알고리즘 보다 빠르기 때문에 사용한다.
+* 송신자와 수신자 모두 같은 key를 가지고 있고 메시지에다가 MAC == Ck(M)을 붙여서 보낸다. Sender는 key를 가지고 메시지 M을 압축한 코드를 메시지와 보내고 receiver는 메시지를 가지고 같은 압축을 해보면서 붙여진 코드와 자기가 했는 것이 같은지 확인을 하여 메시지의 무결성을 확인한다.
+* 여기서는 복화하라는 개념이 없다. 그냥 서로 같은 함수로 같은 키를 가지고 digest를 비교하는 것이다.
+* 여기에서 속도도 빠르면서 암호화를 할 수 있고 MAC 기능을 할 수 있는 것이 HMAC이다. Encryption보다 빠른 이유는 해시 연산에서 저장했다가 다시 쓸 수 있는 연산들이 있어서 속도가 빨라질 수 있는 것이다.
+
 ## Encryption and compression
 * 압축을 하고 암호화를 해버리면 side channel attack에 취약해진다. 이 공격은 JS 코드를 이용하여 victim's browser에 brute force공격을 하는 것인데 이것은 공격자가 암호화된 사이즈를 근간해서 transmitted data가 무엇인지 infer할 수 있게 해준다. compression oracle이라고도 알려져있고 CRIME과 BREACH와 같은 SSL/TLS 공격에도 취약해진다.
 * 그런데 암호화를 하고 압축을 하면 더 많은 issues가 생긴다. 암호화를 해버리면 데이터의 패턴이 사라지고 이럴 경우 압축 자체가 힘들어 질 수 있다. 암호화는 패턴에 의존해서 사이즈를 줄여나가는 방식인데 암호화를 먼저 해버리면 압축을 제대로 할 수가 없게 되는 것이다.
