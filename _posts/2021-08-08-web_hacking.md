@@ -28,9 +28,6 @@ mathjax_autoNumber: true
 1. 405 Method not allowed, 메소드 허용 안됨-> Request 라인에 명시된 메소드를 수행하기 위한 해당 자원의 이용이 허용되지 않았을 경우 발생함.    (페이지는 존재하나, 그걸 못보게 막거나 리소스를 허용안함)
 1. 415, 지원되지 않는 형식으로 클라이언트가 요청을 해서 서버가 요청에 대한 승인을 거부한 오류를 의미한다. (ContentType,Content Encoding 데이터를 확인할 필요가 있다.)
 
-# 500 Error
-1. 500 Internal Server Error, 서버 에러를 총칭하며 서버가 예상하지 못한 상황에 놓였다는 의미.
-
 # PHP eval()
 * eval()함수는 () 안에 있는 것을 실행시키는 것을 의미한다. 따라서 안에 해커가 exploit할 수 있는 확률이 매우 높다.
 
@@ -55,3 +52,5 @@ mathjax_autoNumber: true
 
 ## References
 * https://book.hacktricks.xyz/pentesting/pentesting-web[https://book.hacktricks.xyz/pentesting/pentesting-web]
+* Hash took kit[https://hashtoolkit.com/]
+* Baking the code[https://gchq.github.io/CyberChef/]
