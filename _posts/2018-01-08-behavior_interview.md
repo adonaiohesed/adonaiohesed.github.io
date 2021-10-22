@@ -125,9 +125,9 @@ mathjax_autoNumber: true
 ### Success on a team
   * Tell me about a time you were successful on a team.(How do you work with a team and also cross functional.)
   * If you can show that you've helped a team move through a challenge, you probably have strong communication and interpersonal skills. These kinds of "soft" skills are in high demand and make people successful in their jobs.
-  * 내가 엘로이큐브라는 회사에 들어갈때 회사의 새로운 사업에 관한 프로젝트를 맡은 팀에 들어갔습니다. 내가 들어가기전 회사는 보안장비에 관한 rule base automate account management나 contract management와 같은 solution으로 benefit을 만들었습니다. 회사의 대표는 새로운 사업 solution을 통해 다양한 수입원을 보장하고 싶었지만 시도할 인력이 없었고 내가 그 인력으로 뽑혔습니다.
+  * 내가 엘로이큐브라는 회사에 들어갈때 회사의 새로운 사업에 관한 프로젝트를 맡은 팀에 들어갔습니다. 내가 들어가기전 회사에서ㄴ 보안장비에 관한 rule base automate account management나 contract management와 같은 solution으로 benefit을 만들고 있었습니다. 회사의 대표는 새로운 사업 solution을 통해 다양한 수입원을 보장하고 싶었지만 시도할 인력이 없었고 내가 그 인력으로 뽑혔습니다.
   <br><br>
-  회사 그 누구도 사용하지 않았던 ELK스택을 혼자서 배워서 solution을 planning하기 시작했고 대표님과 3rd party helper와 지속적으로 만나면서 새로운 solution을 구축해나가기 시작했고 그 과정에서 firewall에서 오는 log들을 elastic search enigner으로 저장시키고 그 E(xtractor)T(ransformer)L(oalder)를 .net Core로 작성하면서 데이터를 모아 kibana를 통해 visualization을 시켜 client가 좀 더 쉽게 로그들을 관리 할 수 있게 해주었습니다. 내가 일 하는 동안에 빠르게 prototype을 만들어 그 solution이 시장에서 먹힐지에 대해 확인 할 수 있게 되었고 이것을 바탕으로 대표님은 새로운 client와 계약을 맺을 수 있었습니다. 정확한 이익에 대한 수치는 산출 할 수 없었지만 내가 일하는 동안 2개의 계약을 채결한 것으로 알고 있습니다.
+  회사에서 그 누구도 사용하지 않았던 ELK스택을 혼자서 배워 새로운 사업에 대한 solution을 planning하기 시작했고 대표님과 3rd party helper와 지속적으로 만나면서 solution을 구축해나갔습니다. ELK를 쓰게 된 이유는 각종 방화벽에서 오는 로그들은 서로 다른 포맷을 가지고 있었기에 NoSQL 데이터 베이스를 사용하는 것이 유리했고 Kibana를 통해 visualization을 시키는 것이 쉬웠기 때문에 선택을 했습니다. 이 각 방화벽에서 오는 log들에 관해 E(xtractor)T(ransformer)L(oader)를 .net Core로 작성했었습니다. 그 이유는 적은 비용으로 윈도우와 리눅스 환경에 모두 작동할 솔루션이 필요했기 때문입니다. 이 솔루션을 통해 client가 효과적으로 방화벽에 관련된 로그들을 관리 할 수 있게 되었습니다. 내가 일 하는 동안, 빠른 속도로 prototype을 만들어 그 solution이 시장에서 먹힐지에 대해 확인 할 수 있게 되었고 이것을 바탕으로 대표님은 새로운 client와 계약을 맺을 수 있었습니다.
 ### Surpassed expectation
   * Tell me about a time you surpassed people's expectations.
   * Employers want to know they are hiring high quality people. If you have a story about surpassing an expectation, you've probably gone above and beyond the call of duty and that's great thing!

