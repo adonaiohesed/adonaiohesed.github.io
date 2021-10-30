@@ -28,6 +28,9 @@ mathjax_autoNumber: true
 1. 405 Method not allowed, 메소드 허용 안됨-> Request 라인에 명시된 메소드를 수행하기 위한 해당 자원의 이용이 허용되지 않았을 경우 발생함.    (페이지는 존재하나, 그걸 못보게 막거나 리소스를 허용안함)
 1. 415, 지원되지 않는 형식으로 클라이언트가 요청을 해서 서버가 요청에 대한 승인을 거부한 오류를 의미한다. (ContentType,Content Encoding 데이터를 확인할 필요가 있다.)
 
+# 500 Error
+1. 500 Internal Server Error, 서버 에러를 총칭하며 서버가 예상하지 못한 상황에 놓였다는 의미.
+
 # PHP eval()
 * eval()함수는 () 안에 있는 것을 실행시키는 것을 의미한다. 따라서 안에 해커가 exploit할 수 있는 확률이 매우 높다.
 
@@ -41,9 +44,11 @@ mathjax_autoNumber: true
 * 우선 {{3*'6'}}와 같은 방식으로 넣었을 때 숫자로 결과가 나오면 Twig이고 3이 6번 나오면 Jinja2이다. 
 * 아래 코드로 공격을 시도한다. 
 
-```
+```python
 {{"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("ls").read()}}
 ```
+* 세션이 .으로 시작하면 zlib으로 compression이 된 것이다. 그냥 e로 시작하면 base64로만 인코딩 된 것이다.
+* 세션은 특정 키 없이 decode가 가능하지만 encode할때에는 key가 필요하다. JWT와 비슷한 구조로 되어 있는데 .으로 구분이 된다. 첫번째 공간은 메시지가 담겨 있고 그 다음은 timestamp 마지막은 signing에 관한 것이다. flask-session-cooke-manager 오픈소스를 사용하면 좋다.ㅇ
 
 * MRO(Method Resolution Order)은 파이썬에 있는 classes의 hierarchy안에 있는 method를 보여주는 역할을 한다. 위에서 __mro__가 그 역할을 하고 첫번째 것을 보겠다는 것이다.
 * \__maro__\[1]은 object 클래스에 관한 것이다.
