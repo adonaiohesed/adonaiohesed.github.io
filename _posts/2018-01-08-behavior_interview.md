@@ -299,5 +299,76 @@ user respect를 해야한다.
 고객들을 보강해아한다.
 주어진 문제에 대해서 더욱 포커스 해야하는게 좋다.
 
-리쿠루터한테 최대한 이야기해서 정보를 긁어내라.
-swe로 가는지 아니면 
+110base 35000/4 6900 + service 2000cash standard 
+15k
+
+Every second friday hack day. learning day
+
+
+Given an array of integers nums and an integer limit, return the size of the longest non-empty subarray such that the absolute difference between any two elements of this subarray is less than or equal to limit.
+
+Example 1:
+
+que는 첫번째것만 보기 위해서 필요하다.
+
+max_que = [6] if 새로 들어온 것이 있을때 기존 값이 새로운 값보다 작으면 다 지운다. 지울때는 마지막에서부터 하나하나 살펴본다.
+min_que = [1, 2, 3, 4, 5, 6] if 새로 들어어온 것이 있을때는 그거보다 큰 값들은 다 지운다.
+  
+탈락 기준 : max_que[0] - min_que[0] > limit ==> left window++ 기준이 충족된다면 max_que나 min_que에 탈락되는 값이 (0번째 위치에) 있으면 그것을 지운다.
+
+
+sub string문제를 풀때는 2 pointers 방식을 생각해라.
+2 포인터의 장점은 무조건 O(2*n)이다. l과 r이 전부다 끝까지 갈 수 있으니깐. 
+
+  백트래킹  ==> DFS
+  피보나치 0, 1, 1, 2, 3, 5, 8, ...
+  
+변수 2개(어떤 숫자가, 몇 번)
+{2:3, 3:4}
+[4,6,2,2,2,4,3,3,3,3,2,1,2,5,7,4] limit = 4  
+  
+벽 ::= 윈도우
+Input: nums = [8,|2,4|,7], limit = 5
+Output: 2 
+Explanation: All subarrays are: 
+[8] with maximum absolute diff |8-8| = 0 <= 4.
+[8,2] with maximum absolute diff |8-2| = 6 > 4. 
+[8,2,4] with maximum absolute diff |8-2| = 6 > 4.
+[8,2,4,7] with maximum absolute diff |8-2| = 6 > 4.
+[2] with maximum absolute diff |2-2| = 0 <= 4.
+[2,4] with maximum absolute diff |2-4| = 2 <= 4.
+[2,4,7] with maximum absolute diff |2-7| = 5 > 4.
+[4] with maximum absolute diff |4-4| = 0 <= 4.
+[4,7] with maximum absolute diff |4-7| = 3 <= 4.
+[7] with maximum absolute diff |7-7| = 0 <= 4. 
+Therefore, the size of the longest subarray is 2.
+
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums, int limit) {
+      // nums = {8, 2, 4, 7}
+        int n = nums.size();
+        deque<int> deq; //  Descending queue record maximum
+        deque<int> inq; //  Ascending queue record minimum
+        int l = 0, r = 0, ans = 0;
+        while (r < n) {
+            int x = nums[r];
+            while (deq.size() && nums[deq.back()] <= x) {
+                deq.pop_back();
+            }
+            deq.push_back(r);
+            while (inq.size() && nums[inq.back()] >= x) {
+                inq.pop_back();
+            }
+            inq.push_back(r);
+            while (nums[deq.front()] - nums[inq.front()] > limit) {
+                l++;
+                if (deq.front() < l) deq.pop_front();
+                if (inq.front() < l) inq.pop_front();
+            }
+            ans = max(ans, r - l + 1);
+            r++;
+        }
+        return ans;
+    }
+};
