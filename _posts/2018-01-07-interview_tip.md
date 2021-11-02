@@ -46,6 +46,8 @@ mathjax_autoNumber: true
 1. What gets you most excited about the company's future?
 1. What are the common carrer paths in this department?
 1. How has the company changed since you joined?
+1. What’s your favorite part about working here? What’s the Team Culture like?
+1. What are the most important things you’d like to see someone accomplish in the first 30, 60, and 90 days on the job?
 
 ## 전화 오퍼 받을 때
 1. Really excited about the team! Thank you for the offer. I'll need time to review this, can we speak in a few days? In the meantime, I have a few questions for you.
