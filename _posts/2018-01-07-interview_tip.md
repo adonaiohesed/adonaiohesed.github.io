@@ -48,15 +48,14 @@ mathjax_autoNumber: true
 1. How has the company changed since you joined?
 1. What’s your favorite part about working here? What’s the Team Culture like?
 1. What are the most important things you’d like to see someone accomplish in the first 30, 60, and 90 days on the job?
+1. What's the single biggest challenge you're facing today during this current pandemic from a security standpoint. Taking into account that COVID-19 crisis have shifted cybersecurity priorities and budgets, and also with the rise in the supply chain attacks, the focus of the CISO's was to prioritize situations related to remote work and business continuity.
+1. <Company> already has a Bug bounty program managed via BugCrowd. Do you envision a bug bounty program evolving at Twilio over the next couple of years? How can someone in this role help you achieve that vision?
+1. What are some of the problems facing the team today during this current pandemic?
+1. What are the next steps left in the process?
+1. Are there any other questions I can answer for you?
 
 ## 전화 오퍼 받을 때
 1. Really excited about the team! Thank you for the offer. I'll need time to review this, can we speak in a few days? In the meantime, I have a few questions for you.
-1. What’s your favorite part about working here? What’s the Team Culture like?
-1. What are some of the problems facing the product security team today during this current pandemic? You joined the firm right around the peak of the pandemic (he joined Twilio in August 2020).
-1. Twilio already has a Bug bounty program managed via BugCrowd. Do you envision a bug bounty program evolving at Twilio over the next couple of years? How can someone in this role help you achieve that vision?
-1. What are the most important things you’d like to see someone accomplish in the first 30, 60, and 90 days on the job?
-1. What are the next steps left in the process?
-1. Are there any other questions I can answer for you?
 
 ## 연봉 협상 방법
 1. 절대 숫자를 먼저 말하지 마라. 희망 연봉을 적는 곳이 나온다면 Negotiable or 000을 적어라.

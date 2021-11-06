@@ -52,6 +52,9 @@ mathjax_autoNumber: true
   * SOP의 불편함을 해소하기 위한 것으로 HTTP 헤더 베이스 메커니즘으로 다른 도메인, scheme, or port에서 온 것(browser가 resource를 loading하기 위해 permit해야 하는 것들)을 서버에 허용해주는 메커니즘이다.
   * 이것은 사실상 CSRF를 막는것과 상관이 없다. SOP와 연관이 있어 가져왔다.
 
+### 생각해볼 문제
+* 만약 CSRF 토큰 1개로 여러가지 Request를 사용 할 수 있는 방식과 각 request마다 1개의 CSRF토큰이 필요한 방식이 있다면 무엇이 더 safe한가? 후자이다.
+
 ## Refrence
 
 * [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)

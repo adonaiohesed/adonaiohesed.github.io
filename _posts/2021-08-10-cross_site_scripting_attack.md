@@ -10,7 +10,7 @@ mathjax_autoNumber: true
 ## The Cross-Site Scripting Attack
 * Attacker가 victim's browser에 code를 inject시키면 공격을 할 수 있는데 victim이 attacker의 page에 접속할때마다 그 공격이 이루어질 수 있는 것이다. 하지만 sandbox protection 때문에 그 공격이 이루어지지 않는다.
 * 하지만 target page에 공격 코드를 inject시키면 공격을 성공시킬 수 있는데 이것을 cross-site scripting(xss) attack이라고 부르는 것이다.
-* 기본적으로 어떤 웹사이트에서 온 코드는 그 웹사이트에 관해서는 다 신뢰하고 실행하게 된다. 따라서 그 웹사이트와 연관된 쿠키를 가지고 내용을 수정하거나 리퀘스트를 날리거나 뭐든지 할 수 있는것이다. 특히 active session을 가지고 있으면 어떠한 것도 그 웹사이트 안에서는 다 허용한다.
+* 기본적으로 어떤 웹사이트에서 온 코드는 그 웹사이트에 관해서는 다 신뢰하고 실행하게 된다. 따라서 이 공격을 통해 그 웹사이트와 연관된 쿠키를 수정하거나 또 다른 리퀘스트를 날리거나 뭐든지 할 수 있는것이다. 특히 active session을 가지고 있으면 어떠한 것도 그 웹사이트 안에서는 다 허용한다.
 * 따라서 공격자가 target website에 코드를 심어서 공격을 하는 것이다.
 <br><br>
 
@@ -86,6 +86,10 @@ mathjax_autoNumber: true
 ### Encoding Approach
 * Code들을 브라우저가 볼 수 있는 방식(\&\lt; 같이 < 대신에 보여지는 방식)으로 바꾸는 것이다.
 * 브라우저가 representations하는 방식이 된다는 것은 코드는 실행되지 않는다는 것을 의미한다.
+
+### 생각해볼 문제
+* 위 방식들을 사용할 경우 white list가 나을것인가 black list가 나을 것인가?
+* 경우에 따라 각각 다르겠지만 white list가 일반적으로 작성하기 쉽고(알파벳과 숫자 혹은 특수문자 몇개 정도만 허용하게 하면 된다.) 사용자가 예상 범위 안에서 사용할 수 있게 만들 수 있어서 좀 더 나을 수 있다.
 
 ### Content Security Policy(CSP) 사용
 * 스크립트 실행에 대한 정책을 설정해 예방하는 방법. 어떤 웹 리소스만 허용할지 정의.

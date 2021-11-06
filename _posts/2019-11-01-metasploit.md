@@ -1,5 +1,5 @@
 ---
-title: Metasploit2
+title: Metasploit
 tags: metasploit hacking
 key: page-metasploit
 cover: /assets/cover/metasploit.png
