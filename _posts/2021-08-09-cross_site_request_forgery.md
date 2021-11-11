@@ -46,15 +46,19 @@ mathjax_autoNumber: true
   * page를 initiated하는 request에다가 랜덤 넘버를 부여하는 방법이 있다.
   * 또 다른 방법으로는 쿠키 안에 secret value를 넣는 방법이다.
 ### Same-Origin Policy
-  * 프로토콜, 호스트, 포트가 동일한 서버로만 ajax 요청을 주고 받을 수 있도록 제한 하는 정책이다. 이러한 제한으로 CSRF 공격을 막을 수도 있을 것이다.
+  * 웹브라우저들이 자바스크립트로 다른 도메인의 웹페이지에 접근하는 것을 못하도록 막아놓은 제약조건이다.
+  * 프로토콜, 호스트, 포트가 동일한 요청만 가능하도록 제한 하는 정책이다. 이러한 제한으로 CSRF 공격을 막을 수도 있을 것이다.
   * 하지만 외부 API를 사용하는 경우도 많고 클라이언트와 서버를 분리하여 개발하는 경우도 많은데 이 정책으로 불편함을 겪어 CORS정책을 이용하기도 한다.
 ### Cross-Origin Resoures Sharing(CORS)
-  * SOP의 불편함을 해소하기 위한 것으로 HTTP 헤더 베이스 메커니즘으로 다른 도메인, scheme, or port에서 온 것(browser가 resource를 loading하기 위해 permit해야 하는 것들)을 서버에 허용해주는 메커니즘이다.
-  * 이것은 사실상 CSRF를 막는것과 상관이 없다. SOP와 연관이 있어 가져왔다.
+  * SOP의 불편함을 해소하기 위한 것으로 CORS는 추가 헤더를 통해 다른 출처의 자원을 현재 실행중인 웹 애플리케이션에 허용 시켜주는 메커니즘이다.
+  * 이것은 사실상 CSRF를 막는것과 상관이 없다. 외부 API를 사용하고 클라이언트와 서버를 분리하여 개발하는  환경이 많연한 요즘 시대에는 SOP가 많은 불편함을 가져다 주어 CORS를 통해 그 불편함을 해소한다.
+### How to work CORS
+  * CORS는 서버가 추가 헤더를 통해 자원 공유에 대한 정의를 브라우저에게 보낸다. 이 때, preflight가 있는 preflight request 혹은 simple request가 존재한다.
+  * Preflight가 없는 simple request인 경우: 클라리언트가 서버에 Origin을 포함하여 request를 보내면 서버측에서는 origin header를 통해 이것이 Access-Control-Allo-Origin에 해당하는 것인지 확인을 하고 그것에 해당하면 접근을 허용하고 아니면 거부합니다.
+  * Preflight request의 경우: Simple request와 달리 먼저 OPTIONS 메서드를 통해 다른 도메인의 리소스로 HTTP 요청을 보내 실제 요청이 전송하기에 안전한지 확인합니다. Cross-site 요청은 유저 데이터에 영향을 줄 수 있기 때문에 preflighted를 합니다. 이 때, Access-Control-Request-Method와 Access-Control-Request-Headers를 포함하여 보내고 서버는 Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Max-Age등 Access-Control-*-* 계열의 Response Header를 선언하여 응답을 보냅니다. 이를 통해 해당 Origin이 허용되었다는 것을 preflight request를 통해 파악되면 그제서야 브라우저는 본 요청을 보내고 simple request의 Response와 동일하게 처리됩니다.
 
 ### 생각해볼 문제
 * 만약 CSRF 토큰 1개로 여러가지 Request를 사용 할 수 있는 방식과 각 request마다 1개의 CSRF토큰이 필요한 방식이 있다면 무엇이 더 safe한가? 후자이다.
 
-## Refrence
-
+## References
 * [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)

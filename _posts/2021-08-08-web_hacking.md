@@ -41,14 +41,11 @@ mathjax_autoNumber: true
 * url 뒤에 ```abc.com/<img src=x onerror="alert('xss')">``` 을 넣어서 xss 확인을 해볼 수 있다.
 
 ## Flask/Jinja 관련 공격
-* 우선 {{3*'6'}}와 같은 방식으로 넣었을 때 숫자로 결과가 나오면 Twig이고 3이 6번 나오면 Jinja2이다. 
-* 아래 코드로 공격을 시도한다. 
+* 우선 \{\{3*'6'\}\}와 같은 방식으로 넣었을 때 숫자로 결과가 나오면 Twig이고 3이 6번 나오면 Jinja2이다. 
+* 다음 코드로 공격을 시도한다. \{\{"".\_\_class__.\_\_mro__[1].\_\_subclasses__()[186].\_\_init__.\_\_globals__["\_\_builtins__"]\["\_\_import__"]\("os").popen("ls").read()}}
 
-```python
-{{"".__class__.__mro__[1].__subclasses__()[186].__init__.__globals__["__builtins__"]["__import__"]("os").popen("ls").read()}}
-```
 * 세션이 .으로 시작하면 zlib으로 compression이 된 것이다. 그냥 e로 시작하면 base64로만 인코딩 된 것이다.
-* 세션은 특정 키 없이 decode가 가능하지만 encode할때에는 key가 필요하다. JWT와 비슷한 구조로 되어 있는데 .으로 구분이 된다. 첫번째 공간은 메시지가 담겨 있고 그 다음은 timestamp 마지막은 signing에 관한 것이다. flask-session-cooke-manager 오픈소스를 사용하면 좋다.ㅇ
+* 세션은 특정 키 없이 decode가 가능하지만 encode할때에는 key가 필요하다. JWT와 비슷한 구조로 되어 있는데 .으로 구분이 된다. 첫번째 공간은 메시지가 담겨 있고 그 다음은 timestamp 마지막은 signing에 관한 것이다. flask-session-cooke-manager 오픈소스를 사용하면 좋다.
 
 * MRO(Method Resolution Order)은 파이썬에 있는 classes의 hierarchy안에 있는 method를 보여주는 역할을 한다. 위에서 __mro__가 그 역할을 하고 첫번째 것을 보겠다는 것이다.
 * \__maro__\[1]은 object 클래스에 관한 것이다.
@@ -56,6 +53,6 @@ mathjax_autoNumber: true
 * 뒤에 os까지에는 모듈 os가 작동된다. 이후에 popen을 통해 os의 명령어를 실행한다. 마지막 read를 통해 그 안의 명령어 실행 결과를 읽는다.
 
 ## References
-* https://book.hacktricks.xyz/pentesting/pentesting-web[https://book.hacktricks.xyz/pentesting/pentesting-web]
-* Hash took kit[https://hashtoolkit.com/]
-* Baking the code[https://gchq.github.io/CyberChef/]
+* [https://book.hacktricks.xyz/pentesting/pentesting-web](https://book.hacktricks.xyz/pentesting/pentesting-web)
+* [Hash took kit](https://hashtoolkit.com/)
+* [Baking the code](https://gchq.github.io/CyberChef/)

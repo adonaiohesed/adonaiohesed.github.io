@@ -14,15 +14,20 @@ mathjax_autoNumber: true
 * 따라서 공격자가 target website에 코드를 심어서 공격을 하는 것이다.
 <br><br>
 
-## Non-persistent (Reflected) XSS Attack
-* 대다수의 웹사이트들이 reflective behavior을 가지고 있다. 간단히 얘기하자면 user가 웹 사이트 input에 어떤 값을 넣어서 request를 보내면 서버는 user의 input값을 response에 포함시켜서 다시 보내는(reflect) 행위들을 의미한다.
-* 이때 서버가 input을 제대로 sanitize하지 않는다면 input에 script 코드를 넣어서 보내면 다시 돌아올때 그것이 실행되게 되는 것이다.
-<br><br>
-
-## Persistent XSS Attack
-* Target website에 data로써 코드를 저장시켜서 공격하는 기법이다.
+## Persistent(Stored) XSS Attack
+* 악성 스크립트가 포함된 User input이 타겟 서버에 페이로드로써 저장되어 그 페이로드가 포함된 애플리케이션 부분에 액세스 하는 모든 사람이 악성 스크립트를 트리거 하게 되는 공격입니다.
 * 예를들어 공격자가 자신의 프로필 수정란에 script code를 기입하고 그것을 db에 저장시킨다음 다른 사람들이 그 프로필을 보게 되면 injecte된 script code를 보게 되면서 그것을 실행하게 된다. 이것은 서버측에서 data로 저장할때 HTML markup을 제대로 sanitized하지 않았기 때문에 생기는 허점이다.
 * 브라우저는 이러한 코드들을 서버에서 만든건지 다른 사람이 만든건지 구별할 수 없기 때문에 그 코드를 user의 privilege로 실행시켜버린다.
+<br><br>
+
+## Non-persistent(Reflected) XSS Attack
+* 웹 애플리케이션이 request에 포함된 user input을 안전하게 sanitize를 하지 않고 악성 스크립트가 있는 채로 response를 해 악성 스크립트가 클라이언트에서 실행되는 공격기법이다.
+* 주로 사용자에게 악성 URL을 배포하여 사용자가 그것을 클릭하도록 유도하여 클릭한 사용자의 브라우저에서 악성 스크립트가 실행되도록 한다.
+<br><br>
+
+## Dom-based XSS
+* 공격자가 DOM에 페이로드를 주입해서 피해자의 브라우저가 HTML 페이지를 로드 할 때마다 악성 스크립트가 DOM 생성의 일부로 실행되면서 공격하는 기법이다. 페이지 자체는 변하지 않으나, 페이지에 포함되어 있는 브라우저측 코드가 DOM 환경에서 악성코드로 실행된다.
+* 앞선 타입과는 다르게 서버와 관계없이 브라우저에서 발생하는 것이 차이점이다.
 <br><br>
 
 ## What damage can XSS cause?
@@ -97,3 +102,4 @@ mathjax_autoNumber: true
 
 ## Refrence
 * [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)
+* [설명이 풍부한 자료](https://excess-xss.com/)

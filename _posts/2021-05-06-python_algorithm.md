@@ -121,13 +121,12 @@ xx라고 하고 혼자 진행해라. ex) Let's work through with my idea.
 * 타입은 아예 쓰지말고 consistant를 지키는 것이 중요하다.
 * 버그가 많으면 더 헷갈리게 되고 사소한데에서 시간을 쓸데없이 쓰지 않도록 해라.
 * 연습시 run을 거의 누르지 말고 한 번에 코드가 돌아갈 수 있도록 Run through를 많이해라.
-
-Sorry 너무 많이 한다. Thank you 이런거 너무 많이 하지마라.
-You are right 정도만 얘기해라. That is a good pint라고 하는게 훨씬 낫다. Sorry는 아예 말하지 마라.
-Let's run through. 혼자 생각할 시간만 가질 수 잇을때만 Can I 를 쓰고 아니면 다른거는 그냥 I am going to run thorugh만 해라.
-물어보고 허락하는 얘기는 하지마라. 시간 낭비다.
-
-나는 어느 학교에 다녔고 어느 정도의 프로젝트를 했었고 시큐어리티에 관심 있다. 혹시 다른 궁금한거 있으면 언제든지 질문해달라고 하면 된다.
-work through를 할 때 머릿속 시나리오로 가는게 아니라 한줄 한줄 진짜로 해야된다. 긴장해서 놓치면 안된다.
-
+* Sorry라는 말은 거의 쓰지 말고 thank you, you are right, that is a good point라는 표현을 해라.
+* Can은 거의 쓰지 말고 let's run through, work through등의 표현을 써라. 예의 차리는 것은 시간을 낭비하게 만들고 불필요한 예의이다.
+* 소개는 간단하게 나는 어느 학교에 다녔고 어느 정도의 프로젝트를 했었고 시큐어리티에 관심 있다. 혹시 다른 궁금한거 있으면 언제든지 질문해달라고 하면 된다.
+* work through를 할 때 머릿속 시나리오로 가는게 아니라 한줄 한줄 진짜로 해야된다. 긴장해서 놓치면 안된다.
 * 쉬운 알고리즘은 그냥 외워라. 템플릿을 들고 있느넥 확실히 좋다. 바이너리 서치같은거는 그냥 외워서 하는게 낫다. 바이너리 서치, BFS, DFS, 파이썬 템플릿을 만들어서 그냥 외워라 그거는 그냥 펑션으로 쳐내도 되고 그걸로 시간을 줄이는게 낫다.
+
+## 참고하기 좋은 사이트
+* [알고리즘 Big-O Cheat Sheet](https://www.bigocheatsheet.com/)
+* [파이썬 자료형 및 연산자의 시간 복잡도](https://chancoding.tistory.com/43)
