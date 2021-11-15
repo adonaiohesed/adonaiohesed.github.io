@@ -90,4 +90,5 @@ mathjax_autoNumber: true
 1. 거만한 사람은 모두가 싫어한다. 자신만의 방법을 고집하는 사람도 좋아할 사람이 별로 없을 것이다.
 
 ## Reference
-* https://candor.co/guides/salary-negotiation[https://candor.co/guides/salary-negotiation]
+* [Security technical interview question 1](https://gist.github.com/namishelex01/b5555edbdcdf5597174ddce5c86d3192)
+* [Security technical interview question 2](https://github.com/tadwhitaker/Security_Engineer_Interview_Questions/blob/master/security-interview-questions.md)

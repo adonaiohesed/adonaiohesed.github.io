@@ -25,3 +25,9 @@ cover: /assets/cover/developer.png
 오퍼를 받고 사인 할때까지 지원읆 멈추면 안 된다. 오퍼를 줘놓고 취소하는 경우를 당해봤다. 오퍼를 받는 당시에 너무 많은 말은 하지 마라. 그리고 최소한 말을 아끼고 감사의 말만 전해라. 카운터 오퍼에 관한 숫자를 말할시 I forgot the number I will tell you next time이라는 식으로 얘기를 해라. 내 숫자를 먼저 알려주는 것이 의무는 아니니깐 안 알려주는 식으로 넘어가도 괜찮다.
 
 서로 다른 주에 관한 연봉 비교는 [Cost of Living Calculator](https://www.bankrate.com/calculators/savings/moving-cost-of-living-calculator.aspx) 혹은 [사진으로 나오고 보기 쉬운 사이트](https://www.nerdwallet.com/cost-of-living-calculator)를 참고해도 좋다.
+
+## References
+* [연봉 정보](https://candor.co/guides/salary-negotiation)
+* [협상 방법](https://haseebq.com/tech-careers/)
+* [H1b visa database](https://h1bdata.info/index.php)
+* [Start up salary](https://angel.co/jobs)
