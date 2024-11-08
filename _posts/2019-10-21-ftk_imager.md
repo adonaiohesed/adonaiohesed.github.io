@@ -24,5 +24,5 @@ mathjax_autoNumber: true
 * 이미징 작업이 끝나면 MD5, SHA1 값이 나오는데 만약 imaging한 drive의 내용이 바뀌면 이 값들도 바뀌게 되는 것이다.
 
 ## Software blocker
-* [http;//www.forensicsoft.com/safeblock.php](http;//www.forensicsoft.com/safeblock.php)에서 7일 무료 버전을 써볼 수 있다.
+* [https://www.forensicsoft.com/safeblock.php](https://www.forensicsoft.com/safeblock.php)에서 7일 무료 버전을 써볼 수 있다.
 * SAFE Block은 많이 사용하는 tool 중에 하나이다.
