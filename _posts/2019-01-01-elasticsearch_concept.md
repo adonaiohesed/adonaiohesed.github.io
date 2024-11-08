@@ -24,7 +24,7 @@ author: hyoeun
 
 ## 용어 설명
 
-<img src="/assets/images/elasticsearch_cluster.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/elasticsearch_cluster.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * 클러스터: 하나이상의 노드(물리적 서버)가 모인것.
   * 클러스터는 고유의 이름으로 식별되며 동일한 클러스터 이름을 서로 다른 환경에서 재사용 하면 안됨
@@ -66,19 +66,19 @@ http://[host]:9200/firepd/Ticket
 http://[host]:9200/firepd/esndpolicy/1?pretty&pretty
 ```
 
-<img src="/assets/images/elasticsearch.png" width="600px">
+<img alt=" " src="/assets/images/elasticsearch.png" width="600px">
 
 
 * 맵핑 : 각 타입별로 데이터 형식을 매칭
   * 맵핑은 필드와 인덱스에 대해 연결 지어 주는 것이고 필드 타입에는 아래와 같은 것이 있다.
-  <img src="/assets/images/field_datatypes.png" width="650px" style="display: block;margin-left: auto;margin-right: auto;">
+  <img alt=" " src="/assets/images/field_datatypes.png" width="650px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * 기본적으로 맵핑은 자동적으로 진행되지만 개발자가 직접 맵핑을 시켜 성능을 향상 시킬 수 있고 직접 매핑을 시키는 것을 권장.
 * TF(term frequency)/IDF(inverse document frequency) Relevance 알고리즘을 사용
 얼마나 자주 field안에 나타났는지, 얼마나 자주 index안에 나타났는지, 얼마동안이나 field안에서 검색되었는지에 따라 score가 부여된다.
 * text 검색을 할 때 full-text, keyword 방식이 있고 두개는 mutual-exclusive하지만 multi-field로 이용 가능하다.
 
-<img src="/assets/images/full_text_keyword.png" width="430px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/full_text_keyword.png" width="430px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * full-text는 단어로 부분 매칭 검색이 가능하지만 keyword는 완전히 일치해야지만 검색이 된다.
 따라서 "New York"와 같은 것을 검색하려면 keyword로 지정해야지 full-text로 지정하면 "New", "York" 로 분리된 상태로 검색이 되어진다.
@@ -87,10 +87,10 @@ http://[host]:9200/firepd/esndpolicy/1?pretty&pretty
 
 ## 검색 과정
 
-<img src="/assets/images/search_process1.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
-<img src="/assets/images/search_process1-1.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
-<img src="/assets/images/search_process2.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
-<img src="/assets/images/search_process2-2.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/search_process1.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/search_process1-1.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/search_process2.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/search_process2-2.png" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * 검색에 사용할 샤드와 노드의 수는 경험적인 방식으로 결정해야 된다. 자세한 내용은 클러스터 포스팅 참고.
 

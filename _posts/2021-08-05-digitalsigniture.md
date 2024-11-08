@@ -36,7 +36,7 @@ mathjax_autoNumber: true
   1. key usage도 확인을 해야 한다. Key usage란 인증서가 사용될 목적을 나타내는데 encipherment, signatures, certificate signing과 같은 목적에 부합하지 않는 사용으로 인증서를 쓰려고 한다면 validate해서는 안 될 것이다.
   1. 마지막으로 남은 모든 extensions를 확인한다. leaf certificate까지 error없이 진행된다면 path는 valid하다고 accept한다. 
 * 만약 인증서가 신뢰할 수 없는 것이라면(인증 기관의 공개키로 복호화가 불가능 혹은 값이 다름) 키가 유출 되었을 가능성이 있으므로 다른 사람이 복호화 가능 할 가능성이 크다.
-* <img src="/assets/images/certificate.png" width="600px">
+* <img alt=" " src="/assets/images/certificate.png" width="600px">
 * root CA로써 Verisign, Geotrust 등의 회사가 있다.
 
 ### X.509

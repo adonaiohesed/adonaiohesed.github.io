@@ -39,7 +39,7 @@ mathjax_autoNumber: true
 * python3 dirsearch -u http://xxx.com:4514
  
 ## XSS 공격
-* url 뒤에 ```abc.com/<img src=x onerror="alert('xss')">``` 을 넣어서 xss 확인을 해볼 수 있다.
+* url 뒤에 ```abc.com/<img alt=" " src=x onerror="alert('xss')">``` 을 넣어서 xss 확인을 해볼 수 있다.
 
 ## Flask/Jinja 관련 공격
 * 우선 \{\{3*'6'\}\}와 같은 방식으로 넣었을 때 숫자로 결과가 나오면 Twig이고 3이 6번 나오면 Jinja2이다. 

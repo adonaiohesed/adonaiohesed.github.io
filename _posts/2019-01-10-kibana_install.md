@@ -16,7 +16,7 @@ author: hyoeun
 $ ./bin/elasticsearch
 ```
 * 실행 후 크롬 혹은 자신이 편한 브라우저(curl포함)에서 localhost:5601으로 접속. 아래와 같은 화면이 뜨면 성공.
-<img src="/assets/images/kibana_install_success.png" width="600px">
+<img alt=" " src="/assets/images/kibana_install_success.png" width="600px">
 
 <br>
 ## CentOS 7 환경에서 설치

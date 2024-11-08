@@ -47,5 +47,5 @@ author: hyoeun
 
 ### Linux 종류
 <a href="/assets/images/linux_distribution_timeline.svg">
-<img src="/assets/images/linux_distribution_timeline.svg">
+<img alt=" " src="/assets/images/linux_distribution_timeline.svg">
 </a>

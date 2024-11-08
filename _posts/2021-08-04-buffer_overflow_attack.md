@@ -67,7 +67,7 @@ $ sudo chown root stack
 $ sudo chmod 4755 stack
 ```
 
-<img src="/assets/images/chmod_special.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/chmod_special.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * ```sudo chmod 4755 stack``` 을 할때에는 위와 같은 특수 권한이 부여되는 것이다. [참고사이트](https://eunguru.tistory.com/115)
 
@@ -83,7 +83,7 @@ $ sudo chmod 4755 stack
 
 * 우리가 inject 시킬 코드의 위치도 정확히 계산을 해야 하는데 이때 우리가 1 byte라도 놓치게 된다면 실패할 것이다. 그래서 No-Op(NOP) instructions을 넣음으로써 entry point자체를 늘려준다.
 
-<img src="/assets/images/nop.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/nop.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
 
 [출처:https://csis.gmu.edu/ksun/AIT681-s19/notes/T07_Buffer_Overflow.pdf](https://csis.gmu.edu/ksun/AIT681-s19/notes/T07_Buffer_Overflow.pdf)
 
@@ -97,7 +97,7 @@ $ sudo chmod 4755 stack
 
 * 위의 gdb 과정에서 단순 gussing이 아닌 어느 정도 그 구조의 위치들을 알아냈으면 우리가 원하는 코드를 집어넣기 위해서 어떻게 코드를 짜야될지 계산한다.
 
-<img src="/assets/images/constructing_intput_file.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/constructing_intput_file.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * 위의 프로그램은 'Computer Security A Hands-on Approach Chapter 4에서 나오는 예제로 구성한 그림이다.
 * 먼저 우리 타겟 프로그램에 대한 분석을 끝내고 exploit.c프로그램을 통해서 badfile을 만들어 그 badfile을 타켓 프로그램에서 불러오도록 하여 타겟 스택에다가 심는다.

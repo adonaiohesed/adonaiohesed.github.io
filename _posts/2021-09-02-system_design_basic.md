@@ -194,7 +194,7 @@ mathjax_autoNumber: true
 ### Solution
 * 파티션이 있는 경우 C와 A 사이에서 절충할 수 있습니다.
 * 파티션이 없는 경우 시스템은 L과 C사이에서 tradeoff 관계가 형성됩니다.
-* <img src="/assets/images/pacelc_theorem.jpeg" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
+* <img alt=" " src="/assets/images/pacelc_theorem.jpeg" width="550px" style="display: block;margin-left: auto;margin-right: auto;">
 * PAC는 CAP theorem과 동일하며 ELC가 추가된 것입니다. 여기에서는 우리가 high availability를 복제를 통해 유지한다는 가정이 있습니다. 그래서 만약 failure가 일어났을때 CAP theorem이 우세합니다. 하지만 그렇지 않을 경우에는 우리는 여전히 consistency와 latency 사이의 tradeoff를 고려할 수 있습니다.
 
 ### Example

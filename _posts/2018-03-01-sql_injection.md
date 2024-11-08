@@ -42,10 +42,10 @@ author: hyoeun
   * * substr(pw,2,1)='1'은 pw 두번째부터 1개의 문자로 짜른것을 의미하기에 즉 두번째 pw 문자가 1인지 확인하는 구문이다.
 
 ## URL encoding에 관련하여서
-<img src="/assets/images/url_encoding.png">
+<img alt=" " src="/assets/images/url_encoding.png">
 
 ## ASCII CODE
-<img src="/assets/images/asciicode.jpg">
+<img alt=" " src="/assets/images/asciicode.jpg">
 
 ## 했던 공격 예시
 * username=sadcowboy&password=' +OR '1'='1

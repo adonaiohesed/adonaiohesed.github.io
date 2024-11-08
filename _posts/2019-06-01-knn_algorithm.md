@@ -13,15 +13,15 @@ author: hyoeun
   * 컴퓨터 vision, 음성 처리, 자연어 처리에서 뛰어난 성능들을 보이면서 ML 기법들 중 가장 활발히 성장하고 있는 기술 분야이다.
 
 * ML의 기초적인 워크 플로우는 다음과 같다.
-<img src="/assets/images/ml_workflow.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/ml_workflow.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
 * 그렇기 때문에 평균적으로 training set이 test set보다 훨씬 크다.
 * 학습을 시킬 때 test set의 정보가 흘러가게 되면 모델의 정확도에 대한 신뢰도가 줄어든다.
 * 학습시키는 data가 좋지 않으면 불안정하고 overfit된 학습 모델이 나오게 된다.
 
-<img src="/assets/images/ml_workflow_phase.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/ml_workflow_phase.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
 * 단계를 나누자면 데이터를 수집하고 전처리 하는 단계, 전처리 된 데이터로 학습을 하는 단계, 학습된 모델링으로 적용하고 유지보수 하는 단계로 나눌 수 있다.
 
-<img src="/assets/images/ml_taxonomy.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/ml_taxonomy.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
 * 머신러닝의 기법들로 분류를 잘 나타낸 그림이다.
   * Supervised learning: 문제와 답이 모두 주어진 상태에서 학습을 하는 방법입니다.
   * Unsupervised learning: 문제는 있지만 답은 있지 않은 상황에서 학습을 하는 방법입니다.

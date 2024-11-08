@@ -133,7 +133,7 @@ Corrdinating Node
 예를들어 클러스터 데이터 크기가 3TB(일 별 최대 100GB, 최대 30일 보관), 초당 최대 인입 쿼리 수 10개, 목표 검색 쿼리 응답시간 100ms,
 24 Core / 32GB MEM일때 샤드의 크기는 대략 26GB가 되어야 합니다. 이 때 샤드는 5개 정도로 설정하면 되고 초당 인입되는 쿼리 수를 계산하여
 노드의 갯수를 설정합니다. 대략 6대의 노드가 필요합니다. 
-<img src="/assets/images/cluster_node_number.png" width="350px" style="display: block;margin-left: auto;margin-right: auto; margin-top: 15px;">
+<img alt=" " src="/assets/images/cluster_node_number.png" width="350px" style="display: block;margin-left: auto;margin-right: auto; margin-top: 15px;">
 
 자세한 테스트 방식과 설명에 대해서는 다음 블로그가 잘 설명하고 있습니다. [참고](https://brunch.co.kr/@alden/39)<br>
 클러스터 성능 측정 도구인 [랠리](https://github.com/elastic/rally)를 사용 할 수 있습니다. 

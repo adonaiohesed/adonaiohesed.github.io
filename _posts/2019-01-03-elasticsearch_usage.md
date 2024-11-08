@@ -17,7 +17,7 @@ author: hyoeun
     |DELETE|DELETE|DELETE|
 
 * curl로 위의 정보를 기본적으로 사용 할 수 있으며 my_index3(예시)의 mapping정보를 받고 싶을 때에는 아래와 같은 명령어로 확인 할 수 있습니다.<br>
-<img src="/assets/images/date_mapping.png" width="500px">
+<img alt=" " src="/assets/images/date_mapping.png" width="500px">
 * localhost:9200/_mapping : 모든 index에 관한 mapping에 대한 정보를 보여줍니다.
 * localhost:9200/books/_search?pretty : books index에 있는 모든 정보를 예쁘게 보여줍니다.
 * 뒤에 ?pretty를 넣으면 JSON이 보기 좋게 출력됩니다.
@@ -661,7 +661,7 @@ GET famous-librarians/_search
 curl 명령어로 사용하려면 위의 방식과 조금 달라진다.
 여기서는 curl에 관한 명령어를 설명하기보다 kibana에 있는 dev tools 기능을 가지고 쉽게 curl 명령어에 대해 공부할 수 있는 방법을 소개한다.
 
-<img src="/assets/images/kibana_curl.png" width="400px">
+<img alt=" " src="/assets/images/kibana_curl.png" width="400px">
 dev tools로 들어간 다음 도구에서 Copy as cURL을 클릭 하고 붙여넣기를 하면 
 curl -XGET "http://localhost:9200/test/doc/2"과 같은식으로 curl 명령어가 나오게 된다.
 

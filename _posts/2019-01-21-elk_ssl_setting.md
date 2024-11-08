@@ -27,11 +27,11 @@ elasticsearch.hosts: ["http://<elasticsearch http ip>:9200"]
 <br>
 ## Elastic search node간의 TLS 통신 적용
 
-<img src="/assets/images/es_transport_ssl_impostor.png" width="500px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/es_transport_ssl_impostor.png" width="500px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * 만약, 동일한 클러스터에 속한 노드들 사이의 통신을 암호화 하지 않는다면 impostor가 다른 노드들을 속이고 정보를 빼내갈 수 있습니다. 따라서 노드들 간의 암호화를 해주어야 합니다.
 
-<img src="/assets/images/es_transport_ssl.png" width="500px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/es_transport_ssl.png" width="500px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * 암호화를 하기 위해 CA를 생성해야 되고 인증서를 발급 받아야 합니다. x-pack 유료 버전으로 이용가능 했던 것들이 7.1 버전 이후 무료로 사용이 가능하게 되었고 bin폴더 안에 관련 프로그램들이 있습니다.
 
@@ -87,12 +87,12 @@ $ /usr/share/elastic/bin/elasticsearch-keystore add xpack.security.transport.ssl
 <br>
 ## Role-Based Access Control 적용
 
-<img src="/assets/images/es_block_unauthroized_access.png" width="500px">
+<img alt=" " src="/assets/images/es_block_unauthroized_access.png" width="500px">
 
 * RBAC를 통해 클러스터 접근에 제한을 둘 수 있습니다.
 
 <br>
-<img src="/assets/images/es_roll_based.png" width="500px" style="display: block;margin-left: auto;margin-right: auto;">
+<img alt=" " src="/assets/images/es_roll_based.png" width="500px" style="display: block;margin-left: auto;margin-right: auto;">
 
 * RBAC는 위와 같은 구조를 지녔습니다.
 * 노드 간의 TLS 적용이 선행되어야 하고 TLS적용이 되었으면 아래 명령어를 실행시킵니다.

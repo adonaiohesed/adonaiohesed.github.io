@@ -42,6 +42,6 @@ author: hyoeun
 * 공개키 인증서를 사용하기 위해서는 어떤 표준이 있어야 되는 것인데 현재 널리 사용하고 있는 표준이 X.509이다.
 * X.509의 표준을 사용하여 만든 인증서를 X.509 인증서라고 부른다.
 * Extensino항목은 중요한 것만 기입했다.
-<img src="/assets/images/x509_1.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;"> 
+<img alt=" " src="/assets/images/x509_1.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;"> 
 * 위의 항목 중 DN형식이 있는데 DN의 항목은 다음과 같다.
-<img src="/assets/images/x509_2.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;"> 
+<img alt=" " src="/assets/images/x509_2.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;"> 
