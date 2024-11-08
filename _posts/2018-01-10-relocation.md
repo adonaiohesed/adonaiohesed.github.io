@@ -11,7 +11,7 @@ author: hyoeun
 
 ## 집
 * 각 주에 해당하는 한인 커뮤니티에 들어가서 아파트 transfer같은 것을 보면 어느 아파트가 좋은지 가늠할 수 있다. 보통 거기서 파는 사람들은 자기가 들어갈때 조사를 하고 들어갔을 가능성도 크고 가성비 좋은 아파트 여부를 바로 알 수 있다.
-* Austin - [http://www.texasksa.org/](http://www.texasksa.org/), [https://ktown.longhorns.kr/](https://ktown.longhorns.kr/), 
+* Austin - [https://www.texasksa.org/](https://www.texasksa.org/), [https://ktown.longhorns.kr/](https://ktown.longhorns.kr/), 
 [https://texasuka.org/](https://texasuka.org/)
 
 ## Living cost 차이

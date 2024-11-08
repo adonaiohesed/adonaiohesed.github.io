@@ -51,7 +51,7 @@ strcpy()라는 함수는 끝에 ```\0``` 즉 0x00으로 끝나면 함수의 끝�
 * EBP : 스택의 가장 윗 부분(기준점), Base Pointer
 * EIP : 실행할 명령의 주소, Instruction Pointer
 * E가 붙는 것은 16비트에서 32비트 시스템으로 오면서 Extended 된 개념, 64비트에서는 R이 붙음
-* 32bit 레지스터의 기본 설명은 [http://www.reversecore.com/tag/EIP](http://www.reversecore.com/tag/EIP) 참고
+* 32bit 레지스터의 기본 설명은 [https://www.reversecore.com/tag/EIP](https://www.reversecore.com/tag/EIP) 참고
 
 ## Setup for Our Experiment
 
