@@ -16,11 +16,11 @@ timezone: America/Chicago
 
 title: Hyoeun's Wiki # the main title
 
-tagline: A collection of all the knowledge # it will display as the subtitle
+tagline: Cybersecurity Engineer # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   This is a collection of all the knowledge I have gained through my experiences, shared for both myself and others.
-
+  
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
 url: "https://adonaiohesed.github.io"
@@ -115,7 +115,7 @@ comments:
   provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
-    shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+    shortname: adonaiohesed-github-io # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
     repo: # <gh-username>/<repo>
