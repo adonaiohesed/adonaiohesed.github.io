@@ -2,7 +2,7 @@
 title: Tiny URL case
 tags: TinyURL Cybersecurity Case-Study
 key: page-tiny_url_case
-categories: [Cybersecurity, Web Hacking]
+categories: [Cybersecurity, Web Security]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true

@@ -2,7 +2,7 @@
 title: Cross-Site Request Forgery
 tags: CSRF Web-Hacking Cybersecurity
 key: page-csrf_attack
-categories: [Cybersecurity, Web Hacking]
+categories: [Cybersecurity, Web Security]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true

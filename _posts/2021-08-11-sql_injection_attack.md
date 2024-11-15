@@ -2,7 +2,7 @@
 title: SQL Injection Attack
 tags: SQL-Injection Web-Hacking Cybersecurity
 key: page-sql_injection_attack
-categories: [Cybersecurity, Web Hacking]
+categories: [Cybersecurity, Web Security]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true

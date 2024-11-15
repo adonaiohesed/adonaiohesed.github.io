@@ -2,7 +2,7 @@
 title: Web hacking
 tags: Web-Hacking Cybersecurity
 key: page-web_hacking
-categories: [Cybersecurity, Web Hacking]
+categories: [Cybersecurity, Web Security]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true

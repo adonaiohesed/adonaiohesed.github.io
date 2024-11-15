@@ -4,7 +4,6 @@ tags: OWASP Top-10 Mobile-Security
 key: page-owasp_top_10_mobile_2017
 categories: [Cybersecurity, Mobile Security]
 author: hyoeun
- /assets/cover/cyber_security.png
 mathjax: true
 mathjax_autoNumber: true
 ---

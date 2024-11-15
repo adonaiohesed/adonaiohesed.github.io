@@ -2,7 +2,7 @@
 title: Cross-Site Scripting Attack
 tags: XSS Web-Hacking Cybersecurity
 key: page-xss_attack
-categories: [Cybersecurity, Web Hacking]
+categories: [Cybersecurity, Web Security]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
