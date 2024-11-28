@@ -2,7 +2,7 @@
 title: Automating Mac Mini and MacBook Air Setup - AirPlay Connect and Audio Device Switching
 tags: Automator
 key: page-mac_mini_air_automator
-categories: [Tools, Mac]
+categories: [Tools, MacOS]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
@@ -19,8 +19,6 @@ The two features I needed were:
 1. A shortcut to **connect** AirPlay.
 2. A shortcut to **disconnect** AirPlay  
    (achieved by switching to another audio device).
-
----
 
 ## Setting Up an AirPlay Connection Shortcut with Automator
 
@@ -127,7 +125,6 @@ To disconnect AirPlay and switch to another audio device, I used a program calle
 
 4. **Assign a Shortcut**  
 	Go to **System Preferences > Keyboard > Shortcuts > Services**, find the saved script, and assign an appropriate shortcut.
-
 
 ---
 
