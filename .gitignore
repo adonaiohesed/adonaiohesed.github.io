@@ -25,3 +25,7 @@ package-lock.json
 # Misc
 _sass/dist
 assets/js/dist
+
+# Mac
+.DS_Store
+assets/.DS_Store
