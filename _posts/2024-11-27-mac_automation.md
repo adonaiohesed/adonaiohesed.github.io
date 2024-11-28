@@ -1,5 +1,5 @@
 ---
-title: Mac Mini + MacBook Air Env setting with Automator
+title: Automating Mac Mini and MacBook Air Setup - AirPlay Connect and Audio Device Switching
 tags: Automator
 key: page-mac_mini_air_automator
 categories: [Tools, Mac]
