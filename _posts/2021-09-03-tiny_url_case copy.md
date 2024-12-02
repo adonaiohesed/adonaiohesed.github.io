@@ -1,8 +1,8 @@
 ---
 title: Tiny URL case
-tags: TinyURL Cybersecurity Case-Study
+tags: TinyURL Web Case-Study
 key: page-tiny_url_case
-categories: [Cybersecurity, Web Security]
+categories: [Software Engineering, Web]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
