@@ -7,6 +7,17 @@ author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
 ---
+## URL Shortening Service Design Like TinyURL
+* URL shortening can optimize links across multiple devices and track individual links to analyze potential customers and measure advertising campaign performance. Alternatively, it can be used to hide the original connected URL.
+* This system will be read-heavy. There will be more redirection requests than URL shortening creation. Let's assume a ratio of 100:1.
+  * Traffic Estimates: Assuming 500M new URL shortenings per month with a 100:1 read/write ratio, we can expect 50B redirections during the same period. The QPS (Queries Per Second) would be 500M / (30 days * 24 hours * 3600 sec) = ~200 URLs/s, and redirections would be 100 * 200 URLs/s = 20,000 URLs/s.
+  * Storage Estimates: Assuming we store all URL shortening requests for 5 years. With 500M new URLs expected monthly, the total number of stored URLs would be 500M * 12 months * 5 years = 30B. If each URL is 500 bytes, we would need 30B * 500 bytes = 15TB of storage.
+  * Bandwidth Estimates: For write requests, with 200 new URLs expected per second, the total incoming data would be 200 * 500 bytes = 100KB/s. For read requests, with ~20K URL redirections expected per second, the total outgoing data for the service would be 20K * 500 bytes = 10MB/s.
+  * Memory Estimates: To cache some frequently accessed hot URLs, following the 80-20 rule where 20% of URLs generate 80% of traffic, for the 20% hot URLs to be stored in memory: With 20,000 requests per second, we'd receive ~1.7B requests per day (20K * 3600s * 24h). To cache 20% of this, we'd need 0.2 * 1.7B * 500 bytes = 170GB.
+
+## System API Design
+* Once requirements are finalized, it's always good to define the system APIs.
+* The service functionality can be exposed through SOAP or REST APIs.
 
 ## TinyURL과 같은 URL 단축 서비스 설계
 * URL단축은 여러 장치에서 링크를 최적화하고 개별 링크를 추적하여 잠재고객 분석 및 광고 캠페인의 실적을 측정 할 수 있습니다. 혹은 연결된 원본 URL을 숨기는 역할로 사용될 수 있습니다.

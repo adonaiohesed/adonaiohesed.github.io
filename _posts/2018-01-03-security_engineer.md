@@ -4,6 +4,7 @@ tags: Cybersecurity Career
 key: page-cybersecurity_engineer
 categories: [Personal, Identity]
 author: hyoeun
+pin: true
 ---
 
 ### What Cybersecurity Means to Me
