@@ -7,6 +7,7 @@ author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
 ---
+
 ## URL Shortening Service Design Like TinyURL
 * URL shortening can optimize links across multiple devices and track individual links to analyze potential customers and measure advertising campaign performance. Alternatively, it can be used to hide the original connected URL.
 * This system will be read-heavy. There will be more redirection requests than URL shortening creation. Let's assume a ratio of 100:1.

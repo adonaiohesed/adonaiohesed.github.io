@@ -7,6 +7,7 @@ author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
 ---
+
 # Setting Up Mac Mini and MacBook Air Environment with Automator
 
 Recently, I decided to purchase a Mac Mini after experiencing performance issues with my MacBook Air. However, one major downside of the Mac Mini is its poor built-in speaker quality. While my MacBook Air wasn’t completely unusable, I wanted to find a way to use both devices effectively.
