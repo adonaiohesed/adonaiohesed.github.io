@@ -32,6 +32,17 @@ author: hyoeun
 * Back in 2021, I believed that a Software Engineer background offered more job options. However, with recent advances in AI, I think it’s more advantageous to continue focusing on cybersecurity while developing code quality skills. My goal is not merely to be a skilled hacker but to advance my career as a security leader.
 
 ![cybersecurity-jobs](/assets/images/cybersecurity_jobs.jpeg)
+* Analysts: Focus on identifying, monitoring, and addressing vulnerabilities. Their primary role is to detect and analyze security risks.  
+* Security Engineers: Responsible for building defensive systems based on security architecture designs. This role can specialize into areas like:
+  - Network Security Engineers  
+  - Cloud Security Engineers  
+  - Security Operations Engineers  
+* Incident Response: The first team to respond to security incidents. They play a crucial role in detecting and resolving security events, often requiring collaboration with multiple departments.  
+* Digital Forensics: Analyzes cyberattacks and prepares legal evidence to support investigations and prosecutions.  
+* GRC Roles: Primarily focus on managing legal and regulatory compliance, providing training, and handling risk management. They are also responsible for educating other departments and are often performed by security leaders.
+* Security Architecture: Requires extensive experience across various domains and at least three years of security experience. Responsible for designing solutions or products with a strong security mindset.  
+* IAM Analyst: Manages and designs IAM (Identity and Access Management) processes and resources.  
+* IAM Engineer: Designs, builds, and maintains IAM tools and systems.  
 
 ### What I Need to Do
 * Solve Hack The Box challenges and gain experience in CTF competitions.
@@ -69,6 +80,15 @@ author: hyoeun
 * 2021년에만 해도 Software Engineer 경력이 더 유리하다고 생각했으나, 최근 AI의 발전을 보며 코드 품질에 대한 역량을 잘 갖춘다면 사이버 보안에 중점을 두고 커리어를 이어나가는 것이 더 유리할 것이라 생각한다. 단순히 해킹을 잘 하는 해커가 되는 것을 추구하는 것이 아니라 보안 전문 리더로서 커리어를 발전시키고자 한다.
 
 ![cybersecurity-jobs](/assets/images/cybersecurity_jobs.jpeg)
+### Cybersecurity Career Tracks
+* Analysts: 취약점들에 대해 찾고 모니터하고 관련 일을 하는 쪽이다.
+* Security Engineers: Security architects design과 관련된 방어적인 부분들을 building하는 역할이다. Network Security Engineers, Cloud Security Engineers, Security Operation Engineers등으로 세분화 될 수도 있다.
+* Incident Response: 보안 사건이 터졌을 때 가장 먼저 반응 하는 팀이고 그 문제들을 detect하는 역할을 한다. 많은 부서와의 협약이 필요하다.
+* Digital forensics: 사이버 공격에 관해 분석하고 법적인 증거를 제출 할 수 있도록 준비하는 역할들을 한다.
+* GRC roles: 전반적인 법률 규제와 관련된 관리하고 교육시키며 위험 부담에 대한 매니징을 주로한다. 다른 부서의 교육 또한 책임진다. 보안 리더들이 주로 하는 일이다.
+* Security Architecture: 여러 도메인에 경험이 있는 것이 도움이 되고 보안에 3년 이상의 경력으로 security mindset을 지닌 상태로 솔루션 혹은 프로덕트의 전반적인 디자인을 책임진다.
+* IAM Analyst: IAM 프로세스나 리소스를 관리하고 디자인하는 역할을 한다.
+* IAM Engineer: IAM 관련 도구들을 design, build, maintains하는 역할을 한다.
 
 ### 내가 해야 하는 일
 * Hack The Box 문제를 해결하고, CTF 대회에서 입상 경험 쌓기.

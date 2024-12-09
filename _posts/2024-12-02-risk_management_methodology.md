@@ -7,6 +7,7 @@ author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
 ---
+
 # Risk Management Methodology
 
 Risk management refers to a systematic approach to managing various types of risks that may arise in areas such as **People Risk** and **Cybersecurity Risk**. This process can be broken down into four key steps:
@@ -56,13 +57,12 @@ Risk monitoring and review are essential for continuously improving the risk man
 
 Risk management is not just about "avoiding" risks. In fact, the process of **identifying**, **assessing**, and **treating** risks enhances an organization's **crisis management capabilities** and **overall efficiency**. Additionally, a well-established risk management framework enables the organization to **better prepare for future uncertainties**.
 
-Systematically applying risk management methodology is a critical foundation for the sustainability and success of any organization.
-
-## Conclusion
-
 Risk management is a vital process for any organization. By following the four steps of **risk identification, assessment, treatment, and monitoring**, organizations can effectively manage risks and prepare for unexpected situations. A well-structured risk management methodology helps enhance organizational stability and minimize damage from unforeseen risks.
 
 The key to successful risk management lies in systematically managing risks within the organization and taking appropriate actions based on the situation.
+
+## What we should protect
+- Transactions, Service availability, Data/Account Info, Sensitive Personal Info(SPI), Systems & Applications, Money & Digital Stores of Value
 
 ---
 
@@ -115,10 +115,9 @@ The key to successful risk management lies in systematically managing risks with
 
 리스크 관리는 단순히 리스크를 "피하는" 과정만이 아닙니다. 오히려 **리스크를 식별하고, 평가하고, 적절히 처리**하는 과정에서 조직의 **위기 대응 능력**과 **전반적인 효율성**이 향상됩니다. 또한, 리스크 관리 체계를 잘 구축해 놓으면 **미래의 불확실성에 더 잘 대비**할 수 있습니다.
 
-리스크 관리 방법론을 체계적으로 적용하는 것은 조직의 지속 가능성과 성공을 위한 중요한 발판이 될 것입니다.
-
-## 결론
-
 리스크 관리는 모든 조직에서 필수적인 프로세스입니다. **리스크 식별, 평가, 처리, 모니터링**의 4단계를 통해 효과적으로 리스크를 관리하고, 예기치 않은 상황에 대비할 수 있습니다. 리스크 관리 방법론을 잘 구축하면, 조직의 안정성을 높이고, 예상치 못한 리스크로부터의 피해를 최소화할 수 있습니다.
 
 조직 내에서 리스크를 체계적으로 관리하고, 상황에 맞는 적절한 조치를 취하는 것이 결국 성공적인 리스크 관리의 핵심입니다.
+
+## 지켜야하는 것
+- Transactions, Service availability, Data/Account Info, Sensitive Personal Info(SPI), Systems & Applications, Money & Digital Stores of Value
