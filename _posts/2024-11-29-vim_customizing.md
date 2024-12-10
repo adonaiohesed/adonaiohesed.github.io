@@ -7,6 +7,7 @@ author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
 ---
+
 ## Vim Plugin Manager Installation 
 아래의 플러그인들을 설치하기 위해서 우선 플러그 매니저를 설치해야한다.
 ```bash

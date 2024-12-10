@@ -7,6 +7,7 @@ author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
 ---
+
 # Customizing MacOS Terminal
 
 ## 1. Transforming Terminal with Oh My Zsh
