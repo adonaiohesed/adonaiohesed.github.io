@@ -33,6 +33,7 @@ pin: true
 * Back in 2021, I believed that a Software Engineer background offered more job options. However, with recent advances in AI, I think it’s more advantageous to continue focusing on cybersecurity while developing code quality skills. My goal is not merely to be a skilled hacker but to advance my career as a security leader.
 
 ![cybersecurity-jobs](/assets/images/cybersecurity_jobs.jpeg)
+### Cybersecurity Career Tracks
 * Analysts: Focus on identifying, monitoring, and addressing vulnerabilities. Their primary role is to detect and analyze security risks.  
 * Security Engineers: Responsible for building defensive systems based on security architecture designs. This role can specialize into areas like:
   - Network Security Engineers  
