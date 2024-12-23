@@ -1,9 +1,41 @@
 ---
-title: 구직 활동을 하면서 느낀 점
+title: Reflections on My Job Search Journey
 tags: Carrer
 key: page-job_hunting
 categories: [Carrer, Post-Interview]
 author: hyoeun
+---
+
+# When Frustration and Depression Hit
+
+During times when I couldn't secure interviews, I was depressed about not getting them. Once I started getting interviews, I became depressed about failing technical rounds. When I made it to final interviews, I was depressed about not receiving offers. When an offer was rescinded due to team circumstances, I felt like all hope was lost.
+
+However, looking back, I had forgotten that I was gradually improving. At some point, making it to technical interviews became natural, and receiving responses to applications became expected. During this time, I kept focusing only on my shortcomings. Throughout my job search, I learned from each interview and filled knowledge gaps, which greatly helped in subsequent interviews. This led to final rounds with Facebook, Google, Twilio, Visa, Appfolio, and Dark Rhino. Before that, I had technical interviews with Uber, Amazon, Rover, Nuro, Alto Pharmacy, ByteDance, Bloomberg, Intuit, Udemy, Juniper Network, and One Medical, but didn't make it to finals. Appfolio gave me a verbal offer three hours after my CISO interview on Friday, but the following Thursday, they informed me that due to changed circumstances discussed in Tuesday's morning meeting, they couldn't allocate mentoring time and were seeking a more senior candidate. As for Dark Rhino, I declined their offer.
+
+Looking back, despite doing better than expected, there were moments when I felt so frustrated and defeated that I wanted to give up everything. What gave me courage and strength during these times was the encouragement and belief of my friends.
+
+While my friends were all working at top-tier companies and doing well, I felt sad and like a loser for not being able to join similar companies. However, I failed to realize that employment isn't just about the first step - it's a continuous journey, and while the first step might seem most important, that's not always the case. Just like how attending Seoul National University might seem best to everyone but isn't always the case, and how graduating from Handong University wasn't a wrong choice but actually the best choice for me, I was looking at everything from the wrong perspective.
+
+Employment should be a process, not my ultimate goal. Rather than focusing on how many actions I've taken, I should focus on how much progress I've made while properly setting my goals and considering what I want to do. Throughout my job search period, I was making excellent progress. I had denied all of this simply because the results weren't what I expected, but that shouldn't have been the case. I needed to trust the ongoing progress and move forward without getting discouraged. In the end, following guidance would lead to good results.
+
+# Things to Consider When Job Hunting
+
+Don't go into a company thinking you'll learn everything there. While I've always worked alone and frequently thought about wanting to learn from others, no company welcomes candidates who only focus on learning. While they might offer opportunities and try to understand, they don't particularly welcome such attitudes. I should be capable of doing the work independently, with the company supporting me, and I should be able to give more to the company. Within this structure, we help each other grow and move forward together.
+
+People often say that finding the right team is like finding a girlfriend or spouse. While we might want to meet someone better than ourselves, why would someone better want to meet us? We need to have equivalent value. Only when we become such a person can we meet such a person. The same applies when applying to companies and interviewing. We need to demonstrate our value and make the company want to hire us. We shouldn't be full of pretense, shouldn't lie, and shouldn't be ignorant. We should speak truthfully, have confidence in what we know, and effectively communicate what we can offer.
+
+# About Offers
+
+Don't stop applying until you've signed an offer - I've experienced having an offer rescinded. When receiving an offer, don't talk too much. Keep your words minimal and express gratitude. When discussing counter-offer numbers, say something like "I forgot the number, I will tell you next time." Since it's not mandatory to disclose your numbers first, it's okay to pass without revealing them.
+
+For comparing salaries across different states, you can refer to the [Cost of Living Calculator](https://www.bankrate.com/calculators/savings/moving-cost-of-living-calculator.aspx) or [this more visual and easy-to-use site](https://www.nerdwallet.com/cost-of-living-calculator).
+
+# References
+* [Salary Information](https://candor.co/guides/salary-negotiation)
+* [Negotiation Methods](https://haseebq.com/tech-careers/)
+* [H1b visa database](https://h1bdata.info/index.php)
+* [Start up salary](https://angel.co/jobs)
+
 ---
 
 ## 좌절감과 우을감이 찾아 왔을 때
