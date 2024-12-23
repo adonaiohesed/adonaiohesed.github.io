@@ -4,6 +4,7 @@ tags: Cybersecurity Career
 key: page-cybersecurity_engineer
 categories: [Personal, Identity]
 author: hyoeun
+pin: true
 ---
 
 ### What Cybersecurity Means to Me
@@ -21,7 +22,7 @@ author: hyoeun
 
 ### My Skills and Strengths
 * I possess a comprehensive understanding of security, with advanced knowledge particularly in penetration testing for web and mobile applications.
-* I have strong soft skills and leadership abilities that enable me to collaborate effectively with others and work towards shared goals. I am comfortable in leadership roles and frequently receive positive feedback for my interpersonal skills, confident in my network development skills.
+* I possess leadership skills that enable me to effectively communicate with people and achieve shared goals. Drawing from my experience as a team leader, I have consistently developed my interpersonal skills and have a particular strength in building extensive networks. I approach collaborative challenges with a positive and constructive mindset, finding opportunities for growth in situations that others might find stressful, rather than being overwhelmed by them.
 * I have project and resource management abilities. I prepare WBS annually and consistently receive recognition from managers for being the most organized team member.
 * I am committed to continuous learning and curiosity. Recently, I completed an 8-month program in AI, and I am frequently recognized for my broad interest in various fields beyond computer science.
 
@@ -32,6 +33,18 @@ author: hyoeun
 * Back in 2021, I believed that a Software Engineer background offered more job options. However, with recent advances in AI, I think it’s more advantageous to continue focusing on cybersecurity while developing code quality skills. My goal is not merely to be a skilled hacker but to advance my career as a security leader.
 
 ![cybersecurity-jobs](/assets/images/cybersecurity_jobs.jpeg)
+### Cybersecurity Career Tracks
+* Analysts: Focus on identifying, monitoring, and addressing vulnerabilities. Their primary role is to detect and analyze security risks.  
+* Security Engineers: Responsible for building defensive systems based on security architecture designs. This role can specialize into areas like:
+  - Network Security Engineers  
+  - Cloud Security Engineers  
+  - Security Operations Engineers  
+* Incident Response: The first team to respond to security incidents. They play a crucial role in detecting and resolving security events, often requiring collaboration with multiple departments.  
+* Digital Forensics: Analyzes cyberattacks and prepares legal evidence to support investigations and prosecutions.  
+* GRC Roles: Primarily focus on managing legal and regulatory compliance, providing training, and handling risk management. They are also responsible for educating other departments and are often performed by security leaders.
+* Security Architecture: Requires extensive experience across various domains and at least three years of security experience. Responsible for designing solutions or products with a strong security mindset.  
+* IAM Analyst: Manages and designs IAM (Identity and Access Management) processes and resources.  
+* IAM Engineer: Designs, builds, and maintains IAM tools and systems.  
 
 ### What I Need to Do
 * Solve Hack The Box challenges and gain experience in CTF competitions.
@@ -58,7 +71,7 @@ author: hyoeun
 
 ### 내가 가지고 있는 역량
 * 보안 전반에 걸쳐 기본적인 이해를 가지고 있으며, 특히 웹과 모바일의 침투 테스트(penetration testing) 분야에서 심화된 지식을 갖추고 있다.
-* 다른 사람과 소통하며 우리가 목표하는 바를 이끌어 나갈 수 있는 소프트 스킬과 리더십을 가지고 있다. 리더로서 일하는 것에 익숙하고, 대인 관계에서 좋은 평가를 받으며 네트워크 형성이 평균보다 잘 되어 있다고 자신한다.
+* 사람들과 소통하며 목표를 효과적으로 달성할 수 있는 리더십 능력을 갖추고 있다. 많은 팀 리더로서의 경험을 바탕으로 대인관계 기술을 꾸준히 발전시켜 왔으며, 폭넓은 네트워크 형성에 강점을 가지고 있다. 사람들과의 협업 과정에서 발생하는 도전적인 상황들을 긍정적이고 건설적인 방식으로 접근하며, 이러한 과정에서 스트레스보다는 성장의 기회를 발견한다.
 * 프로젝트 및 리소스에 대한 관리 능력을 가지고 있다. 매년 WBS를 작성하고, 팀에서 가장 체계적으로 일하는 사람으로 매니저에게 평가받았다.
 * 끊임없는 호기심과 배움의 자세를 가지고 있다. 최근에는 AI 영역의 8개월 프로그램을 수료하였으며, 단순한 컴퓨터 과학뿐만 아니라 다양한 분야에 대한 관심이 많다는 평가를 받고 있다.
 
@@ -69,6 +82,15 @@ author: hyoeun
 * 2021년에만 해도 Software Engineer 경력이 더 유리하다고 생각했으나, 최근 AI의 발전을 보며 코드 품질에 대한 역량을 잘 갖춘다면 사이버 보안에 중점을 두고 커리어를 이어나가는 것이 더 유리할 것이라 생각한다. 단순히 해킹을 잘 하는 해커가 되는 것을 추구하는 것이 아니라 보안 전문 리더로서 커리어를 발전시키고자 한다.
 
 ![cybersecurity-jobs](/assets/images/cybersecurity_jobs.jpeg)
+### Cybersecurity Career Tracks
+* Analysts: 취약점들에 대해 찾고 모니터하고 관련 일을 하는 쪽이다.
+* Security Engineers: Security architects design과 관련된 방어적인 부분들을 building하는 역할이다. Network Security Engineers, Cloud Security Engineers, Security Operation Engineers등으로 세분화 될 수도 있다.
+* Incident Response: 보안 사건이 터졌을 때 가장 먼저 반응 하는 팀이고 그 문제들을 detect하는 역할을 한다. 많은 부서와의 협약이 필요하다.
+* Digital forensics: 사이버 공격에 관해 분석하고 법적인 증거를 제출 할 수 있도록 준비하는 역할들을 한다.
+* GRC roles: 전반적인 법률 규제와 관련된 관리하고 교육시키며 위험 부담에 대한 매니징을 주로한다. 다른 부서의 교육 또한 책임진다. 보안 리더들이 주로 하는 일이다.
+* Security Architecture: 여러 도메인에 경험이 있는 것이 도움이 되고 보안에 3년 이상의 경력으로 security mindset을 지닌 상태로 솔루션 혹은 프로덕트의 전반적인 디자인을 책임진다.
+* IAM Analyst: IAM 프로세스나 리소스를 관리하고 디자인하는 역할을 한다.
+* IAM Engineer: IAM 관련 도구들을 design, build, maintains하는 역할을 한다.
 
 ### 내가 해야 하는 일
 * Hack The Box 문제를 해결하고, CTF 대회에서 입상 경험 쌓기.

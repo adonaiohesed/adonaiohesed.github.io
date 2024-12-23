@@ -1,9 +1,28 @@
 ---
-title: Relocation시 고려할 점들
+title: Relocation Considerations
 tags: Relocation Interview
 key: page-relocation_considerations
 categories: [Carrer, Post-Interview]
 author: hyoeun
+---
+
+Here's the English translation in markdown format:
+
+## Car
+* When looking for short-term rentals, [TURO](https://turo.com/) is worth considering.
+
+## Housing
+* Joining Korean community forums for specific states can help gauge which apartments are good, especially by looking at apartment transfer posts. People selling their leases likely did research before moving in, and you can quickly determine if an apartment offers good value for money.
+* Austin Korean Communities:
+  * [https://www.texasksa.org/](https://www.texasksa.org/)
+  * [https://ktown.longhorns.kr/](https://ktown.longhorns.kr/)
+  * [https://texasuka.org/](https://texasuka.org/)
+
+## Cost of Living Differences
+* [Visual and easy-to-use comparison site](https://www.nerdwallet.com/cost-of-living-calculator)
+* [Cost of Living Calculator - Good for reference after checking the above site](https://www.bankrate.com/calculators/savings/moving-cost-of-living-calculator.aspx)
+* Note that when searching "cost of living calculator" on Google, prices may vary between different sites.
+
 ---
 
 ## 자동차
