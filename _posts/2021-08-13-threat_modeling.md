@@ -2,7 +2,7 @@
 title: Threat Modeling
 tags: Threat-Modeling Cybersecurity Risk-Management
 key: page-threat_modeling
-categories: [Cybersecurity, Risk Management]
+categories: [Cybersecurity, Security Operations]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true

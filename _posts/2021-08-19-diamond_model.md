@@ -2,7 +2,7 @@
 title: Diamond Model of Intrustion Analysis
 tags: Diamond-Model Intrusion Cybersecurity
 key: page-diamond_model_intrusion
-categories: [Cybersecurity, Threat Analysis]
+categories: [Cybersecurity, Security Operations]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true

@@ -2,7 +2,7 @@
 title: EDR Bypass
 tags: EDR
 key: page-edr_bypass
-categories: [Cybersecurity, Monitoring]
+categories: [Cybersecurity, Security Operations]
 author: hyoeun
 mathjax: true
 mathjax_autoNumber: true
