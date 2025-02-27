@@ -8,6 +8,38 @@ mathjax: true
 mathjax_autoNumber: true
 ---
 
+## Bitcoin
+* Bitcoin is based on the premise that you don't need to trust anyone, recording all transaction details in blocks and distributing them equally to all network participants. You can verify manipulation by comparing distributed blocks, and the process of transmitting this information across the network is called broadcasting.
+* Bitcoin transaction records are created when miners generate new blocks through proof of work and broadcast these blocks to nodes worldwide.
+* Because the network is decentralized, transactions take longer and fees are more expensive.
+* These aspects create an environment where Bitcoin cannot be used for everyday payments, leading to new designs like Bitcoin Cash, but even these cannot solve Bitcoin's fundamental problems, which is why the Lightning Network emerged as a solution.
+
+## Background of the Lightning Network
+* Bitcoin blocks are set to be generated once every 10 minutes, and each block can only process about 7 transactions per second. Compared to Visa card's millions of transactions per second, this transaction volume is too low for real-world usage levels. Therefore, to handle current transaction demands, we need scalability that can meet the same transaction volume.
+* While increasing the block size itself could increase the number of transactions, this would mean only computers capable of performing the related calculations could effectively participate. Since very few computers can handle this level, it's practically impossible. The Lightning Network was developed to solve this problem.
+* Lightning is a payment channel. By creating payment channels outside the blockchain, when transaction parties have their public keys, they can record their transactions.
+* When we say Bitcoin generates one block every 10 minutes, it means it takes 10 minutes to confirm a Bitcoin transaction. Transaction fees ranged from 5 to 10 cents per transaction, making micropayments impossible. The Lightning Network enables immediate transactions at speeds of thousands to millions per second with fees of 1 cent or free.
+
+## Payment Routing
+* Once users create payment channels with each other, each person in the network will have channels with different people, and if these connections are linked, transactions can be sent between two different people via the shortest route through routing, even without direct channel connections.
+* However, this network won't work unless each independent person has enough money to cover the amount being sent.
+* It feels like it happens simultaneously rather than sequentially. Therefore, you need to find the shortest network route that satisfies the amount of money each person has.
+* The goals are availability (user funds must always be available) and connectivity (network participants must be able to send funds to other participants).
+
+## Lightning Channel
+* In the payment channel network, transactions are conducted in mili-satoshi units (1/1000 of a satoshi).
+* To create a channel between two users, a funding transaction (funding tx) must be sent to the Bitcoin network. The funding tx is similar to a regular Bitcoin transaction, with transaction records of both users held as collateral, and the transaction can only be released with the private keys of both people through a locking script.
+* The channel creation is considered complete when the funding tx is sent to the Bitcoin network and included in the blockchain.
+* A commitment tx in the Lightning Network takes the channel created by the funding tx as input, locks balance information for each user with their public key, and allows each party to take their output so they can retrieve their balance at any time.
+* The commitment tx can be seen as Layer 2 of the Lightning Network, where balances exchanged between parties are continuously updated through the process above.
+* Finally, the channel is closed through agreement between the two users.
+
+## Funding Transaction
+* Open a channel.
+* There is a multi-signature address (walnut). When you put Bitcoin in the wallet and open a channel, private keys are given to two people, and you only pay the Bitcoin fee once, allowing transactions on the Lightning channel.
+
+---
+
 ## 비트코인
 * 비트코인에서는 그 누구도 믿지 않아도 되는 것을 가정하고 모든 거래 내용을 블록에 기록하고 블록을 네트워크에 참여한 사람에게 똑같이 뿌린다. 분산된 블록과 대조를 해서 조작 여부를 확인 할 수 있고 네트워크로 알 수 있도록 전송하는 과정을 브로드 캐스팅이다.
 * 비트코인의 거래 기록은 채굴자가 작업 증명으로 새로운 블록을 생성하고 그 블록을 전 세계 노드에 브로드 캐스팅 한다.
