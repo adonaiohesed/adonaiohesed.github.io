@@ -29,9 +29,6 @@ mathjax_autoNumber: true
 * Privacy Policy(법적으로 고객의 데이터들을 관리해야 하는 방식에 관한 문서)에서부터 Privacy Requirements를 발전시켜야 한다.
 * 유저 스토리를 만들어라. 
 
-### Develop
-* 
-
 ## Different Flavors of Personal Information(PII)
 * Direct PII(Linked Information): An individual을 identify할 수 있는데 직접적으로 사용될 수 있는 정보, 예를 들어 이름, DOB, address
 * Indirect PII(Linkable Information): 간접적으로 그 사람에 대해 알 수 있는 것 하지만 다른 조합과 합쳐졌을때에만 비로서 제대로 알 수 있는 정보들, 예를 들어 gender, ethnicity, non-specific age
