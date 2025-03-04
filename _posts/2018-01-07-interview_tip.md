@@ -59,7 +59,7 @@ mathjax_autoNumber: true
 1. Really excited about the team! Thank you for the offer. I'll need time to review this, can we speak in a few days? In the meantime, I have a few questions for you.
 
 ## 연봉 협상 방법
-1. 절대 숫자를 먼저 말하지 마라. 희망 연봉을 적는 곳이 나온다면 Negotiable or 000을 적어라.
+1. 절대 숫자를 먼저 말하지 마라. 희망 연봉을 적는 곳이 나온다면 Negotiable or 그 포션에 대해 나오는 적정 금액을 적어라.
 1. This could be a little bit personal... but how much would someone in this career path expect to make at each stage? Just want to take it as a future reference. 를 말하면서 간접적으로 상대방이 숫자를 먼저 말하도록 하라.
 1. 회사들은 연봉을 책정할때 한 숫자로 측정하는 것이 아니라 보통 5-10% 여유를 두고 Range를 책정하기 때문에 그 안에서 연봉 협상의 여지가 남아 있다.
 1. 최종면접까지 합격했다는 것은 내가 가치 있는 인재이기에 좀 더 연봉을 부른다고 바로 자르는 회사는 흔치 않다.
