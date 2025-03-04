@@ -9,9 +9,8 @@ mathjax_autoNumber: true
 ---
 
 ## Attitude
-1. 여유와 자신감을 가져야 한다.
-1. 같이 일을 할 때 자신감 없는 의견을 내면 들어줄 사람이 많지 않다. 내가 가진 생각이 틀릴지라도 자신감을 가지고 나의 확신으로 얘기를 해야지 들어줄 것이며 모르면 모르는 것을 말하고 아는대까지 최선을 다해 말한다.
-1. 사람이 여유가 없으면 매력적으로 보이지 않는다. 욕심을 내려 놓고 이번 면접을 통해 모르는 것을 배워나간다고 생각하면서 대화를 이끌어 나가면 오히려 잘 된다.
+1. 여유와 자신감을 가져야 한다. 사람이 여유가 없으면 매력적으로 보이지 않는다. 욕심을 내려 놓고 이번 면접을 통해 모르는 것을 배워나간다고 생각하면서 대화를 이끌어 나가면 오히려 잘 된다.
+1. 같이 일을 할 때 자신감 없는 의견을 내면 들어줄 사람이 많지 않다. 내가 가진 생각이 틀릴 수 있을 지라도 자신감을 가지고 나의 확신으로 얘기를 해야지 들어줄 것이며 모르면 모르는 것을 말하고 아는대까지 최선을 다해 말한다.
 1. 커뮤니케이션이 가장 중요하다. 말은 천천히 하고 반복되는 Actually와 같은 쓸데 없는 말은 최대한 자제하라.
 1. 다른 회사의 인터뷰가 잡혔는걸 알려서는 좋지 않다. 자신의 가치는 오퍼가 많을때 올라가지 인터뷰가 많다고 올라가는 것이 아니다. 인터뷰가 많은데 떨어지면 오히려 감점요소다.
 1. 좋은 질문을 해야하고 대화를 해야하지 일방적인 들음 혹은 이야기만 해서는 안된다. 상호작용이 중요하다. 상대방을 인터뷰해라.
@@ -20,7 +19,7 @@ mathjax_autoNumber: true
 1. 해봤던 기술들에 대해 장황하게 설명하지마라. 당연하게 써야되는것들인데 무슨 그리 장황하게 적는거는 지루할 수 있다. 많은 것을 썼다는 것은 내가 패스트 러너인것을 강조할때만 이용하라. 혹은 특별한 근거를 가지고 썼던 경험이 있을때 나의 선택 방식(행동 방식)에 관해 말할때 근거로 써라.
 1. 천천히 말해라.
 1. 좋은 사람들이 있는 곳이라서 좋다라는 말은 하지 마라. 내가 좋아하는 이유를 명확히 들어라.
-1. 가이드가 필요하다는 말을 하면 안 된다. 인터뷰에서는 what bring I can to compnay, 사실은 나한테 좋은것만 생각해라.
+1. 내가 회사에서 얻을 수 있는 것에 초점을 맞추지 말고 내가 팀에 가져다 줄 수 있는 것을 강조해라.
 
 ## Question to interview
 ### Recruitor phone call
@@ -30,7 +29,6 @@ mathjax_autoNumber: true
 1. Is there anything about my background or resume that makes you question wheter I am a good fit for this role?
 
 ### Team technical interview
-1. Are there oppotunities for professional development?
 1. What are the performance expectations of this position over the first year?
 1. What's your favorite part about working here?
 1. What are the skills and experiences you're looking for in an ideal candidate?
