@@ -8,7 +8,7 @@ author: hyoeun
 
 * Python은 interpreter이다. Interpreter란 한 줄 한 줄 바로바로 해석하고 결과를 보여주는 언어이다.
 * Scalar type
-  * int, float, bool, none, null
+  * int, float, bool, None
   * atomic data type
 * Non-scalar type 
   * string, tuple, list, dictionary
@@ -251,6 +251,9 @@ print(type(whatever))
 
 ### List of immutable types:
 * int, float, decimal, complex, bool, string, tuple, range, frozenset, bytes
+
+파이썬에서 “hashable(해시 가능)”하다는 것은, 해당 객체가 해시(hash) 값을 가질 수 있고 이 해시 값이 객체의 생존 기간 동안 변하지 않아야 함을 의미합니다. 파이썬에서 “객체의 해시(hash) 값이 그 객체의 생존 기간(lifetime) 동안 변하지 않는다”는 말은, 객체가 메모리에 존재하는 동안(= 프로그램 실행 중 해당 객체가 실제로 사용되고 있을 때)에는 그 객체를 대표하는 해시 값이 계속 동일하게 유지되어야 한다는 것을 의미합니다.
+파이썬의 int, float, bool, str, tuple (단, 튜플 안에 있는 요소들도 전부 해시 가능해야 함) 등은 기본적으로 해시 가능합니다. 반면, 리스트 list나 딕셔너리 dict 같은 가변 객체는 해시 값이 변할 수 있으므로 기본적으로 해시 불가능합니다.
 
 ### Hashable
 ```python
