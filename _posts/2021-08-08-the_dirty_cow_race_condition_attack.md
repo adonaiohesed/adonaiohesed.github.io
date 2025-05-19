@@ -4,7 +4,7 @@ tags: Dirty-COW Race-Condition Vulnerabilities
 key: page-dirty_cow_attack
 categories: [Cybersecurity, Vulnerabilities]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

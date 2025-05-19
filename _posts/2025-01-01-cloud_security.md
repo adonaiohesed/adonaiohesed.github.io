@@ -4,7 +4,7 @@ tags: Cloud-Security
 key: page-cloud_security_overview
 categories: [Cybersecurity, Cloud Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

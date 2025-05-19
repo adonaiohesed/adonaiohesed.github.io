@@ -4,7 +4,7 @@ tags: Buffer-Overflow Vulnerabilities Cybersecurity
 key: page-buffer_overflow_attack
 categories: [Cybersecurity, Vulnerabilities]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

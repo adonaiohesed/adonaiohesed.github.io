@@ -4,7 +4,7 @@ tags: EDR
 key: page-edr_bypass
 categories: [Cybersecurity, Security Operations]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

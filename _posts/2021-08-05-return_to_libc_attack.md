@@ -4,7 +4,7 @@ tags: Return-to-libc Vulnerabilities Cybersecurity
 key: page-return_to_libc_attack
 categories: [Cybersecurity, Vulnerabilities]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

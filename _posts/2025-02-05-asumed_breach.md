@@ -4,7 +4,7 @@ tags: Assumed-Breach
 key: page-assumed_breach
 categories: [Cybersecurity, Security Operations]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

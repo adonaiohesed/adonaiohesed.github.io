@@ -4,7 +4,7 @@ tags: Base64 Hex Encoding Decoding
 key: page-base64_hex_encoding_decoding
 categories: [Cybersecurity, Cryptography]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

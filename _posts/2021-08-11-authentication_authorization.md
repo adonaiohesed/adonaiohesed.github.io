@@ -4,7 +4,7 @@ tags: JWT Authentication Cybersecurity
 key: page-jwt_authentication
 categories: [Cybersecurity, IAM]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

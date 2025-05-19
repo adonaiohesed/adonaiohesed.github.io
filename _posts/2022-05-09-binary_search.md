@@ -4,7 +4,7 @@ tags: Binary-Search Algorithms
 key: page-binary_search
 categories: [Software Engineering, Algorithms]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

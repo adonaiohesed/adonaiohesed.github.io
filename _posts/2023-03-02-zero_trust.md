@@ -4,7 +4,7 @@ tags: Zero-Trust-Architecture
 key: page-zero_trust
 categories: [Cybersecurity, Network Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

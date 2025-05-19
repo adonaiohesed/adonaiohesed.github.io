@@ -4,7 +4,7 @@ tags: Intermediate-Payments-Cybersecurity
 key: page-security_control_domain
 categories: [Cybersecurity, Payment]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

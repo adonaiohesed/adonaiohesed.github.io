@@ -4,7 +4,7 @@ tags: XSS Web-Hacking Cybersecurity
 key: page-xss_attack
 categories: [Cybersecurity, Web Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

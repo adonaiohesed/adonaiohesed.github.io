@@ -4,7 +4,7 @@ tags: Static-Analysis Cybersecurity
 key: page-static_analysis
 categories: [Cybersecurity, Analysis]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: DNS-Data-Exfiltration
 key: page-dns_data_exfiltration
 categories: [Cybersecurity, Network Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: Crime-Investigation Forensics Cybersecurity
 key: page-crime_investigation
 categories: [Cybersecurity, Forensics]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

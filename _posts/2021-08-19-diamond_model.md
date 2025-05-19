@@ -4,7 +4,7 @@ tags: Diamond-Model Intrusion Cybersecurity
 key: page-diamond_model_intrusion
 categories: [Cybersecurity, Security Operations]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

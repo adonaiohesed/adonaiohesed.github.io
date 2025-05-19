@@ -4,7 +4,7 @@ tags: Intermediate-Payments-Cybersecurity
 key: page-risk_management_methodology
 categories: [Cybersecurity, Payment]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

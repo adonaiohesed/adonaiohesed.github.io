@@ -4,7 +4,7 @@ tags: Cert-Pinning
 key: page-certificate_pinning
 categories: [Cybersecurity, Mobile Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

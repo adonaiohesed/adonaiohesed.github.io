@@ -4,7 +4,7 @@ tags: Packet-Sniffing Spoofing Cybersecurity
 key: page-packet_sniffing_spoofing
 categories: [Cybersecurity, Network Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

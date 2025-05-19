@@ -4,7 +4,7 @@ tags: Carrer
 key: page-job_application_questions
 categories: [Carrer, Interview Tips]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: Presentation
 key: page-presentation_tip
 categories: [General, Life Information]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

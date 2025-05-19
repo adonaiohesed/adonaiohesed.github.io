@@ -4,7 +4,7 @@ tags: Metasploit Cybersecurity Penetration-Testing Tools
 key: page-metasploit
 categories: [Tools, Penetration Testing]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

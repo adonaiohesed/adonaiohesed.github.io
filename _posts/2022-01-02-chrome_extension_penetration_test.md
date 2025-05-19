@@ -4,7 +4,7 @@ tags: Chrome-Extension
 key: page-chorme_extension_penetration_test
 categories: [Cybersecurity, Web Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

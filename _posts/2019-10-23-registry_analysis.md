@@ -4,7 +4,7 @@ tags: Registry-Analysis Cybersecurity Forensics Tools
 key: page-registry_analysis
 categories: [Tools, Forensics]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

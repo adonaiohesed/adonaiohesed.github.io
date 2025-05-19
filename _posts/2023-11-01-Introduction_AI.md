@@ -4,7 +4,7 @@ tags: AI Machine-Learning
 key: page-ai_introduction
 categories: [AI, Machine Learning]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

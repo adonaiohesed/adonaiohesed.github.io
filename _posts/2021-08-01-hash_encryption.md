@@ -4,7 +4,7 @@ tags: Hashing Encryption Cryptography
 key: page-hash_encryption
 categories: [Cybersecurity, Cryptography]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

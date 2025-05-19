@@ -4,7 +4,7 @@ tags: Open-Network-Vulnerabilities
 key: page-open_network_vulnerabilities
 categories: [Cybersecurity, Network Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

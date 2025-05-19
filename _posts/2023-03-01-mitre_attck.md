@@ -4,7 +4,7 @@ tags: MITRE ATT&CK
 key: page-mitre_attck
 categories: [Cybersecurity, Security Operations]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: SET-UID Vulnerabilities Cybersecurity
 key: page-set_uid_program
 categories: [Cybersecurity, Vulnerabilities]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: System-Design Software-Engineering Interview
 key: page-system_design_basic
 categories: [Carrer, Interview Tips]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

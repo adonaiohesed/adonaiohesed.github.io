@@ -4,7 +4,7 @@ tags: Digital-Signature Cryptography Cybersecurity
 key: page-digital_signature
 categories: [Cybersecurity, Cryptography]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

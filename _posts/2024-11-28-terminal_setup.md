@@ -4,7 +4,7 @@ tags: Terminal
 key: page-terminal_setup
 categories: [Tools, MacOS]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: Burp
 key: page-burp_setting
 categories: [Tools, Penetration Testing]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

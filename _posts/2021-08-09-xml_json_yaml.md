@@ -4,7 +4,7 @@ tags: XML JSON YAML Data-Formats
 key: page-xml_json_yaml
 categories: [Software Engineering, Data Formats]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

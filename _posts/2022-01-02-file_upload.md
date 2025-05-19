@@ -4,7 +4,7 @@ tags: File-Upload
 key: page-file_upload
 categories: [Cybersecurity, Web Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

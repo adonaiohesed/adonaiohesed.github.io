@@ -4,7 +4,7 @@ tags: Privacy Engineering Cybersecurity Interview
 key: page-privacy_engineering
 categories: [Carrer, Interview Tips]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

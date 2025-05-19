@@ -4,7 +4,7 @@ tags: Lightning-Network Blockchain
 key: page-lightning_network
 categories: [Cybersecurity, Blockchain]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

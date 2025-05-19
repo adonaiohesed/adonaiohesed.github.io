@@ -4,7 +4,7 @@ tags: Vim
 key: page-vim_customizing
 categories: [Tools, MacOS]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

@@ -4,7 +4,7 @@ tags: Shellshock Vulnerabilities Cybersecurity
 key: page-shellshock_attack
 categories: [Cybersecurity, Vulnerabilities]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

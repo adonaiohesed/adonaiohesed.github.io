@@ -4,7 +4,7 @@ tags: SolarWinds Hack Cybersecurity
 key: page-solarwinds_hack
 categories: [Cybersecurity, Vulnerabilities]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

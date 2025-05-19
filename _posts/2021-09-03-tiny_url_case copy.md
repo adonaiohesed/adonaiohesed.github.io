@@ -4,7 +4,7 @@ tags: TinyURL Web Case-Study
 key: page-tiny_url_case
 categories: [Software Engineering, Web]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

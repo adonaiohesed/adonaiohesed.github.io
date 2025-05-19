@@ -4,7 +4,7 @@ tags: Cookies Sessions Web-Security
 key: page-cookie_session_security
 categories: [Cybersecurity, Web Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

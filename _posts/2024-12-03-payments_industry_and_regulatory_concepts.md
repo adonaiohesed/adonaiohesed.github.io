@@ -4,7 +4,7 @@ tags: Intermediate-Payments-Cybersecurity
 key: page-payments_industry_and_regulatory_concepts
 categories: [Cybersecurity, Payment]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

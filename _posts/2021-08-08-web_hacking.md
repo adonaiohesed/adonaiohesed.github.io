@@ -4,7 +4,7 @@ tags: Web-Hacking Cybersecurity
 key: page-web_hacking
 categories: [Cybersecurity, Web Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

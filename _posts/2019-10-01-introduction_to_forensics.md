@@ -4,7 +4,7 @@ tags: Introduction-Forensics Cybersecurity
 key: page-introduction_to_forensics
 categories: [Cybersecurity, Forensics]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

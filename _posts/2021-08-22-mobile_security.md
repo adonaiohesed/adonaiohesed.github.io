@@ -4,7 +4,7 @@ tags: Mobile-Security Cybersecurity
 key: page-mobile_security
 categories: [Cybersecurity, Mobile Security]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

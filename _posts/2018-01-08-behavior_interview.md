@@ -4,7 +4,7 @@ tags: Behavior-Interview Carrer
 key: page-behavior_interview
 categories: [Carrer, Interview Tips]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 

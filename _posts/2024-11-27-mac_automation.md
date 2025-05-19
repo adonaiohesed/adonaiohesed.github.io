@@ -4,7 +4,7 @@ tags: Automator
 key: page-mac_mini_air_automator
 categories: [Tools, MacOS]
 author: hyoeun
-mathjax: true
+math: true
 mathjax_autoNumber: true
 ---
 
