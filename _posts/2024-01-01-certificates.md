@@ -59,6 +59,31 @@ mathjax_autoNumber: true
 
 ---
 
+### 🧪 CRTL (Certified Red Team Lead)
+- **목적**: Red Team 리더십 및 전략 수립 능력 인증
+- **특징**: 공격 계획 수립, 목표 기반 침투, 협업/보고 능력 강조
+- **왜 필요한가?**
+  - 기술적인 역량뿐 아니라 리더십, 전략 수립 능력도 평가됨
+  - Red Team을 이끄는 입장에서 필요한 고급 자격증
+- **준비 방법**
+  - ZeroPoint Security 제공 과정
+  - CRTO 경험 이후 준비 권장
+  - 실전 보고서 작성 및 팀 협업 사례 공부 필요
+
+---
+
+### 🔍 BSCP (Blue Team Security Certification)
+- **목적**: 방어 측면에서의 사이버 위협 탐지 및 대응 능력 인증
+- **특징**: 로그 분석, 위협 헌팅, SIEM 운영 능력 포함
+- **왜 필요한가?**
+  - Red Team을 잘 하려면 Blue Team 입장에서의 이해도 중요함
+  - 실무에서 공격 탐지 우회 테스트 수행 시 유용함
+- **준비 방법**
+  - 보통 로그 분석, EDR/SIEM 툴 경험 필요
+  - 커뮤니티 자료나 실습 기반 교육 과정 활용
+
+---
+
 ## ☁️ 클라우드 시큐리티 자격증
 
 ### ☁️ AWS Certified Security – Specialty
@@ -103,6 +128,8 @@ mathjax_autoNumber: true
 1. **OSCP** → 실전 침투 테스트 능력 확보
 2. **AWS Certified Security** → 클라우드 보안 기초 다지기
 3. **CRTO** → 실전 레드팀 기술 쌓기
-4. **OSWE** → 고급 웹 해킹 역량 강화
-5. **Google Cloud Security Engineer** → 멀티 클라우드 대응력
-6. **CCSP** → 정책/거버넌스 기반 확장
+4. **BSCP** → Blue Team 관점 이해 및 위협 대응
+5. **OSWE** → 고급 웹 해킹 역량 강화
+6. **Google Cloud Security Engineer** → 멀티 클라우드 대응력
+7. **CRTL** → 레드팀 리더 역할 준비
+8. **CCSP** → 정책/거버넌스 기반 확장
