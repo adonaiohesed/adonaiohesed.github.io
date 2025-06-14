@@ -24,6 +24,16 @@ Don't go into a company thinking you'll learn everything there. While I've alway
 
 People often say that finding the right team is like finding a girlfriend or spouse. While we might want to meet someone better than ourselves, why would someone better want to meet us? We need to have equivalent value. Only when we become such a person can we meet such a person. The same applies when applying to companies and interviewing. We need to demonstrate our value and make the company want to hire us. We shouldn't be full of pretense, shouldn't lie, and shouldn't be ignorant. We should speak truthfully, have confidence in what we know, and effectively communicate what we can offer.
 
+## Thoughts on Changing Jobs
+
+I used to think my skills were good enough to get a job anywhere. Then, as I prepared to switch jobs during a tough hiring market in **2025**, and didn't even get a single call back, I started to doubt my abilities. I wondered if I wasn't getting responses because I lacked something. However, later, when recruiters started reaching out to me first, even if I wasn't interested in a particular team, expressing interest in another team often led to immediate interview progression with the very same resume that had previously received no responses. The identical resume would sometimes pass and sometimes not.
+
+And it's true that going through technical interviews helped me realize what more I needed to study and what I didn't know. The more interviews I did, the better my answers became. I also felt like there were more interview opportunities between **April and June** than during the end of the year or **January to March**. However, places that were hiring in **February** still did; it was just that the distribution was heavier in the second quarter.
+
+Preparing for interviews takes surprisingly a lot of time. Ideally, I think it's good to consistently interview in the **second and third quarters** each year as a way to check what skills I need to build up. It helps refine my resume, keeps me motivated, and ensures I'm ready to work anywhere, anytime. However, the downside is that I could be spending that time focusing more on my current work, but instead, I'd be diverting that time to interview preparation. Nevertheless, for your own benefit, I think it's a good idea to try interviewing every year.
+
+If I could go back **2-3 years**, I'd still spend time on certification studies and schoolwork, but I would definitely also dedicate time to interview preparation. I am a capable person, and even though I didn't find a job quickly, I didn't let that initial frustration hold me back. I kept improving little by little, overcoming challenges. The next time such a period comes, I'll look back at this post and remember what I've done and that I **can do it**.
+
 # About Offers
 
 Don't stop applying until you've signed an offer - I've experienced having an offer rescinded. When receiving an offer, don't talk too much. Keep your words minimal and express gratitude. When discussing counter-offer numbers, say something like "I forgot the number, I will tell you next time." Since it's not mandatory to disclose your numbers first, it's okay to pass without revealing them.
@@ -54,8 +64,11 @@ For comparing salaries across different states, you can refer to the [Cost of Li
 
 나에게 맞는 팀을 찾는 것은 나의 여자친구 혹은 배우자를 찾는 것과 같다는 말을 많이들 한다. 이상형이 나보다 더 나은 사람을 만나면 좋겠다고 생각하지만 나보다 잘난 사람이 나를 왜 만나겠는가? 내가 그만큼의 가치가 있어야 한다. 그런 사람이 되었을 때에 나는 그 사람을 만날 수 있을 것이다. 회사에 지원을 할때에도, 면접을 할 때에도 마찬가지이다. 내가 얼마나 가치 있는 사람인지 보여주어야 하고 회사가 나를 가지고 싶게끔 만들어야 한다. 허세가 가득해서는 안 될 것이고 거짓말을 일삼는 사람이어서도 안 될 것이고 아무것도 몰라도 안 될 것이다. 진실된 말을 하며 내가 알고 있는 것에 대한 충분한 자신감을 가져야 하고 내가 줄 수 있는 것에 관해 충분히 어필을 해야 한다.
 
+## 이직을 하면서 느끼는 점
+나 정도 실력이면 어디든 갈 수 있지라는 생각을 했었다. 그리고 2025년 취업 시장이 안 좋을 때 이직 준비를 하면서 연락조차 오지 않을 때, 내 실력에 대한 의구심을 품었다. 내가 부족해서 연락이 안 오는건가 싶기도했다. 하지만 이후 주로 리쿠루터가 먼저 나에게 연락이 왔을 때, 내가 그 팀에 관심이 없더라도 다른 팀에 관심을 보였을때에는 기존에 이미 연락이 없던 레쥬메로 바로 다음 인터뷰 진행을 할 수 있었다. 레쥬메 자체가 같더라도 어떤 경우에는 통과가 되고 어떤 경우에는 통과가 되지 못했던 것이다. 그리고 확실히 테크니컬 인터뷰를 거치면서 내가 무엇을 더 공부해야했는지, 어떤 것을 몰랐는지 알게 되고 인터뷰를 할수록 더 나은 대답을 하게 되는 것은 사실이었다. 그리고 연말,1-3 월 보다는 4-6월 사이가 조금 더 인터뷰 기회가 많은 듯한 느낌도 들었다. 하지만 여전히 2월에도 사람을 뽑는 곳은 뽑았다. 분포만 2분기때가 많았을 뿐이었다. 인터뷰 준비를 하게 되면 생각보다 시간이 꽤 든다. 이상적인 생각으로는 매년 2-3분기에 인터뷰를 보면서 내가 앞으로 쌓아가야 할 실력들을 점검하는 방식으로 인터뷰를 늘 보는것도 좋다고 생각한다. 레쥬메도 고치고 동기부여도 되고 언제든 어디서나 일 할 수 있는 준비도 되는 것이다. 하지만 그의 단점으로는 그 시간에 사실 내 일에 더 시간을 쓸 수도 있고 집중할 수도 있는데 오히려 인터뷰 준비를 하면서 그 시간을 다르게 쓰게 된다는 점도 있긴하다. 그래도 본인을 위해서라면 매년 인터뷰를 시도해보는것도 좋은 것 같다. 내가 만약 2-3년 전으로 돌아간다면, 그 당시에는 자격증 공부와 학교 수업에 좀 더 시간을 썼지만 인터뷰에도 시간을 썼더라면 하는 생각이 들긴한다. 나는 할 수 있는 사람이고 빠른 시일내에 일을 구하진 못했었지만 처음의 좌절감에 머물지 않고 늘 조금씩 나아지며 극복해 나갔고 다음에 또 이런 시간이 찾아올때 이 글을 보며 내가 해왔고, 할 수 있음을 잊지 말아야 할 것이다.
+
 ## 오퍼
-오퍼를 받고 사인 할때까지 지원읆 멈추면 안 된다. 오퍼를 줘놓고 취소하는 경우를 당해봤다. 오퍼를 받는 당시에 너무 많은 말은 하지 마라. 그리고 최소한 말을 아끼고 감사의 말만 전해라. 카운터 오퍼에 관한 숫자를 말할시 I forgot the number I will tell you next time이라는 식으로 얘기를 해라. 내 숫자를 먼저 알려주는 것이 의무는 아니니깐 안 알려주는 식으로 넘어가도 괜찮다.
+오퍼를 받고 사인 할때까지 지원을 멈추면 안 된다. 오퍼를 줘놓고 취소하는 경우를 당해봤다. 오퍼를 받는 당시에 너무 많은 말은 하지 마라. 그리고 최소한 말을 아끼고 감사의 말만 전해라. 카운터 오퍼에 관한 숫자를 말할시 I forgot the number I will tell you next time이라는 식으로 얘기를 해라. 내 숫자를 먼저 알려주는 것이 의무는 아니니깐 안 알려주는 식으로 넘어가도 괜찮다.
 
 서로 다른 주에 관한 연봉 비교는 [Cost of Living Calculator](https://www.bankrate.com/calculators/savings/moving-cost-of-living-calculator.aspx) 혹은 [사진으로 나오고 보기 쉬운 사이트](https://www.nerdwallet.com/cost-of-living-calculator)를 참고해도 좋다.
 
