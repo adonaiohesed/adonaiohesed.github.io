@@ -1,5 +1,5 @@
 ---
-title: File upload feature test
+title: File Upload Feature Penetration Test
 tags: File-Upload
 key: page-file_upload
 categories: [Cybersecurity, Web Security]
@@ -7,6 +7,247 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 ---
+
+When a file upload feature is present, you should check the following items. Fundamentally, from a developer's perspective, a whitelist or allowlist approach is ideal.
+
+## Checklist
+
+1.  **Check the file extension.**
+
+      * If it is a compressed file, you must also check its contents. Check the target path, level of compression, and the estimated unzip size.
+      * Check for double extensions, such as `.jpg.php`.
+      * Check if `.php` is executed using null bytes, such as `exploit.jpg%00.php` or `exploit.jpg\00.php`.
+      * Only allow extensions that are appropriate for the business logic and choose the least harmful and lowest-risk file types.
+      * Allowing SVG files can make the application vulnerable to SSRF, XXE, and XSS attacks.
+
+2.  **Check the file size.** You must verify if it is possible to upload a file larger than the set limit.
+
+      * [Large size file download site](https://testing.taxi/blog/325-giant-file-generator-tool/)
+
+3.  **Check for malicious content detection** using an Eicar test file.
+
+4.  **Verify if the uploaded file path is determined by the client.** The file path should be randomly determined on the server-side.
+
+5.  **Confirm that the Content-Type correctly matches the file extension.**
+
+6.  **Check if any web-executable script files** are among the allowed file extensions, such as `aspx, asp, css, swf, xhtml, rhtml, shtml, jsp, js, pl, php, cgi`. If they are present, attempt related attacks.
+
+7.  **If image uploads are possible,** try to upload a `.php` file containing malicious code by changing its extension to `.jpg`, or upload a malicious file while changing the `Content-Type` to `image/jpeg`.
+
+8.  **Check the file name length limit.** Attempt an attack with a file name longer than 10,000 characters.
+
+9.  **Check if only authorized users can upload files.**
+
+10. **Verify if files are stored on a different server.** At a minimum, it is safer to store them somewhere outside the webroot.
+
+11. **Check if file execution occurs in a sandbox.**
+
+12. **Try to upload a file after changing its name to something like** `"/><svg onload = alert(document.cookie)>`.
+
+## Content-Type
+
+The `Content-Type` header in the HTTP protocol indicates the type of data being transmitted and is defined based on MIME (Multipurpose Internet Mail Extensions) types. The `Content-Type` value helps clients and servers to correctly process and interpret data.
+
+### 1\. Text Types
+
+Used for text data, representing human-readable content.
+
+  - `text/plain`: Basic text files (e.g., `.txt`)
+  - `text/html`: HTML documents (e.g., `.html`)
+  - `text/css`: CSS stylesheets (e.g., `.css`)
+  - `text/javascript` or `application/javascript`: JavaScript files (e.g., `.js`)
+  - `text/csv`: CSV files (e.g., `.csv`)
+
+### 2\. Application Types
+
+Primarily represent binary or special data.
+
+  - `application/json`: JSON data (e.g., API responses)
+  - `application/xml`: XML data (e.g., `.xml`)
+  - `application/x-www-form-urlencoded`: URL-encoded form data
+  - `application/pdf`: PDF documents (e.g., `.pdf`)
+  - `application/zip`: ZIP compressed files (e.g., `.zip`)
+  - `application/x-httpd-php`: PHP files (e.g., `.php`)
+  - `application/octet-stream`: Arbitrary binary data (e.g., file downloads)
+  - `application/vnd.ms-excel`: Microsoft Excel files (e.g., `.xls`)
+  - `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`: Excel Open XML format (e.g., `.xlsx`)
+
+### 3\. Image Types
+
+Represent image data.
+
+  - `image/jpeg`: JPEG images (e.g., `.jpg`, `.jpeg`)
+  - `image/png`: PNG images (e.g., `.png`)
+  - `image/gif`: GIF images (e.g., `.gif`)
+  - `image/svg+xml`: SVG images (e.g., `.svg`)
+  - `image/webp`: WebP images (e.g., `.webp`)
+
+### 4\. Audio Types
+
+Represent audio data.
+
+  - `audio/mpeg`: MP3 audio files (e.g., `.mp3`)
+  - `audio/ogg`: Ogg Vorbis audio files (e.g., `.ogg`)
+  - `audio/wav`: WAV audio files (e.g., `.wav`)
+  - `audio/flac`: FLAC audio files (e.g., `.flac`)
+
+### 5\. Video Types
+
+Represent video data.
+
+  - `video/mp4`: MP4 video files (e.g., `.mp4`)
+  - `video/webm`: WebM video files (e.g., `.webm`)
+  - `video/ogg`: Ogg video files (e.g., `.ogv`)
+
+### 6\. Multipart Types
+
+Used for transmitting composite data.
+
+  - `multipart/form-data`: Form data, including file uploads
+  - `multipart/alternative`: Data with various representation formats (e.g., HTML email)
+  - `multipart/mixed`: A mix of text and binary data
+
+### 7\. Font Types
+
+`Content-Type` for font files used on the web.
+
+  - `font/woff`: WOFF font files (e.g., `.woff`)
+  - `font/woff2`: WOFF2 font files (e.g., `.woff2`)
+  - `font/ttf`: TrueType font files (e.g., `.ttf`)
+  - `font/otf`: OpenType font files (e.g., `.otf`)
+
+### 8\. Other Types
+
+`Content-Type` used in specific situations.
+
+  - `application/x-shockwave-flash`: Flash files (e.g., `.swf`)
+  - `application/wasm`: WebAssembly files (e.g., `.wasm`)
+  - `application/vnd.api+json`: JSON API specification (e.g., REST API responses)
+
+## Security Vulnerabilities Due to Mismatch Between Actual File Content and Content-Type
+
+### 1\. File Execution Vulnerability
+
+If a malicious file disguised with a `Content-Type` like `image/png` or `text/plain` is uploaded to the server, the following problems can occur. An attacker can try to upload a desired file by tampering with the `Content-Type` to one that the server allows.
+
+#### Scenario
+
+  - An attacker uploads a file containing PHP code, disguised with the `Content-Type` of `image/jpeg`.
+  - The server trusts the `Content-Type`, saves the file, and places it in a directory where files can be executed.
+  - As a result, the PHP code uploaded by the attacker can be executed, leading to **Remote Code Execution (RCE)**.
+
+#### Prevention
+
+  - **Verify the actual MIME type of the file**: Use a library like `magic` to check the actual type of the uploaded file.
+  - **Configure the upload directory**: Set the upload directory to be non-executable by the web server.
+
+### 2\. MIME Sniffing Attack
+
+An attack that exploits a `Content-Type` mismatch to trick the browser into misinterpreting the file's content.
+
+#### Scenario
+
+  - An attacker uploads an `.html` file containing malicious JavaScript, disguised with the `Content-Type` of `text/plain`.
+  - When the browser opens the file, it recognizes it as HTML through MIME sniffing.
+  - The malicious JavaScript code executes in the browser.
+
+#### Prevention
+
+  - **Set response headers**: Use the `X-Content-Type-Options: nosniff` header to prevent the browser from performing MIME sniffing.
+  - **Set Content-Disposition**: Configure `Content-Disposition: attachment` to ensure the file is only handled as a download.
+
+### 3\. Evasion of Detection
+
+A malicious file can be uploaded with a forged `Content-Type` to evade detection by certain security solutions (e.g., antivirus, WAF).
+
+#### Scenario
+
+  - An attacker uploads an `.exe` file containing a malicious script, disguised with the `Content-Type` of `image/png`.
+  - If the security solution only checks the `Content-Type` and does not analyze the file's content, the file will evade detection.
+
+#### Prevention
+
+  - **Content-based verification**: Analyze the actual content of the file, not just the `Content-Type`.
+  - **File signature verification**: Analyze the file header to confirm the file type.
+
+### 4\. Denial of Service (DoS) Attack
+
+A `Content-Type` mismatch can lead to excessive use of server resources or abnormal processing.
+
+#### Scenario
+
+  - An attacker uploads large binary data disguised with the `Content-Type` of `application/json`.
+  - The server fails while trying to process this data as JSON, leading to a memory leak or CPU overload.
+
+#### Prevention
+
+  - **File size limit**: Restrict the size of uploadable files.
+  - **Separate data processing logic**: Add a separate verification step to ensure the `Content-Type` and file content match.
+
+### 5\. Client-Side Attack (Stored XSS)
+
+If a malicious file is processed with an incorrect `Content-Type` and delivered to the client, it can lead to a client-side attack.
+
+#### Scenario
+
+  - An attacker uploads an HTML file containing malicious JavaScript while setting the `Content-Type` to `image/png`.
+  - The file is treated as a safe image file and served to the client.
+  - When the user opens the file, the malicious script executes, resulting in **Stored XSS**.
+
+#### Prevention
+
+  - **File format whitelist**: Clearly restrict the file formats allowed for upload.
+  - **Output encoding**: Properly encode the file name or content if it is displayed to the user.
+
+## Vulnerabilities in SVG Files
+
+### Case 1: SSRF
+
+For this exploit, an attacker needs to create an SVG file with the below content and change the controlled server URL to their own server:
+
+```html
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200">
+<image height="30" width="30" xlink:href="https://controlledserver.com/pic.svg" />
+</svg>
+```
+
+If they upload this file to the application, there will be a callback if the application is vulnerable.
+
+### Case 2: XXE
+
+Here, attackers create an SVG file with the content shown below, and if the server is vulnerable the content of the local file is visible either in the response or in the image itself.
+
+```xml
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/hostname" > ]>
+<svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <text font-size="16" x="0" y="16">&xxe;</text>
+</svg>
+```
+
+### Case 3: Cross-Site Scripting
+
+In this case, attackers need to create an SVG file with the below content. If the server is vulnerable, they will see a pop-up showing that it is.
+
+```html
+<svg xmlns="http://www.w3.org/2000/svg">
+  <script>alert('XSS');</script>
+  <rect x="0" height="100" width="100" style="fill: #cccccc"/>
+  <line x1="20" y1="80" x2="80" y2="80" style="stroke: #ff0000; stroke-width: 5;"/>
+</svg>
+```
+
+## How to prevent and mitigate file upload vulnerabilities
+
+  - Your application should always check the content of the uploaded file. If it detects anything malicious, the file must be discarded.
+  - Maintain a whitelist of allowed extensions. Make sure that a file does not contain more than one extension.
+  - Ensure that the filename does not contain any special characters like “;”, “:”, “\>”, “\<”, “/”, “\\”, “.”, “\*”, “%”, etc.
+  - Limit the size of the file name.
+  - Limit the size (minimum & maximum) of file uploads to prevent DoS attacks.
+  - Make sure to disable execute permissions on the directories where all the uploaded files are stored.
+  - Ensure the uploaded files do not replace local files on the server.
+
+  ---
 
 파일 업로드 기능이 있을때에는 다음과 같은 것들을 확인해보면 됩니다. 기본적으로 개발자 입장에서는 white-list or allowlist approach가 이상적입니다.
 
