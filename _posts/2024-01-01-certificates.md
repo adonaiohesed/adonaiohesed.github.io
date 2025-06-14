@@ -1,7 +1,7 @@
 ---
 title: What Cybersecurity Certifications Should I Get Next?
 tags: certificates
-key: page-certificates
+key: page-certificates_cybersecurity
 categories: [Carrer, Certificates]
 author: hyoeun
 math: true
