@@ -6,8 +6,6 @@ categories: [Carrer, Post-Interview]
 author: hyoeun
 ---
 
-Here's the English translation in markdown format:
-
 ## Car
 * When looking for short-term rentals, [TURO](https://turo.com/) is worth considering.
 
