@@ -1,5 +1,5 @@
 ---
-title: Bypass pinning by repackiging - Android
+title: Bypass pinning by repackaging - Android
 tags: Android
 key: page-pinning_bypass
 categories: [Cybersecurity, Mobile Security]
