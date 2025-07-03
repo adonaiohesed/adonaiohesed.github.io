@@ -64,6 +64,14 @@ SQL Injection attacks can be categorized into several types based on how data is
 
 This type of attack occurs when data is extracted via SQL Injection through the **same communication channel as the web application's normal HTTP response.** It is the most common and often easiest to detect.
 
+  * **UNION-based SQL Injection (UNION-based SQLi):**
+
+      * **Description:** An attacker uses the `UNION SELECT` statement to **combine the results of a malicious `SELECT` query with the results of the original SQL query**, making them appear together on the web page.
+      * **Mechanism:** `UNION SELECT` requires both `SELECT` statements to have the same number of columns and compatible data types. Attackers often guess the number of columns using clauses like `ORDER BY`, then match column counts with `UNION SELECT NULL, NULL, ...`. Subsequently, they inject desired data using `UNION SELECT version(), database(), user()`, etc., to be displayed on the web page.
+      * **Detection:** Observe if query results are appended to the normal content of the web page.
+      * **Impact:** Retrieval of arbitrary data from other tables, database user information, version information, etc.
+      * **Pentesting:** Use `ORDER BY` to guess column count, then attempt `UNION SELECT` to retrieve database version, user, database name, and other information.
+
   * **Error-based SQL Injection (Error-based SQLi):**
 
       * **Description:** An attacker intentionally causes an SQL syntax error, leading the database to return **detailed error messages** that include sensitive information like query results or database structure.
@@ -72,13 +80,6 @@ This type of attack occurs when data is extracted via SQL Injection through the 
       * **Impact:** Database information disclosure, arbitrary data extraction.
       * **Pentesting:** Inject common error-inducing SQL payloads and analyze the error messages included in the response.
 
-  * **UNION-based SQL Injection (UNION-based SQLi):**
-
-      * **Description:** An attacker uses the `UNION SELECT` statement to **combine the results of a malicious `SELECT` query with the results of the original SQL query**, making them appear together on the web page.
-      * **Mechanism:** `UNION SELECT` requires both `SELECT` statements to have the same number of columns and compatible data types. Attackers often guess the number of columns using clauses like `ORDER BY`, then match column counts with `UNION SELECT NULL, NULL, ...`. Subsequently, they inject desired data using `UNION SELECT version(), database(), user()`, etc., to be displayed on the web page.
-      * **Detection:** Observe if query results are appended to the normal content of the web page.
-      * **Impact:** Retrieval of arbitrary data from other tables, database user information, version information, etc.
-      * **Pentesting:** Use `ORDER BY` to guess column count, then attempt `UNION SELECT` to retrieve database version, user, database name, and other information.
 
 #### **2. Out-of-band SQL Injection**
 
@@ -358,6 +359,14 @@ SQL Injection 공격은 데이터를 추출하거나 시스템에 영향을 미�
 
 공격자가 SQL Injection을 통해 데이터를 추출할 때, **데이터가 웹 애플리케이션의 일반적인 통신 채널(즉, 동일한 HTTP 응답)을 통해 반환되는 방식**입니다. 가장 흔하고 탐지하기 쉬운 유형입니다.
 
+   * **유니온 기반 SQL Injection (UNION-based SQLi):**
+
+      * **설명:** 공격자가 `UNION SELECT` 문을 사용하여 원래의 SQL 쿼리 결과에 악의적인 `SELECT` 쿼리 결과를 **결합하여 웹 페이지에 함께 출력**되도록 하는 방식입니다.
+      * **작동 원리:** `UNION SELECT`는 두 `SELECT` 문의 컬럼 수와 데이터 타입이 일치해야 합니다. 공격자는 `ORDER BY` 절 등을 사용하여 원래 쿼리의 컬럼 수를 추측한 후, `UNION SELECT NULL, NULL, ...`과 같이 컬럼 수를 맞춥니다. 이후 원하는 데이터를 `UNION SELECT version(), database(), user()` 등과 같이 주입하여 웹 페이지에 출력되도록 합니다.
+      * **탐지:** 쿼리 결과가 웹 페이지의 정상적인 콘텐츠에 추가되어 출력되는지 관찰합니다.
+      * **영향:** 데이터베이스 내의 임의의 테이블로부터 데이터 추출, 데이터베이스 사용자 정보, 버전 정보 등 획득.
+      * **펜테스팅:** `' ORDER BY 1--` 또는 `'UNION SELECT NULL,NULL--` 절을 이용한 컬럼 수 추측, `'UNION SELECT NULL,NULL--`를 이용한 데이터베이스 버전, 사용자, 데이터베이스 이름 등 정보 획득 시도.
+
   * **에러 기반 SQL Injection (Error-based SQLi):**
 
       * **설명:** 공격자가 의도적으로 SQL 구문 오류를 발생시켜, 데이터베이스가 반환하는 **상세한 에러 메시지**에 쿼리 결과나 데이터베이스 구조 등 민감한 정보가 포함되도록 유도하는 방식입니다.
@@ -365,14 +374,6 @@ SQL Injection 공격은 데이터를 추출하거나 시스템에 영향을 미�
       * **탐지:** 웹 페이지에 상세한 데이터베이스 에러 메시지가 노출되는지 확인합니다.
       * **영향:** 데이터베이스 정보 노출, 임의의 데이터 추출.
       * **펜테스팅:** 에러를 유발하는 일반적인 SQL 페이로드를 주입하여 응답에 포함된 에러 메시지를 분석합니다.
-
-  * **유니온 기반 SQL Injection (UNION-based SQLi):**
-
-      * **설명:** 공격자가 `UNION SELECT` 문을 사용하여 원래의 SQL 쿼리 결과에 악의적인 `SELECT` 쿼리 결과를 **결합하여 웹 페이지에 함께 출력**되도록 하는 방식입니다.
-      * **작동 원리:** `UNION SELECT`는 두 `SELECT` 문의 컬럼 수와 데이터 타입이 일치해야 합니다. 공격자는 `ORDER BY` 절 등을 사용하여 원래 쿼리의 컬럼 수를 추측한 후, `UNION SELECT NULL, NULL, ...`과 같이 컬럼 수를 맞춥니다. 이후 원하는 데이터를 `UNION SELECT version(), database(), user()` 등과 같이 주입하여 웹 페이지에 출력되도록 합니다.
-      * **탐지:** 쿼리 결과가 웹 페이지의 정상적인 콘텐츠에 추가되어 출력되는지 관찰합니다.
-      * **영향:** 데이터베이스 내의 임의의 테이블로부터 데이터 추출, 데이터베이스 사용자 정보, 버전 정보 등 획득.
-      * **펜테스팅:** `' ORDER BY 1--` 또는 `'UNION SELECT NULL,NULL--` 절을 이용한 컬럼 수 추측, `'UNION SELECT NULL,NULL--`를 이용한 데이터베이스 버전, 사용자, 데이터베이스 이름 등 정보 획득 시도.
 
 #### **2. 아웃오브밴드 SQL Injection (Out-of-band SQL Injection)**
 
