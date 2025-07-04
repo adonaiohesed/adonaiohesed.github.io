@@ -1,5 +1,5 @@
 ---
-title: Cross-Site Request Forgery
+title: Cross-Site Request Forgery (CSRF)
 tags: CSRF Web-Hacking Cybersecurity
 key: page-csrf_attack
 categories: [Cybersecurity, Web Security]

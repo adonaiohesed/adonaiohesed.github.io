@@ -1,5 +1,5 @@
 ---
-title: Cross-Site Scripting Attack
+title: Cross-Site Scripting Attack (XXS)
 tags: XSS Web-Hacking Cybersecurity
 key: page-xss_attack
 categories: [Cybersecurity, Web Security]
