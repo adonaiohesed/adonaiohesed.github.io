@@ -2,7 +2,7 @@
 title: FTK Imager
 tags: FTK-Imager Cybersecurity Forensics Tools
 key: page-ftk_imager
-categories: [Tools, Forensics]
+categories: [Tools, Forensics Tools]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

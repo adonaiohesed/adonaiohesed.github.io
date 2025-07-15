@@ -2,7 +2,7 @@
 title: Registry Analysis
 tags: Registry-Analysis Cybersecurity Forensics Tools
 key: page-registry_analysis
-categories: [Tools, Forensics]
+categories: [Tools, Forensics Tools]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
