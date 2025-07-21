@@ -11,4 +11,5 @@ author: hyoeun
 * [Security Certification Roadmap](https://pauljerimy.com/security-certification-roadmap/)
 * [Google Security Blog](https://security.googleblog.com/)
 * [Google Project Zero](https://googleprojectzero.blogspot.com/)
-* [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/) 
+* [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/)
+* [HackTricks](https://book.hacktricks.wiki/en/index.html)
