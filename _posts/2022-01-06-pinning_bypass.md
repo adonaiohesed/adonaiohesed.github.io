@@ -179,7 +179,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
 모바일 앱 모의 해킹 시 가장 먼저 마주치는 장애물 중 하나는 바로 **SSL Pinning**입니다. SSL Pinning은 앱이 미리 지정된 서버의 인증서만 신뢰하도록 강제하여, 중간자 공격(MITM)을 통해 네트워크 트래픽을 가로채려는 시도를 무력화합니다. 하지만 보안 분석가와 모의 해커에게는 이 장벽을 우회해야만 앱의 통신 내용을 분석하고 취약점을 찾을 수 있습니다.
 
-이 글에서는 가장 전통적인 우회 기법인 \*\*패키지 리패키징(Package Repackaging)\*\*을 통한 수동 우회 방법과, `objection`이라는 강력한 도구를 사용하여 이 과정을 자동화하는 방법을 모두 다룹니다.
+이 글에서는 가장 전통적인 우회 기법인 **패키지 리패키징(Package Repackaging)**을 통한 수동 우회 방법과, `objection`이라는 강력한 도구를 사용하여 이 과정을 자동화하는 방법을 모두 다룹니다.
 
 ### 1\. 패키지 리패키징을 통한 우회 개요
 

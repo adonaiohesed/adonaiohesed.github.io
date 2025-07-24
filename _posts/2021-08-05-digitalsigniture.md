@@ -166,7 +166,7 @@ In conclusion, digital signatures, X.509 certificates, PKI, and management techn
 
 <img alt=" " src="/assets/images/x509_2.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;"> 
 
-* **주체 (Subject):** 인증서 소유자의 정보입니다. 이 정보는 \*\*DN(Distinguished Name)\*\*이라는 고유한 형식으로 표현되며, 주요 속성은 다음과 같습니다. 
+* **주체 (Subject):** 인증서 소유자의 정보입니다. 이 정보는 **DN(Distinguished Name)**이라는 고유한 형식으로 표현되며, 주요 속성은 다음과 같습니다. 
   * **CN (Common Name):** 가입자의 이름 (예: [www.example.com](https://www.example.com))
   * **OU (Organizational Unit Name):** 소속 부서명 (예: IT Department)
   * **O (Organization Name):** 소속 조직명 (예: Example Corp)
@@ -215,7 +215,7 @@ PKI의 핵심은 **인증서 체인(Certificate Chain)**과 **신뢰의 계층 �
 
 **Keystore란 무엇인가?**
 
-**Keystore**는 이름 그대로 키를 저장하는 창고입니다. 특히 \*\*개인키(Private Key)\*\*와 같이 민감한 정보를 담고 있는 암호화된 파일(또는 하드웨어 모듈)을 의미합니다. Keystore의 가장 중요한 특징은 저장된 키에 직접 접근하는 것을 막고, 오직 Keystore가 제공하는 정해진 연산(operation)을 통해서만 키를 사용할 수 있도록 하여 보안을 강화한다는 점입니다.
+**Keystore**는 이름 그대로 키를 저장하는 창고입니다. 특히 **개인키(Private Key)**와 같이 민감한 정보를 담고 있는 암호화된 파일(또는 하드웨어 모듈)을 의미합니다. Keystore의 가장 중요한 특징은 저장된 키에 직접 접근하는 것을 막고, 오직 Keystore가 제공하는 정해진 연산(operation)을 통해서만 키를 사용할 수 있도록 하여 보안을 강화한다는 점입니다.
 
 **인증서 파일 형식: PKCS\#12와 PEM**
 
