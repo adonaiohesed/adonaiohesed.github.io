@@ -373,7 +373,7 @@ ResponseCookie csrfCookie = ResponseCookie.from("csrf_token", "generated_csrf_to
 - 브라우저의 종료와 상관없이 Max-Age 또는 Expires에 지정된 유효시간만큼 사용가능한 쿠키를 Persistent Cookei로 부릅니다.
 
 ### HttpOnly
-- 설정 시, 쿠키가 클라이언트의 JavaScript에서 접근할 수 없습니다.
+- 설정 시, 해당 쿠키는 클라이언트의 JavaScript에서 접근될 수 없습니다.
 - **XSS 공격**으로부터 쿠키를 보호합니다.
 
 ### Secure
@@ -386,6 +386,7 @@ ResponseCookie csrfCookie = ResponseCookie.from("csrf_token", "generated_csrf_to
   - **Lax**: 안전한 크로스사이트 요청(GET 링크/폼) 허용.
   - **None**: 모든 크로스사이트 요청 허용 (단, `Secure` 필수).
 - CSRF를 막는데 매우 효과적인 옵션입니다.
+
 ---
 
 ## 쿠키 주요 보안 옵션 설정 예시
