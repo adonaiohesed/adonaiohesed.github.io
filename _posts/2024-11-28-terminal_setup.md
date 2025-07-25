@@ -38,8 +38,7 @@ ZSH_THEME="agnoster"  # One of the popular themes
 ### Installing iTerm2
 Instead of the default terminal app, using iTerm2 provides more customization options.
 
-1. Download from [iTerm2 official website](https://iterm2.com/)
-2. Install via Homebrew: `brew install --cask iterm2`
+1. Download from [iTerm2 official website](https://iterm2.com/) or Install via Homebrew: `brew install --cask iterm2`
 3. Install Fira code font: `brew install font-fira-code`
 4. Find desired color preset: Visit [https://iterm2colorschemes.com/](https://iterm2colorschemes.com/) and save the desired color scheme using Save Link As.
 ![Color Save](/assets/images/terminal_color_save.png)
