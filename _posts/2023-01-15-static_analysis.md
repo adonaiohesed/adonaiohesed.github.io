@@ -1,8 +1,8 @@
 ---
-title: Static Analysis
+title: Code Review
 tags: Static-Analysis Cybersecurity
 key: page-static_analysis
-categories: [Cybersecurity, Analysis]
+categories: [Cybersecurity, Web Security]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
