@@ -2,7 +2,7 @@
 title: 유용한 사이트 모음
 tags: Useful-Sites
 key: page-useful_sites
-categories: [General, Life Information]
+categories: [Personal, Life Information]
 author: hyoeun
 ---
 

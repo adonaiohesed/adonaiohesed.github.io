@@ -2,7 +2,7 @@
 title: Reflections on My Job Search Journey
 tags: Carrer
 key: page-job_hunting
-categories: [Carrer, Post-Interview]
+categories: [Professional Toolkit, Post-Interview]
 author: hyoeun
 ---
 

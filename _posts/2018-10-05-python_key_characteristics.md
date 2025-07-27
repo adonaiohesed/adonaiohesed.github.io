@@ -2,7 +2,7 @@
 title: 파이썬 특징적인 문법
 tags: Python
 key: page-python_syntax
-categories: [Software Engineering, Python]
+categories: [Development, Python]
 author: hyoeun
 ---
 

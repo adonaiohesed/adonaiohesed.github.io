@@ -2,7 +2,7 @@
 title: General Interview
 tags: General-Interview
 key: page-general-interview
-categories: [Carrer, Interview]
+categories: [Professional Toolkit, Interview]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

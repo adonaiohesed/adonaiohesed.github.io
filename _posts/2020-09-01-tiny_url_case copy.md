@@ -2,7 +2,7 @@
 title: Tiny URL case
 tags: TinyURL Web Case-Study
 key: page-tiny_url_case
-categories: [Software Engineering, Web]
+categories: [Development, Web]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

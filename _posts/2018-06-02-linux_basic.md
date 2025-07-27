@@ -2,7 +2,7 @@
 title: 리눅스 기본 지식
 tags: Linux
 key: page-linux_basics
-categories: [Software Engineering, Linux]
+categories: [Development, Linux]
 author: hyoeun
 ---
 ## 쉘 커맨드 창에 보이는 기호 분석

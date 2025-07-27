@@ -2,7 +2,7 @@
 title: Relocation Considerations
 tags: Relocation Interview
 key: page-relocation_considerations
-categories: [Carrer, Post-Interview]
+categories: [Professional Toolkit, Post-Interview]
 author: hyoeun
 ---
 

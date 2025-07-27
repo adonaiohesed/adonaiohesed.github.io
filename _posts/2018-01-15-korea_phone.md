@@ -2,11 +2,11 @@
 title: 한국에서 휴대폰 개통할때
 tags: Korea
 key: Korea-phone-problem-solve
-categories: [General, Life Information]
+categories: [Personal, Life Information]
 author: hyoeun
 ---
 
-# 미국에서 구입한 핸드폰의 한국 사용 가이드
+# 미국에서 구입한 핸드폰의 한국 사용 가이드 (2025년 3월까지 유효했음)
 
 ## 📱 휴대폰별 사용 경험
 

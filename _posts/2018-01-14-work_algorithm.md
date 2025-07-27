@@ -2,7 +2,7 @@
 title: 일하는 방식
 tags: Working-Style
 key: page-working_style
-categories: [General, Life Information]
+categories: [Personal, Life Information]
 author: hyoeun
 ---
 

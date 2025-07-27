@@ -2,7 +2,7 @@
 title: 파이썬 함수와 클래스
 tags: Python
 key: page-python_functions_classes
-categories: [Software Engineering, Python]
+categories: [Development, Python]
 author: hyoeun
 ---
 

@@ -2,7 +2,7 @@
 title: System Design Basic
 tags: System-Design Software-Engineering Interview
 key: page-system_design_basic
-categories: [Carrer, Interview Tips]
+categories: [Professional Toolkit, Interview Tips]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

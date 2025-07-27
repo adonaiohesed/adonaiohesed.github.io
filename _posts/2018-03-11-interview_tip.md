@@ -2,7 +2,7 @@
 title: Interview Tip
 tags: Interview Carrer
 key: page-interview_tip
-categories: [Carrer, Interview Tips]
+categories: [Professional Toolkit, Interview Tips]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

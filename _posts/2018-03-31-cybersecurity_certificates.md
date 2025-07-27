@@ -2,7 +2,7 @@
 title: What Cybersecurity Certifications Should I Get Next?
 tags: Cybersecurity-Certificates
 key: page-certificates_cybersecurity
-categories: [Carrer, Certificates]
+categories: [Professional Toolkit, Certificates]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

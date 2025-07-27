@@ -2,7 +2,7 @@
 title: Job Application Questions
 tags: Carrer
 key: page-job_application_questions
-categories: [Carrer, Interview Tips]
+categories: [Professional Toolkit, Interview Tips]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

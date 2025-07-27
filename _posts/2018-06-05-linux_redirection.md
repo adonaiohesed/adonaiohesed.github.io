@@ -2,7 +2,7 @@
 title: 리눅스 리다이렉션 파일디스크립터
 tags: Linux
 key: page-linux_redirection_file_descriptors
-categories: [Software Engineering, Linux]
+categories: [Development, Linux]
 author: hyoeun
 ---
 

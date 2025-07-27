@@ -2,7 +2,7 @@
 title: 파이썬 제어문
 tags: Python
 key: page-python_control_structures
-categories: [Software Engineering, Python]
+categories: [Development, Python]
 author: hyoeun
 ---
 

@@ -2,7 +2,7 @@
 title: 파이썬 알고리즘에 사용되는 함수
 tags: Python
 key: page-python_algorithms_functions
-categories: [Software Engineering, Python]
+categories: [Development, Python]
 author: hyoeun
 ---
 

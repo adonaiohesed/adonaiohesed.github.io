@@ -2,7 +2,7 @@
 title: Presentation Tip
 tags: Presentation
 key: page-presentation_tip
-categories: [General, Life Information]
+categories: [Personal, Life Information]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
