@@ -30,9 +30,11 @@ mathjax_autoNumber: true
 1. Is there anything about my background or resume that makes you question wheter I am a good fit for this role?
 
 ### Team technical interview
+1. From your perspective, what qualities or mindset are most important for someone to thrive in this position?
 1. What are the performance expectations of this position over the first year?
 1. What's your favorite part about working here?
 1. What are the skills and experiences you're looking for in an ideal candidate?
+1. Before we wrap up, is there anything I haven’t covered or anything you'd recommend I elaborate on to better demonstrate my fit for the role?
 
 ### On site tinerview
 1. What do the day-to-day responsibilities of the role look like?

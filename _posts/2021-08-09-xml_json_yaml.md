@@ -2,7 +2,7 @@
 title: XML JSON YAML
 tags: XML JSON YAML Data-Formats
 key: page-xml_json_yaml
-categories: [Software Engineering, Data Formats]
+categories: [Software Engineering, Web]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

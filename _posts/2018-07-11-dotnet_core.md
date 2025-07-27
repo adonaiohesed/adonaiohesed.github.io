@@ -2,7 +2,7 @@
 title: c# .net core 설치 및 실행
 tags: C# .NET-Core
 key: page-csharp_dotnetcore_installation_usage
-categories: [Software Engineering, .NET]
+categories: [Tools, .NET]
 author: hyoeun
 ---
 
