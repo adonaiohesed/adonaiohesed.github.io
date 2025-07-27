@@ -131,7 +131,7 @@ ZSH_THEME="agnoster"  # 인기 있는 테마 중 하나
 ![Color Save](/assets/images/terminal_color_save.png)
 5. iTerm2를 실행하여 설정창에 들어갑니다. 이후 Color 탭에서 저장한 Dracula+를 선택합니다.
 ![Color Setting](/assets/images/terminal_color.png)
-6. Text 탭에서는 Fira Code를 설정합니다.
+6. Text 탭에서는 Fira Code를 설정합니다. 그리고 Normalization을 HFS+로 바꿉니다.
 ![Text Setting](/assets/images/terminal_text.png)
 7. Session 탭에서 Status bar enabled를 체크하고 Configure Status Bar에서 원하는 셋팅들을 드래그 앤 드랍합니다. 위치는 Appearance
 ![Session Setting](/assets/images/terminal_session.png)
