@@ -1,8 +1,8 @@
 ---
 title: Interview Tip
-tags: Interview Carrer
+tags: Interview
 key: page-interview_tip
-categories: [Professional Toolkit, Interview Tips]
+categories: [Professional Toolkit, Interview]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
