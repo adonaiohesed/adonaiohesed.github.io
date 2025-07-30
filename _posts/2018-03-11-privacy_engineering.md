@@ -1,8 +1,8 @@
 ---
-title: Privacy engineering
-tags: Privacy Engineering Cybersecurity Interview
+title: Privacy Engineering Position Interview
+tags: Interview
 key: page-privacy_engineering
-categories: [Professional Toolkit, Interview Tips]
+categories: [Professional Toolkit, Interview]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

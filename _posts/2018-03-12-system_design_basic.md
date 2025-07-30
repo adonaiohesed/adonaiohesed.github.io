@@ -1,8 +1,8 @@
 ---
-title: System Design Basic
-tags: System-Design Software-Engineering Interview
+title: System Design Interview
+tags: System-Design Interview
 key: page-system_design_basic
-categories: [Professional Toolkit, Interview Tips]
+categories: [Professional Toolkit, Interview]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
