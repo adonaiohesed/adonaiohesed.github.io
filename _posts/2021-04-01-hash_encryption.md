@@ -8,8 +8,6 @@ math: true
 mathjax_autoNumber: true
 ---
 
------
-
 ## Hash and Encryption: Key Concepts and Differences
 
 In cybersecurity, **hashing** and **encryption** are essential techniques for data protection. While often confused, they have fundamental differences in their purpose and operation.
