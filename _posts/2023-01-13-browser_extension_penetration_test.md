@@ -109,7 +109,7 @@ The powerful permissions of browser extensions make them attractive targets for 
 브라우저 확장 프로그램은 기본적으로 **JavaScript, HTML, CSS**로 구성된 작은 웹 애플리케이션입니다.
 
   * **핵심 파일: `manifest.json`**
-      * 확장 프로그램의 \*\*청사진(blueprint)\*\*이자 코어 설정 파일입니다.
+      * 확장 프로그램의 **청사진(blueprint)**이자 코어 설정 파일입니다.
       * 확장 프로그램의 이름, 버전, 설명, 아이콘, 그리고 가장 중요한 **필요한 권한(Permissions)**, 배경 스크립트(Background Scripts), 콘텐츠 스크립트(Content Scripts), 사용자 인터페이스(UI) 파일(팝업, 옵션 페이지) 등의 모든 구성 요소를 정의합니다.
   * **배경 스크립트 (Background Scripts):**
       * 확장 프로그램의 핵심 로직을 담당하는 JavaScript 파일입니다.
@@ -136,7 +136,7 @@ The powerful permissions of browser extensions make them attractive targets for 
 확장 프로그램의 권한은 해당 확장 프로그램이 브라우저와 시스템에 대해 어떤 작업을 수행할 수 있는지를 정의하는 가장 중요한 보안 요소입니다. 사용자는 확장 프로그램 설치 시 요청하는 권한 목록을 명확히 확인하고 동의해야 합니다.
 
   * **`host_permissions`:**
-      * 확장 프로그램이 \*\*특정 웹사이트(Host)\*\*에 대해 광범위한 권한을 가질 수 있게 합니다.
+      * 확장 프로그램이 **특정 웹사이트(Host)**에 대해 광범위한 권한을 가질 수 있게 합니다.
       * 이는 `cookies` (특정 웹사이트의 쿠키를 읽거나 수정), `webRequest` (네트워크 요청을 가로채거나 수정, 차단), `tabs` (탭 정보에 접근하거나 생성/업데이트)와 같은 강력한 API와 상호작용할 수 있도록 해줍니다.
       * **예시:** `["https://*.example.com/*"]`는 `example.com`의 모든 서브도메인에 접근 권한을 부여합니다.
       * `"<all_urls>"`: 모든 웹사이트에 대한 `host_permission`을 부여하는 가장 강력하고 위험한 권한입니다.
