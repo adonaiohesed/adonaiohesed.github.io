@@ -8,7 +8,146 @@ math: true
 mathjax_autoNumber: true
 ---
 
+## Installing Frida on macOS
 
+When using Frida, **it's highly recommended to work within a virtual environment**. This allows you to efficiently manage the necessary libraries without conflicting with your system-wide Python environment.
+
+### 1\. Configure Conda Initialization (Zsh Shell)
+
+To use `conda` in the zsh shell, you need to add the following content to your `~/.zshrc` file. This configuration helps the `conda` command function correctly. Remember to replace `<YOUR_CONDA_PATH>` with the actual path where Anaconda or Miniconda is installed. It will typically look something like `/Users/YOUR_USERNAME/anaconda3`.
+
+```bash
+# Add to your ~/.zshrc file:
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/YOUR_USERNAME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/YOUR_USERNAME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/YOUR_USERNAME/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/YOUR_USERNAME/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+```
+
+### 2\. Apply the Configuration
+
+After modifying the `~/.zshrc` file, either restart your terminal or run the following command to apply the changes.
+
+```bash
+source ~/.zshrc
+```
+
+### 3\. Create and Activate the Frida Virtual Environment
+
+Now you can use the `conda` command to create and activate a new virtual environment for Frida. Let's create an environment named `frida_env` using `python=3.12`.
+
+```bash
+conda create -n frida_env python=3.12
+conda activate frida_env
+```
+
+### 4\. Install Frida
+
+Install the `frida` and `frida-tools` packages. It's crucial that the version you install matches the version of the Frida server running on your mobile device.
+
+```bash
+# The version must match the Frida server running on the mobile device.
+pip install frida==17.2.6
+pip install frida-tools==12.2.4
+```
+
+### 5\. Deactivate the Virtual Environment
+
+When you're finished with your Frida tasks or want to switch to another environment, you can exit the currently active virtual environment with the following command.
+
+```bash
+conda deactivate
+```
+
+When installing Frida Server, it is critical to check your phone's CPU architecture (e.g., ARM, ARM64, x86). The Frida Server binary must match the device's architecture to function correctly.
+
+-----
+
+## Installing Frida Server on a Mobile Device (for Rooted Devices)
+
+For mobile application penetration testing, **running Frida Server on a rooted device is essential**, especially when analyzing commercial apps that don't allow debugging or when probing system-level vulnerabilities. This mirrors the approach real attackers would use and provides the deepest possible insight into an app's security posture.
+
+### 1\. Check Mobile Architecture via ADB Shell
+
+First, you must accurately identify your mobile device's CPU architecture to download the correct Frida Server binary.
+
+  * **Ensure ADB is installed on your computer.** If not, you'll need to download and install the Android SDK Platform-Tools.
+
+  * **Enable USB debugging on your phone.** You can typically do this by going to `Settings > About phone > Build number` and tapping it multiple times to enable Developer options. Then, turn on USB debugging within the Developer options menu.
+
+  * **Connect your phone to your computer using a USB cable.**
+
+  * **Open a terminal (or command prompt) and enter one of the following commands:**
+
+    ```bash
+    adb shell getprop ro.product.cpu.abi
+    ```
+
+    or
+
+    ```bash
+    adb shell getprop ro.product.cpu.abilist
+    ```
+
+    or
+
+    ```bash
+    adb shell uname -m
+    ```
+
+  * **Interpreting the results:**
+
+      * `arm64-v8a` or `aarch64` indicates an **ARM64** architecture (64-bit ARM).
+      * `armeabi-v7a` or `armv7l` indicates an **ARM** architecture (32-bit ARM).
+      * `x86_64` indicates an **x86\_64** architecture (64-bit x86).
+      * `x86` or `i686` indicates an **x86** architecture (32-bit x86).
+
+### 2\. Download the Frida Server File
+
+Once you've identified the CPU architecture, it's time to download the Frida Server binary.
+
+  * Go to the **[Frida GitHub Releases page](https://github.com/frida/frida/releases)**.
+  * Download the `frida-server` binary that matches your architecture. For example, if your device is ARM64, you should download the `frida-server-*-android-arm64.xz` file.
+  * **It's crucial to ensure the major version number of your locally installed Frida matches the server version.** Mismatched versions can cause issues.
+
+### 3\. Transfer and Run the Frida Server File on Your Mobile Device
+
+Transfer the downloaded Frida Server file to the `/data/local/tmp` directory on your mobile device and **run it with root privileges**.
+
+1.  **Extract the downloaded `frida-server-*.xz` file.** You can decompress `.xz` files using the `tar -xvf` command or a tool like 7-Zip. After extraction, you will have an executable file named `frida-server`.
+
+    ```bash
+    # In a terminal, navigate to the directory containing the downloaded file
+    tar -xvf frida-server-*-android-arm64.xz # Example: frida-server-17.2.6-android-arm64.xz
+    ```
+
+2.  **Push the extracted `frida-server` file to your mobile device.** The `/data/local/tmp` directory is a temporary directory where even normal users have write permissions, so you can push the file without `su`.
+
+    ```bash
+    adb push frida-server /data/local/tmp/
+    ```
+
+3.  **Grant execute permissions to the file.** You need to set the permissions so the `frida-server` file pushed to the device can be executed.
+
+    ```bash
+    adb shell "chmod +x /data/local/tmp/frida-server"
+    ```
+
+4.  **Run Frida Server with root privileges.** Use `su -c` to execute Frida Server as the root user.
+
+    ```bash
+    adb shell "su -c 'cd /data/local/tmp && ./frida-server &'"
+    ```
 
 ---
 
