@@ -372,7 +372,7 @@ SQL Injection 공격은 데이터를 추출하거나 시스템에 영향을 미�
       * **작동 원리:** `UNION SELECT`는 두 `SELECT` 문의 컬럼 수와 데이터 타입이 일치해야 합니다. 공격자는 `ORDER BY` 절 등을 사용하여 원래 쿼리의 컬럼 수를 추측한 후, `UNION SELECT NULL, NULL, ...`과 같이 컬럼 수를 맞춥니다. 이후 원하는 데이터를 `UNION SELECT version(), database(), user()` 등과 같이 주입하여 웹 페이지에 출력되도록 합니다.
       * **탐지:** 쿼리 결과가 웹 페이지의 정상적인 콘텐츠에 추가되어 출력되는지 관찰합니다.
       * **영향:** 데이터베이스 내의 임의의 테이블로부터 데이터 추출, 데이터베이스 사용자 정보, 버전 정보 등 획득.
-      * **펜테스팅:** `ORDER BY` 절을 이용한 컬럼 수 추측, `UNION SELECT`를 이용한 데이터베이스 버전, 사용자, 데이터베이스 이름 등 정보 획득 시도.
+      * **펜테스팅:** `' ORDER BY 1--` 또는 `'UNION SELECT NULL,NULL--` 절을 이용한 컬럼 수 추측, `'UNION SELECT NULL,NULL--`를 이용한 데이터베이스 버전, 사용자, 데이터베이스 이름 등 정보 획득 시도.
 
 #### **2. 아웃오브밴드 SQL Injection (Out-of-band SQL Injection)**
 
