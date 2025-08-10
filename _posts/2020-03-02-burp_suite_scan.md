@@ -1,7 +1,7 @@
 ---
-title: Brup Suite
-tags: Burp-Suite Tools Cybersecurity
-key: page-burp_suite
+title: Brup Suite - Scan
+tags: Burp-Suite
+key: page-burp_suite_scan
 categories: [Tools, Penetration Testing]
 author: hyoeun
 math: true
@@ -233,5 +233,5 @@ Burp Proxy를 켜고 웹 사이트를 탐색하다 보면, 진단 대상과 전�
 #### **Scope 설정 방법**
 
 1.  **분석 대상 추가 (Include in scope)**: `Target > Site map` 탭이나 `Proxy > HTTP history` 탭에서 분석하려는 도메인(예: `https://my-target-app.com`)을 마우스 오른쪽 버튼으로 클릭한 뒤, **`Add to scope`**를 선택합니다. 이렇게 추가된 도메인은 앞으로 Burp의 모든 기능에서 '분석 대상'으로 인지됩니다.
-2.  **분석 제외 대상 추가 (Exclude from scope)**: 반대로 분석할 필요가 없는 제3자 도메인(예: `google-analytics.com`)이 있다면, `Target > Scope` 탭의 **`Exclude from scope`** 목록에 직접 추가할 수 있습니다. 와일드카드(`*`)를 사용해 `*.google.com` 과 같이 특정 패턴을 가진 모든 하위 도메인을 제외하는 것도 가능합니다.
+2.  **분석 제외 대상 추가 (Exclude from scope)**: 반대로 분석할 필요가 없는 제3자 도메인(예: `google-analytics.com`)이 있다면, `Target > Scope` 탭의 **`Exclude from scope`** 목록에 직접 추가할 수 있습니다. 와일드카드(`*`)를 사용해 `.*.google.com` 과 같이 특정 패턴을 가진 모든 하위 도메인을 제외하는 것도 가능합니다.
 3.  **필터링 적용**: Scope 설정의 진정한 힘은 필터에서 나옵니다. `Proxy > HTTP history` 탭 상단의 필터 바(Filter bar)에서 **`Show only in-scope items`** 체크박스를 활성화하세요. 이 순간, 설정된 Scope에 포함된 트래픽만 화면에 남아 분석에만 온전히 집중할 수 있는 환경이 만들어집니다.
