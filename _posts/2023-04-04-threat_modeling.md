@@ -126,30 +126,44 @@ It is critical to use one consistent threat modeling methodology (format):
 
   * This fosters team learning and internalizes security capabilities
 
-## Four Common Methodologies
+## Three Commonly Mentioned Methodologies
+### STRIDE (Based on type of threat)
+STRIDE focuses on systematically identifying and categorizing types of threats. It is typically used to analyze potential threats for each component (e.g., processes, data stores) based on a system's **Data Flow Diagram (DFD)**.
 
-### STRIDE (Based on Type of Threat)
+* **Spoofing** - The threat of gaining system access by using another user's credentials.
+    * **Countermeasure**: **Authentication** (e.g., digital signatures, proper authentication like passwords or iris scans).
+* **Tampering** - Maliciously modifying information on a system.
+    * **Countermeasure**: **Integrity** (e.g., hashes, digital signatures).
+* **Repudiation** - The threat of a user denying they performed a malicious action.
+    * **Countermeasure**: **Non-repudiation** (e.g., digital signatures, audit logs).
+* **Information Disclosure** - The threat of leaking sensitive data.
+    * **Countermeasure**: **Confidentiality** (e.g., encryption).
+* **Denial of Service** - The threat of making a system unavailable for normal use.
+    * **Countermeasure**: **Availability** (e.g., filtering, attack monitoring).
+* **Elevation of Privilege** - The threat of a user gaining higher privileges than they are authorized for.
+    * **Countermeasure**: **Authorization**.
 
-* Conduct threat modeling based on the following six threats:
+### DREAD (Based on level of dangerous threat)
+Like STRIDE, DREAD is a methodology developed by Microsoft. It is used to quantitatively assess the risk of identified threats and to prioritize them. While STRIDE focuses on 'identifying' threats, DREAD focuses on determining how 'dangerous' a threat is.
 
-  1. **Spoofing**: Gaining unauthorized access using another user's identity – Countermeasure: Authentication, digital signatures
-  2. **Tampering**: Malicious modification of information – Countermeasure: Integrity measures (hashes, digital signatures)
-  3. **Repudiation**: Denying the attack actions – Countermeasure: Non-repudiation, digital signatures, audit logs
-  4. **Information Disclosure**: Leakage of sensitive data – Countermeasure: Confidentiality, encryption
-  5. **Denial of Service**: Rendering the system unusable – Countermeasure: Availability, filtering, monitoring
-  6. **Elevation of Privilege**: Unauthorized privilege escalation – Countermeasure: Authorization
+* **Damage Potential** - The scale of damage if an attack succeeds.
+* **Reproducibility** - How easily the attack can be reproduced.
+* **Exploitability cost** - The effort or cost required to carry out the attack.
+* **Affected users** - The number of users affected by the attack.
+* **Discoverability** - How easy it is to discover the vulnerability.
+* $$\text{Risk value} = (\text{Damage} + \text{Affected users}) \times (\text{Reproducibility} + \text{Exploitability} + \text{Discoverability})$$
 
-### DREAD (Based on Level of Threat Danger)
 
-* Scores threats as High, Medium, or Low for each criterion, total score represents risk level
-* Should be conducted by experienced security professionals, credibility based on expertise and reputable sources (e.g., FireEye reports)
+### PASTA (Process for Attack Simulation and Threat Analysis)
+PASTA is a 7-stage, risk-centric methodology that analyzes business risks from an **attacker's perspective**.
 
-  1. **Damage Potential**: Impact on system
-  2. **Reproducibility**: Ease of repeated exploitation
-  3. **Exploitability Cost**: Effort or cost needed to execute attack (lower cost implies higher risk)
-  4. **Affected Users**: Number of users impacted
-  5. **Discoverability**: Ease of discovering the vulnerability
-* $$ Risk value = {(Damage + Affected users) * (Reproducibility + Exploitability + discoverability)} $$
+* **Stage 1: Define Business and Security Objectives**: Define business objectives and their corresponding security requirements.
+* **Stage 2: Define the Technical Scope**: Define the architecture and data flows of the system to be analyzed.
+* **Stage 3: Application Analysis**: Decompose the application's components and identify potential vulnerabilities.
+* **Stage 4: Threat Analysis**: Analyze potential threats to the system based on threat intelligence.
+* **Stage 5: Vulnerability Analysis**: Map and analyze the identified threats against the system's vulnerabilities.
+* **Stage 6: Attack Modeling**: Simulate scenarios (attack trees) of how an attacker would exploit vulnerabilities.
+* **Stage 7: Risk and Impact Analysis**: Evaluate risks based on the likelihood of a successful attack and its business impact, and develop mitigation strategies.
 
 ---
 
@@ -258,21 +272,43 @@ Threat Modeling은 혼자 하는 작업이 아닙니다. 다양한 관점을 가
 - **앞으로 배포할 기능부터 Threat Modeling 적용**
   → 팀이 학습하며 보안 역량 내재화
 
-## 주로 언급되는 4가지 방법론
-### STRIDE(Based on type of threat)
-* 다음 6가지 위협을 기반으로 threat modeling을 진행한다.
-1. Spoofing - 다른 이용자의 권한을 이용해서 시스템의 접근 권한을 획득하는 위협. - Authentication로 대처, 전자 서명, 적절한 인증(패스워드, 홍채인식 등)
-1. Tampering - 시스템에 있는 정보를 악의적으로 수정한다. - Integrity로 대처, 해쉬, 전자 서명
-1. Repudiation - 공격을 했으나 그 공격을 부인하는 위협. - Non-repudiation으로 대처, 전자 서명, 감시 로그
-1. Information Disclosure - 민감한 데이터를 유출시키는 위협 - Confidentiality로 대처, 암호화
-1. Denial of Service - 시스템을 정상적으로 사용할 수 없도록 만드는 위협 - Availability로 대처, 필터링, 공격 모니터링, 
-1. Elevation of Privilege - 권한이 없는 유저의 권한을 올려버리는 위협 - Authorization으로 대처
+## 주로 언급되는 3가지 방법론
+### STRIDE (Based on type of threat)
+STRIDE는 위협의 유형을 체계적으로 식별하고 분류하는 데 중점을 둡니다. 보통 시스템의 데이터 흐름 다이어그램(DFD)을 기반으로 각 구성 요소(프로세스, 데이터 저장소 등)에 어떤 위협이 존재할 수 있는지 분석하는 데 사용됩니다.
+
+* **Spoofing** - 다른 이용자의 권한을 이용해서 시스템의 접근 권한을 획득하는 위협.
+  * **대응 (Countermeasure)**: 인증(Authentication) (예: 전자 서명, 패스워드, 홍채인식 등)
+
+* **Tampering** - 시스템에 있는 정보를 악의적으로 수정하는 위협.
+  * **대응 (Countermeasure)**: 무결성(Integrity) (예: 해시, 전자 서명)
+
+* **Repudiation** - 공격을 했으나 그 공격을 부인하는 위협.
+  * **대응 (Countermeasure)**: 부인 방지(Non-repudiation) (예: 전자 서명, 감시 로그)
+
+* **Information Disclosure** - 민감한 데이터를 유출시키는 위협.
+  * **대응 (Countermeasure)**: 기밀성(Confidentiality) (예: 암호화)
+
+* **Denial of Service** - 시스템을 정상적으로 사용할 수 없도록 만드는 위협.
+  * **대응 (Countermeasure)**: 가용성(Availability) (예: 필터링, 공격 모니터링)
+
+* **Elevation of Privilege** - 권한이 없는 유저의 권한을 올려버리는 위협.
+  * **대응 (Countermeasure)**: 인가/권한 부여(Authorization)
 
 ### DREAD(Based on level of dangerous threat)
-* 각 항목들에 따라서 High, Medium, Low로 점수를 매겨 총점으로 공격의 위험도를 나타낸다. 이런 방법은 경력이 많은 보안 담당자가 해야 하고 이것의 신빙서은 그 작성자의 권위와 실력에서 나온다. 또는 fire eye와 같은 리포트에서 나온 점수를 기반으로 이러한 점수를 매길 수도 있다.
-1. Damage Potential - 피해가 어느정도 시스템에 영향을 줄지
-1. Reproducibility - 피해가 얼마나 쉽게 반복적으로 일어 날 수 있는지
-1. Exploitability cost - 공격을 하기 위해 얼마나 비용이 드는지(비용이 적게 들수록 위험한거다)
-1. Affected users - 몇명의 사용자가 피해를 입을지
-1. Discoverability - 얼마나 찾기 쉬운 공격일지
+DREAD는 STRIDE와 마찬가지로 마이크로소프트에서 개발된 방법론으로, 식별된 위협의 위험도를 정량적으로 평가하고 우선순위를 정하는 데 사용됩니다. STRIDE가 위협을 '식별'하는 데 중점을 둔다면, DREAD는 그 위협이 얼마나 '위험한지'를 판단하는 데 초점을 맞춥니다.
+* Damage Potential - 공격 성공 시 피해 규모.
+* Reproducibility - 공격의 재현이 얼마나 쉬운지.
+* Exploitability cost - 공격에 필요한 노력이나 비용.
+* Affected users - 공격에 영향을 받는 사용자의 수.
+* Discoverability - 취약점을 발견하기 얼마나 쉬운지.
 * $$ Risk value = {(Damage + Affected users) * (Reproducibility + Exploitability + discoverability)} $$
+
+### PASTA (Process for Attack Simulation and Threat Analysis)
+공격자 관점에서 비즈니스 위험을 분석하는 7단계의 리스크 중심 방법론입니다.
+* **1단계: 비즈니스 및 보안 목표 정의**: 비즈니스 목표와 그에 따른 보안 요구사항을 정의합니다.
+* **2단계: 기술 범위 정의**: 분석할 시스템의 아키텍처와 데이터 흐름을 정의합니다.
+* **3단계: 애플리케이션 분석**: 애플리케이션의 구성요소를 분해하고 잠재적 취약점을 식별합니다.
+* **4단계: 위협 분석**: 위협 인텔리전스를 기반으로 시스템에 대한 잠재적 위협을 분석합니다.
+* **5단계: 취약점 분석**: 식별된 위협과 시스템의 취약점을 매핑하고 분석합니다.
+* **6단계: 공격 모델링**: 공격자가 취약점을 이용하는 시나리오(공격 트리)를 시뮬레이션합니다.
+* **7단계: 리스크 및 영향 분석**: 공격 성공 가능성과 비즈니스 영향을 기반으로 리스크를 평가하고 완화 전략을 수립합니다.
