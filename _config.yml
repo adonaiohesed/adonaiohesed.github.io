@@ -62,7 +62,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: G-2L0TS7WWZD # fill in your Google Analytics ID
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -123,9 +123,9 @@ comments:
   # Giscus options › https://giscus.app
   giscus:
     repo: adonaiohesed/adonaiohesed.github.io # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo_id: R_kgDONMfigQ
+    category: General
+    category_id: DIC_kwDONMfigc4CuHo2
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
