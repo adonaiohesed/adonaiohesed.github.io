@@ -66,7 +66,7 @@ MACs are not encrypted, so there's no concept of decryption. Integrity and authe
 
 ### HMAC: Hash-based Message Authentication Code
 
-**HMAC (Hash-based Message Authentication Code)** is a type of MAC that generates a message authentication code based on cryptographic hash functions like **MD5, SHA-1, and SHA-256**. HMAC can be thought of as "keyed-hashing" since it requires a key for message authentication.
+**HMAC (Hash-based Message Authentication Code)** is a type of MAC that generates a message authentication code based on cryptographic hash functions like **MD5, SHA-1, and SHA-256**. HMAC can be thought of as "keyed-hashing" since it requires a key for message authentication. HMAC uses a symmetric key, while a Digital Signature uses an asymmetric key.
 
 Here's how HMAC works:
 
@@ -246,7 +246,7 @@ MAC은 암호화된 형태가 아니기 때문에 복호화라는 개념이 없�
 
 ### HMAC: 해시 기반 메시지 인증 코드
 
-**HMAC(Hash-based Message Authentication Code)**은 MAC의 한 종류로, **MD5, SHA-1, SHA-256**과 같은 암호학적 해시 함수를 기반으로 메시지 인증 코드를 생성하는 방식입니다. HMAC은 메시지 인증을 위해 키가 필요한 "키드 해싱(keyed-hashing)"이라고도 할 수 있습니다.
+**HMAC(Hash-based Message Authentication Code)**은 MAC의 한 종류로, **MD5, SHA-1, SHA-256**과 같은 암호학적 해시 함수를 기반으로 메시지 인증 코드를 생성하는 방식입니다. HMAC은 메시지 인증을 위해 키가 필요한 "키드 해싱(keyed-hashing)"이라고도 할 수 있습니다. HMAC은 대칭키를 사용하고 Digital Signiture는 비대칭키 방식을 사용합니다.
 
 HMAC의 작동 방식은 다음과 같습니다.
 
