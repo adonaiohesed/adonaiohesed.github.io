@@ -1,7 +1,7 @@
 ---
-title: Base64, Hex encoding and ecoding
-tags: Base64 Hex Encoding Decoding
-key: page-base64_hex_encoding_decoding
+title: Encoding And Decoding
+tags: Encoding Decoding
+key: page-encoding_decoding
 categories: [Cybersecurity, Cryptography]
 author: hyoeun
 math: true
