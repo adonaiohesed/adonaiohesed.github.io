@@ -14,7 +14,7 @@ In the field of web application security diagnostics, **Burp Suite** has establi
 
 In this article, we'll take a deep dive into how these two scanning methods work and what makes them different. Furthermore, we'll cover the clear limitations of automated tools and explore the approaches that professional penetration testers use to overcome them.
 
-***
+
 
 ## **1. Active Scan: The Aggressive Attacker of Web Vulnerabilities**
 
@@ -49,7 +49,7 @@ Active Scan effectively detects most of the technical vulnerabilities included i
 * **Utilize Resource Pools:** When running multiple scans simultaneously, you can set up resource pools to manage the load between scan jobs and optimize testing time.
 * **Verify False Positives:** The results of automated scanners are not 100% accurate. It's essential to **manually reproduce and verify** all detected vulnerabilities.
 
-***
+
 
 ## **2. Passive Scan: The Silent Detective of Traffic**
 
@@ -75,7 +75,7 @@ Passive Scan automatically works in the background from the moment you enable th
 | **Missing Security Headers** | Headers that enhance browser-side security, such as `X-Content-Type-Options` and `X-Frame-Options`, are missing. |
 | **Potential Cross-Site Scripting** | User input is directly reflected in the response, making it potentially exploitable for XSS attacks. |
 
-***
+
 
 ## **3. The Synergy of Active and Passive Scans**
 
@@ -86,7 +86,7 @@ Active Scan and Passive Scan are not mutually exclusive; they have a **complemen
 
 This step-by-step approach is the optimal strategy for securing both the depth and breadth of a diagnosis while using time and resources efficiently.
 
-***
+
 
 ## **4. The Limits of Burp Suite and the Role of the Penetration Tester**
 
@@ -107,7 +107,7 @@ A true professional doesn't blindly trust the results of a tool; they use the to
 2.  **Active Use of Extensions:** Burp's BApp Store has numerous extensions that complement its basic functions. You can add depth to your analysis by using extensions specialized for specific technology stacks or vulnerability types, such as **GraphQL Scanner**, **Logger++**, and **Autorize**.
 3.  **Integration with External Tools:** Burp can't do everything. You can expand your attack surface and increase the accuracy of your analysis by integrating it with external specialized tools, such as `subfinder` for subdomain discovery, `nuclei` for large-scale pattern-based scanning, and `Postman` for API testing.
 
-***
+
 
 ### **Bonus Tip: Eliminating Noise with the Scope Feature**
 
@@ -129,7 +129,7 @@ This is where the **Scope** feature comes in handy to dramatically increase the 
 
 이 글에서는 Burp Suite의 두 가지 스캔 방식이 어떻게 작동하며 어떤 차이가 있는지 심층적으로 알아보고, 나아가 자동화된 도구의 명백한 한계와 이를 극복하기 위한 전문적인 펜테스터의 접근 방식까지 함께 다루어 보겠습니다.
 
-***
+
 
 ### **1. Active Scan: 웹 취약점을 향한 적극적인 공격수**
 
@@ -164,7 +164,7 @@ Active Scan은 OWASP Top 10에 포함된 대부분의 기술적 취약점을 효
 * **리소스 풀(Resource Pool) 활용**: 여러 개의 스캔을 동시에 실행할 때 리소스 풀을 설정하여 스캔 작업 간의 부하를 조절하고 테스트 시간을 최적화할 수 있습니다.
 * **오탐(False Positive) 검증**: 자동화된 스캐너의 결과는 100% 정확하지 않습니다. 탐지된 모든 취약점은 반드시 **수동으로 재현하고 검증하는 과정**이 필수적입니다.
 
-***
+
 
 ### **2. Passive Scan: 트래픽을 관찰하는 조용한 탐정**
 
@@ -190,7 +190,7 @@ Passive Scan은 Burp Proxy를 활성화하는 순간부터 백그라운드에서
 | **보안 헤더 미설정** | `X-Content-Type-Options`, `X-Frame-Options` 등 브라우저 단의 보안을 강화하는 헤더가 누락되어 있습니다. |
 | **잠재적 Cross-Site Scripting** | 사용자 입력 값이 응답에 그대로 반영되어 XSS 공격에 악용될 가능성이 있습니다. |
 
-***
+
 
 ### **3. Active와 Passive Scan의 시너지**
 
@@ -201,7 +201,7 @@ Active Scan과 Passive Scan은 서로를 대체하는 관계가 아닌, **상호
 
 이러한 단계적 접근은 시간과 자원을 효율적으로 사용하면서도 진단의 깊이와 범위를 모두 확보하는 최적의 전략입니다.
 
-***
+
 
 ### **4. Burp Suite의 한계와 펜테스터의 역할**
 
@@ -222,7 +222,7 @@ Burp Suite는 의심할 여지 없이 강력한 도구이지만, 결코 만능�
 2.  **확장(Extensions)의 적극적 활용**: Burp의 BApp Store에는 기본 기능을 보완하는 수많은 확장 프로그램이 있습니다. **GraphQL Scanner**, **Logger++**, **Autorize** 등 특정 기술 스택이나 취약점 유형에 특화된 확장을 활용하여 분석의 깊이를 더합니다.
 3.  **외부 도구와의 연계**: Burp가 모든 것을 할 수는 없습니다. 서브도메인 검색을 위한 `subfinder`, 대규모 패턴 기반 스캐닝을 위한 `nuclei`, API 테스트를 위한 `Postman` 등 외부 전문 도구와 연계하여 공격 표면을 넓히고 분석의 정확도를 높입니다.
 
-***
+
 
 ### **Scope 기능으로 노이즈 제거하기**
 
