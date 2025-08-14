@@ -8,9 +8,6 @@ math: true
 mathjax_autoNumber: true
 ---
 
-
------
-
 ## The Anatomy of Mobile App and Penetration Testing
 ### **Common Types of Sensitive Information to Look For**
 
