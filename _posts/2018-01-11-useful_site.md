@@ -16,6 +16,7 @@ author: hyoeun
 * [CWE TOP25](https://cwe.mitre.org/top25/index.html)
 * [Salted Password Hashing](https://crackstation.net/hashing-security.htm)
 * [Hacking Tools](https://infosecmania.com/)
+* [Daniel Miessler's Blog](https://danielmiessler.com/blog)
 
 ## Software Engineer
 * [정규식이랑 데이터랑 매칭 되는지 확인 해주는 사이트](https://regex101.com/)
