@@ -1,8 +1,8 @@
 ---
 title: Nslookup & Dig
-tags: Nslookup Dig
+tags: Nslookup Dig Network
 key: page-nslookup_dig
-categories: [Tools, Networking]
+categories: [Tools, Reconnaissance]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

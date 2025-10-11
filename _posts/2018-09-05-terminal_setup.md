@@ -2,7 +2,7 @@
 title: Terminal Setting
 tags: Terminal
 key: page-terminal_setup
-categories: [Tools, MacOS]
+categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

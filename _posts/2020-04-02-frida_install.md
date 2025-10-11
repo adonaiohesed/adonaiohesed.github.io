@@ -2,7 +2,7 @@
 title: Frida Install And Trouble Shooting
 tags: Frida
 key: page-frida_install
-categories: [Tools, Penetration Testing]
+categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

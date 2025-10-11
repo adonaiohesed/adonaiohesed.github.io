@@ -2,7 +2,7 @@
 title: Brup Suite - Scan
 tags: Burp-Suite
 key: page-burp_suite_scan
-categories: [Tools, Penetration Testing]
+categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

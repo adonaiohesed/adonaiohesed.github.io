@@ -2,7 +2,7 @@
 title: Metasploit
 tags: Metasploit Cybersecurity Penetration-Testing Tools
 key: page-metasploit
-categories: [Tools, Penetration Testing]
+categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

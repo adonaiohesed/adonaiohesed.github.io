@@ -2,7 +2,7 @@
 title: Linux Cheatshhe
 tags: Linux
 key: page-linux_cheatsheet
-categories: [Tools, Penetration Testing]
+categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

@@ -2,7 +2,7 @@
 title: Vim Customizing
 tags: Vim
 key: page-vim_customizing
-categories: [Tools, MacOS]
+categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
