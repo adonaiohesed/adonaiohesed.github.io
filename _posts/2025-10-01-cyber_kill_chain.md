@@ -8,6 +8,105 @@ math: true
 mathjax_autoNumber: true
 ---
 
+## All About the Cyber Kill Chain and Attack Infrastructure
+
+### Overview
+The Cyber Kill Chain is an information security model developed by Lockheed Martin to defend its own internal network. The framework's purpose is to systematically analyze the series of steps an adversary performs to achieve their objective, thereby identifying opportunities to detect and block the attack at each stage. The Kill Chain serves as a highly useful conceptual tool for understanding the entire flow of an attack and for formulating defense strategies.
+
+### The 7 Stages of the Cyber Kill Chain
+The Cyber Kill Chain divides an attacker's activities into seven distinct stages. Each stage builds upon the success of the previous one, and defenders can neutralize an attack by breaking any link in this chain.
+
+**1. Reconnaissance**
+
+This is the first stage, where the attacker gathers information about the target organization. During this phase, the attacker leverages publicly available information (OSINT) to understand the target's network environment, technology stack, organizational structure, and employee details. The primary techniques used are:
+* **Passive Reconnaissance**: Gathering information without leaving a trace through sources like social media, job-seeking sites, the company's public website, DNS records, and WHOIS information.
+* **Active Reconnaissance**: Collecting system information through direct interaction, such as port scanning (Nmap), network topology mapping, and vulnerability scanning. This carries a risk of detection.
+
+**2. Weaponization**
+
+Based on the intelligence gathered during reconnaissance, the attacker creates a malicious payload. This payload is designed to exploit vulnerabilities in the target system and is often combined with an exploit that enables Remote Code Execution. For example, creating a malicious PDF document that targets a specific version of Adobe Flash Player or crafting a Microsoft Office document with malicious macros falls into this stage. This stage goes beyond using existing tools and is directly linked to the specialized field of **Malware Development**.
+
+Malware development refers to the creation of custom malware designed to bypass modern security solutions like Antivirus (AV) and Endpoint Detection and Response (EDR). Developed malware may include advanced techniques such as running only in system memory to minimize its footprint (Fileless Malware), injecting code into legitimate processes (Process Injection), and obfuscating API calls.
+
+The core objective of this stage is to ensure the created malware can pass through initial defense systems like email gateways, sandboxes, and AV scanners. To achieve this, attackers employ techniques like code obfuscation to evade signature-based detection and anti-sandbox methods that detect virtual environments and hide malicious behavior. In short, this stage focuses on disguising the weapon itself so it can pass through security checkpoints undetected.
+
+**3. Delivery**
+
+This is the stage where the weaponized payload is transmitted to the target system. The most common delivery vectors include:
+* **Email Phishing**: Sending emails that impersonate a trusted sender and contain malicious attachments or links.
+* **Watering Hole**: Compromising a website frequently visited by members of the target organization to automatically download malware onto their systems.
+* **USB Drive**: If physical access is possible, leaving a malware-infected USB drive within the organization's premises to exploit user curiosity.
+
+**4. Exploitation**
+
+In this stage, the delivered payload is executed on the target system, triggering a vulnerability. A successful exploit provides a foothold for executing additional malicious code (the implant).
+
+**5. Installation**
+
+The attacker establishes persistence on the system to maintain the initial access they have gained. This is often achieved by installing malware such as a backdoor or a Remote Access Trojan (RAT).
+
+**6. Command & Control (C2)**
+
+The installed malware establishes a communication channel with an external C2 server. Through this channel, the attacker can remotely issue commands to the compromised system, download additional malicious scripts, or exfiltrate internal system information. To evade detection, C2 communication often uses common protocols like HTTP/HTTPS, DNS, or ICMP, and the traffic is frequently encrypted or disguised. Once the malware successfully bypasses initial defenses and is installed on a system, the focus of the attack shifts to concealing post-compromise activities. The key objective of the C2 phase is to evade behavior-based and network traffic monitoring solutions like EDR, network firewalls, and IDS/IPS to maintain persistent control. This process is analogous to a spy who has successfully infiltrated a target and is now secretly communicating with their headquarters.
+
+#### Example C2 Infrastructure Setup (Using AWS)
+Building a stable and hard-to-trace C2 infrastructure is a core component of modern attacks. Cloud services, particularly **AWS (Amazon Web Services)**, are widely used for this purpose.
+
+1.  **C2 Server Hosting**: An attacker uses an AWS **EC2 (Elastic Compute Cloud)** instance to host their C2 server (team server). EC2 offers the flexibility to scale computing resources as needed and has the advantage of blending in with legitimate web traffic, making detection difficult.
+2.  **Setting up Redirectors**: Direct communication between an infected system (implant) and the C2 server is risky. If the defense team detects this communication and blocks the C2 server's IP, the entire infrastructure is neutralized. To prevent this, attackers place **redirectors** in between.
+    * **How it works**: A web server like Nginx or Apache is installed on a cheap VPS or another EC2 instance. It is configured to forward (proxy) only the traffic that meets specific criteria (e.g., a specific User-Agent, URI path) to the actual C2 server. All other traffic is redirected to a legitimate website (like Google). This makes it difficult for analysts to trace the infrastructure.
+3.  **Domain Fronting**: This technique disguises C2 traffic by using a high-reputation domain. For instance, an attacker can use a CDN (Content Delivery Network) service like AWS **CloudFront**. The implant sends an HTTPS request to a legitimate CloudFront domain (`*.cloudfront.net`), but the HTTP Host header specifies the domain of the actual C2 server. Most network security appliances, unable to inspect the encrypted traffic, will see this as a legitimate connection to the CDN.
+4.  **Domain Aging**: Attackers pre-register a large number of domains for phishing or malicious C2 servers and let them sit dormant for a period of time (from weeks to months). This "aging" process allows them to bypass **NRD (Newly Registered Domain)** detection policies, as security solutions are less likely to flag and block older, established domains.
+
+#### Major C2 Frameworks
+C2 frameworks are integrated toolkits for efficiently managing numerous compromised systems and executing attacks.
+* **Cobalt Strike**: A commercial framework considered the industry standard for red teaming and adversary simulation. It uses a powerful payload called 'Beacon' and features Malleable C2 profiles that can meticulously disguise communication traffic to look like legitimate applications (e.g., Netflix, Gmail).
+* **Metasploit Framework**: One of the most famous open-source frameworks, providing C2 capabilities through its powerful in-memory payload, 'Meterpreter.' It is integrated with a vast library of exploits, enabling everything from initial penetration to post-exploitation.
+* **Sliver / Havoc / Mythic**: These are popular, modern open-source frameworks. Developed in languages like Go and C++, they support cross-platform operations, incorporate the latest EDR evasion techniques, and feature a modular architecture for easy extension.
+
+**7. Actions on Objectives**
+
+In the final stage of the attack, the adversary executes their original goals. This can manifest as **Data Exfiltration** (stealing confidential organizational data), **Sabotage** (destroying systems), or **Ransomware** (encrypting data and demanding payment).
+
+### The Relationship Between a Full Chain Attack and the Kill Chain Model
+It is important to distinguish between the **Cyber Kill Chain as a 'theoretical model'** and a **Full Chain Attack as a 'successful real-world execution'** of that model.
+
+* **Cyber Kill Chain**: A **framework or blueprint** that describes the stages of an attack. It is an analytical tool for defenders to understand attacks on a stage-by-stage basis and identify points for interception.
+* **Full Chain Attack**: A specific, concrete attack in which **all stages described in the Cyber Kill Chain model, from reconnaissance to actions on objectives, are successfully linked and completed.**
+
+Advanced Persistent Threat (APT) attacks are prime examples of full chain attacks.
+1.  **Reconnaissance**: The attacker identifies an engineer in a specific department of the target company via LinkedIn.
+2.  **Weaponization**: They craft an exploit for a zero-day vulnerability in the web browser the engineer is likely to use and embed it on a malicious website.
+3.  **Delivery**: Using social engineering, they send a spear-phishing email to the engineer with the subject line "Project-Related Documents," containing a link to the malicious website.
+4.  **Exploitation**: When the engineer clicks the link, the browser's zero-day vulnerability is triggered, and the attacker's code is executed on the system.
+5.  **Installation**: After gaining initial access, a PowerShell-based backdoor is loaded into memory to establish persistence.
+6.  **C2**: The backdoor begins communicating with an external C2 server using DNS tunneling to evade detection.
+7.  **Actions on Objectives**: Through the C2 channel, the attacker scans the internal network, exploits an Active Directory vulnerability to escalate privileges to Domain Admin, and finally exfiltrates the company's core design blueprints.
+
+Because each stage of a full chain attack is intricately connected, it is difficult for defenders to stop the entire attack by blocking just a single piece of malware or one vulnerability. Therefore, a Defense in Depth strategy, based on the Cyber Kill Chain model, is essential to break the chain of the attack as early as possible.
+
+### Modern Attack Trends: The Attack Surface is Shifting from the Perimeter to the Interior
+
+The paradigm of cyber attack and defense is changing. In the past, **Perimeter Security**, which focused on protecting internal assets from external threats, was the most critical defense strategy. Today, however, the center of gravity for attacks is shifting beyond the perimeter and into the organization's **interior**.
+
+#### Hardened Perimeters and New Attack Solutions
+For decades, enterprises have invested heavily in hardening their external perimeters with Next-Generation Firewalls (NGFWs), email gateways, and advanced phishing awareness training. As a result, the difficulty of achieving initial access from a zero-base starting point has increased significantly compared to the past.
+
+This strengthened defensive posture has presented a new challenge for attackers, who have naturally turned their attention to an easier and more effective path: **attack scenarios that begin from within**.
+
+#### Attacks Starting from the Inside: Assumed Breach
+The concept that best reflects this trend is **'Assumed Breach.'** This is an approach to building a defense strategy based on the assumption that "a breach is inevitable, and threats already exist inside." Red Team exercises have also evolved, with many now being conducted from the perspective of an attacker who has already established a foothold on the internal network, rather than just simulating an external intrusion.
+
+The primary ways modern attackers compromise the interior are as follows:
+
+* **Acquiring Valid Credentials**: On the dark web, access credentials for corporate internal systems are traded at surprisingly low prices. Attackers can purchase these or bribe an insider with financial incentives to easily gain an initial foothold.
+* **Social Engineering**: This method exploits human trust instead of technical vulnerabilities. Help desks and IT support departments are prime targets for social engineering attacks, as they have high-level access to internal systems and are required to respond to support requests.
+* **Supply Chain Attack**: This approach involves first compromising a third-party partner or software vendor with relatively weaker defenses and using that access as a bridgehead to pivot into the main target's internal network.
+
+In conclusion, modern defense strategies must evolve beyond simply blocking external attacks and focus on **how quickly one can detect and respond to an attacker who is already inside the network**. This re-emphasizes the importance of a **Zero Trust** architecture, internal network segmentation, and the continuous monitoring and threat detection (NDR/EDR) of core infrastructure like Active Directory.
+
+---
+
 ## 사이버 킬 체인(Cyber Kill Chain)과 공격 인프라의 모든 것
 
 ### 개요
@@ -52,10 +151,11 @@ mathjax_autoNumber: true
 #### C2 인프라 구축 예시 (AWS 활용)
 안정적이고 추적이 어려운 C2 인프라를 구축하는 것은 현대 공격의 핵심입니다. 클라우드 서비스, 특히 **AWS(Amazon Web Services)** 는 이러한 인프라 구축에 널리 사용됩니다.
 
-1.  **C2 서버 호스팅**: 공격자는 AWS의 **EC2(Elastic Compute Cloud)** 인스턴스를 사용하여 C2 서버(팀 서버)를 호스팅합니다. EC2는 필요에 따라 컴퓨팅 자원을 유연하게 조절할 수 있고, 정상적인 웹 트래픽과 섞여 탐지를 어렵게 만드는 장점이 있습니다.
-2.  **리디렉터(Redirector) 설정**: 감염된 시스템(임플란트)이 C2 서버와 직접 통신하는 것은 위험합니다. 방어팀이 통신을 탐지하여 C2 서버의 IP를 차단하면 전체 인프라가 무력화되기 때문입니다. 이를 방지하기 위해 중간에 **리디렉터**를 둡니다.
+1. **C2 서버 호스팅**: 공격자는 AWS의 **EC2(Elastic Compute Cloud)** 인스턴스를 사용하여 C2 서버(팀 서버)를 호스팅합니다. EC2는 필요에 따라 컴퓨팅 자원을 유연하게 조절할 수 있고, 정상적인 웹 트래픽과 섞여 탐지를 어렵게 만드는 장점이 있습니다.
+2. **리디렉터(Redirector) 설정**: 감염된 시스템(임플란트)이 C2 서버와 직접 통신하는 것은 위험합니다. 방어팀이 통신을 탐지하여 C2 서버의 IP를 차단하면 전체 인프라가 무력화되기 때문입니다. 이를 방지하기 위해 중간에 **리디렉터**를 둡니다.
     * **작동 방식**: 저렴한 VPS나 또 다른 EC2 인스턴스에 Nginx나 Apache 같은 웹 서버를 설치합니다. 그리고 특정 조건(User-Agent, URI 경로 등)을 만족하는 트래픽만 실제 C2 서버로 전달(프록시)하고, 그 외의 모든 트래픽은 정상적인 웹사이트(예: 구글)로 보내버립니다. 이를 통해 분석가의 추적을 어렵게 만듭니다.
-3.  **도메인 프론팅(Domain Fronting)**: 신뢰도가 높은 도메인을 사용하여 C2 트래픽을 위장하는 기법입니다. 예를 들어, AWS의 **CloudFront**와 같은 CDN(Content Delivery Network) 서비스를 이용합니다. 임플란트는 CloudFront의 정상적인 도메인(`*.cloudfront.net`)으로 HTTPS 요청을 보내지만, HTTP Host 헤더에는 실제 C2 서버의 도메인을 지정합니다. 암호화된 트래픽 내부를 볼 수 없는 대부분의 네트워크 보안 장비는 이 트래픽을 정상적인 CDN 접속으로 판단하게 됩니다.
+3. **도메인 프론팅(Domain Fronting)**: 신뢰도가 높은 도메인을 사용하여 C2 트래픽을 위장하는 기법입니다. 예를 들어, AWS의 **CloudFront**와 같은 CDN(Content Delivery Network) 서비스를 이용합니다. 임플란트는 CloudFront의 정상적인 도메인(`*.cloudfront.net`)으로 HTTPS 요청을 보내지만, HTTP Host 헤더에는 실제 C2 서버의 도메인을 지정합니다. 암호화된 트래픽 내부를 볼 수 없는 대부분의 네트워크 보안 장비는 이 트래픽을 정상적인 CDN 접속으로 판단하게 됩니다.
+4. **도메인 에이징(Domain Aging)**: 공격자가 피싱이나 악성 C2 서버에 사용할 도메인을 미리 대량으로 등록해 놓고, 아무것도 하지 않은 채 일정 시간(수 주에서 수개월) 동안 방치하여 '숙성'시켜 보안 솔루션들이 의심하고 차단하지 않도록 **NRD(Newly Registered Domain, 신규 등록 도메인)** 탐지 정책을 우회합니다.
 
 #### 주요 C2 프레임워크
 C2 프레임워크는 감염된 다수의 시스템을 효율적으로 관리하고 공격을 수행하기 위한 통합 도구입니다.
@@ -100,7 +200,7 @@ APT(Advanced Persistent Threat) 공격은 풀 체인 공격의 대표적인 예�
 
 현대의 공격자들이 내부를 공략하는 주요 방식은 다음과 같습니다.
 
-* **유효한 자격 증명 획득 🕵️**: 다크웹에서는 생각보다 저렴한 가격에 기업 내부 시스템의 접근 권한(Credentials)이 거래되고 있습니다. 공격자는 이를 구매하거나, 금전적 보상을 미끼로 내부자를 매수하여 손쉽게 첫 발판을 마련합니다.
+* **유효한 자격 증명 획득 **: 다크웹에서는 생각보다 저렴한 가격에 기업 내부 시스템의 접근 권한(Credentials)이 거래되고 있습니다. 공격자는 이를 구매하거나, 금전적 보상을 미끼로 내부자를 매수하여 손쉽게 첫 발판을 마련합니다.
 * **사회 공학 기법**: 기술적인 취약점 대신 사람의 신뢰를 이용하는 방식입니다. 특히 헬프 데스크나 IT 지원 부서는 내부 시스템에 대한 접근 권한이 높고 지원 요청에 응해야 하는 입장이므로 사회 공학 공격의 핵심 타겟이 됩니다.
 * **공급망 공격 (Supply Chain Attack)**: 방어 체계가 상대적으로 허술한 서드파티 협력업체나 소프트웨어 공급망을 먼저 장악한 후, 이를 교두보 삼아 최종 목표인 기업의 내부망으로 접근하는 방식입니다.
 
