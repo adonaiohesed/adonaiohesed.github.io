@@ -138,6 +138,18 @@ This method involves self-replication by loading a malicious JavaScript file ext
 
   * The reason for separating the `</script>` part into `</" + "script>` in the code above is that **some browsers, like Firefox, might parse `</script>` as a single token and unintentionally close the script tag prematurely.** This is an important bypass technique that can vary depending on the browser's parsing method.
 
+### **Key Attack Vectors Using XSS**
+
+* **Session Hijacking:** Steal user session tokens from `document.cookie` or `localStorage` and send them to an attacker's server to take over the user's account.
+* **Phishing & UI Redressing:** Inject a fake login page that looks identical to the real one, tricking users into entering their credentials.
+* **CSRF Automation:** Forge requests to make users perform unintended actions (e.g., changing a password, deleting a post) simply by loading the page.
+* **Keylogging:** Capture all keyboard inputs made by the user on the compromised page and exfiltrate the data.
+* **Browser Exploitation (via BeEF):** Hook the user's browser by injecting a script from a framework like **BeEF**. This enables a wide range of secondary attacks, including:
+    * Internal network scanning and reconnaissance
+    * Real-time screen captures of the user's browser
+    * Malware distribution via fake notification bars
+    * User action manipulation through clickjacking
+
 ### Preventing XSS Attacks
 
 The fundamental reason XSS attacks occur is the **failure to properly separate data and code.** However, in a web environment that must support HTML markup, completely separating the two is by no means easy.
@@ -313,6 +325,18 @@ XSS 공격은 다양한 종류의 심각한 피해를 유발할 수 있습니다
     ```
 
   * 위 코드에서 `</script>` 부분을 `</" + "script>`와 같이 분리하여 문자열 처리하는 이유는, **Firefox와 같은 일부 브라우저가 파싱 시 `</script>`를 단일 토큰으로 인식하여 의도치 않게 스크립트 태그를 조기에 닫아버릴 수 있기 때문**입니다. 브라우저 파싱 방식에 따라 달라질 수 있는 중요한 우회 기법입니다.
+
+### **XSS를 활용한 주요 공격 기법**
+
+* **세션 하이재킹 (Session Hijacking):** `document.cookie` 또는 `localStorage`에 저장된 사용자 세션 토큰을 탈취해 공격자의 서버로 전송하여 사용자 계정을 탈취합니다.
+* **피싱 및 UI Redressing (Phishing & UI Redressing):** Stored XSS를 통해 실제 사이트와 똑같은 가짜 로그인 페이지를 삽입하여 사용자의 아이디와 비밀번호를 직접 탈취합니다.
+* **CSRF 공격 자동화 (CSRF Automation):** 사용자가 페이지를 보는 것만으로도, 자신도 모르게 비밀번호 변경, 글 삭제, 친구 추가 등 특정 기능이 실행되도록 요청을 위조합니다.
+* **키로깅 (Keylogging):** 사용자가 페이지 내에서 입력하는 모든 키보드 값을 가로채 공격자에게 전송하여 민감한 정보를 유출시킵니다.
+* **브라우저 공격 프레임워크 연동 (Browser Exploitation):** **BeEF**와 같은 도구의 `hook.js`를 삽입하여 브라우저를 원격으로 제어합니다. 이를 통해 다음과 같은 2차 공격이 가능합니다.
+    * 내부망 스캔 및 정찰
+    * 사용자 화면 실시간 캡처
+    * 가짜 알림창을 이용한 악성코드 유포
+    * 클릭재킹(Clickjacking)을 통한 행위 조작
 
 ### Preventing XSS Attacks
 
