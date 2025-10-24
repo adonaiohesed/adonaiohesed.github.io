@@ -89,7 +89,7 @@ While HTTP POST services are also susceptible to CSRF, they generally require sl
 
   * When the victim visits this page, the form is automatically submitted via JavaScript. If the victim is logged into the target website, their session cookie is included, and their password could be changed to the attacker's chosen value.
 
-  * POST requests are less visible to the user when forged than GET requests. However, unlike GET requests, they cannot be triggered by simply clicking a URL link without other vulnerabilities like XSS. This is because POST requests require specific user interaction or script execution; without a vulnerability like XSS to run arbitrary JavaScript, triggering a POST-based CSRF attack is difficult.
+  * A CSRF attack requires either exploiting an XSS vulnerability or luring a victim to a malicious site, like evil.com.
 
 ### Countermeasures: Protecting Your Application
 
@@ -257,7 +257,7 @@ HTTP POST 메서드를 사용하는 서비스도 CSRF 공격에 취약할 수 �
 
   * 피해자가 이 페이지를 방문하면, JavaScript를 통해 폼이 자동으로 제출됩니다. 피해자가 타겟 웹사이트에 로그인되어 있다면 세션 쿠키가 포함되어 전송되고, 결과적으로 비밀번호가 공격자가 원하는 값으로 변경될 수 있습니다.
 
-  * POST 요청은 GET 요청보다 사용자 눈에 띄지 않게 위조하기 쉽지만, XSS와 같은 취약점이 함께 존재해야 트리거가 가능합니다. POST 요청은 GET 요청과 달리 특정 사용자 상호작용이나 스크립트 실행이 필요하기에 XSS와 같은 취약점이 없다면 POST 서비스에 대한 CSRF 공격은 어렵습니다.
+  * CSRF 공격은 XSS 취약점을 이용하거나 혹은 피해자를 evil.com으로 끌어들이는 과정이 필요하다.
 
 ### 보안 대책: 여러분의 애플리케이션 보호하기
 
