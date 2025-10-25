@@ -236,6 +236,10 @@ Exploiting legitimate penetration testing tools like Cobalt Strike and Mimikatz.
 
 Using digitally signed binaries to execute code or perform DLL sideloading.
 
+### 8. Using an Expired Trust Domain
+
+You find and purchase a recently expired domain that had a 'Trusted' status. Then you connect that domain to a C2 server or a phishing site. When a compromised PC inside a company tries to communicate with this domain, it can sometimes bypass the EDR."
+
 ## Defense Strategies Against EDR Bypass
 
 ### 1. Build Multi-Layered Defense
@@ -528,6 +532,10 @@ Cobalt Strike, Mimikatz 등 합법적 펜테스트 도구를 악용합니다.
 #### 코드 서명 우회
 
 디지털 서명된 바이너리를 사용하여 코드를 실행하거나 DLL 사이드로딩을 수행합니다.
+
+### 8. Expired된 Trust Domain 이용
+
+Trusted 등급을 받은 도메인을 받은 도메인중 최근 expired된 도메인을 찾아 구매합니다. 그리고 그 도메인을 C2 서버나 피싱 사이트에 연결을 하고 기업 내부에 감연된 PC에서 이 도메인으로 통신을 시도하게 되면 EDR을 우회하는 경우가 생깁니다.
 
 ## EDR 우회에 대한 방어 전략
 
