@@ -4,7 +4,7 @@ tags: Nodejs
 author: Hyoeun-Choi
 pageview: true
 key: page-nodejs_installation_usage
-categories: [Development, NodeJs]
+categories: [Development, Server]
 author: hyoeun
 ---
 
