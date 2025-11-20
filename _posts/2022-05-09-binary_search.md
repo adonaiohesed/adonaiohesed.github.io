@@ -2,7 +2,7 @@
 title: Binary Search
 tags: Binary-Search Algorithms
 key: page-binary_search
-categories: [Development, Algorithms]
+categories: [Development, Algorithms & Data Structures]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
