@@ -2,7 +2,7 @@
 title: 리눅스 알아두면 좋은 커맨드
 tags: Linux
 key: page-linux_useful_commands
-categories: [Development, Linux]
+categories: [Development, SysOps & Infrastructure]
 author: hyoeun
 ---
 ## 정렬하지 않고 유니크한 부분만 출력하기

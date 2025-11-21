@@ -2,7 +2,7 @@
 title: Shell script 기본 문법
 tags: Shell-Script
 key: page-shell_script_syntax
-categories: [Development, Linux]
+categories: [Development, SysOps & Infrastructure]
 author: hyoeun
 ---
 

@@ -2,7 +2,7 @@
 title: Syslog-Ng 설치 및 사용 방법
 tags: Syslog-Ng Installation Tools
 key: page-syslog_ng_installation_usage
-categories: [Tools, Syslog]
+categories: [Development, SysOps & Infrastructure]
 author: hyoeun
 ---
 

@@ -2,7 +2,7 @@
 title: c# 리눅스 배포 및 데몬 등록법
 tags: C# Linux Deployment Daemon
 key: page-csharp_linux_deployment_daemon
-categories: [Development, Linux]
+categories: [Development, SysOps & Infrastructure]
 author: hyoeun
 ---
 

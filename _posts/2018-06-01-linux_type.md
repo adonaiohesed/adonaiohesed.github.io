@@ -2,7 +2,7 @@
 title: Linux 종류
 tags: Linux
 key: page-linux_types
-categories: [Development, Linux]
+categories: [Development, SysOps & Infrastructure]
 author: hyoeun
 ---
 
