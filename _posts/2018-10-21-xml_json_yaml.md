@@ -2,7 +2,7 @@
 title: XML JSON YAML
 tags: XML JSON YAML Data-Formats
 key: page-xml_json_yaml
-categories: [Development, Web]
+categories: [Development, Programming Fundamentals]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

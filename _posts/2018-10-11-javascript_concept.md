@@ -2,7 +2,7 @@
 title: Javascript 개념 및 사용법
 tags: Javascript
 key: page-javascript_concepts_usage
-categories: [Development, Javascript]
+categories: [Development, Programming Fundamentals]
 author: hyoeun
 cover_size: md
 ---

@@ -2,7 +2,7 @@
 title: 파이썬 Data type
 tags: Python
 key: page-python_data_types
-categories: [Development, Python]
+categories: [Development, Programming Fundamentals]
 author: hyoeun
 ---
 
