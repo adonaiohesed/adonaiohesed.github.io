@@ -2,7 +2,7 @@
 title: Backtracking
 tags: Backtracking Algorithms
 key: page-backtracking
-categories: [Development, Algorithms]
+categories: [Development, Algorithms & Data Structures]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
