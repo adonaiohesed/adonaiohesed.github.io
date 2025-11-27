@@ -2,7 +2,7 @@
 title: Cassandra 설치 및 사용 방법
 tags: Cassandra Installation
 key: page-cassandra_installation_usage
-categories: [Development, Databases]
+categories: [Development, Database Systems]
 author: hyoeun
 ---
 
