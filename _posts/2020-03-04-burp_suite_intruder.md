@@ -348,7 +348,7 @@ Verifies if the payload I sent returns included as-is in the response value.
   * **Working Principle**: It dynamically inspects whether *the payload used in that request* exists in the response, rather than looking for a fixed string.
   * **Match against pre-URL-encoded payloads**: Even if the payload was transmitted URL-encoded, it may appear decoded in the response. Enabling this option attempts matching based on the original string before encoding to increase accuracy.
 
-![](assets/images/burp_intruder_payloads%201.png)
+![](assets/images/burp_intruder_payloads.png)
 
 #### Senior Engineer's Grep Strategy
 
@@ -406,7 +406,7 @@ Payloads 탭의 최상단에 위치한 Payload Sets 섹션은 Positions 탭에�
 * **Payload Set의 활성화**: Positions 탭에서 지정한 마킹(`§`)의 개수와 선택한 Attack Type에 따라 활성화되는 Set의 개수가 결정됩니다. 예를 들어, `Pitchfork`나 `Cluster bomb`을 선택하고 두 개의 파라미터를 마킹했다면, Payload Set은 1번과 2번으로 나뉘며 각각 독립적으로 설정해야 합니다.
 * **Set별 독립 구성**: 각 Set마다 서로 다른 Payload type을 적용할 수 있습니다. 예를 들어, 첫 번째 Set(Username)은 `Simple list`로 설정하고, 두 번째 Set(Password)은 대용량 처리를 위해 `Runtime file`로 설정하는 식의 하이브리드 구성이 가능합니다.
 
-![](assets/images/burp_intruder_payload.png)
+![](assets/images/burp_intruder_payloads.png)
 ### 주요 Payload Types 및 고급 활용 전략
 
 Burp는 다양한 Payload Type을 제공하며, 상황에 맞는 적절한 타입을 선택하는 것이 테스트의 효율성을 결정합니다.
@@ -673,7 +673,7 @@ Intruder는 기본적으로 모든 요청과 응답 데이터를 메모리(또�
 * **동작 방식**: 고정된 문자열을 찾는 것이 아니라, *해당 요청에 사용된 페이로드*가 응답에 있는지를 동적으로 검사합니다.
 * **Match against pre-URL-encoded payloads**: 페이로드가 URL 인코딩되어 전송되었더라도, 응답에는 디코딩되어 나타날 수 있습니다. 이 옵션을 켜면 인코딩 전의 원본 문자열을 기준으로 매칭을 시도하여 정확도를 높입니다.
 
-![](assets/images/burp_intruder_payloads%201.png)
+![](assets/images/burp_intruder_payloads.png)
 
 #### 시니어 엔지니어의 Grep 전략
 
