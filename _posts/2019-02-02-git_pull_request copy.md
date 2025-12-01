@@ -6,6 +6,153 @@ categories: [Development, DevOps & Automation]
 author: hyoeun
 ---
 
+# [GitHub] The Cheat Sheet for Better Collaboration: Understanding Pull Requests and Setting Up Templates
+
+## 1\. What is a Pull Request (PR)?
+
+A Pull Request is literally **"a request to pull my code."**
+
+When using a Git hosting service like **GitHub** (or GitLab, Bitbucket), a PR is a formal feature request to merge the content of the **auxiliary branch** you worked on into the **main branch**.
+
+### The Core Role of a PR
+
+A PR is more than just a 'merge request'; it is the central discussion forum and safety net for team collaboration.
+
+1.  **Starting Point for Code Review:** It is the space where team members inspect the code (Code Review) and exchange feedback before the merge.
+2.  **Recording Change History:** It leaves a clear history of why this code was changed and the context in which the work began.
+3.  **CI/CD Automation Trigger:** Automated tests are executed upon PR creation to prevent problematic code from being merged in advance.
+
+## 2\. PR Creation Workflow (How-To)
+
+Here is the process of creating a PR, using the `feature` branch work discussed in a previous article as an example.
+
+1.  **Local Work and Push:** Complete your work on the `feature/new-api` branch (which was forked from `develop`) and push it to the remote repository.
+
+    ```bash
+    git push origin feature/new-api
+    ```
+
+2.  **Start PR Creation on GitHub:**
+
+      * Navigate to your GitHub repository page.
+      * Click the **"Compare & pull request"** button that appears (detecting your recent push) or go to the `Pull Requests` tab.
+
+3.  **Set the Base Branch (Crucial):**
+
+      * Define the merge target for the PR. (Specifying where the PR will be merged)
+      * **Base (Target Branch):** `develop` (our development branch)
+      * **Compare (Your Work Branch):** `feature/new-api`
+
+4.  **Write the Title and Description:**
+
+      * **Title:** Write according to the **Conventional Commit** rules defined earlier. (e.g., `feat: Implement user information lookup API`)
+      * **Description:** This is where the **PR template** will be automatically populated.
+
+5.  **Assign Reviewer and Create:**
+
+      * Assign the reviewer(s) (your teammates) and create the PR.
+
+## 3\. The Necessity of Adopting a PR Template
+
+While the PR feature is excellent, it loses its value if the author doesn't put effort into the description. A PR template is the solution to this problem.
+
+1.  **Provides Writing Guidelines:** It reduces the time a PR author spends pondering what to write.
+2.  **Reduces Communication Costs:** It prevents repetitive questions like, "Did you test this?" or "What's the related ticket number?"
+3.  **Improves Review Quality:** Including screenshots or testing methods allows reviewers to quickly understand the changes and focus on reviewing the core logic.
+4.  **Enforces a Checklist:** It helps ensure essential pre-deployment checks (testing performed, linting checked, etc.) are not missed.
+
+## 4\. How to Set Up a PR Template (Step-by-Step)
+
+To set up a template, simply add a Markdown file to an agreed-upon path in the project's root directory.
+
+### Basic Setup
+
+1.  Create a folder named `.github` in the project's root (top-level) directory.
+2.  Create a file named `pull_request_template.md` inside that folder.
+
+**Path Example:**
+
+```text
+my-project/
+├── .github/
+│   └── pull_request_template.md  <-- Here!
+├── src/
+├── README.md
+└── ...
+```
+
+### Best Practice Template Ready to Use
+
+You can paste this content into your `pull_request_template.md` file.
+
+```markdown
+## 1. Overview
+- **Related Issue:** (e.g., #123, [JIRA-456])
+- **Changes:** (Summarize the core changes made in this PR.)
+
+## 2. Detailed Work Description
+- (Write concrete work details as a list.)
+- (e.g., Improved the error handling logic for the login API.)
+- (e.g., Removed unnecessary console logs.)
+
+## 3. Screenshots (Mandatory for UI Changes)
+| Before | After |
+| :---: | :---: |
+| <img src="" width="300" /> | <img src="" width="300" /> |
+
+## 4. Checklist
+- [ ] Does the build complete successfully without errors?
+- [ ] Have test codes been written and passed?
+- [ ] Have unnecessary comments or code been removed?
+- [ ] Is the commit message written according to the convention (Conventional Commits)?
+
+## 5. Review Requests
+- (Please specify any particular logic or questions you'd like the reviewer to focus on.)
+```
+
+## 5\. Explanation of Key Template Components
+
+Here's why the template above is structured this way.
+
+### A. Related Issues
+
+Link Jira tickets or GitHub Issue numbers here. This is the most important clue for tracking the history—"Why was this feature built?"—when looking at the code later.
+
+### B. Screenshots
+
+Unnecessary if only back-end logic was modified, but **mandatory** for front-end or mobile work. One screenshot (or GIF) is much faster for understanding changes than reading 100 lines of code.
+
+### C. Checklist
+
+Using the `[ ]` syntax renders as clickable checkboxes in the GitHub interface.
+
+  * Whether local testing was performed
+  * Whether Lint/Format checks were done
+  * Whether Self-Review was performed
+
+Having the author check these items directly assigns responsibility, ensuring the request for review is made only after "minimum quality assurance" has been met.
+
+## 6\. Advanced: Using Multiple Templates
+
+As projects grow, the required format for a bug fix might differ from that for a feature development. In this case, you can create a dedicated folder `.github/PULL_REQUEST_TEMPLATE/` and place multiple files inside it.
+
+**Path Example:**
+
+```text
+.github/
+└── PULL_REQUEST_TEMPLATE/
+    ├── feature_request.md
+    └── bug_fix.md
+```
+
+With this setup, you can select the template either via a URL query parameter (`?template=bug_fix.md`) when creating the PR or through an option that appears in the GitHub UI.
+
+## 7\. Conclusion
+
+A PR template is not just a document format; it is a mirror reflecting a team's **development culture**.
+
+While it might seem bothersome at first, I encourage you to create your team's own template, remembering that "a good PR creates a good review, and a good review creates a good product."
+
 -----
 
 # [GitHub] 협업의 질을 높이는 치트키: Pull Request 이해와 템플릿 설정 가이드
@@ -54,8 +201,6 @@ PR은 단순한 '병합 요청'을 넘어, 팀 협업의 핵심적인 토론장�
 
       * 리뷰어(팀 동료)를 지정하고 PR을 생성합니다.
 
------
-
 ## 3\. PR 템플릿 도입의 필요성
 
 PR의 기능은 훌륭하지만, 작성자가 내용을 성의 없이 적으면 그 가치를 잃습니다. PR 템플릿은 이 문제에 대한 해결책입니다.
@@ -64,8 +209,6 @@ PR의 기능은 훌륭하지만, 작성자가 내용을 성의 없이 적으면 
 2.  **커뮤니케이션 비용 절감:** "이거 테스트는 해보신 건가요?", "관련 티켓 번호가 뭐죠?" 같은 반복적인 질문을 사전에 방지합니다.
 3.  **리뷰 품질 향상:** 스크린샷이나 테스트 방법이 포함되면 리뷰어가 변경 사항을 훨씬 빠르게 이해하고 본질적인 로직 검토에 집중할 수 있습니다.
 4.  **체크리스트 강제:** 배포 전 필수 확인 사항(테스트 수행, 린트 체크 등)을 놓치지 않도록 돕습니다.
-
------
 
 ## 4\. PR 템플릿 설정 방법 (Step-by-Step)
 
@@ -116,8 +259,6 @@ my-project/
 - (리뷰어가 특별히 봐주었으면 하는 로직이나 궁금한 점이 있다면 적어주세요.)
 ```
 
------
-
 ## 5\. 템플릿의 핵심 구성 요소 설명
 
 위 템플릿이 왜 이렇게 구성되었는지 설명합니다.
@@ -140,7 +281,6 @@ Jira 티켓이나 GitHub Issue 번호를 링크합니다. 나중에 코드를 �
 
 이 항목들을 작성자가 직접 체크하게 함으로써, "최소한의 품질 보증"을 마친 상태로 리뷰를 요청한다는 책임감을 부여합니다.
 
------
 
 ## 6\. 심화: 여러 개의 템플릿 사용하기
 
@@ -157,7 +297,6 @@ Jira 티켓이나 GitHub Issue 번호를 링크합니다. 나중에 코드를 �
 
 이렇게 설정하면 PR 생성 시 URL 쿼리 파라미터(`?template=bug_fix.md`)를 통해 템플릿을 선택하거나, GitHub UI에서 템플릿을 선택할 수 있는 옵션이 나타납니다.
 
------
 
 ## 7\. 마치며
 

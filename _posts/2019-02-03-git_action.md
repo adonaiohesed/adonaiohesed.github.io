@@ -6,6 +6,156 @@ categories: [Development, DevOps & Automation]
 author: hyoeun
 ---
 
+# [CI/CD] Collaboration Mastered: Automating Branch-Specific Builds and Deployments with GitHub Actions
+
+In previous posts, we established a stable **Git Branching Strategy (Git Flow)** and an efficient **Pull Request (PR) Template**. The next step is to technically complete this strategy.
+
+Manually building code and deploying it to servers wastes developer time and causes human errors. **CI/CD (Continuous Integration / Continuous Deployment)** is the solution that maximizes team productivity.
+
+In this article, we will provide a step-by-step guide on how to build an automated pipeline tailored to our configured `develop` and `main` branches, leveraging **GitHub Actions**, which is built into GitHub.
+
+## 1\. What is CI/CD, and Why Adopt It Now?
+
+### CI (Continuous Integration)
+
+  * **Goal:** Every developer regularly integrates their code into the main repository (e.g., the `develop` branch), and a build and test process is automatically run upon each integration.
+  * **Effect:** Conflicts and bugs are discovered early, keeping issues small and reducing the cost of resolution.
+
+### CD (Continuous Deployment)
+
+  * **Goal:** Code that has passed testing is automatically deployed to staging or production servers.
+  * **Effect:** Standardizes and automates the deployment process, shortening deployment time and reducing deployment errors.
+
+## 2\. Understanding GitHub Actions: Workflow File Structure
+
+GitHub Actions is used by creating a `.github/workflows` directory within your repository and defining YAML files inside it. This YAML file serves as the blueprint for your automation.
+
+### Core Components of a Workflow File
+
+| Element | Description |
+| :--- | :--- |
+| `name` | The name of the workflow (displayed in the GitHub UI) |
+| `on` | The **event** that triggers the workflow (e.g., `push`, `pull_request`, etc.) |
+| `jobs` | A set of tasks to be executed. Each Job runs in an independent environment. |
+| `steps` | Units of commands executed sequentially within a Job (e.g., `npm install`, `npm test`) |
+| `uses` | A command to invoke and use pre-built actions from others (Actions) |
+
+### File Creation Path
+
+Create the YAML file in the following path within the project root directory:
+
+```text
+.github/workflows/ci_pipeline.yml
+```
+
+## 3\. Hands-On: Building CI for Automatic Testing on PR (Build & Test)
+
+This is the most fundamental and important CI pipeline. It sets up automatic testing to run before any PR is merged into the `develop` branch.
+
+### ci\_pipeline.yml Example Code
+
+```yaml
+name: CI Build & Test
+
+# 1. Trigger Condition: Push to main or develop, and any PR creation
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+# 2. Job Definition
+jobs:
+  build_and_test:
+    name: Build & Run Tests
+    # Execution Environment: Latest Ubuntu
+    runs-on: ubuntu-latest
+    
+    # 3. Steps to be executed sequentially
+    steps:
+      - name: Checkout Code
+        # Use standard action provided by GitHub Actions Marketplace
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        # Configure Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Unit Tests
+        run: npm test
+```
+
+**How it works:** When a PR is created from a `feature` branch into `develop`, this workflow automatically executes `npm test`. If the tests fail, the PR can be configured to be unmergeable.
+
+## 4\. Building Separate CD for Different Environments (Deployment)
+
+Now that we have confirmed the code is stable, we build a CD pipeline that automatically deploys to the corresponding server for each branch.
+
+### Deployment Strategy: Develop vs. Main
+
+We separate the CD strategy according to the Git Flow established in the previous post.
+
+| Branch | Environment | Trigger Event |
+| :--- | :--- | :--- |
+| `develop` | Development Server (Dev Environment) | **Push or Merge** to the `develop` branch |
+| `main` | Production Server (Prod Environment) | **Merge** to the `main` branch |
+
+### deployment\_pipeline.yml (Example - Assuming AWS S3 Deployment)
+
+```yaml
+name: CD Deployment
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Environment
+    runs-on: ubuntu-latest
+    # Environment Variable Configuration (using Secrets for security)
+    environment: 
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+      
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # ... (Node.js installation, dependency installation, and build process omitted)
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} # GitHub Secrets
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Deploy to S3 Bucket
+        # Set different target S3 buckets based on the branch
+        if: github.ref == 'refs/heads/develop' # If develop branch
+        run: aws s3 sync ./dist s3://${{ secrets.DEV_S3_BUCKET }} --delete
+
+      - name: Deploy to S3 Bucket (Production)
+        if: github.ref == 'refs/heads/main' # If main branch
+        run: aws s3 sync ./dist s3://${{ secrets.PROD_S3_BUCKET }} --delete
+```
+
+### Security Best Practice: Using GitHub Secrets
+
+**Security** is paramount in CI/CD. Sensitive information like AWS keys or DB passwords must **never** be hardcoded in the YAML file.
+
+  * **Configuration Method:** Register secret information in your GitHub repository under `Settings` \> `Secrets and variables` \> `Actions`, and safely retrieve and use it within the YAML file using the `${{ secrets.NAME }}` format.
 
 -----
 
@@ -16,8 +166,6 @@ author: hyoeun
 수동으로 코드를 빌드하고 서버에 배포하는 방식은 개발자의 시간을 낭비시키고 휴먼 에러를 유발합니다. 이 문제를 해결하고 팀의 생산성을 극대화하는 것이 바로 **CI/CD (Continuous Integration / Continuous Deployment)**입니다.
 
 본 글에서는 GitHub에 내장된 **GitHub Actions**를 활용하여, 우리가 설정한 `develop`과 `main` 브랜치에 맞춘 자동화 파이프라인을 구축하는 방법을 단계별로 안내합니다.
-
------
 
 ## 1\. CI/CD란 무엇이며, 왜 지금 도입해야 하는가?
 
