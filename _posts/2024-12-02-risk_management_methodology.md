@@ -2,7 +2,7 @@
 title: Risk Management Methodology
 tags: Intermediate-Payments-Cybersecurity
 key: page-risk_management_methodology
-categories: [Cybersecurity, Payment]
+categories: [Cybersecurity, Payment Card Industry Data Security Standard]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

@@ -2,7 +2,7 @@
 title: Payments Industry and Regulatory Concepts
 tags: Intermediate-Payments-Cybersecurity
 key: page-payments_industry_and_regulatory_concepts
-categories: [Cybersecurity, Payment]
+categories: [Cybersecurity, Payment Card Industry Data Security Standard]
 author: hyoeun
 math: true
 mathjax_autoNumber: true

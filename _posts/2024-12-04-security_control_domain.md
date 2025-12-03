@@ -2,7 +2,7 @@
 title: Security Control Domains and Associated Roles
 tags: Intermediate-Payments-Cybersecurity
 key: page-security_control_domain
-categories: [Cybersecurity, Payment]
+categories: [Cybersecurity, Payment Card Industry Data Security Standard]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
