@@ -2,7 +2,7 @@
 title: Gen AI Penetration Test Check List
 tags: GenAI-Check-List
 key: page-gen_ai_penetration_check_list
-categories: [AI, GenAI]
+categories: [Artificial Intelligence, GenAI]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
