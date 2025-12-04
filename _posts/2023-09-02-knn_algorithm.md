@@ -2,7 +2,7 @@
 title: k-NN 알고리즘
 tags: k-NN-Algorithm Machine-Learning
 key: page-knn_algorithm
-categories: [AI, Machine Learning]
+categories: [Artificial Intelligence, Machine Learning]
 author: hyoeun
 ---
 

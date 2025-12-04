@@ -2,7 +2,7 @@
 title: Introduction of AI
 tags: AI Machine-Learning
 key: page-ai_introduction
-categories: [AI, Machine Learning]
+categories: [Artificial Intelligence, Machine Learning]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
