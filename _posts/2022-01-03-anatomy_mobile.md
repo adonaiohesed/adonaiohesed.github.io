@@ -1,6 +1,6 @@
 ---
 title: The Anatomy of Mobile App
-tags: Android IOS
+tags: Android iOS
 key: page-anatomy_mobile
 categories: [Cybersecurity, Mobile Security]
 author: hyoeun

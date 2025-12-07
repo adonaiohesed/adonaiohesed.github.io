@@ -111,6 +111,7 @@ We separate the CD strategy according to the Git Flow established in the previou
 
 ### deployment\_pipeline.yml (Example - Assuming AWS S3 Deployment)
 
+{% raw %}
 ```yaml
 name: CD Deployment
 
@@ -126,7 +127,7 @@ jobs:
     runs-on: ubuntu-latest
     # Environment Variable Configuration (using Secrets for security)
     environment: 
-      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+      name: ${{ github.ref == 'refs/heads/main' &amp;&amp; 'production' || 'development' }}
       
     steps:
       - name: Checkout Code
@@ -150,6 +151,7 @@ jobs:
         if: github.ref == 'refs/heads/main' # If main branch
         run: aws s3 sync ./dist s3://${{ secrets.PROD_S3_BUCKET }} --delete
 ```
+{% endraw %}
 
 ### Security Best Practice: Using GitHub Secrets
 
@@ -264,6 +266,7 @@ jobs:
 
 ### deployment\_pipeline.yml (예시 - AWS S3 배포 가정)
 
+{% raw %}
 ```yaml
 name: CD Deployment
 
@@ -279,7 +282,7 @@ jobs:
     runs-on: ubuntu-latest
     # 환경 변수 설정 (보안을 위해 Secrets 사용)
     environment: 
-      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+      name: ${{ github.ref == 'refs/heads/main' &amp;&amp; 'production' || 'development' }}
       
     steps:
       - name: Checkout Code
@@ -303,6 +306,7 @@ jobs:
         if: github.ref == 'refs/heads/main' # main 브랜치인 경우
         run: aws s3 sync ./dist s3://${{ secrets.PROD_S3_BUCKET }} --delete
 ```
+{% endraw %}
 
 ### 보안 Best Practice: GitHub Secrets 사용
 
