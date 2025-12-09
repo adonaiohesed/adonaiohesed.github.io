@@ -8,7 +8,7 @@ math: true
 mathjax_autoNumber: true
 ---
 
-### 1\. Web Shells: The Master Key to the Web Server
+### 1. Web Shells: The Master Key to the Web Server
 
 #### What is a Web Shell?
 
@@ -74,7 +74,7 @@ Web shells range from simple, single-function scripts to highly sophisticated to
 
 -----
 
-### 2\. Reverse Shells: Bypassing Firewalls with a Connection in Reverse
+### 2. Reverse Shells: Bypassing Firewalls with a Connection in Reverse
 
 #### What is a Reverse Shell?
 
@@ -140,7 +140,7 @@ Reverse shells can be implemented in many languages and are often achievable wit
 
 -----
 
-### 3\. The Synergy: A Combined Web Shell and Reverse Shell Attack Scenario
+### 3. The Synergy: A Combined Web Shell and Reverse Shell Attack Scenario
 
 While powerful on their own, web shells and reverse shells are devastating when used together. A typical attack flow looks like this:
 
@@ -167,7 +167,7 @@ An effective response to these threats requires more than a single layer of defe
 
 -----
 
-### 1\. 웹쉘: 웹 서버의 문을 여는 만능열쇠
+### 1. 웹쉘: 웹 서버의 문을 여는 만능열쇠
 
 #### 웹쉘이란 무엇인가?
 
@@ -233,7 +233,7 @@ An effective response to these threats requires more than a single layer of defe
 
 -----
 
-### 2\. 리버스쉘: 방화벽을 우회하는 역방향 연결
+### 2. 리버스쉘: 방화벽을 우회하는 역방향 연결
 
 #### 리버스쉘이란 무엇인가?
 
@@ -299,7 +299,7 @@ An effective response to these threats requires more than a single layer of defe
 
 -----
 
-### 3\. 시너지 효과: 웹쉘과 리버스쉘의 연계 공격 시나리오
+### 3. 시너지 효과: 웹쉘과 리버스쉘의 연계 공격 시나리오
 
 웹쉘과 리버스쉘은 단독으로도 강력하지만, 함께 사용될 때 파괴력이 배가됩니다. 일반적인 공격 흐름은 다음과 같습니다.
 

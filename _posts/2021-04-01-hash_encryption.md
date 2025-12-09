@@ -36,13 +36,13 @@ A good **cryptographic hash function** must satisfy three critical properties:
 
 There are two main types of encryption methods:
 
-### 1\. Symmetric-key Encryption
+### 1. Symmetric-key Encryption
 
 **Symmetric-key encryption** uses the **same encryption key** for both encrypting and decrypting data. Its advantage lies in its speed, making it efficient for encrypting large volumes of data. However, it introduces the **key distribution** problem, where both the sender and receiver must securely share the same key.
 
   * **Examples**: DES (Data Encryption Standard, no longer secure for most uses), 3DES (Triple DES), **AES (Advanced Encryption Standard)**, Blowfish, Twofish, RC4 (stream cipher).
 
-### 2\. Asymmetric-key Encryption
+### 2. Asymmetric-key Encryption
 
 **Asymmetric-key encryption** uses a pair of different keys for encryption and decryption: a **public key** and a **private key**. The public key can be openly distributed, while the private key must be kept secure by its owner. Data encrypted with a public key can only be decrypted by its corresponding private key. Conversely, data signed with a private key can be verified with its public key. While it simplifies key distribution, it is slower than symmetric-key encryption.
 
@@ -127,7 +127,7 @@ Securely storing user **passwords** is crucial for protecting user accounts in t
 
 However, simply hashing passwords is not enough. The following attacks exist:
 
-### 1\. Password Cracking Attacks
+### 1. Password Cracking Attacks
 
   * **Dictionary Attack**: This attack involves hashing a pre-prepared list of common words or phrases (a dictionary file) and comparing these hashes to the stored hash values in the database.
   * **Brute-Force Attack**: This attack attempts every possible character combination for a given length and compares its hash to the target hash value. While computationally very expensive, it can eventually succeed with sufficient time and resources.
@@ -137,7 +137,7 @@ However, simply hashing passwords is not enough. The following attacks exist:
 
 These attacks make password cracking easier and faster. While we cannot completely prevent these attacks, we can significantly reduce their effectiveness.
 
-### 2\. Adding Salt: Enhancing Hashing Security
+### 2. Adding Salt: Enhancing Hashing Security
 
 To mitigate the vulnerabilities of simple password hashing, an arbitrary piece of data called a **salt** is added before hashing. A **salt** does not need to be encrypted, and its mere presence is highly effective in neutralizing the lookup table and rainbow table attacks mentioned above. Rather than simply prepending or appending the salt to the password, it's best to use Key Derivation Functions (KDFs) designed to securely incorporate the salt internally.
 
@@ -216,13 +216,13 @@ To mitigate the vulnerabilities of simple password hashing, an arbitrary piece o
 
 암호화 방식은 크게 두 가지로 나뉩니다.
 
-### 1\. 대칭키 암호화 (Symmetric-key Encryption)
+### 1. 대칭키 암호화 (Symmetric-key Encryption)
 
 **대칭키 암호화**는 데이터를 암호화하고 복호화할 때 **동일한 암호화 키**를 사용하는 방식입니다. 속도가 빠르다는 장점이 있어 대량의 데이터를 암호화하는 데 효율적입니다. 하지만 송신자와 수신자가 안전하게 키를 공유해야 한다는 **키 분배(Key Distribution)** 문제가 발생할 수 있습니다.
 
   * **종류**: DES (Data Encryption Standard, 현재는 보안상 사용하지 않음), 3DES (Triple DES), **AES (Advanced Encryption Standard)**, Blowfish, Twofish, RC4 (스트림 암호)
 
-### 2\. 비대칭키 암호화 (Asymmetric-key Encryption)
+### 2. 비대칭키 암호화 (Asymmetric-key Encryption)
 
 **비대칭키 암호화**는 암호화와 복호화에 서로 다른 한 쌍의 키, 즉 **공개키(Public Key)**와 **개인키(Private Key)**를 사용하는 방식입니다. 공개키는 누구나 알 수 있도록 공개하고, 개인키는 소유자만 안전하게 보관합니다. 공개키로 암호화한 데이터는 해당 공개키에 해당하는 개인키로만 복호화할 수 있고, 반대로 개인키로 서명한 데이터는 공개키로 검증할 수 있습니다. 키 분배가 용이하다는 장점이 있지만, 대칭키 암호화에 비해 속도가 느립니다.
 
@@ -309,7 +309,7 @@ HMAC은 **재전송 공격(Replay Attack)**에 취약할 수 있습니다. 공�
 
 하지만 단순히 패스워드를 해시하는 것만으로는 충분하지 않습니다. 다음과 같은 공격들이 존재하기 때문입니다.
 
-### 1\. 패스워드 크래킹 공격
+### 1. 패스워드 크래킹 공격
 
   * **사전 공격(Dictionary Attack)**: 미리 준비된 일반적인 단어나 구문 목록(사전 파일)을 해시하여 데이터베이스에 저장된 해시값과 비교하는 공격입니다.
   * **무차별 대입 공격(Brute-Force Attack)**: 특정 길이의 모든 가능한 문자 조합을 시도하여 해시값을 비교하는 공격입니다. 계산 비용이 매우 높지만, 충분한 시간과 자원이 있다면 결국 성공할 수 있습니다.
@@ -319,7 +319,7 @@ HMAC은 **재전송 공격(Replay Attack)**에 취약할 수 있습니다. 공�
 
 이러한 공격들은 패스워드 크래킹을 더 쉽고 빠르게 만듭니다. 우리는 이러한 공격들을 완전히 막을 수는 없지만, 그 효과를 현저히 떨어뜨릴 수 있습니다.
 
-### 2\. 솔트(Salt) 추가: 해싱 보안 강화
+### 2. 솔트(Salt) 추가: 해싱 보안 강화
 
 단순히 패스워드를 해시하는 방식의 취약점을 보완하기 위해 **솔트(Salt)**라는 임의의 데이터를 추가하여 해싱합니다. **솔트**는 암호화할 필요가 없으며, 존재 자체만으로 위에서 언급된 룩업 테이블 및 레인보우 테이블 공격을 무력화하는 데 매우 효과적입니다. 솔트는 패스워드 앞에 붙이거나 뒤에 붙이거나 하는 방식보다는, 해시 함수 내부적으로 안전하게 처리되도록 설계된 키 유도 함수(KDFs)를 사용하는 것이 좋습니다.
 

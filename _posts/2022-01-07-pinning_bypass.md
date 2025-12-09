@@ -16,7 +16,7 @@ This article covers both the traditional manual bypass method through **Package 
 
 -----
 
-### 1\. Overview of Bypassing with Package Repackaging
+### 1. Overview of Bypassing with Package Repackaging
 
 Package repackaging proceeds through the following steps:
 
@@ -31,7 +31,7 @@ Through this process, we can modify the app's internal logic to neutralize SSL P
 
 -----
 
-### 2\. Prerequisites (macOS Environment)
+### 2. Prerequisites (macOS Environment)
 
 This guide assumes that **JDK** and **Android SDK Platform-Tools** are already installed. The additional tools required are as follows:
 
@@ -50,7 +50,7 @@ This guide assumes that **JDK** and **Android SDK Platform-Tools** are already i
 
 -----
 
-### 3\. [Method 1] Step-by-Step Manual Bypass: Package Repackaging
+### 3. [Method 1] Step-by-Step Manual Bypass: Package Repackaging
 
 This guide assumes we are using a hypothetical `VulnerableApp.apk` file with SSL Pinning applied.
 
@@ -141,7 +141,7 @@ Running this command will generate a new signed APK file (e.g., `VulnerableApp_r
 
 -----
 
-### 4\. [Method 2] Automated Bypass: Using Objection
+### 4. [Method 2] Automated Bypass: Using Objection
 
 The process of decompiling, modifying XML, recompiling, and signing described above is complex and time-consuming. **Objection** simplifies SSL Pinning bypass by automating this entire process into a single command.
 
@@ -181,7 +181,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
 이 글에서는 가장 전통적인 우회 기법인 **패키지 리패키징(Package Repackaging)**을 통한 수동 우회 방법과, `objection`이라는 강력한 도구를 사용하여 이 과정을 자동화하는 방법을 모두 다룹니다.
 
-### 1\. 패키지 리패키징을 통한 우회 개요
+### 1. 패키지 리패키징을 통한 우회 개요
 
 패키지 리패키징은 다음과 같은 단계로 진행됩니다.
 
@@ -194,7 +194,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
 이 과정을 통해 우리는 앱의 내부 로직을 변경하여 SSL Pinning을 무력화하고, 프록시를 통해 앱의 네트워크 트래픽을 성공적으로 가로챌 수 있게 됩니다.
 
-### 2\. 준비물 (macOS 환경)
+### 2. 준비물 (macOS 환경)
 
 이 가이드에서는 **JDK**, **Android SDK Platform-Tools**가 이미 설치되어 있다고 가정합니다. 추가적으로 필요한 도구는 다음과 같습니다.
 
@@ -216,7 +216,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
 -----
 
-### 3\. [방법 1] 단계별 수동 우회: 패키지 리패키징
+### 3. [방법 1] 단계별 수동 우회: 패키지 리패키징
 
 이 가이드에서는 가상의 SSL Pinning이 적용된 `VulnerableApp.apk` 파일을 사용한다고 가정합니다.
 
@@ -307,7 +307,7 @@ java -jar /path/to/uber-apk-signer.jar --apks VulnerableApp_repacked_unsigned.ap
 
 -----
 
-### 4\. [방법 2] 자동화된 우회: Objection 사용
+### 4. [방법 2] 자동화된 우회: Objection 사용
 
 위에서 설명한 디컴파일, XML 수정, 리컴파일, 서명 과정은 복잡하고 시간이 많이 소요됩니다. **Objection**은 이 모든 과정을 단 하나의 명령어로 자동화하여 SSL Pinning 우회를 매우 간단하게 만들어 줍니다.
 

@@ -12,7 +12,7 @@ mathjax_autoNumber: true
 
 When using Frida, **it's highly recommended to work within a virtual environment**. This allows you to efficiently manage the necessary libraries without conflicting with your system-wide Python environment.
 
-### 1\. Configure Conda Initialization (Zsh Shell)
+### 1. Configure Conda Initialization (Zsh Shell)
 
 To use `conda` in the zsh shell, you need to add the following content to your `~/.zshrc` file. This configuration helps the `conda` command function correctly. Remember to replace `<YOUR_CONDA_PATH>` with the actual path where Anaconda or Miniconda is installed. It will typically look something like `/Users/YOUR_USERNAME/anaconda3`.
 
@@ -34,7 +34,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-### 2\. Apply the Configuration
+### 2. Apply the Configuration
 
 After modifying the `~/.zshrc` file, either restart your terminal or run the following command to apply the changes.
 
@@ -42,7 +42,7 @@ After modifying the `~/.zshrc` file, either restart your terminal or run the fol
 source ~/.zshrc
 ```
 
-### 3\. Create and Activate the Frida Virtual Environment
+### 3. Create and Activate the Frida Virtual Environment
 
 Now you can use the `conda` command to create and activate a new virtual environment for Frida. Let's create an environment named `frida_env` using `python=3.12`.
 
@@ -51,7 +51,7 @@ conda create -n frida_env python=3.12
 conda activate frida_env
 ```
 
-### 4\. Install Frida
+### 4. Install Frida
 
 Install the `frida` and `frida-tools` packages. It's crucial that the version you install matches the version of the Frida server running on your mobile device.
 
@@ -61,7 +61,7 @@ pip install frida==17.2.6
 pip install frida-tools==12.2.4
 ```
 
-### 5\. Deactivate the Virtual Environment
+### 5. Deactivate the Virtual Environment
 
 When you're finished with your Frida tasks or want to switch to another environment, you can exit the currently active virtual environment with the following command.
 
@@ -77,7 +77,7 @@ When installing Frida Server, it is critical to check your phone's CPU architect
 
 For mobile application penetration testing, **running Frida Server on a rooted device is essential**, especially when analyzing commercial apps that don't allow debugging or when probing system-level vulnerabilities. This mirrors the approach real attackers would use and provides the deepest possible insight into an app's security posture.
 
-### 1\. Check Mobile Architecture via ADB Shell
+### 1. Check Mobile Architecture via ADB Shell
 
 First, you must accurately identify your mobile device's CPU architecture to download the correct Frida Server binary.
 
@@ -112,7 +112,7 @@ First, you must accurately identify your mobile device's CPU architecture to dow
       * `x86_64` indicates an **x86\_64** architecture (64-bit x86).
       * `x86` or `i686` indicates an **x86** architecture (32-bit x86).
 
-### 2\. Download the Frida Server File
+### 2. Download the Frida Server File
 
 Once you've identified the CPU architecture, it's time to download the Frida Server binary.
 
@@ -120,7 +120,7 @@ Once you've identified the CPU architecture, it's time to download the Frida Ser
   * Download the `frida-server` binary that matches your architecture. For example, if your device is ARM64, you should download the `frida-server-*-android-arm64.xz` file.
   * **It's crucial to ensure the major version number of your locally installed Frida matches the server version.** Mismatched versions can cause issues.
 
-### 3\. Transfer and Run the Frida Server File on Your Mobile Device
+### 3. Transfer and Run the Frida Server File on Your Mobile Device
 
 Transfer the downloaded Frida Server file to the `/data/local/tmp` directory on your mobile device and **run it with root privileges**.
 
@@ -155,7 +155,7 @@ Transfer the downloaded Frida Server file to the `/data/local/tmp` directory on 
 
 Frida를 사용할 때는 **가상 환경에서 작업하는 것을 권장**합니다. 이렇게 하면 시스템 전체의 파이썬 환경과 충돌 없이 필요한 라이브러리들을 효율적으로 관리할 수 있습니다.
 
-### 1\. Conda 초기화 설정 (Zsh 쉘)
+### 1. Conda 초기화 설정 (Zsh 쉘)
 
 `conda`를 zsh 쉘에서 사용하기 위해, `~/.zshrc` 파일에 다음 내용을 추가해야 합니다. 이 설정은 `conda` 명령어가 올바르게 작동하도록 돕습니다. `<YOUR_CONDA_PATH>`는 Anaconda 또는 Miniconda가 설치된 경로로 변경해야 합니다. 일반적으로 `/Users/YOUR_USERNAME/anaconda3/bin/conda`와 같을 수 있습니다.
 
@@ -177,7 +177,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 ```
 
-### 2\. 설정 적용
+### 2. 설정 적용
 
 `~/.zshrc` 파일을 수정한 후에는 변경 사항을 적용하기 위해 터미널을 다시 시작하거나 다음 명령어를 실행합니다.
 
@@ -185,7 +185,7 @@ unset __conda_setup
 source ~/.zshrc
 ```
 
-### 3\. Frida 가상 환경 생성 및 활성화
+### 3. Frida 가상 환경 생성 및 활성화
 
 이제 `conda` 명령어를 사용하여 Frida를 위한 새로운 가상 환경을 생성하고 활성화할 수 있습니다. `frida_env`라는 이름으로 `python=3.12` 버전을 사용하는 환경을 만듭니다.
 
@@ -194,7 +194,7 @@ conda create -n frida_env python=3.12
 conda activate frida_env
 ```
 
-### 4\. Frida 설치
+### 4. Frida 설치
 
 Frida 작업을 마쳤거나 다른 환경으로 전환하고 싶을 때는 다음 명령어로 현재 활성화된 가상 환경에서 벗어날 수 있습니다.
 
@@ -203,7 +203,7 @@ Frida 작업을 마쳤거나 다른 환경으로 전환하고 싶을 때는 다�
 pip install frida==17.2.6
 ```
 
-### 5\. 가상 환경 비활성화
+### 5. 가상 환경 비활성화
 
 Frida 작업을 마쳤거나 다른 환경으로 전환하고 싶을 때는 다음 명령어로 현재 활성화된 가상 환경에서 벗어날 수 있습니다.
 
@@ -219,7 +219,7 @@ Frida Server를 설치할 때 휴대폰의 CPU 아키텍처(ARM, ARM64, x86 등)
 
 모바일 애플리케이션 침투 테스트(모의 해킹) 시, 특히 **디버깅이 허용되지 않은 상용 앱이나 시스템 수준의 취약점을 분석할 때는 루팅된 장치에서 Frida Server를 실행하는 것이 필수적입니다.** 이는 실제 공격자가 활용하는 접근 방식이며, 앱의 보안 취약점을 가장 심층적으로 파악할 수 있게 해줍니다.
 
-### 1\. ADB Shell 명령어를 통해 모바일 아키텍처 확인
+### 1. ADB Shell 명령어를 통해 모바일 아키텍처 확인
 
 먼저 모바일 장치의 CPU 아키텍처를 정확히 파악해야 합니다. 이에 맞는 Frida Server 바이너리를 다운로드해야 하니까요.
 
@@ -254,7 +254,7 @@ Frida Server를 설치할 때 휴대폰의 CPU 아키텍처(ARM, ARM64, x86 등)
       * `x86_64`가 나오면 **x86\_64** 아키텍처입니다. (64비트 x86)
       * `x86` 또는 `i686`이 나오면 **x86** 아키텍처입니다. (32비트 x86)
 
-### 2\. Frida Server 파일 다운로드
+### 2. Frida Server 파일 다운로드
 
 CPU 아키텍처를 확인했다면, 이제 Frida Server 바이너리를 다운로드할 차례입니다.
 
@@ -262,7 +262,7 @@ CPU 아키텍처를 확인했다면, 이제 Frida Server 바이너리를 다운�
   * 확인한 아키텍처에 맞는 `frida-server` 바이너리를 다운로드하세요. 예를 들어, 기기가 ARM64라면 `frida-server-*-android-arm64.xz` 파일을 다운로드해야 합니다.
   * **로컬에 설치된 Frida 버전과 서버 버전의 주요 버전 번호가 일치하는지 확인하는 것이 중요합니다.** 버전이 다르면 문제가 발생할 수 있습니다.
 
-### 3\. 모바일에 다운로드한 Frida Server 파일 전송 및 실행
+### 3. 모바일에 다운로드한 Frida Server 파일 전송 및 실행
 
 다운로드한 Frida Server 파일을 모바일 장치의 `/data/local/tmp` 디렉터리로 전송하고, **루트 권한으로 실행**합니다.
 

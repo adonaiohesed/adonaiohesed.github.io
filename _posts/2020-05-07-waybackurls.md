@@ -42,7 +42,7 @@ This command will output a list of all URLs associated with `example.com` and it
 
 While a raw list of URLs is useful, the real power of `waybackurls` comes from filtering and analyzing its output to find actionable intelligence.
 
-#### 1\. Discovering Sensitive Files and Endpoints
+#### 1. Discovering Sensitive Files and Endpoints
 
 Historical archives often contain direct links to files that were never intended to be public or have since been forgotten. You can use `grep` to filter for interesting file extensions.
 
@@ -58,7 +58,7 @@ Historical archives often contain direct links to files that were never intended
     echo "example.com" | waybackurls | grep -E "\.(json|xml|txt|bak|zip|conf)$"
     ```
 
-#### 2\. Identifying Potentially Vulnerable Parameters
+#### 2. Identifying Potentially Vulnerable Parameters
 
 Old URLs can reveal query parameters that are no longer used in the front-end application but might still be processed by the back-end. These parameters can be a goldmine for finding vulnerabilities like XSS, SQL injection, or open redirects.
 
@@ -72,7 +72,7 @@ After obtaining a list of URLs with parameters, you can use tools like `gf` to s
 
 The true strength of `waybackurls` is realized when you chain it with other tools in your workflow.
 
-#### 1\. Checking for Live URLs with `httpx`
+#### 1. Checking for Live URLs with `httpx`
 
 Many URLs found in archives may no longer be active. The `httpx` tool can quickly probe a list of URLs to see which ones are still live and return a valid response.
 
@@ -82,7 +82,7 @@ echo "example.com" | waybackurls | httpx -status-code -mc 200,301,302
 
 This command filters the results to show only URLs that return a `200 OK`, `301 Moved Permanently`, or `302 Found` status code.
 
-#### 2\. Pattern Matching for Vulnerabilities with `gf`
+#### 2. Pattern Matching for Vulnerabilities with `gf`
 
 `gf` (grep from files) is a tool that allows you to search for common vulnerability patterns in text. By combining it with `waybackurls`, you can quickly identify potential weak points.
 
@@ -144,7 +144,7 @@ echo "example.com" | waybackurls
 
 원시 URL 목록도 유용하지만, `waybackurls`의 진정한 힘은 실행 가능한 정보를 찾기 위해 출력을 필터링하고 분석하는 데서 나옵니다.
 
-#### 1\. 민감한 파일 및 엔드포인트 발견
+#### 1. 민감한 파일 및 엔드포인트 발견
 
 과거 아카이브에는 공개될 의도가 없었거나 잊혀진 파일에 대한 직접적인 링크가 포함된 경우가 많습니다. `grep`을 사용하여 흥미로운 파일 확장자를 필터링할 수 있습니다.
 
@@ -160,7 +160,7 @@ echo "example.com" | waybackurls
     echo "example.com" | waybackurls | grep -E "\.(json|xml|txt|bak|zip|conf)$"
     ```
 
-#### 2\. 잠재적으로 취약한 매개변수 식별
+#### 2. 잠재적으로 취약한 매개변수 식별
 
 오래된 URL은 프런트엔드 애플리케이션에서는 더 이상 사용되지 않지만 백엔드에서는 여전히 처리될 수 있는 쿼리 매개변수를 드러낼 수 있습니다. 이러한 매개변수는 XSS, SQL 인젝션 또는 오픈 리디렉션과 같은 취약점을 찾는 데 금광이 될 수 있습니다.
 
@@ -174,7 +174,7 @@ echo "example.com" | waybackurls | grep "=" | uniq
 
 `waybackurls`의 진정한 강점은 작업 흐름에서 다른 도구와 연계할 때 실현됩니다.
 
-#### 1\. `httpx`로 활성 URL 확인
+#### 1. `httpx`로 활성 URL 확인
 
 아카이브에서 발견된 많은 URL은 더 이상 활성 상태가 아닐 수 있습니다. `httpx` 도구는 URL 목록을 신속하게 탐색하여 어떤 URL이 여전히 활성 상태이고 유효한 응답을 반환하는지 확인할 수 있습니다.
 
@@ -184,7 +184,7 @@ echo "example.com" | waybackurls | httpx -status-code -mc 200,301,302
 
 이 명령은 `200 OK`, `301 Moved Permanently` 또는 `302 Found` 상태 코드를 반환하는 URL만 표시하도록 결과를 필터링합니다.
 
-#### 2\. `gf`로 취약점 패턴 매칭
+#### 2. `gf`로 취약점 패턴 매칭
 
 `gf`(grep from files)는 텍스트에서 일반적인 취약점 패턴을 검색할 수 있는 도구입니다. 이를 `waybackurls`와 결합하면 잠재적인 약점을 신속하게 식별할 수 있습니다.
 

@@ -14,7 +14,7 @@ Manually building code and deploying it to servers wastes developer time and cau
 
 In this article, we will provide a step-by-step guide on how to build an automated pipeline tailored to our configured `develop` and `main` branches, leveraging **GitHub Actions**, which is built into GitHub.
 
-## 1\. What is CI/CD, and Why Adopt It Now?
+## 1. What is CI/CD, and Why Adopt It Now?
 
 ### CI (Continuous Integration)
 
@@ -26,7 +26,7 @@ In this article, we will provide a step-by-step guide on how to build an automat
   * **Goal:** Code that has passed testing is automatically deployed to staging or production servers.
   * **Effect:** Standardizes and automates the deployment process, shortening deployment time and reducing deployment errors.
 
-## 2\. Understanding GitHub Actions: Workflow File Structure
+## 2. Understanding GitHub Actions: Workflow File Structure
 
 GitHub Actions is used by creating a `.github/workflows` directory within your repository and defining YAML files inside it. This YAML file serves as the blueprint for your automation.
 
@@ -48,7 +48,7 @@ Create the YAML file in the following path within the project root directory:
 .github/workflows/ci_pipeline.yml
 ```
 
-## 3\. Hands-On: Building CI for Automatic Testing on PR (Build & Test)
+## 3. Hands-On: Building CI for Automatic Testing on PR (Build & Test)
 
 This is the most fundamental and important CI pipeline. It sets up automatic testing to run before any PR is merged into the `develop` branch.
 
@@ -96,7 +96,7 @@ jobs:
 
 **How it works:** When a PR is created from a `feature` branch into `develop`, this workflow automatically executes `npm test`. If the tests fail, the PR can be configured to be unmergeable.
 
-## 4\. Building Separate CD for Different Environments (Deployment)
+## 4. Building Separate CD for Different Environments (Deployment)
 
 Now that we have confirmed the code is stable, we build a CD pipeline that automatically deploys to the corresponding server for each branch.
 
@@ -169,7 +169,7 @@ jobs:
 
 본 글에서는 GitHub에 내장된 **GitHub Actions**를 활용하여, 우리가 설정한 `develop`과 `main` 브랜치에 맞춘 자동화 파이프라인을 구축하는 방법을 단계별로 안내합니다.
 
-## 1\. CI/CD란 무엇이며, 왜 지금 도입해야 하는가?
+## 1. CI/CD란 무엇이며, 왜 지금 도입해야 하는가?
 
 ### CI (지속적 통합 - Continuous Integration)
 
@@ -181,7 +181,7 @@ jobs:
   * **목표:** 테스트를 통과한 코드를 자동으로 스테이징 서버나 운영 서버에 배포합니다.
   * **효과:** 배포 과정을 표준화하고 자동화하여, 배포 시간을 단축하고 배포 오류를 줄입니다.
 
-## 2\. GitHub Actions 이해하기: Workflow 파일 구조
+## 2. GitHub Actions 이해하기: Workflow 파일 구조
 
 GitHub Actions는 저장소 내부에 `.github/workflows` 디렉터리를 만들고 그 안에 YAML 파일을 정의하여 사용합니다. 이 YAML 파일이 곧 자동화의 설계도입니다.
 
@@ -203,7 +203,7 @@ GitHub Actions는 저장소 내부에 `.github/workflows` 디렉터리를 만들
 .github/workflows/ci_pipeline.yml 
 ```
 
-## 3\. 실습: PR 시 자동 테스트를 위한 CI 구축 (Build & Test)
+## 3. 실습: PR 시 자동 테스트를 위한 CI 구축 (Build & Test)
 
 가장 기본적이면서 중요한 CI 파이프라인입니다. 모든 PR이 `develop` 브랜치로 병합되기 전에 자동으로 테스트를 수행하도록 설정합니다.
 
@@ -251,7 +251,7 @@ jobs:
 
 **작동 방식:** `feature` 브랜치에서 `develop`으로 PR을 생성하면, 이 워크플로우가 자동으로 실행되어 `npm test`를 돌립니다. 테스트가 실패하면 PR은 병합될 수 없도록 설정할 수 있습니다.
 
-## 4\. 환경별 분리된 CD 구축 (Deployment)
+## 4. 환경별 분리된 CD 구축 (Deployment)
 
 이제 코드가 안정적임을 확인했으니, 브랜치별로 대응하는 서버에 자동 배포하는 CD 파이프라인을 구축합니다.
 

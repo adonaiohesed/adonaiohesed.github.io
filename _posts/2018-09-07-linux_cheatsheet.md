@@ -8,7 +8,7 @@ math: true
 mathjax_autoNumber: true
 ---
 
-## 1\. File and Directory Navigation
+## 1. File and Directory Navigation
 
 Understanding the system's structure and finding important configuration files or hidden information is the most fundamental step.
 
@@ -48,7 +48,7 @@ Searches for specific strings (patterns) within file contents or command output.
 
 -----
 
-## 2\. Process Management
+## 2. Process Management
 
 Used to check which programs are running on the current system with what permissions and to terminate suspicious processes.
 
@@ -84,7 +84,7 @@ Terminates a specific process.
 
 -----
 
-## 3\. Network Analysis
+## 3. Network Analysis
 
 Used to check ports or connection statuses communicating with the outside and to perform simple data transfer tests.
 
@@ -129,7 +129,7 @@ Known as the "Swiss Army knife of networking," it can perform various tasks such
 
 -----
 
-## 4\. User and Privilege Information
+## 4. User and Privilege Information
 
 Essential for checking the current user's permissions and finding clues for privilege escalation.
 

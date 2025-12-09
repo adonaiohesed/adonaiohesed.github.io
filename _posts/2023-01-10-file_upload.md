@@ -48,7 +48,7 @@ When a file upload feature is present, you should check the following items. Fun
 
 The `Content-Type` header in the HTTP protocol indicates the type of data being transmitted and is defined based on MIME (Multipurpose Internet Mail Extensions) types. The `Content-Type` value helps clients and servers to correctly process and interpret data.
 
-### 1\. Text Types
+### 1. Text Types
 
 Used for text data, representing human-readable content.
 
@@ -58,7 +58,7 @@ Used for text data, representing human-readable content.
   - `text/javascript` or `application/javascript`: JavaScript files (e.g., `.js`)
   - `text/csv`: CSV files (e.g., `.csv`)
 
-### 2\. Application Types
+### 2. Application Types
 
 Primarily represent binary or special data.
 
@@ -72,7 +72,7 @@ Primarily represent binary or special data.
   - `application/vnd.ms-excel`: Microsoft Excel files (e.g., `.xls`)
   - `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`: Excel Open XML format (e.g., `.xlsx`)
 
-### 3\. Image Types
+### 3. Image Types
 
 Represent image data.
 
@@ -82,7 +82,7 @@ Represent image data.
   - `image/svg+xml`: SVG images (e.g., `.svg`)
   - `image/webp`: WebP images (e.g., `.webp`)
 
-### 4\. Audio Types
+### 4. Audio Types
 
 Represent audio data.
 
@@ -91,7 +91,7 @@ Represent audio data.
   - `audio/wav`: WAV audio files (e.g., `.wav`)
   - `audio/flac`: FLAC audio files (e.g., `.flac`)
 
-### 5\. Video Types
+### 5. Video Types
 
 Represent video data.
 
@@ -99,7 +99,7 @@ Represent video data.
   - `video/webm`: WebM video files (e.g., `.webm`)
   - `video/ogg`: Ogg video files (e.g., `.ogv`)
 
-### 6\. Multipart Types
+### 6. Multipart Types
 
 Used for transmitting composite data.
 
@@ -107,7 +107,7 @@ Used for transmitting composite data.
   - `multipart/alternative`: Data with various representation formats (e.g., HTML email)
   - `multipart/mixed`: A mix of text and binary data
 
-### 7\. Font Types
+### 7. Font Types
 
 `Content-Type` for font files used on the web.
 
@@ -116,7 +116,7 @@ Used for transmitting composite data.
   - `font/ttf`: TrueType font files (e.g., `.ttf`)
   - `font/otf`: OpenType font files (e.g., `.otf`)
 
-### 8\. Other Types
+### 8. Other Types
 
 `Content-Type` used in specific situations.
 
@@ -126,7 +126,7 @@ Used for transmitting composite data.
 
 ## Security Vulnerabilities Due to Mismatch Between Actual File Content and Content-Type
 
-### 1\. File Execution Vulnerability
+### 1. File Execution Vulnerability
 
 If a malicious file disguised with a `Content-Type` like `image/png` or `text/plain` is uploaded to the server, the following problems can occur. An attacker can try to upload a desired file by tampering with the `Content-Type` to one that the server allows.
 
@@ -141,7 +141,7 @@ If a malicious file disguised with a `Content-Type` like `image/png` or `text/pl
   - **Verify the actual MIME type of the file**: Use a library like `magic` to check the actual type of the uploaded file.
   - **Configure the upload directory**: Set the upload directory to be non-executable by the web server.
 
-### 2\. MIME Sniffing Attack
+### 2. MIME Sniffing Attack
 
 An attack that exploits a `Content-Type` mismatch to trick the browser into misinterpreting the file's content.
 
@@ -156,7 +156,7 @@ An attack that exploits a `Content-Type` mismatch to trick the browser into misi
   - **Set response headers**: Use the `X-Content-Type-Options: nosniff` header to prevent the browser from performing MIME sniffing.
   - **Set Content-Disposition**: Configure `Content-Disposition: attachment` to ensure the file is only handled as a download.
 
-### 3\. Evasion of Detection
+### 3. Evasion of Detection
 
 A malicious file can be uploaded with a forged `Content-Type` to evade detection by certain security solutions (e.g., antivirus, WAF).
 
@@ -170,7 +170,7 @@ A malicious file can be uploaded with a forged `Content-Type` to evade detection
   - **Content-based verification**: Analyze the actual content of the file, not just the `Content-Type`.
   - **File signature verification**: Analyze the file header to confirm the file type.
 
-### 4\. Denial of Service (DoS) Attack
+### 4. Denial of Service (DoS) Attack
 
 A `Content-Type` mismatch can lead to excessive use of server resources or abnormal processing.
 
@@ -184,7 +184,7 @@ A `Content-Type` mismatch can lead to excessive use of server resources or abnor
   - **File size limit**: Restrict the size of uploadable files.
   - **Separate data processing logic**: Add a separate verification step to ensure the `Content-Type` and file content match.
 
-### 5\. Client-Side Attack (Stored XSS)
+### 5. Client-Side Attack (Stored XSS)
 
 If a malicious file is processed with an incorrect `Content-Type` and delivered to the client, it can lead to a client-side attack.
 

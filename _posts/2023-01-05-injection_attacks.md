@@ -8,7 +8,7 @@ math: true
 mathjax_autoNumber: true
 ---
 
-### 1\. Command Injection: The Shell is the Limit
+### 1. Command Injection: The Shell is the Limit
 
 Command Injection is one of the most critical vulnerabilities we can encounter. A successful attack can lead beyond simple data theft to the 'Holy Grail' of gaining direct control over the server.
 
@@ -69,7 +69,7 @@ When reporting this vulnerability, you must present specific defensive strategie
 
 -----
 
-### 2\. NoSQL Injection: Abusing the Flexibility of Modern Databases
+### 2. NoSQL Injection: Abusing the Flexibility of Modern Databases
 
 With the rise of NoSQL databases like MongoDB, Cassandra, and Redis, a new form of injection has emerged. Although the syntax differs from SQL, the fundamental vulnerability of dynamically constructing queries from untrusted user input remains the same.
 
@@ -125,7 +125,7 @@ A typical login query looks like this:
 
 -----
 
-### 3\. XML Injection & XXE: The Deceptive Data Format
+### 3. XML Injection & XXE: The Deceptive Data Format
 
 XML is still widely used, from legacy SOAP APIs to modern configuration files. While XPath Injection focuses on manipulating queries, XML Injection and its final evolution, XXE, attack the XML parser itself, causing much more severe damage.
 
@@ -197,7 +197,7 @@ The defense methods for XXE are very clear. You must include the following in yo
 
 -----
 
-### 4\. LDAP Injection: The Corporate Directory's Weakness
+### 4. LDAP Injection: The Corporate Directory's Weakness
 
 LDAP Injection is a powerful weapon when testing authentication mechanisms in a corporate environment. Many companies use LDAP-based systems like Active Directory to handle user authentication and information lookups.
 
@@ -223,7 +223,7 @@ The key is to manipulate the LDAP filter syntax `(attribute=value)`.
 
 -----
 
-### 1\. Command Injection: The Shell is the Limit
+### 1. Command Injection: The Shell is the Limit
 
 Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약점 중 하나입니다. 성공 시, 단순히 데이터를 탈취하는 것을 넘어 서버의 제어권을 직접 획득하는 'Holy Grail'로 이어질 수 있습니다.
 
@@ -284,7 +284,7 @@ Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약�
 
 -----
 
-### 2\. NoSQL Injection: Abusing the Flexibility of Modern Databases
+### 2. NoSQL Injection: Abusing the Flexibility of Modern Databases
 
 MongoDB, Cassandra, Redis와 같은 NoSQL 데이터베이스의 사용이 증가하면서 새로운 형태의 인젝션이 부상했습니다. SQL과 문법은 다르지만, '사용자 입력을 신뢰하여 쿼리를 동적으로 구성한다'는 근본적인 취약점은 동일합니다.
 
@@ -340,7 +340,7 @@ SQLi의 `' or '1'='1` 처럼, NoSQL에서는 **연산자 주입(Operator Injecti
 
 -----
 
-### 3\. XML Injection & XXE: The Deceptive Data Format
+### 3. XML Injection & XXE: The Deceptive Data Format
 
 XML은 레거시 SOAP API부터 최신 설정 파일까지 여전히 널리 사용됩니다. XPath Injection이 쿼리 조작에 집중한다면, XML Injection과 그 최종 진화형인 XXE는 XML 파서 자체를 공격하여 훨씬 더 심각한 피해를 유발합니다.
 
@@ -415,7 +415,7 @@ XXE는 방어 방법이 매우 명확합니다. 보고서에 반드시 다음 �
 
 -----
 
-### 4\. LDAP Injection: The Corporate Directory's Weakness
+### 4. LDAP Injection: The Corporate Directory's Weakness
 
 기업 환경의 인증 메커니즘을 테스트할 때 LDAP Injection은 강력한 무기입니다. 많은 기업들이 Active Directory와 같은 LDAP 기반 시스템으로 사용자 인증 및 정보 조회를 처리하기 때문입니다.
 

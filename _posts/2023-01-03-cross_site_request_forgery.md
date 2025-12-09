@@ -95,14 +95,14 @@ While HTTP POST services are also susceptible to CSRF, they generally require sl
 
 Many websites suffer from CSRF vulnerabilities, often because developers don't adequately consider the potential damage from this attack. However, **defending against CSRF attacks is relatively straightforward** when correctly implemented on your server-side. It's crucial to understand that while many security policies operate at the browser level, the core responsibility for **Referer validation and Secret Token implementation lies with your server (web application).**
 
-#### 1\. Using the Referer Header
+#### 1. Using the Referer Header
 
   * The HTTP request header includes a `Referer` field, which indicates the URL of the previous web page from which the request originated. Your server can check this `Referer` header to determine if the request came from your own domain or from another website (cross-site).
   * If the `Referer` is not your domain, you can treat that request as a CSRF attack and block it.
   * **Drawbacks:** This method has limitations due to privacy concerns. Many browsers allow users to disable or limit the transmission of the `Referer` header to avoid disclosing Browse history. Furthermore, if an attacker can manipulate the `Referer` header (e.g., by combining with XSS), this defense can be bypassed, making it insufficient for standalone protection.
   * Theoretically, it would be beneficial to create a new field that removes privacy-sensitive information from the `Referer` header while still indicating the cross-site status, but such a standard has not yet been widely adopted.
 
-#### 2\. Same-Site Cookies
+#### 2. Same-Site Cookies
 
   * `Same-Site` cookies are a relatively new defense mechanism designed to mitigate CSRF attacks at the browser level. They are already widely implemented in major browsers like Chrome and Opera.
   * The `Same-Site` attribute is set on a cookie by your server and can have one of three values:
@@ -111,7 +111,7 @@ Many websites suffer from CSRF vulnerabilities, often because developers don't a
       * **`None`:** This behaves identically to having no `Same-Site` attribute, meaning the cookie is sent with all cross-site requests. In this case, it **must** be used in conjunction with the `Secure` attribute (meaning it's only sent over HTTPS).
   * `Same-Site` cookies are automatically applied by the browser, offering the advantage that developers don't need to manage separate CSRF tokens. However, they are not universally supported by all browsers, and there's a possibility of bypass in specific scenarios, so combining them with other defenses is safer.
 
-#### 3\. Secret Token
+#### 3. Secret Token
 
 While `Same-Site` cookies are a browser-driven defense, the **Secret Token method is one of the most effective CSRF defense techniques that enables your web application itself to identify and defend against CSRF requests.**
 
@@ -128,13 +128,13 @@ While `Same-Site` cookies are a browser-driven defense, the **Secret Token metho
       * **Hidden Form Field:** The most common method involves including the token as a hidden field inside an HTML form: `<input type="hidden" name="csrf_token" value="RANDOM_TOKEN">`.
       * **Custom HTTP Header:** For AJAX requests, the token can be included in a custom header like `X-CSRF-Token`. Client-side JavaScript can read the token from a cookie and add it to the header (Double Submit Cookie Pattern).
 
-#### 4\. Same-Origin Policy (SOP)
+#### 4. Same-Origin Policy (SOP)
 
   * The **Same-Origin Policy (SOP)** is a fundamental security constraint built into web browsers that prevents JavaScript from accessing web pages from different domains.
   * This policy **restricts script access to resources only if they originate from the same protocol, host, and port.** These restrictions help mitigate XSS attacks and partially aid in CSRF defense. For example, when an attacker tries to send a forged request via a malicious script, SOP prevents them from reading the target website's response or directly extracting CSRF tokens.
   * **Limitations:** In modern web development, it's common to use external APIs and separate client (frontend) and server (backend) development. In such environments, SOP can cause many inconveniences, leading to the use of **CORS (Cross-Origin Resource Sharing) policy** to overcome these limitations.
 
-#### 5\. Cross-Origin Resource Sharing (CORS)
+#### 5. Cross-Origin Resource Sharing (CORS)
 
 **Cross-Origin Resource Sharing (CORS)** is a **standard mechanism introduced to alleviate the inconveniences of SOP.** CORS allows a web application running at one origin to access selected resources from a different origin using additional HTTP headers.
 
@@ -263,14 +263,14 @@ HTTP POST 메서드를 사용하는 서비스도 CSRF 공격에 취약할 수 �
 
 많은 웹사이트가 CSRF 취약점을 가지고 있는 것은 주로 개발자들이 이 공격으로 인한 잠재적 피해를 충분히 신경 쓰지 않기 때문입니다. 하지만 **CSRF 공격을 방어하는 것은 여러분의 서버 측에서 올바르게 구현된다면 비교적 쉽습니다.** 대다수의 보안 정책은 브라우저 단에서 이루어지고 Referer, Secret Token은 서버(웹 애플리케이션)에서 이루어지는거다.
 
-#### 1\. Referer 헤더 사용 (`Referer` Header)
+#### 1. Referer 헤더 사용 (`Referer` Header)
 
   * HTTP 요청 헤더에는 `Referer` 필드가 존재하며, 이 필드는 요청이 시작된 이전 웹 페이지의 URL을 알려줍니다. 여러분의 서버는 이 `Referer` 헤더를 확인하여 요청이 자신의 도메인에서 온 것인지, 아니면 다른 웹사이트(크로스-사이트)에서 온 것인지 판단할 수 있습니다.
   * 만약 `Referer`가 여러분의 도메인이 아니라면, 해당 요청을 CSRF 공격으로 간주하고 차단할 수 있습니다.
   * **단점:** 이 방식은 브라우징 기록을 노출할 수 있다는 개인 정보 보호 문제로 인해 `Referer` 헤더를 사용하지 않도록 설정하거나, 제한적으로만 전송하는 브라우저가 많습니다. 또한, 공격자가 `Referer` 헤더를 조작할 수 있는 경우(예: XSS와 결합하여) 우회될 수 있으므로, 단독으로 사용하기에는 충분하지 않습니다.
   * 이론적으로는 `Referer` 헤더에서 개인 정보가 드러날 수 있는 부분을 제거하고 cross-site 여부만 확인할 수 있는 새로운 필드를 만들면 좋겠지만, 아직까지 표준화되어 널리 사용되지는 않고 있습니다.
 
-#### 2\. Same-Site 쿠키 (`Same-Site` Cookies)
+#### 2. Same-Site 쿠키 (`Same-Site` Cookies)
 
   * `Same-Site` 쿠키는 브라우저 수준에서 CSRF 공격을 완화하기 위해 고안된 비교적 새로운 방어 메커니즘입니다. Chrome 및 Opera와 같은 주요 브라우저에서 이미 구현되어 널리 사용되고 있습니다.
   * `Same-Site` 속성은 여러분의 서버에 의해 쿠키에 설정되며, 세 가지 값 중 하나를 가질 수 있습니다:
@@ -279,7 +279,7 @@ HTTP POST 메서드를 사용하는 서비스도 CSRF 공격에 취약할 수 �
       * **`None`:** `Same-Site` 속성이 없는 것과 동일하게 작동하며, 모든 크로스-사이트 요청에 쿠키가 전송됩니다. 이 경우 반드시 `Secure` 속성(HTTPS에서만 전송)과 함께 사용되어야 합니다.
   * `Same-Site` 쿠키는 브라우저에 의해 자동적으로 적용되므로 개발자가 별도의 CSRF 토큰을 관리할 필요가 없다는 장점이 있습니다. 그러나 모든 브라우저에서 완벽하게 지원되는 것은 아니며, 특정 상황에서 우회될 가능성도 있으므로 다른 방어책과 병행하는 것이 안전합니다.
 
-#### 3\. 비밀 토큰 (Secret Token)
+#### 3. 비밀 토큰 (Secret Token)
 
 `Same-Site` 쿠키가 브라우저에 의해 자동적으로 적용되는 방어책이라면, **비밀 토큰(Secret Token) 방식은 여러분의 웹 애플리케이션 스스로가 CSRF 요청을 식별하고 방어할 수 있도록 하는 가장 효과적인 CSRF 방어 기법 중 하나**입니다.
 
@@ -296,13 +296,13 @@ HTTP POST 메서드를 사용하는 서비스도 CSRF 공격에 취약할 수 �
       * **숨겨진 폼 필드:** 가장 흔한 방법으로, HTML 폼 내부에 `<input type="hidden" name="csrf_token" value="RANDOM_TOKEN">`과 같이 숨겨진 필드로 토큰을 포함시킵니다.
       * **커스텀 HTTP 헤더:** AJAX 요청의 경우 `X-CSRF-Token`과 같은 커스텀 헤더에 토큰을 포함시켜 보냅니다. 클라이언트 측 JavaScript에서 쿠키에 저장된 토큰을 읽어 헤더에 추가하는 방식도 있습니다(Double Submit Cookie Pattern).
 
-#### 4\. Same-Origin Policy (동일 출처 정책, SOP)
+#### 4. Same-Origin Policy (동일 출처 정책, SOP)
 
   * **동일 출처 정책(Same-Origin Policy, SOP)**은 웹 브라우저가 JavaScript로 다른 도메인의 웹 페이지에 접근하는 것을 막아 놓은 핵심적인 보안 제약 조건입니다.
   * 이 정책은 **프로토콜, 호스트, 포트가 모두 동일한 출처(origin)에서만 요청된 리소스에 대한 스크립트 접근이 가능하도록 제한**합니다. 이러한 제한은 XSS 공격뿐만 아니라 CSRF 공격도 부분적으로 완화하는 데 도움을 줍니다. 예를 들어, 공격자가 악성 스크립트를 통해 위조된 요청을 보낼 때, SOP 때문에 타겟 웹사이트의 응답을 읽거나, CSRF 토큰을 직접 추출하는 것이 불가능해집니다.
   * **한계:** 현대 웹 개발 환경에서는 외부 API를 사용하는 경우가 많고, 클라이언트(프론트엔드)와 서버(백엔드)를 분리하여 개발하는 경우도 많습니다. 이러한 환경에서 SOP는 많은 불편함을 가져다주어, 이를 해소하기 위해 **CORS(Cross-Origin Resource Sharing) 정책**을 이용하기도 합니다.
 
-#### 5\. Cross-Origin Resource Sharing (CORS)
+#### 5. Cross-Origin Resource Sharing (CORS)
 
 **Cross-Origin Resource Sharing (CORS)**는 **SOP의 불편함을 해소하기 위해 도입된 표준 메커니즘**입니다. CORS는 추가 HTTP 헤더를 통해 다른 출처의 자원(resource)을 현재 실행 중인 웹 애플리케이션에 허용시켜주는 메커니즘입니다.
 

@@ -82,7 +82,7 @@ These characteristics expose mobile apps to a different set of attacks compared 
 
 ### Key Unique Mobile App Vulnerabilities
 
-#### 1\. Insecure Data Storage
+#### 1. Insecure Data Storage
 
 This is one of the most common vulnerabilities. It occurs when an app stores sensitive data like usernames, passwords, API tokens, and session information in local storage without proper encryption. An attacker with a rooted or jailbroken device can access the file system and steal this information.
 
@@ -99,7 +99,7 @@ editor.apply();
 
 The value stored by this code is easily exposed in the `/data/data/com.example.myapp/shared_prefs/MyPrefs.xml` file as plaintext XML.
 
-#### 2\. Reverse Engineering and Code Tampering
+#### 2. Reverse Engineering and Code Tampering
 
 Attackers can decompile an app's APK (Android) or IPA (iOS) file to analyze its source code. This process, known as **reverse engineering**, can reveal hardcoded API keys, sensitive business logic, or weak encryption algorithms.
 
@@ -112,11 +112,11 @@ For example, an attacker can use a tool like JADX to decompile an Android app's 
 3.  **Analyze the Code:** Analyze the converted code to identify payment logic, ad removal logic, permission validation logic, and more.
 4.  **Tamper:** Use a dynamic analysis tool like **Frida** to change the return value of a specific method at runtime or skip logic to **tamper with the code**.
 
-#### 3\. Client-Side Logic Vulnerabilities
+#### 3. Client-Side Logic Vulnerabilities
 
 Some apps handle critical business logic on the client side without server-side validation. For instance, if an app changes a value like `isPremium = true` on the client side when a user purchases premium content, an attacker can manipulate this value to access paid features for free.
 
-#### 4\. Weak Cryptography
+#### 4. Weak Cryptography
 
 While mobile apps use encryption to protect data, improper implementation can lead to serious vulnerabilities.
 
@@ -139,7 +139,7 @@ However, when a mobile app uses a **WebView** to display web content, web vulner
 
 Determining whether a mobile app uses a WebView is a critical first step in security analysis. The presence of a WebView dictates the scope and focus of the penetration test. This article covers both static and dynamic analysis methods to identify WebView usage in Android and iOS apps.
 
-### 1\. Static Analysis
+### 1. Static Analysis
 
 Static analysis involves analyzing the app package file (APK or IPA) without running the app.
 
@@ -190,7 +190,7 @@ For iOS apps, you can find traces of WebView usage in the binary file and projec
     @end
     ```
 
-### 2\. Dynamic Analysis
+### 2. Dynamic Analysis
 
 Dynamic analysis involves running the app on an actual device or emulator and observing its behavior.
 
@@ -309,7 +309,7 @@ Using a dynamic instrumentation tool like Frida to hook the app's runtime behavi
 
 ## 주요 모바일 앱 고유 취약점
 
-### 1\. 부적절한 데이터 저장 (Insecure Data Storage)
+### 1. 부적절한 데이터 저장 (Insecure Data Storage)
 
 가장 흔하게 발견되는 취약점 중 하나입니다. 앱이 사용자 이름, 비밀번호, API 토큰, 세션 정보와 같은 민감 데이터를 암호화하지 않거나, 쉽게 접근 가능한 형태로 로컬 저장소에 저장할 때 발생합니다. 공격자는 루팅되거나 탈옥된 기기에서 파일 시스템에 접근하여 이 정보를 탈취할 수 있습니다.
 
@@ -326,7 +326,7 @@ editor.apply();
 
 위 코드로 저장된 값은 `/data/data/com.example.myapp/shared_prefs/MyPrefs.xml` 경로에 평문 XML 파일로 저장되어 쉽게 노출됩니다.
 
-### 2\. 역공학 (Reverse Engineering) 및 코드 변조 (Code Tampering)
+### 2. 역공학 (Reverse Engineering) 및 코드 변조 (Code Tampering)
 
 공격자는 앱의 APK(Android) 또는 IPA(iOS) 파일을 디컴파일하여 소스 코드를 분석할 수 있습니다. 이를 **역공학**이라 부르며, 이 과정을 통해 하드코딩된 API 키, 민감한 비즈니스 로직, 취약한 암호화 알고리즘 등을 찾아낼 수 있습니다.
 
@@ -339,11 +339,11 @@ editor.apply();
 3.  **코드 분석**: 변환된 코드를 분석하여 결제 로직, 광고 제거 로직, 권한 검증 로직 등을 파악합니다.
 4.  **변조**: Frida와 같은 동적 분석 도구를 사용하여 런타임에 특정 메서드의 반환값을 변경하거나, 로직을 건너뛰도록 **코드 변조**를 시도합니다.
 
-### 3\. 클라이언트 측 로직 취약점 (Client-Side Logic Vulnerabilities)
+### 3. 클라이언트 측 로직 취약점 (Client-Side Logic Vulnerabilities)
 
 일부 앱은 서버의 검증 없이 클라이언트 앱 자체에서 중요한 비즈니스 로직을 처리합니다. 예를 들어, 사용자가 유료 콘텐츠를 구매할 때, 클라이언트 앱에서 단순히 `isPremium = true`와 같은 값을 변경하는 로직이 있다면, 공격자는 이 값을 조작하여 유료 기능을 무단으로 사용할 수 있습니다.
 
-### 4\. 취약한 암호화 (Weak Cryptography)
+### 4. 취약한 암호화 (Weak Cryptography)
 
 모바일 앱은 데이터 보호를 위해 암호화를 사용하지만, 부적절한 방식으로 구현될 경우 심각한 취약점이 될 수 있습니다.
 
@@ -366,7 +366,7 @@ editor.apply();
 
 모바일 앱이 웹뷰를 사용하는지 여부를 확인하는 것은 보안 분석의 첫 단계에서 중요합니다. 웹뷰의 존재 여부에 따라 테스트 범위와 중점이 달라지기 때문입니다. 이 글에서는 안드로이드와 iOS 앱을 대상으로 웹뷰 사용을 식별하는 정적 및 동적 분석 방법을 다룹니다.
 
-### 1\. 정적 분석 (Static Analysis)
+### 1. 정적 분석 (Static Analysis)
 
 정적 분석은 앱을 실행하지 않고 패키지 파일(APK 또는 IPA)을 분석하는 방법입니다.
 
@@ -417,7 +417,7 @@ iOS 앱의 경우, 바이너리 파일과 프로젝트 구조에서 웹뷰 사�
     @end
     ```
 
-### 2\. 동적 분석 (Dynamic Analysis)
+### 2. 동적 분석 (Dynamic Analysis)
 
 동적 분석은 앱을 실제 기기나 에뮬레이터에서 실행하여 동작을 관찰하는 방법입니다.
 

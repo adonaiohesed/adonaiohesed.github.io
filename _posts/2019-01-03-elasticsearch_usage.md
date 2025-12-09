@@ -34,7 +34,7 @@ author: hyoeun
 
 ## Kibana dev tool 사용법으로 보는 Elastic Search의 사용법
 
-1\. **Index Setting**: library라는 새로운 인덱스의 setting값 설정.
+1. **Index Setting**: library라는 새로운 인덱스의 setting값 설정.
 
 ```json
 PUT library
@@ -46,7 +46,7 @@ PUT library
 }
 ```
 
-2\. **_bulk**: 대량의 자료를 한꺼번에 넣을 때 사용.
+2. **_bulk**: 대량의 자료를 한꺼번에 넣을 때 사용.
 
 ```json
 POST library/books/_bulk
@@ -62,7 +62,7 @@ POST library/books/_bulk
 {"title":"Lazy dog","price":9, "colors":["red","blue","green"]}
 ```
 
-3\. **_search**: 검색할때 아무 옵션을 주지 않으면 기본적으로 match all 검색이라는 것을 하는데 이 때 score 검색은 계산하지 않는다.
+3. **_search**: 검색할때 아무 옵션을 주지 않으면 기본적으로 match all 검색이라는 것을 하는데 이 때 score 검색은 계산하지 않는다.
 
 ```json
 GET library/_search
@@ -73,7 +73,7 @@ GET library/_search
 }
 ```
 
-4\. title field중심으로 서치를 했을 때 4개의 다큐먼트가 매칭(hit) 되었는것을 알 수 있고 각 매칭된 다큐에 관한 score를 보여준다.
+4. title field중심으로 서치를 했을 때 4개의 다큐먼트가 매칭(hit) 되었는것을 알 수 있고 각 매칭된 다큐에 관한 score를 보여준다.
 검색에 relevance 알고리즘을 이용되는데 이때 검색 단어가 많이 포함될수록 높은 점수를 얻는다.
 
 <div class="grid">
@@ -117,7 +117,7 @@ GET library/_search
   </div>
 </div>
 
-5\. match조건에서 띄어쓰기를 하면 기본적으로 or 검색이 된다.
+5. match조건에서 띄어쓰기를 하면 기본적으로 or 검색이 된다.
 
 <div class="grid">
   <div class="cell cell--6" style="margin-top: auto; margin-bottom: auto;">
@@ -152,7 +152,7 @@ GET library/_search
   </div>
 </div>
 
-6\. **match_phrase**: quick dog를 or 검색이 아닌 keyword처럼 한 단어로 인지해서 검색 할 때 사용.
+6. **match_phrase**: quick dog를 or 검색이 아닌 keyword처럼 한 단어로 인지해서 검색 할 때 사용.
 
 <div class="grid">
   <div class="cell cell--6" style="margin-top: auto; margin-bottom: auto;">
@@ -197,7 +197,7 @@ GET library/_search
 </div>
 
 
-7\. **bool query**: must, must_not, should를 사용 할 수 있다. 
+7. **bool query**: must, must_not, should를 사용 할 수 있다. 
 must 조건안에서는 and조건으로 이어진다.
 
 <div class="grid">
@@ -255,7 +255,7 @@ GET /library/_search
   </div>
 </div>
 
-8\. **should**: 일종의 or 검색 개념으로써 정확한 조건이 없어도 검색이 되지만 매칭 되었을 시에 더 높은 스코어를 부여하게 하는 방식이다.
+8. **should**: 일종의 or 검색 개념으로써 정확한 조건이 없어도 검색이 되지만 매칭 되었을 시에 더 높은 스코어를 부여하게 하는 방식이다.
 boost: 3으로 했을 경우 매칭 되었을 때 기본 점수(1)의 3배 점수를 부여.
 
 ```json
@@ -283,7 +283,7 @@ GET /library/_search
 }
 ```
 
-9\. **must + should**: 일단 must를 따져서 그 조건에 맞는 것을 선별하게 되고 should에 의해 점수가 올라간다.
+9. **must + should**: 일단 must를 따져서 그 조건에 맞는 것을 선별하게 되고 should에 의해 점수가 올라간다.
 
 ```json
 GET /library/_search
@@ -309,7 +309,7 @@ GET /library/_search
 }
 ```
 
-10\. **highlight**: field에 지정된 부분을 highlight 처리해서 결과 반환.
+10. **highlight**: field에 지정된 부분을 highlight 처리해서 결과 반환.
 
 <div class="grid">
   <div class="cell cell--6" style="margin-top: auto; margin-bottom: auto;">

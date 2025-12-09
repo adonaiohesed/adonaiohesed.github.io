@@ -8,7 +8,7 @@ math: true
 mathjax_autoNumber: true
 ---
 
-### 1\. What is Backtracking?
+### 1. What is Backtracking?
 
 In a nutshell, **backtracking** is a strategy that involves **exploring all potential solutions, but immediately abandoning paths that are no longer likely to lead to a solution and returning to a previous state.**
 
@@ -35,7 +35,7 @@ In essence, backtracking is an **optimized DFS** for finding solutions that sati
 
 -----
 
-### 2\. The Universal Backtracking Recipe (Template)
+### 2. The Universal Backtracking Recipe (Template)
 
 Most backtracking problems can be solved using the following template. Understanding and memorizing this template will help you apply it confidently to any problem.
 
@@ -64,7 +64,7 @@ This **"Choose -\> Explore -\> Un-choose"** pattern is the heart of backtracking
 
 -----
 
-### 3\. LeetCode Example: Subsets (LeetCode \#78)
+### 3. LeetCode Example: Subsets (LeetCode \#78)
 
 Now, let's look at a real problem to see how the above template is applied. This problem asks us to find all subsets of a given array of numbers.
 
@@ -138,7 +138,7 @@ print(solver.subsets([1, 2, 3]))
 
 -----
 
-### 4\. Coding Interview Tips
+### 4. Coding Interview Tips
 
 1.  **Pattern Recognition:** If a problem asks for "all possible combinations," "all permutations," or "all possible paths," think of backtracking.
 2.  **Draw the State-Space Tree:** Before coding, drawing the decision tree for a small example directly helps clarify the logic and reduce errors.

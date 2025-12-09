@@ -54,7 +54,7 @@ After the automated scan is complete, begin the manual analysis, diving deep int
 
 An effective security review goes beyond simply checking off a list of vulnerabilities; it's a process of constantly asking, "If I were an attacker, how would I exploit this code?"
 
-#### 1\. Entry Points: The Beginning of All Evil
+#### 1. Entry Points: The Beginning of All Evil
 
 All data entering the system is a potential attack vector. Identify all entry points, including HTTP request parameters, headers, cookies, and file uploads, and check the following.
 
@@ -127,7 +127,7 @@ All data entering the system is a potential attack vector. Identify all entry po
 
   * **Path Traversal**: When constructing file system paths from user input, an attacker can use characters like `../../` to access files in unintended parent directories. Always use `path.normalize` and `path.join`, and verify that the final path is within the intended base directory.
 
-#### 2\. Processing Logic: Flaws in Permissions and Logic
+#### 2. Processing Logic: Flaws in Permissions and Logic
 
   * **Broken Access Control / IDOR**: This occurs when the application correctly verifies that a user is authenticated but fails to verify that they are **authorized** to access the specific object they have requested.
 
@@ -158,7 +158,7 @@ All data entering the system is a potential attack vector. Identify all entry po
         });
         ```
 
-#### 3\. Data Storage and Output: Preventing Information Disclosure
+#### 3. Data Storage and Output: Preventing Information Disclosure
 
   * **Cross-Site Scripting (XSS)**: When outputting data from a database or external source to a web page, you must apply proper output encoding for the given context. Modern frameworks like React, Vue, and Angular provide auto-encoding by default, but you must carefully review any use of functions that intentionally bypass it, like `dangerouslySetInnerHTML`.
 
@@ -251,7 +251,7 @@ SAST(Static Application Security Testing)와 같은 자동화된 스캔 도구�
 
 효과적인 보안 리뷰는 단순히 취약점 목록을 확인하는 것을 넘어, "내가 공격자라면 이 코드를 어떻게 악용할까?"라는 질문을 끊임없이 던지는 과정입니다.
 
-#### 1\. 입력 지점: 모든 악의 시작
+#### 1. 입력 지점: 모든 악의 시작
 
 시스템으로 들어오는 모든 데이터는 잠재적인 공격 벡터입니다. HTTP 요청 파라미터, 헤더, 쿠키, 파일 업로드 등 모든 입력 지점을 식별하고 다음을 확인해야 합니다.
 
@@ -324,7 +324,7 @@ SAST(Static Application Security Testing)와 같은 자동화된 스캔 도구�
 
   * **경로 조작 (Path Traversal)**: 사용자 입력으로 파일 시스템 경로를 구성할 때, `../../`와 같은 문자를 사용하여 의도치 않은 상위 디렉터리의 파일에 접근할 수 있습니다. `path.normalize`와 `path.join`을 사용하고, 최종 경로가 허용된 기본 디렉터리 내에 있는지 반드시 확인해야 합니다.
 
-#### 2\. 처리 로직: 권한과 논리의 허점
+#### 2. 처리 로직: 권한과 논리의 허점
 
   * **접근 통제 실패 (Broken Access Control / IDOR)**: 사용자가 특정 객체나 기능에 접근할 때, 단순히 인증 여부만 확인하고 해당 객체에 대한 **소유권**이나 **권한**을 확인하지 않는 경우입니다.
 
@@ -355,7 +355,7 @@ SAST(Static Application Security Testing)와 같은 자동화된 스캔 도구�
         });
         ```
 
-#### 3\. 데이터 저장 및 출력: 정보 노출 방어
+#### 3. 데이터 저장 및 출력: 정보 노출 방어
 
   * **크로스 사이트 스크립팅 (XSS)**: 데이터베이스나 외부 소스에서 온 데이터를 웹 페이지에 출력할 때, 적절한 컨텍스트에 맞는 출력 인코딩(Output Encoding)을 적용해야 합니다. React, Vue, Angular와 같은 최신 프레임워크는 대부분 자동 인코딩을 지원하지만, `dangerouslySetInnerHTML`과 같이 이를 의도적으로 우회하는 기능의 사용을 주의 깊게 봐야 합니다.
 
