@@ -2,7 +2,7 @@
 title: Authentication and Authorization - JWT
 tags: JWT Authentication Cybersecurity
 key: page-jwt_authentication
-categories: [Cybersecurity, Identity and access management]
+categories: [Cybersecurity, Identity and Access Management]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
