@@ -43,6 +43,7 @@ mathjax_autoNumber: true
 
 ### On site tinerview
 1. Are there any other questions I can answer for you?
+1. In terms of the volume of findings, how frequently does the team encounter Medium-plus vulnerabilities?
 1. What’s your favorite part about working here? What’s the Team Culture like?
 1. What gets you most excited about the company's future?
 1. Why did you come to this team?
