@@ -12,7 +12,7 @@ mathjax_autoNumber: true
 
 This article identifies attack types based on the OWASP Top 10 for LLM and covers concrete defense strategies for them.
 
-## 1\. Prompt Injection
+## 1. Prompt Injection
 
   * **Description:** Unintended manipulation of LLM output and behavior using user input.
 
@@ -34,7 +34,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **LLM-Based Verification:** Use a separate, smaller model to inspect input for malicious intent before sending it to the main model.
   * **Human-in-the-Loop:** Design the system to require human approval before performing sensitive tasks.
 
-## 2\. Sensitive Information Disclosure
+## 2. Sensitive Information Disclosure
 
   * **Description:** Exposure of sensitive information such as PII, financial data, or medical records.
 
@@ -55,7 +55,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Output Filtering:** Inspect and block LLM responses containing patterns like emails, phone numbers, or social security numbers using Regular Expressions (Regex).
   * **RAG Access Control:** When using Retrieval-Augmented Generation (RAG), enforce access control at the vector DB level so that only documents accessible to the user's permission level are retrieved.
 
-## 3\. Supply Chain Vulnerabilities
+## 3. Supply Chain Vulnerabilities
 
   * **Description:** Issues arising from vulnerabilities in third-party models and data.
 
@@ -76,7 +76,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Model Signing and Verification:** Use models only from trusted sources (e.g., Hugging Face Verified Organizations) and verify integrity via checksums.
   * **Sandbox Environment:** Test external models or code in an isolated environment (Container, Sandbox) with network restrictions.
 
-## 4\. Data and Model Poisoning
+## 4. Data and Model Poisoning
 
   * **Description:** Manipulation of training data to degrade model performance or induce malicious output.
 
@@ -97,7 +97,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Outlier Detection:** Detect and remove data showing statistically abnormal distributions or repeating specific patterns within the training dataset.
   * **Adversarial Training:** Intentionally include poisoned examples during model training and train the model to answer correctly to build resistance.
 
-## 5\. Improper Output Handling
+## 5. Improper Output Handling
 
   * **Description:** Additional security issues arising from insufficient validation of LLM output.
 
@@ -118,7 +118,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Output Encoding:** Apply HTML Entity Encoding before rendering in a web browser to prevent script execution.
   * **Parameterized Queries:** Even if the LLM generates SQL, force the use of ORMs or Prepared Statements instead of concatenating strings directly.
 
-## 6\. Excessive Agency
+## 6. Excessive Agency
 
   * **Description:** Unintended side effects caused by granting excessive permissions to the LLM.
 
@@ -135,7 +135,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Human-in-the-Loop:** Require user confirmation (button click) for critical actions like data deletion, payments, or sending emails.
   * **Backend Verification:** Even for tasks requested by the LLM, verify the requestor's permissions (AuthZ) again at the backend system level.
 
-## 7\. System Prompt Leakage
+## 7. System Prompt Leakage
 
   * **Description:** Exposure of sensitive information contained in the system prompt.
 
@@ -152,7 +152,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Post-processing Verification:** Inspect the model's output to check if it contains key phrases from the system prompt and block it if necessary.
   * **Prompt Encapsulation:** Abstract the content of the system prompt or separate the layers handling user questions and system instructions.
 
-## 8\. Vector and Embedding Weaknesses
+## 8. Vector and Embedding Weaknesses
 
   * **Description:** Security vulnerabilities in vector and embedding-based systems.
 
@@ -169,7 +169,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Adding Noise:** Add slight noise to embedding vectors or reduce dimensions to make perfect reconstruction of original text difficult (consider the trade-off with accuracy).
   * **Rate Limiting:** Restrict the ability to perform a large volume of similarity searches in a short period.
 
-## 9\. Misinformation
+## 9. Misinformation
 
   * **Description:** Generation of incorrect information leading to loss of trust and legal issues.
 
@@ -186,7 +186,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Mandatory Citations:** Prompt the model to explicitly state the source (Citation) of the referenced document when generating answers.
   * **UI/UX Disclaimer:** Explicitly display a warning message in the user interface stating "AI can make mistakes."
 
-## 10\. Unbounded Consumption
+## 10. Unbounded Consumption
 
   * **Description:** Excessive use of LLM system resources causing service disruption.
 
@@ -213,7 +213,7 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
 
 Defense status check items corresponding to existing penetration test items have been added.
 
-## 1\. System Configuration and Attack Surface Identification
+## 1. System Configuration and Attack Surface Identification
 
   * [ ] Identify model type (GPT-4, LLaMA, Claude, etc.)
   * [ ] Check deployment method (API, Web UI, Standalone Server, etc.)
@@ -222,7 +222,7 @@ Defense status check items corresponding to existing penetration test items have
   * [ ] Identify connected external resources (plugins, DB, file systems, external APIs, etc.)
   * **[Defense] Verify SBOM updates and asset inventory possession**
 
-## 2\. LLM-Specific Attack Vector Testing
+## 2. LLM-Specific Attack Vector Testing
 
 ### Prompt Injection
 
@@ -239,14 +239,14 @@ Defense status check items corresponding to existing penetration test items have
   * [ ] Check for sensitive info leakage based on RAG documents
   * **[Defense] Verify operation of output-side PII filtering and DLP (Data Loss Prevention) solutions**
 
-## 3\. Function Misuse and Business Logic Attacks
+## 3. Function Misuse and Business Logic Attacks
 
   * [ ] Unintended misuse of functions
   * [ ] Service abuse
   * [ ] Inducing execution of external system commands
   * **[Defense] Verify implementation of explicit Allowlists and approval procedures per function**
 
-## 4\. External Connectivity Testing
+## 4. External Connectivity Testing
 
   * [ ] Potential for Plugin abuse
   * [ ] Check for API key misuse potential
@@ -254,33 +254,33 @@ Defense status check items corresponding to existing penetration test items have
   * [ ] Potential for SSRF, LFI, RFI attacks
   * **[Defense] Verify application of Least Privilege Principle when executing plugins/tools**
 
-## 5\. Privacy and Compliance Check
+## 5. Privacy and Compliance Check
 
   * [ ] Test for PII exposure potential
   * [ ] Verify compliance with regulations like GDPR/CCPA
   * **[Defense] Validate training data pseudonymization process**
 
-## 6\. Traditional Penetration Testing (System Level)
+## 6. Traditional Penetration Testing (System Level)
 
   * [ ] OWASP Top 10 API/Web vulnerability check
   * [ ] Authentication and Session Management testing
   * [ ] Rate limit and abuse prevention mechanism testing
   * **[Defense] Confirm integration with WAF (Web Application Firewall) and existing security equipment**
 
-## 7\. Malicious User Scenario Check
+## 7. Malicious User Scenario Check
 
   * [ ] Potential for generating social engineering attacks
   * [ ] Potential for generating malware
   * [ ] Potential for generating hate speech and misinformation
   * **[Defense] Verify integration with Content Moderation APIs (e.g., OpenAI Moderation)**
 
-## 8\. Red Teaming Scenario Evaluation
+## 8. Red Teaming Scenario Evaluation
 
   * [ ] APT-style attack simulation
   * [ ] Attack Chain (PI → Plugin misuse → Data exfiltration, etc.)
   * **[Defense] Possession of Anomaly Detection alerts and response manuals**
 
-## 9\. Automation and Response Check
+## 9. Automation and Response Check
 
   * [ ] Utilization of automated attack tools (Gandalf, LLMFuzzer, etc.)
   * [ ] Check efficiency of logs and response systems
