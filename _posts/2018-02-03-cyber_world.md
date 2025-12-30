@@ -5,6 +5,7 @@ key: page-cyber_world
 categories: [Personal, Philosophy]
 author: hyoeun
 ---
+
 Cyber world라는 말은 너무나 적절하고 심오한 말이었다.  
 이제야 그것을 깨닫기 시작했다.  
 컴퓨터는 또 다른 세상이다.  
