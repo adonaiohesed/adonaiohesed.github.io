@@ -1,5 +1,5 @@
 ---
-title: How I will work on 2026
+title: How I will work in 2026
 tags: Mindset
 key: page-mindset_in_next
 categories: [Personal, Identity]
