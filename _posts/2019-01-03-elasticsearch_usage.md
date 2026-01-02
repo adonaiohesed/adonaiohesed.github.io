@@ -391,7 +391,7 @@ GET /library/_search
   </div>
 </div>
 
-11\. filter: socre에 영향을 미치지 않고 sub-set의 결과를 캐싱하기 때문에 쿼리보다 속도가 빠른편이다.
+11. filter: socre에 영향을 미치지 않고 sub-set의 결과를 캐싱하기 때문에 쿼리보다 속도가 빠른편이다.
 bool조건과 함게 쓸 수 있다.
 
 ```json
@@ -419,7 +419,7 @@ GET /library/_search
 }
 ```
 
-12\. 아래의 방식에서는 숫자 기준으로 필터가 되는데 숫자에는 sscore 개념이 들어갈 수 없어서 score가 나오지 않는다.
+12. 아래의 방식에서는 숫자 기준으로 필터가 되는데 숫자에는 sscore 개념이 들어갈 수 없어서 score가 나오지 않는다.
 
 ```json
 GET /library/_search
@@ -438,7 +438,7 @@ GET /library/_search
 }
 ```
 
-13\. analyze: 주어진 text에 관해서 분석을 해주는 명령어.
+13. analyze: 주어진 text에 관해서 분석을 해주는 명령어.
 "lowercase"로 filter를 걸면 대소문자 구분 없이 분석을해준다. 
 "unique"로 filter를 걸면 text안에 여러개의 동일한 문구가 있을 때 첫번째 것만 분석하고 동일한 나머지는 생략해서 결과를 보여준다.
 
@@ -450,7 +450,7 @@ GET /library/_analyze
 }
 ```
 
-14\. analyze는 일종의 모니터인데 elastic search가 어떤 식으로 문장을 분석하는지 보여준다.
+14. analyze는 일종의 모니터인데 elastic search가 어떤 식으로 문장을 분석하는지 보여준다.
 tokenize를 letter로 두면 quick.brown_fox가 한 단어로 검색되는 것이 아닌 quick, brown, fox처럼 나눠져서 알파벳으로만 검색되고 숫자, 특수문자는 생략된다.
 
 ```json
@@ -464,7 +464,7 @@ GET /library/_analyze
 }
 ```
 
-15\. tokenizer를 uax_url_email로 두면 메일과 url형식의 분리가 가능해진다. standard로 두면 @나 //문자들이 날라가게 된다.
+15. tokenizer를 uax_url_email로 두면 메일과 url형식의 분리가 가능해진다. standard로 두면 @나 //문자들이 날라가게 된다.
 
 ```json
 GET /library/_analyze
@@ -474,7 +474,7 @@ GET /library/_analyze
 }
 ```
 
-16\. aggregation: 해당 keyword에 대해 몇개의 document에서 발견 되었는지가 나온다.
+16. aggregation: 해당 keyword에 대해 몇개의 document에서 발견 되었는지가 나온다.
 
 ```json
 GET /library/_search
@@ -490,7 +490,7 @@ GET /library/_search
 }
 ```
 
-17\. query랑 같은 레벨에서 쓰고 동시에 사용 할 수 있다. 동시에 사용 할 경우 query에서 match된 document안에서 aggs를 실행하게 된다.
+17. query랑 같은 레벨에서 쓰고 동시에 사용 할 수 있다. 동시에 사용 할 경우 query에서 match된 document안에서 aggs를 실행하게 된다.
 size가 0일시에는 query에 관한 검색결과는 나오지 않는다.
 
 ```json
@@ -512,7 +512,7 @@ GET /library/_search
 }
 ```
 
-18\. price-statistics와 poplular-colors는 내가 정한 변수명이다.
+18. price-statistics와 poplular-colors는 내가 정한 변수명이다.
  * price-statistics의 경우 : price를 기준으로 count, min, max, avg, sum을 알려준다.
  * poplular-colors의 경우 : terms는 keyword에 해당하는 bucket들을 만들어주고 aggs를 통해 그 안에서 field(price)에 관해 원하는 값(avg)을 value로 표현한다.
 
@@ -542,7 +542,7 @@ GET /library/_search
 }
 ```
 
-19\. famous-librarians index의 setting값과 mappings값을 같은 레벨로 준다.
+19. famous-librarians index의 setting값과 mappings값을 같은 레벨로 준다.
  * setting: analyzer의 이름을 my-desc-analyzer로 쓰고 속성들을 정의할 수 있다.
 
 ```json
@@ -593,7 +593,7 @@ PUT famous-librarians
 처음 만들어 놓은 mapping에 대해서는 바꿀 수 없고 새로운 필드의 데이터가 들어오면 업데이트가 새로 된다.
 하지만 만들어 놓은 맵핑을 바꾸기 위해서는 인덱스를 지우고 처음부터 데이터를 다시 넣어야 한다.
 
-20\. query_string: query_string fiedls를 기준으로 query에 해당하는 문자열을 검색한다. 이 때, 대소문자를 구분한다.
+20. query_string: query_string fiedls를 기준으로 query에 해당하는 문자열을 검색한다. 이 때, 대소문자를 구분한다.
 
 ```json
 GET famous-librarians/_search
@@ -609,7 +609,7 @@ GET famous-librarians/_search
 }
 ```
 
-21\. range 날짜 범위 검색: 특별히 now라는 keyword를 쓸 수 있는데 지금을 의미하고 now-200y는 지금으로부터 200년 전을 의미한다. y대신 m,d도 쓸 수 있다. 
+21. range 날짜 범위 검색: 특별히 now라는 keyword를 쓸 수 있는데 지금을 의미하고 now-200y는 지금으로부터 200년 전을 의미한다. y대신 m,d도 쓸 수 있다. 
 
 ```json
 GET famous-librarians/_search
@@ -634,7 +634,7 @@ GET famous-librarians/_search
 }
 ```
 
-22\. geo_distance: hometown의 위치에서 100km안에 존재하는 documents를 검색한다.
+22. geo_distance: hometown의 위치에서 100km안에 존재하는 documents를 검색한다.
 
 ```json
 GET famous-librarians/_search
