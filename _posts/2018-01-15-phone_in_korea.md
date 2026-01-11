@@ -1,7 +1,7 @@
 ---
 title: 한국에서 휴대폰 개통할때
 tags: Korea
-key: Korea-phone-problem-solve
+key: page-phone_in_korea
 categories: [Personal, Life Information]
 author: hyoeun
 ---
