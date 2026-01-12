@@ -119,7 +119,7 @@ It generally flows from the left (Problem Definition & Analysis) to the right (S
 6. **Implementation Plan:** Who, when, and what? (Gantt Chart, etc.)
 7. **Follow-up:** Did the results meet the goal? What standardization is needed?
 
----
+-----
 
 # My Personal Problem-Solving Method
 
