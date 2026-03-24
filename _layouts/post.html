@@ -3,101 +3,256 @@ layout: default
 ---
 
 <div class="post-wrapper">
-  <article class="post-article" itemscope itemtype="http://schema.org/BlogPosting">
-    <header class="post-header">
-      <div class="post-meta-top" style="justify-content: center; margin-bottom: 1.5rem; display:flex; gap:0.5rem;">
-        {% for cat in page.categories %}
-          <div style="background-color: #f6f8fa; color: #57606a; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #d0d7de;">{{ cat }}</div>
-        {% endfor %}
-      </div>
-      <h1 class="post-title" itemprop="name headline" style="text-align: center;">{{ page.title | escape }}</h1>
-      
-      {% if page.image %}
-        {% assign thumb = page.image.path | default: page.image %}
-        <div style="text-align: center; margin-bottom: 3rem; margin-top: 2rem;">
-           <img src="{{ thumb | relative_url }}" alt="Cover Image for {{ page.title }}" style="width: 100%; border-radius: 12px; height: auto; object-fit: cover; border: 1px solid #d0d7de;">
+  <div class="post-layout">
+    <article class="post-article" itemscope itemtype="http://schema.org/BlogPosting">
+      <header class="post-header">
+        <div class="post-meta-top" style="justify-content: center; margin-bottom: 1.5rem; display:flex; gap:0.5rem;">
+          {% for cat in page.categories %}
+            <div style="background-color: #f6f8fa; color: #57606a; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #d0d7de;">{{ cat }}</div>
+          {% endfor %}
         </div>
-      {% endif %}
-    </header>
+        <h1 class="post-title" itemprop="name headline" style="text-align: center;">{{ page.title | escape }}</h1>
 
-    <div class="post-main-content" itemprop="articleBody">
-      {% if page.bilingual %}
-        <div id="post-content-wrapper">{{ content }}</div>
-      {% else %}
-        {{ content }}
-      {% endif %}
+        {% if page.image %}
+          {% assign thumb = page.image.path | default: page.image %}
+          <div style="text-align: center; margin-bottom: 3rem; margin-top: 2rem;">
+             <img src="{{ thumb | relative_url }}" alt="Cover Image for {{ page.title }}" style="width: 100%; border-radius: 12px; height: auto; object-fit: cover; border: 1px solid #d0d7de;">
+          </div>
+        {% endif %}
+      </header>
+
+      <div class="post-main-content" itemprop="articleBody">
+        {% if page.bilingual %}
+          <div id="post-content-wrapper">{{ content }}</div>
+        {% else %}
+          {{ content }}
+        {% endif %}
+      </div>
+    </article>
+
+    <!-- Table of Contents Sidebar -->
+    <aside class="post-toc-sidebar">
+      <button class="post-toc-toggle" aria-label="Toggle Table of Contents">
+        <span class="material-symbols-outlined">toc</span>
+      </button>
+      <div class="post-toc-box">
+        <h3 class="post-toc-title">Table of Contents</h3>
+        <nav class="post-toc-nav" id="post-toc-nav"></nav>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Related Posts Section -->
+  {% assign related_posts = "" | split: "" %}
+  {% for post in site.posts %}
+    {% if post.url != page.url %}
+      {% for cat in post.categories %}
+        {% if page.categories contains cat %}
+          {% assign related_posts = related_posts | push: post %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+
+  {% if related_posts.size > 0 %}
+  <section class="related-posts-section">
+    <h2 class="related-posts-title">Related Posts</h2>
+    <div class="related-posts-grid">
+      {% for post in related_posts limit:4 %}
+      <a href="{{ post.url | relative_url }}" class="related-post-card">
+        {% if post.image %}
+          {% assign thumb = post.image.path | default: post.image %}
+          <div class="related-post-image">
+            <img src="{{ thumb | relative_url }}" alt="{{ post.title }}" />
+          </div>
+        {% else %}
+          <div class="related-post-image related-post-image-placeholder">
+            <span class="material-symbols-outlined">article</span>
+          </div>
+        {% endif %}
+        <div class="related-post-content">
+          <div class="related-post-categories">
+            {% for cat in post.categories limit:1 %}
+              <span class="related-post-category">{{ cat }}</span>
+            {% endfor %}
+          </div>
+          <h3 class="related-post-title">{{ post.title }}</h3>
+        </div>
+      </a>
+      {% endfor %}
     </div>
-  </article>
+  </section>
+  {% endif %}
 </div>
 
-{% if page.bilingual %}
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // ===== Bilingual Content Split =====
+    {% if page.bilingual %}
     const wrapper = document.getElementById('post-content-wrapper');
-    if (!wrapper) return;
+    if (wrapper) {
+      const firstHr = wrapper.querySelector('hr');
+      if (firstHr) {
+        const enContent = [];
+        const krContent = [];
+        let foundHr = false;
 
-    const firstHr = wrapper.querySelector('hr');
-    if (!firstHr) return;
+        for (let node of wrapper.childNodes) {
+          if (node === firstHr) {
+            foundHr = true;
+            continue;
+          }
+          if (!foundHr) {
+            enContent.push(node);
+          } else {
+            krContent.push(node);
+          }
+        }
 
-    // Get all nodes before and after the first <hr>
-    const enContent = [];
-    const krContent = [];
-    let foundHr = false;
+        const enSection = document.createElement('div');
+        enSection.className = 'lang-section';
+        enSection.dataset.lang = 'en';
 
-    for (let node of wrapper.childNodes) {
-      if (node === firstHr) {
-        foundHr = true;
-        continue;
-      }
-      if (!foundHr) {
-        enContent.push(node);
-      } else {
-        krContent.push(node);
+        const krSection = document.createElement('div');
+        krSection.className = 'lang-section';
+        krSection.dataset.lang = 'kr';
+
+        enContent.forEach(node => {
+          enSection.appendChild(node.cloneNode(true));
+        });
+        krContent.forEach(node => {
+          krSection.appendChild(node.cloneNode(true));
+        });
+
+        wrapper.innerHTML = '';
+        wrapper.appendChild(enSection);
+        wrapper.appendChild(krSection);
+
+        const savedLang = localStorage.getItem('site-lang') || 'en';
+        const langSections = wrapper.querySelectorAll('.lang-section');
+        langSections.forEach(section => {
+          if (section.dataset.lang !== savedLang) {
+            section.classList.add('lang-hidden');
+          }
+        });
+
+        window.addEventListener('languageChanged', function() {
+          const currentLang = localStorage.getItem('site-lang') || 'en';
+          langSections.forEach(section => {
+            if (section.dataset.lang === currentLang) {
+              section.classList.remove('lang-hidden');
+            } else {
+              section.classList.add('lang-hidden');
+            }
+          });
+          generateTableOfContents();
+        });
       }
     }
+    {% endif %}
 
-    // Create language sections
-    const enSection = document.createElement('div');
-    enSection.className = 'lang-section';
-    enSection.dataset.lang = 'en';
+    // ===== Table of Contents Generation =====
+    function generateTableOfContents() {
+      const mainContent = document.querySelector('.post-main-content');
+      if (!mainContent) return;
 
-    const krSection = document.createElement('div');
-    krSection.className = 'lang-section';
-    krSection.dataset.lang = 'kr';
+      // Get visible content (not hidden by language toggle)
+      const allHeadings = Array.from(mainContent.querySelectorAll('h2, h3'));
+      const visibleHeadings = allHeadings.filter(heading => {
+        const isVisible = !heading.closest('.lang-hidden');
+        return isVisible;
+      });
 
-    // Move content
-    enContent.forEach(node => {
-      enSection.appendChild(node.cloneNode(true));
-    });
-    krContent.forEach(node => {
-      krSection.appendChild(node.cloneNode(true));
-    });
+      if (visibleHeadings.length === 0) return;
 
-    // Clear original wrapper and add sections
-    wrapper.innerHTML = '';
-    wrapper.appendChild(enSection);
-    wrapper.appendChild(krSection);
-
-    // Apply current language setting
-    const savedLang = localStorage.getItem('site-lang') || 'en';
-    const langSections = wrapper.querySelectorAll('.lang-section');
-    langSections.forEach(section => {
-      if (section.dataset.lang !== savedLang) {
-        section.classList.add('lang-hidden');
-      }
-    });
-
-    // Listen for language changes
-    window.addEventListener('languageChanged', function() {
-      const currentLang = localStorage.getItem('site-lang') || 'en';
-      langSections.forEach(section => {
-        if (section.dataset.lang === currentLang) {
-          section.classList.remove('lang-hidden');
-        } else {
-          section.classList.add('lang-hidden');
+      // Generate unique IDs for headings
+      visibleHeadings.forEach((heading, index) => {
+        if (!heading.id) {
+          heading.id = `heading-${index}`;
         }
       });
-    });
+
+      // Build TOC HTML
+      const tocNav = document.getElementById('post-toc-nav');
+      tocNav.innerHTML = '';
+
+      visibleHeadings.forEach(heading => {
+        const level = heading.tagName === 'H2' ? 2 : 3;
+        const link = document.createElement('a');
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent;
+        link.className = 'toc-link';
+        link.dataset.level = level;
+
+        const li = document.createElement('div');
+        li.className = `toc-item toc-level-${level}`;
+        li.appendChild(link);
+
+        tocNav.appendChild(li);
+      });
+
+      // Smooth scroll on click
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.getElementById(link.getAttribute('href').substring(1));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      setupIntersectionObserver(visibleHeadings);
+    }
+
+    // ===== Intersection Observer for Active TOC =====
+    function setupIntersectionObserver(headings) {
+      if (!headings || headings.length === 0) return;
+
+      const options = {
+        root: null,
+        rootMargin: '-10% 0px -90% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const id = entry.target.id;
+          const link = document.querySelector(`.toc-link[href="#${id}"]`);
+
+          if (entry.isIntersecting) {
+            document.querySelectorAll('.toc-link.active').forEach(l => {
+              l.classList.remove('active');
+            });
+            if (link) link.classList.add('active');
+          }
+        });
+      }, options);
+
+      headings.forEach(heading => {
+        observer.observe(heading);
+      });
+    }
+
+    // ===== Mobile TOC Toggle =====
+    const tocToggle = document.querySelector('.post-toc-toggle');
+    const tocBox = document.querySelector('.post-toc-box');
+
+    if (tocToggle && tocBox) {
+      tocToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        tocBox.classList.toggle('visible');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.post-toc-sidebar')) {
+          tocBox.classList.remove('visible');
+        }
+      });
+    }
+
+    // Initial TOC generation
+    generateTableOfContents();
   });
 </script>
-{% endif %}
