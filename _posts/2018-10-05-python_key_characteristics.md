@@ -7,6 +7,7 @@ categories:
 - Programming Fundamentals
 author: hyoeun
 image: "/assets/thumbnails/2018-10-05-python_key_characteristics.png"
+date: 2018-10-05 09:00:00
 ---
 ## 입출력
 

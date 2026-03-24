@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-01-08-solarwinds.png"
+date: 2020-01-08 09:00:00
 ---
 ## 개요
 * SolarWinds는 네트워크, 시스템 및 정보 기술 인프라 관리를 지원하는 기업용 소프트웨어 회사이다. 이 회사 제품 중 Solarwinds Orion이라는 제품의 공급망 서버가 해킹을 당해 본 제품에 악성 플러그인이 숨겨진 채로 배포되었다. 피해 대상은 미 국토안보부, 재무부 등 미국 정부기관과 많은 기업들이 사용해서 그 피해 규모가 엄청났다. 이 공격은 Supply Chain Attack으로 볼 수 있다.

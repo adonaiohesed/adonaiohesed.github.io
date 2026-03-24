@@ -7,6 +7,7 @@ categories:
 - Programming Fundamentals
 author: hyoeun
 image: "/assets/thumbnails/2018-10-02-python_data_type.png"
+date: 2018-10-02 09:00:00
 ---
 * Python은 interpreter이다. Interpreter란 한 줄 한 줄 바로바로 해석하고 결과를 보여주는 언어이다.
 * Scalar type

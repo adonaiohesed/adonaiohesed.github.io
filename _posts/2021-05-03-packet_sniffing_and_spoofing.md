@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-05-03-packet_sniffing_and_spoofing.png"
 bilingual: true
+date: 2021-05-03 09:00:00
 ---
 ### **1. The Difference Between Sniffing and Spoofing**
 

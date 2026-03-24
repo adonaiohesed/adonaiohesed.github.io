@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-05-07-waybackurls.png"
 bilingual: true
+date: 2020-05-07 09:00:00
 ---
 
 ## Waybackurls: Discovering Forgotten Paths for Reconnaissance

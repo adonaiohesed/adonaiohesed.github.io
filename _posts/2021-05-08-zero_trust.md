@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-05-08-zero_trust.png"
 bilingual: true
+date: 2021-05-08 09:00:00
 ---
 # Zero Trust Architecture: A New Paradigm in Modern Cybersecurity
 

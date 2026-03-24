@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-12-01-lightning_network.png"
 bilingual: true
+date: 2021-12-01 09:00:00
 ---
 ## Bitcoin
 * Bitcoin is based on the premise that you don't need to trust anyone, recording all transaction details in blocks and distributing them equally to all network participants. You can verify manipulation by comparing distributed blocks, and the process of transmitting this information across the network is called broadcasting.

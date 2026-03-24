@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-01-03-buffer_overflow_attack.png"
+date: 2020-01-03 09:00:00
 ---
 ## The five segments in a process's memory layout for a typical C program.
 

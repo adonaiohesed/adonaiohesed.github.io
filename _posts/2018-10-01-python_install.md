@@ -7,6 +7,7 @@ categories:
 - Programming Fundamentals
 author: hyoeun
 image: "/assets/thumbnails/2018-10-01-python_install.png"
+date: 2018-10-01 09:00:00
 ---
 ```console
 # yum install gcc openssl-devel bzip2-devel libffi-devel

@@ -7,6 +7,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2019-10-23-registry_analysis.png"
+date: 2019-10-23 09:00:00
 ---
 
 ## RegRipper

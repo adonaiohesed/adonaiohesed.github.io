@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-02-mobile_platform_security.png"
 bilingual: true
+date: 2022-01-02 09:00:00
 ---
 ### Mobile Platform Security: A Comparative Analysis of iOS and Android Strategies
 

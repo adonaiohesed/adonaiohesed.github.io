@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-07-pinning_bypass.png"
 bilingual: true
+date: 2022-01-07 09:00:00
 ---
 ## Mastering SSL Pinning Bypass: From Package Repackaging to Automated Tools
 

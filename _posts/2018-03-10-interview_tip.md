@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-03-10-interview_tip.png"
+date: 2018-03-10 09:00:00
 ---
 ## Attitude
 1. 여유와 자신감을 가져야 한다. 사람이 여유가 없으면 매력적으로 보이지 않는다. 욕심을 내려 놓고 이번 면접을 통해 모르는 것을 배워나간다고 생각하면서 대화를 이끌어 나가면 오히려 잘 된다.

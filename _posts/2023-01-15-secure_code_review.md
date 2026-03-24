@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-15-secure_code_review.png"
 bilingual: true
+date: 2023-01-15 09:00:00
 ---
 ## Secure Code Review: Reading Code Through an Attacker's Eyes in JavaScript and Node.js
 

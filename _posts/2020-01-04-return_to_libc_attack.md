@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-01-04-return_to_libc_attack.png"
+date: 2020-01-04 09:00:00
 ---
 ## Introduction
 

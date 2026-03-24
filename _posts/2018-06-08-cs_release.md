@@ -7,6 +7,7 @@ categories:
 - SysOps & Infrastructure
 author: hyoeun
 image: "/assets/thumbnails/2018-06-08-cs_release.png"
+date: 2018-06-08 09:00:00
 ---
 ## CentOS7 배포 방법
 

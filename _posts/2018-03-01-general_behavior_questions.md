@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-03-01-general_behavior_questions.png"
 bilingual: true
+date: 2018-03-01 09:00:00
 ---
 ## **'Why did you choose to enter the cybersecurity field?'**
 

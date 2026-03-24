@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-09-04-mac_automation.png"
 bilingual: true
+date: 2018-09-04 09:00:00
 ---
 
 # Setting Up Mac Mini and MacBook Air Environment with Automator

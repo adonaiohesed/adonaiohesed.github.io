@@ -7,6 +7,7 @@ categories:
 - DevOps & Automation
 author: hyoeun
 image: "/assets/thumbnails/2019-02-02-git_pull_request.png"
+date: 2019-02-02 09:00:00
 ---
 # [GitHub] The Cheat Sheet for Better Collaboration: Understanding Pull Requests and Setting Up Templates
 

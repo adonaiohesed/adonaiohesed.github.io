@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-09-01-Introduction_AI.png"
+date: 2023-09-01 09:00:00
 ---
 ## How to train
 * Supervised Learning은 결과값(y)를 알고 있을 때 쓴다.

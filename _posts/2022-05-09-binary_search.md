@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-05-09-binary_search.png"
+date: 2022-05-09 09:00:00
 ---
 ## 바이너리 서치
 ```python

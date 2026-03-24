@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-04-04-threat_modeling.png"
 bilingual: true
+date: 2023-04-04 09:00:00
 ---
 # Threat Modeling Practical Guide
 

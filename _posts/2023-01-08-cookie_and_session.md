@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-08-cookie_and_session.png"
 bilingual: true
+date: 2023-01-08 09:00:00
 ---
 # **Differences Between Cookies and Sessions**
 

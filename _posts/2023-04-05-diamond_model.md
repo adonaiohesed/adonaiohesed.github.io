@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-04-05-diamond_model.png"
 bilingual: true
+date: 2023-04-05 09:00:00
 ---
 ## What is the Diamond Model of Intrusion Analysis?
 

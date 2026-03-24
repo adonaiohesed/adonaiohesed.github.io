@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2019-10-02-crime_investigation.png"
+date: 2019-10-02 09:00:00
 ---
 ## Chain of Custody 
 * Chain of Custody에 어떠한 결함이라도 있다면 그것은 trial에서 채택되지 않는다.

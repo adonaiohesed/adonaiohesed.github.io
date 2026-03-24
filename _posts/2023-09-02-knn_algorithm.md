@@ -7,6 +7,7 @@ categories:
 - Machine Learning
 author: hyoeun
 image: "/assets/thumbnails/2023-09-02-knn_algorithm.png"
+date: 2023-09-02 09:00:00
 ---
 * AI는 컴퓨터가 사람과 같은 행동을 할 수 있는 기술을 의미한다.
 * ML은 AI를 달성하기 위해 사용되는 방법 중에 하나이다.

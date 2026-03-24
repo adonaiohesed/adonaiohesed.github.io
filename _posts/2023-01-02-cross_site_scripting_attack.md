@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-02-cross_site_scripting_attack.png"
+date: 2023-01-02 09:00:00
 ---
 ## The Cross-Site Scripting Attack
 

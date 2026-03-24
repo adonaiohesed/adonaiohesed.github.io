@@ -9,4 +9,5 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-12-05-owasp_10_smart_contract_2025.png"
+date: 2021-12-05 09:00:00
 ---

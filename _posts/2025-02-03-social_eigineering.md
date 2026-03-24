@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2025-02-03-social_eigineering.png"
 bilingual: true
+date: 2025-02-03 09:00:00
 ---
 ## Social Engineering: The Art of Hacking the Human OS
 

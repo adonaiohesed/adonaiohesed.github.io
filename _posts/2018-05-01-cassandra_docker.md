@@ -7,6 +7,7 @@ categories:
 - Database Systems
 author: hyoeun
 image: "/assets/thumbnails/2018-05-01-cassandra_docker.png"
+date: 2018-05-01 09:00:00
 ---
 ## Cassadnra에 대한 소개
 

@@ -6,6 +6,7 @@ categories: [Personal, Philosophy]
 author: hyoeun
 image: "/assets/thumbnails/2018-02-04-data_trash.png"
 bilingual: true
+date: 2018-02-04 09:00:00
 ---
 
 ## The Hidden Cost of Digital Expansion: Data Waste

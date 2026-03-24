@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-10-binary_protection.png"
 bilingual: true
+date: 2022-01-10 09:00:00
 ---
 ### 우리 손안의 전쟁터: 모바일 바이너리 보호 기술과 우회 전략
 

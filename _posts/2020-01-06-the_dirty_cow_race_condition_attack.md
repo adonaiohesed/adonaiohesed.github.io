@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-01-06-the_dirty_cow_race_condition_attack.png"
+date: 2020-01-06 09:00:00
 ---
 ## Introduction
 * Race condition vulnerability의 일종이며 Linux기반의 모든 OS에 영향을 주는 취약점이다.

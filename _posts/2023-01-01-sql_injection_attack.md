@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-01-sql_injection_attack.png"
+date: 2023-01-01 09:00:00
 ---
 ## SQL Injection: When Data Becomes Code
 

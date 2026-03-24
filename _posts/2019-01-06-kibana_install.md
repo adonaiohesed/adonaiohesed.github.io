@@ -5,6 +5,7 @@ key: page-kibana_installation_usage
 categories: [Tools, ELK]
 author: hyoeun
 image: "/assets/thumbnails/2019-01-06-kibana_install.png"
+date: 2019-01-06 09:00:00
 ---
 
 ## Windows 환경에서 설치

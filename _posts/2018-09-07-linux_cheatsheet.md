@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-09-07-linux_cheatsheet.png"
 bilingual: true
+date: 2018-09-07 09:00:00
 ---
 
 ## 1. File and Directory Navigation

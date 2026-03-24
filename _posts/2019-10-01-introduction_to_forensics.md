@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2019-10-01-introduction_to_forensics.png"
+date: 2019-10-01 09:00:00
 ---
 ## Intoruction
 * Forensics란? the use of science and technology to investigate and establish facts in criminal or civil courts of law. 즉 법정에서 효력이 있는 fact들을 만들어가는 작업들이다.

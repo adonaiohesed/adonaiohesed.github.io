@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2025-08-01-key_roles_in_data_governance.png"
 bilingual: true
+date: 2025-08-01 09:15:00
 ---
 ## Key Roles in Data Governance and System Security
 

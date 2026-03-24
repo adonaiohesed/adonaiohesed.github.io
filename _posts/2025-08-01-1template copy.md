@@ -10,6 +10,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2025-08-01-1template copy.png"
+date: 2025-08-01 09:00:00
 ---
 Security Policies, Security Standards, Baselines, and Guidelines, Security Procedures.
 

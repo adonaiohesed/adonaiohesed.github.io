@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-04-01-mitre_attck.png"
 bilingual: true
+date: 2023-04-01 09:00:00
 ---
 # MITRE ATT&CK Framework: Understanding Cyber Threats and Defense Strategies
 

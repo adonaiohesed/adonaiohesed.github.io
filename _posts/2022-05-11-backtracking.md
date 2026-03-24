@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-05-11-backtracking.png"
 bilingual: true
+date: 2022-05-11 09:00:00
 ---
 ### 1. What is Backtracking?
 

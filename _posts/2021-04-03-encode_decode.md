@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-04-03-encode_decode.png"
 bilingual: true
+date: 2021-04-03 09:00:00
 ---
 ### **The Concepts of Encoding and Decoding**
 

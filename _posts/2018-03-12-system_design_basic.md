@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-03-12-system_design_basic.png"
+date: 2018-03-12 09:00:00
 ---
 ## 시스템 디자인 인터뷰 단계
 1. Clarificiations을 제대로 해야한다. SDI(System Design Interview)는 정해진 답이 없기 때문에 주어진 시간안에 큰 설계를 끝내야 함으로 항상 명확한 범위를 설정해야 합니다. 트위터의 디자인을 설계할때 트윗에 사진과 비디오가 포함되는지, 핫 트렌드 주제를 표시할것인지, 푸시 알림이 있는지, 검색 기능이 있는지 등을 고려해야 합니다.

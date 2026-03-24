@@ -7,6 +7,7 @@ categories:
 - Post-Interview
 author: hyoeun
 image: "/assets/thumbnails/2018-03-24-after_accept_offer.png"
+date: 2018-03-24 09:00:00
 ---
 ## H1B Transfer
 

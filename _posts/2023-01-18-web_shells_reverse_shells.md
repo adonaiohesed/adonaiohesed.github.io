@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-18-web_shells_reverse_shells.png"
+date: 2023-01-18 09:00:00
 ---
 ### 1. Web Shells: The Master Key to the Web Server
 

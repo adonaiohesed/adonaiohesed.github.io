@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2025-02-02-edr_bypass.png"
 bilingual: true
+date: 2025-02-02 09:00:00
 ---
 # EDR Bypass Techniques: Understanding Attack Methods and Defense Strategies
 

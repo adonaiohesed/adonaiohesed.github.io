@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-22-android_penetration_test_check_list.png"
+date: 2022-01-22 09:00:00
 ---
 -----
 

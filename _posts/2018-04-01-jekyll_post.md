@@ -5,6 +5,7 @@ key: page-jekyll_posting
 categories: [Tools, Jekyll]
 author: hyoeun
 image: "/assets/thumbnails/2018-04-01-jekyll_post.png"
+date: 2018-04-01 09:00:00
 ---
 
 ## 지킬 포스팅 규칙

@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2024-12-04-security_control_domain.png"
 bilingual: true
+date: 2024-12-04 09:00:00
 ---
 # Understanding Information Security: Key Areas and Practices
 

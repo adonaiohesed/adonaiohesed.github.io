@@ -8,6 +8,7 @@ categories:
 author: hyoeun
 image: "/assets/thumbnails/2023-09-03-isolation_forest.png"
 bilingual: true
+date: 2023-09-03 09:00:00
 ---
 # Isolation Forest: Detecting Anomalies Through Isolation
 

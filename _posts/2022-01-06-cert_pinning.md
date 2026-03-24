@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-06-cert_pinning.png"
 bilingual: true
+date: 2022-01-06 09:00:00
 ---
 # What is Certificate Pinning?
 

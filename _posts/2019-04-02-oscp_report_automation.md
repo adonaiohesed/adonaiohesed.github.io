@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2019-04-02-oscp_report_automation.png"
 bilingual: true
+date: 2019-04-02 09:00:00
 ---
 # Automating OSCP and Penetration Testing Reports
 

@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-01-mobile_app_types.png"
 bilingual: true
+date: 2022-01-01 09:00:00
 ---
 The three main approaches to mobile application development are **Native**, **Cross-Platform**, and **Hybrid** apps. Each method has its unique characteristics, advantages, disadvantages, and security considerations.
 

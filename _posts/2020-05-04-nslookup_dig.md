@@ -7,6 +7,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-05-04-nslookup_dig.png"
+date: 2020-05-04 09:00:00
 ---
 
 ### **A Tale of Two Tools: Philosophy and Core Differences**

@@ -7,6 +7,7 @@ categories:
 - Programming Fundamentals
 author: hyoeun
 image: "/assets/thumbnails/2018-10-04-python_function_class.png"
+date: 2018-10-04 09:00:00
 ---
 ## 함수
 

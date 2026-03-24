@@ -7,6 +7,7 @@ categories:
 - Programming Fundamentals
 author: hyoeun
 image: "/assets/thumbnails/2018-10-06-python_algorithm.png"
+date: 2018-10-06 09:00:00
 ---
 ## All, Any
 * 파라미터로 iterable를 받아서 각 item들이 모두가 참일때 true를 반환하는 것이 all, 하나라도 참일때 true를 반환하는 것이 any이다.

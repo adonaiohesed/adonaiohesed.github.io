@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2019-04-01-cybersecurity_certificates.png"
 bilingual: true
+date: 2019-04-01 09:00:00
 ---
 # 어떤 보안 자격증을 준비하면 좋을까? (펜테스트 & 클라우드 시큐리티 진로 고민)
 

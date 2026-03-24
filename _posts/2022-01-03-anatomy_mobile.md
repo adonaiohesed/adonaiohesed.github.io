@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-03-anatomy_mobile.png"
 bilingual: true
+date: 2022-01-03 09:00:00
 ---
 ## The Anatomy of Mobile App and Penetration Testing
 ### **Common Types of Sensitive Information to Look For**

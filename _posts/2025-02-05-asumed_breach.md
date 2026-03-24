@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2025-02-05-asumed_breach.png"
 bilingual: true
+date: 2025-02-05 09:00:00
 ---
 # Assumed Breach: A Paradigm Shift in Security Architecture
 

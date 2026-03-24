@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-05-injection_attacks.png"
+date: 2023-01-05 09:00:00
 ---
 ### 1. Command Injection: The Shell is the Limit
 

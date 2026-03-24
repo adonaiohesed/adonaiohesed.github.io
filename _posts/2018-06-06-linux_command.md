@@ -7,6 +7,7 @@ categories:
 - SysOps & Infrastructure
 author: hyoeun
 image: "/assets/thumbnails/2018-06-06-linux_command.png"
+date: 2018-06-06 09:00:00
 ---
 ## 정렬하지 않고 유니크한 부분만 출력하기
 ```console

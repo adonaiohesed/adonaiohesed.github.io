@@ -8,6 +8,7 @@ categories:
 - Engineering
 - SysOps & Infrastructure
 image: "/assets/thumbnails/2018-07-01-nodejs_install.png"
+date: 2018-07-01 09:00:00
 ---
 ### NodeJS의 특징
 * Javascript를 사용한다. (따라서 front, back이 모두 같은 언어로 작업 할 수 있다.)

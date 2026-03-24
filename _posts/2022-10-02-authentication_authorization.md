@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-10-02-authentication_authorization.png"
 bilingual: true
+date: 2022-10-02 09:00:00
 ---
 Here's the English translation of the provided text:
 

@@ -7,6 +7,7 @@ categories:
 - SysOps & Infrastructure
 author: hyoeun
 image: "/assets/thumbnails/2018-07-12-syslog-ng_advanced.png"
+date: 2018-07-12 09:00:00
 ---
 ### if, elif, and else 구문
 * 2가지 형식이 가능하다.

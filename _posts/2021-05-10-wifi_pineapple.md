@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-05-10-wifi_pineapple.png"
 bilingual: true
+date: 2021-05-10 09:00:00
 ---
 ### **WiFi Pineapple Analysis: A Threat Exploiting Fundamental Vulnerabilities in Trust-Based Wireless Networks**
 

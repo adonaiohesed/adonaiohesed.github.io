@@ -7,6 +7,7 @@ categories:
 - Programming Fundamentals
 author: hyoeun
 image: "/assets/thumbnails/2018-10-03-python_control.png"
+date: 2018-10-03 09:00:00
 ---
 ## 변수
 

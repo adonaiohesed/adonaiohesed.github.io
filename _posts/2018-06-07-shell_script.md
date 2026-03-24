@@ -7,6 +7,7 @@ categories:
 - SysOps & Infrastructure
 author: hyoeun
 image: "/assets/thumbnails/2018-06-07-shell_script.png"
+date: 2018-06-07 09:00:00
 ---
 ## 파일 생성 및 실행 권한 부여
 ```console

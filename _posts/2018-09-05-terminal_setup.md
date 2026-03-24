@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-09-05-terminal_setup.png"
 bilingual: true
+date: 2018-09-05 09:00:00
 ---
 
 # Customizing MacOS Terminal

@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2025-03-05-gen_ai_penetration_check_list.png"
 bilingual: true
+date: 2025-03-05 09:00:00
 ---
 # LLM Security Audit Checklist (Based on OWASP Top 10) and Defense Strategies
 

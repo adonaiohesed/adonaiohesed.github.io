@@ -6,6 +6,7 @@ categories: [Personal, Identity]
 author: hyoeun
 image: "/assets/thumbnails/2018-01-05-mindset_in_next.png"
 bilingual: true
+date: 2018-01-05 09:00:00
 ---
 
 ## Mindset for the New Year

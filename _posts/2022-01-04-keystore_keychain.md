@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-04-keystore_keychain.png"
 bilingual: true
+date: 2022-01-04 09:00:00
 ---
 ## Fort Knox on Your Phone: Understanding & Pentesting Android KeyStore and iOS Keychain
 

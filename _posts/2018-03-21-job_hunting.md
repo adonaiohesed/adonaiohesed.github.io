@@ -8,6 +8,7 @@ categories:
 author: hyoeun
 image: "/assets/thumbnails/2018-03-21-job_hunting.png"
 bilingual: true
+date: 2018-03-21 09:00:00
 ---
 # When Frustration and Depression Hit
 

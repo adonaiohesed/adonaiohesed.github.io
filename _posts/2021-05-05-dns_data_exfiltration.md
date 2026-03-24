@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-05-05-dns_data_exfiltration.png"
 bilingual: true
+date: 2021-05-05 09:00:00
 ---
 ## DNS Operating Principles
 

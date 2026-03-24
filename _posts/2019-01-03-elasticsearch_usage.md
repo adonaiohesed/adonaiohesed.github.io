@@ -5,6 +5,7 @@ key: page-elastic_search_usage
 categories: [Tools, ELK]
 author: hyoeun
 image: "/assets/thumbnails/2019-01-03-elasticsearch_usage.png"
+date: 2019-01-03 09:00:00
 ---
 ## 정보 확인
  

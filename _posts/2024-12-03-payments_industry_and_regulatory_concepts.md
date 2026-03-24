@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2024-12-03-payments_industry_and_regulatory_concepts.png"
 bilingual: true
+date: 2024-12-03 09:00:00
 ---
 # Key Drivers of Industry and Regulatory Compliance: Core Standards and Concepts
 

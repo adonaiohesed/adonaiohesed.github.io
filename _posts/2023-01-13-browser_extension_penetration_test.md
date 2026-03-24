@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-13-browser_extension_penetration_test.png"
+date: 2023-01-13 09:00:00
 ---
 ## Browser Extension Security
 

@@ -7,6 +7,7 @@ categories:
 - SysOps & Infrastructure
 author: hyoeun
 image: "/assets/thumbnails/2018-06-05-linux_redirection.png"
+date: 2018-06-05 09:00:00
 ---
 ## 쉘 커맨드 창에 보이는 기호 분석
 * ```guest@linux:~$(#)``` 

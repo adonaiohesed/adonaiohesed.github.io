@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2024-12-02-risk_management_methodology.png"
 bilingual: true
+date: 2024-12-02 09:00:00
 ---
 # Risk Management Methodology
 

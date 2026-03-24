@@ -7,6 +7,7 @@ categories:
 - SysOps & Infrastructure
 author: hyoeun
 image: "/assets/thumbnails/2018-07-12-syslog-ng_install.png"
+date: 2018-07-12 09:15:00
 ---
 ## syslog-ng란?
 * 로그를 다루는 프로그램이다.

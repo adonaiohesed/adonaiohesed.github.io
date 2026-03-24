@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-03-02-burp_suite_scan.png"
 bilingual: true
+date: 2020-03-02 09:00:00
 ---
 
 ## **Mastering Burp Suite: From Active & Passive Scans to Overcoming Its Limits**

@@ -6,6 +6,7 @@ categories: [Personal, Identity]
 author: hyoeun
 pin: true
 image: "/assets/thumbnails/2018-01-03-security_engineer.png"
+date: 2018-01-03 09:00:00
 ---
 
 ### What Cybersecurity Means to Me

@@ -5,6 +5,7 @@ key: page-search_guard_installation_usage
 categories: [Tools, ELK]
 author: hyoeun
 image: "/assets/thumbnails/2019-01-05-search_guard.png"
+date: 2019-01-05 09:00:00
 ---
 
 ## Windows 환경 (6.6.1 version 기준)

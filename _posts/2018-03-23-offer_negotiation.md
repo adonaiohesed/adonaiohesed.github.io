@@ -7,6 +7,7 @@ categories:
 - Post-Interview
 author: hyoeun
 image: "/assets/thumbnails/2018-03-23-offer_negotiation.png"
+date: 2018-03-23 09:00:00
 ---
 ## Sourcer와 Recruiter의 차이점
 Sourcer는 주로 후보자를 발굴하고 접촉하는 역할을 하고 이후에 Recruiter가 전체 채용 과정을 관리하고 진행한다. 그래서 나한테 연락 온 소서분이 말한 연봉의 수치와 리쿠루터가 말한 연봉의 수치에 차이가 있을 수도 있는 것이다. 소서가 전달하는 범위는 좀 더 공개적이고 전체적인 반면 리쿠루터의 범위는 실제로 받는 범위에 대해 말하는 것일 수 있다.

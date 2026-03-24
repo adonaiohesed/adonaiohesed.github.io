@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-03-13-cybersecurity_questions.png"
+date: 2018-03-13 09:00:00
 ---
 # Comprehensive Cybersecurity Interview Questions & Answers
 

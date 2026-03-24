@@ -7,6 +7,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-09-06-vim_customizing.png"
+date: 2018-09-06 09:00:00
 ---
 
 ## Vim Plugin Manager Installation 

@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-05-02-open_network_vulnerabilties.png"
 bilingual: true
+date: 2021-05-02 09:00:00
 ---
 # Open Network Vulnerabilities: Risks and Security Measures
 

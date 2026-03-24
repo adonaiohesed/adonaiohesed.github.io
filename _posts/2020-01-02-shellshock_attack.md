@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-01-02-shellshock_attack.png"
+date: 2020-01-02 09:00:00
 ---
 ## Shell이란?
 * Shell이란 command-line interpreter이다. 유저와 OS사이에서 명령어들을 읽고 그것들을 실행시켜준다.

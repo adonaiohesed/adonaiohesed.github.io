@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-12-06-proxy_protocol.png"
 bilingual: true
+date: 2021-12-06 09:00:00
 ---
 ## Understanding 'Proxy Protocols': Overcoming the Limitations of Smart Contracts
 

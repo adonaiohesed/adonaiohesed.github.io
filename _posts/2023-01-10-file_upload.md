@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-10-file_upload.png"
+date: 2023-01-10 09:00:00
 ---
 When a file upload feature is present, you should check the following items. Fundamentally, from a developer's perspective, a whitelist or allowlist approach is ideal.
 

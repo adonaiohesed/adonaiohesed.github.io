@@ -7,6 +7,7 @@ categories:
 - DevOps & Automation
 author: hyoeun
 image: "/assets/thumbnails/2019-02-03-git_action.png"
+date: 2019-02-03 09:00:00
 ---
 # [CI/CD] Collaboration Mastered: Automating Branch-Specific Builds and Deployments with GitHub Actions
 

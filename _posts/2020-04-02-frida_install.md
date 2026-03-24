@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-04-02-frida_install.png"
 bilingual: true
+date: 2020-04-02 09:00:00
 ---
 
 ## Installing Frida on macOS

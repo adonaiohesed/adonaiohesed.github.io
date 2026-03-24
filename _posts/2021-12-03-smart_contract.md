@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-12-03-smart_contract.png"
 bilingual: true
+date: 2021-12-03 09:00:00
 ---
 ## Basic Concepts of Smart Contracts
 

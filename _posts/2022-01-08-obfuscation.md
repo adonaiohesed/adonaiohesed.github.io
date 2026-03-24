@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2022-01-08-obfuscation.png"
+date: 2022-01-08 09:00:00
 ---
 ## A Smokescreen in the Code: Obfuscation and the Art of Lifting the Veil
 

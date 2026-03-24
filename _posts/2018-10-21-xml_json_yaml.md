@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2018-10-21-xml_json_yaml.png"
 bilingual: true
+date: 2018-10-21 09:00:00
 ---
 # Understanding Data Serialization Formats: XML, JSON, and YAML Explained
 

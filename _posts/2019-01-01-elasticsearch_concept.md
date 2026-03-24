@@ -5,6 +5,7 @@ key: page-elastic_search_concept
 categories: [Tools, ELK]
 author: hyoeun
 image: "/assets/thumbnails/2019-01-01-elasticsearch_concept.png"
+date: 2019-01-01 09:00:00
 ---
 
 ## 특징

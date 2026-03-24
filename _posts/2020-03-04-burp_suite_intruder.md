@@ -8,6 +8,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-03-04-burp_suite_intruder.png"
 bilingual: true
+date: 2020-03-04 09:00:00
 ---
 
 # Burp Intruder

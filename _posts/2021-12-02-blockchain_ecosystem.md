@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2021-12-02-blockchain_ecosystem.png"
 bilingual: true
+date: 2021-12-02 09:00:00
 ---
 ## What is Blockchain Technology?
 

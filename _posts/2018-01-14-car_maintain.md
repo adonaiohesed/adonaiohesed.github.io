@@ -5,6 +5,7 @@ key: page-car_maintain
 categories: [Personal, Life Information]
 author: hyoeun
 image: "/assets/thumbnails/2018-01-14-car_maintain.png"
+date: 2018-01-14 09:00:00
 ---
 
 # 자동차 관리 매뉴얼 (기록용)

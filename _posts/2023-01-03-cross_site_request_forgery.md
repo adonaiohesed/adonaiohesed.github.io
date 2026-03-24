@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-03-cross_site_request_forgery.png"
+date: 2023-01-03 09:00:00
 ---
 ## The Cross-Site Request Forgery (CSRF) Attack
 

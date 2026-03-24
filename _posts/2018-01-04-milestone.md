@@ -5,6 +5,7 @@ key: page-milestone
 tags: hyoeun
 categories: [Personal, Identity]
 image: "/assets/thumbnails/2018-01-04-milestone.png"
+date: 2018-01-04 09:00:00
 ---
 
 여기에는 나의 작은 고백들이 담겨있고 내가 힘들고 나를 의심할때, 그리고 하나님을 의심할때 볼 페이지입니다. 내 지나온 역사를 바라 볼 때, 주님께서 나를 어떻게 인도하셨는지 까먹지 않고 기억하기 위해 그 순간들을 적어 놓고 고백합니다.

@@ -9,6 +9,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2020-09-01-tiny_url_case.png"
+date: 2020-09-01 09:00:00
 ---
 ## URL Shortening Service Design Like TinyURL
 * URL shortening can optimize links across multiple devices and track individual links to analyze potential customers and measure advertising campaign performance. Alternatively, it can be used to hide the original connected URL.

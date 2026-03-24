@@ -6,6 +6,7 @@ categories: [Personal, Life Information]
 author: hyoeun
 image: "/assets/thumbnails/2018-01-16-problem_solve.png"
 bilingual: true
+date: 2018-01-16 09:00:00
 ---
 
 # Problem-Solving Methodologies

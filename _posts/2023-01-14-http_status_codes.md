@@ -10,6 +10,7 @@ math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2023-01-14-http_status_codes.png"
 bilingual: true
+date: 2023-01-14 09:00:00
 ---
 ### HTTP Status Codes
 

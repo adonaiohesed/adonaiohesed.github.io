@@ -7,6 +7,7 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 image: "/assets/thumbnails/2019-10-21-ftk_imager.png"
+date: 2019-10-21 09:00:00
 ---
 
 ## Image

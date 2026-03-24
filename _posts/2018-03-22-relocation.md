@@ -8,6 +8,7 @@ categories:
 author: hyoeun
 image: "/assets/thumbnails/2018-03-22-relocation.png"
 bilingual: true
+date: 2018-03-22 09:00:00
 ---
 ## Car
 * When looking for short-term rentals, [TURO](https://turo.com/) is worth considering.
