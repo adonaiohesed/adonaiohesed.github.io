@@ -8,7 +8,7 @@ layout: default
       <header class="post-header">
         <div class="post-meta-top" style="justify-content: center; margin-bottom: 1.5rem; display:flex; gap:0.5rem;">
           {% for cat in page.categories %}
-            <div style="background-color: #f6f8fa; color: #57606a; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #d0d7de;">{{ cat }}</div>
+            <div style="background-color: #172d4d; color: #a8b9d1; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #30414d;">{{ cat }}</div>
           {% endfor %}
         </div>
         <h1 class="post-title" itemprop="name headline" style="text-align: center;">{{ page.title | escape }}</h1>
@@ -16,7 +16,7 @@ layout: default
         {% if page.image %}
           {% assign thumb = page.image.path | default: page.image %}
           <div style="text-align: center; margin-bottom: 3rem; margin-top: 2rem;">
-             <img src="{{ thumb | relative_url }}" alt="Cover Image for {{ page.title }}" style="width: 100%; border-radius: 12px; height: auto; object-fit: cover; border: 1px solid #d0d7de;">
+             <img src="{{ thumb | relative_url }}" alt="Cover Image for {{ page.title }}" style="width: 100%; border-radius: 12px; height: auto; object-fit: cover; border: 1px solid #30414d;">
           </div>
         {% endif %}
       </header>
@@ -82,6 +82,28 @@ layout: default
       </a>
       {% endfor %}
     </div>
+  </section>
+  {% endif %}
+
+  <!-- Giscus Comments Section -->
+  {% if page.comments and site.comments.provider == "giscus" %}
+  <section class="comments-section" style="max-width: 1200px; margin: 80px auto 0; padding: 0 24px; border-top: 1px solid var(--border-color); padding-top: 80px;">
+    <script src="https://giscus.app/client.js"
+      data-repo="{{ site.comments.giscus.repo }}"
+      data-repo-id="{{ site.comments.giscus.repo_id }}"
+      data-category="{{ site.comments.giscus.category }}"
+      data-category-id="{{ site.comments.giscus.category_id }}"
+      data-mapping="{{ site.comments.giscus.mapping | default: 'pathname' }}"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="dark"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async>
+    </script>
   </section>
   {% endif %}
 </div>

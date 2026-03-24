@@ -1,0 +1,122 @@
+---
+layout: default
+---
+
+{% assign cat_slug = page.title | downcase | replace: ' & ', '-' | replace: ' ', '-' %}
+
+{% comment %} Find matching nav entry for sub-category pills {% endcomment %}
+{% assign cat_nav = nil %}
+{% for nav in site.data.navigation %}
+  {% if nav.title == page.title %}
+    {% assign cat_nav = nav %}
+  {% endif %}
+{% endfor %}
+
+<!-- ── Category Hero ──────────────────────────────────────────── -->
+<section class="cat-hero cat-hero--{{ cat_slug }}">
+  <div class="cat-hero-glow-wrap">
+    <div class="cat-hero-glow"></div>
+  </div>
+  <div class="cat-hero-inner">
+    <p class="cat-hero-eyebrow">Explore</p>
+    <h1 class="cat-hero-title">{{ page.title }}</h1>
+    {% if cat_nav.featured_desc and cat_nav.featured_desc != '' %}
+    <p class="cat-hero-desc">{{ cat_nav.featured_desc }}</p>
+    {% else %}
+    <p class="cat-hero-desc">Articles, tutorials, and deep-dives about {{ page.title | downcase }}.</p>
+    {% endif %}
+
+    {% if cat_nav and cat_nav.items.size > 0 %}
+    <div class="cat-subcategory-pills">
+      {% for item in cat_nav.items %}
+      <a href="{{ item.url | relative_url }}" class="cat-pill">{{ item.name }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- ── Posts ─────────────────────────────────────────────────── -->
+<div class="home-wrapper cat-content-wrap">
+
+  {% assign all_posts = page.posts %}
+  {% assign featured_post = all_posts | first %}
+  {% assign rest_posts = all_posts | slice: 1, 1000 %}
+
+  <!-- Featured post (large card) -->
+  {% if featured_post %}
+  <div class="cat-featured-wrap">
+    <a href="{{ featured_post.url | relative_url }}" class="cat-featured-card">
+      {% if featured_post.image %}
+        {% assign thumb = featured_post.image.path | default: featured_post.image %}
+        <div class="cat-featured-img" style="background-image: url('{{ thumb | relative_url }}')"></div>
+      {% else %}
+        <div class="cat-featured-img cat-featured-img--placeholder">
+          <span class="material-symbols-outlined">article</span>
+        </div>
+      {% endif %}
+      <div class="cat-featured-content">
+        {% if featured_post.categories.size > 1 %}
+        <span class="cat-featured-label" data-cat="{{ featured_post.categories | last | downcase }}">
+          {{ featured_post.categories | last }}
+        </span>
+        {% elsif featured_post.categories.size == 1 %}
+        <span class="cat-featured-label" data-cat="{{ featured_post.categories[0] | downcase }}">
+          {{ featured_post.categories[0] }}
+        </span>
+        {% endif %}
+        <h2 class="cat-featured-title">{{ featured_post.title }}</h2>
+        <p class="cat-featured-excerpt">{{ featured_post.excerpt | strip_html | truncatewords: 35 }}</p>
+        <div class="cat-featured-meta">
+          <span class="post-author-avatar">{{ site.social.name | slice: 0 }}</span>
+          <span>{{ site.social.name }}</span>
+          <span class="post-meta-sep">·</span>
+          <time datetime="{{ featured_post.date | date_to_xmlschema }}">{{ featured_post.date | date: "%b %-d, %Y" }}</time>
+        </div>
+        <span class="cat-featured-readmore">
+          Read more <span class="material-symbols-outlined">arrow_forward</span>
+        </span>
+      </div>
+    </a>
+  </div>
+  {% endif %}
+
+  <!-- Remaining posts grid -->
+  {% if rest_posts.size > 0 %}
+  <section class="home-section">
+    <div class="section-header">
+      <h2 class="section-heading">More in {{ page.title }}</h2>
+    </div>
+    <div class="post-grid">
+      {% for post in rest_posts %}
+      <a href="{{ post.url | relative_url }}" class="post-card">
+        {% if post.image %}
+          {% assign thumb = post.image.path | default: post.image %}
+          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')"></div>
+        {% else %}
+          <div class="post-thumbnail placeholder">
+            <span class="material-symbols-outlined">article</span>
+          </div>
+        {% endif %}
+        <div class="post-content">
+          {% if post.categories.size > 1 %}
+          <span class="post-category-label" data-cat="{{ post.categories | last | downcase }}">{{ post.categories | last }}</span>
+          {% elsif post.categories.size == 1 %}
+          <span class="post-category-label" data-cat="{{ post.categories[0] | downcase }}">{{ post.categories[0] }}</span>
+          {% endif %}
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          <div class="post-meta-row">
+            <span class="post-author-avatar">{{ site.social.name | slice: 0 }}</span>
+            <span class="post-author-name">{{ site.social.name }}</span>
+            <span class="post-meta-sep">·</span>
+            <time class="post-meta-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</div>
