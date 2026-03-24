@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Material Symbols -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+</head>
+<body>
+  
+  <!-- Double Navbar mimicking GitHub Engineering Blog -->
+  <header class="gh-header">
+    <div class="gh-nav-top">
+      <a href="{{ '/' | relative_url }}" class="gh-logo">
+        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github" style="fill: white;">
+            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+        </svg>
+        <span class="slash"> / </span>
+        <span class="wiki">Hyoeun's Wiki</span>
+      </a>
+      
+      <nav class="gh-links">
+        <a href="{{ '/' | relative_url }}">Blog</a>
+        <a href="{{ '/projects/' | relative_url }}">Projects</a>
+        <a href="{{ '/ctf/' | relative_url }}">CTF</a>
+        <a href="{{ '/about/' | relative_url }}">About Me</a>
+      </nav>
+
+      <div class="search-container">
+        <div class="gh-search">
+           <span class="material-symbols-outlined search-icon">search</span>
+           <input type="text" id="search-input" placeholder="Search wiki...">
+        </div>
+      </div>
+    </div>
+
+    <div class="gh-nav-sub">
+      {% for nav in site.data.navigation %}
+        <div class="gh-sub-item-wrapper">
+          <div class="gh-sub-item">
+            {{ nav.title }}
+            <span class="material-symbols-outlined nav-toggle-icon">expand_more</span>
+          </div>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-menu-left">
+                <a href="{{ nav.url | default: '#' | relative_url }}" class="mega-category-title">{{ nav.title }} <span class="material-symbols-outlined">chevron_right</span></a>
+                <p class="mega-category-desc">Explore technical insights and deep-dives about {{ nav.title | downcase }}.</p>
+                <div class="mega-items-grid">
+                  {% for item in nav.items %}
+                  <a href="{{ item.url | relative_url }}" class="mega-item">
+                    <div class="mega-item-title">{{ item.name }}</div>
+                    <div class="mega-item-desc">{{ item.desc }}</div>
+                  </a>
+                  {% endfor %}
+                </div>
+              </div>
+              <div class="mega-menu-right">
+                <a href="{{ nav.featured_url | relative_url }}" class="mega-featured">
+                  {% if nav.featured_image != "" %}
+                    <img src="{{ nav.featured_image | relative_url }}" alt="{{ nav.featured_title }}">
+                  {% else %}
+                    <div style="width: 100%; height: 160px; background: #e1e4e8; border-radius: 8px; margin-bottom: 16px; display: flex; align-items:center; justify-content:center;">
+                      <span class="material-symbols-outlined" style="font-size:48px; color:#bdc1c6">image</span>
+                    </div>
+                  {% endif %}
+                  <div class="mega-featured-title">{{ nav.featured_title }}</div>
+                  <div class="mega-featured-desc">{{ nav.featured_desc }}</div>
+                  <div class="mega-featured-link">Learn more <span class="material-symbols-outlined" style="font-size: 16px; margin-left:2px;">chevron_right</span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </header>
+
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  <footer class="gh-footer">
+    <div class="footer-inner">
+
+      <!-- Top: brand + nav columns -->
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="{{ '/' | relative_url }}" class="footer-logo">
+            <svg height="28" viewBox="0 0 16 16" width="28" fill="currentColor" aria-hidden="true">
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/>
+            </svg>
+            <span>Hyoeun's Wiki</span>
+          </a>
+          <p class="footer-tagline">Ethical Hacker &middot; Cybersecurity Engineer</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h4 class="footer-col-title">Topics</h4>
+            <ul class="footer-col-links">
+              <li><a href="/categories/security/">Security</a></li>
+              <li><a href="/categories/engineering/">Engineering</a></li>
+              <li><a href="/categories/ai-ml/">AI &amp; ML</a></li>
+              <li><a href="/categories/career/">Career</a></li>
+              <li><a href="/categories/tools/">Tools</a></li>
+              <li><a href="/categories/personal/">Personal</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Explore</h4>
+            <ul class="footer-col-links">
+              <li><a href="{{ '/about/' | relative_url }}">About Me</a></li>
+              <li><a href="{{ '/archives/' | relative_url }}">Archives</a></li>
+              <li><a href="{{ '/categories/' | relative_url }}">Categories</a></li>
+              <li><a href="{{ '/tags/' | relative_url }}">Tags</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Connect</h4>
+            <ul class="footer-col-links">
+              <li><a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://linkedin.com/in/{{ site.linkedin.username }}" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="mailto:{{ site.social.email }}">Email</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <span class="footer-copy">&copy; {{ 'now' | date: "%Y" }} {{ site.social.name }}. All rights reserved.</span>
+          <a href="#" class="footer-legal-link">Terms</a>
+          <a href="#" class="footer-legal-link">Privacy</a>
+        </div>
+        <div class="footer-social-icons">
+          <a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="GitHub">
+            <svg height="20" viewBox="0 0 16 16" width="20" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/{{ site.linkedin.username }}" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn">
+            <svg height="20" viewBox="0 0 24 24" width="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="mailto:{{ site.social.email }}" class="footer-social-icon" aria-label="Email">
+            <svg height="20" viewBox="0 0 24 24" width="20" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll('.gh-sub-item-wrapper');
+
+      items.forEach(item => {
+        const trigger = item.querySelector('.gh-sub-item');
+        trigger.addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent document click from firing immediately
+          
+          // Close others
+          items.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+
+          // Toggle current
+          item.classList.toggle('active');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        items.forEach(item => item.classList.remove('active'));
+      });
+
+      // Prevent closing when clicking inside the mega menu itself
+      const megaMenus = document.querySelectorAll('.mega-menu');
+      megaMenus.forEach(menu => {
+        menu.addEventListener('click', (e) => {
+          e.stopPropagation();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,31 +1,54 @@
 # Bundler cache
-.bundle
-vendor
+.bundle/
+vendor/
 Gemfile.lock
 
 # Jekyll cache
-.jekyll-cache
+.jekyll-cache/
 .jekyll-metadata
-_site
+_site/
 
 # RubyGems
 *.gem
+*.gemspec
 
 # NPM dependencies
-node_modules
+node_modules/
 package-lock.json
+yarn.lock
 
 # IDE configurations
-.idea
+.idea/
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
+.ruby-lsp/
 
-# Misc
-_sass/dist
-assets/js/dist
+# Build artifacts
+_sass/dist/
+assets/js/dist/
 
-# Mac
+# Environment variables
+.env
+.env.local
+
+# OS files
 .DS_Store
-assets/.DS_Store
+.DS_Store?
+._*
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# Claude Code
+.claude/
+
+# Project-specific
+.obsidian/
+.vscode/.DS_Store
+
+# Server output
+server_output.txt

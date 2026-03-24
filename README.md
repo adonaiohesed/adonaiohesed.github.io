@@ -1,43 +1,104 @@
-# Chirpy Starter
+# Hyoeun's Wiki - hyoeun-blog-theme
 
-[![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)][gem]&nbsp;
-[![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+A custom Jekyll blog theme built from scratch for Hyoeun's personal knowledge repository and portfolio.
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders
-`_data`, `_layouts`, `_includes`, `_sass` and `assets`, as well as a small part of options of the `_config.yml` file
-from the theme's gem. If you have ever installed this theme gem, you can use the command
-`bundle info --path jekyll-theme-chirpy` to locate these files.
+## 📚 About
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being
-able to enjoy the out-of-the-box experience when using feature-rich themes.
+This is a personal blog showcasing knowledge in cybersecurity, ethical hacking, software engineering, AI/ML, and career development. The site features a clean, modern design with support for multiple languages (English/Korean).
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your
-Jekyll site. The following is a list of targets:
+## ✨ Features
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Bilingual Support**: English/Korean language toggle
+- **Dark/Light Theme**: Automatic theme detection with manual override
+- **Table of Contents**: Auto-generated TOC for easy navigation in posts
+- **Category & Tag System**: Organized content discovery
+- **Related Posts**: Suggestions for related articles
+- **SEO Optimized**: Built-in SEO meta tags and sitemap
+- **PWA Support**: Installable progressive web app
+- **Fast Performance**: Minified CSS and optimized assets
+
+## 🛠️ Tech Stack
+
+- **Static Site Generator**: Jekyll 4.3+
+- **Theme**: hyoeun-blog-theme (custom)
+- **Styling**: SCSS
+- **Comments**: Giscus
+- **Analytics**: Google Analytics + GoatCounter
+- **Deployment**: GitHub Pages
+
+## 📝 Post Structure
+
+Posts can include both English and Korean versions in a single file. Use the language toggle to switch between versions.
+
+### Front Matter Example
+
+```yaml
+---
+title: Post Title
+tags: tag1 tag2
+key: page-unique-key
+categories:
+  - Category
+  - Subcategory
+author: hyoeun
+math: true
+mathjax_autoNumber: true
+image: "/assets/thumbnails/image.png"
+---
 ```
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the
-latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+## 🚀 Getting Started
 
-## Usage
+### Prerequisites
 
-Check out the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy/wiki).
+- Ruby 3.0+
+- Bundler
 
-## Contributing
+### Installation
 
-This repository is automatically updated with new releases from the theme repository. If you encounter any issues or want to contribute to its improvement, please visit the [theme repository][chirpy] to provide feedback.
+```bash
+# Install dependencies
+bundle install
 
-## License
+# Serve locally
+bundle exec jekyll serve --livereload
 
-This work is published under [MIT][mit] License.
+# Build for production
+bundle exec jekyll build
+```
 
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+## 📂 Project Structure
+
+```
+.
+├── _posts/          # Blog posts
+├── _tabs/           # About, Projects, CTF pages
+├── _layouts/        # Page templates
+├── _includes/       # Reusable components
+├── _sass/           # Stylesheets
+├── assets/          # Images, JS, CSS
+├── _config.yml      # Jekyll configuration
+└── Gemfile          # Ruby dependencies
+```
+
+## 🎨 Customization
+
+### Colors & Fonts
+
+Edit `_sass/` directory to customize the theme colors and typography.
+
+### Navigation
+
+Update the navigation links in `_layouts/default.html`.
+
+## 📄 License
+
+MIT License - See LICENSE file for details.
+
+## 👤 Author
+
+**Hyoeun Choi**
+- GitHub: [@adonaiohesed](https://github.com/adonaiohesed)
+- Email: hyoeun.choi@outlook.com
+- LinkedIn: [hyoeun-choi](https://linkedin.com/in/hyoeun-choi)
