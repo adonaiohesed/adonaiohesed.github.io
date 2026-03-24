@@ -2,10 +2,12 @@
 title: Linux 종류
 tags: Linux
 key: page-linux_types
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-06-01-linux_type.png"
 ---
-
 리눅스를 사용하다보면 무슨 계열별로 설치하는 방식이 다르다면서 여러가지 계열이 나오는데 한 번 정리해보았다.
 <br>
 

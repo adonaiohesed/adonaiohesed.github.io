@@ -4,6 +4,7 @@ tags: Vehical
 key: page-car_maintain
 categories: [Personal, Life Information]
 author: hyoeun
+image: "/assets/thumbnails/2018-01-14-car_maintain.png"
 ---
 
 # 자동차 관리 매뉴얼 (기록용)
@@ -38,6 +39,7 @@ author: hyoeun
 
 * **세차 주기:** **최소 월 1회** 권장.
 * **긴급 대응:** 새 똥이나 나무 수액은 산성이 강해 발견 즉시 닦아내야 한다. 방치하면 도장면 코팅층이 부식되어 나중에 광택(Polishing) 작업 없이는 복구가 불가능해진다. 겨울철 제설제가 뿌려진 도로를 달린 후에는 하부 부식 방지를 위해 하부 세차가 필수다.
+* **자동 세차:** 자동세차의 여러 옵션들 중에는 그냥 가장 기본을 하는게 좋고 그 윗단계는 주로 마케팅 관련이다. 하지만 그럼에도 흙탕물이 차 하단에 묻거나 했을 때에는 기본 보다 Underbody Rinse 기능이 포함된 한 단계 위의 자동 세차 기능을 쓰는것이 훨씬 차 상태 유지에 도움이 된다.
 
 ## 7. 배터리 및 비상 대비 (Battery & Jump Starter)
 

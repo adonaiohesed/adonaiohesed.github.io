@@ -6,6 +6,8 @@ categories: [Tools, Reconnaissance]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-05-07-waybackurls.png"
+bilingual: true
 ---
 
 ## Waybackurls: Discovering Forgotten Paths for Reconnaissance

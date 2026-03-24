@@ -2,10 +2,12 @@
 title: Git Pull Request
 tags: Git Collaborate
 key: page-git_pull_request
-categories: [Development, DevOps & Automation]
+categories:
+- Engineering
+- DevOps & Automation
 author: hyoeun
+image: "/assets/thumbnails/2019-02-02-git_pull_request.png"
 ---
-
 # [GitHub] The Cheat Sheet for Better Collaboration: Understanding Pull Requests and Setting Up Templates
 
 ## 1. What is a Pull Request (PR)?

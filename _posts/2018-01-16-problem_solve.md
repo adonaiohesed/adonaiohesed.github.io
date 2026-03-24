@@ -4,6 +4,8 @@ tags: PM
 key: page-problem_solve
 categories: [Personal, Life Information]
 author: hyoeun
+image: "/assets/thumbnails/2018-01-16-problem_solve.png"
+bilingual: true
 ---
 
 # Problem-Solving Methodologies

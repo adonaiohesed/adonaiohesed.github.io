@@ -1,13 +1,16 @@
 ---
-title: Automating OSCP Reports 
+title: Automating OSCP Reports
 tags: Cybersecurity-Certificates OSCP
 key: page-oscp_report_automation
-categories: [Professional Toolkit, Certificates]
+categories:
+- Career
+- Certificates
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2019-04-02-oscp_report_automation.png"
+bilingual: true
 ---
-
 # Automating OSCP and Penetration Testing Reports
 
 In penetration testing, report writing is a process just as critical as technical discovery. Recently, writing reports in Markdown and converting them into high-quality PDFs using Pandoc and the LaTeX engine has become the standard among the Offensive Security community and practitioners.

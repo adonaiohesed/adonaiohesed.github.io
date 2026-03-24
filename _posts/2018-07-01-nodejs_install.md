@@ -1,13 +1,14 @@
 ---
 title: Nodejs 설치 및 사용 방법
 tags: Nodejs
-author: Hyoeun-Choi
+author: hyoeun
 pageview: true
 key: page-nodejs_installation_usage
-categories: [Development, SysOps & Infrastructure]
-author: hyoeun
+categories:
+- Engineering
+- SysOps & Infrastructure
+image: "/assets/thumbnails/2018-07-01-nodejs_install.png"
 ---
-
 ### NodeJS의 특징
 * Javascript를 사용한다. (따라서 front, back이 모두 같은 언어로 작업 할 수 있다.)
 * Single thread 기반으로 동작한다.

@@ -2,12 +2,14 @@
 title: Injection Attacks Beyond SQL and XXS
 tags: Injection-Attacks
 key: page-injection_attacks
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-05-injection_attacks.png"
 ---
-
 ### 1. Command Injection: The Shell is the Limit
 
 Command Injection is one of the most critical vulnerabilities we can encounter. A successful attack can lead beyond simple data theft to the 'Holy Grail' of gaining direct control over the server.

@@ -2,12 +2,14 @@
 title: SQL Injection
 tags: SQL-Injection Web-Hacking Cybersecurity
 key: page-sql_injection_attack
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-01-sql_injection_attack.png"
 ---
-
 ## SQL Injection: When Data Becomes Code
 
 ### Introduction

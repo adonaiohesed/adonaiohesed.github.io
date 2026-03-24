@@ -2,12 +2,14 @@
 title: Introduction of AI
 tags: AI Machine-Learning
 key: page-ai_introduction
-categories: [Artificial Intelligence, Machine Learning]
+categories:
+- AI & ML
+- Machine Learning
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-09-01-Introduction_AI.png"
 ---
-
 ## How to train
 * Supervised Learning은 결과값(y)를 알고 있을 때 쓴다.
 

@@ -2,12 +2,15 @@
 title: Types of Mobile App
 tags: Mobile
 key: page-mobile_app_types
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-01-mobile_app_types.png"
+bilingual: true
 ---
-
 The three main approaches to mobile application development are **Native**, **Cross-Platform**, and **Hybrid** apps. Each method has its unique characteristics, advantages, disadvantages, and security considerations.
 
 ## Native Apps

@@ -2,10 +2,12 @@
 title: 파이썬 특징적인 문법
 tags: Python
 key: page-python_syntax
-categories: [Development, Programming Fundamentals]
+categories:
+- Engineering
+- Programming Fundamentals
 author: hyoeun
+image: "/assets/thumbnails/2018-10-05-python_key_characteristics.png"
 ---
-
 ## 입출력
 
 ```python

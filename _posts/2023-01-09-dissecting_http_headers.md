@@ -2,12 +2,15 @@
 title: Dissecting HTTP Headers
 tags: HTTP-Headers
 key: page-dissecting_http_headers
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-09-dissecting_http_headers.png"
+bilingual: true
 ---
-
 ## Web Penetration Testing: Dissecting HTTP Headers
 
 When performing web penetration testing, HTTP headers are the backbone of communication between the client and server. They provide crucial clues for understanding an application's security posture, misconfigurations, and potential vulnerabilities. Properly configured headers can be a strong defense, but misconfigured or missing ones expose significant attack surfaces.

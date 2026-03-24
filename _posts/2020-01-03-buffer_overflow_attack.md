@@ -2,12 +2,14 @@
 title: Buffer overflow attack
 tags: Buffer-Overflow Vulnerabilities Cybersecurity
 key: page-buffer_overflow_attack
-categories: [Cybersecurity, Vulnerabilities]
+categories:
+- Security
+- Vulnerabilities
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-01-03-buffer_overflow_attack.png"
 ---
-
 ## The five segments in a process's memory layout for a typical C program.
 
 * **Text segment**: stores the executable code of the program. This block of memory is usually read-only. 코드 자체가 올라가는 영역으로 보면 된다.

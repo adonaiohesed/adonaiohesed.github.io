@@ -2,12 +2,14 @@
 title: Browser Extension Penetration Test
 tags: Browser-Extension
 key: page-browser_extension_penetration_test
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-13-browser_extension_penetration_test.png"
 ---
-
 ## Browser Extension Security
 
 Browser Extensions are powerful tools that extend the functionality of web browsers and enhance the user experience. From ad blockers to productivity tools and developer utilities, their variety is immense. However, behind these extensive capabilities lies the potential for **very high privileges** that can deeply interact with a user's web activities, simultaneously leading to significant security risks.

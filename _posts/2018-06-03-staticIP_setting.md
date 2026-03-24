@@ -2,8 +2,11 @@
 title: CentOS7 고정 ip 설정
 tags: CentOS7 Static-IP
 key: page-centos7_static_ip_configuration
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-06-03-staticIP_setting.png"
 ---
 ## 네트워크 설정 파일 열기
 1. ifconfig를 통해 연결된 이더넷의 이름이 뭔지 확인합니다.

@@ -4,6 +4,7 @@ tags: Korea
 key: page-phone_in_korea
 categories: [Personal, Life Information]
 author: hyoeun
+image: "/assets/thumbnails/2018-01-15-phone_in_korea.png"
 ---
 
 # 미국에서 구입한 핸드폰의 한국 사용 가이드 (2025년 3월까지 유효했음)

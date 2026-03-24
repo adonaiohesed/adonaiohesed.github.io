@@ -2,12 +2,15 @@
 title: Packet Sniffing and Spoofing
 tags: Packet-Sniffing Spoofing Cybersecurity
 key: page-packet_sniffing_spoofing
-categories: [Cybersecurity, Network Security]
+categories:
+- Security
+- Network Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-05-03-packet_sniffing_and_spoofing.png"
+bilingual: true
 ---
-
 ### **1. The Difference Between Sniffing and Spoofing**
 
 * **Sniffing**: This is an attack where an attacker silently **eavesdrops** on network traffic to **capture** information. This is typically done by setting a Network Interface Card (NIC) to an abnormal mode to intercept all packets, including those not addressed to it.

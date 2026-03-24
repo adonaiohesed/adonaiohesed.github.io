@@ -2,12 +2,15 @@
 title: Security Control Domains and Associated Roles
 tags: Intermediate-Payments-Cybersecurity
 key: page-security_control_domain
-categories: [Cybersecurity, Payment Card Industry Data Security Standard]
+categories:
+- Security
+- Payment Card Industry Data Security Standard
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2024-12-04-security_control_domain.png"
+bilingual: true
 ---
-
 # Understanding Information Security: Key Areas and Practices
 
 ## Organizational Structure of Information Security Under the CISO

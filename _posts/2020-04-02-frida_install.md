@@ -6,6 +6,8 @@ categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-04-02-frida_install.png"
+bilingual: true
 ---
 
 ## Installing Frida on macOS

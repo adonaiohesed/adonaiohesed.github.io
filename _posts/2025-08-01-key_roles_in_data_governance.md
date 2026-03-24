@@ -2,12 +2,15 @@
 title: Key Roles in Data Governance and System Security
 tags: Custodian
 key: page-key_roles_in_data_governance
-categories: [Cybersecurity, Governance Risk and Compliance]
+categories:
+- Security
+- Governance Risk and Compliance
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-08-01-key_roles_in_data_governance.png"
+bilingual: true
 ---
-
 ## Key Roles in Data Governance and System Security
 
 In the **cybersecurity** landscape of a large organization, a clear distribution of responsibilities is essential for effectively protecting data and systems. Beyond merely implementing technical controls, establishing boundaries for who holds ultimate responsibility for which assets, who performs day-to-day operations, and who uses the systems forms the foundation of the security framework.

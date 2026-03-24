@@ -2,12 +2,14 @@
 title: Shellshock Attack
 tags: Shellshock Vulnerabilities Cybersecurity
 key: page-shellshock_attack
-categories: [Cybersecurity, Vulnerabilities]
+categories:
+- Security
+- Vulnerabilities
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-01-02-shellshock_attack.png"
 ---
-
 ## Shell이란?
 * Shell이란 command-line interpreter이다. 유저와 OS사이에서 명령어들을 읽고 그것들을 실행시켜준다.
 * sh, bash, csh, zsh, Windows PowerShell 등이 있다.

@@ -1,13 +1,16 @@
 ---
 title: What is Blockchain?
-tags:  Blockchain
+tags: Blockchain
 key: page-blockchain_ecosystem
-categories: [Cybersecurity, Blockchain]
+categories:
+- Security
+- Blockchain
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-12-02-blockchain_ecosystem.png"
+bilingual: true
 ---
-
 ## What is Blockchain Technology?
 
 Blockchain technology is an advanced database mechanism that allows for transparent information sharing within a business network. A blockchain database stores data in blocks that are linked together in a chain. Since the chain cannot be deleted or modified without network consensus, this data remains chronologically consistent. As a result, blockchain technology can be used to create an **immutable** or unchangeable ledger for tracking orders, payments, accounts, and other transactions. The system includes built-in mechanisms to prevent unauthorized transaction entries and ensure consistency across a shared view of these transactions.

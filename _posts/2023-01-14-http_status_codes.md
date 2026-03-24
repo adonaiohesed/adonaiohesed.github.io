@@ -2,12 +2,15 @@
 title: HTTP Status Codes
 tags: HTTP-Status-Codes
 key: page-http_status_codes
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-14-http_status_codes.png"
+bilingual: true
 ---
-
 ### HTTP Status Codes
 
 HTTP status codes are more than just numbers indicating success or failure; they are a critical source of intelligence for a penetration tester. Each code, especially within the error ranges, can reveal hidden server behavior, security configurations, and potential vulnerabilities. Here's a breakdown of what each status code range means from a security perspective.

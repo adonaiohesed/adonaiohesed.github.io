@@ -2,12 +2,14 @@
 title: Bypassing the Client-Side Authentication Mechanism
 tags: Client-Side-Authentication
 key: page-client_side_auth
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-14-client_side_auth.png"
 ---
-
 ## Mobile App Penetration Testing: The Anatomy of Local Data Storage & Runtime Extraction on Android & iOS
 
 Mobile apps provide convenience to users, but they also store and process a significant amount of sensitive information. One of the core goals of penetration testing is to **verify whether this sensitive information is securely stored on the client side (user's device).** Attackers can access an app's file system, uncover unencrypted or inadequately protected data, and cause severe security breaches.

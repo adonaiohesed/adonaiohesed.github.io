@@ -4,6 +4,7 @@ tags: ELK SSL Tools
 key: page-elk_ssl_setup
 categories: [Tools, ELK]
 author: hyoeun
+image: "/assets/thumbnails/2019-01-08-elk_ssl_setting.png"
 ---
 
 ## 기본 설치 및 실행 (CentOS 7 환경)

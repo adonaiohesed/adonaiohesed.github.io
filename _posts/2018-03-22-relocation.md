@@ -2,10 +2,13 @@
 title: Relocation Considerations
 tags: Relocation Interview
 key: page-relocation_considerations
-categories: [Professional Toolkit, Post-Interview]
+categories:
+- Career
+- Post-Interview
 author: hyoeun
+image: "/assets/thumbnails/2018-03-22-relocation.png"
+bilingual: true
 ---
-
 ## Car
 * When looking for short-term rentals, [TURO](https://turo.com/) is worth considering.
 

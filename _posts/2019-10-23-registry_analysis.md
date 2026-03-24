@@ -6,6 +6,7 @@ categories: [Tools, Forensics Tools]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2019-10-23-registry_analysis.png"
 ---
 
 ## RegRipper

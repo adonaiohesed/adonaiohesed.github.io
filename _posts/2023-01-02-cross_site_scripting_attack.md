@@ -2,12 +2,14 @@
 title: Cross-Site Scripting Attack (XXS)
 tags: XSS Web-Hacking Cybersecurity
 key: page-xss_attack
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-02-cross_site_scripting_attack.png"
 ---
-
 ## The Cross-Site Scripting Attack
 
 Let's explore **Cross-Site Scripting (XSS)**, one of the most common and dangerous vulnerabilities in web application security. XSS is a security flaw that occurs when a website fails to properly handle user input, allowing an attacker to inject malicious scripts into web pages that then execute in other users' browsers.

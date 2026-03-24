@@ -2,12 +2,15 @@
 title: Digital Signatures and Certificates
 tags: Digital-Signature Cryptography Cybersecurity PKI
 key: page-digital_signature
-categories: [Cybersecurity, Cryptography]
+categories:
+- Security
+- Cryptography
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-04-02-digitalsigniture.png"
+bilingual: true
 ---
-
 ## **Everything About Digital Signatures and Certificates: A Complete Guide to PKI**
 
 Today, we exchange vast amounts of information online. But how can we be sure that this data truly comes from a trusted party and hasn't been intercepted or tampered with along the way? The technologies developed to solve this very problem are the **Digital Signature** and the **Digital Certificate**, and the overarching system that governs them is the **Public Key Infrastructure (PKI)**.

@@ -2,10 +2,12 @@
 title: k-NN 알고리즘
 tags: k-NN-Algorithm Machine-Learning
 key: page-knn_algorithm
-categories: [Artificial Intelligence, Machine Learning]
+categories:
+- AI & ML
+- Machine Learning
 author: hyoeun
+image: "/assets/thumbnails/2023-09-02-knn_algorithm.png"
 ---
-
 * AI는 컴퓨터가 사람과 같은 행동을 할 수 있는 기술을 의미한다.
 * ML은 AI를 달성하기 위해 사용되는 방법 중에 하나이다.
   * 통계학적 기법을 사용하며 명시적 프로그래밍 없이 데이터로부터 학습을 하여 어떠한 문제를 해결 하는 기술이다.

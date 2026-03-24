@@ -2,12 +2,14 @@
 title: Return to libc Attack
 tags: Return-to-libc Vulnerabilities Cybersecurity
 key: page-return_to_libc_attack
-categories: [Cybersecurity, Vulnerabilities]
+categories:
+- Security
+- Vulnerabilities
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-01-04-return_to_libc_attack.png"
 ---
-
 ## Introduction
 
 * Stack은 주로 data가 담기는 곳이기 때문에 거기서 코드를 실행 시킬 필요는 없다. 그렇기 때문에 x86과 같은 컴퓨터 구조나 gcc에서 non-executable stack을 구현하여 stack에서 코드가 실행되지 않도록 해준다.

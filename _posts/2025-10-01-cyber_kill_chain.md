@@ -2,12 +2,15 @@
 title: Cyber Kill Chain
 tags: Cyber-Kill-Chain
 key: page-cyber_kill_chain
-categories: [Cybersecurity, Threat Intelligence]
+categories:
+- Security
+- Threat Intelligence
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-10-01-cyber_kill_chain.png"
+bilingual: true
 ---
-
 ## All About the Cyber Kill Chain and Attack Infrastructure
 
 ### Overview

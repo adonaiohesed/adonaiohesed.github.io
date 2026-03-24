@@ -2,12 +2,15 @@
 title: Encoding And Decoding
 tags: Encoding Decoding
 key: page-encoding_decoding
-categories: [Cybersecurity, Cryptography]
+categories:
+- Security
+- Cryptography
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-04-03-encode_decode.png"
+bilingual: true
 ---
-
 ### **The Concepts of Encoding and Decoding**
 
 The first step in security analysis is to identify the format of the data you encounter. The most fundamental concepts here are **encoding** and **decoding**.

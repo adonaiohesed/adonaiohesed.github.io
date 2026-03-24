@@ -2,12 +2,15 @@
 title: Zero Trust Architecture
 tags: Zero-Trust-Architecture
 key: page-zero_trust
-categories: [Cybersecurity, Network Security]
+categories:
+- Security
+- Network Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-05-08-zero_trust.png"
+bilingual: true
 ---
-
 # Zero Trust Architecture: A New Paradigm in Modern Cybersecurity
 
 ## What is Zero Trust?

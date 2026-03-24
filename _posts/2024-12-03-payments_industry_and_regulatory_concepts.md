@@ -2,12 +2,15 @@
 title: Payments Industry and Regulatory Concepts
 tags: Intermediate-Payments-Cybersecurity
 key: page-payments_industry_and_regulatory_concepts
-categories: [Cybersecurity, Payment Card Industry Data Security Standard]
+categories:
+- Security
+- Payment Card Industry Data Security Standard
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2024-12-03-payments_industry_and_regulatory_concepts.png"
+bilingual: true
 ---
-
 # Key Drivers of Industry and Regulatory Compliance: Core Standards and Concepts
 
 Industry and regulatory compliance is complex and requires adherence to various standards and regulations to ensure security, privacy, and operational efficiency. In this post, we’ll explore key regulatory frameworks, privacy concerns, and industry-specific standards.

@@ -2,12 +2,14 @@
 title: Binary Search
 tags: Binary-Search Algorithms
 key: page-binary_search
-categories: [Development, Algorithms & Data Structures]
+categories:
+- Engineering
+- Algorithms & Data Structures
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-05-09-binary_search.png"
 ---
-
 ## 바이너리 서치
 ```python
 left = 1

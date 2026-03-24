@@ -2,10 +2,12 @@
 title: 파이썬 설치 및 2.7 3.7 차이 설명
 tags: Python
 key: page-python_installation_differences
-categories: [Development, Programming Fundamentals]
+categories:
+- Engineering
+- Programming Fundamentals
 author: hyoeun
+image: "/assets/thumbnails/2018-10-01-python_install.png"
 ---
-
 ```console
 # yum install gcc openssl-devel bzip2-devel libffi-devel
 # cd /usr/src

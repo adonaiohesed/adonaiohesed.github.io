@@ -2,12 +2,15 @@
 title: EDR Bypass
 tags: EDR
 key: page-edr_bypass
-categories: [Cybersecurity, Security Operations]
+categories:
+- Security
+- Security Operations
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-02-02-edr_bypass.png"
+bilingual: true
 ---
-
 # EDR Bypass Techniques: Understanding Attack Methods and Defense Strategies
 
 ## Overview

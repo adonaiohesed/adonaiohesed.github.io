@@ -2,10 +2,12 @@
 title: Shell script 기본 문법
 tags: Shell-Script
 key: page-shell_script_syntax
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-06-07-shell_script.png"
 ---
-
 ## 파일 생성 및 실행 권한 부여
 ```console
 $ touch shell_script_practice.sh // 파일 생성

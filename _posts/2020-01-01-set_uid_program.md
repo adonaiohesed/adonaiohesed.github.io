@@ -2,12 +2,14 @@
 title: SET-UID Program
 tags: SET-UID Vulnerabilities Cybersecurity
 key: page-set_uid_program
-categories: [Cybersecurity, Vulnerabilities]
+categories:
+- Security
+- Vulnerabilities
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-01-01-set_uid_program.png"
 ---
-
 * privileged program: 접근 권한이 적용되어 있는 프로그램
 * 이런 프로그램에 접근하기 위해서는 2가지 방법이 필요하다. 
 1. Set-UID program.

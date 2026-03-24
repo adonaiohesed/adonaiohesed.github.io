@@ -2,12 +2,15 @@
 title: MITRE ATT&CK
 tags: MITRE ATT&CK
 key: page-mitre_attck
-categories: [Cybersecurity, Security Operations]
+categories:
+- Security
+- Security Operations
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-04-01-mitre_attck.png"
+bilingual: true
 ---
-
 # MITRE ATT&CK Framework: Understanding Cyber Threats and Defense Strategies
 
 ## What is MITRE ATT&CK?

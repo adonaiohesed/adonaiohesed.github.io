@@ -2,12 +2,15 @@
 title: Risk Management Methodology
 tags: Intermediate-Payments-Cybersecurity
 key: page-risk_management_methodology
-categories: [Cybersecurity, Payment Card Industry Data Security Standard]
+categories:
+- Security
+- Payment Card Industry Data Security Standard
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2024-12-02-risk_management_methodology.png"
+bilingual: true
 ---
-
 # Risk Management Methodology
 
 Risk management refers to a systematic approach to managing various types of risks that may arise in areas such as **People Risk** and **Cybersecurity Risk**. This process can be broken down into four key steps:

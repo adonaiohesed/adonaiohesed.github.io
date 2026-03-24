@@ -2,10 +2,12 @@
 title: Git Action
 tags: Git Collaborate
 key: page-git_flow
-categories: [Development, DevOps & Automation]
+categories:
+- Engineering
+- DevOps & Automation
 author: hyoeun
+image: "/assets/thumbnails/2019-02-03-git_action.png"
 ---
-
 # [CI/CD] Collaboration Mastered: Automating Branch-Specific Builds and Deployments with GitHub Actions
 
 In previous posts, we established a stable **Git Branching Strategy (Git Flow)** and an efficient **Pull Request (PR) Template**. The next step is to technically complete this strategy.

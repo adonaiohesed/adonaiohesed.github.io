@@ -2,12 +2,15 @@
 title: Certificate Pinning
 tags: Cert-Pinning
 key: page-certificate_pinning
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-06-cert_pinning.png"
+bilingual: true
 ---
-
 # What is Certificate Pinning?
 
 Certificate Pinning is a method where a client application "pins" specific server certificates (or related data) to trust only those certificates. This ensures stricter certificate validation during network communication and effectively defends against **MITM (Man-in-the-Middle)** attacks. Key characteristics include:

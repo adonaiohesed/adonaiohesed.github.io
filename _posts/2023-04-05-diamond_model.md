@@ -2,12 +2,15 @@
 title: Diamond Model of Intrustion Analysis
 tags: Diamond-Model Intrusion Cybersecurity
 key: page-diamond_model_intrusion
-categories: [Cybersecurity, Security Operations]
+categories:
+- Security
+- Security Operations
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-04-05-diamond_model.png"
+bilingual: true
 ---
-
 ## What is the Diamond Model of Intrusion Analysis?
 
 In the cyber threat intelligence (CTI) industry, several approaches are used to analyze and track the characteristics of cyber intrusions. Among them, one of the most widely known and effective frameworks is the **Diamond Model of Intrusion Analysis**. This model posits that every intrusion event consists of four core elements: the **Adversary**, **Capability**, **Infrastructure**, and **Victim**.

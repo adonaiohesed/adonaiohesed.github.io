@@ -2,12 +2,15 @@
 title: Mobile Platform Security
 tags: Mobile-Security
 key: page-mobile_platform_security
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-02-mobile_platform_security.png"
+bilingual: true
 ---
-
 ### Mobile Platform Security: A Comparative Analysis of iOS and Android Strategies
 
 In the modern era, smartphones have become more than just communication devices; they are indispensable tools that handle personal information, financial transactions, and sensitive corporate data. Consequently, mobile platform security has become a critical component for protecting user data and maintaining system integrity. This article explores the core principles and threat models of mobile security, and then compares and analyzes how Apple's **iOS** and Google's **Android** reinforce their platform security.

@@ -6,6 +6,7 @@ categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-03-01-metasploit.png"
 ---
 
 ## 사용법

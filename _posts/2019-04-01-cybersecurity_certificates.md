@@ -2,12 +2,15 @@
 title: What Cybersecurity Certifications Should I Get Next?
 tags: Cybersecurity-Certificates
 key: page-certificates_cybersecurity
-categories: [Professional Toolkit, Certificates]
+categories:
+- Career
+- Certificates
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2019-04-01-cybersecurity_certificates.png"
+bilingual: true
 ---
-
 # 어떤 보안 자격증을 준비하면 좋을까? (펜테스트 & 클라우드 시큐리티 진로 고민)
 
 보안 업계에서 일하며 CEH와 CISSP를 이미 취득한 지금, 앞으로 어떤 자격증을 준비하면 좋을까 고민해봤다.  

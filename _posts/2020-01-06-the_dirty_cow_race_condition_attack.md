@@ -2,12 +2,14 @@
 title: The Dirty COW Race Condition Attack
 tags: Dirty-COW Race-Condition Vulnerabilities
 key: page-dirty_cow_attack
-categories: [Cybersecurity, Vulnerabilities]
+categories:
+- Security
+- Vulnerabilities
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-01-06-the_dirty_cow_race_condition_attack.png"
 ---
-
 ## Introduction
 * Race condition vulnerability의 일종이며 Linux기반의 모든 OS에 영향을 주는 취약점이다.
 * 공격자는 읽기 모드라도 모든 protected file을 수정할 수 있게 된다.

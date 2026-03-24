@@ -2,12 +2,15 @@
 title: Secure Code Review
 tags: Static-Analysis Cybersecurity
 key: page-secure_code_review
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-15-secure_code_review.png"
+bilingual: true
 ---
-
 ## Secure Code Review: Reading Code Through an Attacker's Eyes in JavaScript and Node.js
 
 While a typical code review focuses on functional correctness and code quality, a **Secure Code Review** goes a step further, concentrating on identifying and eliminating potential attack vectors and security vulnerabilities. In a dynamic and asynchronous environment like JavaScript and Node.js, a developer's small mistake can lead to a critical security flaw. Although Static Application Security Testing (SAST) tools can report numerous potential issues, they often miss design-level flaws hidden in complex business logic or subtle, context-based vulnerabilities that can only be found by the sharp eye of a skilled security professional.

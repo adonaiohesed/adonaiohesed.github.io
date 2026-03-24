@@ -2,12 +2,15 @@
 title: Binary Protection
 tags: Binary-Protection
 key: page-binary_protection
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-10-binary_protection.png"
+bilingual: true
 ---
-
 ### 우리 손안의 전쟁터: 모바일 바이너리 보호 기술과 우회 전략
 
 PC와 달리 모바일 앱의 바이너리(`APK`, `IPA`)는 누구나 쉽게 다운로드하여 자신의 기기에서 실행할 수 있습니다. 바로 그 기기는 루팅이나 탈옥을 통해 완전한 통제권을 가진 공격자의 손에 있을 수 있죠. 이런 **적대적인 환경(Hostile Environment)** 이야말로 모바일 보안의 가장 큰 숙제입니다.

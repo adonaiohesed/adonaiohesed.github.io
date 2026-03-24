@@ -2,10 +2,13 @@
 title: Reflections on My Job Search Journey
 tags: Carrer
 key: page-job_hunting
-categories: [Professional Toolkit, Post-Interview]
+categories:
+- Career
+- Post-Interview
 author: hyoeun
+image: "/assets/thumbnails/2018-03-21-job_hunting.png"
+bilingual: true
 ---
-
 # When Frustration and Depression Hit
 
 During times when I couldn't secure interviews, I was depressed about not getting them. Once I started getting interviews, I became depressed about failing technical rounds. When I made it to final interviews, I was depressed about not receiving offers. When an offer was rescinded due to team circumstances, I felt like all hope was lost.

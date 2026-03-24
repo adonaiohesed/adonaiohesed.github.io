@@ -2,12 +2,15 @@
 title: The Anatomy of Mobile App
 tags: Android iOS
 key: page-anatomy_mobile
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-03-anatomy_mobile.png"
+bilingual: true
 ---
-
 ## The Anatomy of Mobile App and Penetration Testing
 ### **Common Types of Sensitive Information to Look For**
 

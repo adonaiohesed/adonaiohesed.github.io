@@ -2,8 +2,11 @@
 title: 리눅스 기본 지식
 tags: Linux
 key: page-linux_basics
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-06-02-linux_basic.png"
 ---
 ## 쉘 커맨드 창에 보이는 기호 분석
 * ```guest@linux:~$(#)``` 

@@ -2,12 +2,14 @@
 title: System Design Interview
 tags: System-Design Interview
 key: page-system_design_basic
-categories: [Professional Toolkit, Interview]
+categories:
+- Career
+- Interview
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-03-12-system_design_basic.png"
 ---
-
 ## 시스템 디자인 인터뷰 단계
 1. Clarificiations을 제대로 해야한다. SDI(System Design Interview)는 정해진 답이 없기 때문에 주어진 시간안에 큰 설계를 끝내야 함으로 항상 명확한 범위를 설정해야 합니다. 트위터의 디자인을 설계할때 트윗에 사진과 비디오가 포함되는지, 핫 트렌드 주제를 표시할것인지, 푸시 알림이 있는지, 검색 기능이 있는지 등을 고려해야 합니다.
 1. 시스템 설계시 규모도 생각해야 합니다. 나중에 확장, 로드 밸런싱 및 캐싱에 집중할 때에도 도움이 됩니다. 트윗의 수, 트윗 보기 수, 초당 타임라인 생성 수과 같은규모를 고려해야 하고 얼마나 많은 스토리지가 필요한지, 네트워크 대역폭 사용량은 어느정도인지 생각해야 합나디.

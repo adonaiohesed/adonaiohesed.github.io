@@ -1,13 +1,16 @@
 ---
 title: Proxy Protocols
-tags:  Blockchain
+tags: Blockchain
 key: page-proxy_protocol
-categories: [Cybersecurity, Blockchain]
+categories:
+- Security
+- Blockchain
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-12-06-proxy_protocol.png"
+bilingual: true
 ---
-
 ## Understanding 'Proxy Protocols': Overcoming the Limitations of Smart Contracts
 
 One of the defining characteristics of blockchain is **Immutability**. However, when a critical bug is discovered or a feature needs improvement during service operation, this permanence can become a double-edged sword. To solve this, **Proxy Protocols** were introduced.

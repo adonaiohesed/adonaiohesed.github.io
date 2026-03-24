@@ -2,12 +2,15 @@
 title: Bypass pinning by repackaging - Android
 tags: Android
 key: page-pinning_bypass
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-07-pinning_bypass.png"
+bilingual: true
 ---
-
 ## Mastering SSL Pinning Bypass: From Package Repackaging to Automated Tools
 
 One of the first obstacles encountered during mobile app penetration testing is **SSL Pinning**. SSL Pinning forces an app to trust only a predefined server certificate, neutralizing attempts to intercept network traffic through a Man-in-the-Middle (MITM) attack. However, for security analysts and penetration testers, bypassing this barrier is necessary to analyze the app's communications and find vulnerabilities.

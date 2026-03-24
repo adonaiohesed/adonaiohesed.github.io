@@ -2,12 +2,14 @@
 title: Cross-Site Request Forgery (CSRF)
 tags: CSRF Web-Hacking Cybersecurity
 key: page-csrf_attack
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-03-cross_site_request_forgery.png"
 ---
-
 ## The Cross-Site Request Forgery (CSRF) Attack
 
 Let's dive deep into **Cross-Site Request Forgery (CSRF)**, one of the most subtle and dangerous attacks in web application security. CSRF is an attack that tricks a user into unknowingly sending malicious web requests, causing them to perform critical actions they never intended.

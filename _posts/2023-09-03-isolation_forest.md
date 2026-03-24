@@ -2,10 +2,13 @@
 title: Isolation Forest
 tags: Isolation Forest Machine-Learning
 key: page-isolation_forest
-categories: [Artificial Intelligence, Machine Learning]
+categories:
+- AI & ML
+- Machine Learning
 author: hyoeun
+image: "/assets/thumbnails/2023-09-03-isolation_forest.png"
+bilingual: true
 ---
-
 # Isolation Forest: Detecting Anomalies Through Isolation
 
 In vast datasets like security logs, system metrics, or financial transaction records, we often need to find the data that is 'different'. Detecting a few malicious attempts among millions of normal network requests is a classic anomaly detection problem. While many algorithms focus on learning the distribution of normal data, Isolation Forest starts from the opposite idea: **"Anomalies are few and different, and therefore they are easier to isolate."**

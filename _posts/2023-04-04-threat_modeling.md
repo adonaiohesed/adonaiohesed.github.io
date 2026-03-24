@@ -2,12 +2,15 @@
 title: Threat Modeling
 tags: Threat-Modeling Cybersecurity Risk-Management
 key: page-threat_modeling
-categories: [Cybersecurity, Security Operations]
+categories:
+- Security
+- Security Operations
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-04-04-threat_modeling.png"
+bilingual: true
 ---
-
 # Threat Modeling Practical Guide
 
 ## What is Threat Modeling?

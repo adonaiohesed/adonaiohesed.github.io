@@ -2,10 +2,12 @@
 title: c# 리눅스 배포 및 데몬 등록법
 tags: C# Linux Deployment Daemon
 key: page-csharp_linux_deployment_daemon
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-06-08-cs_release.png"
 ---
-
 ## CentOS7 배포 방법
 
 1. Visual Studio를 통해서 디버그 모드로 아무 이상이 없는지 먼저 확인부터 하고 배포를 시작합니다.

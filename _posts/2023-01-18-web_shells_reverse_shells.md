@@ -2,12 +2,14 @@
 title: Web Shells and Reverse Shells
 tags: Web-Shells Reverse-Shells
 key: page-web_shells_reverse_shells
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-18-web_shells_reverse_shells.png"
 ---
-
 ### 1. Web Shells: The Master Key to the Web Server
 
 #### What is a Web Shell?

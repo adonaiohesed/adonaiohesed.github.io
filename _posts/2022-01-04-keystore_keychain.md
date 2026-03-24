@@ -2,12 +2,15 @@
 title: Android Key Store & iOS Keychain
 tags: Android iOS KeyStore Keychain
 key: page-keystore_keychain
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-04-keystore_keychain.png"
+bilingual: true
 ---
-
 ## Fort Knox on Your Phone: Understanding & Pentesting Android KeyStore and iOS Keychain
 
 One of the most critical challenges in mobile app security is **how to securely store and manage sensitive information, especially cryptographic keys and user credentials.** Storing such information in plaintext in common file systems or `UserDefaults`/`SharedPreferences` is highly risky, as it can be easily exposed to malicious apps, rooted/jailbroken devices, or forensic analysis.

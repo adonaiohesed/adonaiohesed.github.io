@@ -2,8 +2,11 @@
 title: Syslog-Ng 심화 사용
 tags: Syslog-Ng Tools
 key: page-syslog_ng_advanced_usage
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-07-12-syslog-ng_advanced.png"
 ---
 ### if, elif, and else 구문
 * 2가지 형식이 가능하다.

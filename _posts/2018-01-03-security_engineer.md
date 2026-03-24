@@ -5,6 +5,7 @@ key: page-cybersecurity_engineer
 categories: [Personal, Identity]
 author: hyoeun
 pin: true
+image: "/assets/thumbnails/2018-01-03-security_engineer.png"
 ---
 
 ### What Cybersecurity Means to Me

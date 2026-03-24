@@ -2,12 +2,15 @@
 title: XML JSON YAML
 tags: XML JSON YAML Data-Formats
 key: page-xml_json_yaml
-categories: [Development, Programming Fundamentals]
+categories:
+- Engineering
+- Programming Fundamentals
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-10-21-xml_json_yaml.png"
+bilingual: true
 ---
-
 # Understanding Data Serialization Formats: XML, JSON, and YAML Explained
 
 In the world of software development and data interchange, choosing the right data format is crucial. This post explores three popular data serialization formats: XML, JSON, and YAML, diving into their characteristics, strengths, and use cases.

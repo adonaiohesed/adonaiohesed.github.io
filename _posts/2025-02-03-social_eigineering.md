@@ -2,12 +2,15 @@
 title: Social Engineering
 tags: Social-Engineering
 key: page-social_engineering
-categories: [Cybersecurity, Security Operations]
+categories:
+- Security
+- Security Operations
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-02-03-social_eigineering.png"
+bilingual: true
 ---
-
 ## Social Engineering: The Art of Hacking the Human OS
 
 In the world of cybersecurity, there's an attack vector that can neutralize the most sophisticated firewalls, state-of-the-art intrusion detection systems, and complex encryption algorithms. That vector is **Social Engineering**. Social engineering is an attack method that targets not technical vulnerabilities, but human psychology, trust, and instinct. It goes beyond simple deception; it's closer to an "art" of systematically hacking the human decision-making process to achieve a goal.

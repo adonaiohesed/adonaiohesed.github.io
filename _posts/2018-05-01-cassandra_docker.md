@@ -2,10 +2,12 @@
 title: Cassandra 설치 및 사용 방법
 tags: Cassandra Installation
 key: page-cassandra_installation_usage
-categories: [Development, Database Systems]
+categories:
+- Engineering
+- Database Systems
 author: hyoeun
+image: "/assets/thumbnails/2018-05-01-cassandra_docker.png"
 ---
-
 ## Cassadnra에 대한 소개
 
 * 잘 정리된 [블로그](https://meetup.toast.com/posts/58) 가 있으니 참고하시기 바랍니다.

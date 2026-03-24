@@ -2,10 +2,12 @@
 title: 파이썬 제어문
 tags: Python
 key: page-python_control_structures
-categories: [Development, Programming Fundamentals]
+categories:
+- Engineering
+- Programming Fundamentals
 author: hyoeun
+image: "/assets/thumbnails/2018-10-03-python_control.png"
 ---
-
 ## 변수
 
 * 변수 선언법

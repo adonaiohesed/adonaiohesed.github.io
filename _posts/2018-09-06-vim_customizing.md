@@ -6,6 +6,7 @@ categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-09-06-vim_customizing.png"
 ---
 
 ## Vim Plugin Manager Installation 

@@ -2,12 +2,15 @@
 title: General Behavior Questions
 tags: Behavior-Questions
 key: page-general_behavior_questions
-categories: [Professional Toolkit, Interview]
+categories:
+- Career
+- Interview
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-03-01-general_behavior_questions.png"
+bilingual: true
 ---
-
 ## **'Why did you choose to enter the cybersecurity field?'**
 
 **S (Situation)**

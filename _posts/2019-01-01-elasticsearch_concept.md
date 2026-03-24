@@ -4,6 +4,7 @@ tags: ELK Tools
 key: page-elastic_search_concept
 categories: [Tools, ELK]
 author: hyoeun
+image: "/assets/thumbnails/2019-01-01-elasticsearch_concept.png"
 ---
 
 ## 특징

@@ -6,6 +6,8 @@ categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-09-04-mac_automation.png"
+bilingual: true
 ---
 
 # Setting Up Mac Mini and MacBook Air Environment with Automator

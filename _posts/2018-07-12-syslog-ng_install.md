@@ -2,10 +2,12 @@
 title: Syslog-Ng 설치 및 사용 방법
 tags: Syslog-Ng Installation Tools
 key: page-syslog_ng_installation_usage
-categories: [Development, SysOps & Infrastructure]
+categories:
+- Engineering
+- SysOps & Infrastructure
 author: hyoeun
+image: "/assets/thumbnails/2018-07-12-syslog-ng_install.png"
 ---
-
 ## syslog-ng란?
 * 로그를 다루는 프로그램이다.
 * 기존의 리눅스에 포함되어 있는 syslog의 상위 버전이라 할 수 있다.

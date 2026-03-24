@@ -2,12 +2,15 @@
 title: Backtracking
 tags: Backtracking Algorithms
 key: page-backtracking
-categories: [Development, Algorithms & Data Structures]
+categories:
+- Engineering
+- Algorithms & Data Structures
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-05-11-backtracking.png"
+bilingual: true
 ---
-
 ### 1. What is Backtracking?
 
 In a nutshell, **backtracking** is a strategy that involves **exploring all potential solutions, but immediately abandoning paths that are no longer likely to lead to a solution and returning to a previous state.**

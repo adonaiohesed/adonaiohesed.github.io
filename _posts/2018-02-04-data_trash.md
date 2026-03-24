@@ -4,6 +4,8 @@ tags: Philosophy
 key: page-data_trash
 categories: [Personal, Philosophy]
 author: hyoeun
+image: "/assets/thumbnails/2018-02-04-data_trash.png"
+bilingual: true
 ---
 
 ## The Hidden Cost of Digital Expansion: Data Waste

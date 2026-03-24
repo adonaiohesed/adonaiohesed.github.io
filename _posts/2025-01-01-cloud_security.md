@@ -2,12 +2,15 @@
 title: Cloud Security Overview
 tags: Cloud-Security
 key: page-cloud_security_overview
-categories: [Cybersecurity, Cloud Security]
+categories:
+- Security
+- Cloud Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-01-01-cloud_security.png"
+bilingual: true
 ---
-
 When focusing on cloud security, one must consider securing infrastructure, network, data, applications, and managing identities and access, security operations, governance, risk, and compliance management. However, the key is not for the responsible person to try to handle all security aspects, but to effectively distribute responsibilities with the cloud provider and focus on the specific areas that are your direct responsibility.
 
 # Google Cloud Security: A Comprehensive Cloud Security Guide

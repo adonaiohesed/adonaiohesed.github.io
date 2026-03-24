@@ -4,6 +4,8 @@ tags: Mindset
 key: page-mindset_in_next
 categories: [Personal, Identity]
 author: hyoeun
+image: "/assets/thumbnails/2018-01-05-mindset_in_next.png"
+bilingual: true
 ---
 
 ## Mindset for the New Year

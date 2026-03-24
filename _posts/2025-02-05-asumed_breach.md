@@ -2,12 +2,15 @@
 title: Assumed Breach
 tags: Assumed-Breach
 key: page-assumed_breach
-categories: [Cybersecurity, Security Operations]
+categories:
+- Security
+- Security Operations
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-02-05-asumed_breach.png"
+bilingual: true
 ---
-
 # Assumed Breach: A Paradigm Shift in Security Architecture
 
 In modern cybersecurity, a purely "defensive" mindset is no longer sufficient. Advanced threat actors infiltrate systems through increasingly diverse vectors, rendering perimeter-based security models progressively ineffective. Against this backdrop, the concept of **Assumed Breach**—the presumption that a system has already been compromised—has emerged as a foundational security strategy. This article explores the conceptual underpinnings, security engineering implications, and practical implementations of the Assumed Breach model.

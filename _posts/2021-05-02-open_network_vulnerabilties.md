@@ -2,12 +2,15 @@
 title: Open Network Vulnerabilities
 tags: Open-Network-Vulnerabilities
 key: page-open_network_vulnerabilities
-categories: [Cybersecurity, Network Security]
+categories:
+- Security
+- Network Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-05-02-open_network_vulnerabilties.png"
+bilingual: true
 ---
-
 # Open Network Vulnerabilities: Risks and Security Measures
 
 ## Network Vulnerabilities

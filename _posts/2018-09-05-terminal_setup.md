@@ -6,6 +6,8 @@ categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-09-05-terminal_setup.png"
+bilingual: true
 ---
 
 # Customizing MacOS Terminal

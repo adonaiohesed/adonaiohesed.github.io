@@ -1,13 +1,16 @@
 ---
 title: Smart Contract
-tags:  Blockchain
+tags: Blockchain
 key: page-smart_contract
-categories: [Cybersecurity, Blockchain]
+categories:
+- Security
+- Blockchain
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-12-03-smart_contract.png"
+bilingual: true
 ---
-
 ## Basic Concepts of Smart Contracts
 
 Unlike traditional contracts executed in writing, a **smart contract** is a digital protocol that automatically executes when predefined conditions, written in code, are met. First proposed by Nick Szabo in 1994, it is most easily understood through the mechanism of a **vending machine**. Just as a vending machine dispenses a product immediately without third-party intervention when a user inserts the correct amount and selects an item, a smart contract processes transactions according to predefined logic.

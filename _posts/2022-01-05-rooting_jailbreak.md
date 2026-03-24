@@ -2,12 +2,15 @@
 title: Rooting & Jailbreak
 tags: Rooting Jailbreak
 key: page-tag
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-05-rooting_jailbreak.png"
+bilingual: true
 ---
-
 ## The Art of Breaking System Locks: Everything About Rooting and Jailbreaking
 
 When you buy a smartphone, are you truly the owner of the device? Manufacturers and operating system developers, under the pretext of stability and security, restrict numerous functions and confine users within a 'safe wall'. However, for those of us who seek to explore the system's limits and see beyond them, that wall is nothing more than a frustrating prison.

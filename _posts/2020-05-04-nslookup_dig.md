@@ -6,6 +6,7 @@ categories: [Tools, Reconnaissance]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-05-04-nslookup_dig.png"
 ---
 
 ### **A Tale of Two Tools: Philosophy and Core Differences**

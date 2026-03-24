@@ -2,10 +2,12 @@
 title: 파이썬 알고리즘에 사용되는 함수
 tags: Python
 key: page-python_algorithms_functions
-categories: [Development, Programming Fundamentals]
+categories:
+- Engineering
+- Programming Fundamentals
 author: hyoeun
+image: "/assets/thumbnails/2018-10-06-python_algorithm.png"
 ---
-
 ## All, Any
 * 파라미터로 iterable를 받아서 각 item들이 모두가 참일때 true를 반환하는 것이 all, 하나라도 참일때 true를 반환하는 것이 any이다.
 ```python

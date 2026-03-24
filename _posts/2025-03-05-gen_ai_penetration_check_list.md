@@ -2,12 +2,15 @@
 title: Gen AI Penetration Test Check List
 tags: GenAI-Check-List
 key: page-gen_ai_penetration_check_list
-categories: [Artificial Intelligence, GenAI]
+categories:
+- AI & ML
+- GenAI
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2025-03-05-gen_ai_penetration_check_list.png"
+bilingual: true
 ---
-
 # LLM Security Audit Checklist (Based on OWASP Top 10) and Defense Strategies
 
 This article identifies attack types based on the OWASP Top 10 for LLM and covers concrete defense strategies for them.

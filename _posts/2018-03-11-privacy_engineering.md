@@ -2,12 +2,14 @@
 title: Privacy Engineering Position Interview
 tags: Interview
 key: page-privacy_engineering
-categories: [Professional Toolkit, Interview]
+categories:
+- Career
+- Interview
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-03-11-privacy_engineering.png"
 ---
-
 ## Basic of privacy engineering
 * 데이터 보안과 데이터 프라이버시에 대해 차이를 둬야한다. 보안이란 내외부에서 발생하는 해킹으로부터 데이터를 보호하는 것을 뜻하고 프라이버시는 개인정보에 관한 데이터를 어떤 식으로 수집하고, 다루고, 활용하고 처리하는지에 관한 문제이다.
 * Data Privacy is the fair and authorized processing of personal information or PII(Personally Identifiable Information).

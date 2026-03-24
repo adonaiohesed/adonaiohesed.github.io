@@ -4,6 +4,7 @@ tags: Philosophy Cyber-World
 key: page-cyber_world
 categories: [Personal, Philosophy]
 author: hyoeun
+image: "/assets/thumbnails/2018-02-03-cyber_world.png"
 ---
 
 Cyber world라는 말은 너무나 적절하고 심오한 말이었다.  

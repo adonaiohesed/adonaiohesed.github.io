@@ -2,12 +2,15 @@
 title: Cookie & Seession Security
 tags: Cookies Sessions Web-Security
 key: page-cookie_session_security
-categories: [Cybersecurity, Web Security]
+categories:
+- Security
+- Web Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2023-01-08-cookie_and_session.png"
+bilingual: true
 ---
-
 # **Differences Between Cookies and Sessions**
 
 ## **Cookies**

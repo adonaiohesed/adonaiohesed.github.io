@@ -2,12 +2,14 @@
 title: Obfuscation
 tags: Obfuscation
 key: page-obfuscation
-categories: [Cybersecurity, Mobile Security]
+categories:
+- Security
+- Mobile Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2022-01-08-obfuscation.png"
 ---
-
 ## A Smokescreen in the Code: Obfuscation and the Art of Lifting the Veil
 
 When developers release their code into the world, they want to protect the secrets within—core business logic, proprietary algorithms, and API keys. To do this, they create a clever **smokescreen** over their code. This is **obfuscation**. Obfuscation is a technique that keeps the code's functionality intact while making it nearly impossible for humans to read and understand.

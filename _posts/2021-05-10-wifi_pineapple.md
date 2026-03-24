@@ -2,12 +2,15 @@
 title: WiFi Pineapple
 tags: WiFi-Pineapple
 key: page-wifi_pineapple
-categories: [Cybersecurity, Network Security]
+categories:
+- Security
+- Network Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-05-10-wifi_pineapple.png"
+bilingual: true
 ---
-
 ### **WiFi Pineapple Analysis: A Threat Exploiting Fundamental Vulnerabilities in Trust-Based Wireless Networks**
 
 Modern wireless network environments have evolved to maximize user convenience. Smartphones and laptops remember the SSIDs (Service Set Identifiers) of previously connected wireless networks and automatically reconnect when those signals are detected, providing a seamless user experience. However, this "trust" mechanism harbors a fundamental flaw in the 802.11 protocol, and a powerful tool that exploits this to automate Man-in-the-Middle (MITM) attacks is the WiFi Pineapple by Hak5. This article provides a deep technical analysis of the core attack principles of the WiFi Pineapple and corresponding defense strategies.

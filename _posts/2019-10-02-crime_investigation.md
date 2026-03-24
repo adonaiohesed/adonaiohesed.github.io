@@ -2,12 +2,14 @@
 title: Crime Investigation
 tags: Crime-Investigation Forensics Cybersecurity
 key: page-crime_investigation
-categories: [Cybersecurity, Forensics]
+categories:
+- Security
+- Forensics
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2019-10-02-crime_investigation.png"
 ---
-
 ## Chain of Custody 
 * Chain of Custody에 어떠한 결함이라도 있다면 그것은 trial에서 채택되지 않는다.
 * 증거물품들이 옮겨질때마다 항상 기록해야되는데 첫번째 기록은 when the seizure(압수) of evidence이다.

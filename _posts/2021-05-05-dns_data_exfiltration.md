@@ -2,12 +2,15 @@
 title: DNS Data Exfiltration
 tags: DNS-Data-Exfiltration
 key: page-dns_data_exfiltration
-categories: [Cybersecurity, Network Security]
+categories:
+- Security
+- Network Security
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2021-05-05-dns_data_exfiltration.png"
+bilingual: true
 ---
-
 ## DNS Operating Principles
 
 * DNS (Domain Name System) is a distributed database system that translates domain names into IP addresses on the internet.

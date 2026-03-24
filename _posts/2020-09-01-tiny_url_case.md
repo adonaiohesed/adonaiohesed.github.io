@@ -2,12 +2,14 @@
 title: Tiny URL case
 tags: TinyURL Web Case-Study
 key: page-tiny_url_case
-categories: [Development, System Design & Architecture]
+categories:
+- Engineering
+- System Design & Architecture
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2020-09-01-tiny_url_case.png"
 ---
-
 ## URL Shortening Service Design Like TinyURL
 * URL shortening can optimize links across multiple devices and track individual links to analyze potential customers and measure advertising campaign performance. Alternatively, it can be used to hide the original connected URL.
 * This system will be read-heavy. There will be more redirection requests than URL shortening creation. Let's assume a ratio of 100:1.

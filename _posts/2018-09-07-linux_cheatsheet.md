@@ -6,6 +6,8 @@ categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+image: "/assets/thumbnails/2018-09-07-linux_cheatsheet.png"
+bilingual: true
 ---
 
 ## 1. File and Directory Navigation

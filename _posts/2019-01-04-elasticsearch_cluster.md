@@ -4,6 +4,7 @@ tags: ELK Tools
 key: page-elastic_search_cluster_concept_configuration
 categories: [Tools, ELK]
 author: hyoeun
+image: "/assets/thumbnails/2019-01-04-elasticsearch_cluster.png"
 ---
 
 ## 클러스터 적용
