@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+<div class="post-wrapper">
+  <article class="post-article" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <div class="post-meta-top" style="justify-content: center; margin-bottom: 1.5rem; display:flex; gap:0.5rem;">
+        {% for cat in page.categories %}
+          <div style="background-color: #f6f8fa; color: #57606a; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #d0d7de;">{{ cat }}</div>
+        {% endfor %}
+      </div>
+      <h1 class="post-title" itemprop="name headline" style="text-align: center;">{{ page.title | escape }}</h1>
+      
+      {% if page.image %}
+        {% assign thumb = page.image.path | default: page.image %}
+        <div style="text-align: center; margin-bottom: 3rem; margin-top: 2rem;">
+           <img src="{{ thumb | relative_url }}" alt="Cover Image for {{ page.title }}" style="width: 100%; border-radius: 12px; height: auto; object-fit: cover; border: 1px solid #d0d7de;">
+        </div>
+      {% endif %}
+    </header>
+
+    <div class="post-main-content" itemprop="articleBody">
+      {% if page.bilingual %}
+        <div id="post-content-wrapper">{{ content }}</div>
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+  </article>
+</div>
+
+{% if page.bilingual %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const wrapper = document.getElementById('post-content-wrapper');
+    if (!wrapper) return;
+
+    const firstHr = wrapper.querySelector('hr');
+    if (!firstHr) return;
+
+    // Get all nodes before and after the first <hr>
+    const enContent = [];
+    const krContent = [];
+    let foundHr = false;
+
+    for (let node of wrapper.childNodes) {
+      if (node === firstHr) {
+        foundHr = true;
+        continue;
+      }
+      if (!foundHr) {
+        enContent.push(node);
+      } else {
+        krContent.push(node);
+      }
+    }
+
+    // Create language sections
+    const enSection = document.createElement('div');
+    enSection.className = 'lang-section';
+    enSection.dataset.lang = 'en';
+
+    const krSection = document.createElement('div');
+    krSection.className = 'lang-section';
+    krSection.dataset.lang = 'kr';
+
+    // Move content
+    enContent.forEach(node => {
+      enSection.appendChild(node.cloneNode(true));
+    });
+    krContent.forEach(node => {
+      krSection.appendChild(node.cloneNode(true));
+    });
+
+    // Clear original wrapper and add sections
+    wrapper.innerHTML = '';
+    wrapper.appendChild(enSection);
+    wrapper.appendChild(krSection);
+
+    // Apply current language setting
+    const savedLang = localStorage.getItem('site-lang') || 'en';
+    const langSections = wrapper.querySelectorAll('.lang-section');
+    langSections.forEach(section => {
+      if (section.dataset.lang !== savedLang) {
+        section.classList.add('lang-hidden');
+      }
+    });
+
+    // Listen for language changes
+    window.addEventListener('languageChanged', function() {
+      const currentLang = localStorage.getItem('site-lang') || 'en';
+      langSections.forEach(section => {
+        if (section.dataset.lang === currentLang) {
+          section.classList.remove('lang-hidden');
+        } else {
+          section.classList.add('lang-hidden');
+        }
+      });
+    });
+  });
+</script>
+{% endif %}

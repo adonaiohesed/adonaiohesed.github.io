@@ -34,9 +34,15 @@
       </nav>
 
       <div class="search-container">
-        <div class="gh-search">
-           <span class="material-symbols-outlined search-icon">search</span>
-           <input type="text" id="search-input" placeholder="Search wiki...">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <div class="gh-search">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input type="text" id="search-input" placeholder="Search wiki...">
+          </div>
+          <div class="lang-toggle-group">
+            <button class="lang-toggle-btn lang-active" data-lang="en" title="English">EN</button>
+            <button class="lang-toggle-btn" data-lang="kr" title="한국어">KR</button>
+          </div>
         </div>
       </div>
     </div>
@@ -161,38 +167,79 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // ===== Mega Menu Logic =====
       const items = document.querySelectorAll('.gh-sub-item-wrapper');
 
       items.forEach(item => {
         const trigger = item.querySelector('.gh-sub-item');
         trigger.addEventListener('click', (e) => {
-          e.stopPropagation(); // Prevent document click from firing immediately
-          
-          // Close others
+          e.stopPropagation();
+
           items.forEach(otherItem => {
             if (otherItem !== item) {
               otherItem.classList.remove('active');
             }
           });
 
-          // Toggle current
           item.classList.toggle('active');
         });
       });
 
-      // Close menu when clicking outside
       document.addEventListener('click', (e) => {
         items.forEach(item => item.classList.remove('active'));
       });
 
-      // Prevent closing when clicking inside the mega menu itself
       const megaMenus = document.querySelectorAll('.mega-menu');
       megaMenus.forEach(menu => {
         menu.addEventListener('click', (e) => {
           e.stopPropagation();
         });
       });
+
+      // ===== Language Toggle Logic =====
+      const langToggleBtns = document.querySelectorAll('.lang-toggle-btn');
+      const savedLang = localStorage.getItem('site-lang') || 'en';
+
+      // Initialize button states
+      langToggleBtns.forEach(btn => {
+        btn.classList.remove('lang-active');
+        if (btn.dataset.lang === savedLang) {
+          btn.classList.add('lang-active');
+        }
+      });
+
+      langToggleBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const lang = btn.dataset.lang;
+          localStorage.setItem('site-lang', lang);
+
+          // Update button states
+          langToggleBtns.forEach(b => b.classList.remove('lang-active'));
+          btn.classList.add('lang-active');
+
+          // Update language sections on page
+          updateLanguageSections(lang);
+
+          // Dispatch custom event for bilingual posts
+          window.dispatchEvent(new Event('languageChanged'));
+        });
+      });
+
+      // Apply language on page load
+      updateLanguageSections(savedLang);
     });
+
+    function updateLanguageSections(lang) {
+      const langSections = document.querySelectorAll('.lang-section');
+      langSections.forEach(section => {
+        if (section.dataset.lang === lang) {
+          section.classList.remove('lang-hidden');
+        } else {
+          section.classList.add('lang-hidden');
+        }
+      });
+    }
   </script>
 </body>
 </html>
