@@ -26,10 +26,12 @@
 
 .post-card {
   opacity: 1;
+  --animation-delay: 0s;
 }
 
 .post-card.animate-in {
-  animation: slideDown 0.6s ease-out forwards;
+  animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: var(--animation-delay);
 }
 
 * { box-sizing: border-box; }
@@ -111,13 +113,28 @@ body {
 .home-section { margin-top: 56px; opacity: 1; transition: opacity 0.6s ease-out; }
 .home-section.transitioning { opacity: 0.7; }
 
+/* Security Section Theme */
+body.security-theme {
+  --bg-color: #0a0f1a;
+  --surface-color: #1a2849;
+  --text-primary: #e8f1ff;
+  --text-secondary: #9bacc7;
+  --accent-color: #ff6b6b;
+  --accent-hover: #ff8585;
+  --header-bg: #131d33;
+}
+
 @keyframes sectionGlow {
-  0% { box-shadow: inset 0 0 0 0 rgba(255, 157, 61, 0); }
-  50% { box-shadow: inset 0 0 20px 0 rgba(255, 157, 61, 0.05); }
-  100% { box-shadow: inset 0 0 0 0 rgba(255, 157, 61, 0); }
+  0% { box-shadow: inset 0 0 0 0 rgba(255, 107, 107, 0); }
+  50% { box-shadow: inset 0 0 30px 0 rgba(255, 107, 107, 0.08); }
+  100% { box-shadow: inset 0 0 0 0 rgba(255, 107, 107, 0); }
 }
 
 .home-section.glow { animation: sectionGlow 1.2s ease-out; }
+
+body {
+  transition: --bg-color 0.8s ease-out, --surface-color 0.8s ease-out, --text-primary 0.8s ease-out, --text-secondary 0.8s ease-out, --accent-color 0.8s ease-out;
+}
 
 .section-header {
   display: flex;

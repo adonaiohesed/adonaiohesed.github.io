@@ -249,6 +249,12 @@
       // ===== Scroll Animation for Post Cards =====
       const postCards = document.querySelectorAll('.post-card');
 
+      // Set initial opacity to 0 for all cards and apply animation with staggered delays
+      postCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.setProperty('--animation-delay', index * 0.08 + 's');
+      });
+
       if ('IntersectionObserver' in window) {
         const animationObserver = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
@@ -259,32 +265,44 @@
           });
         }, {
           threshold: 0.1,
-          rootMargin: '0px 0px -100px 0px'
+          rootMargin: '0px 0px -50px 0px'
         });
 
         postCards.forEach(card => {
           animationObserver.observe(card);
         });
+      } else {
+        // Fallback: if IntersectionObserver not supported, animate all cards immediately
+        postCards.forEach(card => {
+          card.classList.add('animate-in');
+        });
       }
 
       // ===== Section Theme Transition =====
       const securitySection = document.getElementById('security-section');
-      if (securitySection && 'IntersectionObserver' in window) {
-        const sectionObserver = new IntersectionObserver((entries) => {
+      const latestSection = document.getElementById('latest-section');
+
+      if ('IntersectionObserver' in window) {
+        const themeObserver = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('glow');
-              entry.target.classList.add('transitioning');
-              setTimeout(() => {
-                entry.target.classList.remove('transitioning');
-              }, 600);
+            if (entry.target === securitySection) {
+              if (entry.isIntersecting) {
+                document.body.classList.add('security-theme');
+                entry.target.classList.add('glow');
+              } else if (entry.boundingClientRect.top > 0) {
+                // Only remove theme if scrolling up past the section
+                document.body.classList.remove('security-theme');
+              }
             }
           });
         }, {
-          threshold: 0.2
+          threshold: 0.15,
+          rootMargin: '-100px 0px -60% 0px'
         });
 
-        sectionObserver.observe(securitySection);
+        if (securitySection) {
+          themeObserver.observe(securitySection);
+        }
       }
     });
 
