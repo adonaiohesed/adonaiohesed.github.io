@@ -246,13 +246,15 @@
       // Apply language on page load
       updateLanguageSections(savedLang);
 
-      // ===== Scroll Animation for Post Cards =====
+      // ===== Scroll Animation for Post Thumbnails Only =====
       const postCards = document.querySelectorAll('.post-card');
 
-      // Set initial opacity to 0 for all cards and apply animation with staggered delays
+      // Set staggered delays only for thumbnails
       postCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.setProperty('--animation-delay', index * 0.08 + 's');
+        const thumbnail = card.querySelector('.post-thumbnail');
+        if (thumbnail) {
+          thumbnail.style.setProperty('--animation-delay', index * 0.08 + 's');
+        }
       });
 
       if ('IntersectionObserver' in window) {

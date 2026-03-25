@@ -29,7 +29,11 @@
   --animation-delay: 0s;
 }
 
-.post-card.animate-in {
+.post-thumbnail {
+  opacity: 0;
+}
+
+.post-card.animate-in .post-thumbnail {
   animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   animation-delay: var(--animation-delay);
 }
