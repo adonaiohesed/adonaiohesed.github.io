@@ -113,21 +113,21 @@ body {
 .home-section { margin-top: 56px; opacity: 1; transition: opacity 0.6s ease-out; }
 .home-section.transitioning { opacity: 0.7; }
 
-/* Security Section Theme */
+/* Security Section Theme - Purple + Cyan */
 body.security-theme {
-  --bg-color: #0a0f1a;
-  --surface-color: #1a2849;
-  --text-primary: #e8f1ff;
-  --text-secondary: #9bacc7;
-  --accent-color: #ff6b6b;
-  --accent-hover: #ff8585;
-  --header-bg: #131d33;
+  --bg-color: #0f0620;
+  --surface-color: #2a1a4a;
+  --text-primary: #e8d9ff;
+  --text-secondary: #b89dcc;
+  --accent-color: #00ffcc;
+  --accent-hover: #33ffdd;
+  --header-bg: #1a0f3a;
 }
 
 @keyframes sectionGlow {
-  0% { box-shadow: inset 0 0 0 0 rgba(255, 107, 107, 0); }
-  50% { box-shadow: inset 0 0 30px 0 rgba(255, 107, 107, 0.08); }
-  100% { box-shadow: inset 0 0 0 0 rgba(255, 107, 107, 0); }
+  0% { box-shadow: inset 0 0 0 0 rgba(0, 255, 204, 0); }
+  50% { box-shadow: inset 0 0 40px 0 rgba(0, 255, 204, 0.12); }
+  100% { box-shadow: inset 0 0 0 0 rgba(0, 255, 204, 0); }
 }
 
 .home-section.glow { animation: sectionGlow 1.2s ease-out; }
