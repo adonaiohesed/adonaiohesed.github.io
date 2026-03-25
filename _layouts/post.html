@@ -276,5 +276,19 @@ layout: default
 
     // Initial TOC generation
     generateTableOfContents();
+
+    // Align TOC sidebar to start at the same position as post content (below header)
+    function alignTocSidebar() {
+      if (window.innerWidth <= 1024) return;
+      const postHeader = document.querySelector('.post-header');
+      const tocSidebar = document.querySelector('.post-toc-sidebar');
+      if (postHeader && tocSidebar) {
+        tocSidebar.style.paddingTop = (postHeader.offsetHeight * 0.4) + 'px';
+      }
+    }
+
+    alignTocSidebar();
+    window.addEventListener('load', alignTocSidebar);
+    window.addEventListener('resize', alignTocSidebar);
   });
 </script>

@@ -43,6 +43,7 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.8s ease-out, color 0.8s ease-out;
 }
 
 .material-symbols-outlined {
@@ -51,7 +52,13 @@ body {
 }
 
 /* GitHub Double Header */
-.gh-header { background: var(--header-bg); color: var(--header-text); width: 100%; border-bottom: 1px solid #1a5490;}
+.gh-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  width: 100%;
+  border-bottom: 1px solid #1a5490;
+  transition: background-color 0.8s ease-out, border-color 0.8s ease-out;
+}
 .gh-nav-top { display: flex; align-items: center; padding: 20px 24px; justify-content: space-between; max-width: 1440px; margin: 0 auto;}
 .gh-logo { font-size: 20px; font-weight: 600; display: flex; align-items: center; text-decoration: none; color: #e8f1ff; margin-right: 8px; }
 .gh-logo .slash { color: #7a94af; font-weight: 300; margin: 0 8px; font-size: 24px;}
@@ -105,7 +112,12 @@ body {
 .mega-featured-link { color: var(--accent-color); font-size: 14px; font-weight: 600; display: flex; align-items: center; }
 
 /* Main Content Area */
-.page-content { min-height: calc(100vh - 200px); padding: 0 0 64px 0; background: #0f1419; }
+.page-content {
+  min-height: calc(100vh - 200px);
+  padding: 0 0 64px 0;
+  background-color: var(--bg-color);
+  transition: background-color 0.8s ease-out;
+}
 .home-wrapper, .page-wrapper { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 .post-wrapper { width: 100%; }
 
@@ -132,9 +144,6 @@ body.security-theme {
 
 .home-section.glow { animation: sectionGlow 1.2s ease-out; }
 
-body {
-  transition: --bg-color 0.8s ease-out, --surface-color 0.8s ease-out, --text-primary 0.8s ease-out, --text-secondary 0.8s ease-out, --accent-color 0.8s ease-out;
-}
 
 .section-header {
   display: flex;
@@ -616,6 +625,11 @@ body {
   position: relative;
   background: linear-gradient(135deg, #0d3b66 0%, #1a5490 55%, #172d4d 100%);
   overflow: hidden;
+  transition: background 0.8s ease-out;
+}
+
+body.security-theme .hero-banner {
+  background: linear-gradient(135deg, #2a0f4a 0%, #3d1a6a 55%, #1a0f3a 100%);
 }
 
 /* Glow blobs */
@@ -2084,6 +2098,12 @@ body {
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
+  transition: background 0.8s ease-out, border-color 0.8s ease-out, box-shadow 0.8s ease-out;
+}
+
+body.security-theme .post-toc-box {
+  background: linear-gradient(135deg, rgba(42, 26, 74, 0.8) 0%, rgba(15, 6, 32, 0.95) 100%);
+  border-color: var(--border-color);
 }
 
 .post-toc-title {
