@@ -24,6 +24,10 @@
   }
 }
 
+.post-card {
+  opacity: 1;
+}
+
 .post-card.animate-in {
   animation: slideDown 0.6s ease-out forwards;
 }
