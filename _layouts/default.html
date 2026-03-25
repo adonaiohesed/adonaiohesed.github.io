@@ -245,6 +245,48 @@
 
       // Apply language on page load
       updateLanguageSections(savedLang);
+
+      // ===== Scroll Animation for Post Cards =====
+      const postCards = document.querySelectorAll('.post-card');
+
+      if ('IntersectionObserver' in window) {
+        const animationObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -100px 0px'
+        });
+
+        postCards.forEach(card => {
+          card.style.opacity = '0';
+          animationObserver.observe(card);
+        });
+      }
+
+      // ===== Section Theme Transition =====
+      const securitySection = document.getElementById('security-section');
+      if (securitySection && 'IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('glow');
+              entry.target.classList.add('transitioning');
+              setTimeout(() => {
+                entry.target.classList.remove('transitioning');
+              }, 600);
+            }
+          });
+        }, {
+          threshold: 0.2
+        });
+
+        sectionObserver.observe(securitySection);
+      }
     });
 
     function updateLanguageSections(lang) {

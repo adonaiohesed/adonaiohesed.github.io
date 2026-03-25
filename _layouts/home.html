@@ -45,7 +45,7 @@ layout: default
   <div class="home-two-col">
 
     <!-- Latest (left, wider) -->
-    <section class="home-col-main">
+    <section class="home-col-main" id="latest-section">
       <div class="section-header">
         <h2 class="section-heading">Latest</h2>
         <a href="{{ '/archives/' | relative_url }}" class="section-view-all">
@@ -182,7 +182,7 @@ layout: default
   <!-- Security section -->
   {% assign sec_posts = site.posts | where_exp: "post", "post.categories contains 'Security'" %}
   {% if sec_posts.size > 0 %}
-  <section class="home-section">
+  <section class="home-section section-security" id="security-section">
     <div class="section-header">
       <h2 class="section-heading">Security</h2>
       <a href="/categories/security/" class="section-view-all">
