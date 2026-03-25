@@ -75,7 +75,7 @@
   featured_url: "/system_design_basic/"
 
 - title: "AI & ML"
-  url: "/categories/ai-&-ml/"
+  url: "/categories/ai-ml/"
   items:
     - name: "GenAI"
       desc: "Generative models and applications."
@@ -118,7 +118,7 @@
       desc: "Thoughts and philosophical discussions."
       url: "/categories/philosophy/"
   featured_title: "About Me"
-  featured_image: ""
+  featured_image: "/assets/images/avatar.jpg"
   featured_desc: "Learn more about who I am and my journey."
   featured_url: "/about/"
 

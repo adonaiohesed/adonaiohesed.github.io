@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<!-- ── Archives Hero ──────────────────────────────────────────── -->
+<section class="cat-hero">
+  <div class="cat-hero-glow-wrap">
+    <div class="cat-hero-glow"></div>
+  </div>
+  <div class="cat-hero-inner">
+    <h1 class="cat-hero-title">Archive</h1>
+    <p class="cat-hero-desc">Timeline of all my technical documentation and thoughts.</p>
+  </div>
+</section>
+
+<div class="home-wrapper">
+  <div class="archive-list">
+    {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+    {% for year in posts_by_year %}
+      <div class="archive-year-group">
+        <h2 class="archive-year">{{ year.name }}</h2>
+        <div class="archive-posts">
+          {% for post in year.items %}
+          <div class="archive-post-item">
+            <time class="archive-post-date">{{ post.date | date: "%b %d" }}</time>
+            <a href="{{ post.url | relative_url }}" class="archive-post-link">{{ post.title }}</a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.archive-list {
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+.archive-year-group {
+  margin-bottom: 48px;
+}
+.archive-year {
+  font-size: 28px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+.archive-post-item {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--rgba-border);
+}
+.archive-post-item:last-child {
+  border-bottom: none;
+}
+.archive-post-date {
+  font-family: monospace;
+  color: var(--text-secondary);
+  font-size: 14px;
+  width: 60px;
+  flex-shrink: 0;
+}
+.archive-post-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+.archive-post-link:hover {
+  color: var(--accent-color);
+}
+</style>

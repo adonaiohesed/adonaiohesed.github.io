@@ -235,6 +235,15 @@ body {
   text-transform: uppercase;
 }
 
+.post-author-avatar-img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+}
+
 .post-author-name {
   font-size: 13px;
   font-weight: 500;

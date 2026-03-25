@@ -71,7 +71,7 @@ layout: default
             <h3 class="post-title">{{ post.title }}</h3>
             <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
             <div class="post-meta-row">
-              <span class="post-author-avatar">{{ site.social.name | slice: 0 }}</span>
+              <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" class="post-author-avatar-img" alt="{{ site.social.name }}">
               <span class="post-author-name">{{ site.social.name }}</span>
               <span class="post-meta-sep">·</span>
               <time class="post-meta-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
