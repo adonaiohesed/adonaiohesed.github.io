@@ -191,32 +191,34 @@ layout: default
         <h2 class="section-heading">Popular</h2>
       </div>
       <div class="popular-list">
-        {% assign popular_posts = site.posts | sort: 'popular' | reverse %}
-        {% for post in popular_posts limit:7 %}
-        <a href="{{ post.url | relative_url }}" class="popular-item">
-          <span class="popular-rank">{{ forloop.index }}</span>
-          <div class="popular-item-content">
-            {% if post.categories.size > 0 %}
-            <div class="popular-item-category" data-cat="{{ post.categories[0] | downcase }}">{{ post.categories[0] }}</div>
-            {% endif %}
-            {% if post.bilingual %}
-              {% assign content_parts = post.content | split: '<hr />' %}
-              {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
-              {% if content_parts.size >= 2 %}
-                {% assign kr_part = content_parts[1] %}
-                {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
-                {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
-              {% endif %}
-            {% endif %}
-            <div class="popular-item-title">
-              <span class="lang-section" data-lang="en">{{ post.title }}</span>
-              <span class="lang-section" data-lang="kr">{{ kr_title | default: post.title }}</span>
-            </div>
-            <div class="popular-item-footer">
-              <span class="popular-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-            </div>
-          </div>
-        </a>
+        {% for item in site.data.popular limit:7 %}
+          {% assign post = site.posts | where: "slug", item.slug | first %}
+          {% if post %}
+            <a href="{{ post.url | relative_url }}" class="popular-item">
+              <span class="popular-rank">{{ forloop.index }}</span>
+              <div class="popular-item-content">
+                {% if post.categories.size > 0 %}
+                <div class="popular-item-category" data-cat="{{ post.categories[0] | downcase }}">{{ post.categories[0] }}</div>
+                {% endif %}
+                <div class="popular-item-title">
+                  <span class="lang-section" data-lang="en">{{ post.title }}</span>
+                  {% if post.bilingual %}
+                    {% assign content_parts = post.content | split: '<hr />' %}
+                    {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
+                    {% if content_parts.size >= 2 %}
+                      {% assign kr_part = content_parts[1] %}
+                      {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
+                      {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
+                    {% endif %}
+                    <span class="lang-section" data-lang="kr">{{ kr_title | default: post.title }}</span>
+                  {% endif %}
+                </div>
+                <div class="popular-item-footer">
+                  <span class="popular-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                </div>
+              </div>
+            </a>
+          {% endif %}
         {% endfor %}
       </div>
     </aside>
