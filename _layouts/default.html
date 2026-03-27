@@ -8,7 +8,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <!-- Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
@@ -34,23 +34,21 @@
     gtag('config', '{{ site.analytics.google.id }}');
   </script>
   {% endif %}
+
+  <!-- Busuanzi Page View Tracking -->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </head>
 <body>
   
   <!-- Double Navbar mimicking GitHub Engineering Blog -->
   <header class="gh-header">
     <div class="gh-nav-top">
-      <a href="{{ '/' | relative_url }}" class="gh-logo">
-        <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="Logo" style="height: 32px; width: 32px; border-radius: 4px;">
-        <span class="slash"> / </span>
-        <span class="wiki">Hyoeun's Wiki</span>
-      </a>
+      <div class="header-left-spacer"></div>
       
-      <nav class="gh-links">
-        <a href="{{ '/' | relative_url }}">Blog</a>
-        <a href="{{ '/projects/' | relative_url }}">Projects</a>
-        <a href="{{ '/ctf/' | relative_url }}">CTF</a>
-        <a href="{{ '/about/' | relative_url }}">About Me</a>
+      <nav class="gh-center-nav">
+        <a href="{{ '/' | relative_url }}" class="center-nav-link {% if page.url == '/' or page.url contains '/blog/' or page.url contains '/posts/' or page.url contains '/categories/' %}active{% endif %}">Wiki</a>
+        <div class="nav-divider"></div>
+        <a href="{{ '/portfolio/' | relative_url }}" class="center-nav-link {% if page.url contains '/portfolio/' %}active{% endif %}">Portfolio</a>
       </nav>
 
       <div class="search-container">
@@ -58,6 +56,7 @@
           <div class="gh-search">
             <span class="material-symbols-outlined search-icon">search</span>
             <input type="text" id="search-input" placeholder="Search wiki...">
+            <ul id="results-container"></ul>
           </div>
           <div class="lang-toggle-group">
             <button class="lang-toggle-btn lang-active" data-lang="en" title="English">EN</button>
@@ -78,7 +77,7 @@
             <div class="mega-menu-content">
               <div class="mega-menu-left">
                 <a href="{{ nav.url | default: '#' | relative_url }}" class="mega-category-title">{{ nav.title }} <span class="material-symbols-outlined">chevron_right</span></a>
-                <p class="mega-category-desc">Explore technical insights and deep-dives about {{ nav.title | downcase }}.</p>
+                <p class="mega-category-desc">{{ nav.short_desc }}</p>
                 <div class="mega-items-grid">
                   {% for item in nav.items %}
                   <a href="{{ item.url | relative_url }}" class="mega-item">
@@ -89,16 +88,39 @@
                 </div>
               </div>
               <div class="mega-menu-right">
-                <a href="{{ nav.featured_url | relative_url }}" class="mega-featured">
-                  {% if nav.featured_image != "" %}
-                    <img src="{{ nav.featured_image | relative_url }}" alt="{{ nav.featured_title }}">
+                {% assign cat_posts = site.categories[nav.title] %}
+                {% assign latest_post = cat_posts | first %}
+                
+                {% assign feat_url = nav.featured_url %}
+                {% if feat_url == nil or feat_url == "" %}
+                  {% assign feat_url = latest_post.url %}
+                {% endif %}
+
+                {% assign feat_title = nav.featured_title %}
+                {% if feat_title == nil or feat_title == "" %}
+                  {% assign feat_title = latest_post.title %}
+                {% endif %}
+
+                {% assign feat_desc = nav.featured_desc %}
+                {% if feat_desc == nil or feat_desc == "" %}
+                  {% assign feat_desc = latest_post.excerpt | strip_html | truncatewords: 20 %}
+                {% endif %}
+
+                {% assign feat_img = nav.featured_image %}
+                {% if feat_img == nil or feat_img == "" %}
+                   {% assign feat_img = latest_post.image.path | default: latest_post.image %}
+                {% endif %}
+
+                <a href="{{ feat_url | relative_url }}" class="mega-featured">
+                  {% if feat_img != nil and feat_img != "" %}
+                    <img src="{{ feat_img | relative_url }}" alt="{{ feat_title }}">
                   {% else %}
                     <div style="width: 100%; height: 160px; background: #1a4d6d; border-radius: 8px; margin-bottom: 16px; display: flex; align-items:center; justify-content:center;">
                       <span class="material-symbols-outlined" style="font-size:48px; color:#7a94af">image</span>
                     </div>
                   {% endif %}
-                  <div class="mega-featured-title">{{ nav.featured_title }}</div>
-                  <div class="mega-featured-desc">{{ nav.featured_desc }}</div>
+                  <div class="mega-featured-title">{{ feat_title }}</div>
+                  <div class="mega-featured-desc">{{ feat_desc }}</div>
                   <div class="mega-featured-link">Learn more <span class="material-symbols-outlined" style="font-size: 16px; margin-left:2px;">chevron_right</span></div>
                 </a>
               </div>
@@ -141,11 +163,11 @@
             </ul>
           </div>
           <div class="footer-col">
-            <h4 class="footer-col-title">Explore</h4>
+            <h4 class="footer-col-title">Portfolio</h4>
             <ul class="footer-col-links">
-              <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-              <li><a href="{{ '/ctf/' | relative_url }}">CTF</a></li>
-              <li><a href="{{ '/about/' | relative_url }}">About Me</a></li>
+              <li><a href="{{ '/portfolio/#section-intro' | relative_url }}">About Me</a></li>
+              <li><a href="{{ '/portfolio/#section-projects' | relative_url }}">Projects</a></li>
+              <li><a href="{{ '/portfolio/#section-ctfs' | relative_url }}">CTF</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -249,11 +271,12 @@
       // ===== Scroll Animation for Post Thumbnails Only =====
       const postCards = document.querySelectorAll('.post-card');
 
-      // Set staggered delays only for thumbnails
+      // Set staggered delays based on a modulus to keep them consistent regardless of index
       postCards.forEach((card, index) => {
         const thumbnail = card.querySelector('.post-thumbnail');
         if (thumbnail) {
-          thumbnail.style.setProperty('--animation-delay', index * 0.08 + 's');
+          // Stagger by 3 (columns) to keep it snappier
+          thumbnail.style.setProperty('--animation-delay', (index % 3) * 0.1 + 's');
         }
       });
 
@@ -266,8 +289,8 @@
             }
           });
         }, {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
+          threshold: 0.01,
+          rootMargin: '0px 0px 20px 0px' // Trigger slightly before it enters the viewport
         });
 
         postCards.forEach(card => {
@@ -317,6 +340,39 @@
           section.classList.add('lang-hidden');
         }
       });
+    }
+
+    // ===== Search Engine Initialization =====
+    if (document.getElementById('search-input')) {
+      const searchScript = document.createElement('script');
+      searchScript.src = 'https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js';
+      searchScript.onload = () => {
+        SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '{{ "/search.json" | relative_url }}',
+          searchResultTemplate: '<li><a href="{url}"><span class="search-result-title">{title}</span><div class="search-result-meta"><span>{category}</span><span>{date}</span></div></a></li>',
+          noResultsText: '<li><div style="padding: 12px 16px; color: #7d8590; font-size: 13px;">No results found</div></li>'
+        });
+
+        const searchInput = document.getElementById('search-input');
+        const resultsContainer = document.getElementById('results-container');
+        
+        searchInput.addEventListener('input', () => {
+          if (searchInput.value.length > 0) {
+            resultsContainer.classList.add('visible');
+          } else {
+            resultsContainer.classList.remove('visible');
+          }
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.gh-search')) {
+            resultsContainer.classList.remove('visible');
+          }
+        });
+      };
+      document.body.appendChild(searchScript);
     }
   </script>
 </body>

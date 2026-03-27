@@ -1,6 +1,5 @@
 ---
 title: XML JSON YAML
-tags: XML JSON YAML Data-Formats
 key: page-xml_json_yaml
 categories:
 - Engineering
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-10-21-xml_json_yaml.png"
+image: "/assets/thumbnails/2020-05-26-xml_json_yaml.png"
 bilingual: true
 date: 2020-05-26 07:12:00
 ---

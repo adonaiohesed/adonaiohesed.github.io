@@ -1,6 +1,5 @@
 ---
 title: Packet Sniffing and Spoofing
-tags: Packet-Sniffing Spoofing Cybersecurity
 key: page-packet_sniffing_spoofing
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-05-03-packet_sniffing_and_spoofing.png"
+image: "/assets/thumbnails/2022-06-10-packet_sniffing_and_spoofing.png"
 bilingual: true
 date: 2022-06-10 03:43:12
 ---

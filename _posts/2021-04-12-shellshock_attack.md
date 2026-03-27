@@ -1,6 +1,5 @@
 ---
 title: Shellshock Attack
-tags: Shellshock Vulnerabilities Cybersecurity
 key: page-shellshock_attack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-01-02-shellshock_attack.png"
+image: "/assets/thumbnails/2021-04-12-shellshock_attack.png"
 date: 2021-04-12 14:38:24
 ---
 ## Shell이란?

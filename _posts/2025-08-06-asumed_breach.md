@@ -1,6 +1,5 @@
 ---
 title: Assumed Breach
-tags: Assumed-Breach
 key: page-assumed_breach
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-02-05-asumed_breach.png"
+image: "/assets/thumbnails/2025-08-06-asumed_breach.png"
 bilingual: true
 date: 2025-08-06 22:48:00
 ---

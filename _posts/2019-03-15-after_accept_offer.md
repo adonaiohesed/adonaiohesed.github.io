@@ -1,12 +1,11 @@
 ---
 title: What To Do After Accepting An Offer
-tags: Offer
 key: page-after_accept_offer
 categories:
 - Career
 - Post-Interview
 author: hyoeun
-image: "/assets/thumbnails/2018-03-24-after_accept_offer.png"
+image: "/assets/thumbnails/2019-03-15-after_accept_offer.png"
 date: 2019-03-15 03:36:00
 ---
 ## H1B Transfer

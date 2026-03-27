@@ -1,6 +1,5 @@
 ---
 title: Cybersecurity Interview Questions
-tags: Interview
 key: page-cybersecurity_questions
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-03-13-cybersecurity_questions.png"
+image: "/assets/thumbnails/2019-01-15-cybersecurity_questions.png"
 date: 2019-01-15 17:31:12
 ---
 # Comprehensive Cybersecurity Interview Questions & Answers

@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:engineering.atspotify.com)",
+      "Bash(xargs ls:*)",
+      "WebFetch(domain:github.blog)",
+      "Read(//Users/hyoeunchoi/**)",
+      "Bash(unzip -p taste-skill-main.zip taste-skill-main/README.md)",
+      "Bash(unzip -o taste-skill-main.zip -d /tmp/taste-skill-extract/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/taste-skill ~/.claude/skills/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/redesign-skill ~/.claude/skills/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/soft-skill ~/.claude/skills/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/output-skill ~/.claude/skills/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/minimalist-skill ~/.claude/skills/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/brutalist-skill ~/.claude/skills/)",
+      "Bash(cp -r /tmp/taste-skill-extract/taste-skill-main/skills/stitch-skill ~/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/taste-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/redesign-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/soft-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/output-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/minimalist-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/brutalist-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(cp -r ~/.claude/skills/stitch-skill /Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills/)",
+      "Bash(grep -E \"\\\\.\\(md|yaml|yml\\)$\")",
+      "Bash(curl -s http://localhost:4001/)",
+      "Bash(curl -s http://localhost:4001/categories/security/)",
+      "Bash(curl -s http://localhost:4001/about/)",
+      "Bash(curl -s http://localhost:4001/projects/)",
+      "Bash(curl -s http://localhost:4001/ctf/)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(grep -l \"^# \" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2025-03-*.md)",
+      "Bash(ls /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/*.md)",
+      "Bash(python3:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/hyoeunchoi/.claude/skills/taste-skill"
+    ]
+  }
+}

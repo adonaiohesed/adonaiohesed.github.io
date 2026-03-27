@@ -1,12 +1,11 @@
 ---
 title: Offer Negotiation
-tags: Negotiation
 key: page-offer_negotiation
 categories:
 - Career
 - Post-Interview
 author: hyoeun
-image: "/assets/thumbnails/2018-03-23-offer_negotiation.png"
+image: "/assets/thumbnails/2019-02-28-offer_negotiation.png"
 date: 2019-02-28 13:04:48
 ---
 ## Sourcer와 Recruiter의 차이점

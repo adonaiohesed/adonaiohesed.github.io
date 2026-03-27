@@ -1,12 +1,11 @@
 ---
 title: 파이썬 Data type
-tags: Python
 key: page-python_data_types
 categories:
 - Engineering
 - Programming Fundamentals
 author: hyoeun
-image: "/assets/thumbnails/2018-10-02-python_data_type.png"
+image: "/assets/thumbnails/2020-03-14-python_data_type.png"
 date: 2020-03-14 06:36:00
 ---
 * Python은 interpreter이다. Interpreter란 한 줄 한 줄 바로바로 해석하고 결과를 보여주는 언어이다.

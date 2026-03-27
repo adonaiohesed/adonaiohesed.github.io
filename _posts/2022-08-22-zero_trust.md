@@ -1,6 +1,5 @@
 ---
 title: Zero Trust Architecture
-tags: Zero-Trust-Architecture
 key: page-zero_trust
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-05-08-zero_trust.png"
+image: "/assets/thumbnails/2022-08-22-zero_trust.png"
 bilingual: true
 date: 2022-08-22 04:19:12
 ---

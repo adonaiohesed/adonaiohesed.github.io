@@ -1,0 +1,726 @@
+---
+layout: nil
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | Portfolio</title>
+  <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  {% if site.analytics.google.id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.google.id }}');
+  </script>
+  {% endif %}
+</head>
+<body class="portfolio-body theme-intro">
+  <div class="p-noise-overlay"></div>
+  <div class="p-scanlines"></div>
+
+  <!-- Floating Navigation -->
+  <nav class="about-nav">
+    <div class="nav-left">
+      <a href="{{ '/' | relative_url }}" class="about-nav-link">Wiki</a>
+      <a href="{{ '/portfolio/' | relative_url }}" class="about-nav-link active">Portfolio</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-lang-toggle">
+        <button class="nav-lang-btn" data-lang="en">EN</button>
+        <button class="nav-lang-btn" data-lang="kr">KR</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="section-intro" class="p-section p-hero theme-anchor" data-theme="theme-intro">
+    <div class="hero-container">
+      <div class="p-hero-status reveal rise-up">
+        <div class="p-hero-status-inner">
+          <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 6px; vertical-align: middle;">verified</span>
+          AGENTIC_PROTOCOL: ACTIVE
+        </div>
+      </div>
+      <h1 class="p-hero-title reveal rise-up">HYOEUN CHOI</h1>
+      <p class="p-hero-desc reveal rise-up">
+        <span class="lang-section" data-lang="en"><strong>Red Team & Pentest Expert | Security Architect</strong>. Combining offensive precision with a developer's perspective to automate large-scale infrastructure defense.</span>
+        <span class="lang-section" data-lang="kr"><strong>레드팀과 펜테스터의 전문성을 결합한 보안 아키텍트</strong>. 개발자 출신의 안목으로 블루팀과 협업하며, 자동화 기술을 통해 대규모 보안 인프라를 혁신적으로 강화합니다.</span>
+      </p>
+      
+      <blockquote class="p-quote-block reveal rise-up">
+        <span class="lang-section" data-lang="en">Security is more than a technology—it defines the culture of an organization and the velocity of its business.</span>
+        <span class="lang-section" data-lang="kr">보안은 기술을 넘어 조직의 문화와 비즈니스의 속도를 결정합니다.</span>
+      </blockquote>
+
+      <div class="p-hero-metrics reveal rise-up">
+        <div class="metric-box">
+          <span class="material-symbols-outlined metric-icon">rocket_launch</span>
+          <span class="metric-txt">Identity: Entrepreneur</span>
+        </div>
+        <div class="metric-box">
+          <span class="material-symbols-outlined metric-icon">shield_with_heart</span>
+          <span class="metric-txt">Philosophy: Purple Team</span>
+        </div>
+        <div class="metric-box">
+          <span class="material-symbols-outlined metric-icon">speed</span>
+          <span class="metric-txt">Impact: Business Velocity</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Identity Bento Grid -->
+  <section class="p-section theme-anchor" data-theme="theme-intro">
+    <div class="p-bento-grid">
+      
+      <!-- Card: The Mission -->
+      <div class="p-card box-intro reveal rise-up">
+        <h2 class="card-title">
+          <span class="material-symbols-outlined card-icon">bolt</span> 
+          <span class="lang-section" data-lang="en">The Mission: Security with AI</span>
+          <span class="lang-section" data-lang="kr">나의 미션: AI와 함께하는 Security를 완성시킵니다.</span>
+        </h2>
+        <p class="lang-section" data-lang="en">AI is reshaping our world. I seek to transcend individual domains and achieve true security integration. Starting as a developer and evolving into a pentester and Red Team Lead, I offer more than just offensive skills—I provide balanced, high-impact solutions by understanding the business context of every vulnerability. My mission is to redefine security not as a barrier, but as a strategic asset built from an attacker's perspective to drive business value and operational resilience.</p>
+        <p class="lang-section" data-lang="kr">AI가 모든 영역의 경계를 허물고 있는 지금, 저는 특정 분야에 매몰되지 않고 기술 그 너머를 통합하는 보안을 추구합니다. 개발자로 시작해 펜테스터를 거쳐 레드팀 리드에 이르기까지, 저의 여정은 단순히 시스템을 공격하는 것을 넘어 비즈니스 임팩트를 입체적으로 이해하는 과정이었습니다. 저는 기술적 무결성과 비즈니스 가치가 조화를 이루는 균형 잡힌 솔루션을 제시하며, 보안을 공격자의 시각에서 비즈니스 가치를 보완하는 전략적 자산으로 만들어 나갑니다.</p>
+        
+        <p style="margin-top: 20px; color: var(--p-text-muted);" class="lang-section" data-lang="en">Continuously evolving the edge between offensive insight and scalable defense.</p>
+        <p style="margin-top: 20px; color: var(--p-text-muted);" class="lang-section" data-lang="kr">"단순 탐지를 넘어, 공격자의 시점에서 비즈니스 가치를 극대화하는 보안 아키텍처를 설계합니다."</p>
+      </div>
+
+      <!-- Card: Impact -->
+      <div class="p-card box-stats reveal rise-up">
+        <h2 class="card-title">Business Impact</h2>
+        <div class="metric-feed">
+          <div class="metric-item">
+            <div class="metric-val">$1M+</div>
+            <div class="metric-label">
+              <span class="lang-section" data-lang="en">Operational Savings (Visa)</span>
+              <span class="lang-section" data-lang="kr">운영 비용 절감 (Visa)</span>
+            </div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">Outstanding</div>
+            <div class="metric-label">
+              <span class="lang-section" data-lang="en">Senior Performance Rating</span>
+              <span class="lang-section" data-lang="kr">최상위 성과 평가 (Senior)</span>
+            </div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">200+</div>
+            <div class="metric-label">
+              <span class="lang-section" data-lang="en">Security Pentests Conducted</span>
+              <span class="lang-section" data-lang="kr">보안 침투 테스트 수행</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card: The Humanist -->
+      <div class="p-card box-skills-off reveal rise-up">
+        <h2 class="card-title">
+          <span class="material-symbols-outlined card-icon">lightbulb</span> 
+          <span class="lang-section" data-lang="en">Entrepreneurial Mindset</span>
+          <span class="lang-section" data-lang="kr">창업가 마인드</span>
+        </h2>
+        <p style="font-size: 14px; color: var(--p-text-muted); margin-bottom: 24px;">
+          <span class="lang-section" data-lang="en">I discover opportunities where others see obstacles. With an entrepreneurial mindset, I deliver deep, practical solutions that drive impact for my team and the entire organization. I don't just solve tasks; I build value.</span>
+          <span class="lang-section" data-lang="kr">남들이 지나쳐온 곳들에서 문제를 발견하고 그 문제에 대한 현실적이고 깊이 있는 솔루션을 제시해왔습니다. 창업가의 마인드로 끊임없는 도전을 하고 나 뿐만 아니라 주변에 임팩트를 줍니다.</span>
+        </p>
+        <div style="font-family: var(--p-font-quote); font-style: italic; color: var(--p-accent); font-size: 13px;">
+          <span class="lang-section" data-lang="en">"Innovation begins with discovering the gaps others ignore."</span>
+          <span class="lang-section" data-lang="kr">"혁신은 보이지 않는 틈을 발견하는 것에서 시작됩니다."</span>
+        </div>
+      </div>
+
+      <!-- Card: Stack -->
+      <div class="p-card box-skills-ai reveal rise-up">
+        <h2 class="card-title">
+          <span class="material-symbols-outlined card-icon">layers</span> 
+          <span class="lang-section" data-lang="en">Security Architect</span>
+          <span class="lang-section" data-lang="kr">보안 아키텍트</span>
+        </h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div>
+            <h4 style="font-size: 11px; margin-bottom: 12px; color: var(--p-accent); letter-spacing: 0.1em;">AGENTIC SECURITY</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              {% assign s_ai = "Agentic Orchestration,Autonomous Red Team Ops,LLM Guardrail Research,AI Workflow Security,Adversarial AI Defense" | split: "," %}
+              {% for s in s_ai %}<span style="font-size: 10px; font-weight: 700; padding: 4px 10px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); border-radius: 4px;">{{ s }}</span>{% endfor %}
+            </div>
+          </div>
+          <div>
+            <h4 style="font-size: 11px; margin-bottom: 12px; color: var(--p-accent); letter-spacing: 0.1em;">OFFENSIVE SYSTEMS</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+              {% assign s_off = "Advanced Red/Purple Teaming,Mobile/Cloud Exploitation,Automated Defense Infrastructure,Strategic Remediation,Security Tooling & Automation" | split: "," %}
+              {% for s in s_off %}<span style="font-size: 10px; font-weight: 700; padding: 4px 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--p-glass-border); border-radius: 4px;">{{ s }}</span>{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Professional Pulse: Career Experience -->
+  <section id="section-experience" class="p-section theme-anchor" data-theme="theme-intro">
+    <h2 class="reveal rise-up" style="font-size: 40px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 64px; text-align: center;">Professional Narrative</h2>
+    
+    <div class="experience-timeline staggered-reveal">
+      
+      <!-- Visa -->
+      <div class="exp-item reveal rise-up">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <div class="exp-company">Visa</div>
+            <div class="exp-role">Cybersecurity Analyst (Team Lead)</div>
+          </div>
+          <div class="exp-meta-row">
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">calendar_today</span>
+              January 2022 - Present
+            </div>
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">location_on</span>
+              Austin, Texas
+            </div>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li class="lang-section" data-lang="en">Leading the R&D of an integrated security platform (Inventory, Risk, Detection), generating $1M+ in enterprise value and reducing manual workload by 40+ hours/month.</li>
+          <li class="lang-section" data-lang="kr">인벤토리, 리스크, 탐지 및 시무를 통합한 전사 보안 플랫폼 개발을 주도하여, 연간 $1M 이상의 가치를 창출하고 월 40시간 이상의 수동 업무를 단축했습니다.</li>
+          <li class="lang-section" data-lang="en">Orchestrating high-impact Red/Purple Team exercises in hybrid cloud environments using Cobalt Strike and MITRE ATT&CK, while automating offensive infrastructure to enrich defensive threat intelligence.</li>
+          <li class="lang-section" data-lang="kr">Cobalt Strike와 MITRE ATT&CK 프레임워크를 활용해 하이브리드 클라우드 환경에서 고도화된 Red/Purple Team 훈련을 수행하고, 공방 인프라 자동화를 통해 전사적 위협 인텔리전스를 강화했습니다.</li>
+          <li class="lang-section" data-lang="en">Spearheading mobile pentesting and developing AI-powered automated testing frameworks, reducing overall assessment time by 30%.</li>
+          <li class="lang-section" data-lang="kr">모바일 침투 테스트를 주도하고 AI 기반 자동화 펜테스팅 프레임워크를 개발하여, 보안 점검 시간을 30% 이상 단축했습니다.</li>
+        </ul>
+      </div>
+
+      <!-- CableLabs -->
+      <div class="exp-item reveal rise-up">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <div class="exp-company">CableLabs</div>
+            <div class="exp-role">Security Researcher</div>
+          </div>
+          <div class="exp-meta-row">
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">calendar_today</span>
+              June 2020 - May 2021
+            </div>
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">language</span>
+              Remote
+            </div>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li class="lang-section" data-lang="en">Engineered ML models to detect BGP anomalies for mitigating prefix hijacking and AS path manipulation.</li>
+          <li class="lang-section" data-lang="kr">BGP 비정상 탐지를 위한 ML 모델을 설계하여 접두사 하이재킹 및 AS 경로 조작 위협을 완회했습니다.</li>
+          <li class="lang-section" data-lang="en">Developed a custom visualization dashboard that dramatically reduced routing incident MTTD.</li>
+          <li class="lang-section" data-lang="kr">라우팅 사고 탐지 시간(MTTD)을 획기적으로 단축하는 맞춤형 시각화 대시보드를 개발했습니다.</li>
+        </ul>
+      </div>
+
+      <!-- Cisco -->
+      <div class="exp-item reveal rise-up">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <div class="exp-company">Cisco</div>
+            <div class="exp-role">Security Researcher</div>
+          </div>
+          <div class="exp-meta-row">
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">calendar_today</span>
+              February 2020 - June 2020
+            </div>
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">location_on</span>
+              Baltimore Area
+            </div>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li class="lang-section" data-lang="en">Translated complex JHU cryptographic research into actionable engineering guides.</li>
+          <li class="lang-section" data-lang="kr">JHU의 복잡한 암호학 연구를 실무 엔지니어링 가이드로 변환하여 기술적 가교 역할을 수행했습니다.</li>
+          <li class="lang-section" data-lang="en">Authored open-source modules for CryptoDoneRight to simplify secure crypto usage for developers.</li>
+          <li class="lang-section" data-lang="kr">개발자들이 암호화 기술을 안전하고 쉽게 사용할 수 있도록 CryptoDoneRight 오픈소스 모듈을 제작했습니다.</li>
+        </ul>
+      </div>
+
+      <!-- Eloicube -->
+      <div class="exp-item reveal rise-up">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <div class="exp-company">Eloicube</div>
+            <div class="exp-role">Security Engineer</div>
+          </div>
+          <div class="exp-meta-row">
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">calendar_today</span>
+              January 2019 - June 2019
+            </div>
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">location_on</span>
+              Seoul, South Korea
+            </div>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li class="lang-section" data-lang="en">Led the R&D and commercial launch of a flagship firewall solution generating $20M+ in enterprise value.</li>
+          <li class="lang-section" data-lang="kr">연간 300억 원 이상의 비즈니스 가치를 창출하는 회사 주력 방화벽 솔루션의 초기 R&D 및 상용화를 주도했습니다.</li>
+          <li class="lang-section" data-lang="en">Developed a high-concurrency C# engine handling 10M+ daily firewall events with standardized data integrity.</li>
+          <li class="lang-section" data-lang="kr">일일 1,000만 건 이상의 이기종 방화벽 이벤트를 표준화하여 처리하는 고가용성 C# 기반 로그 엔진을 개발했습니다.</li>
+        </ul>
+      </div>
+
+      <!-- Western Michigan University -->
+      <div class="exp-item reveal rise-up">
+        <div class="exp-header">
+          <div class="exp-title-group">
+            <div class="exp-company">Western Michigan University</div>
+            <div class="exp-role">Research Intern</div>
+          </div>
+          <div class="exp-meta-row">
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">calendar_today</span>
+              February 2018 - August 2018
+            </div>
+            <div class="exp-pill">
+              <span class="material-symbols-outlined icon">location_on</span>
+              Kalamazoo, MI
+            </div>
+          </div>
+        </div>
+        <ul class="exp-list">
+          <li class="lang-section" data-lang="en">Published a paper titled "Efficient Parallel All-Pairs Shortest Paths Algorithm for Complex Graph Analysis" in the Proceedings of the 47th International Conference on Parallel Processing Companion (ICPP).</li>
+          <li class="lang-section" data-lang="kr">ICPP(International Conference on Parallel Processing) 학회에서 "Efficient Parallel All-Pairs Shortest Paths Algorithm for Complex Graph Analysis" 논문을 발표하고 게재했습니다.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Academic Foundation -->
+  <section id="section-education" class="p-section theme-anchor" data-theme="theme-intro">
+    <div style="text-align: center; margin-bottom: 80px;">
+      <h2 class="reveal rise-up" style="font-size: 48px; font-weight: 950; letter-spacing: -0.05em; margin-bottom: 16px;">Academic Foundation</h2>
+      <p class="reveal rise-up" style="color: var(--p-text-muted); font-size: 18px;">Rigorous training in Security Informatics and Artificial Intelligence.</p>
+    </div>
+    
+    <div class="academic-grid">
+      
+      <!-- McCombs (2024) -->
+      <div class="edu-card reveal rise-up">
+        <div class="edu-card-top">
+          <div class="edu-header">
+            <div class="edu-title-group">
+              <div class="edu-school">UT Austin McCombs School</div>
+              <div class="edu-degree">PG Program in AI and ML</div>
+            </div>
+            <img src="/assets/images/logos/mccombs.png" class="edu-logo" alt="McCombs Logo">
+          </div>
+          
+          <div class="edu-meta-pills">
+            <div class="edu-pill">Graduated 2024</div>
+            <div class="edu-pill" style="border-color: rgba(var(--p-accent), 0.4);">GPA 4.06 / 4.33</div>
+          </div>
+        </div>
+
+        <div class="edu-highlights" style="margin-top: 0px;">
+          <span class="edu-highlights-label">Applied Specializations</span>
+          <div class="edu-icon-list">
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">analytics</span>
+              <span>AI-Driven Business Applications & Strategy</span>
+            </div>
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">trending_up</span>
+              <span>Predictive Performance Optimization</span>
+            </div>
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">leaderboard</span>
+              <span>Post-Graduate Academic Excellence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JHU (2021) -->
+      <div class="edu-card reveal rise-up">
+        <div class="edu-card-top">
+          <div class="edu-header">
+            <div class="edu-title-group">
+              <div class="edu-school">Johns Hopkins University</div>
+              <div class="edu-degree">M.S. in Security Informatics</div>
+            </div>
+            <img src="/assets/images/logos/jhu.png" class="edu-logo" alt="JHU Logo">
+          </div>
+
+          <div class="edu-meta-pills">
+            <div class="edu-pill">Graduated 2021</div>
+            <div class="edu-pill" style="border-color: rgba(var(--p-accent), 0.4);">GPA 3.93 / 4.0</div>
+          </div>
+        </div>
+
+        <div class="edu-highlights" style="margin-top: 0px;">
+          <span class="edu-highlights-label">Core Accomplishments</span>
+          <div class="edu-icon-list">
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">military_tech</span>
+              <span>RSA® Conference Security Scholarship</span>
+            </div>
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">workspace_premium</span>
+              <span>Tapia Scholarship</span>
+            </div>
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">groups</span>
+              <span>Whiting School of Engineering (WSE) Representative</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Handong (2019) -->
+      <div class="edu-card reveal rise-up">
+        <div class="edu-card-top">
+          <div class="edu-header">
+            <div class="edu-title-group">
+              <div class="edu-school">Handong<br>Global<br>University</div>
+              <div class="edu-degree">B.S. in Computer Science</div>
+            </div>
+            <img src="/assets/images/logos/handong.png" class="edu-logo" alt="Handong Logo">
+          </div>
+
+          <div class="edu-meta-pills">
+            <div class="edu-pill">Graduated 2019</div>
+            <div class="edu-pill" style="border-color: rgba(var(--p-accent), 0.4);">GPA 3.82 / 4.0</div>
+          </div>
+        </div>
+
+        <div class="edu-highlights">
+          <span class="edu-highlights-label">Leadership & Research</span>
+          <div class="edu-icon-list">
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">flight_takeoff</span>
+              <span>Selected as Sole Representative for USA Research Internship</span>
+            </div>
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">diversity_3</span>
+              <span>President, Computer Research Association (CRA)</span>
+            </div>
+            <div class="edu-icon-item">
+              <span class="material-symbols-outlined icon">verified</span>
+              <span>Academic Excellence Scholarship (Top 5%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications Sub-section -->
+    <div class="cert-section reveal rise-up">
+      <h3 style="text-align: center; font-size: 12px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--p-accent); margin-bottom: 40px;">Professional Certifications</h3>
+      <div class="cert-grid">
+        
+        <!-- CEH (Feb 2025) -->
+        <div class="cert-card reveal rise-up">
+          <div class="cert-icon"><span class="material-symbols-outlined">security</span></div>
+          <div class="cert-info">
+            <div class="cert-issuer">EC-Council</div>
+            <h4>Certified Ethical Hacker (CEH)</h4>
+            <div class="cert-date">Issued Feb 2025 · ID: ECC3526971480</div>
+          </div>
+        </div>
+
+        <!-- Armis Power User (Feb 2025) -->
+        <div class="cert-card reveal rise-up">
+          <div class="cert-icon"><span class="material-symbols-outlined">verified_user</span></div>
+          <div class="cert-info">
+            <div class="cert-issuer">Armis</div>
+            <h4>Armis Centrix™ Power User</h4>
+            <div class="cert-date">Issued Feb 2025</div>
+          </div>
+        </div>
+
+        <!-- Armis User (Jan 2025) -->
+        <div class="cert-card reveal rise-up">
+          <div class="cert-icon"><span class="material-symbols-outlined">person_check</span></div>
+          <div class="cert-info">
+            <div class="cert-issuer">Armis</div>
+            <h4>Armis Centrix™ User</h4>
+            <div class="cert-date">Issued Jan 2025</div>
+          </div>
+        </div>
+
+        <!-- Visa Associate (Dec 2024) -->
+        <div class="cert-card reveal rise-up">
+          <div class="cert-icon"><span class="material-symbols-outlined">shield_with_heart</span></div>
+          <div class="cert-info">
+            <div class="cert-issuer">Visa</div>
+            <h4>Payments Cybersecurity Certified Associate</h4>
+            <div class="cert-date">Issued Dec 2024</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Projects -->
+
+  <section id="section-projects" class="p-section theme-anchor" data-theme="theme-projects">
+    <h2 class="reveal rise-up" style="font-size: 48px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 64px; text-align: center;">Signature Projects</h2>
+    
+    {% assign projects = site.projects | default: site.collections.projects.docs %}
+    {% if projects %}
+      {% assign public_projects = projects | where: "private", false | sort: "order" %}
+      {% for project in public_projects %}
+        {% capture cycle_anim %}{% cycle 'slide-in-right', 'slide-in-left' %}{% endcapture %}
+        <div class="p-feature-row">
+          <div class="p-feature-text reveal rise-up">
+            <h3 class="feature-title">{{ project.title }}</h3>
+            {% assign desc_parts = project.description | split: '<hr />' %}
+            <p class="feature-desc">
+              <span class="lang-section" data-lang="en">{{ desc_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ desc_parts[1] | default: desc_parts[0] }}</span>
+            </p>
+          </div>
+          <div class="p-feature-image-container reveal {{ cycle_anim }}">
+            {% if project.image %}
+              <img src="{{ project.image | relative_url }}" class="p-feature-img" alt="{{ project.title }}">
+            {% else %}
+              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); display: flex; align-items: center; justify-content: center; color: var(--p-accent);">
+                <span class="material-symbols-outlined" style="font-size: 64px;">dataset</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </section>
+
+  <!-- Confidential Experience -->
+  <section class="p-section theme-anchor" data-theme="theme-projects">
+    <div style="margin-bottom: 64px;">
+      <h2 class="reveal rise-up" style="font-size: 40px; font-weight: 900; letter-spacing: -0.03em;">
+        <span class="lang-section" data-lang="en">Confidential Projects</span>
+        <span class="lang-section" data-lang="kr">비공개 프로젝트</span>
+      </h2>
+      <p class="reveal rise-up" style="color: var(--p-text-muted); margin-top: 12px;">
+        <span class="lang-section" data-lang="en">Due to the sensitive nature of these works, details are summarized without proprietary information.</span>
+        <span class="lang-section" data-lang="kr">작업의 민감한 성격으로 인해, 세부 사항은 기밀 정보 없이 요약되어 제공됩니다.</span>
+      </p>
+    </div>
+    <div class="confidential-grid">
+      {% if projects %}
+        {% assign private_projects = projects | where: "private", true | sort: "order" %}
+        {% for project in private_projects %}
+        <div class="conf-card reveal rise-up">
+          <div class="conf-icon"><span class="material-symbols-outlined">lock</span></div>
+          <div class="conf-content">
+            {% assign title_parts = project.title | split: '<hr />' %}
+            {% assign desc_parts = project.description | split: '<hr />' %}
+            <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">
+              <span class="lang-section" data-lang="en">{{ title_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ title_parts[1] | default: title_parts[0] }}</span>
+            </h3>
+            <p style="font-size: 14px; color: var(--p-text-muted); line-height: 1.6;">
+              <span class="lang-section" data-lang="en">{{ desc_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ desc_parts[1] | default: desc_parts[0] }}</span>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- CTF Achievement Log -->
+  <section id="section-ctfs" class="p-section theme-anchor" data-theme="theme-ctf">
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px;">
+      <h2 class="reveal" style="font-size: 48px; font-weight: 900; letter-spacing: -0.04em;">
+        <span class="lang-section" data-lang="en">CTF Rankings</span>
+        <span class="lang-section" data-lang="kr">CTF 랭킹</span>
+      </h2>
+      <a href="https://ctftime.org/team/303159/" target="_blank" class="reveal" style="display: block; text-decoration: none; transition: var(--p-transition);">
+        <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); padding: 12px 24px; border-radius: 12px; color: var(--p-accent); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
+          <span class="material-symbols-outlined" style="font-size: 20px;">groups</span>
+          <span class="lang-section" data-lang="en">Active Team Member: <strong>RubiyaLab</strong></span>
+          <span class="lang-section" data-lang="kr">활동 팀: <strong>RubiyaLab</strong></span>
+          <span class="material-symbols-outlined" style="font-size: 14px; opacity: 0.5;">open_in_new</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="ctf-timeline staggered-reveal">
+      {% assign ctfs = site.ctfs | default: site.collections.ctfs.docs %}
+      {% if ctfs %}
+        {% assign sorted_ctfs = ctfs | sort: 'date' | reverse %}
+        {% for ctf in sorted_ctfs %}
+        <div class="ctf-row reveal rise-up">
+          <div class="ctf-rank-big">#{{ ctf.rank }}</div>
+          <div class="ctf-info">
+            {% assign ctf_title_parts = ctf.title | split: '<hr />' %}
+            {% assign ctf_desc_parts = ctf.description | split: '<hr />' %}
+            <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 4px;">
+              <span class="lang-section" data-lang="en">{{ ctf_title_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ ctf_title_parts[1] | default: ctf_title_parts[0] }}</span>
+            </h3>
+            <p style="color: var(--p-text-muted); font-size: 15px; margin: 0;">
+              <span class="lang-section" data-lang="en">{{ ctf_desc_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ ctf_desc_parts[1] | default: ctf_desc_parts[0] }}</span>
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <div class="ctf-meta">{{ ctf.date | date: "%B %Y" }}</div>
+            {% if ctf.screenshots %}
+              <button onclick="openGallery('{{ ctf.title | escape }}', {{ ctf.screenshots | jsonify | escape }})" class="ctf-gallery-btn">
+                <span class="material-symbols-outlined" style="font-size: 18px;">collections</span> 
+                <span class="lang-section" data-lang="en">View Gallery</span>
+                <span class="lang-section" data-lang="kr">갤러리 보기</span>
+              </button>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </section>
+
+  <footer class="p-section staggered-reveal" style="text-align: center; border-top: 1px solid var(--p-glass-border); padding-top: 80px; padding-bottom: 80px;">
+    <a href="mailto:{{ site.social.email }}" class="reveal rise-up" style="display: inline-block; background: var(--p-accent); color: #fff; padding: 20px 48px; border-radius: 100px; font-weight: 800; text-decoration: none; font-size: 18px; box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4); --stagger-idx: 1;">
+      <span class="lang-section" data-lang="en">Let's Connect</span>
+      <span class="lang-section" data-lang="kr">연락하기</span>
+    </a>
+    
+    <div class="reveal rise-up" style="margin-top: 64px; display: flex; justify-content: center; gap: 32px; font-size: 14px; font-weight: 700; color: var(--p-text-muted); --stagger-idx: 4;">
+      <a href="https://github.com/{{ site.github.username }}" style="color: inherit; text-decoration: none;">GITHUB</a>
+      <a href="https://linkedin.com/in/{{ site.linkedin.username }}" style="color: inherit; text-decoration: none;">LINKEDIN</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Reveal Animation ---
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+      // --- Dynamic Theme Switching ---
+      const themeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const theme = entry.target.getAttribute('data-theme');
+            if (theme) {
+              // Remove other theme classes but keep base body class
+              document.body.classList.remove('theme-intro', 'theme-projects', 'theme-ctf');
+              document.body.classList.add(theme);
+            }
+          }
+        });
+      }, { 
+        threshold: 0.2, // More sensitive for faster transitions
+        rootMargin: "-10% 0px -10% 0px" // Trigger slightly before it hits the center
+      });
+
+      document.querySelectorAll('.theme-anchor').forEach(el => themeObserver.observe(el));
+
+      // ===== Language Toggle Logic =====
+      const langBtns = document.querySelectorAll('.nav-lang-btn');
+      const savedLang = localStorage.getItem('site-lang') || 'en';
+      
+      const setLang = (lang) => {
+        localStorage.setItem('site-lang', lang);
+        langBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        updateLanguageSections(lang);
+      };
+
+      langBtns.forEach(btn => {
+        btn.addEventListener('click', () => setLang(btn.dataset.lang));
+      });
+
+      // Initial state
+      setLang(savedLang);
+
+      window.addEventListener('languageChanged', () => {
+        const newLang = localStorage.getItem('site-lang') || 'en';
+        setLang(newLang);
+      });
+    });
+
+    function updateLanguageSections(lang) {
+      const langSections = document.querySelectorAll('.lang-section');
+      langSections.forEach(section => {
+        // Handle both block and inline elements correctly
+        if (section.dataset.lang === lang) {
+          section.style.display = ''; 
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+  <!-- CTF Gallery Modal -->
+  <div id="ctf-modal" class="p-modal">
+    <div class="p-modal-overlay" onclick="closeGallery()"></div>
+    <div class="p-modal-content">
+      <button class="p-modal-close" onclick="closeGallery()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <div class="p-modal-header">
+        <h3 id="modal-title" style="margin: 0; font-size: 24px; font-weight: 900;"></h3>
+      </div>
+      <div id="modal-gallery" class="p-modal-gallery">
+        <!-- Images injected here -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openGallery(title, images) {
+      const modal = document.getElementById('ctf-modal');
+      const titleEl = document.getElementById('modal-title');
+      const galleryEl = document.getElementById('modal-gallery');
+      
+      titleEl.innerText = title;
+      galleryEl.innerHTML = '';
+      
+      images.forEach(img => {
+        const imgContainer = document.createElement('div');
+        imgContainer.className = 'gallery-img-wrapper';
+        const image = document.createElement('img');
+        image.src = img;
+        image.loading = 'lazy';
+        imgContainer.appendChild(image);
+        galleryEl.appendChild(imgContainer);
+      });
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+      const modal = document.getElementById('ctf-modal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>

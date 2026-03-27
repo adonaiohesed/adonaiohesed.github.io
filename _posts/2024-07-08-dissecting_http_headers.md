@@ -1,6 +1,5 @@
 ---
 title: Dissecting HTTP Headers
-tags: HTTP-Headers
 key: page-dissecting_http_headers
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-09-dissecting_http_headers.png"
+image: "/assets/thumbnails/2024-07-08-dissecting_http_headers.png"
 bilingual: true
 date: 2024-07-08 14:45:36
 ---

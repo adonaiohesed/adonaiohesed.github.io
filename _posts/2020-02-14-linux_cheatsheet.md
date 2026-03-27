@@ -1,12 +1,11 @@
 ---
 title: Linux Cheatshhe
-tags: Linux
 key: page-linux_cheatsheet
 categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-09-07-linux_cheatsheet.png"
+image: "/assets/thumbnails/2020-02-14-linux_cheatsheet.png"
 bilingual: true
 date: 2020-02-14 01:33:36
 ---

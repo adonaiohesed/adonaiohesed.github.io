@@ -1,12 +1,11 @@
 ---
 title: Terminal Setting
-tags: Terminal
 key: page-terminal_setup
 categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-09-05-terminal_setup.png"
+image: "/assets/thumbnails/2020-01-15-terminal_setup.png"
 bilingual: true
 date: 2020-01-15 20:31:12
 ---

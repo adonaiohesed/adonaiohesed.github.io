@@ -1,6 +1,5 @@
 ---
 title: Threat Modeling
-tags: Threat-Modeling Cybersecurity Risk-Management
 key: page-threat_modeling
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-04-04-threat_modeling.png"
+image: "/assets/thumbnails/2025-01-14-threat_modeling.png"
 bilingual: true
 date: 2025-01-14 11:31:12
 ---

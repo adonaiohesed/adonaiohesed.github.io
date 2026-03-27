@@ -1,6 +1,5 @@
 ---
 title: File Upload Feature Penetration Test
-tags: File-Upload
 key: page-file_upload
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-10-file_upload.png"
+image: "/assets/thumbnails/2024-07-23-file_upload.png"
 date: 2024-07-23 05:16:48
 ---
 When a file upload feature is present, you should check the following items. Fundamentally, from a developer's perspective, a whitelist or allowlist approach is ideal.

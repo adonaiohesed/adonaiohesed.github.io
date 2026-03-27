@@ -1,10 +1,9 @@
 ---
 title: Cyber World
-tags: Philosophy Cyber-World
 key: page-cyber_world
 categories: [Personal, Philosophy]
 author: hyoeun
-image: "/assets/thumbnails/2018-02-03-cyber_world.png"
+image: "/assets/thumbnails/2018-07-09-cyber_world.png"
 date: 2018-07-09 20:45:36
 ---
 

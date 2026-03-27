@@ -1,6 +1,5 @@
 ---
 title: Return to libc Attack
-tags: Return-to-libc Vulnerabilities Cybersecurity
 key: page-return_to_libc_attack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-01-04-return_to_libc_attack.png"
+image: "/assets/thumbnails/2021-05-11-return_to_libc_attack.png"
 date: 2021-05-11 19:40:48
 ---
 ## Introduction

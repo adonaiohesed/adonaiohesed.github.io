@@ -1,12 +1,11 @@
 ---
 title: Nslookup & Dig
-tags: Nslookup Dig Network
 key: page-nslookup_dig
 categories: [Tools, Reconnaissance]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-05-04-nslookup_dig.png"
+image: "/assets/thumbnails/2021-12-02-nslookup_dig.png"
 date: 2021-12-02 06:57:36
 ---
 

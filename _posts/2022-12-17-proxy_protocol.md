@@ -1,6 +1,5 @@
 ---
 title: Proxy Protocols
-tags: Blockchain
 key: page-proxy_protocol
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-12-06-proxy_protocol.png"
+image: "/assets/thumbnails/2022-12-17-proxy_protocol.png"
 bilingual: true
 date: 2022-12-17 00:28:48
 ---

@@ -1,6 +1,5 @@
 ---
 title: During The Interview Process
-tags: Interview
 key: page-interview_tip
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-03-10-interview_tip.png"
+image: "/assets/thumbnails/2018-12-02-interview_tip.png"
 date: 2018-12-02 21:57:36
 ---
 ## Attitude

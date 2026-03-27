@@ -1,12 +1,11 @@
 ---
 title: Brup Suite - Intruder
-tags: Burp-Suite
 key: page-burp_suite_intruder
 categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-03-04-burp_suite_intruder.png"
+image: "/assets/thumbnails/2021-08-22-burp_suite_intruder.png"
 bilingual: true
 date: 2021-08-22 01:19:12
 ---

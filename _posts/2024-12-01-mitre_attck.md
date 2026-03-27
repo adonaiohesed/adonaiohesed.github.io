@@ -1,6 +1,5 @@
 ---
 title: MITRE ATT&CK
-tags: MITRE ATT&CK
 key: page-mitre_attck
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-04-01-mitre_attck.png"
+image: "/assets/thumbnails/2024-12-01-mitre_attck.png"
 bilingual: true
 date: 2024-12-01 15:57:36
 ---

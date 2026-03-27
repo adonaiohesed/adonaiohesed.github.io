@@ -1,10 +1,9 @@
 ---
 title: Problem & Solve
-tags: PM
 key: page-problem_solve
 categories: [Personal, Life Information]
 author: hyoeun
-image: "/assets/thumbnails/2018-01-16-problem_solve.png"
+image: "/assets/thumbnails/2018-05-27-problem_solve.png"
 bilingual: true
 date: 2018-05-27 01:12:00
 ---

@@ -1,10 +1,9 @@
 ---
 title: Jekyll posting 관련
-tags: Jekyll
 key: page-jekyll_posting
 categories: [Tools, Jekyll]
 author: hyoeun
-image: "/assets/thumbnails/2018-04-01-jekyll_post.png"
+image: "/assets/thumbnails/2019-03-29-jekyll_post.png"
 date: 2019-03-29 18:07:12
 ---
 

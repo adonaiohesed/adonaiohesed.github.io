@@ -1,12 +1,11 @@
 ---
 title: Frida Install And Trouble Shooting
-tags: Frida
 key: page-frida_install
 categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-04-02-frida_install.png"
+image: "/assets/thumbnails/2021-10-04-frida_install.png"
 bilingual: true
 date: 2021-10-04 20:52:48
 ---

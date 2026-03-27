@@ -1,6 +1,5 @@
 ---
 title: Smart Contract
-tags: Blockchain
 key: page-smart_contract
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-12-03-smart_contract.png"
+image: "/assets/thumbnails/2022-11-03-smart_contract.png"
 bilingual: true
 date: 2022-11-03 04:55:12
 ---

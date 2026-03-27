@@ -1,6 +1,5 @@
 ---
 title: System Design Interview
-tags: System-Design Interview
 key: page-system_design_basic
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-03-12-system_design_basic.png"
+image: "/assets/thumbnails/2019-01-01-system_design_basic.png"
 date: 2019-01-01 03:00:00
 ---
 ## 시스템 디자인 인터뷰 단계

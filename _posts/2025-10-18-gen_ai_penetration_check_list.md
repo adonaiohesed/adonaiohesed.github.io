@@ -1,6 +1,5 @@
 ---
 title: Gen AI Penetration Test Check List
-tags: GenAI-Check-List
 key: page-gen_ai_penetration_check_list
 categories:
 - AI & ML
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-03-05-gen_ai_penetration_check_list.png"
+image: "/assets/thumbnails/2025-10-18-gen_ai_penetration_check_list.png"
 bilingual: true
 date: 2025-10-18 23:24:00
 ---

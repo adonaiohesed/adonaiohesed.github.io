@@ -1,10 +1,9 @@
 ---
 title: Elastic Search 설치 및 실행(v 6.6.1)
-tags:  ELK Tools
 key: page-elastic_search_installation_usage
 categories: [Tools, ELK]
 author: hyoeun
-image: "/assets/thumbnails/2019-01-02-elasticsearch_install.png"
+image: "/assets/thumbnails/2020-07-09-elasticsearch_install.png"
 date: 2020-07-09 02:45:36
 ---
 

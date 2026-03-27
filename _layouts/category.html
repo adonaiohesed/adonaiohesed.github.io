@@ -9,7 +9,17 @@ layout: default
 {% for nav in site.data.navigation %}
   {% if nav.title == page.title %}
     {% assign cat_nav = nav %}
+    {% break %}
   {% endif %}
+  {% if nav.items %}
+    {% for item in nav.items %}
+      {% if item.name == page.title %}
+        {% assign cat_nav = item %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if cat_nav %}{% break %}{% endif %}
 {% endfor %}
 
 <!-- ── Category Hero ──────────────────────────────────────────── -->
@@ -20,8 +30,8 @@ layout: default
   <div class="cat-hero-inner">
     <p class="cat-hero-eyebrow">Explore</p>
     <h1 class="cat-hero-title">{{ page.title }}</h1>
-    {% if cat_nav.featured_desc and cat_nav.featured_desc != '' %}
-    <p class="cat-hero-desc">{{ cat_nav.featured_desc }}</p>
+    {% if cat_nav.desc and cat_nav.desc != '' %}
+    <p class="cat-hero-desc">{{ cat_nav.desc }}</p>
     {% else %}
     <p class="cat-hero-desc">Articles, tutorials, and deep-dives about {{ page.title | downcase }}.</p>
     {% endif %}

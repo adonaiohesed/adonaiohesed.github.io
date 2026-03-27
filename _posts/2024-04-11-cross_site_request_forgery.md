@@ -1,6 +1,5 @@
 ---
 title: Cross-Site Request Forgery (CSRF)
-tags: CSRF Web-Hacking Cybersecurity
 key: page-csrf_attack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-03-cross_site_request_forgery.png"
+image: "/assets/thumbnails/2024-04-11-cross_site_request_forgery.png"
 date: 2024-04-11 23:38:24
 ---
 ## The Cross-Site Request Forgery (CSRF) Attack

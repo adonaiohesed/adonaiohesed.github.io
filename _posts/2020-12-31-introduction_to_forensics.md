@@ -1,6 +1,5 @@
 ---
 title: Introduction to Forensics
-tags: Introduction-Forensics Cybersecurity
 key: page-introduction_to_forensics
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2019-10-01-introduction_to_forensics.png"
+image: "/assets/thumbnails/2020-12-31-introduction_to_forensics.png"
 date: 2020-12-31 09:00:00
 ---
 ## Intoruction

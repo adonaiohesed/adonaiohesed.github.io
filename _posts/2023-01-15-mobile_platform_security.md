@@ -1,6 +1,5 @@
 ---
 title: Mobile Platform Security
-tags: Mobile-Security
 key: page-mobile_platform_security
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-02-mobile_platform_security.png"
+image: "/assets/thumbnails/2023-01-15-mobile_platform_security.png"
 bilingual: true
 date: 2023-01-15 05:31:12
 ---

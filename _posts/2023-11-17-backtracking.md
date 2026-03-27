@@ -1,6 +1,5 @@
 ---
 title: Backtracking
-tags: Backtracking Algorithms
 key: page-backtracking
 categories:
 - Engineering
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-05-11-backtracking.png"
+image: "/assets/thumbnails/2023-11-17-backtracking.png"
 bilingual: true
 date: 2023-11-17 22:26:24
 ---

@@ -1,6 +1,5 @@
 ---
 title: Automating OSCP Reports
-tags: Cybersecurity-Certificates OSCP
 key: page-oscp_report_automation
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2019-04-02-oscp_report_automation.png"
+image: "/assets/thumbnails/2020-12-16-oscp_report_automation.png"
 bilingual: true
 date: 2020-12-16 18:28:48
 ---

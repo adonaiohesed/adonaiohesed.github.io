@@ -1,6 +1,5 @@
 ---
 title: Cross-Site Scripting Attack (XXS)
-tags: XSS Web-Hacking Cybersecurity
 key: page-xss_attack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-02-cross_site_scripting_attack.png"
+image: "/assets/thumbnails/2024-03-28-cross_site_scripting_attack.png"
 date: 2024-03-28 09:07:12
 ---
 ## The Cross-Site Scripting Attack

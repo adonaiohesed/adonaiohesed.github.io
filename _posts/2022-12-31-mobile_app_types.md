@@ -1,6 +1,5 @@
 ---
 title: Types of Mobile App
-tags: Mobile
 key: page-mobile_app_types
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-01-mobile_app_types.png"
+image: "/assets/thumbnails/2022-12-31-mobile_app_types.png"
 bilingual: true
 date: 2022-12-31 15:00:00
 ---

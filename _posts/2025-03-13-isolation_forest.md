@@ -1,12 +1,11 @@
 ---
 title: Isolation Forest
-tags: Isolation Forest Machine-Learning
 key: page-isolation_forest
 categories:
 - AI & ML
 - Machine Learning
 author: hyoeun
-image: "/assets/thumbnails/2023-09-03-isolation_forest.png"
+image: "/assets/thumbnails/2025-03-13-isolation_forest.png"
 bilingual: true
 date: 2025-03-13 21:36:00
 ---

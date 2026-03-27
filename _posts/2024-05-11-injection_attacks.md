@@ -1,6 +1,5 @@
 ---
 title: Injection Attacks Beyond SQL and XXS
-tags: Injection-Attacks
 key: page-injection_attacks
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-05-injection_attacks.png"
+image: "/assets/thumbnails/2024-05-11-injection_attacks.png"
 date: 2024-05-11 04:40:48
 ---
 ### 1. Command Injection: The Shell is the Limit

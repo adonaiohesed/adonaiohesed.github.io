@@ -1,13 +1,12 @@
 ---
 title: Nodejs 설치 및 사용 방법
-tags: Nodejs
 author: hyoeun
 pageview: true
 key: page-nodejs_installation_usage
 categories:
 - Engineering
 - SysOps & Infrastructure
-image: "/assets/thumbnails/2018-07-01-nodejs_install.png"
+image: "/assets/thumbnails/2019-09-21-nodejs_install.png"
 date: 2019-09-21 00:21:36
 ---
 ### NodeJS의 특징

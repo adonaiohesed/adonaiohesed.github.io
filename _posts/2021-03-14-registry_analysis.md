@@ -1,12 +1,11 @@
 ---
 title: Registry Analysis
-tags: Registry-Analysis Cybersecurity Forensics Tools
 key: page-registry_analysis
 categories: [Tools, Forensics Tools]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2019-10-23-registry_analysis.png"
+image: "/assets/thumbnails/2021-03-14-registry_analysis.png"
 date: 2021-03-14 09:36:00
 ---
 

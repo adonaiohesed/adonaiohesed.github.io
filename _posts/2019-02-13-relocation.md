@@ -1,12 +1,11 @@
 ---
 title: Relocation Considerations
-tags: Relocation Interview
 key: page-relocation_considerations
 categories:
 - Career
 - Post-Interview
 author: hyoeun
-image: "/assets/thumbnails/2018-03-22-relocation.png"
+image: "/assets/thumbnails/2019-02-13-relocation.png"
 bilingual: true
 date: 2019-02-13 22:33:36
 ---

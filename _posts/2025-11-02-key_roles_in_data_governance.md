@@ -1,6 +1,5 @@
 ---
 title: Key Roles in Data Governance and System Security
-tags: Custodian
 key: page-key_roles_in_data_governance
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-08-01-key_roles_in_data_governance.png"
+image: "/assets/thumbnails/2025-11-02-key_roles_in_data_governance.png"
 bilingual: true
 date: 2025-11-02 13:55:12
 ---

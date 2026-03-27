@@ -1,6 +1,5 @@
 ---
 title: Privacy Engineering Position Interview
-tags: Interview
 key: page-privacy_engineering
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-03-11-privacy_engineering.png"
+image: "/assets/thumbnails/2018-12-17-privacy_engineering.png"
 date: 2018-12-17 12:28:48
 ---
 ## Basic of privacy engineering

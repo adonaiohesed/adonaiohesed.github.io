@@ -1,10 +1,9 @@
 ---
 title: Elastic Search 개념
-tags: ELK Tools
 key: page-elastic_search_concept
 categories: [Tools, ELK]
 author: hyoeun
-image: "/assets/thumbnails/2019-01-01-elasticsearch_concept.png"
+image: "/assets/thumbnails/2020-06-24-elasticsearch_concept.png"
 date: 2020-06-24 12:14:24
 ---
 

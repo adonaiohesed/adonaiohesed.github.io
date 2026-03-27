@@ -1,18 +1,17 @@
 ---
 title: FTK Imager
-tags: FTK-Imager Cybersecurity Forensics Tools
 key: page-ftk_imager
 categories: [Tools, Forensics Tools]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2019-10-21-ftk_imager.png"
+image: "/assets/thumbnails/2021-02-13-ftk_imager.png"
 date: 2021-02-13 04:33:36
 ---
 
 ## Image
-* Physical image: bit-for-bit copy로 media에 있는 모든 것들을 copy한다. "deleted" data와 no longer accessible data도 포함하는 것이다.
-* Logical image: viewable data(logical data)만 복사하는 것이다. 따라서 실제 데이터 사이즈보다 적은 사이즈로 만들어질 것이다.
+* Physical image: "/assets/thumbnails/2021-02-13-ftk_imager.png"
+* Logical image: "/assets/thumbnails/2021-02-13-ftk_imager.png"
 
 ## Write-blocking
 * 항상 증거 자료가 의도적이든 아닌든 변형되지 않도록 해야 되는데 이때 write-blocker가 필요하다.

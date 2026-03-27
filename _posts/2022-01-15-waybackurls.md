@@ -1,12 +1,11 @@
 ---
 title: Waybackurls
-tags: Waybackurls
 key: page-waybackurls
 categories: [Tools, Reconnaissance]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-05-07-waybackurls.png"
+image: "/assets/thumbnails/2022-01-15-waybackurls.png"
 bilingual: true
 date: 2022-01-15 02:31:12
 ---

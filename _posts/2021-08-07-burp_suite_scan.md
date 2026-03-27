@@ -1,12 +1,11 @@
 ---
 title: Brup Suite - Scan
-tags: Burp-Suite
 key: page-burp_suite_scan
 categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-03-02-burp_suite_scan.png"
+image: "/assets/thumbnails/2021-08-07-burp_suite_scan.png"
 bilingual: true
 date: 2021-08-07 10:48:00
 ---

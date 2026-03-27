@@ -1,6 +1,5 @@
 ---
 title: Authentication and Authorization - JWT
-tags: JWT Authentication Cybersecurity
 key: page-jwt_authentication
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-10-02-authentication_authorization.png"
+image: "/assets/thumbnails/2023-12-17-authentication_authorization.png"
 bilingual: true
 date: 2023-12-17 03:28:48
 ---

@@ -1,6 +1,5 @@
 ---
 title: Buffer overflow attack
-tags: Buffer-Overflow Vulnerabilities Cybersecurity
 key: page-buffer_overflow_attack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-01-03-buffer_overflow_attack.png"
+image: "/assets/thumbnails/2021-04-27-buffer_overflow_attack.png"
 date: 2021-04-27 05:09:36
 ---
 ## The five segments in a process's memory layout for a typical C program.

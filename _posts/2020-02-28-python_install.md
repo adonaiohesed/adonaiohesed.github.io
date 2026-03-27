@@ -1,12 +1,11 @@
 ---
 title: 파이썬 설치 및 2.7 3.7 차이 설명
-tags: Python
 key: page-python_installation_differences
 categories:
 - Engineering
 - Programming Fundamentals
 author: hyoeun
-image: "/assets/thumbnails/2018-10-01-python_install.png"
+image: "/assets/thumbnails/2020-02-28-python_install.png"
 date: 2020-02-28 16:04:48
 ---
 ```console

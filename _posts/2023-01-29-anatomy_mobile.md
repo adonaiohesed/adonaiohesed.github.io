@@ -1,6 +1,5 @@
 ---
 title: The Anatomy of Mobile App
-tags: Android iOS
 key: page-anatomy_mobile
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-03-anatomy_mobile.png"
+image: "/assets/thumbnails/2023-01-29-anatomy_mobile.png"
 bilingual: true
 date: 2023-01-29 20:02:24
 ---

@@ -1,10 +1,9 @@
 ---
 title: Elastic Search 클러스터 개념 및 구성
-tags: ELK Tools
 key: page-elastic_search_cluster_concept_configuration
 categories: [Tools, ELK]
 author: hyoeun
-image: "/assets/thumbnails/2019-01-04-elasticsearch_cluster.png"
+image: "/assets/thumbnails/2020-08-07-elasticsearch_cluster.png"
 date: 2020-08-07 07:48:00
 ---
 

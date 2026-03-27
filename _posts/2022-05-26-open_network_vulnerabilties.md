@@ -1,6 +1,5 @@
 ---
 title: Open Network Vulnerabilities
-tags: Open-Network-Vulnerabilities
 key: page-open_network_vulnerabilities
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-05-02-open_network_vulnerabilties.png"
+image: "/assets/thumbnails/2022-05-26-open_network_vulnerabilties.png"
 bilingual: true
 date: 2022-05-26 13:12:00
 ---

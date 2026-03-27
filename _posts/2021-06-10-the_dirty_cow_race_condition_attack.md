@@ -1,6 +1,5 @@
 ---
 title: The Dirty COW Race Condition Attack
-tags: Dirty-COW Race-Condition Vulnerabilities
 key: page-dirty_cow_attack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-01-06-the_dirty_cow_race_condition_attack.png"
+image: "/assets/thumbnails/2021-06-10-the_dirty_cow_race_condition_attack.png"
 date: 2021-06-10 00:43:12
 ---
 ## Introduction

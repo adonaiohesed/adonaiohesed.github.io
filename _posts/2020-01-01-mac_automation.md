@@ -1,12 +1,11 @@
 ---
 title: Automating Mac Mini and MacBook Air Setup - AirPlay Connect and Audio Device Switching
-tags: Automator
 key: page-mac_mini_air_automator
 categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-09-04-mac_automation.png"
+image: "/assets/thumbnails/2020-01-01-mac_automation.png"
 bilingual: true
 date: 2020-01-01 06:00:00
 ---

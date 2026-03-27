@@ -1,6 +1,5 @@
 ---
 title: Secure Code Review
-tags: Static-Analysis Cybersecurity
 key: page-secure_code_review
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-15-secure_code_review.png"
+image: "/assets/thumbnails/2024-10-04-secure_code_review.png"
 bilingual: true
 date: 2024-10-04 05:52:48
 ---

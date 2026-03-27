@@ -1,6 +1,5 @@
 ---
 title: General Behavior Questions
-tags: Behavior-Questions
 key: page-general_behavior_questions
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-03-01-general_behavior_questions.png"
+image: "/assets/thumbnails/2018-10-05-general_behavior_questions.png"
 bilingual: true
 date: 2018-10-05 11:52:48
 ---

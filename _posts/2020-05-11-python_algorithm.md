@@ -1,12 +1,11 @@
 ---
 title: 파이썬 알고리즘에 사용되는 함수
-tags: Python
 key: page-python_algorithms_functions
 categories:
 - Engineering
 - Programming Fundamentals
 author: hyoeun
-image: "/assets/thumbnails/2018-10-06-python_algorithm.png"
+image: "/assets/thumbnails/2020-05-11-python_algorithm.png"
 date: 2020-05-11 16:40:48
 ---
 ## All, Any

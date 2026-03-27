@@ -1,6 +1,5 @@
 ---
 title: What Cybersecurity Certifications Should I Get Next?
-tags: Cybersecurity-Certificates
 key: page-certificates_cybersecurity
 categories:
 - Career
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2019-04-01-cybersecurity_certificates.png"
+image: "/assets/thumbnails/2020-12-02-cybersecurity_certificates.png"
 bilingual: true
 date: 2020-12-02 03:57:36
 ---

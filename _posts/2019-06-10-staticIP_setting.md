@@ -1,12 +1,11 @@
 ---
 title: CentOS7 고정 ip 설정
-tags: CentOS7 Static-IP
 key: page-centos7_static_ip_configuration
 categories:
 - Engineering
 - SysOps & Infrastructure
 author: hyoeun
-image: "/assets/thumbnails/2018-06-03-staticIP_setting.png"
+image: "/assets/thumbnails/2019-06-10-staticIP_setting.png"
 date: 2019-06-10 18:43:12
 ---
 ## 네트워크 설정 파일 열기

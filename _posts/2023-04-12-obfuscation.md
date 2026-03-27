@@ -1,6 +1,5 @@
 ---
 title: Obfuscation
-tags: Obfuscation
 key: page-obfuscation
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-08-obfuscation.png"
+image: "/assets/thumbnails/2023-04-12-obfuscation.png"
 date: 2023-04-12 20:38:24
 ---
 ## A Smokescreen in the Code: Obfuscation and the Art of Lifting the Veil

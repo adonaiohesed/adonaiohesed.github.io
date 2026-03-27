@@ -1,6 +1,5 @@
 ---
 title: HTTP Status Codes
-tags: HTTP-Status-Codes
 key: page-http_status_codes
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-14-http_status_codes.png"
+image: "/assets/thumbnails/2024-09-19-http_status_codes.png"
 bilingual: true
 date: 2024-09-19 15:21:36
 ---

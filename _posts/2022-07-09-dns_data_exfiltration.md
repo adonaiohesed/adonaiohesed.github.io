@@ -1,6 +1,5 @@
 ---
 title: DNS Data Exfiltration
-tags: DNS-Data-Exfiltration
 key: page-dns_data_exfiltration
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-05-05-dns_data_exfiltration.png"
+image: "/assets/thumbnails/2022-07-09-dns_data_exfiltration.png"
 bilingual: true
 date: 2022-07-09 08:45:36
 ---

@@ -1,6 +1,5 @@
 ---
 title: Cyber Kill Chain
-tags: Cyber-Kill-Chain
 key: page-cyber_kill_chain
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-10-01-cyber_kill_chain.png"
+image: "/assets/thumbnails/2025-11-17-cyber_kill_chain.png"
 bilingual: true
 date: 2025-11-17 04:26:24
 ---

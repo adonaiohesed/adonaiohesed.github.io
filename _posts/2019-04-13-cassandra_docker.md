@@ -1,12 +1,11 @@
 ---
 title: Cassandra 설치 및 사용 방법
-tags: Cassandra Installation
 key: page-cassandra_installation_usage
 categories:
 - Engineering
 - Database Systems
 author: hyoeun
-image: "/assets/thumbnails/2018-05-01-cassandra_docker.png"
+image: "/assets/thumbnails/2019-04-13-cassandra_docker.png"
 date: 2019-04-13 08:38:24
 ---
 ## Cassadnra에 대한 소개

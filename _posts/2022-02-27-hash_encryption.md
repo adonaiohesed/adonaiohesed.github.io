@@ -1,6 +1,5 @@
 ---
 title: Hash & Encryption
-tags: Hashing Encryption Cryptography
 key: page-hash_encryption
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-04-01-hash_encryption.png"
+image: "/assets/thumbnails/2022-02-27-hash_encryption.png"
 date: 2022-02-27 22:04:48
 ---
 ## Hash and Encryption: Key Concepts and Differences

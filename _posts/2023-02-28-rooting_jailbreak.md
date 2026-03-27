@@ -1,6 +1,5 @@
 ---
 title: Rooting & Jailbreak
-tags: Rooting Jailbreak
 key: page-tag
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-05-rooting_jailbreak.png"
+image: "/assets/thumbnails/2023-02-28-rooting_jailbreak.png"
 bilingual: true
 date: 2023-02-28 01:04:48
 ---

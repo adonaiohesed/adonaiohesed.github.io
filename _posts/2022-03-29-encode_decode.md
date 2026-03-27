@@ -1,6 +1,5 @@
 ---
 title: Encoding And Decoding
-tags: Encoding Decoding
 key: page-encoding_decoding
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-04-03-encode_decode.png"
+image: "/assets/thumbnails/2022-03-29-encode_decode.png"
 bilingual: true
 date: 2022-03-29 03:07:12
 ---

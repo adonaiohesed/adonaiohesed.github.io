@@ -1,6 +1,5 @@
 ---
 title: Social Engineering
-tags: Social-Engineering
 key: page-social_engineering
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-02-03-social_eigineering.png"
+image: "/assets/thumbnails/2025-07-23-social_eigineering.png"
 bilingual: true
 date: 2025-07-23 08:16:48
 ---

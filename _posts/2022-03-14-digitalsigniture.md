@@ -1,6 +1,5 @@
 ---
 title: Digital Signatures and Certificates
-tags: Digital-Signature Cryptography Cybersecurity PKI
 key: page-digital_signature
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-04-02-digitalsigniture.png"
+image: "/assets/thumbnails/2022-03-14-digitalsigniture.png"
 bilingual: true
 date: 2022-03-14 12:36:00
 ---

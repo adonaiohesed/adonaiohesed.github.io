@@ -1,12 +1,11 @@
 ---
 title: Reflections on My Job Search Journey
-tags: Carrer
 key: page-job_hunting
 categories:
 - Career
 - Post-Interview
 author: hyoeun
-image: "/assets/thumbnails/2018-03-21-job_hunting.png"
+image: "/assets/thumbnails/2019-01-30-job_hunting.png"
 bilingual: true
 date: 2019-01-30 08:02:24
 ---

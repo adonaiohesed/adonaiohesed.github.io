@@ -1,10 +1,9 @@
 ---
 title: How I will work in 2026
-tags: Mindset
 key: page-mindset_in_next
 categories: [Personal, Identity]
 author: hyoeun
-image: "/assets/thumbnails/2018-01-05-mindset_in_next.png"
+image: "/assets/thumbnails/2018-02-28-mindset_in_next.png"
 bilingual: true
 date: 2018-02-28 10:04:48
 ---

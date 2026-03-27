@@ -1,12 +1,11 @@
 ---
 title: Git Pull Request
-tags: Git Collaborate
 key: page-git_pull_request
 categories:
 - Engineering
 - DevOps & Automation
 author: hyoeun
-image: "/assets/thumbnails/2019-02-02-git_pull_request.png"
+image: "/assets/thumbnails/2020-11-02-git_pull_request.png"
 date: 2020-11-02 22:55:12
 ---
 # [GitHub] The Cheat Sheet for Better Collaboration: Understanding Pull Requests and Setting Up Templates

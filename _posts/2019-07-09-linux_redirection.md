@@ -1,12 +1,11 @@
 ---
 title: 리눅스 리다이렉션 파일디스크립터
-tags: Linux
 key: page-linux_redirection_file_descriptors
 categories:
 - Engineering
 - SysOps & Infrastructure
 author: hyoeun
-image: "/assets/thumbnails/2018-06-05-linux_redirection.png"
+image: "/assets/thumbnails/2019-07-09-linux_redirection.png"
 date: 2019-07-09 23:45:36
 ---
 ## 쉘 커맨드 창에 보이는 기호 분석

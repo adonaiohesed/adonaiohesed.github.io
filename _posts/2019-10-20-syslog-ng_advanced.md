@@ -1,12 +1,11 @@
 ---
 title: Syslog-Ng 심화 사용
-tags: Syslog-Ng Tools
 key: page-syslog_ng_advanced_usage
 categories:
 - Engineering
 - SysOps & Infrastructure
 author: hyoeun
-image: "/assets/thumbnails/2018-07-12-syslog-ng_advanced.png"
+image: "/assets/thumbnails/2019-10-20-syslog-ng_advanced.png"
 date: 2019-10-20 05:24:00
 ---
 ### if, elif, and else 구문

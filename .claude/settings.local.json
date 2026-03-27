@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r 'layout: tag' /Users/hyoeunchoi/Documents/adonaiohesed.github.io --include=*.html)",
+      "Bash(grep -n \"giscus\\\\|analytics\\\\|comments\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_layouts/*.html /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_includes/*.html)",
+      "Bash(xargs git:*)",
+      "Bash(ls -la /Users/hyoeunchoi/Documents/adonaiohesed.github.io/index.*)",
+      "Bash(grep -h \"^categories:\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/*.md)",
+      "Bash(grep \"^categories:\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/*.md)",
+      "Bash(sort -k2)"
+    ]
+  }
+}

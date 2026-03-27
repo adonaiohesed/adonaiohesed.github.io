@@ -1,6 +1,5 @@
 ---
 title: Diamond Model of Intrustion Analysis
-tags: Diamond-Model Intrusion Cybersecurity
 key: page-diamond_model_intrusion
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-04-05-diamond_model.png"
+image: "/assets/thumbnails/2025-01-29-diamond_model.png"
 bilingual: true
 date: 2025-01-29 02:02:24
 ---

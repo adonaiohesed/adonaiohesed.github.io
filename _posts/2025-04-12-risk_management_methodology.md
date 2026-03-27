@@ -1,6 +1,5 @@
 ---
 title: Risk Management Methodology
-tags: Intermediate-Payments-Cybersecurity
 key: page-risk_management_methodology
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2024-12-02-risk_management_methodology.png"
+image: "/assets/thumbnails/2025-04-12-risk_management_methodology.png"
 bilingual: true
 date: 2025-04-12 02:38:24
 ---

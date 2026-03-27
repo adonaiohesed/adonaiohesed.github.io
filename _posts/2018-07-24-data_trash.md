@@ -1,10 +1,9 @@
 ---
 title: Data Waste & Dark Data
-tags: Philosophy
 key: page-data_trash
 categories: [Personal, Philosophy]
 author: hyoeun
-image: "/assets/thumbnails/2018-02-04-data_trash.png"
+image: "/assets/thumbnails/2018-07-24-data_trash.png"
 bilingual: true
 date: 2018-07-24 11:16:48
 ---

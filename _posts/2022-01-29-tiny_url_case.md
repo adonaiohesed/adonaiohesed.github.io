@@ -1,6 +1,5 @@
 ---
 title: Tiny URL case
-tags: TinyURL Web Case-Study
 key: page-tiny_url_case
 categories:
 - Engineering
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-09-01-tiny_url_case.png"
+image: "/assets/thumbnails/2022-01-29-tiny_url_case.png"
 date: 2022-01-29 17:02:24
 ---
 ## URL Shortening Service Design Like TinyURL

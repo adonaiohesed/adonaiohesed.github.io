@@ -1,6 +1,5 @@
 ---
 title: Bypass pinning by repackaging - Android
-tags: Android
 key: page-pinning_bypass
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-07-pinning_bypass.png"
+image: "/assets/thumbnails/2023-03-29-pinning_bypass.png"
 bilingual: true
 date: 2023-03-29 06:07:12
 ---

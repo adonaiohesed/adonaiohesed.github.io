@@ -1,6 +1,5 @@
 ---
 title: Browser Extension Penetration Test
-tags: Browser-Extension
 key: page-browser_extension_penetration_test
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2023-01-13-browser_extension_penetration_test.png"
+image: "/assets/thumbnails/2024-09-05-browser_extension_penetration_test.png"
 date: 2024-09-05 00:50:24
 ---
 ## Browser Extension Security

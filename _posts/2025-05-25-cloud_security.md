@@ -1,6 +1,5 @@
 ---
 title: Cloud Security Overview
-tags: Cloud-Security
 key: page-cloud_security_overview
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-01-01-cloud_security.png"
+image: "/assets/thumbnails/2025-05-25-cloud_security.png"
 bilingual: true
 date: 2025-05-25 22:12:00
 ---

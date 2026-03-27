@@ -1,12 +1,11 @@
 ---
 title: Metasploit
-tags: Metasploit Cybersecurity Penetration-Testing Tools
 key: page-metasploit
 categories: [Tools, Exploitation]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-03-01-metasploit.png"
+image: "/assets/thumbnails/2021-07-23-metasploit.png"
 date: 2021-07-23 20:16:48
 ---
 

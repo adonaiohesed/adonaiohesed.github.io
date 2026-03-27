@@ -1,6 +1,5 @@
 ---
 title: Bypassing the Client-Side Authentication Mechanism
-tags: Client-Side-Authentication
 key: page-client_side_auth
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-14-client_side_auth.png"
+image: "/assets/thumbnails/2023-07-09-client_side_auth.png"
 date: 2023-07-09 11:45:36
 ---
 ## Mobile App Penetration Testing: The Anatomy of Local Data Storage & Runtime Extraction on Android & iOS

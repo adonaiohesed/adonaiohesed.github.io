@@ -1,6 +1,5 @@
 ---
 title: Android Penetration Test Check List
-tags: Android
 key: page-android_penetration_test_check_list
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-22-android_penetration_test_check_list.png"
+image: "/assets/thumbnails/2023-07-24-android_penetration_test_check_list.png"
 date: 2023-07-24 02:16:48
 ---
 -----

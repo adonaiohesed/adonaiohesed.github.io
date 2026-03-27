@@ -1,6 +1,5 @@
 ---
 title: Certificate Pinning
-tags: Cert-Pinning
 key: page-certificate_pinning
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-06-cert_pinning.png"
+image: "/assets/thumbnails/2023-03-14-cert_pinning.png"
 bilingual: true
 date: 2023-03-14 15:36:00
 ---

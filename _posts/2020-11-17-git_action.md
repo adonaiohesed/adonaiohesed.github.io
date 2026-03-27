@@ -1,12 +1,11 @@
 ---
 title: Git Action
-tags: Git Collaborate
 key: page-git_flow
 categories:
 - Engineering
 - DevOps & Automation
 author: hyoeun
-image: "/assets/thumbnails/2019-02-03-git_action.png"
+image: "/assets/thumbnails/2020-11-17-git_action.png"
 date: 2020-11-17 13:26:24
 ---
 # [CI/CD] Collaboration Mastered: Automating Branch-Specific Builds and Deployments with GitHub Actions

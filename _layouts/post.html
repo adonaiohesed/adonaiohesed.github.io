@@ -8,15 +8,23 @@ layout: default
       <header class="post-header">
         <div class="post-meta-top" style="justify-content: center; margin-bottom: 1.5rem; display:flex; gap:0.5rem;">
           {% for cat in page.categories %}
-            <div style="background-color: #172d4d; color: #a8b9d1; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; border: 1px solid #30414d;">{{ cat }}</div>
+            <div class="post-category-tag">{{ cat }}</div>
           {% endfor %}
         </div>
         <h1 class="post-title" itemprop="name headline" style="text-align: center;">{{ page.title | escape }}</h1>
 
+        <div class="post-meta-extra" style="text-align: center; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+          <span style="margin: 0 10px;">·</span>
+          <span id="busuanzi_container_page_pv" style="display: none;">
+            <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: middle; margin-right: 4px;">visibility</span>
+            <span id="busuanzi_value_page_pv"></span> views
+          </span>
+        </div>
+
         {% if page.image %}
           {% assign thumb = page.image.path | default: page.image %}
-          <div style="text-align: center; margin-bottom: 3rem; margin-top: 2rem;">
-             <img src="{{ thumb | relative_url }}" alt="Cover Image for {{ page.title }}" style="width: 100%; border-radius: 12px; height: auto; object-fit: cover; border: 1px solid #30414d;">
+          <div class="post-cover-image" style="background-image: url('{{ thumb | relative_url }}');">
           </div>
         {% endif %}
       </header>
@@ -98,7 +106,7 @@ layout: default
       data-reactions-enabled="1"
       data-emit-metadata="0"
       data-input-position="bottom"
-      data-theme="dark"
+      data-theme="light"
       data-lang="en"
       data-loading="lazy"
       crossorigin="anonymous"
@@ -290,5 +298,59 @@ layout: default
     alignTocSidebar();
     window.addEventListener('load', alignTocSidebar);
     window.addEventListener('resize', alignTocSidebar);
+
+    // ===== Code Block Enhancements =====
+    const highlights = document.querySelectorAll('.post-main-content div.highlight');
+    highlights.forEach(block => {
+      // Avoid duplicate injection if script runs multiple times
+      if (block.querySelector('.code-header')) return;
+
+      // 1. Extract Language
+      let lang = 'code';
+      const classes = block.className.split(' ');
+      const langClass = classes.find(c => c.startsWith('language-'));
+      if (langClass) {
+        lang = langClass.replace('language-', '');
+      } else {
+        // Fallback for Rouge's nested structure if applicable
+        const code = block.querySelector('code');
+        if (code) {
+          const codeClasses = code.className.split(' ');
+          const codeLangClass = codeClasses.find(c => c.startsWith('language-'));
+          if (codeLangClass) lang = codeLangClass.replace('language-', '');
+        }
+      }
+
+      // 2. Create Header
+      const header = document.createElement('div');
+      header.className = 'code-header';
+
+      const langSpan = document.createElement('span');
+      langSpan.className = 'code-lang';
+      langSpan.textContent = lang;
+
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'copy-btn';
+      copyBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size: 16px;">content_copy</span> Copy';
+      
+      copyBtn.addEventListener('click', () => {
+        const codeElement = block.querySelector('pre');
+        const textToCopy = codeElement.innerText;
+        
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          copyBtn.classList.add('copied');
+          copyBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size: 16px;">check</span> Copied';
+          
+          setTimeout(() => {
+            copyBtn.classList.remove('copied');
+            copyBtn.innerHTML = '<span class="material-symbols-outlined" style="font-size: 16px;">content_copy</span> Copy';
+          }, 2000);
+        });
+      });
+
+      header.appendChild(langSpan);
+      header.appendChild(copyBtn);
+      block.insertBefore(header, block.firstChild);
+    });
   });
 </script>

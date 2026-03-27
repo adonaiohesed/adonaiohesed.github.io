@@ -1,6 +1,5 @@
 ---
 title: What is Blockchain?
-tags: Blockchain
 key: page-blockchain_ecosystem
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-12-02-blockchain_ecosystem.png"
+image: "/assets/thumbnails/2022-10-19-blockchain_ecosystem.png"
 bilingual: true
 date: 2022-10-19 14:24:00
 ---

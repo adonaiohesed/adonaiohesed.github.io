@@ -1,6 +1,5 @@
 ---
 title: Android Key Store & iOS Keychain
-tags: Android iOS KeyStore Keychain
 key: page-keystore_keychain
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-04-keystore_keychain.png"
+image: "/assets/thumbnails/2023-02-13-keystore_keychain.png"
 bilingual: true
 date: 2023-02-13 10:33:36
 ---

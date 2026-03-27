@@ -1,6 +1,5 @@
 ---
 title: SolarWinds hack
-tags: SolarWinds Hack Cybersecurity
 key: page-solarwinds_hack
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2020-01-08-solarwinds.png"
+image: "/assets/thumbnails/2021-07-09-solarwinds.png"
 date: 2021-07-09 05:45:36
 ---
 ## 개요

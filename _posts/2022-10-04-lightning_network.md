@@ -1,6 +1,5 @@
 ---
 title: Lightning Network
-tags: Lightning-Network Blockchain
 key: page-lightning_network
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-12-01-lightning_network.png"
+image: "/assets/thumbnails/2022-10-04-lightning_network.png"
 bilingual: true
 date: 2022-10-04 23:52:48
 ---

@@ -1,12 +1,11 @@
 ---
 title: 리눅스 알아두면 좋은 커맨드
-tags: Linux
 key: page-linux_useful_commands
 categories:
 - Engineering
 - SysOps & Infrastructure
 author: hyoeun
-image: "/assets/thumbnails/2018-06-06-linux_command.png"
+image: "/assets/thumbnails/2019-07-24-linux_command.png"
 date: 2019-07-24 14:16:48
 ---
 ## 정렬하지 않고 유니크한 부분만 출력하기

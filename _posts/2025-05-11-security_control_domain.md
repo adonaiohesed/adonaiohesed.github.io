@@ -1,6 +1,5 @@
 ---
 title: Security Control Domains and Associated Roles
-tags: Intermediate-Payments-Cybersecurity
 key: page-security_control_domain
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2024-12-04-security_control_domain.png"
+image: "/assets/thumbnails/2025-05-11-security_control_domain.png"
 bilingual: true
 date: 2025-05-11 07:40:48
 ---

@@ -1,12 +1,11 @@
 ---
 title: 리눅스 기본 지식
-tags: Linux
 key: page-linux_basics
 categories:
 - Engineering
 - SysOps & Infrastructure
 author: hyoeun
-image: "/assets/thumbnails/2018-06-02-linux_basic.png"
+image: "/assets/thumbnails/2019-05-27-linux_basic.png"
 date: 2019-05-27 04:12:00
 ---
 ## 쉘 커맨드 창에 보이는 기호 분석

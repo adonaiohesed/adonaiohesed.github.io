@@ -1,6 +1,5 @@
 ---
 title: WiFi Pineapple
-tags: WiFi-Pineapple
 key: page-wifi_pineapple
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2021-05-10-wifi_pineapple.png"
+image: "/assets/thumbnails/2022-09-20-wifi_pineapple.png"
 bilingual: true
 date: 2022-09-20 09:21:36
 ---

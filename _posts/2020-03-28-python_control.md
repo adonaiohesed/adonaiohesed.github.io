@@ -1,12 +1,11 @@
 ---
 title: 파이썬 제어문
-tags: Python
 key: page-python_control_structures
 categories:
 - Engineering
 - Programming Fundamentals
 author: hyoeun
-image: "/assets/thumbnails/2018-10-03-python_control.png"
+image: "/assets/thumbnails/2020-03-28-python_control.png"
 date: 2020-03-28 21:07:12
 ---
 ## 변수

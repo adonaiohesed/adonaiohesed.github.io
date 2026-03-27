@@ -1,6 +1,5 @@
 ---
 title: EDR Bypass
-tags: EDR
 key: page-edr_bypass
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2025-02-02-edr_bypass.png"
+image: "/assets/thumbnails/2025-07-08-edr_bypass.png"
 bilingual: true
 date: 2025-07-08 17:45:36
 ---

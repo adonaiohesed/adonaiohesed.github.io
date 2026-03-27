@@ -1,12 +1,11 @@
 ---
 title: Vim Customizing
-tags: Vim
 key: page-vim_customizing
 categories: [Tools, Operating System]
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2018-09-06-vim_customizing.png"
+image: "/assets/thumbnails/2020-01-30-vim_customizing.png"
 date: 2020-01-30 11:02:24
 ---
 

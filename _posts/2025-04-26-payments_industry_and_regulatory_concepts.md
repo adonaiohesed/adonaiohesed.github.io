@@ -1,6 +1,5 @@
 ---
 title: Payments Industry and Regulatory Concepts
-tags: Intermediate-Payments-Cybersecurity
 key: page-payments_industry_and_regulatory_concepts
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2024-12-03-payments_industry_and_regulatory_concepts.png"
+image: "/assets/thumbnails/2025-04-26-payments_industry_and_regulatory_concepts.png"
 bilingual: true
 date: 2025-04-26 17:09:36
 ---

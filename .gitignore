@@ -1,54 +1,55 @@
-# Bundler cache
+# Bundler and Jekyll
 .bundle/
 vendor/
-Gemfile.lock
-
-# Jekyll cache
+_site/
 .jekyll-cache/
 .jekyll-metadata
-_site/
+.sass-cache/
 
 # RubyGems
 *.gem
 *.gemspec
 
-# NPM dependencies
+# NPM and Javascript
 node_modules/
 package-lock.json
 yarn.lock
+.eslintcache
 
-# IDE configurations
+# IDEs and Editors
 .idea/
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/tasks.json
+*.swp
+*.swo
+*~
 .ruby-lsp/
 
 # Build artifacts
 _sass/dist/
 assets/js/dist/
 
-# Environment variables
-.env
-.env.local
-
-# OS files
+# OS Specific
 .DS_Store
 .DS_Store?
 ._*
 .AppleDouble
 .LSOverride
-*.swp
-*.swo
-*~
+Icon?
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
 
-# Claude Code
-.claude/
+# Environment and Secrets
+.env
+.env.local
+.env.*.local
 
-# Project-specific
+# Project Specific
 .obsidian/
-.vscode/.DS_Store
-
-# Server output
 server_output.txt
+.gemini
+*.log

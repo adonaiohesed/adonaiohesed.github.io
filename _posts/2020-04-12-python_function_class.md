@@ -1,12 +1,11 @@
 ---
 title: 파이썬 함수와 클래스
-tags: Python
 key: page-python_functions_classes
 categories:
 - Engineering
 - Programming Fundamentals
 author: hyoeun
-image: "/assets/thumbnails/2018-10-04-python_function_class.png"
+image: "/assets/thumbnails/2020-04-12-python_function_class.png"
 date: 2020-04-12 11:38:24
 ---
 ## 함수

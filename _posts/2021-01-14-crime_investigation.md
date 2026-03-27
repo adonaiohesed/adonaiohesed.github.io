@@ -1,6 +1,5 @@
 ---
 title: Crime Investigation
-tags: Crime-Investigation Forensics Cybersecurity
 key: page-crime_investigation
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2019-10-02-crime_investigation.png"
+image: "/assets/thumbnails/2021-01-14-crime_investigation.png"
 date: 2021-01-14 23:31:12
 ---
 ## Chain of Custody 

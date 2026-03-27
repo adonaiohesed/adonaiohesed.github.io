@@ -1,6 +1,5 @@
 ---
 title: Binary Protection
-tags: Binary-Protection
 key: page-binary_protection
 categories:
 - Security
@@ -8,7 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
-image: "/assets/thumbnails/2022-01-10-binary_protection.png"
+image: "/assets/thumbnails/2023-05-12-binary_protection.png"
 bilingual: true
 date: 2023-05-12 01:40:48
 ---

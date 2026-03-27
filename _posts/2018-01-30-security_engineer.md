@@ -1,11 +1,10 @@
 ---
 title: Cybersecurity?
-tags: Cybersecurity Career
 key: page-cybersecurity_engineer
 categories: [Personal, Identity]
 author: hyoeun
 pin: true
-image: "/assets/thumbnails/2018-01-03-security_engineer.png"
+image: "/assets/thumbnails/2018-01-30-security_engineer.png"
 date: 2018-01-30 05:02:24
 ---
 
