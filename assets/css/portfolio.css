@@ -1352,6 +1352,27 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
   border-radius: 4px;
 }
 
+/* ── Hero Section UI ── */
+.ui-layer {
+  position: relative;
+  z-index: 20;
+  height: 100%;
+  pointer-events: none; /* Let background interaction pass through */
+}
+
+.hero-text, .scroll-indicator, .interaction-anchor {
+  pointer-events: auto; /* Enable clicks for actual clickable elements */
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  cursor: pointer;
+}
+
 /* ── Video Wrapper ── */
 .p-video-wrapper {
   position: relative;
@@ -1648,43 +1669,8 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
    Desktop layout is never affected.
    ═══════════════════════════════════════════════════════ */
 
-/* ── Floating nav pill: shrink and scroll on small phones ── */
-@media (max-width: 520px) {
-  .about-nav {
-    top: 12px;
-    padding: 8px 16px;
-    gap: 20px;
-    max-width: calc(100vw - 24px);
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* Hide scrollbar visually but keep functionality */
-    scrollbar-width: none;
-  }
-
-  .about-nav::-webkit-scrollbar {
-    display: none;
-  }
-
-  .about-nav-link {
-    white-space: nowrap;
-    font-size: 13px;
-  }
-}
-
-/* ── Nav links: 44px touch target on mobile ── */
+/* ── CTA buttons: full tap area ── */
 @media (max-width: 768px) {
-  .about-nav-link {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-  }
-
-  /* Hero: respect safe area on notched devices */
-  .lumo-hero {
-    min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
-  }
-
-  /* CTA buttons: full tap area */
   .lumo-hero .cta-container a,
   .lumo-hero .cta-container button {
     min-height: 48px;
@@ -1692,13 +1678,112 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
   }
 }
 
-/* ── Bento grid cards: readable padding on phones ── */
-@media (max-width: 480px) {
-  .p-bento-card {
-    padding: 24px 20px;
+/* ═══════════════════════════════════════════════════════
+   MOBILE: Portfolio — Three.js / Nav / Projects 수정
+   데스크탑은 절대 영향 없음 (max-width 블록만 사용)
+   ═══════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ── 1) Three.js 스크롤 막힘 해결 ──
+     touch-action: pan-y → 수직 스와이프는 브라우저 스크롤로 전달
+     pointer-events: none → 캔버스가 터치를 가로채지 않음 */
+  .lumo-hero {
+    touch-action: pan-y;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    min-height: 100svh;
   }
 
-  .p-hero-title {
-    font-size: 36px;
+  #lumo-three-container {
+    pointer-events: none !important;
+    touch-action: none;
+  }
+
+  .lumo-hero .layer-blur,
+  .lumo-hero .layer-sharp,
+  .lumo-hero .noise-overlay {
+    pointer-events: none !important;
+  }
+
+  /* ── 2) About-nav — Dynamic Island / 노치 대응 ──
+     env(safe-area-inset-top) 이 Dynamic Island 높이 포함한 안전 영역을 반환함
+     거기에 8px 여백 추가 → 노치/아일랜드 아래에 딱 붙음 */
+  .about-nav {
+    top: max(16px, calc(env(safe-area-inset-top) + 8px));
+    gap: 16px;
+    padding: 8px 20px;
+  }
+
+  .about-nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+
+  .nav-lang-btn {
+    min-height: 32px;
+    padding: 4px 10px;
+  }
+
+  /* ── 3) 섹션 패딩 축소 ── */
+  .p-section {
+    padding: 64px 16px;
+  }
+
+  .p-card {
+    padding: 28px 20px;
+  }
+
+  /* ── 4) 프로젝트 row — 세로 스택으로 전환 ──
+     데스크탑: flex-row (이미지 왼쪽/오른쪽 교차)
+     모바일: flex-column (이미지 → 텍스트 순서) */
+  .p-feature-row {
+    flex-direction: column !important; /* nth-child(even)의 row-reverse도 덮어씀 */
+    gap: 28px;
+    padding: 48px 0;
+  }
+
+  .p-feature-image-container {
+    width: 100%;
+    min-height: unset;
+    aspect-ratio: 16/9;
+    flex: unset;
+  }
+
+  .p-feature-text {
+    flex: unset;
+    width: 100%;
+  }
+
+  /* 모바일 목업 컨테이너도 풀 너비 */
+  .mobile-mockup-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .p-section {
+    padding: 48px 12px;
+  }
+
+  .p-bento-grid {
+    gap: 12px;
+  }
+
+  /* 작은 폰에서 nav 텍스트 더 작게 */
+  .about-nav {
+    padding: 6px 14px;
+    gap: 12px;
+  }
+
+  .about-nav-link {
+    font-size: 8px;
+    letter-spacing: 0.15em;
+    padding: 4px 8px;
   }
 }

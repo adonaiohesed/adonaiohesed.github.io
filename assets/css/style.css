@@ -2613,6 +2613,113 @@ body.security-theme .post-category-tag {
    Desktop layout is never affected.
    ═══════════════════════════════════════════════════════ */
 
+/* ── MOBILE: Header ──────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* 1) gh-nav-top: 3열 그리드 → 2줄 flex column */
+  .gh-nav-top {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 16px 10px;
+    gap: 8px;
+  }
+
+  /* 빈 왼쪽 스페이서 숨김 */
+  .header-left-spacer {
+    display: none;
+  }
+
+  /* Wiki | Portfolio 링크: 첫 줄, 중앙 정렬 */
+  .gh-center-nav {
+    justify-content: center;
+    gap: 24px;
+    order: 1;
+  }
+
+  /* 검색 + EN/KR: 두 번째 줄, 가로로 나란히 */
+  .search-container {
+    justify-self: unset;
+    width: 100%;
+    order: 2;
+  }
+
+  .search-container > div {
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* 검색창이 남은 공간 모두 차지 */
+  .gh-search {
+    flex: 1;
+    width: auto;
+  }
+
+  /* EN/KR 버튼 줄어들지 않게 */
+  .lang-toggle-group {
+    flex-shrink: 0;
+  }
+
+  /* 2) gh-nav-sub 카테고리: 가로 스크롤 pills */
+  .gh-nav-sub {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 16px 8px;
+    gap: 4px;
+    /* 스크롤바 숨기기 */
+    scrollbar-width: none;
+  }
+
+  .gh-nav-sub::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 각 카테고리 항목: 줄바꿈 없이 pill 형태 */
+  .gh-sub-item-wrapper {
+    flex-shrink: 0;
+  }
+
+  .gh-sub-item {
+    padding: 8px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+    border-radius: 20px;
+    border-bottom: none;
+    background: rgba(232, 241, 255, 0.06);
+  }
+
+  .gh-sub-item:hover,
+  .gh-sub-item-wrapper.active .gh-sub-item {
+    background: rgba(255, 157, 61, 0.12);
+    border-bottom: none;
+  }
+
+  /* 3) 메가메뉴: 모바일에서 전체 너비로 */
+  .mega-menu {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .mega-menu-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 16px;
+  }
+
+  .mega-menu-right {
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+    padding-left: 0;
+    padding-top: 20px;
+  }
+
+  .mega-items-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* ── Safe area insets (iPhone X+ notch / Dynamic Island) ── */
 .gh-header {
   padding-top: env(safe-area-inset-top, 0px);
