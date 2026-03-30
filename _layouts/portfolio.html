@@ -982,11 +982,7 @@ layout: nil
       controls.autoRotateSpeed = 3;
       controls.enablePan = false;
       controls.enableZoom = false;
-      
-      // Disable controls on mobile to allow scrolling
-      if (window.innerWidth <= 768) {
-        controls.enabled = false;
-      }
+      controls.enabled = false; // Disable all interaction as per user request
 
       // Fixed LUMO Accent Color (Light Sky Blue)
       const getAccentHex = () => '#b3e5fc';
