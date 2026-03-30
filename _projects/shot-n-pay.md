@@ -17,6 +17,9 @@ gallery:
 private: false
 order: 2
 display_type: mobile
+zoom_intensity: high
+zoom_screen: true
+hide_island: true
 ---
 Designed with a "Zero-Login" guest flow, Shot N Pay maximizes user velocity and social engagement. Built with a focus on high-performance mobile UX, the application handles complex tax and tip calculations autonomously through an interactive, game-inspired interface.
 <hr />

@@ -1,7 +1,7 @@
 ---
 title: Auto-Rotating Password Manager<hr />자동 암호 변경 관리 도구
 description: A local-first, zero-cost credential manager designed for personal sovereignty. It proactively monitors data breaches and automatically updates all associated account passwords if a leak is detected. While offering the same robust features as premium SaaS solutions, it remains free and tailored specifically for my own security needs.<hr />로컬 기반으로 작동하며 기존 비밀번호가 유출되었을 경우 관련 비밀번호의 모든 계정 비밀번호를 자동으로 업데이트 시켜줍니다. 동시에 다양한 사이트의 비밀번호를 암호화 하여 관리하는 툴로 여타 SaaS 툴과 동일한 기능을 하지만, 별도의 비용이 들지 않으며 저를 위해 만든 특별한 프로젝트입니다.
-image: /assets/images/projects/passvault.png
+image: 
 private: false
 order: 4
 display_type: desktop

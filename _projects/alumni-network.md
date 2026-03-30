@@ -6,10 +6,18 @@ gallery:
   - /assets/images/projects/alumni-1.png
   - /assets/images/projects/alumni-2.png
   - /assets/images/projects/alumni-3.png
-video: /assets/videos/projects/alumni_demo.mp4
+  - /assets/images/projects/alumni-4.png
+  - /assets/images/projects/alumni-5.png
+  - /assets/images/projects/alumni-6.png
+  - /assets/images/projects/alumni-7.png
+
+video: 
 private: false
 order: 1
 display_type: mobile
+zoom_intensity: none
+zoom_screen: false
+hide_island: true
 ---
 Every aspect—from initial UX/UI prototyping to complex backend orchestration and security auditing—was developed as a solo initiative. The project's technical excellence led to its official sanctioning by the University and the Alumni Association, which now oversee its daily operations.
 <hr />

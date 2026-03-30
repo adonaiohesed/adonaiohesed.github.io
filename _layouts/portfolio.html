@@ -587,17 +587,18 @@ layout: nil
           <div class="p-feature-image-container reveal {{ cycle_anim }} {% if project.display_type == 'mobile' %}mobile-mockup-container p-gallery-slider{% else %}init-laser-container{% endif %}" 
                {% if project.display_type == 'mobile' and project.gallery %}id="gallery-{{ project.title | slugify }}"{% endif %}>
             {% if project.display_type == 'mobile' %}
-              <div class="iphone-frame">
+              <div class="iphone-frame {{ project.zoom_intensity | default: 'none' }}">
+                {% unless project.hide_island %}<div class="iphone-island"></div>{% endunless %}
                 <div class="iphone-reflection"></div>
                 <div class="iphone-screen">
                   {% if project.gallery %}
                       <div class="p-gallery-track">
                         {% for img in project.gallery %}
-                          <img src="{{ img | relative_url }}" class="p-feature-img p-gallery-item matrix-tint" alt="{{ project.title }}">
+                          <img src="{{ img | relative_url }}" class="p-feature-img p-gallery-item matrix-tint {% if project.zoom_screen %}p-gallery-zoom{% endif %}" alt="{{ project.title }}">
                         {% endfor %}
                       </div>
                   {% elsif project.image %}
-                    <img src="{{ project.image | relative_url }}" class="p-feature-img matrix-tint" alt="{{ project.title }}">
+                    <img src="{{ project.image | relative_url }}" class="p-feature-img matrix-tint {% if project.zoom_screen %}p-gallery-zoom{% endif %}" alt="{{ project.title }}">
                   {% endif %}
                 </div>
               </div>
@@ -773,17 +774,42 @@ layout: nil
         const originalText = el.innerText;
         const chars = "0123456789ABCDEF<>[]/_";
         let iterations = 0;
-        const interval = setInterval(() => {
+        
+        // Target 1.5s total duration for project titles
+        // For section titles, we use a slower pace
+        const isProjectTitle = el.classList.contains('feature-title');
+        const targetDuration = isProjectTitle ? 1500 : 2720;
+        const interval = 50; 
+        const totalSteps = targetDuration / interval;
+        const increment = originalText.length / totalSteps;
+
+        const flickerInterval = setInterval(() => {
           el.innerText = originalText.split("")
             .map((char, index) => {
               if (index < iterations) return originalText[index];
               return chars[Math.floor(Math.random() * chars.length)];
             })
             .join("");
-          if (iterations >= originalText.length) clearInterval(interval);
-          iterations += 0.75; // Adjusted to target ~2.7s for the main title
-        }, 60); // Increased from 30ms for less flickery effect
+          
+          if (iterations >= originalText.length) clearInterval(flickerInterval);
+          iterations += increment; 
+        }, interval);
       }
+
+      // ===== Image Preloading & Optimization =====
+      const preloadImages = () => {
+        const imagesToPreload = [];
+        document.querySelectorAll('.p-gallery-item').forEach((img, idx) => {
+          if (idx < 15) { // Preload first few images of all galleries
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.as = 'image';
+            link.href = img.src;
+            document.head.appendChild(link);
+          }
+        });
+      };
+      window.addEventListener('load', preloadImages);
 
       // ===== Language Toggle Logic =====
       const langBtns = document.querySelectorAll('.nav-lang-btn');
