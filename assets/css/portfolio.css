@@ -1379,6 +1379,23 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
   animation: fadeInSlow 2.5s cubic-bezier(0.2, 0.0, 0.2, 1) forwards;
 }
 
+#lumo-three-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  touch-action: auto; /* Allow scrolling on desktop */
+}
+
+@media (max-width: 768px) {
+  #lumo-three-container {
+    touch-action: auto !important; /* Force allow scrolling on mobile touch screens */
+    pointer-events: none; /* Safely pass all touch events to the page scroll */
+  }
+}
+
 #three-container {
   position: absolute;
   top: 0;
@@ -1624,4 +1641,64 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
     .lumo-hero .ui-layer { padding: 2rem; }
     .lumo-hero .coords { display: none; }
     .lumo-hero .cta-container { flex-direction: column; width: 100%; padding: 0 2rem; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   PORTFOLIO MOBILE IMPROVEMENTS
+   Desktop layout is never affected.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Floating nav pill: shrink and scroll on small phones ── */
+@media (max-width: 520px) {
+  .about-nav {
+    top: 12px;
+    padding: 8px 16px;
+    gap: 20px;
+    max-width: calc(100vw - 24px);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar visually but keep functionality */
+    scrollbar-width: none;
+  }
+
+  .about-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .about-nav-link {
+    white-space: nowrap;
+    font-size: 13px;
+  }
+}
+
+/* ── Nav links: 44px touch target on mobile ── */
+@media (max-width: 768px) {
+  .about-nav-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Hero: respect safe area on notched devices */
+  .lumo-hero {
+    min-height: calc(100vh + env(safe-area-inset-bottom, 0px));
+  }
+
+  /* CTA buttons: full tap area */
+  .lumo-hero .cta-container a,
+  .lumo-hero .cta-container button {
+    min-height: 48px;
+    justify-content: center;
+  }
+}
+
+/* ── Bento grid cards: readable padding on phones ── */
+@media (max-width: 480px) {
+  .p-bento-card {
+    padding: 24px 20px;
+  }
+
+  .p-hero-title {
+    font-size: 36px;
+  }
 }

@@ -34,7 +34,8 @@
       "Bash(python3:*)",
       "Bash(grep -n \"^---$\\\\|^-----$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)",
       "Bash(grep -c \"^---$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)",
-      "Bash(grep -n \"^---$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)"
+      "Bash(grep -n \"^---$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)",
+      "Bash(grep -n \"viewport\\\\|meta name\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_includes/*.html)"
     ],
     "additionalDirectories": [
       "/Users/hyoeunchoi/.claude/skills/taste-skill",

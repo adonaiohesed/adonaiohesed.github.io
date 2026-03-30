@@ -2606,3 +2606,104 @@ body.security-theme .post-category-tag {
   background-color: rgba(16, 185, 129, 0.1);
   border-color: var(--accent-color);
 }
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE IMPROVEMENTS
+   All rules below use max-width or mobile-only targets.
+   Desktop layout is never affected.
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Safe area insets (iPhone X+ notch / Dynamic Island) ── */
+.gh-header {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.gh-footer {
+  padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ── Tables in post content: horizontal scroll on small screens ── */
+/* Applied globally — tables are too narrow on mobile without this */
+.post-main-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Post title: reduce font size on small phones ── */
+@media (max-width: 480px) {
+  .post-header h1 {
+    font-size: 26px;
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+  }
+
+  .post-header {
+    margin: 40px 0 28px;
+  }
+
+  .post-main-content {
+    font-size: 16px;
+  }
+
+  .post-main-content h2 {
+    font-size: 22px;
+  }
+
+  .post-main-content h3 {
+    font-size: 18px;
+  }
+}
+
+/* ── TOC toggle button: 44px minimum touch target ── */
+@media (max-width: 1024px) {
+  .post-toc-toggle {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ── Navigation links: 44px touch target ── */
+@media (max-width: 768px) {
+  .gh-nav-links a,
+  .footer-col-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ── Very small screens: 360px and below ── */
+@media (max-width: 360px) {
+  .hero-banner-inner {
+    padding: 36px 12px 44px;
+  }
+
+  .home-wrapper,
+  .page-wrapper {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .post-layout {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* ── Landscape orientation on phones ── */
+/* Prevents hero from being too tall when phone is horizontal */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-banner-inner {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .hero-title {
+    font-size: 26px;
+  }
+}
