@@ -1360,17 +1360,59 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
   pointer-events: none; /* Let background interaction pass through */
 }
 
-.hero-text, .scroll-indicator, .interaction-anchor {
-  pointer-events: auto; /* Enable clicks for actual clickable elements */
-}
-
-.scroll-indicator {
+.lumo-hero .scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 25;
   cursor: pointer;
+  pointer-events: auto; /* Ensure it can be clicked */
+}
+
+.lumo-hero .chevron {
+  position: absolute;
+  width: 28px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.lumo-hero .chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.lumo-hero .chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.lumo-hero .chevron:before,
+.lumo-hero .chevron:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background: var(--c-accent); /* Use theme accent */
+}
+
+.lumo-hero .chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+}
+
+.lumo-hero .chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+}
+
+@keyframes move {
+  25% { opacity: 1; }
+  33% { opacity: 1; transform: translateY(30px); }
+  67% { opacity: 1; transform: translateY(40px); }
+  100% { opacity: 0; transform: translateY(55px) scale3d(0.5, 0.5, 0.5); }
 }
 
 /* ── Video Wrapper ── */
@@ -1467,7 +1509,6 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
     min-height: 800px;
     width: 100vw;
     background-color: var(--c-bg-base);
-  n2mq_yhvhrqjxndkc0000gn/T/antif);
     color: var(--c-text-main);
     cursor: none;
     -webkit-font-smoothing: antialiased;
@@ -1616,11 +1657,7 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
     100% { box-shadow: 0 0 20px rgba(230, 126, 34, 0.3); }
 }
 
-.lumo-hero .scroll-indicator {
-    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; opacity: 0.7; animation: bounce-lumo 2s infinite;
-}
-
-.lumo-hero .chevron { width: 15px; height: 15px; border-bottom: 2px solid var(--c-accent); border-right: 2px solid var(--c-accent); transform: rotate(45deg); }
+/* Removed duplicate scroll-indicator and chevron for consolidation */
 
 @keyframes bounce-lumo {
     0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
