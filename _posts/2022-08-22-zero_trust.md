@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2022-08-22-zero_trust.png"
 bilingual: true
 date: 2022-08-22 04:19:12
 ---
-# Zero Trust Architecture: A New Paradigm in Modern Cybersecurity
+## Zero Trust Architecture: A New Paradigm in Modern Cybersecurity
 
 ## What is Zero Trust?
 
@@ -204,7 +204,7 @@ Government and industry regulatory bodies are increasingly recommending or requi
 
 ---
 
-# 제로 트러스트 아키텍처: 현대 사이버 보안의 새로운 패러다임
+## 제로 트러스트 아키텍처: 현대 사이버 보안의 새로운 패러다임
 
 ## 제로 트러스트란 무엇인가?
 

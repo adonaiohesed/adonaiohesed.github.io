@@ -7,6 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2023-07-09-client_side_auth.png"
 date: 2023-07-09 11:45:36
 ---

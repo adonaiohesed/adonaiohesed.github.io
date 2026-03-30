@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2023-03-14-cert_pinning.png"
 bilingual: true
 date: 2023-03-14 15:36:00
 ---
-# What is Certificate Pinning?
+## What is Certificate Pinning?
 
 Certificate Pinning is a method where a client application "pins" specific server certificates (or related data) to trust only those certificates. This ensures stricter certificate validation during network communication and effectively defends against **MITM (Man-in-the-Middle)** attacks. Key characteristics include:
 
@@ -261,7 +261,7 @@ class Program
 
 ---
 
-# Certificate Pinning이란?
+## Certificate Pinning이란?
 
 Certificate Pinning은 클라이언트 애플리케이션에서 특정 서버 인증서(또는 관련 데이터를) "고정"하여 해당 인증서만 신뢰하는 방식입니다. 이를 통해 네트워크 통신 과정에서 인증서 검증을 보다 엄격히 수행하며, **MITM(Man-in-the-Middle)** 공격을 효과적으로 방어할 수 있습니다. 주요 특징은 다음과 같습니다:
 

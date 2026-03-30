@@ -8,7 +8,8 @@ layout: nil
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | Portfolio</title>
   <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
 
   <!-- Google Analytics -->
@@ -40,42 +41,82 @@ layout: nil
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header id="section-intro" class="p-section p-hero theme-anchor" data-theme="theme-intro">
-    <div class="hero-container">
-      <div class="p-hero-status reveal rise-up">
-        <div class="p-hero-status-inner">
-          <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 6px; vertical-align: middle;">verified</span>
-          AGENTIC_PROTOCOL: ACTIVE
-        </div>
-      </div>
-      <h1 class="p-hero-title reveal rise-up">HYOEUN CHOI</h1>
-      <p class="p-hero-desc reveal rise-up">
-        <span class="lang-section" data-lang="en"><strong>Red Team & Pentest Expert | Security Architect</strong>. Combining offensive precision with a developer's perspective to automate large-scale infrastructure defense.</span>
-        <span class="lang-section" data-lang="kr"><strong>레드팀과 펜테스터의 전문성을 결합한 보안 아키텍트</strong>. 개발자 출신의 안목으로 블루팀과 협업하며, 자동화 기술을 통해 대규모 보안 인프라를 혁신적으로 강화합니다.</span>
-      </p>
-      
-      <blockquote class="p-quote-block reveal rise-up">
-        <span class="lang-section" data-lang="en">Security is more than a technology—it defines the culture of an organization and the velocity of its business.</span>
-        <span class="lang-section" data-lang="kr">보안은 기술을 넘어 조직의 문화와 비즈니스의 속도를 결정합니다.</span>
-      </blockquote>
+  <!-- LUMO Hero Section -->
+  <section id="section-intro" class="lumo-hero theme-anchor" data-theme="theme-intro">
+    <div id="lumo-three-container"></div>
+    <div class="layer-sharp"></div>
+    <div class="layer-blur"></div>
+    <div class="noise-overlay"></div>
 
-      <div class="p-hero-metrics reveal rise-up">
-        <div class="metric-box">
-          <span class="material-symbols-outlined metric-icon">rocket_launch</span>
-          <span class="metric-txt">Identity: Entrepreneur</span>
+    <div class="ui-layer">
+        <main class="hero-text">
+            <h1 class="prompt-main">HYOEUN CHOI</h1>
+            <p class="prompt-sub">
+                <span class="lang-section" data-lang="en">Red Team & Pentest Expert | Security Architect.<br>Combining offensive precision with a developer's perspective to automate large-scale infrastructure&nbsp;defense.</span>
+                <span class="lang-section" data-lang="kr">레드팀과 펜테스터의 전문성을 결합한 보안 아키텍트. <br>개발자 출신의 안목으로 블루팀과 협업하며, 자동화 기술을 통해 대규모 보안 인프라를 혁신적으로&nbsp;강화합니다.</span>
+            </p>
+            <div class="hero-manifesto reveal" style="animation-delay: 2.2s;">
+                <span class="lang-section" data-lang="en">“Security is more than a technology—it defines the culture of an organization and the velocity of its&nbsp;business.”</span>
+                <span class="lang-section" data-lang="kr">“보안은 기술을 넘어 조직의 문화와 비즈니스의 속도를&nbsp;결정합니다.”</span>
+            </div>
+        </main>
+
+        <div class="scroll-indicator">
+            <div class="chevron"></div>
         </div>
-        <div class="metric-box">
-          <span class="material-symbols-outlined metric-icon">shield_with_heart</span>
-          <span class="metric-txt">Philosophy: Purple Team</span>
+
+        <div class="interaction-anchor">
+            <span class="label-enter">Initiate Motion</span>
         </div>
-        <div class="metric-box">
-          <span class="material-symbols-outlined metric-icon">speed</span>
-          <span class="metric-txt">Impact: Business Velocity</span>
-        </div>
-      </div>
     </div>
-  </header>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+  </section>
+
+  <script>
+    const hero = document.getElementById('section-intro');
+    const blurLayer = document.querySelector('.lumo-hero .layer-blur');
+    const cursorDot = document.querySelector('.lumo-hero .cursor-dot');
+    const cursorOutline = document.querySelector('.lumo-hero .cursor-outline');
+    
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = window.innerWidth / 2;
+    let cursorY = window.innerHeight / 2;
+
+    hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Spotlight update
+        blurLayer.style.setProperty('--x', `${x}px`);
+        blurLayer.style.setProperty('--y', `${y}px`);
+
+        // Target coords for cursor
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    const animateCursor = () => {
+        const dx = mouseX - cursorX;
+        const dy = mouseY - cursorY;
+        
+        cursorX += dx * 0.15;
+        cursorY += dy * 0.15;
+        
+        if(cursorOutline) {
+            cursorOutline.style.left = cursorX + 'px';
+            cursorOutline.style.top = cursorY + 'px';
+        }
+        
+        requestAnimationFrame(animateCursor);
+    };
+    animateCursor();
+  </script>
 
   <!-- Identity Bento Grid -->
   <section class="p-section theme-anchor" data-theme="theme-intro">
@@ -193,8 +234,8 @@ layout: nil
           </div>
         </div>
         <ul class="exp-list">
-          <li class="lang-section" data-lang="en">Leading the R&D of an integrated security platform (Inventory, Risk, Detection), generating $1M+ in enterprise value and reducing manual workload by 40+ hours/month.</li>
-          <li class="lang-section" data-lang="kr">인벤토리, 리스크, 탐지 및 시무를 통합한 전사 보안 플랫폼 개발을 주도하여, 연간 $1M 이상의 가치를 창출하고 월 40시간 이상의 수동 업무를 단축했습니다.</li>
+          <li class="lang-section" data-lang="en">Leading a team of 3 in the R&D of an integrated security platform (Inventory, Risk, Detection), generating $1M+ in enterprise value and reducing manual workload by 40+ hours/month.</li>
+          <li class="lang-section" data-lang="kr">3명의 팀원을 이끌며 인벤토리, 리스크, 탐지 및 시무를 통합한 전사 보안 플랫폼 개발을 주도하여, 연간 $1M 이상의 가치를 창출하고 월 40시간 이상의 수동 업무를 단축했습니다.</li>
           <li class="lang-section" data-lang="en">Orchestrating high-impact Red/Purple Team exercises in hybrid cloud environments using Cobalt Strike and MITRE ATT&CK, while automating offensive infrastructure to enrich defensive threat intelligence.</li>
           <li class="lang-section" data-lang="kr">Cobalt Strike와 MITRE ATT&CK 프레임워크를 활용해 하이브리드 클라우드 환경에서 고도화된 Red/Purple Team 훈련을 수행하고, 공방 인프라 자동화를 통해 전사적 위협 인텔리전스를 강화했습니다.</li>
           <li class="lang-section" data-lang="en">Spearheading mobile pentesting and developing AI-powered automated testing frameworks, reducing overall assessment time by 30%.</li>
@@ -474,65 +515,37 @@ layout: nil
     </div>
   </section>
 
-  <!-- Signature Projects -->
-
-  <section id="section-projects" class="p-section theme-anchor" data-theme="theme-projects">
-    <h2 class="reveal rise-up" style="font-size: 48px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 64px; text-align: center;">Signature Projects</h2>
-    
-    {% assign projects = site.projects | default: site.collections.projects.docs %}
-    {% if projects %}
-      {% assign public_projects = projects | where: "private", false | sort: "order" %}
-      {% for project in public_projects %}
-        {% capture cycle_anim %}{% cycle 'slide-in-right', 'slide-in-left' %}{% endcapture %}
-        <div class="p-feature-row">
-          <div class="p-feature-text reveal rise-up">
-            <h3 class="feature-title">{{ project.title }}</h3>
-            {% assign desc_parts = project.description | split: '<hr />' %}
-            <p class="feature-desc">
-              <span class="lang-section" data-lang="en">{{ desc_parts[0] }}</span>
-              <span class="lang-section" data-lang="kr">{{ desc_parts[1] | default: desc_parts[0] }}</span>
-            </p>
-          </div>
-          <div class="p-feature-image-container reveal {{ cycle_anim }}">
-            {% if project.image %}
-              <img src="{{ project.image | relative_url }}" class="p-feature-img" alt="{{ project.title }}">
-            {% else %}
-              <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); display: flex; align-items: center; justify-content: center; color: var(--p-accent);">
-                <span class="material-symbols-outlined" style="font-size: 64px;">dataset</span>
-              </div>
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    {% endif %}
-  </section>
-
-  <!-- Confidential Experience -->
-  <section class="p-section theme-anchor" data-theme="theme-projects">
-    <div style="margin-bottom: 64px;">
-      <h2 class="reveal rise-up" style="font-size: 40px; font-weight: 900; letter-spacing: -0.03em;">
-        <span class="lang-section" data-lang="en">Confidential Projects</span>
-        <span class="lang-section" data-lang="kr">비공개 프로젝트</span>
-      </h2>
-      <p class="reveal rise-up" style="color: var(--p-text-muted); margin-top: 12px;">
-        <span class="lang-section" data-lang="en">Due to the sensitive nature of these works, details are summarized without proprietary information.</span>
-        <span class="lang-section" data-lang="kr">작업의 민감한 성격으로 인해, 세부 사항은 기밀 정보 없이 요약되어 제공됩니다.</span>
-      </p>
-    </div>
+  <!-- Strategic Enterprise Initiatives -->
+  <section class="p-section theme-anchor" data-theme="theme-projects" style="position: relative;">
+    <div class="project-grid-overlay"></div>
+    <div style="position: relative; z-index: 1;">
+      <div style="margin-bottom: 80px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+        <span class="tech-breadcrumb lang-section" data-lang="en">CORE_INIT: ENTERPRISE_PROJECTS</span>
+        <span class="tech-breadcrumb lang-section" data-lang="kr">시스템 롬: 전사적 보안 프로젝트</span>
+        <h2 class="reveal rise-up init-glitch" style="font-size: 40px; font-weight: 900; letter-spacing: -0.03em;">
+          <span class="lang-section" data-lang="en">Enterprise-Level Security Projects</span>
+          <span class="lang-section" data-lang="kr">전사적 보안 프로젝트 및 R&D</span>
+        </h2>
+        <p class="reveal rise-up" style="color: var(--p-text-muted); margin-top: 16px; max-width: 800px;">
+          <span class="lang-section" data-lang="en">Selected high-impact enterprise-level projects focused on security infrastructure, risk mitigation, and defensive R&D for global organizations.</span>
+          <span class="lang-section" data-lang="kr">글로벌 기업 재직 중 직접 수행한 대규모 보안 인프라 구축, 리스크 완화 및 방어 시스템 R&D 프로젝트들입니다.</span>
+        </p>
+      </div>
     <div class="confidential-grid">
-      {% if projects %}
+      {% assign projects = site.collections.projects.docs | default: site.projects %}
+      {% if projects.size > 0 %}
         {% assign private_projects = projects | where: "private", true | sort: "order" %}
         {% for project in private_projects %}
         <div class="conf-card reveal rise-up">
-          <div class="conf-icon"><span class="material-symbols-outlined">lock</span></div>
+          <div class="conf-icon"><span class="material-symbols-outlined">business_center</span></div>
           <div class="conf-content">
             {% assign title_parts = project.title | split: '<hr />' %}
             {% assign desc_parts = project.description | split: '<hr />' %}
-            <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px;">
+            <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px; word-break: keep-all;">
               <span class="lang-section" data-lang="en">{{ title_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ title_parts[1] | default: title_parts[0] }}</span>
             </h3>
-            <p style="font-size: 14px; color: var(--p-text-muted); line-height: 1.6;">
+            <p style="font-size: 14px; color: var(--p-text-muted); line-height: 1.6; word-break: keep-all;">
               <span class="lang-section" data-lang="en">{{ desc_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ desc_parts[1] | default: desc_parts[0] }}</span>
             </p>
@@ -540,24 +553,116 @@ layout: nil
         </div>
         {% endfor %}
       {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Side Projects -->
+  <section id="section-projects" class="p-section theme-anchor" data-theme="theme-projects" style="position: relative;">
+    <div class="project-grid-overlay"></div>
+    <div style="position: relative; z-index: 1;">
+      <h2 class="reveal rise-up init-glitch" style="font-size: 48px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 64px; text-align: center;">
+        <span class="lang-section" data-lang="en">Side Projects</span>
+        <span class="lang-section" data-lang="kr">사이드 프로젝트</span>
+      </h2>
+    
+    {% if projects %}
+      {% assign public_projects = projects | where: "private", false | sort: "order" %}
+      {% for project in public_projects %}
+        {% capture cycle_anim %}{% cycle 'slide-in-right', 'slide-in-left' %}{% endcapture %}
+        <div class="p-feature-row">
+          <div class="p-feature-text reveal rise-up">
+            <span class="tech-breadcrumb">MODULE_PHASE: {{ forloop.index | prepend: '0' }}</span>
+            {% assign title_parts = project.title | split: '<hr />' %}
+            <h3 class="feature-title init-glitch">
+              <span class="lang-section" data-lang="en">{{ title_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ title_parts[1] | default: title_parts[0] }}</span>
+            </h3>
+            {% assign desc_parts = project.description | split: '<hr />' %}
+            <p class="feature-desc">
+              <span class="lang-section" data-lang="en">{{ desc_parts[0] }}</span>
+              <span class="lang-section" data-lang="kr">{{ desc_parts[1] | default: desc_parts[0] }}</span>
+            </p>
+          </div>
+          <div class="p-feature-image-container reveal {{ cycle_anim }} {% if project.display_type == 'mobile' %}mobile-mockup-container p-gallery-slider{% else %}init-laser-container{% endif %}" 
+               {% if project.display_type == 'mobile' and project.gallery %}id="gallery-{{ project.title | slugify }}"{% endif %}>
+            {% if project.display_type == 'mobile' %}
+              <div class="iphone-frame">
+                <div class="iphone-reflection"></div>
+                <div class="iphone-screen">
+                  {% if project.gallery %}
+                      <div class="p-gallery-track">
+                        {% for img in project.gallery %}
+                          <img src="{{ img | relative_url }}" class="p-feature-img p-gallery-item matrix-tint" alt="{{ project.title }}">
+                        {% endfor %}
+                      </div>
+                  {% elsif project.image %}
+                    <img src="{{ project.image | relative_url }}" class="p-feature-img matrix-tint" alt="{{ project.title }}">
+                  {% endif %}
+                </div>
+              </div>
+              {% if project.gallery %}
+                <div class="p-gallery-controls mobile-controls">
+                  <button class="gallery-prev"><span class="material-symbols-outlined">chevron_left</span></button>
+                  <button class="gallery-next"><span class="material-symbols-outlined">chevron_right</span></button>
+                </div>
+              {% endif %}
+            {% else %}
+              <div class="init-laser-line"></div>
+              <div class="img-scanlines"></div>
+              {% if project.video %}
+                <div class="p-video-wrapper">
+                  <video src="{{ project.video | relative_url }}" class="p-feature-img matrix-tint" autoplay muted loop playsinline loading="lazy"></video>
+                  <div class="p-video-overlay">
+                    <span class="material-symbols-outlined">play_circle</span>
+                  </div>
+                </div>
+              {% elsif project.gallery %}
+                <div class="p-gallery-slider" id="gallery-{{ project.title | slugify }}">
+                  <div class="p-gallery-track">
+                    {% for img in project.gallery %}
+                      <img src="{{ img | relative_url }}" class="p-feature-img p-gallery-item matrix-tint" alt="{{ project.title }}">
+                    {% endfor %}
+                  </div>
+                  <div class="p-gallery-controls">
+                    <button class="gallery-prev"><span class="material-symbols-outlined">chevron_left</span></button>
+                    <button class="gallery-next"><span class="material-symbols-outlined">chevron_right</span></button>
+                  </div>
+                  <div class="p-gallery-dots">
+                    {% for img in project.gallery %}
+                      <span class="dot {% if forloop.first %}active{% endif %}"></span>
+                    {% endfor %}
+                  </div>
+                </div>
+              {% elsif project.image %}
+                <img src="{{ project.image | relative_url }}" class="p-feature-img matrix-tint" alt="{{ project.title }}">
+              {% else %}
+                <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #111827 0%, #1f2937 100%); display: flex; align-items: center; justify-content: center; color: var(--p-accent);">
+                  <span class="material-symbols-outlined" style="font-size: 64px;">dataset</span>
+                </div>
+              {% endif %}
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+      {% endif %}
     </div>
   </section>
 
   <!-- CTF Achievement Log -->
-  <section id="section-ctfs" class="p-section theme-anchor" data-theme="theme-ctf">
+  <section id="section-ctfs" class="p-section theme-anchor" data-theme="theme-ctf" style="position: relative; overflow: hidden;">
+    <div id="ctf-three-container"></div>
     <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px;">
       <h2 class="reveal" style="font-size: 48px; font-weight: 900; letter-spacing: -0.04em;">
-        <span class="lang-section" data-lang="en">CTF Rankings</span>
-        <span class="lang-section" data-lang="kr">CTF 랭킹</span>
+        <span class="lang-section ctf-typing-title" data-lang="en">CTF Rankings</span>
+        <span class="lang-section ctf-typing-title" data-lang="kr">CTF 랭킹</span>
       </h2>
-      <a href="https://ctftime.org/team/303159/" target="_blank" class="reveal" style="display: block; text-decoration: none; transition: var(--p-transition);">
-        <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); padding: 12px 24px; border-radius: 12px; color: var(--p-accent); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 8px;">
-          <span class="material-symbols-outlined" style="font-size: 20px;">groups</span>
-          <span class="lang-section" data-lang="en">Active Team Member: <strong>RubiyaLab</strong></span>
-          <span class="lang-section" data-lang="kr">활동 팀: <strong>RubiyaLab</strong></span>
+        <div style="background: var(--p-glass-bg); border: 1px solid var(--p-glass-border); padding: 12px 24px; border-radius: 12px; color: var(--p-accent); font-weight: 700; font-size: 14px; display: inline-flex; align-items: center; gap: 8px; position: relative; z-index: 10;">
+          <div class="ctf-pulse-dot"></div>
+          <span class="lang-section ctf-team-label" data-lang="en">> Team: <strong>RubiyaLab</strong></span>
+          <span class="lang-section ctf-team-label" data-lang="kr">> Team: <strong>RubiyaLab</strong></span>
           <span class="material-symbols-outlined" style="font-size: 14px; opacity: 0.5;">open_in_new</span>
         </div>
-      </a>
     </div>
 
     <div class="ctf-timeline staggered-reveal">
@@ -565,22 +670,22 @@ layout: nil
       {% if ctfs %}
         {% assign sorted_ctfs = ctfs | sort: 'date' | reverse %}
         {% for ctf in sorted_ctfs %}
-        <div class="ctf-row reveal rise-up">
+        <div class="ctf-row reveal">
           <div class="ctf-rank-big">#{{ ctf.rank }}</div>
           <div class="ctf-info">
             {% assign ctf_title_parts = ctf.title | split: '<hr />' %}
             {% assign ctf_desc_parts = ctf.description | split: '<hr />' %}
-            <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 4px;">
+            <h3>
               <span class="lang-section" data-lang="en">{{ ctf_title_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ ctf_title_parts[1] | default: ctf_title_parts[0] }}</span>
             </h3>
-            <p style="color: var(--p-text-muted); font-size: 15px; margin: 0;">
+            <p style="color: var(--p-text-muted); font-size: 15px;">
               <span class="lang-section" data-lang="en">{{ ctf_desc_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ ctf_desc_parts[1] | default: ctf_desc_parts[0] }}</span>
             </p>
           </div>
-          <div style="text-align: right;">
-            <div class="ctf-meta">{{ ctf.date | date: "%B %Y" }}</div>
+          <div class="ctf-item-meta">
+            <div class="ctf-meta">{{ ctf.date | date: "%B %d, %Y" }}</div>
             {% if ctf.screenshots %}
               <button onclick="openGallery('{{ ctf.title | escape }}', {{ ctf.screenshots | jsonify | escape }})" class="ctf-gallery-btn">
                 <span class="material-symbols-outlined" style="font-size: 18px;">collections</span> 
@@ -629,15 +734,56 @@ layout: nil
               // Remove other theme classes but keep base body class
               document.body.classList.remove('theme-intro', 'theme-projects', 'theme-ctf');
               document.body.classList.add(theme);
+              window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
             }
           }
         });
       }, { 
-        threshold: 0.2, // More sensitive for faster transitions
-        rootMargin: "-10% 0px -10% 0px" // Trigger slightly before it hits the center
+        threshold: 0.2, // 0.5에서 0.2로 낮춰 더 빠르게 테마 감지
+        rootMargin: "-10% 0px -10% 0px" // -25%에서 -10%로 완화
       });
 
       document.querySelectorAll('.theme-anchor').forEach(el => themeObserver.observe(el));
+
+      // --- Secure Foundry: Parallax Grid & Hex Glitch ---
+      const projectGrids = document.querySelectorAll('.project-grid-overlay');
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        projectGrids.forEach(grid => {
+          const rect = grid.parentElement.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            const yPos = -(rect.top * 0.03); // Reduced from 0.1 for subtler movement
+            grid.style.backgroundPosition = `0 ${yPos}px`;
+          }
+        });
+      });
+
+      const glitchObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !entry.target.dataset.glitched) {
+            startHexFlicker(entry.target);
+            entry.target.dataset.glitched = "true";
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.init-glitch .lang-section').forEach(el => glitchObserver.observe(el));
+
+      function startHexFlicker(el) {
+        const originalText = el.innerText;
+        const chars = "0123456789ABCDEF<>[]/_";
+        let iterations = 0;
+        const interval = setInterval(() => {
+          el.innerText = originalText.split("")
+            .map((char, index) => {
+              if (index < iterations) return originalText[index];
+              return chars[Math.floor(Math.random() * chars.length)];
+            })
+            .join("");
+          if (iterations >= originalText.length) clearInterval(interval);
+          iterations += 0.75; // Adjusted to target ~2.7s for the main title
+        }, 60); // Increased from 30ms for less flickery effect
+      }
 
       // ===== Language Toggle Logic =====
       const langBtns = document.querySelectorAll('.nav-lang-btn');
@@ -661,6 +807,38 @@ layout: nil
       window.addEventListener('languageChanged', () => {
         const newLang = localStorage.getItem('site-lang') || 'en';
         setLang(newLang);
+      });
+
+      // --- Gallery Slider Logic ---
+      document.querySelectorAll('.p-gallery-slider').forEach(slider => {
+        const track = slider.querySelector('.p-gallery-track');
+        const items = slider.querySelectorAll('.p-gallery-item');
+        const dots = slider.querySelectorAll('.dot');
+        const prevBtn = slider.querySelector('.gallery-prev');
+        const nextBtn = slider.querySelector('.gallery-next');
+        let currentIdx = 0;
+
+        const updateGallery = () => {
+          track.style.transform = `translateX(-${currentIdx * 100}%)`;
+          dots.forEach((dot, idx) => dot.classList.toggle('active', idx === currentIdx));
+        };
+
+        nextBtn?.addEventListener('click', () => {
+          currentIdx = (currentIdx + 1) % items.length;
+          updateGallery();
+        });
+
+        prevBtn?.addEventListener('click', () => {
+          currentIdx = (currentIdx - 1 + items.length) % items.length;
+          updateGallery();
+        });
+
+        dots.forEach((dot, idx) => {
+          dot.addEventListener('click', () => {
+            currentIdx = idx;
+            updateGallery();
+          });
+        });
       });
     });
 
@@ -721,6 +899,231 @@ layout: nil
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
+  </script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+    import { PCDLoader } from 'three/addons/loaders/PCDLoader.js';
+
+    (function() {
+      const container = document.getElementById('lumo-three-container');
+      if (!container) return;
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      container.appendChild(renderer.domElement);
+
+      const scene = new THREE.Scene();
+      // Match LUMO exact background
+      scene.background = null;
+
+      const camera = new THREE.PerspectiveCamera(30, container.clientWidth / container.clientHeight, 0.01, 40);
+      camera.position.set(0, 0, 1);
+      scene.add(camera);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.minDistance = 0.5;
+      controls.maxDistance = 6;
+      controls.enableDamping = true;
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 3;
+      controls.enablePan = false;
+      controls.enableZoom = false;
+
+      // Fixed LUMO Accent Color (Light Sky Blue)
+      const getAccentHex = () => '#b3e5fc';
+
+      function createFallbackGeometry() {
+        const particleCount = 12000;
+        const positions = new Float32Array(particleCount * 3);
+        const colors = new Float32Array(particleCount * 3);
+        const color = new THREE.Color(getAccentHex());
+
+        for (let i = 0; i < particleCount; i++) {
+          const i3 = i * 3;
+          const rand = Math.random();
+
+          let x, y, z;
+          if (rand < 0.18) {
+            // Head sphere
+            const r = 0.13 + Math.random() * 0.05;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos(2 * Math.random() - 1);
+            x = r * Math.sin(phi) * Math.cos(theta);
+            y = 0.38 + r * Math.sin(phi) * Math.sin(theta) * 0.8;
+            z = r * Math.cos(phi);
+          } else if (rand < 0.26) {
+            // Neck cylinder
+            const r = 0.04 + Math.random() * 0.02;
+            const theta = Math.random() * Math.PI * 2;
+            x = r * Math.cos(theta);
+            y = 0.17 + Math.random() * 0.12;
+            z = r * Math.sin(theta);
+          } else {
+            // Shoulders / torso
+            const w = 0.5 * (Math.random() - 0.5);
+            const h = 0.35 * (Math.random() - 0.5);
+            const d = 0.18 * (Math.random() - 0.5);
+            const taper = h > 0 ? (1.0 - h * 0.6) : (1.0 + h * 0.15);
+            x = w * taper;
+            y = 0.05 + h;
+            z = d;
+          }
+
+          positions[i3]     = x + (Math.random() - 0.5) * 0.012;
+          positions[i3 + 1] = y + (Math.random() - 0.5) * 0.012;
+          positions[i3 + 2] = z + (Math.random() - 0.5) * 0.012;
+
+          // Slight brightness variation for depth feel
+          const brightness = 0.7 + Math.random() * 0.5;
+          colors[i3]     = color.r * brightness;
+          colors[i3 + 1] = color.g * brightness;
+          colors[i3 + 2] = color.b * brightness;
+        }
+
+        const geometry = new THREE.BufferGeometry();
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color',    new THREE.BufferAttribute(colors, 3));
+
+        const material = new THREE.PointsMaterial({
+          size: 0.004,
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.85,
+          sizeAttenuation: true,
+        });
+
+        const points = new THREE.Points(geometry, material);
+        points.position.y = -0.12;
+        scene.add(points);
+        window._heroPoints = points;
+      }
+
+      const loader = new PCDLoader();
+      loader.load(
+        'https://threejs.org/examples/models/pcd/binary/Zaghetto.pcd',
+        function(points) {
+          points.geometry.center();
+          points.geometry.rotateX(Math.PI);
+          points.material.size = 0.004;
+          points.material.color.set(getAccentHex());
+          scene.add(points);
+          window._heroPoints = points;
+          renderLoop();
+        },
+        undefined,
+        function() {
+          // PCD failed — use our own humanoid fallback
+          createFallbackGeometry();
+          renderLoop();
+        }
+      );
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+      scene.add(ambientLight);
+      const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+      dirLight.position.set(3, 5, 5);
+      scene.add(dirLight);
+
+      window.addEventListener('resize', () => {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      });
+
+      function renderLoop() {
+        requestAnimationFrame(renderLoop);
+        controls.update();
+        renderer.render(scene, camera);
+      }
+
+      // Re-color particles when theme changes
+      window.addEventListener('themeChanged', () => {
+        const hex = getAccentHex();
+        if (window._heroPoints) {
+          window._heroPoints.material.color?.set(hex);
+        }
+      });
+    })();
+
+
+    // New CTF Section Background
+    (function() {
+      const container = document.getElementById('ctf-three-container');
+      if (!container) return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 20, 80);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      const geometry = new THREE.PlaneGeometry(300, 300, 40, 40); // Optimized segments for better performance
+      const material = new THREE.MeshBasicMaterial({
+          color: 0x00ff41, // Reverted to bright green for visibility
+          wireframe: true,
+          transparent: true,
+          opacity: 0.3 // Increased opacity for better visibility
+      });
+
+      const plane = new THREE.Mesh(geometry, material);
+      plane.rotation.x = -Math.PI / 2.5;
+      scene.add(plane);
+
+      const positions = plane.geometry.attributes.position;
+      const initialZ = new Float32Array(positions.count);
+      for(let i = 0; i < positions.count; i++) initialZ[i] = positions.getZ(i);
+
+      let clock = new THREE.Clock();
+      let mouseX = 0;
+
+      function onResize() {
+        const w = container.clientWidth;
+        const h = container.clientHeight;
+        renderer.setSize(w, h);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+      }
+      window.addEventListener('resize', onResize);
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+      });
+
+      function animate() {
+          requestAnimationFrame(animate);
+          const time = clock.getElapsedTime();
+          
+          for(let i = 0; i < positions.count; i++) {
+              const x = positions.getX(i);
+              const y = positions.getY(i);
+              const wave = Math.sin(x * 0.05 + time) * 3 + Math.cos(y * 0.05 + time) * 3;
+              positions.setZ(i, initialZ[i] + wave);
+          }
+          positions.needsUpdate = true;
+
+          camera.position.x += (mouseX * 15 - camera.position.x) * 0.05;
+          camera.lookAt(0, 0, 0);
+          renderer.render(scene, camera);
+      }
+      animate();
+    })();
   </script>
 </body>
 </html>

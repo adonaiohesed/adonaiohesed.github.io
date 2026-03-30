@@ -7,6 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2024-09-05-browser_extension_penetration_test.png"
 date: 2024-09-05 00:50:24
 ---

@@ -13,7 +13,7 @@ date: 2025-05-25 22:12:00
 ---
 When focusing on cloud security, one must consider securing infrastructure, network, data, applications, and managing identities and access, security operations, governance, risk, and compliance management. However, the key is not for the responsible person to try to handle all security aspects, but to effectively distribute responsibilities with the cloud provider and focus on the specific areas that are your direct responsibility.
 
-# Google Cloud Security: A Comprehensive Cloud Security Guide
+## Google Cloud Security: A Comprehensive Cloud Security Guide
 
 ## 1. Shared Responsibility Model in Cloud Security
 
@@ -107,7 +107,7 @@ Google Cloud's infrastructure security adopts a multi-layered and thorough appro
 
 클라우드 보안을 신경쓸때, securing infrastructure, network, data, applications, and managing identities and access, security operations and governance, risk & compliance management 등을 신경써야 한다고 생각한다. 하지만 중요한건 담당자로써 모든 보안을 신경쓸 것이 아니라 Cloud provider와 그 책임을 잘 분배하여 내가 신경 써야 할 부분에 초점을 맞춘다.
 
-# Google Cloud Security: 포괄적인 클라우드 보안 가이드
+## Google Cloud Security: 포괄적인 클라우드 보안 가이드
 
 ## 1. 클라우드 보안의 공유 책임 모델
 

@@ -27,7 +27,7 @@ This process is the core of backtracking.
 
 Due to these characteristics, backtracking is typically implemented using **recursion** and operates based on a **state-space tree** that explores all possible cases. **Pruning**, which avoids unnecessary exploration, is a critical element of backtracking.
 
-#### Difference from DFS
+### Difference from DFS
 
 "Isn't exploring all paths just Depth-First Search (DFS)?" That's a good question. Backtracking can be seen as a type of DFS, but there's a crucial difference:
 
@@ -36,7 +36,6 @@ Due to these characteristics, backtracking is typically implemented using **recu
 
 In essence, backtracking is an **optimized DFS** for finding solutions that satisfy specific conditions.
 
------
 
 ### 2. The Universal Backtracking Recipe (Template)
 
@@ -65,7 +64,6 @@ def backtrack(candidate, ...):
 
 This **"Choose -\> Explore -\> Un-choose"** pattern is the heart of backtracking. The `Un-choose` process is vital as it must perfectly restore the previous state to allow correct exploration of other paths.
 
------
 
 ### 3. LeetCode Example: Subsets (LeetCode \#78)
 
@@ -73,7 +71,7 @@ Now, let's look at a real problem to see how the above template is applied. This
 
 **Problem:** Given `nums = [1, 2, 3]`, return all its possible subsets: `[[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]`.
 
-#### Solution Logic
+### Solution Logic
 
 For each number in `[1, 2, 3]`, we have two choices: **"include it in the subset"** or **"do not include it"**. If we visualize this decision process as a tree, it looks like this:
 
@@ -89,7 +87,7 @@ For each number in `[1, 2, 3]`, we have two choices: **"include it in the subset
 
 Every node in this tree is a subset. We will use backtracking to traverse this tree and add all nodes to our result.
 
-#### Python Code Implementation
+### Python Code Implementation
 
 ```python
 from typing import List
@@ -127,7 +125,7 @@ print(solver.subsets([1, 2, 3]))
   * `backtrack(i + 1)`: To avoid duplicate subsets, the next exploration starts from the index after the currently chosen number.
   * `path.pop()`: When the recursive call returns, remove the number just added from `path` to revert to the previous state. This is the crucial "un-choose" of backtracking.
 
-#### Time and Space Complexity Analysis
+### Time and Space Complexity Analysis
 
   * **Time Complexity: $O(N \\times 2^N)$**
 
@@ -139,7 +137,6 @@ print(solver.subsets([1, 2, 3]))
 
       * The maximum depth of the recursive calls does not exceed the length of `nums`, which is $N$. Since the `path` list also stores a maximum of $N$ elements, the space used by the recursion stack and `path` is $O(N)$. (The `result` list, which stores the output, is usually excluded from space complexity calculations.)
 
------
 
 ### 4. Coding Interview Tips
 
@@ -166,7 +163,7 @@ print(solver.subsets([1, 2, 3]))
 
 이러한 특성 때문에 백트래킹은 주로 **재귀(Recursion)**를 통해 구현되며, 모든 가능한 경우의 수를 탐색하는 **상태 공간 트리(State Space Tree)**를 기반으로 동작합니다. 백트래킹은 불필요한 탐색을 피하는 **가지치기(Pruning)**가 핵심적인 요소입니다.
 
-#### DFS와의 차이점
+### DFS와의 차이점
 
 "모든 경로를 탐색하는 건 깊이 우선 탐색(DFS) 아닌가요?" 좋은 질문입니다. 백트래킹은 DFS의 한 종류로 볼 수 있지만, 중요한 차이가 있습니다.
 
@@ -208,7 +205,7 @@ def backtrack(candidate, ...):
 
 **문제:** `nums = [1, 2, 3]` 가 주어졌을 때, 모든 부분 집합 `[[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]` 을 반환하라.
 
-#### 풀이 로직
+### 풀이 로직
 
 `[1, 2, 3]`의 각 숫자에 대해 우리는 두 가지 선택을 할 수 있습니다. **"부분 집합에 포함시킨다"** 또는 **"포함시키지 않는다"**. 이 결정 과정을 트리 형태로 그리면 다음과 같습니다.
 
@@ -224,7 +221,7 @@ def backtrack(candidate, ...):
 
 이 트리의 모든 노드가 바로 부분 집합입니다. 우리는 백트래킹을 이용해 이 트리를 순회하며 모든 노드를 결과에 추가할 것입니다.
 
-#### Python 코드 구현
+### Python 코드 구현
 
 ```python
 from typing import List
@@ -262,7 +259,7 @@ print(solver.subsets([1, 2, 3]))
 * `backtrack(i + 1)`: 중복된 부분 집합을 피하기 위해 다음 탐색은 현재 선택한 숫자의 다음 인덱스부터 시작합니다.
 * `path.pop()`: 재귀 호출이 끝나고 돌아오면, 방금 추가했던 숫자를 `path`에서 제거하여 이전 상태로 되돌립니다. 이것이 바로 백트래킹의 핵심인 '선택 취소'입니다.
 
-#### 시간 및 공간 복잡도 분석
+### 시간 및 공간 복잡도 분석
 
 * **시간 복잡도: $O(N \times 2^N)$**
     * 총 $2^N$개의 부분 집합이 존재합니다.

@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2020-05-26-xml_json_yaml.png"
 bilingual: true
 date: 2020-05-26 07:12:00
 ---
-# Understanding Data Serialization Formats: XML, JSON, and YAML Explained
+## Understanding Data Serialization Formats: XML, JSON, and YAML Explained
 
 In the world of software development and data interchange, choosing the right data format is crucial. This post explores three popular data serialization formats: XML, JSON, and YAML, diving into their characteristics, strengths, and use cases.
 
@@ -162,7 +162,7 @@ Each format has its strengths and ideal use cases. The best choice depends on yo
 
 ---
 
-# 데이터 직렬화 형식 이해: XML, JSON, YAML 상세 설명
+## 데이터 직렬화 형식 이해: XML, JSON, YAML 상세 설명
 
 소프트웨어 개발과 데이터 교환의 세계에서 적절한 데이터 형식을 선택하는 것은 매우 중요합니다. 이 포스트에서는 세 가지 인기 있는 데이터 직렬화 형식인 XML, JSON, YAML을 탐구하고, 그들의 특성, 장점, 그리고 사용 사례를 자세히 살펴보겠습니다.
 

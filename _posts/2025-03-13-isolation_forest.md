@@ -9,7 +9,7 @@ image: "/assets/thumbnails/2025-03-13-isolation_forest.png"
 bilingual: true
 date: 2025-03-13 21:36:00
 ---
-# Isolation Forest: Detecting Anomalies Through Isolation
+## Isolation Forest: Detecting Anomalies Through Isolation
 
 In vast datasets like security logs, system metrics, or financial transaction records, we often need to find the data that is 'different'. Detecting a few malicious attempts among millions of normal network requests is a classic anomaly detection problem. While many algorithms focus on learning the distribution of normal data, Isolation Forest starts from the opposite idea: **"Anomalies are few and different, and therefore they are easier to isolate."**
 
@@ -95,7 +95,7 @@ Thanks to these advantages, Isolation Forest can be an effective tool in various
 
 ---
 
-# Isolation Forest: '고립'을 통해 이상을 감지하는 알고리즘
+## Isolation Forest: '고립'을 통해 이상을 감지하는 알고리즘
 
 보안 로그, 시스템 메트릭, 금융 거래 기록 등 방대한 데이터 속에서 우리는 종종 '다른' 데이터를 찾아내야 합니다. 수백만 개의 정상적인 네트워크 요청 중 단 몇 개의 악의적인 시도를 탐지하는 것은 전형적인 이상치 탐지(Anomaly Detection) 문제입니다. 많은 알고리즘이 정상 데이터의 분포를 학습하는 데 집중하는 반면, Isolation Forest는 정반대의 아이디어에서 출발합니다. 바로**"이상치는 소수이며 다르기 때문에 고립시키기 쉽다"**는 것입니다.
 

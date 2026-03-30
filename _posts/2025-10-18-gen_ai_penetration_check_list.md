@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2025-10-18-gen_ai_penetration_check_list.png"
 bilingual: true
 date: 2025-10-18 23:24:00
 ---
-# LLM Security Audit Checklist (Based on OWASP Top 10) and Defense Strategies
+## LLM Security Audit Checklist (Based on OWASP Top 10) and Defense Strategies
 
 This article identifies attack types based on the OWASP Top 10 for LLM and covers concrete defense strategies for them.
 
@@ -210,9 +210,8 @@ This article identifies attack types based on the OWASP Top 10 for LLM and cover
   * **Cost and Usage Monitoring:** Implement Rate Limiting per user/IP and Circuit Breaker functions to automatically block requests when the budget is exceeded.
   * **Queue System:** Introduce an asynchronous processing queue to manage system load in case of request spikes.
 
------
 
-# LLM/AI System Penetration Testing Checklist (Includes Defense Checks)
+## LLM/AI System Penetration Testing Checklist (Includes Defense Checks)
 
 Defense status check items corresponding to existing penetration test items have been added.
 
@@ -291,7 +290,7 @@ Defense status check items corresponding to existing penetration test items have
 
 ---
 
-# LLM 보안 점검 체크리스트 (OWASP Top 10 기반) 및 방어 전략
+## LLM 보안 점검 체크리스트 (OWASP Top 10 기반) 및 방어 전략
 
 이 글은 OWASP Top 10 for LLM을 기반으로 공격 유형을 식별하고, 이에 대한 구체적인 방어 전략을 다룹니다.
 
@@ -490,9 +489,8 @@ Defense status check items corresponding to existing penetration test items have
   * **비용 및 사용량 모니터링:** 사용자/IP별 API 호출 횟수 제한(Rate Limiting)과 예산 초과 시 자동 차단(Circuit Breaker) 기능을 구현합니다.
   * **큐(Queue) 시스템 도입:** 요청이 폭주할 경우를 대비해 비동기 처리 큐를 두어 시스템 부하를 조절합니다.
 
------
 
-# LLM/AI 시스템 침투 테스트 체크리스트 (방어 점검 포함)
+## LLM/AI 시스템 침투 테스트 체크리스트 (방어 점검 포함)
 
 기존 침투 테스트 항목에 대응하는 방어 현황 점검 항목을 추가하였습니다.
 

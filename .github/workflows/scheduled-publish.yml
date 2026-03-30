@@ -1,0 +1,60 @@
+name: "Scheduled Publish"
+
+on:
+  schedule:
+    # Run every day at 14:00 UTC (approx. 9:00 AM Central Time)
+    - cron: '0 14 * * *'
+  workflow_dispatch: # Allows manual trigger for testing
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Move eligible posts
+        id: move-posts
+        run: |
+          CURRENT_DATE=$(date +%Y-%m-%d)
+          echo "Checking for posts scheduled on or before $CURRENT_DATE..."
+          
+          mkdir -p _pending_posts
+          mkdir -p _posts
+          
+          MOVED_ANY=false
+          for file in _pending_posts/*.md; do
+            if [ -e "$file" ]; then
+              filename=$(basename "$file")
+              # Extract date prefix YYYY-MM-DD
+              post_date=$(echo "$filename" | cut -c 1-10)
+              
+              if [[ "$post_date" < "$CURRENT_DATE" || "$post_date" == "$CURRENT_DATE" ]]; then
+                echo "Publishing: $filename ($post_date)"
+                mv "$file" "_posts/"
+                MOVED_ANY=true
+              else
+                echo "Skipping: $filename (Scheduled for $post_date)"
+              fi
+            fi
+          done
+          
+          echo "moved=$MOVED_ANY" >> $GITHUB_OUTPUT
+
+      - name: Commit and Push
+        if: steps.move-posts.outputs.moved == 'true'
+        run: |
+          git config --global user.name "Hyoeun Choi"
+          git config --global user.email "adonaiohesed@gmail.com"
+          
+          # Get the list of moved files for the commit message
+          LIST_OF_FILES=$(git status --short _posts/ | awk '{print $2}' | xargs -I {} basename {} | paste -sd ", " -)
+          
+          git add _posts/ _pending_posts/
+          git commit -m "Published: $LIST_OF_FILES on $(date +%Y-%m-%d)"
+          git push

@@ -24,7 +24,6 @@ The key keyword for understanding proxy structures is **`delegatecall`**. Unlike
 
 In essence, the Proxy contract holds the data (State), while borrowing the business logic from an external logic contract for execution. By simply swapping the address of the logic contract, developers can "upgrade" the service.
 
----
 
 ### 2. Comparison of Major Proxy Protocols
 
@@ -39,27 +38,25 @@ Here is a comparison of the two core patterns frequently discussed in technical 
 
 > **Pro Tip:** Recently, the **UUPS pattern** has been more favored due to its gas efficiency and flexibility. However, engineers must be cautious of the "Bricking" risk: if the upgrade function is omitted in a new logic contract deployment, the contract can never be updated again.
 
----
 
 ### 3. Proxy Vulnerabilities for Security Engineers
 
 Penetration testers must understand the specific vulnerabilities that can arise within a proxy architecture.
 
-#### **① Storage Collision**
+### **① Storage Collision**
 
 If the order of variable declarations in the Proxy and Implementation contracts does not match, data will be overwritten in unintended slots.
 
 * **Solution:** Use **EIP-1967** standard slots (randomized slots located far at the end of storage) or strictly manage inheritance structures.
 
-#### **② Uninitialized Proxy**
+### **② Uninitialized Proxy**
 
 Proxies cannot use a `constructor` because the state must be stored in the Proxy, not the Implementation. Instead, an `initialize` function is used. If this function is not called immediately upon deployment, an attacker can hijack it to seize administrative control.
 
-#### **③ Function Selector Clash**
+### **③ Function Selector Clash**
 
 This occurs when a management function in the Proxy (e.g., `upgradeTo`) and a function in the Implementation share the same 4-byte ID (Function Selector). This is primarily mitigated in the Transparent pattern through strict administrative access control.
 
----
 
 ### 4. Balancing Security and Flexibility
 
@@ -80,7 +77,6 @@ Proxy protocols breathe life into smart contracts, but they significantly increa
 
 즉, 프록시 컨트랙트는 데이터(State)만 가지고 있고, 실제 비즈니스 로직은 외부의 로직 컨트랙트에서 빌려와 실행하는 구조입니다. 이를 통해 로직 컨트랙트 주소만 교체하면 서비스의 '업그레이드'가 가능해집니다.
 
----
 
 ### 2. 주요 프록시 프로토콜 비교
 
@@ -95,27 +91,25 @@ Proxy protocols breathe life into smart contracts, but they significantly increa
 
 > **Pro Tip:** 최근에는 가스비 절감과 유연성 때문에 **UUPS 패턴**이 더 선호되는 추세입니다. 하지만 로직 컨트랙트 배포 시 업그레이드 함수를 누락하면 다시는 업데이트를 할 수 없게 되는 '벽돌(Brick)' 현상을 주의해야 합니다.
 
----
 
 ### 3. 보안 엔지니어가 체크해야 할 프록시 취약점
 
 펜테스터라면 프록시 구조에서 발생할 수 있는 특유의 취약점을 반드시 이해해야 합니다.
 
-#### **① 스토리지 충돌 (Storage Collision)**
+### **① 스토리지 충돌 (Storage Collision)**
 
 프록시와 로직 컨트랙트의 변수 선언 순서가 일치하지 않으면 데이터가 엉뚱한 곳에 덮어씌워집니다.
 
 * **해결책:** `EIP-1967` 표준에 따라 매우 먼 스토리지 슬롯(Randomized Slot)을 사용하거나, 상속 구조를 엄격히 관리해야 합니다.
 
-#### **② 초기화 문제 (Uninitialized Proxy)**
+### **② 초기화 문제 (Uninitialized Proxy)**
 
 프록시는 `constructor`를 사용할 수 없습니다(상태값이 프록시에 저장되어야 하기 때문). 대신 `initialize`라는 일반 함수를 사용하는데, 이 함수를 배포 즉시 호출하지 않으면 공격자가 가로채어 컨트랙트의 권한을 탈취할 수 있습니다.
 
-#### **③ 함수 선택자 충돌 (Function Selector Clash)**
+### **③ 함수 선택자 충돌 (Function Selector Clash)**
 
 프록시 자체의 관리 함수(예: `upgradeTo`)와 로직 컨트랙트의 일반 함수가 동일한 ID를 가질 때 발생하는 문제입니다. 이는 주로 Transparent 패턴에서 관리자 권한 분리로 해결합니다.
 
----
 
 ### 4. 보안과 유연성 사이의 균형
 

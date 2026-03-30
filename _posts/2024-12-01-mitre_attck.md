@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2024-12-01-mitre_attck.png"
 bilingual: true
 date: 2024-12-01 15:57:36
 ---
-# MITRE ATT&CK Framework: Understanding Cyber Threats and Defense Strategies
+## MITRE ATT&CK Framework: Understanding Cyber Threats and Defense Strategies
 
 ## What is MITRE ATT&CK?
 
@@ -201,7 +201,7 @@ MITRE ATT&CK is more than just a reference tool. It's a common language and coll
 
 ---
 
-# MITRE ATT&CK 프레임워크: 사이버 위협 이해와 방어 전략
+## MITRE ATT&CK 프레임워크: 사이버 위협 이해와 방어 전략
 
 ## MITRE ATT&CK란 무엇인가?
 

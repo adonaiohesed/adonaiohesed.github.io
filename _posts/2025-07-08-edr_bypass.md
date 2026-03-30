@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2025-07-08-edr_bypass.png"
 bilingual: true
 date: 2025-07-08 17:45:36
 ---
-# EDR Bypass Techniques: Understanding Attack Methods and Defense Strategies
+## EDR Bypass Techniques: Understanding Attack Methods and Defense Strategies
 
 ## Overview
 
@@ -50,7 +50,7 @@ Memory-based attacks are possible due to several combined factors:
 
 Memory manipulation techniques operate directly in system memory without writing files to disk, bypassing file-based detection in many EDR solutions.
 
-#### DLL Injection
+### DLL Injection
 
 DLL injection is a technique that inserts malicious code into a legitimate process.
 
@@ -62,7 +62,7 @@ WriteProcessMemory(hProcess, remoteBuffer, dllPath, sizeof(dllPath), NULL);
 HANDLE hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, remoteBuffer, 0, NULL);
 ```
 
-#### Process Hollowing
+### Process Hollowing
 
 Process hollowing is a technique that creates a legitimate process and then replaces its memory with malicious code.
 
@@ -71,7 +71,7 @@ Process hollowing is a technique that creates a legitimate process and then repl
 3. Map malicious code into memory
 4. Resume process execution
 
-#### Atom Bombing
+### Atom Bombing
 
 Atom bombing uses the Windows atom table mechanism to inject code.
 
@@ -82,7 +82,7 @@ Atom bombing uses the Windows atom table mechanism to inject code.
 
 ### 2. Direct System Calls and API Hooking Bypass
 
-#### Direct System Calls
+### Direct System Calls
 
 Many EDR solutions monitor by hooking Windows API functions. Attackers can use direct system calls to bypass these hooks.
 
@@ -95,7 +95,7 @@ __asm {
 }
 ```
 
-#### NTDLL Mapping Bypass
+### NTDLL Mapping Bypass
 
 This technique loads a fresh copy of NTDLL.DLL from disk to bypass the hooked NTDLL.DLL.
 
@@ -103,7 +103,7 @@ This technique loads a fresh copy of NTDLL.DLL from disk to bypass the hooked NT
 2. Extract necessary function addresses
 3. Call functions directly from memory
 
-#### Dynamic Function Resolution for Detection Evasion
+### Dynamic Function Resolution for Detection Evasion
 
 Resolving function addresses dynamically instead of string references to evade static analysis detection.
 
@@ -116,7 +116,7 @@ FARPROC pCreateProcessA = GetProcAddress(hKernel32, "CreateProcessA");
 
 ### 3. Fileless Malware Techniques
 
-#### Using PowerShell and WMI
+### Using PowerShell and WMI
 
 Using PowerShell and Windows Management Instrumentation (WMI) to perform attacks without writing files to disk.
 
@@ -126,7 +126,7 @@ $code = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64St
 iex $code
 ```
 
-#### Living-off-the-Land Techniques (LOLBins)
+### Living-off-the-Land Techniques (LOLBins)
 
 Exploiting legitimate binaries built into the system to conduct attacks.
 
@@ -142,7 +142,7 @@ Key LOLBins:
 - bitsadmin.exe
 - msiexec.exe
 
-#### Registry-Based Payloads
+### Registry-Based Payloads
 
 Storing malicious code in the Windows registry and executing it from memory.
 
@@ -154,7 +154,7 @@ Set-ItemProperty -Path "HKCU:\Software\Classes\CLSID\{00000000-0000-0000-0000-00
 
 ### 4. Execution Flow Obfuscation
 
-#### Control Flow Flattening
+### Control Flow Flattening
 
 Making the logical flow of code complex to make analysis difficult.
 
@@ -162,7 +162,7 @@ Making the logical flow of code complex to make analysis difficult.
 2. Control execution order of blocks through a central dispatcher
 3. Hide the actual execution flow
 
-#### String Obfuscation
+### String Obfuscation
 
 Dynamically constructing strings at runtime to evade static analysis detection.
 
@@ -176,7 +176,7 @@ for (int i = 0; i < sizeof(str) - 1; i++) {
 
 ### 5. Kernel-Level Attacks
 
-#### Driver Exploitation
+### Driver Exploitation
 
 Using vulnerable legitimate drivers to escalate privileges and bypass EDR.
 
@@ -187,13 +187,13 @@ SC_HANDLE hService = CreateService(hSCManager, "VulnDriver", "Vulnerable Driver"
 StartService(hService, 0, NULL);
 ```
 
-#### Callback Invalidation
+### Callback Invalidation
 
 Invalidating kernel callbacks used by EDR solutions to block event notifications.
 
 ### 6. Environment Awareness and Evasion Techniques
 
-#### Sandbox Detection
+### Sandbox Detection
 
 Detecting virtual environments or analysis tools to suppress malicious behavior.
 
@@ -219,7 +219,7 @@ vm_detected:
 }
 ```
 
-#### Timing-Based Evasion
+### Timing-Based Evasion
 
 Using execution delays to bypass initial monitoring.
 
@@ -231,11 +231,11 @@ Sleep(300000);  // Wait 5 minutes
 
 ### 7. Abuse of Legitimate Tools
 
-#### Leveraging Dual-Use Tools
+### Leveraging Dual-Use Tools
 
 Exploiting legitimate penetration testing tools like Cobalt Strike and Mimikatz.
 
-#### Code Signing Bypass
+### Code Signing Bypass
 
 Using digitally signed binaries to execute code or perform DLL sideloading.
 
@@ -307,7 +307,7 @@ While EDR is an important component of endpoint security, no solution is perfect
 
 ---
 
-# EDR 우회 기법: 공격 기술 이해와 방어 전략
+## EDR 우회 기법: 공격 기술 이해와 방어 전략
 
 ## 개요
 
@@ -347,7 +347,7 @@ EDR 우회는 다음과 같은 핵심 원리에 기반합니다:
 
 메모리 조작 기법은 디스크에 파일을 쓰지 않고 시스템 메모리에서 직접 작동하여 많은 EDR 솔루션의 파일 기반 탐지를 우회합니다.
 
-#### DLL 인젝션
+### DLL 인젝션
 
 DLL 인젝션은 합법적인 프로세스에 악성 코드를 삽입하는 기술입니다.
 
@@ -359,7 +359,7 @@ WriteProcessMemory(hProcess, remoteBuffer, dllPath, sizeof(dllPath), NULL);
 HANDLE hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)LoadLibraryA, remoteBuffer, 0, NULL);
 ```
 
-#### 프로세스 할로잉(Process Hollowing)
+### 프로세스 할로잉(Process Hollowing)
 
 프로세스 할로잉은 합법적인 프로세스를 생성한 후 해당 메모리를 악성 코드로 교체하는 기술입니다.
 
@@ -368,7 +368,7 @@ HANDLE hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)L
 3. 악성 코드를 메모리에 매핑
 4. 프로세스 실행 재개
 
-#### 아톰 바밍(Atom Bombing)
+### 아톰 바밍(Atom Bombing)
 
 아톰 바밍은 Windows 아톰 테이블 메커니즘을 사용하여 코드를 주입하는 기술입니다.
 
@@ -379,7 +379,7 @@ HANDLE hThread = CreateRemoteThread(hProcess, NULL, 0, (LPTHREAD_START_ROUTINE)L
 
 ### 2. 직접 시스템 호출 및 API 후킹 우회
 
-#### 직접 시스템 호출
+### 직접 시스템 호출
 
 많은 EDR 솔루션은 Windows API 함수를 후킹하여 모니터링합니다. 공격자는 이러한 후킹을 우회하기 위해 직접 시스템 호출을 사용할 수 있습니다.
 
@@ -392,7 +392,7 @@ __asm {
 }
 ```
 
-#### NTDLL 매핑 우회
+### NTDLL 매핑 우회
 
 이 기법은 후킹된 NTDLL.DLL을 우회하기 위해 디스크에서 새로운 NTDLL 복사본을 로드합니다.
 
@@ -400,7 +400,7 @@ __asm {
 2. 필요한 함수 주소 추출
 3. 메모리에서 직접 함수 호출
 
-#### 탐지 회피를 위한 동적 함수 해석
+### 탐지 회피를 위한 동적 함수 해석
 
 문자열 참조 대신 동적으로 함수 주소를 해석하여 정적 분석 탐지를 회피합니다.
 
@@ -413,7 +413,7 @@ FARPROC pCreateProcessA = GetProcAddress(hKernel32, "CreateProcessA");
 
 ### 3. 파일리스 멀웨어 기법
 
-#### PowerShell 및 WMI 사용
+### PowerShell 및 WMI 사용
 
 PowerShell 및 Windows Management Instrumentation(WMI)을 사용하여 디스크에 파일을 쓰지 않고 공격을 수행합니다.
 
@@ -423,7 +423,7 @@ $code = [System.Text.Encoding]::Unicode.GetString([System.Convert]::FromBase64St
 iex $code
 ```
 
-#### Living-off-the-Land 기법(LOLBins)
+### Living-off-the-Land 기법(LOLBins)
 
 시스템에 내장된 합법적인 바이너리를 악용하여 공격을 수행합니다.
 
@@ -439,7 +439,7 @@ regsvr32.exe /s /u /i:evil.sct scrobj.dll
 - bitsadmin.exe
 - msiexec.exe
 
-#### 레지스트리 기반 페이로드
+### 레지스트리 기반 페이로드
 
 악성 코드를 Windows 레지스트리에 저장하고 메모리에서 실행합니다.
 
@@ -451,7 +451,7 @@ Set-ItemProperty -Path "HKCU:\Software\Classes\CLSID\{00000000-0000-0000-0000-00
 
 ### 4. 실행 흐름 난독화
 
-#### 제어 흐름 평탄화(Control Flow Flattening)
+### 제어 흐름 평탄화(Control Flow Flattening)
 
 코드의 논리적 흐름을 복잡하게 만들어 분석을 어렵게 합니다.
 
@@ -459,7 +459,7 @@ Set-ItemProperty -Path "HKCU:\Software\Classes\CLSID\{00000000-0000-0000-0000-00
 2. 중앙 디스패처를 통해 블록 실행 순서 제어
 3. 실제 실행 흐름 숨기기
 
-#### 문자열 난독화
+### 문자열 난독화
 
 문자열을 실행 시간에 동적으로 구성하여 정적 분석 탐지를 회피합니다.
 
@@ -473,7 +473,7 @@ for (int i = 0; i < sizeof(str) - 1; i++) {
 
 ### 5. 커널 레벨 공격
 
-#### 드라이버 악용
+### 드라이버 악용
 
 취약한 합법적 드라이버를 사용하여 권한을 상승시키고 EDR을 우회합니다.
 
@@ -484,13 +484,13 @@ SC_HANDLE hService = CreateService(hSCManager, "VulnDriver", "Vulnerable Driver"
 StartService(hService, 0, NULL);
 ```
 
-#### 콜백 무효화
+### 콜백 무효화
 
 EDR 솔루션이 사용하는 커널 콜백을 무효화하여 이벤트 알림을 차단합니다.
 
 ### 6. 환경 인식 및 회피 기법
 
-#### 샌드박스 감지
+### 샌드박스 감지
 
 가상 환경이나 분석 도구를 감지하여 악성 행동을 억제합니다.
 
@@ -516,7 +516,7 @@ vm_detected:
 }
 ```
 
-#### 타이밍 기반 회피
+### 타이밍 기반 회피
 
 실행 지연을 사용하여 초기 모니터링을 우회합니다.
 
@@ -528,11 +528,11 @@ Sleep(300000);  // 5분 대기
 
 ### 7. 합법적 도구 악용
 
-#### 듀얼 유스 도구 활용
+### 듀얼 유스 도구 활용
 
 Cobalt Strike, Mimikatz 등 합법적 펜테스트 도구를 악용합니다.
 
-#### 코드 서명 우회
+### 코드 서명 우회
 
 디지털 서명된 바이너리를 사용하여 코드를 실행하거나 DLL 사이드로딩을 수행합니다.
 

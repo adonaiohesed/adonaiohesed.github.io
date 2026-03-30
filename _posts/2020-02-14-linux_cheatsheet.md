@@ -48,7 +48,6 @@ Searches for specific strings (patterns) within file contents or command output.
     grep -v "127.0.0.1" /var/log/access.log
     ```
 
------
 
 ## 2. Process Management
 
@@ -84,7 +83,6 @@ Terminates a specific process.
     kill -9 [PID]
     ```
 
------
 
 ## 3. Network Analysis
 
@@ -129,7 +127,6 @@ Known as the "Swiss Army knife of networking," it can perform various tasks such
     nc -lvnp 4444
     ```
 
------
 
 ## 4. User and Privilege Information
 
@@ -184,7 +181,6 @@ whoami
     grep -v "127.0.0.1" /var/log/access.log
     ```
 
----
 
 ## 2. 프로세스 관리
 
@@ -220,7 +216,6 @@ whoami
     kill -9 [PID]
     ```
 
----
 
 ## 3. 네트워크 분석
 
@@ -265,7 +260,6 @@ HTTP/HTTPS 등 다양한 프로토콜을 통해 데이터를 전송하거나 파
     nc -lvnp 4444
     ```
 
----
 
 ## 4. 사용자 및 권한 확인
 

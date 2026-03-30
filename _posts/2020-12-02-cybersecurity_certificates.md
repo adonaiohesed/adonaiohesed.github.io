@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2020-12-02-cybersecurity_certificates.png"
 bilingual: true
 date: 2020-12-02 03:57:36
 ---
-# 어떤 보안 자격증을 준비하면 좋을까? (펜테스트 & 클라우드 시큐리티 진로 고민)
+## 어떤 보안 자격증을 준비하면 좋을까? (펜테스트 & 클라우드 시큐리티 진로 고민)
 
 보안 업계에서 일하며 CEH와 CISSP를 이미 취득한 지금, 앞으로 어떤 자격증을 준비하면 좋을까 고민해봤다.  
 나는 **침투 테스트(펜테스트)**와 **클라우드 보안**에 관심이 많고, 실전 중심의 실력을 쌓고 싶다.  
@@ -19,7 +19,6 @@ date: 2020-12-02 03:57:36
 
 ## 📍 목표: 펜테스트 & 클라우드 시큐리티 전문가
 
----
 
 ## 🛠️ 펜테스트 계열 자격증
 
@@ -34,7 +33,6 @@ date: 2020-12-02 03:57:36
   - HackTheBox, TryHackMe, TJNull OSCP Prep 목록 등으로 실력 쌓기
   - 보고서 작성 연습은 필수!
 
----
 
 ### 🧠 OSWE (Offensive Security Web Expert)
 - **목적**: 고급 웹 애플리케이션 해킹 + 코드 감사 능력
@@ -47,7 +45,6 @@ date: 2020-12-02 03:57:36
   - 소스코드 분석 능력 필요 (PHP, JS, Python 등)
   - 포커스: Auth bypass, SQLi, RCE 등 고급 웹 취약점
 
----
 
 ### 🕵️‍♂️ CRTO (Certified Red Team Operator)
 - **목적**: 실전 Red Team 활동 능력 인증
@@ -60,7 +57,6 @@ date: 2020-12-02 03:57:36
   - AD 환경 실습 랩 구성 필요 (e.g., LabBuildr, DetectionLab)
   - PowerShell, Cobalt Strike에 익숙해질 것
 
----
 
 ### 🧪 CRTL (Certified Red Team Lead)
 - **목적**: Red Team 리더십 및 전략 수립 능력 인증
@@ -85,7 +81,6 @@ date: 2020-12-02 03:57:36
   - 보통 로그 분석, EDR/SIEM 툴 경험 필요
   - 커뮤니티 자료나 실습 기반 교육 과정 활용
 
----
 
 ## ☁️ 클라우드 시큐리티 자격증
 
@@ -99,7 +94,6 @@ date: 2020-12-02 03:57:36
   - AWS 공식 학습 경로 + Whizlabs / TutorialsDojo 모의고사
   - 실제 AWS 환경에서 실습하며 이해할 것
 
----
 
 ### 🛡️ Google Professional Cloud Security Engineer
 - **목적**: GCP 환경의 보안 설계, 구현, 대응 능력 검증
@@ -112,7 +106,6 @@ date: 2020-12-02 03:57:36
   - 실전 GCP 프로젝트 실습 필수
   - 모의고사: Udemy, Linux Academy
 
----
 
 ### 🏢 CCSP (Certified Cloud Security Professional)
 - **목적**: 클라우드 보안 거버넌스와 정책, 아키텍처 전반 커버
@@ -124,7 +117,6 @@ date: 2020-12-02 03:57:36
   - (ISC)² 공식 교재 + 커뮤니티 요약자료
   - 실무 경험과 함께 이론 정리가 중요함
 
----
 
 ## 📌 정리: 나의 진로에 맞는 우선순위
 

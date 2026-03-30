@@ -7,9 +7,71 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2021-06-10-the_dirty_cow_race_condition_attack.png"
 date: 2021-06-10 00:43:12
 ---
+
+## Introduction
+
+**Dirty COW (CVE-2016-5195)** is a race condition vulnerability in the Linux kernel that affects every Linux-based OS. It is one of the most severe privilege escalation vulnerabilities ever found in the Linux kernel, having existed undetected for approximately nine years before disclosure. A local attacker without any privileges can use it to write to any read-only file — including `/etc/passwd` — gaining root access.
+
+The name comes from the underlying kernel mechanism exploited: **Copy-On-Write (COW)**.
+
+## Memory Mapping Using mmap()
+
+Understanding `mmap()` is prerequisite to understanding the attack. `mmap()` maps a file (or anonymous memory) directly into the process's virtual address space:
+
+* **Argument 1** — Starting address for the mapping. `NULL` lets the kernel choose.
+* **Argument 2** — Size of the mapping in bytes.
+* **Argument 3** — Protection flags: `PROT_READ` for readable, `PROT_WRITE` for writable. Must match the file's open mode.
+* **Argument 4** — Mapping type: `MAP_SHARED` or `MAP_PRIVATE`.
+* **Argument 5** — The file descriptor to map.
+* **Argument 6** — Offset into the file. `0` maps from the beginning.
+
+**`MAP_SHARED`:** Changes to the mapped memory are visible to all processes that have the same file mapped. Writes go directly to the underlying physical memory (and thus the file).
+
+**`MAP_PRIVATE`:** Creates a private copy of the mapped region for the process. When the process writes to the mapping, the kernel triggers **Copy-On-Write**: a new physical page is allocated, the content is copied from the original page to the new one, and the process's page table entry is updated to point to the new page. Other processes continue to see the original page. The downside is the latency introduced by the copy operation — the modified page is called a **dirty page**.
+
+## Discard the Copied Memory
+
+After a process has created a private copy via COW, it can manage that mapping with `madvise()`. When the private copy is no longer needed, passing `MADV_DONTNEED` to `madvise()` tells the kernel to discard the private copy. After this, the virtual memory entry for that region reverts to pointing back at the **original read-only physical page**.
+
+This "discard and revert" behavior is the key ingredient in the race.
+
+## Mapping Read-Only Files
+
+Normal OS behavior: if a file is opened read-only and mapped with `MAP_PRIVATE`, a normal user cannot write to the original file. However, the kernel does permit `write()` system calls into the virtual memory of a `MAP_PRIVATE` mapped region — because by definition, writes go to the private copy, not the original.
+
+The write path via `/proc/self/mem` is an indirect mechanism that allows writing to any virtual memory address in the current process, bypassing the file's original permission checks. This is the second ingredient.
+
+## The Dirty COW Vulnerability
+
+A write through `MAP_PRIVATE` into a private copy requires three steps:
+
+1. **Make a copy** — allocate a new physical page and copy the content from the original (COW).
+2. **Update the page table** — redirect the virtual address to the new physical page.
+3. **Write to memory** — perform the actual write to the now-private page.
+
+These three steps are **not atomic**. The kernel does not hold a lock across all three. This creates a race window between steps 2 and 3.
+
+The attack uses **two threads running concurrently**:
+
+* **Thread 1 (writer):** Repeatedly writes to the read-only file via `/proc/self/mem`. Each write attempt triggers the COW sequence.
+* **Thread 2 (madvisor):** Repeatedly calls `madvise(addr, len, MADV_DONTNEED)` on the mapped region to discard the private copy immediately after it's created.
+
+The race condition: if Thread 2 discards the private copy (reverting the page table to the original) **after** step 2 completes but **before** step 3 executes, Thread 1's write lands on the **original read-only physical page** instead of the private copy. The kernel has already updated the page table to the private copy in step 2, then Thread 2 resets it — so step 3 writes to the address that now points back to the original. The read-only check was satisfied before step 2 (it was going to a private copy), so no permission error is raised.
+
+The kernel designers did not add an extra permission check at step 3 because the assumption was that step 2 had already established that writes go to a private page. The race breaks that assumption.
+
+**Key difference from prior attacks:** Dirty COW does not require a specific target program to exploit. The attacker writes their own exploit program, directly interacts with the kernel's memory management subsystem, and modifies protected files without any privileged intermediary.
+
+## Reference
+
+* [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)
+
+---
+
 ## Introduction
 * Race condition vulnerability의 일종이며 Linux기반의 모든 OS에 영향을 주는 취약점이다.
 * 공격자는 읽기 모드라도 모든 protected file을 수정할 수 있게 된다.
@@ -22,7 +84,7 @@ date: 2021-06-10 00:43:12
     * 세 번째 인자는 memory가 readable(PROT_READ)인지 writable(PROT_WRITE)인지 나타내고 open()의 속성과 동일해야한다.
     * 네 번째 인자는 MAP_SHARED, MAP_PRIVATE같은 것을 넣는다.
     * 다섯 번째 인자는 mapped 될 file을 넣는다.
-    * 여섯 번째 인자는 file의 mapping할 시작포인트에 관한 offset을 넣는데, 0이면 file 전체를 mapping하겠다는 의미이다. 
+    * 여섯 번째 인자는 file의 mapping할 시작포인트에 관한 offset을 넣는데, 0이면 file 전체를 mapping하겠다는 의미이다.
 * 이를 이해하기 위해서는 가상메모리에 대해 잘 알고 있어야 한다.
 * MAP_SHARED를 사용하면 physical memory의 내용을 다른 프로세스들에서 다 볼 수 있다.
 * MAP_PRIVATE를 사용하면 한 프로세스에서 내용을 수정하면 기존에 모두가 접근 가능했떤 영역에서 새로운 영역으로 내용을 복사하기 때문에 수정한 프로세스만이 그 내용을 볼 수 있게 되는 것이다. 오리지널 영역에 영향을 주기 싫을때에도 사용한다. 단점은 복사하는 딜레이가 생기는 것이다.

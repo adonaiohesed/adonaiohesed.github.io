@@ -22,7 +22,6 @@ Regardless of the operating system, the following types of information, if found
   * **Cached Sensitive Data:** Sensitive JSON/XML responses fetched from the server, user profile pictures, documents, and other media files, temporary files.
   * **Log Files:** Sensitive information unintentionally included in debug or error logs.
 
------
 
 ### **Android App: Anatomy of Key Folders and Files**
 
@@ -94,7 +93,6 @@ Android app data is primarily stored within an app-specific isolated sandbox at 
       * **Description:** An API and service within the Android OS for securely storing and managing cryptographic keys and credentials. It's designed to be highly secure, potentially leveraging hardware security modules (TEE, StrongBox).
       * **Key Analysis Targets:** It's almost impossible to directly read KeyStore content from the file system. Instead, analyze **how the app's code uses KeyStore (static analysis)** to deduce what sensitive information might be stored there. Then, attempt **runtime analysis (Frida/Objection)** to intercept data as it's brought from KeyStore into memory and decrypted.
 
------
 
 ### **iOS App: Anatomy of Key Folders and Files**
 
@@ -146,13 +144,12 @@ iOS app data runs within a strict Sandbox. App data is stored in app-specific di
       * **Description:** A highly secure service in iOS for storing and managing extremely sensitive credentials like passwords, certificates, and encryption keys. It utilizes hardware-backed encryption.
       * **Key Analysis Targets:** Direct file system access to Keychain content is impossible. During pentesting, **runtime analysis (Frida/Objection)** is used to intercept information as the app retrieves it from Keychain and uses it in memory. Tools like **`objection ios keychain dump`** can extract Keychain items. MobSF can also analyze app code to identify how Keychain is used and spot potential misuse.
 
------
 
 ### **Static/Dynamic Analysis: Advanced Tooling for Data Extraction and Real-time Verification**
 
 While the tools mentioned above help in file system exploration, modern penetration testing heavily relies on combining static and dynamic analysis with specialized tools for efficient data extraction and real-time verification.
 
-#### **1. Android Apps: Live Data Inspection and Extraction**
+### **1. Android Apps: Live Data Inspection and Extraction**
 
 For Android apps, while `AndroidManifest.xml` analysis is key for static analysis, dynamic analysis is crucial to verify how data is actually stored and used during runtime.
 
@@ -230,7 +227,7 @@ For Android apps, while `AndroidManifest.xml` analysis is key for static analysi
         memory search "API_KEY" # Search for 'API_KEY' string in app memory
         ```
 
-#### **2. iOS Apps: Live Data Inspection and Extraction**
+### **2. iOS Apps: Live Data Inspection and Extraction**
 
 Similar to Android, iOS app analysis involves static analysis (IPA file analysis) followed by dynamic analysis (attaching to the running app) to inspect and extract sensitive data. Objection is also extremely powerful in the iOS environment.
 
@@ -321,7 +318,6 @@ Similar to Android, iOS app analysis involves static analysis (IPA file analysis
 * **캐시된 민감 데이터:** 서버에서 가져온 민감한 JSON/XML 응답, 사용자 프로필 사진, 문서 등 미디어 파일, 임시 파일
 * **로그 파일:** 디버그 또는 에러 로그에 민감 정보가 의도치 않게 포함된 경우
 
----
 
 ### **Android 앱의 주요 폴더 및 파일 해부학**
 
@@ -385,7 +381,6 @@ Android 앱의 데이터는 주로 `/data/data/<package_name>/` 경로 아래에
     * **설명:** Android OS에서 암호화 키, 자격 증명 등을 안전하게 저장하고 관리하기 위한 API 및 서비스입니다. 하드웨어 기반의 보안 요소(TEE, StrongBox)를 활용할 수 있어 매우 안전하게 설계되었습니다.
     * **주요 분석 대상:** KeyStore 자체의 내용을 파일 시스템에서 직접 읽어내는 것은 거의 불가능합니다. 대신, **앱 코드가 KeyStore를 어떻게 사용하는지(정적 분석)**를 통해 어떤 민감 정보가 KeyStore에 저장되어 있는지 추정하고, **런타임 분석(Frida/Objection)**을 통해 앱이 KeyStore에서 데이터를 가져와 메모리에서 복호화하는 시점을 포착하여 정보를 덤프하려 시도합니다.
 
----
 
 ### **iOS 앱의 주요 폴더 및 파일 해부학**
 
@@ -431,10 +426,9 @@ iOS 앱은 각 앱이 엄격한 샌드박스(Sandbox) 내에서 실행됩니다.
     * **설명:** iOS에서 비밀번호, 인증서, 암호화 키 등 매우 민감한 자격 증명을 안전하게 저장하고 관리하기 위한 서비스입니다. 하드웨어 기반의 강력한 암호화가 적용됩니다.
     * **주요 분석 대상:** Keychain 파일 시스템에 직접 접근하여 내용을 읽어내는 것은 거의 불가능합니다. 펜테스팅 시에는 **런타임 분석(Frida/Objection)**을 통해 앱이 Keychain에서 데이터를 가져와 메모리에서 사용하는 순간을 포착하여 정보를 덤프하거나, **`objection`의 `ios keychain dump`**와 같은 내장 기능을 활용합니다. 또한 **MobSF**와 같은 도구로 앱 코드가 Keychain을 어떻게 사용하는지 분석하여 잠재적 오용을 탐지합니다.
 
------
 
 ### **정적/동적 분석: 데이터 추출 및 실시간 검증을 위한 툴 활용 심화**
-#### **1. Android 앱: 실행 중인 데이터 확인 및 추출**
+### **1. Android 앱: 실행 중인 데이터 확인 및 추출**
 
 안드로이드 앱의 경우, `AndroidManifest.xml` 분석을 통해 잠재적 취약점을 파악하는 것이 정적 분석의 핵심이라면, 앱이 실제로 데이터를 어떻게 저장하고 활용하는지 확인하는 것은 동적 분석의 영역입니다.
 
@@ -512,7 +506,7 @@ iOS 앱은 각 앱이 엄격한 샌드박스(Sandbox) 내에서 실행됩니다.
         memory search "API_KEY" # 앱 메모리에서 'API_KEY' 문자열 검색
         ```
 
-#### **2. iOS 앱: 실행 중인 데이터 확인 및 추출**
+### **2. iOS 앱: 실행 중인 데이터 확인 및 추출**
 
 iOS 앱의 경우에도 Android와 유사하게, 정적 분석(IPA 파일 분석) 후 동적 분석(실행 중인 앱에 연결)을 통해 민감한 데이터를 확인하고 추출합니다. Objection은 iOS 환경에서도 매우 강력합니다.
 

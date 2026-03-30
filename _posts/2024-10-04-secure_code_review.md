@@ -35,14 +35,14 @@ An effective security review doesn't start with aimlessly reading code. Its effe
 
 A phased approach that combines automated and manual analysis is recommended for an efficient review.
 
-#### Phase 1: Automated Scan
+### Phase 1: Automated Scan
 
 Using automated scanning tools like SAST (Static Application Security Testing) is a very useful first step.
 
   * **Purpose**: Automated tools can quickly find well-known patterns of vulnerabilities like SQL Injection and Cross-Site Scripting (XSS). This filters out the low-hanging fruit, allowing the human reviewer to focus on more complex and subtle logical flaws during the manual review phase.
   * **Limitations**: Automated tools do not understand the complex context of business logic and therefore fail to detect most design-level flaws or authorization-related vulnerabilities. Thus, you should not blindly trust the tool's results but use them as a supplement to the manual review.
 
-#### Phase 2: Manual Scan
+### Phase 2: Manual Scan
 
 After the automated scan is complete, begin the manual analysis, diving deep into key areas of the code from an attacker's perspective.
 
@@ -57,7 +57,7 @@ After the automated scan is complete, begin the manual analysis, diving deep int
 
 An effective security review goes beyond simply checking off a list of vulnerabilities; it's a process of constantly asking, "If I were an attacker, how would I exploit this code?"
 
-#### 1. Entry Points: The Beginning of All Evil
+### 1. Entry Points: The Beginning of All Evil
 
 All data entering the system is a potential attack vector. Identify all entry points, including HTTP request parameters, headers, cookies, and file uploads, and check the following.
 
@@ -130,7 +130,7 @@ All data entering the system is a potential attack vector. Identify all entry po
 
   * **Path Traversal**: When constructing file system paths from user input, an attacker can use characters like `../../` to access files in unintended parent directories. Always use `path.normalize` and `path.join`, and verify that the final path is within the intended base directory.
 
-#### 2. Processing Logic: Flaws in Permissions and Logic
+### 2. Processing Logic: Flaws in Permissions and Logic
 
   * **Broken Access Control / IDOR**: This occurs when the application correctly verifies that a user is authenticated but fails to verify that they are **authorized** to access the specific object they have requested.
 
@@ -161,7 +161,7 @@ All data entering the system is a potential attack vector. Identify all entry po
         });
         ```
 
-#### 3. Data Storage and Output: Preventing Information Disclosure
+### 3. Data Storage and Output: Preventing Information Disclosure
 
   * **Cross-Site Scripting (XSS)**: When outputting data from a database or external source to a web page, you must apply proper output encoding for the given context. Modern frameworks like React, Vue, and Angular provide auto-encoding by default, but you must carefully review any use of functions that intentionally bypass it, like `dangerouslySetInnerHTML`.
 

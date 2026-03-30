@@ -7,6 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2024-10-18-web_shells_reverse_shells.png"
 date: 2024-10-18 20:24:00
 ---

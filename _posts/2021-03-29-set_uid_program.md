@@ -7,11 +7,74 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2021-03-29-set_uid_program.png"
 date: 2021-03-29 00:07:12
 ---
+
+## SET-UID Programs and Privilege Escalation
+
+A **privileged program** is any program that has access controls applied to it — it operates with permissions beyond those of the invoking user. There are two primary mechanisms for delivering privileged functionality to normal users:
+
+1. **Set-UID programs** — allow a process to temporarily adopt the file owner's privileges during execution.
+2. **Daemons (Services on Windows)** — background processes that normal users can send requests to, with the daemon itself executing privileged operations on their behalf.
+
+## Three User ID Types
+
+Understanding the difference between these three UIDs is foundational to understanding SUID exploitation:
+
+* **Real User ID (RUID):** The actual identity of the user who launched the process. Set at login and inherited across child processes.
+* **Effective User ID (EUID):** The identity used for access control decisions. When a Set-UID root binary runs, the RUID might be 5000 (a normal user), but the EUID becomes 0 (root). This is what the kernel checks when evaluating file permissions.
+* **Saved User ID (SUID):** Saves the previous EUID when privileges are dropped, allowing a process to restore them later via `seteuid()`.
+
+## Attack Surfaces of Set-UID Programs
+
+### User Inputs: Explicit Inputs
+
+* **Buffer overflow vulnerability** — classic stack or heap overflow to hijack control flow.
+* **Format string vulnerability** — when user input is passed directly as a format string argument to `printf()`-family functions.
+* Older versions of `chsh` (change shell) allowed attackers to append arbitrary data to `/etc/passwd`, effectively creating new root accounts.
+
+### System Inputs
+
+If an attacker can modify what the program reads as system input — for example, by racing a symlink swap on a file being read — the program may act on attacker-controlled data despite believing it came from a trusted system source. This is the basis of the TOCTOU (Time-of-Check to Time-of-Use) race condition attack.
+
+### Environment Variables: Hidden Inputs
+
+Environment variables are not part of the explicit input the developer writes, but they influence program behavior at runtime. This makes them a covert and often overlooked attack surface. Classic examples include `LD_PRELOAD`, `IFS`, and `PATH` manipulation.
+
+### Capability Leaking
+
+This is a subtle class of privilege bugs that occurs when a privileged process transitions to an unprivileged state — similar to how `su` works — but forgets to close file descriptors or release other capabilities it acquired while elevated. If a Set-UID root program opens `/etc/shadow` and then fails to close that file descriptor before dropping privileges, the unprivileged child process can still read from it via the inherited open descriptor.
+
+## Invoking Other Programs
+
+Privilege escalation frequently happens when a Set-UID program invokes external commands:
+
+* **`system()`** should be avoided. It invokes `/bin/sh -c <command>`, which means semicolons (`;`), pipes, and shell metacharacters in the argument string allow an attacker to chain arbitrary commands. The parameter is supposed to be data, but `system()` treats it as code — a direct violation of the principle of data/code separation.
+* **`execve()`** is the safer choice. It passes the command and its arguments directly to the OS, bypassing shell interpretation entirely. Because the first argument is the exact binary to execute and the subsequent array is passed verbatim as `argv`, there is no metacharacter interpolation.
+* As a rule, prefer the `exec()` family over `system()` whenever invoking external programs from a privileged context.
+
+The **principle of data/code isolation** is fundamental to security. When input data can be interpreted as executable code, every class of injection attack becomes possible — XSS, SQL injection, buffer overflows, and command injection all follow from this same violation.
+
+## Finding SUID Binaries
+
+To enumerate Set-UID binaries on a system:
+
+```bash
+find / -perm -4000 -type f 2>/dev/null
+```
+
+Any binary in this list that is world-writable, calls `system()`, or trusts environment variables is a potential escalation vector.
+
+## Reference
+
+* [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)
+
+---
+
 * privileged program: 접근 권한이 적용되어 있는 프로그램
-* 이런 프로그램에 접근하기 위해서는 2가지 방법이 필요하다. 
+* 이런 프로그램에 접근하기 위해서는 2가지 방법이 필요하다.
 1. Set-UID program.
     * 사용자가 필요에 따라 privilege변환이 필요할때 이용하는 프로그램이다.
 2. Daemons(Services in Windows)

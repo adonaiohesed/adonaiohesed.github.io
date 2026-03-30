@@ -1,272 +1,636 @@
 ---
-title: 파이썬 Data type
+title: "Python Data Types: What Every Engineer Should Know"
 key: page-python_data_types
 categories:
 - Engineering
 - Programming Fundamentals
 author: hyoeun
+math: false
+mathjax_autoNumber: false
 image: "/assets/thumbnails/2020-03-14-python_data_type.png"
+bilingual: true
 date: 2020-03-14 06:36:00
 ---
-* Python은 interpreter이다. Interpreter란 한 줄 한 줄 바로바로 해석하고 결과를 보여주는 언어이다.
-* Scalar type
-  * int, float, bool, None
-  * atomic data type
-* Non-scalar type 
-  * string, tuple, list, dictionary
-  * data types with internal structures
-* 파이썬은 index가 0부터 시작한다.
-* slicing을 할 때 a[0:3]은 0<= index < 3 을 의미한다.<br>이것은 len(array)와 같이 sizeof array크기를 이용해서 slicing이 가능하게 설계한 것으로 보인다.
-* 코드 안에 한글을 사용하기 위해서는 파일 맨 위에 다음 코드를 입력해야 합니다.
-```python
-#-*- coding: utf-8 -*- 
-```
-* ```print(i * j, end = " ")```는 i * j 계산값 이후에 \n이 아니라 " "를 출력한다는 의미.
 
-### Integer
-* ​파이썬 3 이전의 버전에서는 3/4의 계산을 0으로 표시했다.
-int/int는 int형으로만 나타냈다. 하지만 3버전 이후에서는 실수형으로 자동 형변환 시켰다.
-* 강제 형변환을 하기 위해서는 3/(4 * 0.1)의 형태를 취해주면 된다. 
-* / 연산은 나눗셈의 결과를 나타내고 //은 몫을 의미한다
-```python
-print(3.1/2.7)  # 1.1481481481481481
-print(3.1//2.7) # 1.0
-```
+## Why Data Types Matter More in Python Than You Think
 
-### String
-* "What's the matter?"<br>
-'He said to her, "You are so great!"'<br>
-"", ''는 동일한 기능을 하고 안에 escape 문자(\\)를 쓰지 않고 서로 구분 할 수 있도록 설계되었다.
-* \000은 null을 의미한다.
-* """ , """ 의 조합은 주석처리와 마찬가지로 거기 안에 들어있는 모든 문자열을 \n을 포함하면서 하나의 string으로 처리한다. 
-``` python
-multiline = """
-Life is too short
-You need python
-"""
-multiline = "Life is too short\n You need python"
-```
-* string에 관한 특수 formating (printf의 서식문자 관련 기능들과 유사)
-```python
-"I ate %d apples. so I was sick for %s days." % (2, "three") 
-"I ate {0} apples. so I was sick for {1} days.".format (2, "three") 
-"I ate {number} apples. so I was sick for {day} days.".format (number=2, day="three")
-```
-* interger type과 string을 더할때 str(int)로 바꿔야 된다.
-* str * n : str연산자를 n 번 반복합니다.
-* str[n]: 스트링 안에서 인덱스를 지정할 수 있습니다.
-* str[n:m]: 스트링 안에서 인덱스 범위를 지정할 수 있습니다.
-#### string 관련 함수.
+Python's dynamic typing is a double-edged sword. The flexibility speeds up prototyping, but a poor mental model of Python's type system causes bugs that are genuinely hard to find: mutable default arguments, surprising equality behavior, unexpected memory behavior under load, and performance characteristics that don't match expectations.
 
-  |함수|설명|
-  |:--|:--|
-  |a.count(x)| a 안에 x의 갯수 return
-  |a.find(x) |a 문자열안에 x 문자열 처음 나오는 위치 return. 없으면 -1
-  |a.index(x)| find와 동일한 기능이지만 x가 없으면 error 발생
-  |a.join('!@#')| '' 안에 있는 문자 사이에 a가 들어간다. !a@a# <- a는 string
-  |a.upper()| 모두 대문자로 변환
-  |a.lower()| 모두 소문자로 변환
-  |a.lstrip()| 왼쪽 공백 제거 
-  |a.rstrip()| 오른쪽 공백 제거
-  |a.strip()| 양쪽 공백 모두 제거
-  |a.replace(x,y)| a안에 있는 x(string)를 y(string)로 치환
-  |a.split(x)| x를 기준으로 x를 제외한 남은 요소를 list 형태로 return ex) "String".split("tr") -> ['S' , 'ing'] 
+This post builds the correct mental model — not just "what are the types" but how they behave in memory, where they're fast, and where they silently do the wrong thing.
 
+## Core Concepts: Python's Type System
 
-### List
-* []를 사용하고 string을 다루는 것과 매우 유사하다.
-* list는 array와 닮은 점이 많지만 다른 점은 list안에 서로 다른 data type이 존재할 수 있으며 크기가 또 다른 list가 담길 수 있다.
-  ```python
-  a = [1,2,3]
-  a[1] = [1,2,3] => [1, [1,2,3], 3]
-  a[1:2] = [1,2,3] => [1, 1, 2, 3, 1] # a[1:2]의 의미는 1과 2사이에 x를 넣겠다.
-  ```
-* ```del a[1]```을 하면 index 1의 요소가 삭제되고 list 크기도 준다.
-#### List 관련 함수
+### Interpreter vs Compiler
 
-  |함수|설명|
-  |:--|:--|
-  |a.append(x)| x를 list 끝에 추가
-  |a.sort()| list를 오름차순으로 정렬
-  |a.reverse()| list를 내림차순으로 정렬. 1,2,3 -> 3,2,1
-  |a.index(x)| x에 해당하는 index를 return
-  |a.insert(a,b)| index a(int) 위치에 b data를 삽입
-  |a.remove(x)| 처음으로 나오는 x를 삭제
-  |a.pop()| 마지막에 나오는 요소를 return하고 list 안에서는 삭제. ()안에는 index 넣어도 된다.
-  |a.count(x)| list안에 있는 x 갯수 return
-  |a.extend(x)| x라는 list를 a list 뒤에 추가 
-  |len(a)| a리스트의 원소 갯수
-
-#### List Comprehensions
+Python is an interpreted language — each line is parsed and executed at runtime. This means type information exists at runtime, not compile time. There's no static type checking unless you add it explicitly with mypy or Pyright.
 
 ```python
->>> squares = [x**2 for x in range(10)]
->>> squares
-[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-
->>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
-[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
-
->>> matrix = [
-...     [1, 2, 3, 4],
-...     [5, 6, 7, 8],
-...     [9, 10, 11, 12],
-... ]
-
->>> [[row[i] for row in matrix] for i in range(4)]
-[[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
-
->>> list(zip(*matrix))
-[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
+x = 42        # x is int
+x = "hello"   # x is now str — Python allows this
+x = [1, 2]    # x is now list — no error
 ```
 
-### Tuple 
-* ()를 사용하고 tuple은 원소값을 직접 변경 불가. 시도시 error.
-* list보다는 access가 빠른 편이다.
-* ()과 ,로 구분되며 값이 1개인 튜플은(x,)와 같이 뒤에 ,를 붙인다. element가 없을 때는 ()
+### The Mutability Divide
+
+This is the most important concept in Python's type system.
+
+**Immutable types** — value cannot change after creation:
+```
+int, float, bool, complex, str, bytes, tuple, frozenset, range
+```
+
+**Mutable types** — value can be modified in-place:
+```
+list, dict, set, bytearray, user-defined classes (by default)
+```
+
+Immutability has a critical implication: immutable objects can be used as dictionary keys and set members. Mutable objects cannot.
+
+### Scalar Types
+
+- **int** — arbitrary precision. Python integers never overflow (unlike C/Java). `2**1000` works fine.
+- **float** — IEEE 754 double precision. `0.1 + 0.2 != 0.3` is real.
+- **bool** — subclass of int. `True == 1` and `False == 0`.
+- **None** — singleton. There is only one `None` object; use `is None` not `== None`.
+- **complex** — `3+4j`. Rarely needed outside scientific computing.
+
+## How It Works: Deep Dive
+
+### Integer: Arbitrary Precision and Interning
+
+Python integers have no fixed size — they grow as needed. This is why `2**1000` doesn't overflow:
+
+```python
+print(2**1000)
+# 10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376
+```
+
+CPython interns small integers (-5 to 256) — reuses the same object:
+
+```python
+a = 256
+b = 256
+print(a is b)  # True — same object
+
+a = 257
+b = 257
+print(a is b)  # False — different objects (implementation detail, don't rely on this)
+```
+
+### Float: IEEE 754 and Precision Gotchas
+
+```python
+print(0.1 + 0.2)           # 0.30000000000000004
+print(0.1 + 0.2 == 0.3)    # False
+
+# Fix: use decimal for financial math
+from decimal import Decimal
+print(Decimal('0.1') + Decimal('0.2'))  # 0.3
+
+# Or use round() for display
+print(round(0.1 + 0.2, 10) == round(0.3, 10))  # True
+
+# Integer division
+print(3 / 4)    # 0.75  (true division in Python 3)
+print(3 // 4)   # 0     (floor division)
+print(3.1 // 2.7)  # 1.0  (floor division with floats)
+```
+
+### String: Immutable, Interned, Unicode
+
+Strings in Python 3 are Unicode by default (UTF-8 internally stored as latin-1, UCS-2, or UCS-4 depending on content — CPython optimizes this).
+
+```python
+# Immutability — strings cannot be modified
+s = "hello"
+# s[0] = 'H'  → TypeError
+
+# String formatting (modern f-strings are fastest)
+name, count = "Alice", 42
+old_way = "Hello %s, you have %d messages" % (name, count)
+format_way = "Hello {}, you have {} messages".format(name, count)
+f_string = f"Hello {name}, you have {count} messages"  # preferred
+
+# Useful string methods
+s = "  hello world  "
+print(s.strip())           # "hello world"
+print(s.upper())           # "  HELLO WORLD  "
+print(s.split())           # ["hello", "world"]
+print("tr".join(["s", "ing"]))  # "string"
+print("hello".find("ll"))  # 2
+print("hello".count("l"))  # 2
+print("hello".replace("l", "L"))  # "heLLo"
+```
+
+### List: Dynamic Arrays
+
+Lists are backed by dynamic arrays (C arrays that grow by ~1.125x when full). Random access is O(1), append is amortized O(1), but insert at index 0 is O(n).
+
+```python
+a = [1, 2, 3]
+
+# Modification — lists are mutable
+a.append(4)          # [1, 2, 3, 4]
+a.insert(1, 10)      # [1, 10, 2, 3, 4]
+a.remove(10)         # removes first occurrence of 10
+popped = a.pop()     # removes and returns last element
+a.sort()             # in-place sort (Timsort, stable)
+a.reverse()          # in-place reverse
+
+# Slicing — creates a new list
+print(a[1:3])        # elements at index 1 and 2
+print(a[::-1])       # reversed copy
+print(a[::2])        # every other element
+
+# Shallow copy pitfall
+b = a          # b and a point to same list
+b = a[:]       # shallow copy — new list, same element references
+b = a.copy()   # same as a[:]
+from copy import deepcopy
+b = deepcopy(a)  # full independent copy (for nested structures)
+
+# List comprehensions — Pythonic and fast
+squares = [x**2 for x in range(10)]
+evens = [x for x in range(20) if x % 2 == 0]
+matrix_transpose = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+```
+
+### Tuple: Immutable Sequences
+
+Tuples are faster than lists for iteration and use less memory. Use them for fixed-size records, return values, and dictionary keys.
+
 ```python
 empty = ()
-one = 5,     # (5,)로 저장됩니다.
-```
-* 여러개의 요소가 있을 때에는 ()를 생략하고 ,로만 선언 가능.
-```python
-tp = 1,2,3                 # tp == (1, 2, 3)
-print(tp[2])               # 3 출력
-q = tp[:1] + (5,) + tp[2:] # q == (1, 5, 3)
-```
-* tp[2]와 같이 indexing은 가능하다. 그 index의 값 return.
-* tp[:2]와 같이 slicing도 가능하다. 해당하는 값 return.
-* tp1 + tp2 하면 더해진 새로운 tp을 return.
-* tp * 3 은 tp를 3번 반복해서 만든 new 튜플을 return.
-* 튜플 활용법
+single = (5,)          # trailing comma required for single-element
+point = (3, 4)
+x, y = point           # unpacking
 
-  ```python
-  >>> c = 10
-  >>> d = 20
-  >>> c, d = d, c
-  >>> print c,d
-  20 10
+# Swap without temp variable
+a, b = b, a
 
-  >>> def magu_print(x, y, *rest):
-  ...   print x, y, rest
-  ...
-  >>> magu_print(1,2,3,5,6,7,9,10)
-  1 2 (3, 5, 6, 7, 9, 10)
+# Multiple return values (actually returns a tuple)
+def min_max(lst):
+    return min(lst), max(lst)
 
-  >>> p = (1, 2, 3)
-  >>> q = list(p)                  # 튜플 p로 리스트 q를 만듦
-  >>> q
-  [1, 2, 3]
-  >>> r = tuple(q)                 # 리스트 q로 튜플 r을 만듦
-  >>> r
-  (1, 2, 3)
-  ```
-[참고 사이트](https://wikidocs.net/71)
+low, high = min_max([3, 1, 4, 1, 5, 9])
 
-### Dictionary
-* {}를 사용하며 {key:value, ...} pair로 구성.
-* java hash를 의미. 
-* 추가 하는 방식은 dic[key] = value 이다.<br>
-key에는 변하지 않는 값인 숫자, 문자, 튜플이 가능하다.<br>
-value는 어떠한 타입이 와도 상관없다.
-```python
-dic = {}
-dic['python'] = 'Easy'
-```
-* dictionary는 기본적으로 순서가 전혀 상관 없다.
-* del dic[key]로 삭제.
-* dic[key]는 value 값을 return 한다.<br>
-따라서 key는 primary key이고 dic[중복된 key] = value하면 기존 key값의 value가 교체된다.<br>
-초기화 당시에는 중복된 key 값들을 입력할 수 있지만 그렇게 사용하는 것은 피해야 한다.
-#### Dictionary 관련 함수들
-
-  |함수|설명|
-  |:--|:--|
-  |a.keys()| ([ ]) object 형태(ver3.0 이전은 list형태)로 key값들 return
-  |a.values()| keys()와 마찬가지로 value 값들 return
-  |a.items()| key, value pair를 튜플로 묶어서 return
-  |a.clear()| 모두 지우기
-  |a.get(key)| a[key]와 같은 기능이지만 key가 없을 경우 a[key]는 error를, a.get(key)는 None을 return
-  |a.get(key, 'something')|key가 없을경우 None 대신에 'something'을 return
-  
-  * ```'key' in a```: a안에 key가 있으면 True, 없으면 False return<br>
-  * 반환된 object로 ```for k in a.keys()``` 도 사용할 수도 있습니다.<br>
-  * list(a.keys())로 하면 list로 변환 됩니다.
-
-### Set
-* 수학의 set 개념과 비슷합니다. unordered, not allowed redendent
-* list(set), tuple(set) 하면 set이 각각에 해당하는 걸로 변환.
-* 집합이기에 union(|), intersection(&), difference(-), symmetric_difference(^)<합집합 - 교집합> 연산자가 있습니다. ex) s1.difference(s2) == s1 - s2
-```python
->>> a = {1, 2, 3, 4, 5}
->>> b = {3, 4, 5, 6, 7}
->>> c = a.symmetric_difference(b)
->>> a
-{1, 2, 3, 4, 5}
->>> b
-{3, 4, 5, 6, 7}
->>> c
-{1, 2, 6, 7}
-```
-* 초기화
-```python
-s = set()
-s1 = {1,3,5}
-s2 = set([1,'a','ab']) # s2 == {'ab', 1, 'a'}
-```
-#### Set 관련 함수들
-
-  |함수|설명|
-  |:--|:--|
-  |s.add(x)| x 추가
-  |s.update([ , , ])| 여러개 추가
-  |s.remove(x)| x 삭제, 없으면 Error 발생
-  |s.discard(x)| x 삭제, 없어도 에러발생 x
-  |s.copy()| s set 복사
-  |s.issubset(a)| s가 a의 부분집합이면 True 아니면 False
-  |s.issuperset(a)| s가 a의 superset이면 True 아니면 False
-  |s.isdisjoint(a)| s와 a가 교집합이 없으면 True  아니면 False
-
-### Ture and False / None
-* 무슨 자료형이던지 있으면 True 없거나 0이면 False(==None)
-* 다음과 같은 코드들을 쓸 수 있다.
-
-  ```python
-  bool_x = True
-  print(bool_x)                # True
-  print(not bool_x)            # False
-  print(bool_x and not bool_x) # False
-  print(bool_x or not bool_x)  # True
-
-  var_none = None
-  print(var_none)              # None
-  ```
-
-### Type 확인하기
-```python
-print(type(whatever))
+# Named tuples for readability
+from collections import namedtuple
+Point = namedtuple('Point', ['x', 'y'])
+p = Point(3, 4)
+print(p.x, p.y)    # 3 4
 ```
 
-## Mutable / Immutable
-### List of mutable types:
-* list, dict, set, bytearray, user-defined classes
+### Dictionary: Hash Maps with Insertion Order
 
-### List of immutable types:
-* int, float, decimal, complex, bool, string, tuple, range, frozenset, bytes
+Since CPython 3.7, dicts maintain insertion order. This is now guaranteed by the language spec (not just CPython).
 
-파이썬에서 “hashable(해시 가능)”하다는 것은, 해당 객체가 해시(hash) 값을 가질 수 있고 이 해시 값이 객체의 생존 기간 동안 변하지 않아야 함을 의미합니다. 파이썬에서 “객체의 해시(hash) 값이 그 객체의 생존 기간(lifetime) 동안 변하지 않는다”는 말은, 객체가 메모리에 존재하는 동안(= 프로그램 실행 중 해당 객체가 실제로 사용되고 있을 때)에는 그 객체를 대표하는 해시 값이 계속 동일하게 유지되어야 한다는 것을 의미합니다.
-파이썬의 int, float, bool, str, tuple (단, 튜플 안에 있는 요소들도 전부 해시 가능해야 함) 등은 기본적으로 해시 가능합니다. 반면, 리스트 list나 딕셔너리 dict 같은 가변 객체는 해시 값이 변할 수 있으므로 기본적으로 해시 불가능합니다.
-
-### Hashable
 ```python
-x = hash(frozenset([1,2]))
-x = hash((1,2,3))
+d = {'a': 1, 'b': 2, 'c': 3}
+
+# Access and modification
+print(d['a'])         # 1
+d['d'] = 4            # add new key
+del d['a']            # remove key
+
+# Safe access
+print(d.get('missing'))            # None (no KeyError)
+print(d.get('missing', 'default')) # 'default'
+
+# Iteration
+for k, v in d.items():    # key-value pairs
+    print(k, v)
+for k in d.keys():         # keys
+    pass
+for v in d.values():       # values
+    pass
+
+# Dict comprehension
+squared = {x: x**2 for x in range(5)}  # {0:0, 1:1, 2:4, 3:9, 4:16}
+
+# Merge dicts (Python 3.9+)
+merged = d1 | d2
+
+# defaultdict for cleaner accumulation
+from collections import defaultdict
+word_count = defaultdict(int)
+for word in text.split():
+    word_count[word] += 1
 ```
 
-### Unhashable(Not working)
+### Set: Hash-Based Unordered Collections
+
+Sets provide O(1) membership testing, unlike lists (O(n)). Use them for deduplication and membership checks.
+
 ```python
-x = hash(set([1,2]))
-x = hash(([1,2], [2,3]))
-x = hash({1,2})
-x = hash([1,2,3])
+a = {1, 2, 3, 4, 5}
+b = {3, 4, 5, 6, 7}
+
+# Set operations
+print(a | b)   # union: {1, 2, 3, 4, 5, 6, 7}
+print(a & b)   # intersection: {3, 4, 5}
+print(a - b)   # difference: {1, 2}
+print(a ^ b)   # symmetric difference: {1, 2, 6, 7}
+
+# Membership (O(1))
+print(3 in a)  # True
+
+# Modification
+a.add(6)
+a.remove(1)    # KeyError if not found
+a.discard(99)  # safe — no error if not found
+
+# Empty set — must use set(), not {} (that's a dict)
+empty_set = set()
+```
+
+## Practical Application: Choosing the Right Type
+
+### Performance-Conscious Type Selection
+
+```python
+import sys
+
+# Memory comparison
+lst = list(range(1000))
+tup = tuple(range(1000))
+print(sys.getsizeof(lst))  # larger (dynamic array overhead)
+print(sys.getsizeof(tup))  # smaller (fixed size)
+
+# Membership test performance
+import timeit
+lst = list(range(10000))
+st = set(range(10000))
+
+# List: O(n) — scans entire list
+timeit.timeit(lambda: 9999 in lst, number=10000)  # ~slow
+
+# Set: O(1) — hash lookup
+timeit.timeit(lambda: 9999 in st, number=10000)   # ~fast
+
+# Rule: if you do repeated membership checks, convert list to set
+```
+
+### Hashability: Why Some Types Can't Be Dict Keys
+
+An object is **hashable** if it has a `__hash__()` method that returns a consistent value over its lifetime, and an `__eq__()` method.
+
+Immutable types are hashable. Mutable types are not (by default).
+
+```python
+# Hashable — can be dict keys or set members
+hash(42)
+hash("string")
+hash((1, 2, 3))        # tuple of hashables
+hash(frozenset([1,2])) # frozenset
+
+# Not hashable — will raise TypeError
+hash([1, 2, 3])        # TypeError: unhashable type: 'list'
+hash({1: 'a'})         # TypeError: unhashable type: 'dict'
+hash({1, 2, 3})        # TypeError: unhashable type: 'set'
+
+# Use frozenset as a hashable set
+fs = frozenset([1, 2, 3])
+d = {fs: "value"}  # works fine
+```
+
+## Gotchas: What Experts Know
+
+### Mutable Default Argument (Classic Python Bug)
+
+```python
+# BAD — the default list is created ONCE at function definition
+def append_to(element, lst=[]):
+    lst.append(element)
+    return lst
+
+print(append_to(1))  # [1]
+print(append_to(2))  # [1, 2]  ← bug! reuses same list
+
+# GOOD — use None as sentinel
+def append_to(element, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(element)
+    return lst
+```
+
+### `is` vs `==`
+
+```python
+# == checks value equality
+# is checks identity (same object in memory)
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+print(a == b)  # True — same value
+print(a is b)  # False — different objects
+
+# None comparison: always use 'is'
+x = None
+if x is None:   # correct
+    pass
+if x == None:   # works but misleading; custom __eq__ could interfere
+    pass
+```
+
+### String Concatenation in Loops
+
+```python
+# BAD — creates a new string object each iteration, O(n²) total
+result = ""
+for word in words:
+    result += word  # each += creates a new string
+
+# GOOD — join is O(n)
+result = "".join(words)
+```
+
+### Truthiness Rules
+
+```python
+# These are all falsy:
+bool(0)       # False
+bool(0.0)     # False
+bool("")      # False
+bool([])      # False
+bool({})      # False
+bool(set())   # False
+bool(None)    # False
+
+# Everything else is truthy
+bool([0])     # True — list with one element
+bool("False") # True — non-empty string
+```
+
+## Quick Reference
+
+### Type Cheat Sheet
+
+| Type | Mutable | Ordered | Duplicate OK | Key/Member |
+|:--|:--:|:--:|:--:|:--:|
+| `int` | ✗ | — | — | ✓ |
+| `float` | ✗ | — | — | ✓ |
+| `str` | ✗ | ✓ | ✓ | ✓ |
+| `tuple` | ✗ | ✓ | ✓ | ✓ |
+| `frozenset` | ✗ | ✗ | ✗ | ✓ |
+| `list` | ✓ | ✓ | ✓ | ✗ |
+| `dict` | ✓ | ✓ (insertion) | keys: ✗ | ✗ |
+| `set` | ✓ | ✗ | ✗ | ✗ |
+
+### Type Checking
+
+```python
+type(x)           # returns exact type
+isinstance(x, int)             # True if x is int or subclass
+isinstance(x, (int, float))    # True if x is int or float
+```
+
+---
+
+## Python 데이터 타입이 생각보다 중요한 이유
+
+Python의 동적 타이핑은 양날의 검이다. 유연성이 프로토타이핑을 빠르게 해주지만, 잘못된 타입 시스템 이해는 찾기 어려운 버그를 만든다. 뮤터블 기본 인수, 예상치 못한 동등성 동작, 부하 하에서의 메모리 동작, 기대와 다른 성능 특성 등.
+
+이 포스팅은 단순히 "타입이 무엇인가"가 아니라, 메모리에서 어떻게 동작하는지, 언제 빠른지, 언제 조용히 잘못되는지를 다룬다.
+
+## 핵심 개념: Python 타입 시스템
+
+### 인터프리터 언어
+
+Python은 인터프리터 언어다. 각 줄이 런타임에 파싱되고 실행된다. 타입 정보는 컴파일 타임이 아닌 런타임에 존재한다.
+
+### 가변성의 구분
+
+이것이 Python 타입 시스템에서 가장 중요한 개념이다.
+
+**불변(Immutable) 타입** — 생성 후 값 변경 불가:
+```
+int, float, bool, complex, str, bytes, tuple, frozenset, range
+```
+
+**가변(Mutable) 타입** — 내부 값 변경 가능:
+```
+list, dict, set, bytearray, 사용자 정의 클래스 (기본적으로)
+```
+
+불변성의 핵심 의미: 불변 객체는 딕셔너리 키와 집합 멤버로 사용 가능하다. 가변 객체는 불가.
+
+### 스칼라 타입
+
+- **int** — 임의 정밀도. Python 정수는 절대 오버플로우하지 않는다.
+- **float** — IEEE 754 배정밀도. `0.1 + 0.2 != 0.3`은 실제 문제다.
+- **bool** — int의 서브클래스. `True == 1`, `False == 0`.
+- **None** — 싱글톤. `is None`으로 비교하라, `== None`이 아니라.
+
+## 작동 원리: 깊이 들어가기
+
+### 정수: 임의 정밀도와 인터닝
+
+Python 정수는 크기 제한이 없다. `2**1000`이 잘 동작한다. CPython은 작은 정수(-5~256)를 인터닝한다 — 같은 객체를 재사용:
+
+```python
+a = 256; b = 256
+print(a is b)  # True — 같은 객체
+
+a = 257; b = 257
+print(a is b)  # False — 다른 객체 (구현 세부사항, 의존하지 말 것)
+```
+
+### 부동소수점: IEEE 754 함정
+
+```python
+print(0.1 + 0.2)           # 0.30000000000000004
+print(0.1 + 0.2 == 0.3)    # False
+
+# 금융 계산에는 Decimal 사용
+from decimal import Decimal
+print(Decimal('0.1') + Decimal('0.2'))  # 0.3
+
+# 나눗셈
+print(3 / 4)    # 0.75  (Python 3에서 진짜 나눗셈)
+print(3 // 4)   # 0     (나머지 버림)
+```
+
+### 문자열: 불변, 인터닝, 유니코드
+
+Python 3 문자열은 기본적으로 유니코드다.
+
+```python
+# f-string이 가장 빠름 (권장)
+name, count = "Alice", 42
+f_string = f"Hello {name}, you have {count} messages"
+
+# 유용한 문자열 메서드
+s = "  hello world  "
+s.strip()            # "hello world"
+s.upper()            # "  HELLO WORLD  "
+s.split()            # ["hello", "world"]
+"hello".find("ll")   # 2
+"hello".replace("l", "L")  # "heLLo"
+```
+
+### 리스트: 동적 배열
+
+리스트는 동적 배열로 구현된다. 랜덤 접근 O(1), append 분할상각 O(1), 인덱스 0 삽입은 O(n).
+
+```python
+a = [1, 2, 3]
+a.append(4)          # [1, 2, 3, 4]
+a.insert(1, 10)      # [1, 10, 2, 3, 4]
+a.sort()             # 제자리 정렬 (Timsort, 안정적)
+
+# 얕은 복사 함정
+b = a          # 같은 리스트를 가리킴
+b = a[:]       # 새 리스트 (얕은 복사)
+from copy import deepcopy
+b = deepcopy(a)  # 완전 독립 복사
+
+# 리스트 컴프리헨션 — Pythonic하고 빠름
+squares = [x**2 for x in range(10)]
+evens = [x for x in range(20) if x % 2 == 0]
+```
+
+### 딕셔너리: CPython 3.7+에서 삽입 순서 보장
+
+```python
+d = {'a': 1, 'b': 2}
+
+# 안전한 접근
+d.get('missing', 'default')  # KeyError 없음
+
+# 딕셔너리 컴프리헨션
+squared = {x: x**2 for x in range(5)}
+
+# 병합 (Python 3.9+)
+merged = d1 | d2
+```
+
+### 집합: 해시 기반 순서 없는 컬렉션
+
+O(1) 멤버십 테스트. 중복 제거와 멤버십 확인에 사용.
+
+```python
+a = {1, 2, 3, 4, 5}
+b = {3, 4, 5, 6, 7}
+
+print(a | b)   # 합집합
+print(a & b)   # 교집합
+print(a - b)   # 차집합
+print(a ^ b)   # 대칭 차집합
+
+# 빈 집합은 반드시 set()으로 — {}는 딕셔너리
+empty_set = set()
+```
+
+## 실전 활용: 올바른 타입 선택
+
+### 성능을 고려한 타입 선택
+
+```python
+import sys
+
+# 멤버십 테스트 성능
+lst = list(range(10000))
+st = set(range(10000))
+
+# 리스트: O(n) — 전체 스캔
+# 집합: O(1) — 해시 조회
+# 반복 멤버십 검사 → 리스트를 집합으로 변환하라
+```
+
+### 해시 가능성
+
+```python
+# 해시 가능 — 딕셔너리 키나 집합 멤버 가능
+hash(42)
+hash("string")
+hash((1, 2, 3))
+hash(frozenset([1,2]))
+
+# 해시 불가능 — TypeError 발생
+hash([1, 2, 3])    # TypeError: unhashable type: 'list'
+hash({1: 'a'})     # TypeError: unhashable type: 'dict'
+```
+
+## 전문가가 아는 함정들
+
+### 뮤터블 기본 인수 (클래식 Python 버그)
+
+```python
+# 나쁨 — 기본 리스트가 함수 정의 시 딱 한 번 생성됨
+def append_to(element, lst=[]):
+    lst.append(element)
+    return lst
+
+print(append_to(1))  # [1]
+print(append_to(2))  # [1, 2] ← 버그! 같은 리스트를 재사용
+
+# 좋음 — None을 센티넬로 사용
+def append_to(element, lst=None):
+    if lst is None:
+        lst = []
+    lst.append(element)
+    return lst
+```
+
+### `is` vs `==`
+
+```python
+# ==는 값 동등성 확인
+# is는 동일성 확인 (메모리의 같은 객체)
+
+a = [1, 2, 3]; b = [1, 2, 3]
+print(a == b)  # True — 같은 값
+print(a is b)  # False — 다른 객체
+
+# None은 항상 is로 비교
+if x is None:   # 올바름
+    pass
+```
+
+### 루프에서 문자열 연결
+
+```python
+# 나쁨 — 반복마다 새 문자열 객체 생성, O(n²)
+result = ""
+for word in words:
+    result += word
+
+# 좋음 — join은 O(n)
+result = "".join(words)
+```
+
+### 참/거짓 규칙
+
+```python
+# 모두 False:
+bool(0), bool(""), bool([]), bool({}), bool(set()), bool(None)
+
+# True인 함정:
+bool([0])     # True — 원소가 있는 리스트
+bool("False") # True — 비어있지 않은 문자열
+```
+
+## 빠른 참조
+
+### 타입 치트시트
+
+| 타입 | 가변 | 순서 | 중복 | 키/멤버 가능 |
+|:--|:--:|:--:|:--:|:--:|
+| `int` | ✗ | — | — | ✓ |
+| `float` | ✗ | — | — | ✓ |
+| `str` | ✗ | ✓ | ✓ | ✓ |
+| `tuple` | ✗ | ✓ | ✓ | ✓ |
+| `frozenset` | ✗ | ✗ | ✗ | ✓ |
+| `list` | ✓ | ✓ | ✓ | ✗ |
+| `dict` | ✓ | ✓ (삽입순) | 키: ✗ | ✗ |
+| `set` | ✓ | ✗ | ✗ | ✗ |
+
+### 타입 확인
+
+```python
+type(x)                         # 정확한 타입 반환
+isinstance(x, int)              # int 또는 서브클래스면 True
+isinstance(x, (int, float))     # int 또는 float이면 True
 ```

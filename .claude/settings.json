@@ -31,10 +31,14 @@
       "Bash(git commit:*)",
       "Bash(grep -l \"^# \" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2025-03-*.md)",
       "Bash(ls /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/*.md)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(grep -n \"^---$\\\\|^-----$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)",
+      "Bash(grep -c \"^---$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)",
+      "Bash(grep -n \"^---$\" /Users/hyoeunchoi/Documents/adonaiohesed.github.io/_posts/2024-10-04-secure_code_review.md)"
     ],
     "additionalDirectories": [
-      "/Users/hyoeunchoi/.claude/skills/taste-skill"
+      "/Users/hyoeunchoi/.claude/skills/taste-skill",
+      "/Users/hyoeunchoi/Documents/adonaiohesed.github.io/.claude/skills"
     ]
   }
 }

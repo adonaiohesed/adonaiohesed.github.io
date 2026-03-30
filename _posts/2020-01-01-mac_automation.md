@@ -10,7 +10,7 @@ bilingual: true
 date: 2020-01-01 06:00:00
 ---
 
-# Setting Up Mac Mini and MacBook Air Environment with Automator
+## Setting Up Mac Mini and MacBook Air Environment with Automator
 
 Recently, I decided to purchase a Mac Mini after experiencing performance issues with my MacBook Air. However, one major downside of the Mac Mini is its poor built-in speaker quality. While my MacBook Air wasn’t completely unusable, I wanted to find a way to use both devices effectively.
 
@@ -131,7 +131,7 @@ To disconnect AirPlay and switch to another audio device, I used a program calle
 
 ---
 
-# Mac Automator를 이용한 맥 미니와 맥북 에어 환경 설정
+## Mac Automator를 이용한 맥 미니와 맥북 에어 환경 설정
 최근 맥북 에어를 사용하던 중 성능 저하를 느껴 맥 미니를 새로 구매했습니다. 하지만 맥 미니의 가장 큰 단점은 내장 스피커의 음질이 좋지 않다는 점이었습니다. 기존 맥북 에어는 성능 저하가 있었지만 여전히 사용 가능했기 때문에, 맥 미니와 함께 활용할 방법을 고민했습니다.
 결론적으로, 책상 중앙에 맥 미니와 연결된 모니터를 배치하고 그 아래에 맥북 에어를 두는 방식으로 설정했습니다. 영상을 시청할 때는 **AirPlay**를 이용해 맥북 에어의 스피커를 사용하는 방법을 고안했습니다.
 그러나 **AirPlay와 유니버설 컨트롤**을 동시에 사용할 수 없다는 점이 문제였습니다. 따라서 키보드 단축키를 통해 AirPlay를 연결하거나 해제하는 기능을 구현해 두 기기를 더 효율적으로 사용할 수 있도록 했습니다.

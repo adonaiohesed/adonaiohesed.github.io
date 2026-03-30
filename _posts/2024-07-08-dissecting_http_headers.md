@@ -17,7 +17,6 @@ When performing web penetration testing, HTTP headers are the backbone of commun
 
 In this blog post, we will delve deeply into the **key HTTP headers to pay close attention to** during web penetration testing, including their **security implications, vulnerability scenarios, and what a pentester should look for.**
 
----
 
 ### **I. Response Headers for Security Enhancement and Defense Mechanisms**
 
@@ -143,7 +142,6 @@ These headers are included by the client when sending requests to the server. At
     * **Security Relevance:** If the server improperly validates the `Origin` header (e.g., `Access-Control-Allow-Origin: *` or incorrect regex use) or allows `null` Origins, it can lead to CORS bypass. This allows malicious scripts from other origins to make unauthorized requests or read responses.
     * **What Pentesters Should Look For:** Test how the server responds with the `Access-Control-Allow-Origin` header when the `Origin` header is manipulated (e.g., sending `null` or unauthorized domains).
 
----
 
 ### **Conclusion**
 
@@ -279,7 +277,6 @@ HTTP 헤더는 웹 통신에서 클라이언트와 서버가 서로에게 보내
     * **보안 관련성:** 서버가 `Origin` 헤더를 잘못 검증하거나(`Access-Control-Allow-Origin: *` 또는 잘못된 정규 표현식 사용) `null` Origin을 허용할 경우, CORS 우회로 이어져 다른 출처의 악성 스크립트가 인가되지 않은 요청을 보내거나 응답을 읽을 수 있게 됩니다.
     * **펜테스팅 시 확인 사항:** `Origin` 헤더를 조작하여 `null`이나 허용되지 않는 도메인을 보냈을 때 서버가 `Access-Control-Allow-Origin` 헤더를 어떻게 응답하는지 확인합니다.
 
----
 
 ### **결론**
 

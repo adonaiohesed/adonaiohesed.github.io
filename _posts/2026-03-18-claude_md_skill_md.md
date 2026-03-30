@@ -216,7 +216,6 @@ triggered by `/security-review`.
 **Fix**:
 [Code example of the fix]
 
----
 ```
 
 ## Examples
@@ -237,7 +236,6 @@ Avoid these mistakes that undermine the value of your CLAUDE.md:
 
 **Missing the "why"**: Claude Code follows instructions better when it understands the reasoning. "Never use f-strings in SQL queries—this prevents SQL injection attacks" is better than just "Never use f-strings in SQL queries."
 
----
 
 ## 효과적인 CLAUDE.md와 SKILL.md 작성법
 

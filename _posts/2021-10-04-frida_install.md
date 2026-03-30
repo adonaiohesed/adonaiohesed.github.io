@@ -73,7 +73,6 @@ conda deactivate
 
 When installing Frida Server, it is critical to check your phone's CPU architecture (e.g., ARM, ARM64, x86). The Frida Server binary must match the device's architecture to function correctly.
 
------
 
 ## Installing Frida Server on a Mobile Device (for Rooted Devices)
 
@@ -215,7 +214,6 @@ conda deactivate
 
 Frida Server를 설치할 때 휴대폰의 CPU 아키텍처(ARM, ARM64, x86 등)를 확인하는 것은 매우 중요합니다. Frida Server는 기기의 아키텍처에 맞는 바이너리를 사용해야 제대로 작동합니다.
 
------
 
 ## 모바일 환경에 Frida Server 설치 (루팅된 장치용)
 

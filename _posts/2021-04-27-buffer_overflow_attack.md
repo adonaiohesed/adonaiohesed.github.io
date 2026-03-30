@@ -7,9 +7,184 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2021-04-27-buffer_overflow_attack.png"
 date: 2021-04-27 05:09:36
 ---
+
+## Memory Layout of a Typical C Process
+
+A C process's address space is divided into five segments, each serving a distinct purpose:
+
+* **Text segment**: Stores the compiled executable instructions. Read-only at runtime — attempts to write here cause a segfault.
+* **Data segment**: Stores initialized static/global variables. A variable declared as `static int a = 3` lands here.
+* **BSS segment**: Stores uninitialized static/global variables. The OS zeroes this region before program start, so `static int b;` is automatically initialized to zero — unlike stack variables, which hold garbage until explicitly assigned.
+* **Heap**: Dynamic memory managed by `malloc`, `calloc`, `realloc`, and `free`. Grows upward toward higher addresses.
+* **Stack**: Stores local variables, function arguments, return addresses, and saved frame pointers. Grows downward toward lower addresses.
+
+The key insight for overflow attacks: BSS segment variables default to zero. Stack-allocated variables contain garbage unless explicitly initialized — a common source of bugs that static analysis tools flag.
+
+We focus here on stack-based buffer overflows. Heap overflows are a distinct class with different exploitation mechanics.
+
+## The Layout of a Stack Frame
+
+Each function call creates a **stack frame** containing:
+
+* **Arguments**: Pushed onto the stack in reverse order before the call. Located at positive offsets from EBP (`ebp+8`, `ebp+12`, etc. on 32-bit).
+* **Return Address**: The address of the instruction following the `CALL` instruction. Pushed by the CPU before transferring control to the callee. This is the target we want to overwrite.
+* **Previous Frame Pointer (saved EBP)**: The caller's frame pointer, saved so the callee can restore it on return. Located at `[ebp]`.
+* **Local Variables**: Located at negative offsets from EBP (`ebp-4`, `ebp-8`, etc.). The layout and padding between variables is compiler-determined — do not assume any specific ordering.
+
+One register handles the boundary between frames. The system maintains a single frame pointer register (EBP) pointing to the current frame. The saved previous frame pointer at `[ebp]` chains back to the caller's frame, forming a linked list of frames that enables stack unwinding on return.
+
+`strcpy()` copies until it encounters a null byte (`\0`, 0x00). The compiler appends a null terminator to string literals automatically.
+
+## Stack Growth and Variable Layout
+
+The stack grows **downward** (toward lower addresses). Before variables are pushed, the sizes of all locals and arguments are calculated by the compiler and space is reserved in one operation.
+
+* Arguments are accessed at `ebp + offset` (positive direction, ascending).
+* Local variables are accessed at `ebp - offset` (negative direction, descending).
+* For 1-byte and 2-byte types, the compiler pads them to the nearest 4-byte boundary on 32-bit systems — the unused bytes contain garbage.
+
+## Register Reference
+
+* **ESP (Stack Pointer)**: Points to the current top of the stack — the lowest valid address currently in use. Decrements as the stack grows.
+* **EBP (Base/Frame Pointer)**: Points to the base of the current stack frame, used as a stable reference for accessing arguments and locals via fixed offsets.
+* **EIP (Instruction Pointer)**: The address of the next instruction to execute. The attacker's ultimate target — control EIP and you control execution.
+* The `E` prefix denotes 32-bit Extended registers (vs. 16-bit predecessors). 64-bit systems use `R` prefix (RSP, RBP, RIP).
+
+## Setup for Our Experiment
+
+* Disable Address Randomization
+```console
+$ sudo sysctl -w kernel.randomize_va_space=0
+```
+
+* Vulnerable Program
+```console
+$ gcc -o stack -z execstack -fno-stack-protector stack.c
+$ sudo chown root stack
+$ sudo chmod 4755 stack
+```
+
+<img alt=" " src="/assets/images/chmod_special.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+
+* ```sudo chmod 4755 stack``` sets the Set-UID bit, granting the program root's EUID when run by any user. See reference for special permission details.
+
+## Conducting a Buffer Overflow Attack
+
+### Finding the Address of the Injected Code
+
+To redirect execution to shellcode, we need to know where it will land in memory. The target program typically does not print stack addresses, so we must guess or calculate.
+
+On 32-bit systems, the theoretical address space is $$ 2^{32} = 4,294,967,296 $$ bytes (4 GB). However, the actual search space is much smaller because:
+* OSes typically start each process's stack at a fixed base address.
+* Most programs use shallow stacks — function call depth is limited unless recursion is involved.
+
+With ASLR disabled (`kernel.randomize_va_space=0`), the stack base is deterministic, making the address guessable within a small range.
+
+### Improving Chances of Guessing
+
+To tolerate imprecision in our address estimate, we prepend **NOP instructions** (`\x90`) before the shellcode. This creates a "NOP sled" — any address within the sled slides execution forward into the shellcode. The wider the sled, the larger our margin of error.
+
+<img alt=" " src="/assets/images/nop.png" width="400px" style="display: block;margin-left: auto;margin-right: auto;">
+
+[Source: https://csis.gmu.edu/ksun/AIT681-s19/notes/T07_Buffer_Overflow.pdf](https://csis.gmu.edu/ksun/AIT681-s19/notes/T07_Buffer_Overflow.pdf)
+
+### Finding the Address Without Guessing
+
+For local attacks where you have access to a copy of the binary, use `gdb` with debug symbols (`gcc -g`) to determine exact frame layout:
+
+* Set a breakpoint inside the vulnerable function.
+* Inspect `$ebp` to find the current frame base.
+* Calculate the offset from the buffer to the return address.
+
+For remote attacks without access to the binary, address calculation relies on binary similarity, environment variable counting, and other side-channel techniques.
+
+### Constructing the Input File
+
+<img alt=" " src="/assets/images/constructing_intput_file.png" width="600px" style="display: block;margin-left: auto;margin-right: auto;">
+
+This diagram (from *Computer Security: A Hands-on Approach*, Chapter 4) shows the exploit construction process:
+
+1. Analyze the target program's stack layout using GDB.
+2. Craft a `badfile` using an exploit program that:
+   * Contains shellcode placed at a known position.
+   * Overwrites the return address in the stack frame of the target function (e.g., `foo`) to point back into the shellcode (or NOP sled).
+3. Feed `badfile` to the target program to trigger the overflow.
+
+The conditions that make this feasible:
+* Stack usually starts at the same address (with ASLR disabled).
+* Stack depth is typically shallow — a few hundred to a few thousand bytes.
+* The guessable range is small enough for brute force or educated estimation.
+
+## Countermeasures: Overview
+
+### Developer Approaches
+
+* **Safer functions** — `strncpy()`, `strncat()`, `snprintf()` enforce explicit length limits. The `n`-bounded variants should always be preferred over their unbounded counterparts.
+* **Safer dynamic link libraries** — wrapper libraries that check length before copying, applicable even when only binary code is available.
+* **Static Analysis** — compiler-integrated or standalone tools that flag unsafe patterns (e.g., calls to `gets()`, unbounded `strcpy()`) at development time.
+* **Memory-safe languages** — Java, Python, Rust, and Go perform automatic bounds checking at the language level, eliminating the entire class of buffer overflows.
+
+### Compiler Approaches
+
+* **StackShield** — copies the return address to a shadow stack in a protected memory region at function entry and compares on return. Overflow can corrupt the stack copy but not the shadow.
+* **StackGuard / Stack Canaries** — inserts a random "canary" value between the local variables and the return address at function entry. Before the function returns, the canary is verified against the original stored outside the stack frame. An overflow that reaches the return address must first corrupt the canary, triggering detection.
+
+### OS Approaches
+
+* **ASLR (Address Space Layout Randomization)** — randomizes the base addresses of the stack, heap, and shared libraries on each execution, making address prediction unreliable.
+
+### Hardware Approaches
+
+* **Non-Executable Stack (NX bit / DEP)** — marks the stack as non-executable. Modern CPUs support this at the page table level. Shellcode injected into the stack cannot be executed. This specific countermeasure is bypassed by the **Return-to-libc** attack.
+
+## Address Randomization
+
+The stack does not need to start at a fixed address — as long as EBP and ESP are correctly initialized relative to each other, all frame-relative addressing works fine. The same principle applies to heap and library base addresses.
+
+During program load, the OS loader sets up the memory layout. Therefore, ASLR is primarily implemented in the loader. On 32-bit Linux, 19 bits are used for stack entropy, giving $$ 2^{19} = 524,288 $$ possible stack base addresses. This is small enough that a determined attacker can brute-force it with repeated attempts.
+
+The Android Nexus 5 (32-bit) had only 8 bits of entropy, yielding just 256 possibilities. This particular weakness was named **Stagefright** and was actively exploited.
+
+## StackGuard
+
+The canary mechanism works by placing a randomly chosen guard value between local variables and the saved return address at function entry. A copy is kept outside the writable stack region. On function return, the canary is compared to the copy — mismatch triggers process termination.
+
+The underlying assumption is that a linear buffer overflow that reaches the return address must pass through the canary first. This holds for sequential overflows but not for non-contiguous write primitives.
+
+## ETC
+
+A classic vulnerable function pattern — the buffer `buffer[50]` is smaller than the maximum data size read by the caller:
+
+```c
+int foo(char *str)
+{
+    char buffer[50];
+    strcpy(buffer, str);
+    return 1;
+}
+int main(int argc, char ** argv)
+{
+    char str[240];
+    FILE *badfile;
+
+    badfile = fopen("badfile", "r");
+    fread(str, sizeof(char), 200, badfile);
+    foo(str);
+
+    return 1;
+}
+```
+
+## Reference
+
+* [COMPUTER SECURITY: A Hands-on Approach by Wenliang Du](https://www.amazon.com/Computer-Security-Hands-Approach-Wenliang/dp/154836794X)
+
+---
+
 ## The five segments in a process's memory layout for a typical C program.
 
 * **Text segment**: stores the executable code of the program. This block of memory is usually read-only. 코드 자체가 올라가는 영역으로 보면 된다.
@@ -163,7 +338,7 @@ int main(int argc, char ** argv)
     fread(str, sizeof(char), 200, badfile);
     foo(str);
 
-    return 1;    
+    return 1;
 }
 ```
 

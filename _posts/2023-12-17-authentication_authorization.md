@@ -13,7 +13,6 @@ date: 2023-12-17 03:28:48
 ---
 Here's the English translation of the provided text:
 
----
 
 ## Authentication
 * The process of verifying the identity of a user or process, such as with a login.
@@ -26,14 +25,12 @@ Here's the English translation of the provided text:
 * Used as a **U2F (Universal Second Factor)**, where after primary authentication with an ID and password, a dongle storing the security key is inserted into a USB port for secondary authentication.
 * Being a hardware method, it is more resistant to software-based vulnerabilities. It can be seen as changing the nature of the vulnerability itself by shifting key management to a physical method.
 
----
 
 ## Authorization
 * **Permission** or **Access Control**.
 * Authorization occurs after a user's identity has been successfully authenticated. It defines the rules that determine who can do what.
 * Examples include Role-Based Access Control, JSON Web Tokens, SAML, OpenID Connect, and OAuth.
 
----
 
 ## JWT (JSON Web Token)
 * Primarily used in token-based authentication systems. It's a **Claim-based web token** that stores user attributes using the JSON format.

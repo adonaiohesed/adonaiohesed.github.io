@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2025-08-06-asumed_breach.png"
 bilingual: true
 date: 2025-08-06 22:48:00
 ---
-# Assumed Breach: A Paradigm Shift in Security Architecture
+## Assumed Breach: A Paradigm Shift in Security Architecture
 
 In modern cybersecurity, a purely "defensive" mindset is no longer sufficient. Advanced threat actors infiltrate systems through increasingly diverse vectors, rendering perimeter-based security models progressively ineffective. Against this backdrop, the concept of **Assumed Breach**—the presumption that a system has already been compromised—has emerged as a foundational security strategy. This article explores the conceptual underpinnings, security engineering implications, and practical implementations of the Assumed Breach model.
 
@@ -69,9 +69,8 @@ Even intra-system communications must not be implicitly trusted. Implementing mu
 
 좋아, 영어 버전은 이미 완료되었고, 이제 요청대로 같은 내용을 반영한 한글 버전도 마무리해서 아래에 정리해줄게:
 
----
 
-# Assumed Breach: 침해 가정을 기반으로 한 보안 아키텍처의 패러다임 전환
+## Assumed Breach: 침해 가정을 기반으로 한 보안 아키텍처의 패러다임 전환
 
 현대 사이버 보안 환경에서 단순한 “방어적” 접근은 더 이상 충분하지 않다. 공격자는 다양한 경로로 조직 내부에 침투하며, 기존의 경계 기반 보안 모델은 점차 그 실효성을 상실하고 있다. 이러한 맥락 속에서 대두된 것이 바로 **Assumed Breach**, 즉 시스템이 이미 침해되었음을 전제로 한 보안 전략이다. 이 글에서는 해당 개념의 철학적 기반, 보안 공학적 함의, 그리고 실무 적용 사례에 대해 다룬다.
 

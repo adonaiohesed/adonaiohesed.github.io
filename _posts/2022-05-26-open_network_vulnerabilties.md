@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2022-05-26-open_network_vulnerabilties.png"
 bilingual: true
 date: 2022-05-26 13:12:00
 ---
-# Open Network Vulnerabilities: Risks and Security Measures
+## Open Network Vulnerabilities: Risks and Security Measures
 
 ## Network Vulnerabilities
 
@@ -203,7 +203,7 @@ These comprehensive measures help protect against the various vulnerabilities pr
 
 ---
 
-# Open Network Vulnerabilities: 위험성과 보안 대책
+## Open Network Vulnerabilities: 위험성과 보안 대책
 
 ## 공개 네트워크의 취약점
 
@@ -340,7 +340,7 @@ These comprehensive measures help protect against the various vulnerabilities pr
 - [ ] 시스템 로그 확인
 - [ ] 악성코드 검사 수행
 
-# 추가 보호 조치
+## 추가 보호 조치
 
 ### 1. 고급 보안 도구
 * **네트워크 분석 도구**
@@ -371,7 +371,7 @@ These comprehensive measures help protect against the various vulnerabilities pr
   3. 데이터 유출 여부 확인
   4. 의심스러운 활동 신고
 
-# 예방 조치
+## 예방 조치
 
 ### 1. 정기적인 보안 업데이트
 * 운영 체제 최신 상태 유지

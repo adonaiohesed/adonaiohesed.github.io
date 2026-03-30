@@ -1,10 +1,11 @@
 ---
-title: Agentic Job Orchestrator<hr />에이전틱 작업 오케스트레이터
-description: An end-to-end autonomous agent that coordinates multi-platform job extraction and AI-driven application workflows.<hr />멀티 플랫폼 채용 정보 추출 및 AI 기반 지원 워크플로우를 조정하는 엔드투엔드 자율형 에이전트입니다.
+title: AI Automation Job Applier<hr />AI 자동화 구직 지원 플랫폼
+description: An AI-powered job application ecosystem that autonomously discovers, applies to, and tracks relevant positions. It features a keyword-driven resume generation engine that transforms user input into professional PDF templates, all managed via a centralized automation dashboard.<hr />AI 에이전트 기반으로 지역 및 키워드 맞춤형 구직 정보를 탐색하고 자동 지원 및 추적을 수행하는 프로젝트입니다. 특히 사용자가 입력한 키워드를 분석해 최적화된 이력서 템플릿을 자동으로 생성하고 즉시 PDF 파일로 변환하며, 전용 대시보드를 통해 모든 지원 과정을 한눈에 관리 및 추적할 수 있는 기능을 제공합니다.
 image: /assets/images/projects/jobapplier.png
 private: false
 order: 3
+display_type: desktop
 ---
-Architected a multi-agent orchestration system that autonomously extracts high-signal job postings and manages the full application lifecycle using semantic reasoning and RAG-based cover letter generation.
+Beyond simple automation, it handles complex workflow logic including application tracking and professional document orchestration. The system intelligently generates customized resume templates based on target job keywords and automates the PDF conversion process, allowing users to scale their professional reach with zero manual formatting through an integrated tracking dashboard.
 <hr />
-시맨틱 추론과 RAG 기반 자기소개서 생성을 사용하여 고신호 채용 공고를 자율적으로 추출하고 전체 지원 라이프사이클을 관리하는 멀티 에이전트 오케스트레이션 시스템을 설계했습니다.
+단순 지원서 작성을 넘어, AI 에이전트가 지역 및 키워드 기반으로 최적화된 구직 정보를 수집하고 자동으로 지원합니다. 특히 사용자가 입력한 핵심 키워드를 바탕으로 맞춤형 이력서 템플릿을 자동 생성하고 이를 PDF 파일로 즉시 변환하는 기능을 갖추고 있으며, 모든 과정은 전용 대시보드를 통해 실시간으로 관리 및 추적됩니다.

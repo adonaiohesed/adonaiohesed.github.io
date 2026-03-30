@@ -24,6 +24,16 @@
   }
 }
 
+@keyframes fadeInSlow {
+  from { opacity: 0; filter: blur(10px); transform: translateY(10px); }
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
+
+.fade-in-slow {
+  opacity: 0;
+  animation: fadeInSlow 1.5s cubic-bezier(0.2, 0.0, 0.2, 1) forwards;
+}
+
 .post-card {
   opacity: 1;
   --animation-delay: 0s;

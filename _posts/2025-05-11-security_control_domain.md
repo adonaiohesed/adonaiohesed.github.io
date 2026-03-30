@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2025-05-11-security_control_domain.png"
 bilingual: true
 date: 2025-05-11 07:40:48
 ---
-# Understanding Information Security: Key Areas and Practices
+## Understanding Information Security: Key Areas and Practices
 
 ## Organizational Structure of Information Security Under the CISO
 - **Cyber Defense**  
@@ -128,7 +128,7 @@ date: 2025-05-11 07:40:48
 
 ---
 
-# 정보 보안 이해하기: 주요 영역 및 실천
+## 정보 보안 이해하기: 주요 영역 및 실천
 
 ## CISO 하의 정보 보안 조직 구조
 - **사이버 방어 (Cyber Defense)**  

@@ -46,7 +46,6 @@ Companies use blockchain systems to manage copyright data. Copyright verificatio
 
 Retail companies use blockchain to track the movement of goods between suppliers and buyers. For instance, Amazon's retail arm filed a patent for a distributed ledger technology system to ensure all goods sold on the platform are authentic. Amazon sellers can map global supply chains by allowing participants like manufacturers, shippers, distributors, end-users, and secondary users to add events to the ledger after registering with a certificate authority.
 
----
 
 ## What are the Characteristics of Blockchain Technology?
 
@@ -56,7 +55,6 @@ Blockchain technology has the following key characteristics:
 * **Immutability:** This means something cannot be changed or modified. Once a transaction is recorded in the shared ledger, no participant can tamper with it. If a record contains an error, a new transaction must be added to reverse the mistake, and both transactions will be visible to the network.
 * **Consensus:** Blockchain systems establish rules regarding participant agreement for recording transactions. A new transaction can be recorded only when the majority of network participants agree.
 
----
 
 ## What are the Core Components of Blockchain Technology?
 
@@ -72,7 +70,6 @@ Businesses use smart contracts to self-manage business agreements without the ne
 
 Public key cryptography is a security feature that uniquely identifies participants in a blockchain network. This mechanism generates two sets of keys for network members: a **Public Key** (common to everyone in the network) and a **Private Key** (unique to each member). Together, they unlock the data in the ledger.
 
----
 
 ## How Does Blockchain Work?
 
@@ -93,7 +90,6 @@ Blockchain faces a "Trilemma" where it is difficult to achieve **Decentralizatio
 | **PoS** (Proof of Stake) | Verified by those who stake assets. Fast and eco-friendly. | **Ethereum 2.0**, Solana, Cardano |
 | **PoA** (Proof of Authority) | Verified by specific trusted entities. Extremely fast. | Enterprise blockchains, Testnets |
 
----
 
 ## Types of Blockchain Networks
 
@@ -102,7 +98,6 @@ Blockchain faces a "Trilemma" where it is difficult to achieve **Decentralizatio
 * **Hybrid Blockchain:** Combines elements of both. Companies can control access to specific data while keeping the rest public.
 * **Consortium Blockchain:** Managed by a group of organizations who share responsibility for maintaining the blockchain and determining data access.
 
----
 
 ## Understanding Blockchain Protocols
 
@@ -126,7 +121,6 @@ L2s inherit L1 security while increasing speed and reducing costs.
 * **IBC (Inter-Blockchain Communication):** Used in the Cosmos ecosystem for direct communication between chains via light clients.
 * **Cross-chain Bridges:** Use a "Lock and Mint" mechanism. **Security Note:** Bridges are high-value targets for hackers (e.g., multisig signature theft, relayer manipulation).
 
----
 
 ## Integrated Understanding of Blockchain Architecture and Security
 
@@ -161,7 +155,6 @@ Where the business logic resides. Most security incidents occur here.
 * **Merkle Trees:** Used to verify data validity quickly using a 'Root Hash'.
 * **Digital Signatures (ECDSA):** Used to verify ownership of assets through elliptic curve cryptography.
 
----
 
 **Summary for Security Engineers:**
 Blockchain security is a combination of infrastructure security (P2P, Consensus) and application security (VM, Contracts). The flow is:

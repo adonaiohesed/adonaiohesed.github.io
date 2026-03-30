@@ -17,13 +17,12 @@ When you buy a smartphone, are you truly the owner of the device? Manufacturers 
 
 **Rooting** and **Jailbreaking** are the acts of breaking the locks of this digital prison and reclaiming true ownership of the device. In this article, we will discuss what these two technologies are, why we seek to unlock our devices, and what we can do with that power.
 
------
 
 ### The Liberation of Android: Rooting
 
 Rooting is the process of obtaining **superuser (root) privileges** on the Android operating system. In Android, which is based on Linux, 'root' is an all-powerful user who can access and modify all files and processes. By default, manufacturers hide this immense power from the user.
 
-#### **Why We Want Root Access (A Hacker's Perspective)**
+### **Why We Want Root Access (A Hacker's Perspective)**
 
 Beyond simple customization, root access becomes a powerful weapon for analyzing and attacking a system.
 
@@ -32,7 +31,7 @@ Beyond simple customization, root access becomes a powerful weapon for analyzing
   * **Network Traffic Sniffing:** You can intercept and analyze system-wide network traffic to extract sensitive unencrypted information or analyze communication protocols.
   * **Kernel Exploitation:** You can directly attack kernel-level vulnerabilities to gain deeper system control and install persistent backdoors.
 
-#### **Rooting Guide (General Procedure)**
+### **Rooting Guide (General Procedure)**
 
 **⚠️ Warning: This process may void your device's warranty. Performing steps incorrectly can result in your device becoming unusable (bricked). Before you begin, you must back up all your data. Proceed at your own risk.**
 
@@ -56,13 +55,12 @@ A custom recovery is a special recovery environment that allows you to install (
   * Boot into TWRP recovery mode and install the Magisk zip file from the 'Install' menu.
   * After the installation is complete and the device has rebooted, the presence of the Magisk app signifies a successful root.
 
------
 
 ### The Escape from iOS: Jailbreaking
 
 Jailbreaking is the act of escaping from Apple's closed ecosystem, the so-called **'Walled Garden'**. It's the process of breaking all the shackles that prohibit app installation outside of the App Store and block access to system files.
 
-#### **Why We Escape the Prison (A Hacker's Perspective)**
+### **Why We Escape the Prison (A Hacker's Perspective)**
 
 A jailbroken iPhone is no longer a toy that follows the path set by Apple; it becomes a powerful **research tool** for dissecting its internal structure.
 
@@ -71,7 +69,7 @@ A jailbroken iPhone is no longer a toy that follows the path set by Apple; it be
   * **SSH Remote Access:** You can remotely connect to the iOS device from a PC via a terminal to execute shell commands, freely navigate the internal system, and build an analysis environment.
   * **Sideloading and Analysis of Apps:** You can install repackaged or analysis-purposed apps (`*.ipa`) without the App Store to analyze vulnerabilities.
 
-#### **Jailbreaking Guide (Based on `palera1n`)**
+### **Jailbreaking Guide (Based on `palera1n`)**
 
 `palera1n` targets older devices with A8 to A11 chipsets (iPhone 6s to iPhone X) and utilizes a **hardware vulnerability (`checkm8`)**, making it a powerful jailbreak method that cannot be patched by Apple's software updates. It supports iOS 15 up to the latest versions of iOS 17.
 
@@ -115,13 +113,12 @@ Once the jailbreak is complete and you're back on the home screen, you will see 
 
 **루팅(Rooting)**과 **탈옥(Jailbreak)**은 바로 이 디지털 감옥의 자물쇠를 부수고, 기기의 진정한 소유권을 되찾는 행위입니다. 이 글에서는 이 두 가지 기술이 무엇이며, 우리가 왜 기기의 봉인을 해제하려 하는지, 그리고 그 힘으로 무엇을 할 수 있는지에 대해 이야기해 보겠습니다.
 
------
 
 ### 안드로이드의 해방: 루팅(Rooting)
 
 루팅은 안드로이드 운영체제의 **최고 관리자(root) 권한**을 획득하는 과정을 의미합니다. 리눅스(Linux)에 기반한 안드로이드에서 'root'는 모든 파일과 프로세스에 접근하고 수정할 수 있는 전능한 사용자입니다. 기본적으로 제조사는 이 막강한 권한을 사용자에게서 숨겨 놓습니다.
 
-#### **우리가 루트 권한을 원하는 이유 (해커의 관점)**
+### **우리가 루트 권한을 원하는 이유 (해커의 관점)**
 
 루트 권한은 단순한 커스터마이징을 넘어, 시스템을 분석하고 공격하기 위한 강력한 무기가 됩니다.
 
@@ -130,7 +127,7 @@ Once the jailbreak is complete and you're back on the home screen, you will see 
   * **네트워크 트래픽 감청:** 시스템 전반의 네트워크 트래픽을 가로채고 분석하여 암호화되지 않은 민감 정보를 추출하거나 통신 프로토콜을 분석할 수 있습니다.
   * **커널 익스플로잇:** 커널 수준의 취약점을 직접 공략하여 더욱 깊은 시스템 제어권을 획득하고 영구적인 백도어를 설치할 수 있습니다.
 
-#### **루팅 실행 가이드 (일반적인 절차)**
+### **루팅 실행 가이드 (일반적인 절차)**
 
 **⚠️ 경고: 이 과정은 기기의 보증을 무효화할 수 있으며, 잘못된 단계를 수행할 경우 기기가 부팅 불능 상태(벽돌)가 될 수 있습니다. 시작하기 전에 반드시 모든 데이터를 백업하고, 모든 책임은 본인에게 있음을 명심하십시오.**
 
@@ -154,13 +151,12 @@ Once the jailbreak is complete and you're back on the home screen, you will see 
   * TWRP 리커버리 모드로 부팅하여 'Install' 메뉴에서 Magisk zip 파일을 선택하고 설치합니다.
   * 설치가 완료되고 재부팅한 뒤, Magisk 앱이 보이면 루팅이 성공적으로 완료된 것입니다.
 
------
 
 ### iOS의 탈출: 탈옥(Jailbreak)
 
 탈옥은 애플이 구축한 폐쇄적인 생태계, 이른바 **'벽으로 둘러싸인 정원(Walled Garden)'**에서 탈출하는 행위입니다. App Store를 통하지 않은 앱 설치를 금지하고 시스템 파일 접근을 원천적으로 차단하는 모든 족쇄를 풀어버리는 과정입니다.
 
-#### **우리가 감옥을 탈출하는 이유 (해커의 관점)**
+### **우리가 감옥을 탈출하는 이유 (해커의 관점)**
 
 탈옥한 아이폰은 애플이 정해준 길을 따르는 장난감이 아니라, 내부 구조를 속속들이 파헤치고 분석할 수 있는 강력한 **연구 장비**가 됩니다.
 
@@ -169,7 +165,7 @@ Once the jailbreak is complete and you're back on the home screen, you will see 
   * **SSH 원격 접속:** PC에서 터미널을 통해 iOS 기기에 원격으로 접속하여 셸 명령어를 실행하고, 시스템 내부를 자유롭게 탐색하며 분석 환경을 구축할 수 있습니다.
   * **비공식 앱 설치 및 분석:** 리패키징된 앱이나 분석용으로 제작된 앱(`*.ipa`)을 App Store 없이 설치하여 취약점을 분석할 수 있습니다.
 
-#### **탈옥 실행 가이드 (`palera1n` 기준)**
+### **탈옥 실행 가이드 (`palera1n` 기준)**
 
 `palera1n`은 A8부터 A11 칩셋을 사용하는 구형 기기(아이폰 6s \~ 아이폰 X)를 대상으로 하며, **하드웨어 취약점 (`checkm8`)**을 이용하기 때문에 애플이 소프트웨어로 막을 수 없는 강력한 탈옥 방식입니다. iOS 15부터 최신 iOS 17 버전까지 지원합니다.
 

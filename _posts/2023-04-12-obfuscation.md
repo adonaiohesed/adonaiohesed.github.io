@@ -7,6 +7,7 @@ categories:
 author: hyoeun
 math: true
 mathjax_autoNumber: true
+bilingual: true
 image: "/assets/thumbnails/2023-04-12-obfuscation.png"
 date: 2023-04-12 20:38:24
 ---

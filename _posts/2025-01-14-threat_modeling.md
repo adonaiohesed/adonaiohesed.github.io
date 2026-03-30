@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2025-01-14-threat_modeling.png"
 bilingual: true
 date: 2025-01-14 11:31:12
 ---
-# Threat Modeling Practical Guide
+## Threat Modeling Practical Guide
 
 ## What is Threat Modeling?
 
@@ -170,7 +170,7 @@ PASTA is a 7-stage, risk-centric methodology that analyzes business risks from a
 
 ---
 
-# Threat Modeling 실무 가이드
+## Threat Modeling 실무 가이드
 
 ## Threat Modeling이란?
 

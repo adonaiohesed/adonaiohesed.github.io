@@ -17,7 +17,6 @@ Today, we exchange vast amounts of information online. But how can we be sure th
 
 In this article, we will take an in-depth look at how these core elements work together organically to build trust in the digital world.
 
------
 
 ### **1. What is a Digital Signature? - Ensuring Data Integrity and Authenticity**
 
@@ -41,7 +40,6 @@ In the digital realm, a digital signature performs a role similar to a seal or h
 2.  **Generate a New Digest:** The recipient takes the original message they received and puts it through the **exact same hash function** the sender used to generate a new message digest.
 3.  **Compare the Digests:** The digest obtained from decrypting the signature (Step 1) is compared to the digest generated directly from the message (Step 2). If the two values match perfectly, it proves both that the message was not tampered with (integrity) and that it was sent by the legitimate sender (authentication).
 
------
 
 ### **2. What is a Digital Certificate (X.509)? - A Digital ID that Proves Ownership of a Public Key**
 
@@ -72,7 +70,6 @@ This is where the **Digital Certificate** comes in. A certificate is a type of d
 
   * \<img alt="Certificate Chain Example" src="/assets/images/certificate.png" width="600px"\>
 
------
 
 ### **3. What is Public Key Infrastructure (PKI)? - The Chain of Trust**
 
@@ -95,7 +92,6 @@ In addition to this, a browser performs various other verification checks:
 
 In this way, digital signatures, digital certificates, and PKI interact through a complex and sophisticated process, forming the essential security infrastructure that allows us to navigate the digital world safely.
 
------
 
 ### **4. Key and Certificate Management: Keystores and File Formats**
 
@@ -127,7 +123,6 @@ In conclusion, digital signatures, X.509 certificates, PKI, and management techn
 
 이 글에서는 이 세 가지 핵심 요소가 어떻게 유기적으로 동작하여 인터넷 세상의 신뢰를 구축하는지 심도 있게 알아보겠습니다.
 
----
 
 ### **1. 전자 서명이란? - 데이터의 무결성과 신뢰성 확보**
 
@@ -151,7 +146,6 @@ In conclusion, digital signatures, X.509 certificates, PKI, and management techn
 2.  **새로운 다이제스트 생성:** 수신자는 함께 받은 원본 메시지를 송신자가 사용한 것과 **동일한 해시 함수**에 넣어 새로운 메시지 다이제스트를 직접 생성합니다.
 3.  **다이제스트 비교:** 1번 과정에서 복호화하여 얻은 다이제스트와 2번 과정에서 직접 생성한 다이제스트를 비교합니다. 두 값이 완벽하게 일치한다면, 메시지가 중간에 위변조되지 않았음(무결성)과 송신자가 보낸 것이 맞음(인증)을 모두 증명할 수 있습니다.
 
----
 
 ### **2. 디지털 인증서(X.509)란? - 공개키의 진짜 주인을 증명하는 디지털 신분증**
 
@@ -185,7 +179,6 @@ In conclusion, digital signatures, X.509 certificates, PKI, and management techn
 3.  **검증:** 브라우저와 같은 클라이언트는 서버로부터 인증서를 받으면, 먼저 인증서에 있는 **발급자(Issuer)의 공개키**를 이용해 서명을 검증합니다. 만약 서명이 성공적으로 복호화되고, 그 내용이 인증서의 나머지 정보와 일치한다면 이 인증서는 신뢰할 수 있는 CA가 발급한 것이며 위변조되지 않았음을 확인하게 됩니다.
 
 * <img alt=" " src="/assets/images/certificate.png" width="600px">
----
 
 ### **3. 공개키 기반 구조(PKI)란? - 신뢰의 사슬**
 

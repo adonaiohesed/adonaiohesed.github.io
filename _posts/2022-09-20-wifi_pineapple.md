@@ -15,25 +15,23 @@ date: 2022-09-20 09:21:36
 
 Modern wireless network environments have evolved to maximize user convenience. Smartphones and laptops remember the SSIDs (Service Set Identifiers) of previously connected wireless networks and automatically reconnect when those signals are detected, providing a seamless user experience. However, this "trust" mechanism harbors a fundamental flaw in the 802.11 protocol, and a powerful tool that exploits this to automate Man-in-the-Middle (MITM) attacks is the WiFi Pineapple by Hak5. This article provides a deep technical analysis of the core attack principles of the WiFi Pineapple and corresponding defense strategies.
 
----
 
 ### **Core Operating Principles of the WiFi Pineapple**
 
 The WiFi Pineapple essentially operates as a rogue Access Point (AP), a specialized device designed to trick nearby client devices into voluntarily connecting to it. This process goes beyond simple SSID spoofing; it actively exploits vulnerabilities in 802.11 management frames.
 
-#### **1. Probe Request Spoofing and KARMA/MANA Attacks**
+### **1. Probe Request Spoofing and KARMA/MANA Attacks**
 
 When Wi-Fi is enabled, a client device periodically broadcasts **Probe Request** frames to search for SSIDs stored in its PNL (Preferred Network List). For example, a device that has previously connected to a Starbucks Wi-Fi will continuously broadcast Probe Requests searching for "Starbucks_WiFi."
 
 The WiFi Pineapple passively listens for these Probe Requests and then executes a **KARMA attack**, responding to every SSID the client is looking for, essentially saying, "I am that AP." The client device trusts the AP that responds with the strongest signal and attempts to connect automatically. Newer versions of the Pineapple feature an improved technique called the **MANA (Mana Attack)**, which not only responds to the client's Probe Requests but can also identify a specific client's PNL, allowing for more sophisticated AP impersonation and client-tailored attacks.
 
-#### **2. Forcing Connections via Deauthentication Attacks**
+### **2. Forcing Connections via Deauthentication Attacks**
 
 A more severe threat is that an attacker can execute this attack regardless of the client's current connection status. If the target is already legitimately connected to a trusted AP, the WiFi Pineapple can forcibly sever this connection using a **Deauthentication attack**.
 
 This attack exploits a critical design flaw in the 802.11 protocol: management frames are not encrypted or authenticated in most environments (including WPA2-Personal). The attacker spoofs the legitimate AP's MAC address and sends a deauthentication frame to the target client. The client, having no reason to distrust this frame, immediately terminates its current connection. Subsequently, when the client attempts to reconnect to the network, it is highly likely to connect to the WiFi Pineapple, which, through the aforementioned MANA attack, presents a stronger signal than the legitimate AP.
 
----
 
 ### **Possible Attack Scenarios After Achieving MITM**
 
@@ -45,7 +43,6 @@ Once all of the client's traffic is routed through the WiFi Pineapple, the attac
 
 * **Malware Injection**: When a user downloads an executable file or document, the attacker can inject a malicious payload into the HTTP traffic in real-time. This can be used to distribute ransomware or information-stealing malware.
 
----
 
 ### **Fundamental Defense Strategies**
 
@@ -68,25 +65,23 @@ In conclusion, the WiFi Pineapple clearly demonstrates the dangers of the trust-
 
 현대의 무선 네트워크 환경은 사용자의 편의성을 극대화하는 방향으로 발전해왔다. 스마트폰과 노트북은 과거에 접속했던 무선 네트워크의 SSID(Service Set Identifier)를 기억하고, 해당 신호가 감지되면 자동으로 재연결하여 끊김 없는 사용자 경험을 제공한다. 그러나 이러한 '신뢰' 메커니즘은 802.11 프로토콜의 근본적인 허점을 내포하고 있으며, 이를 악용하여 중간자 공격(Man-in-the-Middle)을 자동화하는 강력한 도구가 바로 Hak5의 와이파이 파인애플(WiFi Pineapple)이다. 본 글에서는 와이파이 파인애플의 핵심적인 공격 원리와 방어 전략을 기술적으로 심층 분석하고자 한다.
 
----
 
 ### **와이파이 파인애플의 핵심 작동 원리**
 
 와이파이 파인애플은 본질적으로 악의적인 AP(Access Point)로 동작하며, 주변 클라이언트 기기들이 자발적으로 자신에게 접속하도록 유도하는 데 특화된 장비다. 이 과정은 단순히 SSID를 위조하는 것을 넘어, 802.11 관리 프레임(Management Frame)의 취약점을 적극적으로 활용한다.
 
-#### **1. Probe Request 스푸핑과 KARMA/MANA 공격**
+### **1. Probe Request 스푸핑과 KARMA/MANA 공격**
 
 클라이언트 기기는 와이파이 기능이 활성화된 상태에서 PNL(Preferred Network List)에 저장된 SSID를 찾기 위해 주기적으로 **Probe Request** 프레임을 브로드캐스팅한다. 예를 들어, 과거 스타벅스 와이파이에 접속한 적이 있는 기기는 "Starbucks_WiFi"를 찾는 Probe Request를 주변에 계속 전송한다.
 
 와이파이 파인애플은 이 Probe Request를 수동적으로 감청하고 있다가, 클라이언트가 찾는 모든 SSID에 대해 "제가 바로 그 AP입니다"라고 응답하는 **KARMA 공격**을 수행한다. 클라이언트 기기는 가장 강한 신호로 응답하는 AP를 신뢰하고 자동으로 접속을 시도하게 된다. 최신 버전의 파인애플은 이를 개선한 **MANA(Mana Attack)** 기술을 탑재하여, 클라이언트의 Probe Request에 대한 응답뿐만 아니라 특정 클라이언트의 PNL 목록을 파악하여 더 정교한 AP 위장 및 클라이언트별 맞춤형 공격을 수행할 수 있다.
 
-#### **2. 인증 해제(Deauthentication) 공격을 통한 강제 연결 유도**
+### **2. 인증 해제(Deauthentication) 공격을 통한 강제 연결 유도**
 
 더욱 심각한 위협은 공격자가 클라이언트의 현재 연결 상태와 무관하게 공격을 감행할 수 있다는 점이다. 만약 공격 대상이 이미 신뢰할 수 있는 AP에 정상적으로 연결되어 있다면, 와이파이 파인애플은 **인증 해제(Deauthentication) 공격**을 통해 이 연결을 강제로 끊어버릴 수 있다.
 
 이 공격은 802.11 프로토콜의 관리 프레임이 대부분의 환경(WPA2-Personal 포함)에서 암호화되거나 인증되지 않는다는 치명적인 설계 결함을 이용한다. 공격자는 실제 AP의 MAC 주소로 위장하여 대상 클라이언트에게 인증 해제 프레임을 스푸핑하여 전송한다. 클라이언트는 이 프레임을 신뢰할 수밖에 없으므로 현재 연결을 즉시 종료한다. 이후 네트워크에 재접속하려는 클라이언트는 앞서 설명한 MANA 공격에 의해 진짜 AP보다 더 강한 신호를 보내는 와이파이 파인애플에 연결될 확률이 매우 높아진다.
 
----
 
 ### **중간자(MITM) 확보 후 가능한 공격 시나리오**
 
@@ -98,7 +93,6 @@ In conclusion, the WiFi Pineapple clearly demonstrates the dangers of the trust-
 
 * **악성코드 주입(Malware Injection)**: 사용자가 실행 파일이나 문서를 다운로드할 때, HTTP 트래픽에 악성 페이로드를 실시간으로 주입하여 전달할 수 있다. 이를 통해 랜섬웨어나 정보 탈취 악성코드를 유포한다.
 
----
 
 ### **근본적인 방어 전략**
 

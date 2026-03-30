@@ -1,10 +1,16 @@
 ---
-title: Intelligent Alumni Graph<hr />지능형 동문 그래프
-description: A graph-based networking platform that uses career pattern recognition to autonomously match alumni for high-impact mentorship.<hr />경력 패턴 인식을 사용하여 영향력 있는 멘토링을 위해 동문들을 자율적으로 매칭하는 그래프 기반 네트워킹 플랫폼입니다.
-image: /assets/images/projects/alumni.png
+title: Handong Alumni Network<hr />한동대학교 동문 <br />네트워크
+description: Architected a robust networking ecosystem for Handong Global University, bridging 500+ alumni and students. This platform features an intelligent matching engine and a secure job board, engineered with a privacy-first philosophy and compliance with PIPA.<hr />한동대학교 동문들을 잇는 커뮤니티 플랫폼으로 출시 1주일만에 500명 이상의 가입자로 시작해 지금까지 운영해오고 있으며 한국 개인정보보호법을 준수하는 보안 아키텍처를 직접 설계하고 구현했습니다.
+image: /assets/images/projects/alumni-1.png
+gallery:
+  - /assets/images/projects/alumni-1.png
+  - /assets/images/projects/alumni-2.png
+  - /assets/images/projects/alumni-3.png
+video: /assets/videos/projects/alumni_demo.mp4
 private: false
 order: 1
+display_type: mobile
 ---
-Redefined professional networking by implementing intelligent career graph mapping and autonomous job board extraction engines to facilitate high-precision member matching.
+Every aspect—from initial UX/UI prototyping to complex backend orchestration and security auditing—was developed as a solo initiative. The project's technical excellence led to its official sanctioning by the University and the Alumni Association, which now oversee its daily operations.
 <hr />
-지능형 커리어 그래프 매핑과 자율적인 구인 게시판 추출 엔진을 구현하여 정밀한 멤버 매칭을 가능하게 함으로써 전문적인 네트워킹을 재정의했습니다.
+기획, 디자인, 풀스택 개발, 보안 감사까지 모든 과정을 단독으로 수행한 정식 서비스입니다. 시스템의 기술적 전문성과 보안성을 인정받아 현재 학교 및 총동문회의 공식 파트너 서비스로 채택되어 활발히 운영되고 있습니다.

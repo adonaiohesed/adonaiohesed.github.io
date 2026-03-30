@@ -11,7 +11,7 @@ image: "/assets/thumbnails/2025-04-12-risk_management_methodology.png"
 bilingual: true
 date: 2025-04-12 02:38:24
 ---
-# Risk Management Methodology
+## Risk Management Methodology
 
 Risk management refers to a systematic approach to managing various types of risks that may arise in areas such as **People Risk** and **Cybersecurity Risk**. This process can be broken down into four key steps:
 
@@ -69,7 +69,7 @@ The key to successful risk management lies in systematically managing risks with
 
 ---
 
-# 리스크 관리 방법론
+## 리스크 관리 방법론
 
 리스크 관리는 **People Risk**와 **Cybersecurity risk**을 포함한 여러 측면에서 발생할 수 있는 리스크를 관리하는 체계적인 방법을 말합니다. 이 과정은 크게 4단계로 나눌 수 있습니다:
 
