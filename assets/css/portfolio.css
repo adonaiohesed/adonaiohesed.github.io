@@ -1,6 +1,33 @@
+---
+---
 /* ════════════════════════════════════════════════════════════════
    PORTFOLIO - ZONAL COLOR JOURNEY (NARRATIVE V5)
    ════════════════════════════════════════════════════════════════ */
+
+/* Smooth Gradient Interpolation Support (Registered at root Level) */
+@property --p-bg-top {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #e3f2fd;
+}
+
+@property --p-bg-bottom {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #ffffff;
+}
+
+@property --p-accent {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0288d1;
+}
+
+@property --p-text {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0a0b1e;
+}
 
 :root {
   /* Default (Intro State) */
@@ -15,7 +42,7 @@
   --p-font-tech: 'JetBrains Mono', monospace;
   --p-font-display: 'Inter', sans-serif;
   --p-font-quote: 'Playfair Display', serif; /* Elegant serif for humanities aspect */
-  --p-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --p-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ── Theme Definitions ── */
@@ -72,15 +99,23 @@ body.theme-ctf::after {
 }
 
 /* ── Global Setup ── */
-.portfolio-body {
-  background: linear-gradient(to bottom, var(--p-bg-top) 0%, var(--p-bg-bottom) 1200px, var(--p-bg-bottom) 100%);
+body.portfolio-body {
+  background-color: var(--p-bg-top);
+  background-image: linear-gradient(to bottom, var(--p-bg-top) 0%, var(--p-bg-bottom) 1200px, var(--p-bg-bottom) 100%);
   color: var(--p-text);
   font-family: 'Inter', system-ui, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   overflow-x: hidden;
-  transition: var(--p-transition);
+  /* 명시적으로 변수들을 나열하여 강제 보간 명령 */
+  transition: 
+    background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    --p-bg-top 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    --p-bg-bottom 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    --p-accent 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    --p-text 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-font-smoothing: antialiased;
 }
 
