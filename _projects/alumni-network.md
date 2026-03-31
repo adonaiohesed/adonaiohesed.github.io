@@ -1,6 +1,6 @@
 ---
 title: Handong Alumni Network<hr />한동대학교 동문 <br />네트워크
-description: Architected a robust networking ecosystem for Handong Global University, bridging 500+ alumni and students. This platform features an intelligent matching engine and a secure job board, engineered with a privacy-first philosophy and compliance with PIPA.<hr />한동대학교 동문들을 잇는 커뮤니티 플랫폼으로 출시 1주일만에 500명 이상의 가입자로 시작해 지금까지 운영해오고 있으며 한국 개인정보보호법을 준수하는 보안 아키텍처를 직접 설계하고 구현했습니다.
+description: Since its launch, the platform has successfully onboarded over 500 active users within the first week and continues to serve as a vital networking hub. Architected and implemented a robust security framework that strictly adheres to South Korea’s Personal Information Protection Act (PIPA), ensuring a secure and private environment for professional and social exchange among graduates. <hr />한동대학교 동문들을 잇는 커뮤니티 플랫폼으로 출시 1주일만에 500명 이상의 가입자로 시작해 지금까지 운영해오고 있으며 한국 개인정보보호법을 준수하는 보안 아키텍처를 직접 설계하고 구현했습니다.
 image: /assets/images/projects/alumni-1.png
 gallery:
   - /assets/images/projects/alumni-1.png
