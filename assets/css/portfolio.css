@@ -98,6 +98,49 @@ body.theme-ctf::after {
   opacity: 0.4;
 }
 
+/* ── CTF Team Pill ── */
+.ctf-team-pill {
+  background: var(--p-glass-bg);
+  border: 1px solid var(--p-glass-border);
+  padding: 12px 24px;
+  border-radius: 12px;
+  color: var(--p-accent);
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 10;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.ctf-team-pill:hover {
+  transform: translateY(-2px);
+  background: rgba(0, 255, 65, 0.1);
+  border-color: var(--p-accent);
+  box-shadow: 0 4px 15px rgba(0, 255, 65, 0.2);
+}
+
+.ctf-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--p-accent);
+  border-radius: 50%;
+  position: relative;
+}
+
+.ctf-pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
 /* ── Global Setup ── */
 body.portfolio-body {
   background-color: var(--p-bg-top);
