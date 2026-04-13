@@ -5,5 +5,5 @@ date: 2026-04-10
 team: RubiyaLab
 screenshots:
   - /assets/images/ctf/dawgctf2026.png
-description: An annual jeopardy-style CTF organized by the UMBC Cyber Defense Team (CyberDawgs), featuring a variety of creative security challenges.<hr />UMBC의 Cyber Defense Team(CyberDawgs)이 주최하는 연례 제퍼디(Jeopardy) 방식의 CTF로, 다양하고 창의적인 보안 챌린지들이 출제되었습니다.
+description: DawgCTF 2026 is a Capture The Flag competition hosted by the UMBC CyberDawgs, featuring a mix of educational and competitive security challenges available for both in-person and remote participants.<hr />UMBC(메릴랜드 대학교 볼티모어 카운티)의 사이버 보안팀인 CyberDawgs가 주최하는 DawgCTF 2026은 온라인과 오프라인에서 동시에 진행되는 교육용 및 경쟁용 캡처 더 플래그(CTF) 대회입니다.
 ---

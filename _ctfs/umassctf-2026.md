@@ -5,5 +5,5 @@ date: 2026-04-10
 team: RubiyaLab
 screenshots:
   - /assets/images/ctf/umassctf2026.png
-description: An annual jeopardy-style competition hosted by the UMass Cybersecurity Club at UMass Amherst, featuring a wide range of security categories.<hr />UMass Amherst의 Cybersecurity Club이 주최하는 연례 제퍼디(Jeopardy) 방식의 대회로, 폭넓은 카테고리의 보안 챌린지들이 진행되었습니다.
+description: UMassCTF 2026 is a competitive cybersecurity event hosted by UMass Amherst, featuring a variety of challenges designed for participants ranging from beginners to advanced security professionals.<hr />UMassCTF 2026는 초급부터 고급까지 다양한 난이도의 보안 문제를 통해 실력을 겨루는 매사추세츠 대학교 애머스트 주최 해킹 경진대회입니다.
 ---
