@@ -1,5 +1,5 @@
 ---
-title: Codegate 2026
+title: Codegate CTF 2026 Preliminary
 rank: 1
 date: 2026-03-29
 team: RubiyaLab
