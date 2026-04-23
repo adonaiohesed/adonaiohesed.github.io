@@ -17,7 +17,8 @@ When developers release their code into the world, they want to protect the secr
 
 However, for us—the hackers and reverse engineers who feel compelled to look inside the system—obfuscation isn't an insurmountable wall but an interesting **puzzle** waiting to be solved. In this article, I'll talk about why developers use this smokescreen, what kinds of smokescreens exist, and how we can lift that veil to see the code's true face.
 
------
+
+
 
 ## Why Do Developers Hide Their Code? (The Purpose of Obfuscation)
 
@@ -29,7 +30,8 @@ Understanding our "enemy" is fundamental. The reasons developers apply obfuscati
 
 Ultimately, the essence of obfuscation is to **increase the cost of analysis**. The core goal isn't to make reverse engineering "impossible" but to make it so "time-consuming and labor-intensive" that it diminishes the cost-effectiveness of an attack.
 
------
+
+
 
 ## Common Obfuscation Techniques (Types of Smokescreens)
 
@@ -40,7 +42,8 @@ An attacker must know the weapons their opponent uses. There are various obfusca
   * **Control Flow Flattening**: This is a very effective technique that turns code into spaghetti. Normal control flows like `if-else` or `for` loops are dismantled into a giant `while` loop and a `switch` statement. Code that originally executed sequentially is broken into multiple code blocks and called in a jumbled order within the massive `switch` statement. This makes it nearly impossible to visually follow the code's execution order.
   * **Instruction Substitution & Dead Code Insertion**: Simple operations like `a = b + c` are replaced with more complex but equivalent instructions, such as `a = (b*2 + c*2) / 2`. Alternatively, meaningless code that has no effect on the actual execution (dead code) is inserted intermittently to confuse the analyst.
 
------
+
+
 
 ## Lifting the Veil: The De-obfuscation Process
 
@@ -86,7 +89,8 @@ The true nature of the code is revealed when it's actually **executed**. Dynamic
   * **Unpacking a Packer**:
     Often, the executable file itself is encrypted or compressed (packed). In this case, we wait for the moment the program executes. A packed program unpacks itself in memory at runtime to restore the original code. We target that very moment, dump the cleanly unpacked code from memory, and begin our analysis.
 
------
+
+
 
 ## Conclusion: A Battle of Time and Effort
 
@@ -94,7 +98,8 @@ Obfuscation is not an absolute barrier that prevents reverse engineering. It is 
 
 In the end, any client-side defense is bound to be breached by a persistent attacker. Developers may find temporary relief behind the smokescreen of obfuscation, but they should not forget that we are quietly and persistently finding our way through that smoke. The truth that real security begins not on the client but on the server remains unchanged.
 
------
+<hr />
+
 
 ## 코드 속의 연막: 난독화(Obfuscation)와 그것을 걷어내는 기술
 
@@ -102,9 +107,10 @@ In the end, any client-side defense is bound to be breached by a persistent atta
 
 하지만 우리, 즉 시스템의 내부를 들여다봐야 직성이 풀리는 해커와 리버스 엔지니어에게 난독화는 넘을 수 없는 벽이 아니라, 풀기 위해 만들어진 흥미로운 '퍼즐'에 가깝다. 이 글에서는 개발자들이 왜 이 연막을 피우는지, 어떤 종류의 연막이 있는지, 그리고 우리는 어떻게 그 연막을 걷어내고 코드의 민낯을 마주하는지 이야기해 보겠다.
 
------
 
-### 개발자들은 왜 코드를 숨기려 하는가? (난독화의 목적)
+
+
+## 개발자들은 왜 코드를 숨기려 하는가? (난독화의 목적)
 
 우리가 상대하는 '적'을 이해하는 것은 기본이다. 개발자가 난독화를 적용하는 이유는 명확하다.
 
@@ -114,9 +120,10 @@ In the end, any client-side defense is bound to be breached by a persistent atta
 
 결국, 난독화의 본질은 **분석 비용의 증가**다. 리버스 엔지니어링을 '불가능'하게 만드는 것이 아니라, '시간과 노력이 많이 들게' 만들어 공격의 가성비를 떨어뜨리는 것이 핵심 목표다.
 
------
 
-### 흔한 난독화 기법들 (연막의 종류)
+
+
+## 흔한 난독화 기법들 (연막의 종류)
 
 공격자는 상대가 사용하는 무기를 알아야 한다. 난독화에는 여러 가지 기법이 있으며, 보통 여러 기법이 복합적으로 사용된다.
 
@@ -128,17 +135,18 @@ In the end, any client-side defense is bound to be breached by a persistent atta
 
 4.  **명령어 치환 및 더미 코드 삽입 (Instruction Substitution & Dead Code Insertion):** `a = b + c` 같은 간단한 연산을 `a = (b*2 + c*2) / 2` 처럼 의미는 같지만 훨씬 복잡한 명령어로 대체한다. 또는, 실제 실행에는 아무런 영향을 주지 않는 의미 없는 코드(더미 코드)를 중간중간에 삽입하여 분석가를 혼란에 빠뜨린다.
 
------
 
-### 장막 걷어내기: 역난독화 (De-obfuscation) 프로세스
+
+
+## 장막 걷어내기: 역난독화 (De-obfuscation) 프로세스
 
 자, 이제 퍼즐을 풀 시간이다. 난독화된 코드는 정적 분석만으로는 한계가 명확하다. 우리의 핵심 무기는 **동적 분석**이다.
 
-#### **1단계: 정적 분석으로 구조 파악 (초벌 분석)**
+### **1단계: 정적 분석으로 구조 파악 (초벌 분석)**
 
 먼저 **Jadx(Android)**, **IDA Pro**나 **Ghidra(iOS/Native)** 같은 도구로 코드를 열어본다. 이름이 모두 `a, b, c`로 되어있고, 의미 있는 문자열은 보이지 않으며, 함수의 흐름이 비정상적으로 복잡하다면 난독화가 적용된 것이다. 이 단계에서 우리는 공격할 '타겟'을 물색한다. 예를 들어, 유난히 복잡한 `switch`문이나 암호화된 데이터 덩어리를 찾아낸다.
 
-#### **2단계: 동적 분석으로 민낯 드러내기 (핵심)**
+### **2단계: 동적 분석으로 민낯 드러내기 (핵심)**
 
 코드가 실제로 '실행'될 때 그 본질이 드러난다. **Frida**와 같은 동적 분석 도구는 여기서 절대적인 힘을 발휘한다.
 
@@ -174,7 +182,7 @@ In the end, any client-side defense is bound to be breached by a persistent atta
   * **패커(Packer) 언패킹:**
     실행 파일 자체가 암호화/압축(패킹)된 경우도 많다. 이런 경우, 우리는 프로그램이 실행되는 순간을 기다린다. 패킹된 프로그램은 실행 시점에 메모리에서 스스로 압축을 풀고 원본 코드를 복원하기 때문이다. 우리는 바로 그 시점을 노려, 메모리에서 깨끗하게 언패킹된 코드를 덤프하여 분석을 시작한다.
 
-### 결론: 시간과 노력의 싸움
+## 결론: 시간과 노력의 싸움
 
 난독화는 리버스 엔지니어링을 막는 절대적인 방벽이 아니다. 그것은 단지 **시간을 벌기 위한 장치**일 뿐이다. 잘 된 난독화는 분석에 몇 시간, 며칠이 더 걸리게 할 뿐, '불가능'하게 만들지는 못한다.
 
