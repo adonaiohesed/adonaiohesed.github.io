@@ -260,7 +260,7 @@ In this case, attackers need to create an SVG file with the below content. If th
     - .jpg.php 와 같이 double extensions 체크합니다.
     - Null bytes such as exploit.jpg%00.php or exploit.jpg\00.php 와 같이 .php가 실행되는지 체크합니다.
     - 비즈니스 로직에 알맞은 확장자만 허용을 하고 least harmful and lowest risk file type으로 정합니다.
-    - svg 파일을 허용할 경우 SSRF, XXE, XXS 공격에 취약할 수 있다.
+    - svg 파일을 허용할 경우 SSRF, XXE, XSS 공격에 취약할 수 있다.
 1. File size check - 한도보다 큰 사이즈의 파일을 올릴 수 있는건 아닌지 확인해야합니다.
     - [Large size file download site](https://testing.taxi/blog/325-giant-file-generator-tool/)
 1. Eicar를 이용한 malicious content 기능이 있는지 확인합니다.

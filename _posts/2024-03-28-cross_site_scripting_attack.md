@@ -1,5 +1,5 @@
 ---
-title: Cross-Site Scripting Attack (XXS)
+title: Cross-Site Scripting Attack (XSS)
 key: page-xss_attack
 categories:
 - Security
