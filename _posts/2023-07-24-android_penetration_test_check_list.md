@@ -10,8 +10,8 @@ mathjax_autoNumber: true
 bilingual: true
 image: "/assets/thumbnails/2023-07-24-android_penetration_test_check_list.png"
 date: 2023-07-24 02:16:48
+publish: false
 ---
------
 
 ### **1. Static Analysis**
 
