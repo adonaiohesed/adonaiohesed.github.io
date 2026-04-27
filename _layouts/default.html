@@ -6,19 +6,23 @@
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   
+  <!-- Cache Control -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
   <!-- Material Symbols -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
 
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicons/favicon-32x32.png' | relative_url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicons/favicon-16x16.png' | relative_url }}">
-  <link rel="manifest" href="{{ '/assets/img/favicons/site.webmanifest' | relative_url }}">
-  <link rel="shortcut icon" href="{{ '/assets/img/favicons/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicons/favicon-32x32.png' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicons/favicon-16x16.png' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+  <link rel="manifest" href="{{ '/assets/img/favicons/site.webmanifest' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
+  <link rel="shortcut icon" href="{{ '/assets/img/favicons/favicon.ico' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
   <meta name="apple-mobile-web-app-title" content="Hyoeun's Wiki">
   <meta name="application-name" content="Hyoeun's Wiki">
   <meta name="msapplication-TileColor" content="#0d1117">
@@ -144,7 +148,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="{{ '/' | relative_url }}" class="footer-logo">
-            <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" alt="Logo" style="height: 28px; width: 28px; border-radius: 4px; margin-right: 10px;">
+            <img src="{{ '/assets/images/avatar.jpg' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}" alt="Logo" style="height: 28px; width: 28px; border-radius: 4px; margin-right: 10px;">
             <span>Hyoeun's Wiki</span>
           </a>
           <p class="footer-tagline">Ethical Hacker &middot; Cybersecurity Engineer</p>
@@ -350,7 +354,7 @@
         SimpleJekyllSearch({
           searchInput: document.getElementById('search-input'),
           resultsContainer: document.getElementById('results-container'),
-          json: '{{ "/search.json" | relative_url }}',
+          json: '{{ "/search.json" | relative_url }}?v={{ site.time | date: "%Y%m%d%H%M%S" }}',
           searchResultTemplate: '<li><a href="{url}"><span class="search-result-title">{title}</span><div class="search-result-meta"><span>{category}</span><span>{date}</span></div></a></li>',
           noResultsText: '<li><div style="padding: 12px 16px; color: #7d8590; font-size: 13px;">No results found</div></li>'
         });
