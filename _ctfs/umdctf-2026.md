@@ -1,6 +1,6 @@
 ---
 title: UMDCTF 2026
-rank: 5
+rank: 8
 date: 2026-04-24
 team: RubiyaLab
 screenshots:
