@@ -1,11 +1,11 @@
 ---
 title: H1B 비자와 Greencard에 관하여
-tags: Visa-Info
 key: page-h1b_greencard
 categories: [Personal, Life Information]
 author: hyoeun
-image: "/assets/thumbnails/2018-01-13-h1b_greencard.png"
+image: "/assets/thumbnails/2018-04-13-h1b_greencard.png"
 date: 2018-04-13 05:38:24
+published: false
 ---
 
 미국에서 석사를 하고 OPT로 일을 시작하게 될텐데 그 과정에서 H1B 루트를 타는 것이 일반적이다. 이 때, 만약 OPT 1년을 다 쓰지 않은 상태로 H1B가 되었더라면 다음에 MBA를 하고 나서 남은 OPT를 쓸 수 있고 STEM 연장신청으로 남은 2년도 더 쓸 수 있게 된다. 나 같은 경우는 OPT로 일 시작을 1월에 해서 그해 바로 H1B가 되어 10월부터 H1B로 일을 했기 때문에 MBA를 한다면 2년 3개월을 OPT로 더 일할 수 있는 기회가 생긴다.

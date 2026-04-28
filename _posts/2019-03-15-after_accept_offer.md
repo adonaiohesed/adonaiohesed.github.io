@@ -7,6 +7,7 @@ categories:
 author: hyoeun
 image: "/assets/thumbnails/2019-03-15-after_accept_offer.png"
 date: 2019-03-15 03:36:00
+published: false
 ---
 ## H1B Transfer
 

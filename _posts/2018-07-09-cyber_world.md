@@ -5,6 +5,7 @@ categories: [Personal, Philosophy]
 author: hyoeun
 image: "/assets/thumbnails/2018-07-09-cyber_world.png"
 date: 2018-07-09 20:45:36
+published: false
 ---
 
 Cyber world라는 말은 너무나 적절하고 심오한 말이었다.  

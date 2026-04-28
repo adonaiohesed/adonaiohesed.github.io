@@ -10,7 +10,7 @@ mathjax_autoNumber: true
 bilingual: true
 image: "/assets/thumbnails/2023-07-24-android_penetration_test_check_list.png"
 date: 2023-07-24 02:16:48
-publish: false
+published: false
 ---
 
 ### **1. Static Analysis**
@@ -24,7 +24,6 @@ publish: false
 | **Missing Integrity Checks** | The app does not verify its own integrity, allowing for repackaging attacks. | 1. Decompile the app, modify its code (e.g., Smali), recompile, sign it, and check if it still functions properly. | `apktool`, `apksigner` |
 | **Insecure Manifest Configuration** | The `AndroidManifest.xml` file has insecure flags set, such as `allowBackup=true` or `debuggable=true`. | 1. Review the manifest file for `android:debuggable="true"`, `android:allowBackup="true"`, and `network_security_config` allowing cleartext traffic. | `Jadx`, `apktool`, `MobSF` |
 
------
 
 ### **2. Dynamic Analysis**
 
