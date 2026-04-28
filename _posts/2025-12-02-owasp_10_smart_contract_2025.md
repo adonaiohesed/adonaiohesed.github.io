@@ -8,8 +8,8 @@ author: hyoeun
 math: true
 mathjax_autoNumber: true
 bilingual: true
-image: "/assets/thumbnails/2022-12-02-owasp_10_smart_contract_2025.png"
-date: 2022-12-02 09:57:36
+image: "/assets/thumbnails/2025-12-02-owasp_10_smart_contract_2025.png"
+date: 2025-12-02 09:57:36
 ---
 
 ## OWASP Smart Contract Top 10 - 2025

@@ -43,13 +43,17 @@ layout: default
           <time class="hero-date">{{ hero_post.date | date: "%b %-d, %Y" }}</time>
         </div>
       </div>
-      <a href="{{ hero_post.url | relative_url }}" class="hero-featured-image">
+      <a href="{{ hero_post.url | relative_url }}" class="hero-featured-image {% if hero_post.published == false %}unpublished{% endif %}">
         {% if hero_post.image %}
           {% assign thumb = hero_post.image.path | default: hero_post.image %}
-          <img src="{{ thumb | relative_url }}" alt="{{ hero_post.title }}">
+          <div style="position: relative; height: 100%; width: 100%;">
+            <img src="{{ thumb | relative_url }}" alt="{{ hero_post.title }}">
+            {% if hero_post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+          </div>
         {% else %}
           <div class="hero-featured-placeholder">
             <span class="material-symbols-outlined">article</span>
+            {% if hero_post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
           </div>
         {% endif %}
       </a>
@@ -70,13 +74,16 @@ layout: default
 
       <div class="post-grid">
         {% for post in paginator.posts %}
-        <a href="{{ post.url | relative_url }}" class="post-card">
+        <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
           {% if post.image %}
             {% assign thumb = post.image.path | default: post.image %}
-            <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')"></div>
+            <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')">
+              {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+            </div>
           {% else %}
             <div class="post-thumbnail placeholder">
               <span class="material-symbols-outlined">article</span>
+              {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
             </div>
           {% endif %}
           <div class="post-content">
@@ -240,13 +247,16 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in sec_posts limit:3 %}
-      <a href="{{ post.url | relative_url }}" class="post-card">
+      <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}
-          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')"></div>
+          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')">
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+          </div>
         {% else %}
           <div class="post-thumbnail placeholder">
             <span class="material-symbols-outlined">article</span>
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
           </div>
         {% endif %}
         <div class="post-content">
@@ -299,13 +309,16 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in eng_posts limit:3 %}
-      <a href="{{ post.url | relative_url }}" class="post-card">
+      <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}
-          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')"></div>
+          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')">
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+          </div>
         {% else %}
           <div class="post-thumbnail placeholder">
             <span class="material-symbols-outlined">article</span>
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
           </div>
         {% endif %}
         <div class="post-content">
@@ -358,13 +371,16 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in ai_posts limit:3 %}
-      <a href="{{ post.url | relative_url }}" class="post-card">
+      <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}
-          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')"></div>
+          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')">
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+          </div>
         {% else %}
           <div class="post-thumbnail placeholder">
             <span class="material-symbols-outlined">article</span>
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
           </div>
         {% endif %}
         <div class="post-content">

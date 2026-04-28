@@ -56,13 +56,16 @@ layout: default
   <!-- Featured post (large card) -->
   {% if featured_post %}
   <div class="cat-featured-wrap">
-    <a href="{{ featured_post.url | relative_url }}" class="cat-featured-card">
+    <a href="{{ featured_post.url | relative_url }}" class="cat-featured-card {% if featured_post.published == false %}unpublished{% endif %}">
       {% if featured_post.image %}
         {% assign thumb = featured_post.image.path | default: featured_post.image %}
-        <div class="cat-featured-img" style="background-image: url('{{ thumb | relative_url }}')"></div>
+        <div class="cat-featured-img" style="background-image: url('{{ thumb | relative_url }}')">
+          {% if featured_post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+        </div>
       {% else %}
         <div class="cat-featured-img cat-featured-img--placeholder">
           <span class="material-symbols-outlined">article</span>
+          {% if featured_post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
         </div>
       {% endif %}
       <div class="cat-featured-content">
@@ -99,13 +102,16 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in rest_posts %}
-      <a href="{{ post.url | relative_url }}" class="post-card">
+      <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}
-          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')"></div>
+          <div class="post-thumbnail" style="background-image: url('{{ thumb | relative_url }}')">
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
+          </div>
         {% else %}
           <div class="post-thumbnail placeholder">
             <span class="material-symbols-outlined">article</span>
+            {% if post.published == false %}<div class="draft-overlay">DRAFT</div>{% endif %}
           </div>
         {% endif %}
         <div class="post-content">
