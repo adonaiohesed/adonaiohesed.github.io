@@ -105,6 +105,96 @@ Once the jailbreak is complete and you're back on the home screen, you will see 
 **Note: Re-Jailbreaking After a Reboot**
 `palera1n` is a **semi-tethered** jailbreak, meaning the jailbroken state is lost upon reboot. To re-enable it, you must reconnect the device to your PC and repeat **Steps 1 and 2**. Your existing data and tweaks will be preserved.
 
+## Why App Developers Must Implement Root/Jailbreak Detection
+
+So far, we've explored rooting and jailbreaking from an **attacker's perspective** — the power these techniques unlock. But there is an equal and opposite side to this story: the perspective of the **app developer** and **business owner** who must protect their users and their products.
+
+Why does a banking app refuse to launch on a jailbroken device? Why does a DRM-protected streaming service check for root? This section answers those questions by examining the specific threat scenarios that make root detection a **non-negotiable security control** for any serious mobile application.
+
+### The Hostile Environment Assumption
+
+A mobile device is fundamentally different from a server you control. Your app is deployed into the wild, onto hardware owned by users — hardware that could be in the hands of an adversary. The moment root or jailbreak is present on a device, your app's **entire security model changes**:
+
+*   The **operating system's sandbox** — the primary isolation mechanism between apps — is compromised or bypassable.
+*   **Memory protection** mechanisms can be circumvented, allowing other processes to read your app's memory.
+*   **Filesystem protections** are removed, making private app data directories accessible.
+*   **Kernel-level hooks** can intercept any system call your app makes.
+
+This is why the OWASP Mobile Top 10 (both 2017 and 2024) consistently lists missing root/jailbreak detection as a critical vulnerability under binary protections and environment checks.
+
+### Threat Scenario 1: The Attacker Who Roots Their Own Device
+
+The most common scenario. A user — or more likely, a malicious actor — intentionally roots or jailbreaks their **own device** to attack your app. This is not theoretical; it is the standard methodology for mobile penetration testing and for real-world fraud.
+
+**What the attacker gains:**
+
+*   **Full filesystem access:** The attacker reads your app's private `SharedPreferences`, SQLite databases, and `plist` files. Authentication tokens, session keys, and API credentials stored on the device are directly accessible without any hooking needed.
+*   **Dynamic instrumentation (Frida/Objection):** With root, the attacker can inject Frida into your app's process and hook any function in real time — bypassing certificate pinning, overriding license checks, dumping decrypted memory, and manipulating return values of critical functions.
+*   **Binary extraction and repackaging:** The actual APK or IPA can be pulled from the device, decompiled, modified (e.g., removing payment walls, anti-cheat logic, or watermarks), and repackaged and redistributed.
+*   **Traffic interception without certificate pinning workarounds:** On a rooted device, system-level SSL pinning interception (via Magisk modules or `/etc/hosts` manipulation) can be performed, making Burp Suite proxy setup trivial.
+
+**Real-world business impact:**
+*   Competitors reverse-engineer proprietary algorithms.
+*   In-app purchases are bypassed, resulting in direct revenue loss.
+*   Authentication tokens are stolen and replayed from other infrastructure.
+*   API abuse from extracted keys drives up infrastructure costs.
+
+> [!WARNING]
+> Implementing root detection does **not** prevent a determined attacker — they can hook and bypass your detection logic. But it **dramatically raises the bar**, forcing attackers to invest significant time and expertise, which eliminates the vast majority of opportunistic threats.
+
+### Threat Scenario 2: The Customer's Device Remotely Compromised Without Their Knowledge
+
+This is the more dangerous and less understood scenario. The **customer does not know their device has been rooted**. This can happen through:
+
+*   **Malicious apps with escalation exploits:** A seemingly innocent app (often a game or utility from a third-party store) exploits an unpatched kernel vulnerability to silently acquire root privileges. This is how malware families like **Ztorg**, **Ghost Push**, and **Hummingbad** infected millions of devices.
+*   **Pre-rooted devices from unofficial supply chains:** Devices purchased from gray markets or third-party sellers sometimes arrive pre-rooted with backdoored firmware. The user has no idea.
+*   **Enterprise MDM compromise:** In BYOD (Bring Your Own Device) environments, a compromised Mobile Device Management profile can grant elevated access. This has been exploited in nation-state spyware campaigns (e.g., Pegasus).
+*   **Supply chain attacks on firmware:** Modified firmware distributed through unofficial OTA update channels can persist root access without the user's knowledge.
+
+**What this means for your app:**
+
+Your legitimate user is a **victim**. Malware on their device can:
+*   Read your app's decrypted data from memory while the user is authenticated and actively using the app.
+*   Intercept network calls at the kernel level, bypassing your certificate pinning.
+*   Capture screenshots or audio via accessibility hooks while the user interacts with your app.
+*   Exfiltrate session tokens in **real time**, performing account takeover on behalf of the legitimate user.
+
+From your server's perspective, this attack **looks completely legitimate** — same user, same device fingerprint, valid session token. Without your app detecting the hostile environment and refusing to operate, or alerting the backend, there is nothing you can do to defend against it.
+
+> [!CAUTION]
+> This threat scenario is the primary justification used by regulators and compliance frameworks (e.g., PCI-DSS for mobile payment apps, FIDO Alliance guidelines) for mandating root detection in financial and healthcare applications.
+
+### Threat Scenario 3: Business Logic Manipulation via Modified Binaries
+
+This scenario targets **the integrity of your app's logic**, not just its data. On a rooted or jailbroken device, an attacker can modify your app binary and run the modified version. This is sometimes called "repackaging" or a "patch attack."
+
+**What attackers modify:**
+
+*   **Payment and subscription logic:** Remove code that verifies a paid subscription or in-app purchase receipt with the server. The app behaves as if the user has a premium account.
+*   **Anti-cheat and anti-fraud logic in games:** Disable speed limits, item count checks, or leaderboard submission validation. The modified app sends fraudulent high scores or game states to your backend.
+*   **Loyalty and points systems:** Manipulate point calculation logic or coupon generation code in apps with rewards programs. Attackers can fraudulently accumulate points or generate unlimited discount codes.
+*   **Digital watermarking and DRM:** Strip watermark injection code from media apps so that pirated content can be distributed without tracing back to the attacker's account.
+*   **Risk scoring bypass:** Remove or neuter fraud-detection logic embedded directly in the client (e.g., device fingerprinting, behavior analysis), making fraudulent transactions appear legitimate.
+
+**The deeper danger — server trust:**
+
+Many apps perform critical logic on the client and send the **result** (not the raw inputs) to the server. If an attacker modifies your client to always send `"transaction_type": "bonus"` instead of `"purchase"`, and your server trusts this client-supplied value, the attacker has effectively stolen from you. This is an architectural vulnerability that root detection alone cannot fix, but root detection is the **first line of defense** that signals to your backend that the environment is untrusted.
+
+### Detection Strategies and Their Limitations
+
+| Technique | What It Checks | Bypass Difficulty |
+|---|---|---|
+| Check for `su` binary | Common superuser binaries | Low — file can be hidden |
+| Check for known root apps (Magisk, Superuser) | Installed package names | Low — MagiskHide renames packages |
+| `SafetyNet` / `Play Integrity API` (Android) | Attestation from Google servers | Medium — requires custom ROMs |
+| `DeviceCheck` / `AppAttest` (iOS) | Apple-signed hardware attestation | High |
+| Check `BUILD_TAGS` for `test-keys` | Unofficial Android builds | Medium |
+| Detect Frida / Cydia ports | Known analysis tool artifacts | Medium |
+| Behavioral analysis (runtime RASP) | Anomalous memory access patterns | High |
+
+> [!TIP]
+> The most robust approach combines **multiple layers**: client-side checks (easily bypassed but cheap), server-side behavioral analysis (hard to bypass), and hardware attestation APIs (Google Play Integrity / Apple AppAttest) which are extremely difficult to spoof on modern hardware.
+
 ---
 
 ## 시스템의 자물쇠를 부수는 기술: 루팅과 탈옥의 모든 것
@@ -200,3 +290,93 @@ Once the jailbreak is complete and you're back on the home screen, you will see 
 
 **참고: 재부팅 후 다시 탈옥하기**
 `palera1n`은 **반탈옥(Semi-tethered)** 방식이므로, 기기를 재부팅하면 탈옥 상태가 풀립니다. 이때는 다시 PC에 연결하여 위 **1, 2단계**를 반복하면 기존 데이터는 유지된 채로 탈옥 상태만 다시 활성화됩니다.
+
+## 앱 개발자가 루트/탈옥 감지를 반드시 구현해야 하는 이유
+
+지금까지는 **공격자의 관점**에서 루팅과 탈옥이 열어주는 가능성을 살펴보았습니다. 그러나 이 이야기에는 동등하게 중요한 반대편이 있습니다. 바로 자신의 앱과 사용자를 보호해야 하는 **앱 개발자와 비즈니스 오너**의 관점입니다.
+
+은행 앱이 왜 탈옥된 기기에서 실행을 거부할까요? DRM으로 보호된 스트리밍 서비스가 왜 루트 여부를 검사할까요? 이 섹션에서는 루트/탈옥 감지가 모든 진지한 모바일 앱에서 **핵심 보안 통제**가 되어야 하는 이유를 구체적인 위협 시나리오를 통해 살펴봅니다.
+
+### 적대적 환경이라는 전제
+
+모바일 기기는 운영자가 완전히 통제하는 서버와 근본적으로 다릅니다. 앱은 사용자가 소유한 하드웨어에 배포되며, 그 하드웨어는 잠재적 공격자의 손에 있을 수 있습니다. 기기에 루트나 탈옥이 존재하는 순간, 앱의 **전체 보안 모델이 달라집니다**:
+
+*   앱 간의 핵심 격리 메커니즘인 **운영체제의 샌드박스**가 우회 가능하게 됩니다.
+*   다른 프로세스가 앱의 메모리를 읽을 수 있도록 **메모리 보호** 메커니즘이 무력화됩니다.
+*   **파일 시스템 보호**가 제거되어 앱의 프라이빗 데이터 디렉터리에 접근 가능해집니다.
+*   **커널 수준의 후킹**으로 앱이 수행하는 모든 시스템 콜을 가로챌 수 있습니다.
+
+이것이 OWASP 모바일 Top 10(2017년 및 2024년 버전 모두)이 루트/탈옥 감지 부재를 바이너리 보호 및 환경 검사 항목에서 지속적으로 심각한 취약점으로 분류하는 이유입니다.
+
+### 위협 시나리오 1: 자신의 폰을 스스로 루팅한 공격자
+
+가장 흔한 시나리오입니다. 사용자 또는 악의적인 행위자가 **자신의 기기**를 의도적으로 루팅하거나 탈옥시켜 앱을 공격합니다. 이는 가설이 아니라 모바일 모의해킹과 실제 사기 범죄의 표준 방법론입니다.
+
+**공격자가 얻는 것:**
+
+*   **파일 시스템 전체 접근:** 앱의 `SharedPreferences`, SQLite 데이터베이스, `plist` 파일을 직접 읽습니다. 기기에 저장된 인증 토큰, 세션 키, API 키는 후킹 없이도 바로 획득 가능합니다.
+*   **동적 계측 (Frida/Objection):** 루트 권한으로 Frida를 앱 프로세스에 주입하여 실시간으로 어떤 함수든 후킹합니다. 인증서 피닝 우회, 라이선스 검사 무력화, 복호화된 메모리 덤프, 중요 함수의 반환값 조작이 모두 가능해집니다.
+*   **바이너리 추출 및 리패키징:** 기기에서 실제 APK나 IPA를 추출하고, 디컴파일하여 수정(결제 로직, 안티치트 로직, 워터마크 제거 등)한 뒤 재배포합니다.
+*   **간편한 트래픽 가로채기:** 루팅된 기기에서는 Magisk 모듈이나 `/etc/hosts` 조작으로 Burp Suite 프록시 설정이 매우 쉬워지며, 인증서 피닝도 무력화하기 쉬워집니다.
+
+**비즈니스 관점의 실제 피해:**
+*   경쟁사가 독점적인 핵심 알고리즘을 역공학으로 탈취합니다.
+*   인앱 결제가 우회되어 직접적인 매출 손실이 발생합니다.
+*   추출된 인증 토큰이 다른 인프라에서 재사용됩니다.
+*   노출된 API 키를 통한 무단 API 남용으로 인프라 비용이 급증합니다.
+
+> [!WARNING]
+> 루트 감지를 구현하더라도 결단력 있는 공격자는 감지 로직 자체를 후킹하여 우회할 수 있습니다. 그러나 루트 감지는 **공격의 난이도를 극적으로 높여**, 상당한 시간과 전문 지식이 필요하게 만들어 기회주의적 위협의 대부분을 차단합니다.
+
+### 위협 시나리오 2: 고객이 모르는 사이 원격으로 루팅된 기기
+
+이것이 더 위험하고 덜 알려진 시나리오입니다. **고객 자신은 자신의 기기가 루팅되었다는 사실을 모릅니다.** 이는 다음과 같이 발생할 수 있습니다:
+
+*   **권한 상승 익스플로잇이 포함된 악성 앱:** 겉으로 보이기에 무해한 앱(주로 서드파티 마켓의 게임이나 유틸리티)이 패치되지 않은 커널 취약점을 악용하여 조용히 루트 권한을 획득합니다. **Ztorg**, **Ghost Push**, **Hummingbad**와 같은 악성코드 계열이 수백만 대의 기기를 이런 식으로 감염시켰습니다.
+*   **비공식 유통망의 사전 루팅 기기:** 비공식 채널이나 중고 판매점에서 구매한 기기가 백도어가 심어진 펌웨어와 함께 사전 루팅된 상태로 도착하는 경우가 있습니다. 사용자는 전혀 알 수 없습니다.
+*   **기업용 MDM 침해:** BYOD(개인 기기 업무 사용) 환경에서 침해된 MDM(모바일 기기 관리) 프로파일이 관리자 수준 접근을 부여할 수 있습니다. 이는 Pegasus 스파이웨어와 같은 국가 수준의 사이버 공격에서 악용된 사례가 있습니다.
+*   **펌웨어 공급망 공격:** 비공식 OTA 업데이트 채널을 통해 배포된 변조 펌웨어가 사용자 몰래 루트 접근 권한을 유지하도록 설계될 수 있습니다.
+
+**이것이 여러분의 앱에 미치는 영향:**
+
+여러분의 정상 사용자가 **피해자**가 됩니다. 기기에 심어진 악성코드는:
+*   사용자가 앱을 실제로 사용하는 동안 메모리에서 복호화된 데이터를 실시간으로 읽습니다.
+*   커널 수준에서 네트워크 호출을 가로채어 인증서 피닝을 우회합니다.
+*   사용자가 앱과 상호작용하는 동안 접근성 훅을 통해 스크린샷이나 음성을 캡처합니다.
+*   세션 토큰을 **실시간으로** 탈취하여 정상 사용자인 것처럼 위장한 계정 탈취를 수행합니다.
+
+서버 입장에서는 이 공격이 **완전히 정상적으로 보입니다** — 동일한 사용자, 동일한 기기 지문, 유효한 세션 토큰. 앱이 적대적인 환경을 감지하고 작동을 거부하거나 백엔드에 경보를 보내지 않는다면, 이 공격에 대응할 방법이 없습니다.
+
+> [!CAUTION]
+> 이 위협 시나리오는 금융 및 헬스케어 앱에서 루트 감지를 의무화하는 규제 및 컴플라이언스 프레임워크(예: 모바일 결제 앱의 PCI-DSS, FIDO Alliance 가이드라인)가 제시하는 핵심 근거입니다.
+
+### 위협 시나리오 3: 변조된 바이너리를 통한 비즈니스 로직 조작
+
+이 시나리오는 데이터가 아닌 **앱 로직의 무결성**을 표적으로 삼습니다. 루팅되거나 탈옥된 기기에서 공격자는 앱 바이너리를 수정하고 수정된 버전을 실행할 수 있습니다. 이를 "리패키징" 또는 "패치 공격"이라고도 합니다.
+
+**공격자가 수정하는 것들:**
+
+*   **결제 및 구독 로직:** 서버와 유료 구독이나 인앱 구매 영수증을 검증하는 코드를 제거합니다. 조작된 앱은 사용자가 프리미엄 계정을 가진 것처럼 동작합니다.
+*   **게임의 안티치트 및 사기 방지 로직:** 속도 제한, 아이템 수량 검사, 리더보드 제출 검증을 비활성화합니다. 조작된 앱이 부정한 고점수나 게임 상태를 백엔드로 전송합니다.
+*   **포인트 및 리워드 시스템:** 리워드 프로그램이 있는 앱에서 포인트 계산 로직이나 쿠폰 생성 코드를 조작합니다. 공격자는 포인트를 부정하게 적립하거나 무제한 할인 코드를 생성할 수 있습니다.
+*   **디지털 워터마킹 및 DRM:** 미디어 앱에서 워터마크 삽입 코드를 제거하여, 피해자의 계정으로 추적 불가능한 불법 복제 콘텐츠를 배포합니다.
+*   **위험도 점수 우회:** 클라이언트에 직접 내장된 사기 탐지 로직(예: 기기 지문, 행동 분석)을 제거하거나 무력화하여 부정 거래가 정상처럼 보이게 만듭니다.
+
+**더 깊은 위험 — 서버의 클라이언트 신뢰:**
+
+많은 앱들이 클라이언트에서 핵심 로직을 수행하고 그 **결과**(원시 입력값이 아닌)만 서버로 전송합니다. 공격자가 클라이언트를 조작하여 항상 `"purchase"` 대신 `"bonus"`를 전송하도록 만들고, 서버가 이 클라이언트 제공 값을 신뢰한다면 공격자는 사실상 기업의 돈을 훔친 것입니다. 이는 루트 감지 만으로는 해결할 수 없는 구조적 취약점이지만, 루트 감지는 백엔드에 "이 환경을 신뢰하지 마라"는 신호를 보내는 **1차 방어선**입니다.
+
+### 감지 전략과 그 한계
+
+| 기법 | 검사 대상 | 우회 난이도 |
+|---|---|---|
+| `su` 바이너리 존재 확인 | 주요 슈퍼유저 바이너리 | 낮음 — 파일 경로 숨기기 가능 |
+| 알려진 루트 앱 패키지명 확인 | Magisk, Superuser 등 | 낮음 — MagiskHide로 패키지명 위장 가능 |
+| `SafetyNet` / `Play Integrity API` (Android) | Google 서버 기반 증명 | 중간 — 커스텀 ROM 필요 |
+| `DeviceCheck` / `AppAttest` (iOS) | Apple 하드웨어 증명 | 높음 |
+| `BUILD_TAGS` 검사 (`test-keys` 여부) | 비공식 안드로이드 빌드 | 중간 |
+| Frida / Cydia 관련 포트 및 파일 탐지 | 알려진 분석 도구의 흔적 | 중간 |
+| 런타임 행동 분석 (RASP) | 비정상적인 메모리 접근 패턴 | 높음 |
+
+> [!TIP]
+> 가장 견고한 접근법은 **여러 계층의 조합**입니다. 클라이언트 측 검사(우회하기 쉽지만 비용이 저렴), 서버 측 행동 분석(우회하기 어려움), 그리고 최신 하드웨어에서 위조가 극히 어려운 Google Play Integrity / Apple AppAttest 같은 하드웨어 증명 API를 함께 사용하는 것이 권장됩니다.
