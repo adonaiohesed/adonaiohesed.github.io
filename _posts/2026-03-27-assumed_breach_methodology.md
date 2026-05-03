@@ -1,5 +1,5 @@
 ---
-title: Assumed Breach Methodology
+title: "Assumed Breach Methodology: Building the Technical Controls"
 key: page-assumed_breach_methodology
 categories:
 - Security
@@ -11,99 +11,148 @@ image: "/assets/thumbnails/2026-03-27-assumed_breach_methodology.png"
 bilingual: true
 date: 2026-03-27 09:00:00
 ---
+> **Before you start:** This post is the hands-on technical guide. If you're new to the Assumed Breach concept, read [Assumed Breach: Why Your Firewall Is No Longer Enough](/posts/asumed_breach/) first to understand the philosophy before jumping into implementation.
 
-## The Perimeter Is Already Gone
+## From Philosophy to Operations
 
-Your firewall didn't fail. Your EDR didn't miss anything. Your SIEM is humming along. And the attacker has been sitting in your environment for 73 days — the industry median dwell time before detection. They're not at the gate anymore. They're in your Active Directory, they've mapped your network, and they're waiting for the right moment.
+You've accepted the premise: attackers will get in. Now what?
 
-**Assumed Breach** is the operational posture that starts from this reality and builds backward. Instead of designing defenses around keeping attackers out, you design them around the question: *When they're in — not if — how quickly do we detect, contain, and eject them?* This mindset shift changes everything from how you architect internal networks to how you write detection rules to what you practice in tabletop exercises.
+This guide is for security engineers, SOC analysts, and red/blue team practitioners who need to translate the Assumed Breach philosophy into concrete technical controls. We cover four operational stages — lateral movement detection, detection engineering, network segmentation, and adversary simulation — followed by how to build a complete program and the gotchas that kill these programs in practice.
 
-## What Assumed Breach Actually Means
+## Stage 1: Understand How Attackers Move After Initial Access
 
-Assumed breach is not pessimism. It's a design philosophy — the security equivalent of building with earthquake codes in a seismic zone.
+Before you can detect lateral movement, you need to understand exactly what it looks like. After landing on a beachhead host, an attacker's immediate goal is to move from that host to a higher-value target: a domain controller, a database server, a code signing system.
 
-The traditional model is **perimeter-focused**: strong outer defenses (firewall, WAF, VPN), with implicit trust inside the network. Once you're in, you're trusted. This model broke completely when:
-- Remote work dissolved the network perimeter
-- Cloud expanded blast radius beyond any single firewall
-- Supply chain attacks (SolarWinds, 3CX) proved that trusted software can be the vector
-- Credential phishing bypasses perimeter controls entirely
+The lateral movement toolkit is almost entirely credential-based:
 
-**Assumed breach flips the trust model**: every user, device, and service is treated as potentially compromised, regardless of where it sits in the network. You build controls and detection that are effective *after* initial access — which is a fundamentally different design target than prevention.
-
-The three operational pillars:
-
-| Pillar | Question It Answers | If You Get It Wrong |
+| Technique | What It Does | Event to Detect |
 |---|---|---|
-| **Segmentation** | How far can they move laterally? | Full network compromise from one endpoint |
-| **Detection** | How fast do we see them? | 73+ day dwell time |
-| **Response** | How fast can we eject them? | Attacker achieves objective before you act |
+| **Pass-the-Hash (PtH)** | Reuses NTLM hash without cracking | EventID 4624, LogonType 3, Auth: NTLM |
+| **Pass-the-Ticket (PtT)** | Abuses stolen Kerberos tickets | EventID 4768/4769, unusual TGT/TGS |
+| **Kerberoasting** | Cracks service account passwords offline | EventID 4769, RC4 encryption type |
+| **DCSync** | Dumps all AD credentials remotely | EventID 4662, `Replicating Directory Changes` |
+| **PSExec / WMI / DCOM** | Remote execution via LOLBins | EventID 7045 (service install), 4688 (process) |
+| **Golden Ticket** | Forged TGT using KRBTGT hash | EventID 4769, tickets with 10-year lifetimes |
 
-## How It Works: The Assumed Breach Lifecycle
+The critical insight: **detect behaviors, not tools**. Attackers swap tools constantly. The underlying Windows API calls and authentication events stay consistent. Build your detections on those.
 
-### Stage 1: Lateral Movement Is the Kill Zone
+## Stage 2: Detection Engineering for Post-Compromise Behavior
 
-After initial access, attackers need to move from their beachhead to their target (crown jewels, AD, financial data). This movement phase is where assumed breach defenders focus most of their detection energy — because prevention already failed.
+### 2-1. Credential Abuse Detection
 
-The attacker's lateral movement toolkit is almost always credential-based:
-- **Pass-the-Hash (PtH)**: Reuse NTLM hashes without cracking
-- **Pass-the-Ticket (PtT)**: Abuse Kerberos tickets (Golden/Silver Ticket attacks)
-- **DCOM / WMI / PSExec**: LOLBin (Living Off the Land) remote execution
-- **RDP**: Stolen credentials + open port
-
-Your detection must catch these behaviors, not the tools themselves (tools change; behaviors don't).
-
-### Stage 2: Detection Engineering for Post-Compromise Behavior
-
-Detection in an assumed breach model is behavioral and anomaly-based, not purely signature-based. Key detection categories:
-
-**Credential abuse:**
+**Pass-the-Hash indicator:**
 ```yaml
-# Sigma rule concept — detect Pass-the-Hash indicators
+# Sigma rule — detect Pass-the-Hash lateral movement
 title: Lateral Movement via NTLM Pass-the-Hash
+status: experimental
+logsource:
+  product: windows
+  service: security
 detection:
   selection:
     EventID: 4624
     LogonType: 3
-    AuthPackage: NTLM
-    SubjectUserSid: S-1-5-18  # SYSTEM
-  condition: selection
+    AuthenticationPackageName: NTLM
+    SubjectUserSid: 'S-1-5-18'
+  filter:
+    TargetUserName|endswith: '$'  # Exclude machine accounts
+  condition: selection and not filter
 falsepositives:
-  - Legitimate service accounts using NTLM (enumerate and allowlist)
+  - Legitimate service accounts using NTLM — enumerate and allowlist
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1550.002
 ```
 
-**Abnormal admin tool usage:**
+**Kerberoasting detection:**
+```yaml
+title: Kerberoasting — RC4 Downgrade Attack
+logsource:
+  product: windows
+  service: security
+detection:
+  selection:
+    EventID: 4769
+    TicketEncryptionType: '0x17'  # RC4 — weak, preferred by Kerberoasting tools
+    ServiceName|endswith: '$'
+  condition: selection
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1558.003
+```
+
+### 2-2. Abnormal Process Execution (LOLBin Abuse)
+
+One of the most common red team techniques is spawning shells from Office apps or browsers — processes that should never create command-line children.
+
 ```python
-# Detection logic pseudocode for LOLBin abuse
-suspicious_parents = ["word.exe", "excel.exe", "outlook.exe", "chrome.exe"]
-suspicious_children = ["cmd.exe", "powershell.exe", "wscript.exe", "mshta.exe"]
+# Detection logic pseudocode — LOLBin parent-child abuse
+suspicious_parents = [
+    "winword.exe", "excel.exe", "powerpnt.exe",
+    "outlook.exe", "chrome.exe", "firefox.exe", "msedge.exe"
+]
+suspicious_children = [
+    "cmd.exe", "powershell.exe", "wscript.exe",
+    "cscript.exe", "mshta.exe", "regsvr32.exe"
+]
 
-if process.parent in suspicious_parents and process.name in suspicious_children:
-    alert(severity="HIGH", tactic="Execution", technique="T1059")
+if process.parent_name in suspicious_parents:
+    if process.name in suspicious_children:
+        create_alert(
+            severity="HIGH",
+            tactic="Execution",
+            technique="T1059",
+            message=f"{process.parent_name} spawned {process.name}"
+        )
 ```
 
-**Impossible travel / impossible access:**
+### 2-3. Impossible Access / Anomalous Credential Use
+
+Valid credentials behaving abnormally is the hardest pattern for signature-based tools to catch — and the most important one to detect in an assumed breach model.
+
 ```python
-# Flag accounts accessing resources they've never touched
-def is_anomalous_access(user, resource, timestamp):
-    baseline = get_access_baseline(user, days=90)
-    if resource not in baseline.resources:
-        if resource.sensitivity == "HIGH":
-            return True
-    return False
+def detect_anomalous_access(user, resource, timestamp, source_ip):
+    baseline = get_access_baseline(user, lookback_days=90)
+    signals = []
+
+    # Never-before-accessed sensitive resource
+    if resource not in baseline.resources and resource.sensitivity == "HIGH":
+        signals.append("first_access_to_sensitive_resource")
+
+    # Unusual hours (based on per-user baseline, not generic 9-5)
+    if timestamp.hour not in baseline.active_hours:
+        signals.append("off_hours_access")
+
+    # New source IP (not in baseline)
+    if source_ip not in baseline.known_ips:
+        signals.append("new_source_ip")
+
+    # Alert if 2+ signals — single signals have too many false positives
+    if len(signals) >= 2:
+        create_alert(severity="MEDIUM", signals=signals, user=user)
 ```
 
-### Stage 3: Segmentation Limits Blast Radius
+> **Key principle:** Single anomaly signals generate too many false positives. Combine 2+ weak signals for higher-fidelity alerts.
 
-Network segmentation under assumed breach is not about VLANs — it's about **micro-segmentation** and **least-privilege network access**:
+## Stage 3: Network Segmentation That Actually Stops Lateral Movement
 
-- Workstations should not be able to reach each other directly (peer-to-peer lateral movement prevention)
-- Service accounts should have network access only to the services they need
-- Domain Controllers should only accept connections from specific admin workstations (Privileged Access Workstations / PAWs)
-- Credentials used on internet-exposed systems should never work on internal systems
+Segmentation in an Assumed Breach model is not about VLANs on a diagram. It's about enforceable controls that stop credential-based lateral movement in practice.
+
+### 3-1. Core Segmentation Rules
+
+| Control | What It Prevents | Implementation |
+|---|---|---|
+| Block workstation-to-workstation SMB | Direct PtH/lateral movement | Windows Firewall GPO |
+| Restrict DC access to PAWs only | Credential dumping from endpoints | AD tier model + firewall |
+| Service accounts: network-restrict to single service | Abuse of over-privileged accounts | Firewall + AD attribute |
+| Credentials never shared across tiers | Tier-0 creds not usable from Tier-1 hosts | LAPS + credential tiering |
+
+### 3-2. Workstation Lateral Movement Prevention (GPO)
 
 ```bash
-# Windows Firewall rule to block workstation-to-workstation SMB (lateral movement prevention)
-# Deploy via GPO
+# Block workstation-to-workstation SMB — deploy via Group Policy
 netsh advfirewall firewall add rule `
   name="Block Lateral SMB" `
   dir=in `
@@ -111,112 +160,143 @@ netsh advfirewall firewall add rule `
   localport=445 `
   remoteip=192.168.10.0/24 `
   action=block
+
+# Also block WMI lateral movement
+netsh advfirewall firewall add rule `
+  name="Block Lateral WMI" `
+  dir=in `
+  protocol=TCP `
+  localport=135 `
+  remoteip=192.168.10.0/24 `
+  action=block
 ```
 
-### Stage 4: Adversary Simulation to Validate Your Assumptions
+### 3-3. AD Credential Tiering Model
 
-The only honest way to know if your assumed breach controls work is to test them with simulated breach scenarios. Two approaches:
+The most effective AD control against lateral movement is tier separation. Credentials used at one tier cannot authenticate at another:
 
-**Purple Team Exercises**: Red team performs specific ATT&CK techniques; blue team confirms detection in real time. Collaborative, not adversarial. Goal is to close detection gaps together.
+```
+Tier 0 (Crown Jewels)
+├── Domain Controllers
+├── ADFS servers
+├── PKI/CA infrastructure
+└── Admin accounts: ONLY usable from Tier-0 PAWs
 
-**Breach and Attack Simulation (BAS)**: Automated tools (Cymulate, AttackIQ, SafeBreach) continuously run attack scenarios and report on detection coverage. Gives you coverage metrics over time.
+Tier 1 (Servers)
+├── File servers, app servers, DB servers
+└── Admin accounts: ONLY usable from Tier-1 admin workstations
+
+Tier 2 (Endpoints)
+├── User workstations, laptops
+└── Regular accounts: blocked from Tier 0/1 admin functions
+```
+
+If credentials are stolen from a Tier-2 endpoint, they're useless against Tier-0 systems. This doesn't prevent the breach — it prevents the attacker from reaching the crown jewels.
+
+## Stage 4: Adversary Simulation to Validate Your Controls
+
+The only honest way to know if your controls work is to test them under realistic conditions.
+
+### 4-1. Purple Team Exercises
+
+Red team executes specific ATT&CK techniques. Blue team confirms detection in real time. The goal is collaborative — find gaps together, not score points.
+
+**Sample purple team flow:**
+1. Red team runs `Invoke-AtomicTest T1003.001` (LSASS credential dump)
+2. Blue team watches SIEM for expected alert within 5 minutes
+3. If alert fires: document the rule, confirm fidelity, move to next technique
+4. If alert doesn't fire: write the detection rule together, then re-test
 
 ```bash
-# Atomic Red Team — run a specific ATT&CK technique to test detection
-# T1003.001: OS Credential Dumping - LSASS Memory
-Invoke-AtomicTest T1003.001
+# Atomic Red Team — run specific ATT&CK technique to test detection
+Invoke-AtomicTest T1003.001  # LSASS credential dump
+Invoke-AtomicTest T1550.002  # Pass-the-Hash
+Invoke-AtomicTest T1558.003  # Kerberoasting
 
-# Verify your SIEM/EDR caught it before running in production
-# Always run in an isolated lab environment first
+# Always: run in isolated lab first, confirm blast radius is contained
+# Always: have blue team watching live during execution
 ```
 
-## Practical Application: Building an Assumed Breach Program
+### 4-2. Breach and Attack Simulation (BAS)
 
-Moving from philosophy to operational program requires three concrete workstreams:
+Automated tools continuously run attack scenarios and report detection coverage over time.
 
-### 1. Establish Your Detection Baseline
+| Tool | Type | Best For |
+|---|---|---|
+| Atomic Red Team | Open source | Technique-level testing, purple team |
+| Caldera (MITRE) | Open source | Automated adversary emulation |
+| AttackIQ | Commercial | Continuous BAS, executive reporting |
+| Cymulate | Commercial | Full kill-chain simulation |
+| SafeBreach | Commercial | Large-scale continuous validation |
 
-Run a coverage assessment against MITRE ATT&CK before anything else. Map every detection rule you have to an ATT&CK technique. The gaps are your risk:
+## Building an Assumed Breach Program: Three Workstreams
+
+### Workstream 1: Map Your Detection Coverage
+
+Before building new detections, know what you have. Map every existing SIEM rule to an ATT&CK technique. The unmapped techniques are your risk exposure.
 
 ```python
-# ATT&CK coverage matrix concept
+# ATT&CK coverage gap analysis
 attack_techniques = load_attack_matrix()
 current_detections = load_siem_rules()
 
 coverage = {}
 for technique in attack_techniques:
-    matched = [r for r in current_detections if technique.id in r.tags]
+    matched_rules = [r for r in current_detections if technique.id in r.tags]
     coverage[technique.id] = {
         "name": technique.name,
-        "covered": len(matched) > 0,
-        "rule_count": len(matched),
-        "tactic": technique.tactic
+        "tactic": technique.tactic,
+        "covered": len(matched_rules) > 0,
+        "rule_count": len(matched_rules)
     }
 
-uncovered = [t for t in coverage if not coverage[t]["covered"]]
-print(f"Uncovered techniques: {len(uncovered)}/{len(attack_techniques)}")
+uncovered = [t for t, v in coverage.items() if not v["covered"]]
+print(f"Coverage: {len(attack_techniques) - len(uncovered)}/{len(attack_techniques)} techniques")
+print(f"Gaps: {len(uncovered)} techniques with no detection")
 ```
 
-### 2. Prioritize by Blast Radius
+Use ATT&CK Navigator to visualize this as a heatmap. Share it with leadership — it's the most concrete picture of your detection risk.
 
-Not every ATT&CK technique is equally dangerous in your environment. Prioritize detection development based on what attackers would do in *your* environment to reach *your* crown jewels:
+### Workstream 2: Prioritize by Crown Jewel Reachability
 
-- Map your crown jewels (AD, production databases, code signing infra, financial systems)
-- Identify the ATT&CK techniques most commonly used to reach those targets
-- Build detections for those techniques first
+Not every ATT&CK technique is equally dangerous in your environment. Build detections in order of: *what techniques get attackers to your most critical assets fastest?*
 
-### 3. Practice Incident Response Under Assumed Breach Conditions
+1. Map your crown jewels (AD, production DB, code signing, financial systems)
+2. For each crown jewel, trace the ATT&CK techniques that reach it from a standard user endpoint
+3. Confirm detection coverage for that specific attack path
+4. Gaps in that path are Priority 1
 
-Run tabletop exercises that start *after* initial access — not with "attackers are at the gate." Scenarios like:
+### Workstream 3: Drill Incident Response Post-Compromise
 
-- "We've detected suspicious LSASS access on a workstation. The alert is 4 hours old. What's the playbook?"
-- "An account with Domain Admin privileges logged in at 2am from an unusual host. How do we investigate without tipping off the attacker?"
+Run tabletop exercises that start *after* initial access. Not "attackers are at the gate" — "attackers are already inside." Realistic scenarios:
 
-## Gotchas: What Assumed Breach Gets Wrong in Practice
-
-**Alert fatigue is the assumed breach killer.** Teams implement EDR, tune it to maximum sensitivity, drown in 10,000 alerts a day, and start ignoring them. One real lateral movement alert gets buried. The fix: tune for precision first, recall second. A 90% precision rate on 100 alerts beats 50% precision on 10,000. Alert volume is an engineering problem, not a security problem.
-
-**"We have an EDR" is not assumed breach.** EDR is one detection layer. Assumed breach requires detection at multiple layers: network (east-west traffic), identity (auth events), endpoint (process behavior), and data (DLP, access patterns). Attackers test against your specific EDR. They know your blind spots better than you do.
-
-**Segmentation on paper vs. in practice.** The firewall rule says workstation-to-workstation SMB is blocked. The SOC responds to a lateral movement alert and finds the rule was only applied to the new VLANs — the legacy segment is still flat. Test your segmentation with actual lateral movement simulations quarterly.
-
-**Assumed breach doesn't mean "don't prevent."** Prevention and detection are not in competition. Reduce your attack surface (patch, disable legacy protocols, enforce MFA) and simultaneously build detection-in-depth. Prevention reduces the number of attacker entry points; assumed breach handles the ones that got through anyway.
-
-**Dwell time is not a detection metric.** Teams celebrate "we reduced dwell time from 73 to 14 days." That's great, but dwell time measures how long they were in after a breach. What matters is your detection *coverage* (do you have rules for the technique they used?) and *speed* (how fast did the right alert surface?). Optimize the leading indicators, not the lagging one.
+- *"LSASS access detected on finance-workstation-07. Alert is 4 hours old. The attacker may have lateral moved. What's the playbook?"*
+- *"Domain Admin account logged in at 2:17am from an IP not in baseline. How do we investigate without tipping off the attacker or disrupting production?"*
+- *"BloodHound shows a path from compromised helpdesk account to Domain Admin in 3 hops. Do we remediate now or monitor?"*
 
 ## Quick Reference
 
-### Core Assumed Breach Controls
-
-| Control | Purpose | Key Metric |
-|---|---|---|
-| Micro-segmentation | Limit lateral movement radius | % of east-west traffic with allow-list rules |
-| Privileged Access Workstations (PAW) | Isolate admin credentials | % of admin tasks performed from PAW |
-| Credential tiering | Prevent credential reuse across tiers | % of accounts with tier-appropriate scope |
-| EDR behavioral detection | Post-compromise endpoint visibility | Mean time to alert (MTTA) on test techniques |
-| Identity anomaly detection | Catch credential abuse | Alert rate on impossible access patterns |
-| Purple team cadence | Validate detection coverage | ATT&CK technique coverage % per quarter |
-
-### Detection Priority by Tactic (Post-Initial Access)
+### Detection Priority (Post-Initial Access)
 
 ```
-Priority 1 (Detect within minutes):
-  - Credential dumping (LSASS, SAM, NTDS)
-  - DCSync attacks
-  - Kerberoasting
+Priority 1 — Detect within minutes:
+  - LSASS credential dumping (T1003.001)
+  - DCSync attack (T1003.006)
+  - Kerberoasting (T1558.003)
+  - Golden/Silver Ticket creation (T1558.001/002)
 
-Priority 2 (Detect within hours):
-  - Lateral movement via WMI/PSExec/RDP
-  - Unusual service account activity
-  - Pass-the-Hash / Pass-the-Ticket
+Priority 2 — Detect within hours:
+  - Pass-the-Hash / Pass-the-Ticket (T1550.002/003)
+  - Lateral movement via WMI/PSExec/RDP (T1021)
+  - Unusual service account network activity
 
-Priority 3 (Detect within a day):
-  - Persistence mechanisms (scheduled tasks, registry run keys)
-  - Internal reconnaissance (LDAP queries, network scanning)
-  - Data staging behaviors
+Priority 3 — Detect within a day:
+  - Persistence mechanisms (T1053, T1547)
+  - Internal reconnaissance — LDAP queries, port scans (T1018, T1049)
+  - Data staging (T1074)
 ```
 
-### Key Tools for Assumed Breach Programs
+### Key Tools
 
 | Phase | Tool | Purpose |
 |---|---|---|
@@ -227,89 +307,104 @@ Priority 3 (Detect within a day):
 | Coverage | ATT&CK Navigator | Visualize detection coverage gaps |
 | Identity | BloodHound | Map AD attack paths before attackers do |
 
+## Common Failure Modes
+
+**Alert fatigue kills assumed breach programs.**
+Teams deploy EDR at maximum sensitivity, drown in 10,000 alerts/day, and start ignoring them. The real lateral movement alert gets buried. Fix: optimize for precision first. A 90% precision rate on 100 alerts beats 50% precision on 10,000. Alert volume is an engineering problem, not a security problem.
+
+**"We have EDR" is not assumed breach.**
+EDR is one detection layer. You need detection at: network (east-west traffic), identity (auth events), endpoint (process behavior), and data (DLP, access patterns). Attackers test against your specific EDR and know your blind spots better than you do.
+
+**Segmentation on paper vs. in practice.**
+The firewall rule says workstation-to-workstation SMB is blocked. SOC investigates a lateral movement alert and finds the rule only applied to new VLANs — the legacy segment is still flat. Test your segmentation with actual lateral movement simulations quarterly.
+
+**Dwell time is a lagging indicator.**
+Teams celebrate "we reduced dwell time from 73 to 14 days." That's good, but it measures how long attackers were in *after* a breach. What matters are the leading indicators: detection *coverage* (do you have rules for the techniques they used?) and *speed* (how fast did the right alert surface?). Optimize the leading indicators.
+
 ---
 
-## 이미 뚫렸다는 가정에서 시작하라
+> **시작 전:** 이 글은 실무 기술 가이드입니다. Assumed Breach 개념을 처음 접하신다면, 먼저 [Assumed Breach: 방어선이 더 이상 충분하지 않은 이유](/posts/asumed_breach/)를 읽고 개념을 이해한 후 구현에 들어오시길 권장합니다.
 
-방화벽도 정상이고, EDR도 돌아가고, SIEM도 잘 작동한다. 그런데 공격자는 이미 73일째 네트워크 안에서 머물고 있다. 이게 업계 탐지 전 평균 체류 시간이다. 이들은 이미 Active Directory를 장악했고, 내부 네트워크 지도를 완성했으며, 적절한 순간을 기다리고 있다.
+## 철학에서 운영으로
 
-**Assumed Breach(침해 가정 방법론)** 는 이 현실에서 출발하는 운영 철학이다. 공격자를 막는 것이 아니라, "이미 들어왔다면 얼마나 빨리 탐지하고, 격리하고, 제거할 수 있는가?"라는 질문에 답하도록 보안을 설계하는 것이다.
+공격자가 침투할 것이라는 전제를 받아들였다. 이제 무엇을 해야 하는가?
 
-## Assumed Breach란 무엇인가
+이 가이드는 Assumed Breach 철학을 구체적인 기술 통제로 전환해야 하는 보안 엔지니어, SOC 분석가, 레드/블루팀 실무자를 위한 것이다.
 
-이 방법론은 비관주의가 아니라 설계 철학이다. 지진 발생 지역에서 내진 설계로 건물을 짓는 것과 같다.
+## 1단계: 공격자가 초기 접근 후 어떻게 이동하는지 이해하라
 
-전통적인 **경계 중심 모델**은 강력한 외부 방어(방화벽, WAF, VPN)를 구축하고, 내부 네트워크는 묵시적으로 신뢰한다. 이 모델이 완전히 무너진 이유:
-- 재택근무로 네트워크 경계가 사라짐
-- 클라우드 확산으로 단일 방화벽의 보호 범위 초과
-- 소프트웨어 공급망 공격(SolarWinds, 3CX)이 신뢰할 수 있는 소프트웨어도 벡터가 될 수 있음을 증명
-- 자격증명 피싱은 경계 방어를 완전히 우회
+측면 이동을 탐지하기 전에, 그것이 어떻게 보이는지를 정확히 이해해야 한다. 공격자의 측면 이동 도구는 거의 항상 자격증명 기반이다:
 
-**Assumed Breach는 신뢰 모델을 뒤집는다**: 모든 사용자, 기기, 서비스는 위치에 상관없이 잠재적으로 침해된 것으로 간주한다.
-
-세 가지 운영 기둥:
-
-| 기둥 | 답해야 할 질문 | 실패 시 결과 |
+| 기법 | 하는 일 | 탐지할 이벤트 |
 |---|---|---|
-| **세분화(Segmentation)** | 얼마나 멀리 이동할 수 있는가? | 엔드포인트 하나로 전체 네트워크 침해 |
-| **탐지(Detection)** | 얼마나 빨리 발견하는가? | 73일 이상 체류 |
-| **대응(Response)** | 얼마나 빨리 제거하는가? | 목표 달성 전에 대응 불가 |
+| **Pass-the-Hash** | NTLM 해시를 크래킹 없이 재사용 | EventID 4624, LogonType 3, Auth: NTLM |
+| **Pass-the-Ticket** | 탈취한 Kerberos 티켓 남용 | EventID 4768/4769 |
+| **Kerberoasting** | 서비스 계정 비밀번호 오프라인 크래킹 | EventID 4769, RC4 암호화 타입 |
+| **DCSync** | 모든 AD 자격증명을 원격으로 덤프 | EventID 4662 |
+| **PSExec / WMI** | LOLBin을 통한 원격 실행 | EventID 7045, 4688 |
 
-## 작동 방식: Assumed Breach 생명주기
+핵심 인사이트: **도구가 아닌 행위를 탐지하라.** 공격자는 도구를 자주 바꾼다. 기저의 Windows API 호출과 인증 이벤트는 일정하게 유지된다.
 
-### 1단계: 측면 이동이 핵심 전장
+## 2단계: 침해 후 행위 기반 탐지 엔지니어링
 
-초기 접근 후 공격자는 교두보에서 목표(핵심 자산, AD, 금융 데이터)로 이동해야 한다. 이 이동 단계가 탐지 에너지를 집중해야 할 곳이다.
+### 자격증명 남용 탐지 (Sigma 규칙)
 
-측면 이동 도구는 거의 항상 자격증명 기반이다:
-- **Pass-the-Hash(PtH)**: NTLM 해시를 크래킹 없이 재사용
-- **Pass-the-Ticket(PtT)**: Kerberos 티켓 남용 (Golden/Silver Ticket)
-- **DCOM / WMI / PSExec**: LOLBin(자생 도구) 원격 실행
-- **RDP**: 탈취한 자격증명 + 열린 포트
-
-탐지는 도구가 아닌 행위를 잡아야 한다. 도구는 바뀌지만 행위는 바뀌지 않는다.
-
-### 2단계: 침해 후 행위 기반 탐지 엔지니어링
-
-Assumed Breach 환경의 탐지는 시그니처 기반이 아닌 행위 및 이상 기반이다.
-
-**자격증명 남용 탐지:**
 ```yaml
-# Sigma 규칙 개념 — Pass-the-Hash 지표 탐지
 title: NTLM Pass-the-Hash를 통한 측면 이동
+logsource:
+  product: windows
+  service: security
 detection:
   selection:
     EventID: 4624
     LogonType: 3
-    AuthPackage: NTLM
-    SubjectUserSid: S-1-5-18  # SYSTEM
-  condition: selection
-falsepositives:
-  - NTLM을 사용하는 정상 서비스 계정 (열거 후 허용 목록 등록)
+    AuthenticationPackageName: NTLM
+    SubjectUserSid: 'S-1-5-18'
+  filter:
+    TargetUserName|endswith: '$'
+  condition: selection and not filter
+level: high
+tags:
+  - attack.lateral_movement
+  - attack.t1550.002
 ```
 
-**비정상 관리 도구 사용:**
+### 비정상 프로세스 실행 탐지
+
 ```python
-# LOLBin 남용 탐지 로직 의사코드
-suspicious_parents = ["word.exe", "excel.exe", "outlook.exe", "chrome.exe"]
+suspicious_parents = ["winword.exe", "excel.exe", "outlook.exe", "chrome.exe"]
 suspicious_children = ["cmd.exe", "powershell.exe", "wscript.exe", "mshta.exe"]
 
-if process.parent in suspicious_parents and process.name in suspicious_children:
-    alert(severity="HIGH", tactic="실행", technique="T1059")
+if process.parent_name in suspicious_parents:
+    if process.name in suspicious_children:
+        create_alert(severity="HIGH", tactic="실행", technique="T1059")
 ```
 
-### 3단계: 세분화로 피해 범위 제한
+### 비정상 접근 탐지
 
-Assumed Breach에서 네트워크 세분화는 VLAN이 아닌 **마이크로 세분화**와 **최소 권한 네트워크 접근**을 의미한다:
+```python
+def detect_anomalous_access(user, resource, timestamp, source_ip):
+    baseline = get_access_baseline(user, lookback_days=90)
+    signals = []
 
-- 워크스테이션 간 직접 통신 차단 (P2P 측면 이동 방지)
-- 서비스 계정은 필요한 서비스에만 네트워크 접근 허용
-- DC(도메인 컨트롤러)는 특권 접근 워크스테이션(PAW)에서만 연결 허용
-- 인터넷 노출 시스템의 자격증명은 내부 시스템에서 절대 사용 불가
+    if resource not in baseline.resources and resource.sensitivity == "HIGH":
+        signals.append("민감 리소스 최초 접근")
+    if timestamp.hour not in baseline.active_hours:
+        signals.append("비정상 시간대 접근")
+    if source_ip not in baseline.known_ips:
+        signals.append("새로운 소스 IP")
+
+    # 단일 신호는 오탐이 많음 — 2개 이상 조합 시 알람
+    if len(signals) >= 2:
+        create_alert(severity="MEDIUM", signals=signals)
+```
+
+## 3단계: 실제로 측면 이동을 막는 네트워크 세분화
+
+### 워크스테이션 측면 이동 차단 (GPO)
 
 ```bash
-# 워크스테이션 간 SMB 차단 (측면 이동 방지) — GPO로 배포
-# Windows Firewall 규칙
+# 워크스테이션 간 SMB 차단 — GPO로 배포
 netsh advfirewall firewall add rule `
   name="Block Lateral SMB" `
   dir=in `
@@ -317,102 +412,70 @@ netsh advfirewall firewall add rule `
   localport=445 `
   remoteip=192.168.10.0/24 `
   action=block
+
+# WMI 측면 이동도 차단
+netsh advfirewall firewall add rule `
+  name="Block Lateral WMI" `
+  dir=in `
+  protocol=TCP `
+  localport=135 `
+  remoteip=192.168.10.0/24 `
+  action=block
 ```
 
-### 4단계: 적 시뮬레이션으로 가정 검증
+### AD 자격증명 계층화 모델
 
-Assumed Breach 통제가 실제로 작동하는지 확인하는 유일한 정직한 방법은 시뮬레이션이다.
+```
+Tier 0 (핵심 자산): 도메인 컨트롤러, PKI — Tier-0 PAW에서만 접근 가능
+Tier 1 (서버): 파일/앱/DB 서버 — Tier-1 관리 워크스테이션에서만 접근 가능
+Tier 2 (엔드포인트): 사용자 워크스테이션 — Tier 0/1 관리 기능 차단
+```
 
-**퍼플팀 연습**: 레드팀이 특정 ATT&CK 기법을 수행하고, 블루팀이 실시간으로 탐지를 확인한다. 협력적 접근이며 목표는 함께 탐지 공백을 메우는 것이다.
+Tier-2 엔드포인트에서 자격증명이 탈취되어도 Tier-0 시스템에는 쓸모없다.
 
-**침해 및 공격 시뮬레이션(BAS)**: Cymulate, AttackIQ, SafeBreach 같은 자동화 도구가 지속적으로 공격 시나리오를 실행하고 탐지 커버리지를 보고한다.
+## 4단계: 적 시뮬레이션으로 통제 검증
+
+### 퍼플팀 연습 흐름
+
+1. 레드팀이 특정 ATT&CK 기법 실행
+2. 블루팀이 5분 내 SIEM 알람 확인
+3. 알람 발생 시: 규칙 문서화 후 다음 기법으로
+4. 알람 미발생 시: 함께 탐지 규칙 작성 후 재테스트
 
 ```bash
-# Atomic Red Team — 특정 ATT&CK 기법 테스트
-# T1003.001: 자격증명 덤핑 - LSASS 메모리
-Invoke-AtomicTest T1003.001
+Invoke-AtomicTest T1003.001  # LSASS 자격증명 덤핑
+Invoke-AtomicTest T1550.002  # Pass-the-Hash
+Invoke-AtomicTest T1558.003  # Kerberoasting
 
-# 운영 환경 실행 전 반드시 격리된 랩 환경에서 먼저 검증
+# 항상: 먼저 격리된 랩 환경에서 실행
+# 항상: 블루팀이 라이브로 모니터링 중인 상태에서 실행
 ```
 
-## 실제 적용: Assumed Breach 프로그램 구축
-
-### 1. 탐지 기준선 수립
-
-먼저 현재 탐지 규칙을 MITRE ATT&CK에 매핑해 커버리지를 평가한다. 빈 곳이 곧 리스크다.
-
-```python
-# ATT&CK 커버리지 매트릭스 개념
-attack_techniques = load_attack_matrix()
-current_detections = load_siem_rules()
-
-uncovered = [t for t in attack_techniques
-             if not any(t.id in r.tags for r in current_detections)]
-print(f"커버되지 않은 기법: {len(uncovered)}/{len(attack_techniques)}")
-```
-
-### 2. 피해 범위 기준 우선순위 설정
-
-핵심 자산에 도달하는 데 가장 많이 사용되는 ATT&CK 기법을 먼저 탐지한다:
-- 핵심 자산 식별 (AD, 운영 DB, 코드 서명 인프라, 금융 시스템)
-- 해당 자산에 도달하는 기법 매핑
-- 해당 기법 탐지 먼저 개발
-
-### 3. 침해 후 조건에서 사고 대응 훈련
-
-"공격자가 문 앞에 있다"가 아닌 초기 접근 이후부터 시작하는 탁상 훈련:
-- "워크스테이션에서 의심스러운 LSASS 접근이 탐지됐다. 알람은 4시간 전에 발생했다. 플레이북은?"
-- "도메인 어드민 권한 계정이 새벽 2시에 비정상 호스트에서 로그인했다. 공격자에게 들키지 않고 어떻게 조사하나?"
-
-## 전문가가 현장에서 배운 것들
-
-**알람 피로가 Assumed Breach를 죽인다.** EDR을 최대 민감도로 설정해 하루 10,000개 알람이 쏟아지면, 팀은 이를 무시하기 시작한다. 그 속에서 실제 측면 이동 알람 하나가 묻힌다. 해결책: 재현율보다 정밀도를 먼저 최적화하라. 정밀도 90%에 알람 100개가, 정밀도 50%에 알람 10,000개보다 낫다. 알람 볼륨은 보안 문제가 아닌 엔지니어링 문제다.
-
-**"우리 EDR 있잖아요"는 Assumed Breach가 아니다.** EDR은 탐지 레이어 하나다. 네트워크(동-서 트래픽), 신원(인증 이벤트), 엔드포인트(프로세스 행위), 데이터(DLP, 접근 패턴) 등 다중 레이어 탐지가 필요하다. 공격자는 당신의 EDR을 미리 테스트한다. 그들은 당신보다 맹점을 더 잘 안다.
-
-**문서상 세분화 vs. 실제 세분화.** 방화벽 규칙은 워크스테이션 간 SMB를 차단한다고 되어 있다. SOC가 측면 이동 알람에 대응해보니 규칙이 새 VLAN에만 적용되고 레거시 세그먼트는 여전히 평탄한 상태다. 분기별로 실제 측면 이동 시뮬레이션으로 세분화를 테스트하라.
-
-**Assumed Breach는 "예방하지 말라"는 의미가 아니다.** 예방과 탐지는 경쟁하지 않는다. 공격 표면 축소(패치, 레거시 프로토콜 비활성화, MFA 강제)와 탐지-심층 방어를 동시에 구축하라. 예방은 진입점을 줄이고, Assumed Breach는 통과한 것들을 다룬다.
-
-## 빠른 참조
-
-### 핵심 Assumed Breach 통제
-
-| 통제 | 목적 | 핵심 지표 |
-|---|---|---|
-| 마이크로 세분화 | 측면 이동 범위 제한 | 허용 목록 규칙이 있는 동-서 트래픽 비율 |
-| 특권 접근 워크스테이션(PAW) | 관리자 자격증명 격리 | PAW에서 수행된 관리 작업 비율 |
-| 자격증명 계층화 | 계층 간 자격증명 재사용 방지 | 계층 적절 범위를 가진 계정 비율 |
-| EDR 행위 탐지 | 침해 후 엔드포인트 가시성 | 테스트 기법에 대한 평균 알람 시간(MTTA) |
-| 신원 이상 탐지 | 자격증명 남용 포착 | 불가능 접근 패턴 알람율 |
-| 퍼플팀 주기 | 탐지 커버리지 검증 | 분기별 ATT&CK 기법 커버리지 % |
-
-### 전술별 탐지 우선순위 (초기 접근 이후)
+## 탐지 우선순위 빠른 참조
 
 ```
 우선순위 1 (분 단위 탐지):
-  - 자격증명 덤핑 (LSASS, SAM, NTDS)
-  - DCSync 공격
-  - Kerberoasting
+  - LSASS 자격증명 덤핑 (T1003.001)
+  - DCSync 공격 (T1003.006)
+  - Kerberoasting (T1558.003)
 
 우선순위 2 (시간 단위 탐지):
-  - WMI/PSExec/RDP를 통한 측면 이동
+  - Pass-the-Hash / Pass-the-Ticket (T1550)
+  - WMI/PSExec/RDP를 통한 측면 이동 (T1021)
   - 비정상 서비스 계정 활동
-  - Pass-the-Hash / Pass-the-Ticket
 
 우선순위 3 (일 단위 탐지):
-  - 지속성 메커니즘 (예약 작업, 레지스트리 실행 키)
-  - 내부 정찰 (LDAP 쿼리, 네트워크 스캐닝)
-  - 데이터 준비 행위
+  - 지속성 메커니즘 (T1053, T1547)
+  - 내부 정찰 — LDAP 쿼리, 네트워크 스캐닝
+  - 데이터 준비 행위 (T1074)
 ```
 
-### Assumed Breach 프로그램 핵심 도구
+## 현장에서 배운 실패 패턴
 
-| 단계 | 도구 | 목적 |
-|---|---|---|
-| 시뮬레이션 | Atomic Red Team | 기법 수준 적 시뮬레이션 |
-| 시뮬레이션 | Caldera (MITRE) | 자동화 적 에뮬레이션 |
-| BAS | AttackIQ / Cymulate | 지속적 커버리지 검증 |
-| 탐지 | Sigma | 벤더 중립 탐지 규칙 형식 |
-| 커버리지 | ATT&CK Navigator | 탐지 커버리지 공백 시각화 |
-| 신원 | BloodHound | 공격자보다 먼저 AD 공격 경로 매핑 |
+**알람 피로가 프로그램을 죽인다.** EDR 최대 민감도로 하루 10,000개 알람이 쏟아지면 팀은 무시하기 시작한다. 정밀도 90%에 100개 알람이 정밀도 50%에 10,000개보다 낫다. 알람 볼륨은 보안 문제가 아닌 엔지니어링 문제다.
+
+**"EDR 있잖아요"는 Assumed Breach가 아니다.** 네트워크(동-서 트래픽), 신원(인증 이벤트), 엔드포인트, 데이터 — 다중 레이어 탐지가 필요하다. 공격자는 당신의 EDR을 미리 테스트하고 당신보다 맹점을 더 잘 안다.
+
+**문서상 세분화 vs. 실제 세분화.** 방화벽 규칙이 레거시 세그먼트에 적용되지 않은 경우가 많다. 분기별로 실제 측면 이동 시뮬레이션으로 세분화를 테스트하라.
+
+**체류 시간은 후행 지표다.** "73일에서 14일로 줄었다"는 좋지만 결과를 측정하는 것이다. 탐지 커버리지(몇 %의 ATT&CK 기법이 탐지되는가?)와 탐지 속도(올바른 알람이 얼마나 빨리 뜨는가?)가 진짜 선행 지표다.
