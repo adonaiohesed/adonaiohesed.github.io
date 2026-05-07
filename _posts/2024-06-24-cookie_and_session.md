@@ -68,8 +68,8 @@ A session maintains the state of requests between a client and server until the 
 - Cookies with these attributes are called **Persistent Cookies**.
 
 ### HttpOnly
-- Prevents the cookie from being accessed via JavaScript.  
-- Protects against **XSS attacks**.
+- As the name implies, it ensures the cookie is accessible **only via HTTP** protocol between the browser and the server.
+- This prevents the cookie from being accessed by client-side scripts like JavaScript, effectively protecting it against **XSS attacks**.
 
 ### Secure
 - Restricts cookie transmission to HTTPS connections only.  
@@ -369,12 +369,12 @@ ResponseCookie csrfCookie = ResponseCookie.from("csrf_token", "generated_csrf_to
 - 쿠키의 만료 시간을 지정합니다.
   - **Expires**: 특정 날짜/시간을 설정 (예: `Tue, 19 Jan 2038 03:14:07 GMT`).
   - **Max-Age**: 현재 시간부터의 초 단위 경과 시간 (예: `3600`은 1시간).
-- Max-Age 또는 Expires 옵션이 없으면 Session Cookei이고 브라우저를 종료하면 해당 쿠키는 삭제됩니다.
-- 브라우저의 종료와 상관없이 Max-Age 또는 Expires에 지정된 유효시간만큼 사용가능한 쿠키를 Persistent Cookei로 부릅니다.
+- Max-Age 또는 Expires 옵션이 없으면 Session Cookie이고 브라우저를 종료하면 해당 쿠키는 삭제됩니다.
+- 브라우저의 종료와 상관없이 Max-Age 또는 Expires에 지정된 유효시간만큼 사용가능한 쿠키를 Persistent Cookie로 부릅니다.
 
 ### HttpOnly
-- 설정 시, 해당 쿠키는 클라이언트의 JavaScript에서 접근될 수 없습니다.
-- **XSS 공격**으로부터 쿠키를 보호합니다.
+- 이름에서 알 수 있듯이, 쿠키가 브라우저와 서버 사이의 **HTTP 통신에서만** 접근 가능하도록 제한하는 옵션입니다.
+- 브라우저 내부에서 실행되는 JavaScript로는 해당 쿠키에 접근할 수 없게 되어, **XSS 공격**으로부터 세션 정보를 안전하게 보호할 수 있습니다.
 
 ### Secure
 - HTTPS 연결에서만 쿠키가 전송되도록 설정합니다.
