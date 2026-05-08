@@ -1,5 +1,5 @@
 ---
-title: Injection Attacks Beyond SQL and XXS
+title: Injection Attacks Beyond SQL and XSS
 key: page-injection_attacks
 categories:
 - Security
