@@ -638,15 +638,58 @@ body.security-theme {
 .post-main-content ul { padding-left: 20px; }
 .post-main-content li { margin-bottom: 8px; }
 .post-main-content p { margin-bottom: 20px; }
+
+/* ─── Inline code (paragraphs, lists) ─── */
+/* Excludes code blocks (.highlight pre) — those use Thayer dark theme */
+.post-main-content p code,
+.post-main-content li code,
+.post-main-content h2 code,
+.post-main-content h3 code,
+.post-main-content blockquote code {
+  background: #f0f0f0;
+  border: 1px solid #d0d7de;
+  color: #c0392b;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+}
+
+body.security-theme .post-main-content p code,
+body.security-theme .post-main-content li code,
+body.security-theme .post-main-content h2 code,
+body.security-theme .post-main-content h3 code,
+body.security-theme .post-main-content blockquote code {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #10b981;
+}
+
 /* ─── Code Block Enhancements (Thayer Theme) ────────── */
+
 .post-main-content .highlight {
   position: relative;
   margin: 28px 0;
   background-color: #1b1d1e !important; /* Thayer Background */
   border-radius: 8px;
-  border: 1px solid #2b2d2e;
+  border: none;
+  outline: none;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* No hover effect on code blocks */
+
+/* Kill Rouge's .hll (highlighted line) background — removes any hover-line effect */
+.post-main-content .highlight .hll {
+  background: none !important;
+}
+
+/* Subtle text-selection color inside code blocks */
+.post-main-content .highlight ::selection,
+.post-main-content pre ::selection {
+  background: rgba(255, 255, 255, 0.15);
+  color: inherit;
 }
 
 .post-main-content pre {
@@ -2780,14 +2823,162 @@ body.security-theme .post-category-tag {
   padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px));
 }
 
-/* ── Tables in post content: horizontal scroll on small screens ── */
-/* Applied globally — tables are too narrow on mobile without this */
-.post-main-content table {
+/* ════════════════════════════════════════════════════════════════
+   POST TABLES
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Reset: do NOT apply post-table styles to Rouge line-number tables ── */
+.post-main-content .highlight table,
+.post-main-content .highlight thead tr,
+.post-main-content .highlight tbody tr,
+.post-main-content .highlight td,
+.post-main-content .highlight th {
+  all: revert;
+  /* Re-apply only the code-block essentials */
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  width: auto;
+  display: revert;
+  border-radius: 0;
+  font-weight: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: pre;
+}
+
+
+.post-main-content .table-scroll-wrapper {
   display: block;
   width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin: 2rem 0;
 }
+
+.post-main-content table {
+  /* Use native table layout so width:100% distributes columns evenly */
+  display: table;
+  width: 100%;          /* always fill the parent width */
+  border-collapse: collapse;
+  table-layout: auto;   /* browser distributes column widths proportionally */
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 2rem 0;
+  color: var(--text-primary);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+/* Scroll on mobile: add overflow to the nearest scrollable ancestor */
+@media (max-width: 768px) {
+  .post-main-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+}
+
+
+/* ── Header ── */
+.post-main-content thead tr {
+  background: var(--surface-color);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.post-main-content thead th {
+  padding: 11px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Left accent stripe on first column header */
+.post-main-content thead th:first-child {
+  border-left: 3px solid var(--accent-color);
+  padding-left: 14px;
+}
+
+/* ── Body rows ── */
+.post-main-content tbody tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-main-content tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* ── Cells ── */
+.post-main-content td {
+  padding: 10px 16px;
+  vertical-align: middle;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+/* Same left stripe alignment for first body column */
+.post-main-content td:first-child {
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  padding-left: 14px;
+}
+
+/* ── Inline code inside table cells ── */
+.post-main-content td code,
+.post-main-content th code {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 2px 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  color: var(--accent-color);
+  white-space: nowrap;
+}
+
+/* ══ Security (dark) theme overrides ══ */
+body.security-theme .post-main-content table {
+  border-color: var(--border-color);
+}
+
+body.security-theme .post-main-content thead tr {
+  background: #0f172a;
+  border-bottom-color: var(--border-color);
+}
+
+body.security-theme .post-main-content thead th {
+  color: var(--text-secondary);
+}
+
+body.security-theme .post-main-content thead th:first-child {
+  border-left-color: var(--accent-color);
+}
+
+body.security-theme .post-main-content tbody tr:hover {
+  background: rgba(16, 185, 129, 0.06);
+}
+
+body.security-theme .post-main-content tbody tr {
+  border-bottom-color: var(--border-color);
+}
+
+body.security-theme .post-main-content td code,
+body.security-theme .post-main-content th code {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: var(--accent-color);
+}
+
 
 /* ── Post title: reduce font size on small phones ── */
 @media (max-width: 480px) {
