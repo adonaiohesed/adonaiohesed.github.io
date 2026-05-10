@@ -15,16 +15,16 @@ layout: default
           {{ hero_post.categories[0] }}
         </span>
         {% endif %}
-        {% if hero_post.bilingual %}
-          {% assign content_parts = hero_post.content | split: '<hr />' %}
-          {% if content_parts.size < 2 %}{% assign content_parts = hero_post.content | split: '<hr>' %}{% endif %}
-          {% if content_parts.size >= 2 %}
-            {% assign kr_part = content_parts[1] %}
-            {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
-            {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = hero_post.title %}{% endif %}
-            {% assign kr_excerpt = kr_part | strip_html | truncatewords: 30 %}
+          {% if hero_post.bilingual %}
+            {% assign content_parts = hero_post.content | split: '<hr />' %}
+            {% if content_parts.size < 2 %}{% assign content_parts = hero_post.content | split: '<hr>' %}{% endif %}
+            {% if content_parts.size >= 2 %}
+              {% assign kr_part = content_parts[1] %}
+              {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
+              {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = hero_post.title %}{% endif %}
+              {% assign kr_excerpt = kr_part | strip_html | truncatewords: 30 %}
+            {% endif %}
           {% endif %}
-        {% endif %}
 
         <h1 class="hero-title">
           <span class="lang-section" data-lang="en">{{ hero_post.title }}</span>
@@ -96,7 +96,7 @@ layout: default
               {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
               {% if content_parts.size >= 2 %}
                 {% assign kr_part = content_parts[1] %}
-                {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
+                {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
                 {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
                 {% assign kr_excerpt = kr_part | strip_html | truncatewords: 20 %}
               {% endif %}
@@ -214,7 +214,7 @@ layout: default
                     {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
                     {% if content_parts.size >= 2 %}
                       {% assign kr_part = content_parts[1] %}
-                      {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
+                      {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
                       {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
                     {% endif %}
                     <span class="lang-section" data-lang="kr">{{ kr_title | default: post.title }}</span>
@@ -270,7 +270,7 @@ layout: default
             {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
             {% if content_parts.size >= 2 %}
               {% assign kr_part = content_parts[1] %}
-              {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
+              {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
               {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
               {% assign kr_excerpt = kr_part | strip_html | truncatewords: 20 %}
             {% endif %}
@@ -332,7 +332,7 @@ layout: default
             {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
             {% if content_parts.size >= 2 %}
               {% assign kr_part = content_parts[1] %}
-              {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
+              {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
               {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
               {% assign kr_excerpt = kr_part | strip_html | truncatewords: 20 %}
             {% endif %}
@@ -394,7 +394,7 @@ layout: default
             {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
             {% if content_parts.size >= 2 %}
               {% assign kr_part = content_parts[1] %}
-              {% assign kr_title = kr_part | split: '<h1' | last | split: '</h1>' | first | split: '<h2' | last | split: '</h2>' | first | split: '>' | last | strip_html | strip %}
+              {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
               {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
               {% assign kr_excerpt = kr_part | strip_html | truncatewords: 20 %}
             {% endif %}
