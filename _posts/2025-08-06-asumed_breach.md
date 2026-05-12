@@ -1,125 +1,209 @@
 ---
-title: Assumed Breach
+title: "Assumed Breach: Why Your Firewall Is No Longer Enough"
 key: page-assumed_breach
 categories:
 - Security
 - Security Operations
 author: hyoeun
-math: true
-mathjax_autoNumber: true
+math: false
+mathjax_autoNumber: false
 image: "/assets/thumbnails/2025-08-06-asumed_breach.png"
 bilingual: true
 date: 2025-08-06 22:48:00
 ---
-## Assumed Breach: A Paradigm Shift in Security Architecture
+## The Uncomfortable Truth About Modern Security
 
-In modern cybersecurity, a purely "defensive" mindset is no longer sufficient. Advanced threat actors infiltrate systems through increasingly diverse vectors, rendering perimeter-based security models progressively ineffective. Against this backdrop, the concept of **Assumed Breach**—the presumption that a system has already been compromised—has emerged as a foundational security strategy. This article explores the conceptual underpinnings, security engineering implications, and practical implementations of the Assumed Breach model.
+Your firewall is running. Your antivirus is updated. Your VPN is locked down. And somewhere in your network, an attacker has been quietly watching for 73 days — the industry median dwell time before detection.
 
-## Assumed Breach: Definition and Philosophical Foundation
+This is not a failure of technology. It's a failure of **philosophy**.
 
-**Assumed Breach** is predicated on the dissolution of the traditional trust boundary. Closely aligned with the philosophy of "Zero Trust," it posits that even internal systems should not be inherently trusted and assumes persistent compromise of subsystems. The model rests on the following core premises:
+For decades, the dominant security model was built on a single, increasingly fragile assumption: *keep the bad guys out, and you're safe.* That assumption is now broken. The question is no longer whether to accept this reality, but how quickly your organization can adapt to it.
 
-- Adversaries may already reside within the internal network.
-- Credential theft or privilege escalation may have already occurred.
-- Even defensive mechanisms and logging infrastructure may be manipulated.
+**Assumed Breach** is the security philosophy that starts from honesty: attackers will get in — and many already have.
 
-Far from being pessimistic, these assumptions reflect a realism grounded in empirical threat analysis. For instance, the SolarWinds supply chain attack and the breach of identity systems like Okta illustrate how internal trust models can be fundamentally flawed.
+> **Read next:** Once you understand the philosophy here, the follow-up post [Assumed Breach Methodology](/posts/assumed_breach_methodology/) walks through the exact technical controls, detection engineering, and red team exercises to operationalize this model.
 
-## Contrasting Traditional Security Models
+## How We Got Here: The Death of the Perimeter
 
-Conventional security models emphasize perimeter defense, drawing a rigid distinction between the "trusted" internal and the "untrusted" external. However, the rise of cloud-native infrastructure, remote work, and SaaS ecosystems has blurred these boundaries, significantly undermining perimeter effectiveness.
+The traditional "castle-and-moat" security model made sense in a simpler era. You had an office. The office had a network. The network had a firewall. Employees inside the wall were trusted; the world outside was not.
 
-In contrast, Assumed Breach entails a philosophical inversion:
+Three forces destroyed this model:
 
-- **Breach is inevitable and should be assumed.**
-- **Trust is not a default but must be verified.**
-- **Security must prioritize redundancy and resilience.**
+**1. The Workforce Went Everywhere**
+Remote work, contractors, and mobile devices dissolved the network boundary. The "inside" no longer maps to a physical location. Your most sensitive data is now accessed from home offices, coffee shops, and hotel WiFi — networks you don't control and can't protect.
 
-## Technical Principles of Implementation
+**2. The Cloud Expanded the Attack Surface**
+Cloud infrastructure, SaaS applications, and third-party integrations stretched your security perimeter far beyond any single firewall. Your data lives in AWS, your email in Google Workspace, your HR system in Workday. Each is a potential entry point.
 
-The Assumed Breach model transcends abstraction, offering concrete principles for engineering resilient security systems:
+**3. Attackers Learned to Be Trusted**
+The most dangerous attacks today don't break through the perimeter — they walk through the front door. Supply chain attacks like SolarWinds compromised the update mechanism of trusted software used by 18,000 organizations. The attacker became the software vendor. The perimeter never saw them coming.
 
-- **Consistent Application of Least Privilege**
-  - Users and service accounts should be granted the minimal level of access necessary, with regular privilege reviews.
+Credential phishing — the #1 attack vector — doesn't need to break your firewall. It just needs one employee to click a link. Once they have valid credentials, the attacker *is* the trusted insider.
 
-- **Micro-segmentation of Internal Networks**
-  - Logical and physical segmentation localizes breach impact. Even service-to-service communication should require explicit authorization and mutual authentication.
+## What "Assumed Breach" Actually Means
 
-- **Detection & Response-first Security Posture**
-  - The focus shifts from prevention to rapid detection and automated response. Implementation includes SOAR, MITRE ATT&CK-aligned detection rules, and integration of SIEM/SOAPA frameworks.
+Assumed Breach is not defeatism. It's not saying "we've given up on prevention." It's a **design philosophy** — the security equivalent of building earthquake-resistant structures in a seismic zone. You still try to prevent earthquakes. But you design everything assuming one will eventually happen.
 
-- **Ensuring Logging Integrity and Survivability**
-  - Logs must be collected through segregated channels, stored in immutable formats (e.g., WORM storage), and architected with adversarial manipulation in mind.
+The core shift is from asking:
+> *"How do we keep attackers out?"*
 
-## Applied Case Studies
+To asking:
+> *"When an attacker gets in — not if — how fast do we detect them, how far can they move, and how quickly can we remove them?"*
 
-### Re-architecting IAM Policies and Privilege Models
-Under an Assumed Breach paradigm, identity and access management is not a barrier but a risk distribution mechanism. Rather than assigning broad access to individual accounts, roles are decomposed to the finest operational granularity, with conditional access controls enforced wherever possible.
+This question changes everything. It changes how you design networks. It changes what you log. It changes how you manage user access. It changes what you practice.
 
-### Institutionalizing Red/Blue Team Simulation Exercises
-Breach assumption should not remain hypothetical. Red teams emulate real-world adversaries, while blue teams engage in real-time detection and containment. Purple team strategies formalize the feedback loop, enabling the continual evolution of detection capabilities.
+### The Three Operational Pillars
 
-### Redundant and Encrypted Log Collection Infrastructure
-Centralized logging systems can present a single point of failure. From an Assumed Breach standpoint, logging pipelines must be diversified, encrypted in transit and at rest, and analyzed within isolated security domains.
+An Assumed Breach organization is built on three capabilities:
 
-### Mutual TLS and Policy-driven Internal Access Control
-Even intra-system communications must not be implicitly trusted. Implementing mutual TLS with dynamic policy engines (e.g., OPA, Envoy with SPIRE) dramatically reduces the surface area for lateral movement.
+**Segmentation — Contain the blast radius**
+If an attacker lands on one endpoint, how far can they move? In a flat network, the answer is "everywhere." Segmentation limits lateral movement so that a compromised workstation doesn't mean a compromised domain.
+
+**Detection — Find them fast**
+The 73-day dwell time isn't inevitable. It's the result of poor detection. Organizations with mature assumed breach programs detect post-compromise behaviors in hours, not months. The difference is intentional investment in behavioral detection — watching for *what attackers do*, not just *what tools they use*.
+
+**Response — Remove them decisively**
+Detection without response is just surveillance. An assumed breach organization has practiced, documented, and drilled the answer to: "We've confirmed an active intrusion. What do we do in the next 30 minutes?"
+
+## Why This Changes Your Security Investments
+
+Most security budgets are heavily weighted toward prevention: firewalls, endpoint protection, email filtering, WAF. These are necessary. But they're insufficient alone.
+
+Assumed Breach doesn't eliminate prevention spending — it rebalances it. The principle is simple: **prevention reduces the number of attackers who get in; assumed breach handles the ones who get through anyway.**
+
+This rebalancing typically means investing more in:
+
+- **Identity security**: Every major breach involves credential abuse. If you assume a credential will eventually be stolen, you invest in detecting abnormal use of valid credentials — not just blocking stolen ones.
+- **Internal network visibility**: You can't detect lateral movement you can't see. East-west traffic (traffic between internal systems) is often unmonitored. Assumed breach demands visibility into what systems talk to each other and what's normal.
+- **Detection engineering**: Writing, maintaining, and continuously improving detection rules is a discipline, not a one-time project. Assumed breach organizations treat detection as a core engineering function.
+- **Adversary simulation**: The only way to know your detection and response capabilities actually work is to test them against realistic attack scenarios. Not annual penetration tests — continuous, structured exercises.
+
+## Zero Trust and Assumed Breach: The Relationship
+
+You'll often see these terms together. They're related but distinct.
+
+**Zero Trust** is an access control architecture: never trust, always verify. No user or device gets access by default. Every request is authenticated, authorized, and validated based on identity, context, and policy.
+
+**Assumed Breach** is the overarching philosophy that drives *why* you need Zero Trust. If you assume breach is possible at any time, you cannot afford to grant implicit trust based on network location. Zero Trust implements the controls; Assumed Breach is the mindset that justifies them.
+
+## The Mental Model Shift: From Gates to Layers
+
+Perimeter security is like a bank vault: one extremely strong door, relatively weak inside. If someone gets past the door, everything is accessible.
+
+Assumed Breach security is like a submarine: every compartment has its own sealed door. A hull breach floods one section, not the whole vessel. The crew knows immediately because pressure alarms are everywhere. They have practiced the drill.
+
+This is the mental model: **every compartment is secured, every space is monitored, and every crew member knows the emergency protocol.**
+
+## Is Your Organization Ready?
+
+Ask yourself these questions:
+
+**Detection**: If an attacker with valid credentials started querying your Active Directory at 2am, would you know within an hour?
+
+**Segmentation**: If one developer laptop was compromised today, could the attacker reach your production database? Your domain controller?
+
+**Response**: Does your team have a documented, practiced playbook for "confirmed active intrusion"? Has anyone drilled it in the last six months?
+
+**Identity**: Do you have controls that detect when a valid account starts behaving strangely — even if the credentials themselves haven't been flagged as stolen?
+
+If any of these answers are "no" or "I'm not sure," your security posture is built on perimeter assumptions that the modern threat landscape has already invalidated.
+
+## Where to Go From Here
+
+Understanding the philosophy is step one. Operationalizing it is step two.
+
+The follow-up post — **[Assumed Breach Methodology: Building the Technical Controls](/posts/assumed_breach_methodology/)** — covers exactly how to build an Assumed Breach program: behavioral detection engineering, network segmentation controls, MITRE ATT&CK coverage mapping, purple team exercises, and the common pitfalls that make these programs fail in practice.
+
+Assumed Breach is not a product you buy. It's a posture you build. Start with the philosophy, then build the architecture.
 
 ---
 
-좋아, 영어 버전은 이미 완료되었고, 이제 요청대로 같은 내용을 반영한 한글 버전도 마무리해서 아래에 정리해줄게:
+## 현대 보안의 불편한 진실
 
+방화벽은 작동 중이고, 백신 프로그램은 최신 상태를 유지하고 있으며, VPN도 잘 잠겨 있다. 그런데 어딘가에서 공격자가 조용히 73일 동안 네트워크를 들여다보고 있다. 이것이 업계의 탐지 전 평균 체류 시간이다.
 
-## Assumed Breach: 침해 가정을 기반으로 한 보안 아키텍처의 패러다임 전환
+이것은 기술의 실패가 아니다. **철학의 실패**다.
 
-현대 사이버 보안 환경에서 단순한 “방어적” 접근은 더 이상 충분하지 않다. 공격자는 다양한 경로로 조직 내부에 침투하며, 기존의 경계 기반 보안 모델은 점차 그 실효성을 상실하고 있다. 이러한 맥락 속에서 대두된 것이 바로 **Assumed Breach**, 즉 시스템이 이미 침해되었음을 전제로 한 보안 전략이다. 이 글에서는 해당 개념의 철학적 기반, 보안 공학적 함의, 그리고 실무 적용 사례에 대해 다룬다.
+수십 년 동안 지배적인 보안 모델은 하나의 점점 더 취약해지는 가정 위에 세워졌다: *나쁜 놈들을 막아내면 안전하다.* 그 가정은 이제 깨졌다. 이 현실을 받아들일지 여부가 아니라, 얼마나 빨리 적응할 수 있는지가 문제다.
 
-## Assumed Breach: 정의와 철학
+**Assumed Breach**는 솔직함에서 출발하는 보안 철학이다: 공격자는 결국 침투할 것이며, 많은 경우 이미 들어와 있다.
 
-**Assumed Breach**는 기존의 신뢰 경계를 해체한다. 이는 "제로 트러스트(Zero Trust)" 모델과 밀접하게 연관되어 있으며, 시스템 내부 역시 기본적으로 신뢰하지 않는다는 전제를 따른다. 핵심 가정은 다음과 같다:
+> **다음 글:** 이 철학을 이해한 후, 후속 글 [Assumed Breach Methodology](/posts/assumed_breach_methodology/)에서는 이 모델을 실제로 구현하기 위한 기술적 통제, 탐지 엔지니어링, 레드팀 연습을 자세히 다룬다.
 
-- 공격자가 이미 네트워크 내부에 상주할 수 있다.
-- 자격 증명 탈취 또는 권한 상승이 이미 일어났을 수 있다.
-- 방어 시스템이나 로깅 인프라조차 조작되었을 수 있다.
+## 우리가 여기까지 온 이유: 경계의 죽음
 
-이는 단순한 비관적 관점이 아니라, 실증적 사건 분석을 기반으로 한 현실주의적 모델이다. SolarWinds 공급망 공격이나 Okta 인증 인프라 침해 사건은 내부 신뢰 모델의 구조적 취약성을 명확히 보여준다.
+전통적인 "성-과-해자" 보안 모델은 더 단순한 시대에 의미가 있었다. 사무실이 있고, 사무실에 네트워크가 있고, 네트워크에 방화벽이 있었다. 내부의 직원은 신뢰받고, 외부는 신뢰받지 못했다.
 
-## 전통 보안 모델과의 차이점
+세 가지 힘이 이 모델을 파괴했다:
 
-기존 모델은 내부와 외부를 경계로 구분하고, 외부의 위협만을 차단하는 데 집중한다. 그러나 클라우드 기반 인프라, 원격 업무, SaaS 생태계의 확산으로 인해 경계는 점차 모호해지고 있다.
+**1. 인력이 어디에나 생겼다**
+재택근무, 외주 직원, 모바일 기기가 네트워크 경계를 녹였다. "내부"는 더 이상 물리적 위치에 매핑되지 않는다. 가장 민감한 데이터는 이제 홈 오피스, 카페, 호텔 WiFi에서 접근된다.
 
-Assumed Breach는 다음과 같은 사고 전환을 요구한다:
+**2. 클라우드가 공격 면을 확장했다**
+클라우드 인프라, SaaS 애플리케이션, 서드파티 연동이 보안 경계를 단일 방화벽을 훨씬 넘어 뻗어 나갔다.
 
-- **침해는 피할 수 없으며 전제되어야 한다.**
-- **신뢰는 검증을 통해 동적으로 부여되어야 한다.**
-- **보안은 이중화와 복원력을 중심으로 설계되어야 한다.**
+**3. 공격자들은 신뢰받는 법을 배웠다**
+오늘날 가장 위험한 공격은 경계를 뚫지 않는다. 정문으로 걸어 들어온다. SolarWinds 같은 공급망 공격은 18,000개 조직이 사용하는 신뢰할 수 있는 소프트웨어의 업데이트 메커니즘을 침해했다. 경계는 이들을 결코 보지 못했다.
 
-## 구현을 위한 기술적 원칙
+자격증명 피싱은 방화벽을 뚫을 필요가 없다. 직원 한 명이 링크를 클릭하기만 하면 된다. 공격자는 신뢰받는 내부인이 된다.
 
-Assumed Breach는 단순한 개념적 모델을 넘어, 보안 시스템의 구조적 설계 원칙을 제시한다:
+## "Assumed Breach"가 실제로 의미하는 것
 
-- **최소 권한 원칙의 일관된 적용**  
-  사용자 및 서비스 계정은 가능한 가장 제한된 권한을 부여받아야 하며, 정기적으로 재검토되어야 한다.
+Assumed Breach는 패배주의가 아니다. "예방을 포기했다"는 말이 아니다. 이것은 **설계 철학**이다. 지진 발생 지역에서 내진 설계로 건물을 짓는 것과 같다. 여전히 지진을 예방하려 노력한다. 하지만 결국 지진이 올 것을 가정하고 모든 것을 설계한다.
 
-- **내부 네트워크의 마이크로 세그멘테이션**  
-  논리적/물리적 분리를 통해 침해 범위를 최소화하고, 모든 서비스 간 통신에 명시적 인증 및 승인을 요구한다.
+핵심 전환은 다음과 같이 묻는 것에서:
+> *"어떻게 공격자를 막을까?"*
 
-- **탐지 및 대응 중심 보안 전략**  
-  사전 차단보다는 조기 탐지와 자동화된 대응에 초점을 둔다. SOAR, MITRE ATT&CK 기반 탐지, SIEM/SOAPA 통합 전략 등이 포함된다.
+이렇게 묻는 것으로:
+> *"공격자가 침투했을 때 — 만약이 아니라 언제 — 얼마나 빨리 탐지하고, 얼마나 멀리 이동할 수 있으며, 얼마나 빨리 제거할 수 있는가?"*
 
-- **로깅 무결성과 복원력 보장**  
-  로그는 격리된 채널을 통해 수집되며, WORM 같은 불변 저장소에 저장되고 공격자의 조작 가능성까지 고려해 설계되어야 한다.
+이 질문이 모든 것을 바꾼다. 네트워크 설계 방식을 바꾸고, 무엇을 로그로 남길지를 바꾸고, 사용자 접근 권한을 관리하는 방식을 바꾸고, 무엇을 훈련할지를 바꾼다.
 
-## 실무 적용 사례
+### 세 가지 운영 기둥
 
-### IAM 구조의 리디자인
-Assumed Breach 모델은 계정 탈취를 기본 가정하므로 IAM은 권한 분산과 격리 중심으로 설계되어야 한다. 역할 단위로 세분화하고 조건 기반 접근 정책을 도입하여 리스크를 최소화한다.
+**세분화 — 피해 범위 제한**
+공격자가 하나의 엔드포인트에 착지한다면, 얼마나 멀리 이동할 수 있는가? 플랫 네트워크에서 답은 "어디든"이다. 세분화는 측면 이동을 제한하여 하나의 침해된 워크스테이션이 도메인 전체 침해로 이어지지 않도록 한다.
 
-### 침해 시뮬레이션의 체계화
-침해 가정은 이론에 머물러선 안 되며, Red 팀은 실제 공격자처럼 행동하고 Blue 팀은 실시간 대응을 수행해야 한다. Purple 팀 전략은 이 두 팀 간의 피드백 루프를 통해 탐지 역량을 향상시킨다.
+**탐지 — 빠르게 찾아라**
+73일의 체류 시간은 피할 수 없는 것이 아니다. 그것은 빈약한 탐지의 결과다. 성숙한 Assumed Breach 프로그램을 가진 조직은 침해 후 행위를 몇 달이 아닌 몇 시간 안에 탐지한다.
 
-### 로그 인프라 이중화 및 암호화
-로깅 시스템은 단일 실패 지점이 될 수 있으므로, 수집 경로의 중복 구성, 전송 및 저장 암호화, 별도의 분석 도메인을 적용해 공격 시도에 대비해야 한다.
+**대응 — 단호하게 제거하라**
+탐지 없는 대응은 그냥 감시에 불과하다. Assumed Breach 조직에는 "확인된 활성 침입. 다음 30분 안에 무엇을 하는가?"에 대한 연습되고 문서화된 답변이 있다.
 
-### 내부 시스템 간 mTLS 및 정책 기반 접근 제어
-내부 서비스 간 통신조차도 무조건 신뢰하지 않고, mTLS와 정책 엔진(예: OPA, Envoy + SPIRE)을 통해 lateral movement를 제한한다.
+## 왜 이것이 보안 투자를 바꾸는가
+
+대부분의 보안 예산은 예방에 집중되어 있다: 방화벽, 엔드포인트 보호, 이메일 필터링, WAF. 이것들은 필요하다. 하지만 단독으로는 충분하지 않다.
+
+Assumed Breach는 예방 지출을 없애지 않는다 — 균형을 재조정한다. 원칙은 단순하다: **예방은 침투하는 공격자의 수를 줄이고, Assumed Breach는 어쨌든 통과한 자들을 다룬다.**
+
+## Zero Trust와 Assumed Breach의 관계
+
+**Zero Trust**는 접근 제어 아키텍처다: 절대 신뢰하지 않고, 항상 검증하라. 어떤 사용자나 기기도 기본적으로 접근 권한을 얻지 못한다.
+
+**Assumed Breach**는 *왜* Zero Trust가 필요한지를 이끄는 상위 철학이다. 침해가 언제든 가능하다고 가정하면, 네트워크 위치에 기반한 암묵적 신뢰를 줄 여유가 없다. Zero Trust는 통제를 구현하고, Assumed Breach는 그것을 정당화하는 사고방식이다.
+
+## 정신 모델 전환: 문에서 레이어로
+
+경계 보안은 은행 금고와 같다: 하나의 극히 강한 문, 내부는 상대적으로 약하다. 누군가 문을 통과하면, 모든 것이 접근 가능하다.
+
+Assumed Breach 보안은 잠수함과 같다: 모든 구역에 자체 밀봉 문이 있다. 선체 파손은 한 구역만 침수시키고, 전체 선박은 아니다. 압력 경보가 어디에나 있기 때문에 승무원은 즉시 안다. 그들은 훈련을 받았다.
+
+## 우리 조직은 준비됐는가?
+
+스스로 이 질문들에 답해보라:
+
+**탐지**: 유효한 자격증명을 가진 공격자가 새벽 2시에 Active Directory를 조회하기 시작한다면, 한 시간 안에 알 수 있는가?
+
+**세분화**: 오늘 개발자 노트북 하나가 침해된다면, 공격자가 운영 데이터베이스에 도달할 수 있는가? 도메인 컨트롤러에는?
+
+**대응**: "확인된 활성 침입"에 대한 문서화되고 연습된 플레이북이 있는가? 누군가 지난 6개월 안에 이것을 훈련했는가?
+
+만약 어떤 답이라도 "아니오" 또는 "잘 모르겠다"라면, 당신의 보안 태세는 현대 위협 환경이 이미 무효화한 경계 가정 위에 세워진 것이다.
+
+## 다음 단계
+
+철학을 이해하는 것이 첫 번째 단계다. 이를 실제로 구현하는 것이 두 번째다.
+
+후속 글 **[Assumed Breach Methodology: 기술적 통제 구축](/posts/assumed_breach_methodology/)** 에서는 Assumed Breach 프로그램을 실제로 어떻게 구축하는지를 다룬다: 행위 기반 탐지 엔지니어링, 네트워크 세분화 통제, MITRE ATT&CK 커버리지 매핑, 퍼플팀 연습, 그리고 이런 프로그램을 실패하게 만드는 함정들.
+
+Assumed Breach는 구매하는 제품이 아니다. 구축하는 자세다. 철학부터 시작하고, 아키텍처를 구축하라.
