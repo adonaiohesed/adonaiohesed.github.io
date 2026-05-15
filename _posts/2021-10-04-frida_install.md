@@ -1,7 +1,9 @@
 ---
 title: Frida Install And Trouble Shooting
 key: page-frida_install
-categories: [Tools, Exploitation]
+categories:
+- Tools
+- Exploitation
 author: hyoeun
 math: true
 mathjax_autoNumber: true

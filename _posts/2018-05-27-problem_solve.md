@@ -1,14 +1,16 @@
 ---
 title: Problem & Solve
 key: page-problem_solve
-categories: [Personal, Life Information]
+categories:
+- Personal
+- Life Information
 author: hyoeun
 image: "/assets/thumbnails/2018-05-27-problem_solve.png"
 bilingual: true
 date: 2018-05-27 01:12:00
 ---
 
-# Problem-Solving Methodologies
+## Problem-Solving Methodologies
 
 Beyond simple projects, I have contemplated the structural approach one should take when solving any issue in daily life. While I have my own intuitive ways of doing things, I want to document them as a formal series of structures, moving beyond mere instinct.
 
@@ -63,7 +65,6 @@ Report actionable recommendations so the decision-maker can take immediate actio
 > **💡 Key Tip: Hypothesis-driven Thinking**
 > A hallmark of the McKinsey approach is starting with a **"hypothesis."** Instead of drawing conclusions after looking at all the data, you save time by setting a hypothesis of what the answer might be and then proving or refuting it.
 
----
 
 ## Six Sigma’s **DMAIC**
 
@@ -97,7 +98,6 @@ This exerts powerful force when **reducing defect rates and maximizing efficienc
 
 
 
----
 
 ## Toyota’s **A3**
 
@@ -121,9 +121,8 @@ It generally flows from the left (Problem Definition & Analysis) to the right (S
 6. **Implementation Plan:** Who, when, and what? (Gantt Chart, etc.)
 7. **Follow-up:** Did the results meet the goal? What standardization is needed?
 
------
 
-# My Personal Problem-Solving Method
+## My Personal Problem-Solving Method
 
 The most important thing is **Problem Definition**. I believe the process of defining the problem will be the most crucial element in the AI era and the first and most important step in leading one's life.
 
@@ -141,7 +140,7 @@ Unforeseen issues may arise during the validation of the primary solution, so I 
 
 ---
 
-# 문제 해결 방식
+## 문제 해결 방식
 단순한 프로젝트를 넘어 일상 생활의 모든 것을 해결할때 어떠한 구조로 일을 하면 좋을지 생각을 해보았다. 내 늘 해오던 방식이 있겠지만 그것을 감각, 본능에서 벗어나 일련의 구조로 문서화 해보고자 한다.
 
 우선 일반적으로 알려진 방식들은 다음과 같다.
@@ -266,7 +265,7 @@ Unforeseen issues may arise during the validation of the primary solution, so I 
 * **DMAIC:** 통계와 데이터를 통해 공정의 불량을 잡는 **품질 관리** 스타일.
 * **A3:** 현장의 문제를 한 장으로 요약하여 소통하고 해결하는 **린(Lean) 생산** 스타일.
 
-# 나의 문제 해결 방식
+## 나의 문제 해결 방식
 가장 중요한 것은 문제 정의이다. 문제를 정의하는 과정이 AI시대에서도 가장 중요한 요소가 될 것이고 인생을 살아감에 있어서도 무엇인 문제인지를 인식하고 정의내리는 것이 가장 처음으로 해야 될 일이자 중요한 단계라고 생각한다.
 
 ## 문제 정의 & 현상 분석

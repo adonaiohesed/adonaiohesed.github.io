@@ -1,7 +1,9 @@
 ---
 title: Brup Suite - Scan
 key: page-burp_suite_scan
-categories: [Tools, Exploitation]
+categories:
+- Tools
+- Exploitation
 author: hyoeun
 math: true
 mathjax_autoNumber: true

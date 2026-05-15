@@ -1,7 +1,9 @@
 ---
 title: Terminal Setting
 key: page-terminal_setup
-categories: [Tools, Operating System]
+categories:
+- Tools
+- Operating System
 author: hyoeun
 math: true
 mathjax_autoNumber: true

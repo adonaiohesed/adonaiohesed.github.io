@@ -1,7 +1,9 @@
 ---
 title: Waybackurls
 key: page-waybackurls
-categories: [Tools, Reconnaissance]
+categories:
+- Tools
+- Reconnaissance
 author: hyoeun
 math: true
 mathjax_autoNumber: true

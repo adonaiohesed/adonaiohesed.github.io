@@ -1,7 +1,9 @@
 ---
 title: Elastic Search 사용법(v 6.6.1)
 key: page-elastic_search_usage
-categories: [Tools, ELK]
+categories:
+- Tools
+- ELK
 author: hyoeun
 image: "/assets/thumbnails/2020-07-23-elasticsearch_usage.png"
 date: 2020-07-23 17:16:48

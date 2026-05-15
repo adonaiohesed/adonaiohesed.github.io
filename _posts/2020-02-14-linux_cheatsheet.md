@@ -1,7 +1,9 @@
 ---
 title: Linux Cheatshhe
 key: page-linux_cheatsheet
-categories: [Tools, Operating System]
+categories:
+- Tools
+- Operating System
 author: hyoeun
 math: true
 mathjax_autoNumber: true

@@ -1,7 +1,9 @@
 ---
 title: ELK SSL 적용 (v 7.1.0)
 key: page-elk_ssl_setup
-categories: [Tools, ELK]
+categories:
+- Tools
+- ELK
 author: hyoeun
 image: "/assets/thumbnails/2020-10-04-elk_ssl_setting.png"
 date: 2020-10-04 17:52:48

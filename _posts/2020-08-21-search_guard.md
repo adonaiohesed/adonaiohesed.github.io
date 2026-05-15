@@ -1,7 +1,9 @@
 ---
 title: Search Guard 설치 및 실행
 key: page-search_guard_installation_usage
-categories: [Tools, ELK]
+categories:
+- Tools
+- ELK
 author: hyoeun
 image: "/assets/thumbnails/2020-08-21-search_guard.png"
 date: 2020-08-21 22:19:12

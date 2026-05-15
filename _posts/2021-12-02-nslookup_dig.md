@@ -1,7 +1,9 @@
 ---
 title: Nslookup & Dig
 key: page-nslookup_dig
-categories: [Tools, Reconnaissance]
+categories:
+- Tools
+- Reconnaissance
 author: hyoeun
 math: true
 mathjax_autoNumber: true
@@ -112,7 +114,7 @@ The debate between `nslookup` and `dig` is pointless. A true professional unders
 
 Ultimately, a great penetration tester isn't someone who just sticks to their favorite tool, but someone who deeply understands their entire toolkit and can achieve the best results in any situation. Being proficient in both `nslookup` and `dig` is a sure way to prove that expertise.
 
------
+---
 
 ### **두 도구 이야기: 철학과 핵심 차이점**
 

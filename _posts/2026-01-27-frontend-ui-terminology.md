@@ -1,7 +1,9 @@
 ---
 title: "Frontend & UI/UX Terminology: The Visual Language of the Web"
 date: 2026-01-27 09:00:00 +0900
-categories: [Engineering, UI/UX & Frontend Foundations]
+categories:
+- Engineering
+- UI/UX & Frontend Foundations
 image: "/assets/thumbnails/2026-01-27-frontend-ui-terminology.png"
 bilingual: true
 ---

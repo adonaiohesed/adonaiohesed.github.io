@@ -1,7 +1,9 @@
 ---
 title: Kibana 설치 및 실행(v 7.0.1)
 key: page-kibana_installation_usage
-categories: [Tools, ELK]
+categories:
+- Tools
+- ELK
 author: hyoeun
 image: "/assets/thumbnails/2020-09-05-kibana_install.png"
 date: 2020-09-05 12:50:24

@@ -1,7 +1,9 @@
 ---
 title: Registry Analysis
 key: page-registry_analysis
-categories: [Tools, Forensics Tools]
+categories:
+- Tools
+- Forensics Tools
 author: hyoeun
 math: true
 mathjax_autoNumber: true

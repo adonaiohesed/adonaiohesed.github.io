@@ -1,7 +1,9 @@
 ---
 title: Vim Customizing
 key: page-vim_customizing
-categories: [Tools, Operating System]
+categories:
+- Tools
+- Operating System
 author: hyoeun
 math: true
 mathjax_autoNumber: true

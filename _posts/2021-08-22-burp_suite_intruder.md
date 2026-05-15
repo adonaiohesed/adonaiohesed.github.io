@@ -1,7 +1,9 @@
 ---
 title: Brup Suite - Intruder
 key: page-burp_suite_intruder
-categories: [Tools, Exploitation]
+categories:
+- Tools
+- Exploitation
 author: hyoeun
 math: true
 mathjax_autoNumber: true

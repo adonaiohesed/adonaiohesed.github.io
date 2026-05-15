@@ -1,7 +1,9 @@
 ---
 title: Cybersecurity?
 key: page-cybersecurity_engineer
-categories: [Personal, Identity]
+categories:
+- Personal
+- Identity
 author: hyoeun
 pin: true
 image: "/assets/thumbnails/2018-01-30-security_engineer.png"

@@ -1,7 +1,9 @@
 ---
 title: FTK Imager
 key: page-ftk_imager
-categories: [Tools, Forensics Tools]
+categories:
+- Tools
+- Forensics Tools
 author: hyoeun
 math: true
 mathjax_autoNumber: true

@@ -1,7 +1,9 @@
 ---
 title: A Collection of Useful Sites
 key: page-useful_sites
-categories: [Personal, Life Information]
+categories:
+- Personal
+- Life Information
 author: hyoeun
 image: "/assets/thumbnails/2018-03-15-useful_site.png"
 date: 2018-03-15 00:36:00
