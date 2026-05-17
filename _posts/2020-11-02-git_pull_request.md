@@ -3,7 +3,7 @@ title: Git Pull Request
 key: page-git_pull_request
 categories:
 - Engineering
-- DevOps & Automation
+- Cloud & DevOps
 author: hyoeun
 image: "/assets/thumbnails/2020-11-02-git_pull_request.png"
 date: 2020-11-02 22:55:12

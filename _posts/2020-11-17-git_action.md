@@ -3,7 +3,7 @@ title: Git Action
 key: page-git_flow
 categories:
 - Engineering
-- DevOps & Automation
+- Cloud & DevOps
 author: hyoeun
 image: "/assets/thumbnails/2020-11-17-git_action.png"
 date: 2020-11-17 13:26:24
@@ -159,7 +159,7 @@ jobs:
 
 **Security** is paramount in CI/CD. Sensitive information like AWS keys or DB passwords must **never** be hardcoded in the YAML file.
 
-  * **Configuration Method:** Register secret information in your GitHub repository under `Settings` \> `Secrets and variables` \> `Actions`, and safely retrieve and use it within the YAML file using the `${{ secrets.NAME }}` format.
+  * **Configuration Method:** Register secret information in your GitHub repository under `Settings` \> `Secrets and variables` \> `Actions`, and safely retrieve and use it within the YAML file using the `{% raw %}${{ secrets.NAME }}{% endraw %}` format.
 
 -----
 
@@ -314,4 +314,4 @@ jobs:
 
 CI/CD에서 가장 중요한 것은 **보안**입니다. AWS 키, DB 비밀번호 등 민감한 정보는 절대로 YAML 파일에 하드코딩해서는 안 됩니다.
 
-  * **설정 방법:** GitHub 저장소의 `Settings` \> `Secrets and variables` \> `Actions`에서 비밀 정보를 등록하고, YAML 파일 내에서 `${{ secrets.NAME }}` 형태로 안전하게 불러와 사용해야 합니다.
+  * **설정 방법:** GitHub 저장소의 `Settings` \> `Secrets and variables` \> `Actions`에서 비밀 정보를 등록하고, YAML 파일 내에서 `{% raw %}${{ secrets.NAME }}{% endraw %}` 형태로 안전하게 불러와 사용해야 합니다.
