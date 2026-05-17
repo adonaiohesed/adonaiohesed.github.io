@@ -1,6 +1,6 @@
 ---
-title: Next-Gen Firewall Policy Orchestration Engine<hr />차세대 방화벽 정책 자동화 및 통합 관리 엔진
-description: Developed a scalable policy management engine for 4th-gen firewalls, standardizing logs across heterogeneous appliances with visual analytics.<hr />이기종 방화벽의 로그를 규격화하고 정책 관리를 자동화하며, 시각화 분석을 제공하는 차세대 방화벽 정책 관리 솔루션을 개발했습니다.
+title: Automated Security Compliance Auditor
+description: Built an automated tool to audit and verify infrastructure compliance against global security standards (ISO 27001, SOC2). | ISO 27001, SOC2 등 글로벌 보안 표준에 따라 인프라의 컴플라이언스 준수 여부를 자동으로 진단하고 보고하는 감사 도구를 구축했습니다.
 private: true
 order: 4
 ---

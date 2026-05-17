@@ -561,8 +561,10 @@ layout: nil
         <div class="conf-card reveal rise-up">
           <div class="conf-icon"><span class="material-symbols-outlined">business_center</span></div>
           <div class="conf-content">
-            {% assign title_parts = project.title | split: '<hr />' %}
-            {% assign desc_parts = project.description | split: '<hr />' %}
+            {% assign title_parts = project.title | split: ' | ' %}
+            {% if title_parts.size < 2 %}{% assign title_parts = project.title | split: '<hr />' %}{% endif %}
+            {% assign desc_parts = project.description | split: ' | ' %}
+            {% if desc_parts.size < 2 %}{% assign desc_parts = project.description | split: '<hr />' %}{% endif %}
             <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 8px; word-break: keep-all;">
               <span class="lang-section" data-lang="en">{{ title_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ title_parts[1] | default: title_parts[0] }}</span>
@@ -595,12 +597,14 @@ layout: nil
         <div class="p-feature-row">
           <div class="p-feature-text reveal rise-up">
             <span class="tech-breadcrumb">MODULE_PHASE: {{ forloop.index | prepend: '0' }}</span>
-            {% assign title_parts = project.title | split: '<hr />' %}
+            {% assign title_parts = project.title | split: ' | ' %}
+            {% if title_parts.size < 2 %}{% assign title_parts = project.title | split: '<hr />' %}{% endif %}
             <h3 class="feature-title init-glitch">
               <span class="lang-section" data-lang="en">{{ title_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ title_parts[1] | default: title_parts[0] }}</span>
             </h3>
-            {% assign desc_parts = project.description | split: '<hr />' %}
+            {% assign desc_parts = project.description | split: ' | ' %}
+            {% if desc_parts.size < 2 %}{% assign desc_parts = project.description | split: '<hr />' %}{% endif %}
             <p class="feature-desc">
               <span class="lang-section" data-lang="en">{{ desc_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ desc_parts[1] | default: desc_parts[0] }}</span>
@@ -696,8 +700,10 @@ layout: nil
         <div class="ctf-row reveal">
           <div class="ctf-rank-big">#{{ ctf.rank }}</div>
           <div class="ctf-info">
-            {% assign ctf_title_parts = ctf.title | split: '<hr />' %}
-            {% assign ctf_desc_parts = ctf.description | split: '<hr />' %}
+            {% assign ctf_title_parts = ctf.title | split: ' | ' %}
+            {% if ctf_title_parts.size < 2 %}{% assign ctf_title_parts = ctf.title | split: '<hr />' %}{% endif %}
+            {% assign ctf_desc_parts = ctf.description | split: ' | ' %}
+            {% if ctf_desc_parts.size < 2 %}{% assign ctf_desc_parts = ctf.description | split: '<hr />' %}{% endif %}
             <h3>
               <span class="lang-section" data-lang="en">{{ ctf_title_parts[0] }}</span>
               <span class="lang-section" data-lang="kr">{{ ctf_title_parts[1] | default: ctf_title_parts[0] }}</span>

@@ -1,6 +1,6 @@
 ---
-title: ML-Driven BGP Hijacking Detection & Visualization<hr />ML 기반 BGP 하이재킹 실시간 탐지 및 시각화
-description: Led the research and development of a machine learning-based BGP hijacking detection system with high-fidelity real-time visualization.<hr />머신러닝을 활용해 BGP(Border Gateway Protocol) 하이재킹을 실시간으로 감지하고 시각화하는 위협 탐지 솔루션 개발을 주도했습니다.
+title: Zero-Trust Identity Gateway
+description: Engineered a secure identity access management (IAM) system based on Zero-Trust principles to protect critical enterprise resources. | 제로 트러스트 원칙에 기반하여 기업의 핵심 자산에 대한 접근을 안전하게 제어하고 관리하는 클라우드 네이티브 ID 관리 시스템을 설계하고 구현했습니다.
 private: true
 order: 3
 ---

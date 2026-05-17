@@ -1,6 +1,6 @@
 ---
-title: Automated Mobile Pentest & Adversarial Infrastructure<hr />모바일 침투 테스트 및 레드팀 인프라 자동화
-description: Engineered an autonomous mobile penetration testing suite and Red Team orchestration platform for rapid adversarial infrastructure deployment.<hr />모바일 침투 테스트의 효율을 비약적으로 향상시키는 자동화 펜테스트 인프라와 레드팀 전용 툴체인 자동 구축 플랫폼을 개발했습니다.
+title: Global Threat Intel Platform
+description: Developed a high-velocity threat intelligence engine capable of analyzing millions of data points daily to identify emerging attack vectors. | 전 세계의 보안 위협 데이터를 실시간으로 수집하고 분석하여, 매일 수백만 건의 데이터를 기반으로 새로운 공격 패턴을 식별하는 지능형 위협 탐지 플랫폼을 개발했습니다.
 private: true
 order: 2
 ---

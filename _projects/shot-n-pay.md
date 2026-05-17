@@ -1,6 +1,6 @@
 ---
-title: Shot N Pay<hr />샷앤페이
-description: A personalized FinTech service designed to simplify group dining settlements in the US, where complex tips and taxes make individual split-billing difficult. Leveraging multimodal AI analysis and a gamified UX, it allows users to calculate individual shares from a single receipt photo without requiring an account.<hr />미국 고유의 팁과 세금 문화를 고려해, 여러 명이 함께 식사한 후 각자 먹은 항목만 간편하게 정산할 수 있도록 설계된 개인용 핀테크 서비스입니다. 멀티모달 모델을 통한 영수증 분석과 정산 과정을 게임 같은 직관적인 UX로 풀어냈으며, 별도의 회원가입 없이 영수증 사진 한 장으로 즉시 정산이 가능한 것이 특징입니다.
+title: Shot N Pay
+description: A personalized FinTech service designed to simplify group dining settlements in the US, where complex tips and taxes make individual split-billing difficult. Leveraging multimodal AI analysis and a gamified UX, it allows users to calculate individual shares from a single receipt photo without requiring an account. | 미국 고유의 팁과 세금 문화를 고려해, 여러 명이 함께 식사한 후 각자 먹은 항목만 간편하게 정산할 수 있도록 설계된 개인용 핀테크 서비스입니다. 멀티모달 모델을 통한 영수증 분석과 정산 과정을 게임 같은 직관적인 UX로 풀어냈으며, 별도의 회원가입 없이 영수증 사진 한 장으로 즉시 정산이 가능한 것이 특징입니다.
 image: /assets/images/projects/shotnpay-1.png
 gallery:
   - /assets/images/projects/shotnpay-1.png

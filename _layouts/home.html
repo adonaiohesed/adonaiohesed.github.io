@@ -209,16 +209,18 @@ layout: default
                 {% endif %}
                 <div class="popular-item-title">
                   <span class="lang-section" data-lang="en">{{ post.title }}</span>
-                  {% if post.bilingual %}
-                    {% assign content_parts = post.content | split: '<hr />' %}
-                    {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
-                    {% if content_parts.size >= 2 %}
-                      {% assign kr_part = content_parts[1] %}
-                      {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
-                      {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
+                  <span class="lang-section" data-lang="kr">
+                    {% if post.bilingual %}
+                      {% assign content_parts = post.content | split: '<hr />' %}
+                      {% if content_parts.size < 2 %}{% assign content_parts = post.content | split: '<hr>' %}{% endif %}
+                      {% if content_parts.size >= 2 %}
+                        {% assign kr_part = content_parts[1] %}
+                        {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
+                        {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
+                      {% endif %}
+                      {{ kr_title | default: post.title }}
                     {% endif %}
-                    <span class="lang-section" data-lang="kr">{{ kr_title | default: post.title }}</span>
-                  {% endif %}
+                  </span>
                 </div>
                 <div class="popular-item-footer">
                   <span class="popular-item-date">{{ post.date | date: "%b %-d, %Y" }}</span>
