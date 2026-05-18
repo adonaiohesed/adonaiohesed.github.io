@@ -1,7 +1,9 @@
 ---
 title: "Advanced CSS Animations: Mastering Scroll-Triggered Narratives"
 date: 2026-01-13 12:00:00 +0900
-categories: [Engineering, UI/UX & Frontend Foundations]
+categories:
+- Engineering
+- UI/UX & Frontend Foundations
 image: "/assets/thumbnails/2026-01-13-ui-ux-frontend-foundations.png"
 bilingual: true
 ---
