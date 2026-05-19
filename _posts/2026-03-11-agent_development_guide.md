@@ -190,7 +190,7 @@ def evaluate_security_finding(finding: dict, expected: dict, llm) -> float:
     - Completeness (does it cover all relevant details?)
     - Actionability (does it provide useful remediation guidance?)
 
-    Return only a JSON object: {{"score": 0.0-1.0, "reasoning": "..."}}
+    Return only a JSON object: {% raw %}{{"score": 0.0-1.0, "reasoning": "..."}}{% endraw %}
     """
     # ...
 ```
