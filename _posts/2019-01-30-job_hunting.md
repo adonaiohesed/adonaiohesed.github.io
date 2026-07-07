@@ -9,7 +9,7 @@ image: "/assets/thumbnails/2019-01-30-job_hunting.png"
 bilingual: true
 date: 2019-01-30 08:02:24
 ---
-# When Frustration and Depression Hit
+## When Frustration and Depression Hit
 
 During times when I couldn't secure interviews, I was depressed about not getting them. Once I started getting interviews, I became depressed about failing technical rounds. When I made it to final interviews, I was depressed about not receiving offers. When an offer was rescinded due to team circumstances, I felt like all hope was lost.
 
@@ -21,7 +21,7 @@ While my friends were all working at top-tier companies and doing well, I felt s
 
 Employment should be a process, not my ultimate goal. Rather than focusing on how many actions I've taken, I should focus on how much progress I've made while properly setting my goals and considering what I want to do. Throughout my job search period, I was making excellent progress. I had denied all of this simply because the results weren't what I expected, but that shouldn't have been the case. I needed to trust the ongoing progress and move forward without getting discouraged. In the end, following guidance would lead to good results.
 
-# Things to Consider When Job Hunting
+## Things to Consider When Job Hunting
 
 Don't go into a company thinking you'll learn everything there. While I've always worked alone and frequently thought about wanting to learn from others, no company welcomes candidates who only focus on learning. While they might offer opportunities and try to understand, they don't particularly welcome such attitudes. I should be capable of doing the work independently, with the company supporting me, and I should be able to give more to the company. Within this structure, we help each other grow and move forward together.
 
@@ -37,13 +37,13 @@ Preparing for interviews takes surprisingly a lot of time. Ideally, I think it's
 
 If I could go back **2-3 years**, I'd still spend time on certification studies and schoolwork, but I would definitely also dedicate time to interview preparation. I am a capable person, and even though I didn't find a job quickly, I didn't let that initial frustration hold me back. I kept improving little by little, overcoming challenges. The next time such a period comes, I'll look back at this post and remember what I've done and that I **can do it**.
 
-# About Offers
+## About Offers
 
 Don't stop applying until you've signed an offer - I've experienced having an offer rescinded. When receiving an offer, don't talk too much. Keep your words minimal and express gratitude. When discussing counter-offer numbers, say something like "I forgot the number, I will tell you next time." Since it's not mandatory to disclose your numbers first, it's okay to pass without revealing them.
 
 For comparing salaries across different states, you can refer to the [Cost of Living Calculator](https://www.bankrate.com/calculators/savings/moving-cost-of-living-calculator.aspx) or [this more visual and easy-to-use site](https://www.nerdwallet.com/cost-of-living-calculator).
 
-# References
+## References
 * [Salary Information](https://candor.co/guides/salary-negotiation)
 * [Negotiation Methods](https://haseebq.com/tech-careers/)
 * [H1b visa database](https://h1bdata.info/index.php)
