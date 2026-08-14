@@ -14,7 +14,7 @@ date: 2026-06-15 00:00:00
 
 You have signed the offer, the start date is set, and you are mentally already at your new company. But the remaining weeks at your current employer are arguably the **most consequential period of your entire tenure**. How you leave defines the reputation you carry forward for the rest of your career. Industries are smaller than they seem, and people move around. Your former manager may one day be your future hiring committee member, your skip-level, or your client.
 
-This post is not about administrative paperwork (I covered that in [What To Do After Accepting An Offer](/career/post-interview/2019/03/15/after_accept_offer.html)). This post is about **mindset, attitude, and the human side of departure** — how to leave gracefully while protecting your relationships, your reputation, and your own peace of mind.
+This post is not about administrative paperwork (I covered that in [What To Do After Accepting An Offer](/posts/after_accept_offer/)). This post is about **mindset, attitude, and the human side of departure** — how to leave gracefully while protecting your relationships, your reputation, and your own peace of mind.
 
 ## The Right Mindset
 
@@ -116,7 +116,7 @@ The goal is simple: **leave in a way that your future self would be proud of.**
 
 오퍼에 사인하고, 시작일이 정해지고, 마음은 이미 새로운 회사에 가 있을 것이다. 하지만 현재 직장에서의 마지막 몇 주는 사실 **재직 기간 전체를 통틀어 가장 중요한 시기**라고 해도 과언이 아니다. 어떻게 떠나느냐가 앞으로 커리어 내내 가지고 다닐 평판을 결정한다. 업계는 생각보다 좁고, 사람들은 끊임없이 이동한다. 전 매니저가 미래의 면접관이 될 수도 있고, 스킵 레벨이 될 수도 있고, 고객이 될 수도 있다.
 
-이 글은 행정적인 서류 작업에 대한 내용이 아니다 (그 부분은 [오퍼 수락 후 해야 할 일들](/career/post-interview/2019/03/15/after_accept_offer.html)에서 다뤘다). 이 글은 **마인드셋, 태도, 그리고 퇴사의 인간적인 측면** — 관계와 평판, 그리고 자신의 마음의 평화를 지키면서 어떻게 품위 있게 떠나는가에 대한 이야기이다.
+이 글은 행정적인 서류 작업에 대한 내용이 아니다 (그 부분은 [오퍼 수락 후 해야 할 일들](/posts/after_accept_offer/)에서 다뤘다). 이 글은 **마인드셋, 태도, 그리고 퇴사의 인간적인 측면** — 관계와 평판, 그리고 자신의 마음의 평화를 지키면서 어떻게 품위 있게 떠나는가에 대한 이야기이다.
 
 ## 올바른 마인드셋
 
