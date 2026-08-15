@@ -131,22 +131,22 @@ date: 2022-05-26 13:12:00
 ## Security Checklist
 
 ### Before Using Public Networks
-- [ ] Verify VPN connection
-- [ ] Check firewall status
-- [ ] Disable unnecessary network services
-- [ ] Verify important file encryption
+- Verify VPN connection
+- Check firewall status
+- Disable unnecessary network services
+- Verify important file encryption
 
 ### During Use
-- [ ] Monitor HTTPS connection status
-- [ ] Watch for abnormal network activity
-- [ ] Minimize critical data transmission
-- [ ] Pay attention to security warning messages
+- Monitor HTTPS connection status
+- Watch for abnormal network activity
+- Minimize critical data transmission
+- Pay attention to security warning messages
 
 ### After Use
-- [ ] Disable auto-reconnect settings
-- [ ] End sessions and clear cache
-- [ ] Check system logs
-- [ ] Perform malware scan
+- Disable auto-reconnect settings
+- End sessions and clear cache
+- Check system logs
+- Perform malware scan
 
 ## Additional Protection Measures
 
@@ -323,22 +323,22 @@ These comprehensive measures help protect against the various vulnerabilities pr
 ## 보안 체크리스트
 
 ### 공개 네트워크 사용 전
-- [ ] VPN 연결 상태 확인
-- [ ] 방화벽 활성화 확인
-- [ ] 불필요한 네트워크 서비스 비활성화
-- [ ] 중요 파일 암호화 여부 확인
+- VPN 연결 상태 확인
+- 방화벽 활성화 확인
+- 불필요한 네트워크 서비스 비활성화
+- 중요 파일 암호화 여부 확인
 
 ### 사용 중
-- [ ] HTTPS 연결 상태 모니터링
-- [ ] 비정상적인 네트워크 활동 감시
-- [ ] 중요 데이터 전송 최소화
-- [ ] 보안 경고 메시지 주의 깊게 확인
+- HTTPS 연결 상태 모니터링
+- 비정상적인 네트워크 활동 감시
+- 중요 데이터 전송 최소화
+- 보안 경고 메시지 주의 깊게 확인
 
 ### 사용 후
-- [ ] 자동 재연결 설정 해제
-- [ ] 세션 종료 및 캐시 삭제
-- [ ] 시스템 로그 확인
-- [ ] 악성코드 검사 수행
+- 자동 재연결 설정 해제
+- 세션 종료 및 캐시 삭제
+- 시스템 로그 확인
+- 악성코드 검사 수행
 
 ## 추가 보호 조치
 
