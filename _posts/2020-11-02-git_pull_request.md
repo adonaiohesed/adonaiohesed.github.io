@@ -103,10 +103,10 @@ You can paste this content into your `pull_request_template.md` file.
 | <img src="" width="300" /> | <img src="" width="300" /> |
 
 ## 4. Checklist
-- [ ] Does the build complete successfully without errors?
-- [ ] Have test codes been written and passed?
-- [ ] Have unnecessary comments or code been removed?
-- [ ] Is the commit message written according to the convention (Conventional Commits)?
+- Does the build complete successfully without errors?
+- Have test codes been written and passed?
+- Have unnecessary comments or code been removed?
+- Is the commit message written according to the convention (Conventional Commits)?
 
 ## 5. Review Requests
 - (Please specify any particular logic or questions you'd like the reviewer to focus on.)
@@ -252,10 +252,10 @@ my-project/
 | <img src="" width="300" /> | <img src="" width="300" /> |
 
 ## 4. 체크리스트
-- [ ] 빌드가 에러 없이 정상적으로 수행되는가?
-- [ ] 테스트 코드를 작성하고 통과했는가?
-- [ ] 불필요한 주석이나 코드는 제거했는가?
-- [ ] 컨벤션(Conventional Commits)에 맞게 커밋 메시지를 작성했는가?
+- 빌드가 에러 없이 정상적으로 수행되는가?
+- 테스트 코드를 작성하고 통과했는가?
+- 불필요한 주석이나 코드는 제거했는가?
+- 컨벤션(Conventional Commits)에 맞게 커밋 메시지를 작성했는가?
 
 ## 5. 리뷰 시 요청 사항
 - (리뷰어가 특별히 봐주었으면 하는 로직이나 궁금한 점이 있다면 적어주세요.)
