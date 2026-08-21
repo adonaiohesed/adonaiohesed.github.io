@@ -175,16 +175,16 @@ If your agent uses MCP servers or third-party tool packages, those become part o
 
 Before deploying an agent to production, review this checklist:
 
-- [ ] Principle of least privilege applied to all tools
-- [ ] External content never passed as instructions
-- [ ] All write/destructive actions have explicit guards at the code level
-- [ ] Human approval required for irreversible actions
-- [ ] Output filtered for sensitive data before returning to users
-- [ ] All tool calls logged with inputs, outputs, and timestamps
-- [ ] Hard iteration cap and token budget per run
-- [ ] MCP server and tool provenance verified
-- [ ] Rate limiting on external API calls
-- [ ] Agent tested against prompt injection examples
+- Principle of least privilege applied to all tools
+- External content never passed as instructions
+- All write/destructive actions have explicit guards at the code level
+- Human approval required for irreversible actions
+- Output filtered for sensitive data before returning to users
+- All tool calls logged with inputs, outputs, and timestamps
+- Hard iteration cap and token budget per run
+- MCP server and tool provenance verified
+- Rate limiting on external API calls
+- Agent tested against prompt injection examples
 
 Security for AI agents is not fundamentally different from traditional application security—it's defense in depth, least privilege, input validation, output sanitization. The difference is that the attack surface includes natural language, which is harder to validate than typed inputs. Apply the same rigor you would to any privileged automation system.
 
@@ -244,15 +244,15 @@ Security for AI agents is not fundamentally different from traditional applicati
 
 프로덕션에 에이전트를 배포하기 전에 이 체크리스트를 검토하세요:
 
-- [ ] 모든 도구에 최소 권한 원칙 적용
-- [ ] 외부 콘텐츠가 명령으로 전달되지 않음
-- [ ] 모든 쓰기/파괴적 행동에 코드 레벨의 명시적 가드
-- [ ] 되돌릴 수 없는 행동에 인간 승인 필요
-- [ ] 사용자에게 반환하기 전에 출력에서 민감한 데이터 필터링
-- [ ] 모든 도구 호출 입력, 출력, 타임스탬프로 로깅
-- [ ] 실행당 하드 반복 횟수 제한 및 토큰 예산
-- [ ] MCP 서버 및 도구 출처 검증
-- [ ] 외부 API 호출 속도 제한
-- [ ] 프롬프트 인젝션 예시에 대한 에이전트 테스트
+- 모든 도구에 최소 권한 원칙 적용
+- 외부 콘텐츠가 명령으로 전달되지 않음
+- 모든 쓰기/파괴적 행동에 코드 레벨의 명시적 가드
+- 되돌릴 수 없는 행동에 인간 승인 필요
+- 사용자에게 반환하기 전에 출력에서 민감한 데이터 필터링
+- 모든 도구 호출 입력, 출력, 타임스탬프로 로깅
+- 실행당 하드 반복 횟수 제한 및 토큰 예산
+- MCP 서버 및 도구 출처 검증
+- 외부 API 호출 속도 제한
+- 프롬프트 인젝션 예시에 대한 에이전트 테스트
 
 AI 에이전트에 대한 보안은 전통적인 애플리케이션 보안과 근본적으로 다르지 않습니다—심층 방어, 최소 권한, 입력 유효성 검사, 출력 살균. 차이점은 공격 표면에 자연어가 포함된다는 것으로, 이는 타입화된 입력보다 유효성 검사가 더 어렵습니다. 모든 특권 자동화 시스템에 적용하는 것과 동일한 엄격함을 적용하세요.
