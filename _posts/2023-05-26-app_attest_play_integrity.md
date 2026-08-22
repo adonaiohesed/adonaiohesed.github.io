@@ -176,12 +176,12 @@ guard DCAppAttestService.shared.isSupported else {
 
 **Integration Testing Checklist**
 
-- [ ] Attestation succeeds on a physical device with a production build
-- [ ] Attestation fails in the Simulator (expected)
-- [ ] Server correctly rejects an attestation with a tampered `clientDataHash`
-- [ ] Server correctly rejects a replayed assertion (duplicate challenge)
-- [ ] Server correctly rejects an assertion with a mismatched `appId`
-- [ ] App handles `DCErrorDomain` errors gracefully (network failure, rate limit)
+- Attestation succeeds on a physical device with a production build
+- Attestation fails in the Simulator (expected)
+- Server correctly rejects an attestation with a tampered `clientDataHash`
+- Server correctly rejects a replayed assertion (duplicate challenge)
+- Server correctly rejects an assertion with a mismatched `appId`
+- App handles `DCErrorDomain` errors gracefully (network failure, rate limit)
 
 **Simulating Failure Cases**
 
@@ -203,12 +203,12 @@ val request = IntegrityTokenRequest.builder()
 
 **Integration Testing Checklist**
 
-- [ ] Token decryption succeeds on the server for a Play Store-installed app
-- [ ] Server rejects a token with a stale / mismatched nonce
-- [ ] Server rejects a token where `requestPackageName` does not match
-- [ ] `MEETS_STRONG_INTEGRITY` is verified for high-risk endpoints
-- [ ] Server gracefully degrades when no token is provided (based on risk policy)
-- [ ] Token generation failure is handled in-app without crash
+- Token decryption succeeds on the server for a Play Store-installed app
+- Server rejects a token with a stale / mismatched nonce
+- Server rejects a token where `requestPackageName` does not match
+- `MEETS_STRONG_INTEGRITY` is verified for high-risk endpoints
+- Server gracefully degrades when no token is provided (based on risk policy)
+- Token generation failure is handled in-app without crash
 
 **Testing on Rooted Devices**
 
@@ -394,12 +394,12 @@ guard DCAppAttestService.shared.isSupported else {
 
 **통합 테스트 체크리스트**
 
-- [ ] 프로덕션 빌드의 실기기에서 Attestation 성공
-- [ ] 시뮬레이터에서 Attestation 실패 (예상된 동작)
-- [ ] 변조된 `clientDataHash`를 가진 Attestation을 서버가 올바르게 거부
-- [ ] 재전송된 Assertion(중복 챌린지)을 서버가 올바르게 거부
-- [ ] `appId`가 불일치하는 Assertion을 서버가 올바르게 거부
-- [ ] 앱이 `DCErrorDomain` 오류를 우아하게 처리 (네트워크 실패, 속도 제한)
+- 프로덕션 빌드의 실기기에서 Attestation 성공
+- 시뮬레이터에서 Attestation 실패 (예상된 동작)
+- 변조된 `clientDataHash`를 가진 Attestation을 서버가 올바르게 거부
+- 재전송된 Assertion(중복 챌린지)을 서버가 올바르게 거부
+- `appId`가 불일치하는 Assertion을 서버가 올바르게 거부
+- 앱이 `DCErrorDomain` 오류를 우아하게 처리 (네트워크 실패, 속도 제한)
 
 **실패 케이스 시뮬레이션**
 
@@ -421,12 +421,12 @@ val request = IntegrityTokenRequest.builder()
 
 **통합 테스트 체크리스트**
 
-- [ ] Play Store 설치 앱의 서버 측 토큰 복호화 성공
-- [ ] 오래되거나 불일치하는 논스를 가진 토큰을 서버가 거부
-- [ ] `requestPackageName`이 불일치하는 토큰을 서버가 거부
-- [ ] 고위험 엔드포인트에서 `MEETS_STRONG_INTEGRITY` 검증
-- [ ] 토큰 미제공 시 앱이 위험 정책에 따라 우아하게 처리
-- [ ] 토큰 생성 실패 시 앱이 크래시 없이 처리
+- Play Store 설치 앱의 서버 측 토큰 복호화 성공
+- 오래되거나 불일치하는 논스를 가진 토큰을 서버가 거부
+- `requestPackageName`이 불일치하는 토큰을 서버가 거부
+- 고위험 엔드포인트에서 `MEETS_STRONG_INTEGRITY` 검증
+- 토큰 미제공 시 앱이 위험 정책에 따라 우아하게 처리
+- 토큰 생성 실패 시 앱이 크래시 없이 처리
 
 **루팅 기기에서의 테스트**
 
