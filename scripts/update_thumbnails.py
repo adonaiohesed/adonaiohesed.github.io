@@ -1,40 +1,43 @@
-import os
+"""Update thumbnail metadata without changing post bodies."""
+
+import json
+from pathlib import Path
 import re
 
-posts_dir = '_posts'
-thumbnails_dir = 'assets/thumbnails'
 
-def update_posts():
-    for filename in os.listdir(posts_dir):
-        if not filename.endswith('.md'):
-            continue
-            
-        file_path = os.path.join(posts_dir, filename)
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-            
-        # Extract basename without extension
-        basename = filename[:-3]
-        new_image_path = f"/assets/thumbnails/{basename}.png"
-        
-        # Check if image field already exists
-        if 'image:' in content:
-            # Replace existing image field
-            content = re.sub(r'image:.*', f'image: "{new_image_path}"', content)
-        else:
-            # Find the closing --- of the front matter
-            parts = content.split('---', 2)
-            if len(parts) >= 3:
-                front_matter = parts[1]
-                # Ensure we don't duplicate or mess up the structure
-                if 'image:' not in front_matter:
-                    new_front_matter = front_matter.rstrip() + f'\nimage: "{new_image_path}"\n'
-                    content = '---' + new_front_matter + '---' + parts[2]
-        
-        with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(content)
-            
-    print("Updated all posts with thumbnail paths.")
+def update_thumbnail(content, image_path):
+    front_matter = re.match(r'\A---[ \t]*\r?\n(.*?)^---[ \t]*\r?$', content, re.M | re.S)
+    if not front_matter:
+        raise ValueError("Post must start with YAML front matter")
 
-if __name__ == "__main__":
+    metadata = front_matter.group(1)
+    image = re.search(r'^image:[^\r\n]*(?:\r?\n[ \t]+[^\r\n]*)*', metadata, re.M)
+    replacement = f'image: {json.dumps(image_path, ensure_ascii=False)}'
+    if image:
+        # Do not discard nested metadata or YAML block scalars.
+        if '\n' in image.group() or not image.group().partition(':')[2].strip():
+            raise ValueError("Expected a single-line image field")
+        metadata = metadata[:image.start()] + replacement + metadata[image.end():]
+    else:
+        newline = '\r\n' if '\r\n' in content else '\n'
+        metadata += replacement + newline
+
+    return content[:front_matter.start(1)] + metadata + content[front_matter.end(1):]
+
+
+def update_posts(posts_directory=Path('_posts')):
+    updates = []
+    for post in sorted(Path(posts_directory).glob('*.md')):
+        # Preserve original newline bytes as well as the Markdown body.
+        content = post.read_bytes().decode('utf-8')
+        updated = update_thumbnail(content, f'/assets/thumbnails/{post.stem}.png')
+        if updated != content:
+            updates.append((post, updated))
+
+    for post, updated in updates:
+        post.write_bytes(updated.encode('utf-8'))
+    print(f"Updated {len(updates)} post thumbnail paths.")
+
+
+if __name__ == '__main__':
     update_posts()

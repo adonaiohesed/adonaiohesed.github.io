@@ -45,6 +45,11 @@
   --p-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Leave room for the floating navigation when arriving from wiki search. */
+.portfolio-search-target {
+  scroll-margin-top: 112px;
+}
+
 /* ── Theme Definitions ── */
 body.theme-intro {
   --p-bg-top: #e1f5fe;
@@ -1829,6 +1834,18 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
     top: max(16px, calc(env(safe-area-inset-top) + 8px));
     gap: 16px;
     padding: 8px 20px;
+    width: max-content;
+    max-width: calc(100vw - 24px);
+    box-sizing: border-box;
+  }
+
+  .about-nav .nav-left {
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .about-nav .nav-right {
+    flex-shrink: 0;
   }
 
   .about-nav-link {
@@ -1872,11 +1889,106 @@ section[data-theme="theme-ctf"] .reveal.rise-up {
   .p-feature-text {
     flex: unset;
     width: 100%;
+    min-width: 0;
+  }
+
+  .feature-title {
+    white-space: normal;
+    font-size: clamp(28px, 7vw, 40px);
+    overflow-wrap: anywhere;
+  }
+
+  .confidential-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .edu-card {
+    padding: 28px 20px;
+  }
+
+  .edu-header,
+  .edu-meta-pills {
+    flex-wrap: wrap;
+  }
+
+  .edu-title-group {
+    min-width: 0;
+  }
+
+  .edu-school,
+  .edu-degree {
+    overflow-wrap: anywhere;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .exp-title-group {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .exp-meta-row {
+    align-items: flex-start;
+  }
+
+  .ctf-section-heading {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 24px;
+  }
+
+  .ctf-typing-title {
+    font-size: clamp(28px, 7vw, 48px);
+  }
+
+  .ctf-timeline {
+    padding: 16px;
+  }
+
+  .ctf-row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+  }
+
+  .ctf-item-meta {
+    grid-column: 2;
+    align-items: flex-start;
+    text-align: left;
   }
 
   /* 모바일 목업 컨테이너도 풀 너비 */
   .mobile-mockup-container {
     width: 100%;
+  }
+
+  .reveal.slide-in-right,
+  .reveal.slide-in-left {
+    transform: translateY(40px);
+  }
+
+  .mobile-controls {
+    box-sizing: border-box;
+  }
+
+  .mobile-controls .gallery-prev,
+  .mobile-controls .gallery-next {
+    transform: none;
+  }
+
+  .iphone-frame {
+    box-sizing: border-box;
+    max-width: calc(100% - 32px);
+    height: auto;
+    aspect-ratio: 300 / 650;
+    flex-shrink: 0;
   }
 }
 

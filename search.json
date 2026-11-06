@@ -4,32 +4,34 @@ layout: none
 [
   {% for post in site.posts %}
     {
-      "title"    : "{{ post.title | escape }}",
-      "category" : "{{ post.categories | join: ', ' }}",
-      "url"      : "{{ post.url | relative_url }}",
+      "title"    : {{ post.title | escape | jsonify }},
+      "category" : {{ post.categories | join: ', ' | escape | jsonify }},
+      "url"      : {{ post.url | relative_url | jsonify }},
       "date"     : "{{ post.date | date: '%B %d, %Y' }}"
     }{% if forloop.last == false %},{% endif %}
   {% endfor %}
   
   {% if site.projects.size > 0 %}
-    ,
+    {% if site.posts.size > 0 %},{% endif %}
     {% for project in site.projects %}
+      {% assign project_id = project.path | split: '/' | last | remove: '.md' %}
       {
-        "title"    : "{{ project.title | escape }}",
+        "title"    : {{ project.title | escape | jsonify }},
         "category" : "Project",
-        "url"      : "{{ project.url | relative_url }}",
+        "url"      : {{ '/portfolio/#project-' | append: project_id | relative_url | jsonify }},
         "date"     : "Project"
       }{% if forloop.last == false %},{% endif %}
     {% endfor %}
   {% endif %}
 
   {% if site.ctfs.size > 0 %}
-    ,
+    {% if site.posts.size > 0 or site.projects.size > 0 %},{% endif %}
     {% for ctf in site.ctfs %}
+      {% assign ctf_id = ctf.path | split: '/' | last | remove: '.md' %}
       {
-        "title"    : "{{ ctf.title | escape }}",
+        "title"    : {{ ctf.title | escape | jsonify }},
         "category" : "CTF",
-        "url"      : "{{ ctf.url | relative_url }}",
+        "url"      : {{ '/portfolio/#ctf-' | append: ctf_id | relative_url | jsonify }},
         "date"     : "CTF"
       }{% if forloop.last == false %},{% endif %}
     {% endfor %}

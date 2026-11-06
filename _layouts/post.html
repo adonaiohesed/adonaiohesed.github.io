@@ -40,10 +40,10 @@ layout: default
 
     <!-- Table of Contents Sidebar -->
     <aside class="post-toc-sidebar">
-      <button class="post-toc-toggle" aria-label="Toggle Table of Contents">
+      <button class="post-toc-toggle" aria-label="Toggle Table of Contents" aria-expanded="false" aria-controls="post-toc-box">
         <span class="material-symbols-outlined">toc</span>
       </button>
-      <div class="post-toc-box">
+      <div class="post-toc-box" id="post-toc-box">
         <h3 class="post-toc-title">Table of Contents</h3>
         <nav class="post-toc-nav" id="post-toc-nav"></nav>
       </div>
@@ -230,6 +230,7 @@ layout: default
           if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
           }
+          closeMobileToc();
         });
       });
 
@@ -269,15 +270,28 @@ layout: default
     const tocToggle = document.querySelector('.post-toc-toggle');
     const tocBox = document.querySelector('.post-toc-box');
 
+    function closeMobileToc() {
+      if (tocBox) tocBox.classList.remove('visible');
+      if (tocToggle) tocToggle.setAttribute('aria-expanded', 'false');
+    }
+
     if (tocToggle && tocBox) {
       tocToggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        tocBox.classList.toggle('visible');
+        const expanded = tocBox.classList.toggle('visible');
+        tocToggle.setAttribute('aria-expanded', String(expanded));
       });
 
       document.addEventListener('click', (e) => {
         if (!e.target.closest('.post-toc-sidebar')) {
-          tocBox.classList.remove('visible');
+          closeMobileToc();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && tocBox.classList.contains('visible')) {
+          closeMobileToc();
+          tocToggle.focus();
         }
       });
     }

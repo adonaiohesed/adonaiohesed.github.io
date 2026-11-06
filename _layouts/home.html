@@ -15,6 +15,8 @@ layout: default
           {{ hero_post.categories[0] }}
         </span>
         {% endif %}
+          {% assign kr_title = hero_post.title %}
+          {% assign kr_excerpt = hero_post.excerpt %}
           {% if hero_post.bilingual %}
             {% assign content_parts = hero_post.content | split: '<hr />' %}
             {% if content_parts.size < 2 %}{% assign content_parts = hero_post.content | split: '<hr>' %}{% endif %}
@@ -74,6 +76,8 @@ layout: default
 
       <div class="post-grid">
         {% for post in paginator.posts %}
+        {% assign kr_title = post.title %}
+        {% assign kr_excerpt = post.excerpt %}
         <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
           {% if post.image %}
             {% assign thumb = post.image.path | default: post.image %}
@@ -201,6 +205,7 @@ layout: default
         {% for item in site.data.popular limit:7 %}
           {% assign post = site.posts | where: "slug", item.slug | first %}
           {% if post %}
+            {% assign kr_title = post.title %}
             <a href="{{ post.url | relative_url }}" class="popular-item">
               <span class="popular-rank">{{ forloop.index }}</span>
               <div class="popular-item-content">
@@ -218,8 +223,8 @@ layout: default
                         {% assign kr_title = kr_part | split: '</h1>' | first | split: '<h1' | last | split: '</h2>' | first | split: '<h2' | last | split: '>' | last | strip_html | strip %}
                         {% if kr_title == "" or kr_title == kr_part %}{% assign kr_title = post.title %}{% endif %}
                       {% endif %}
-                      {{ kr_title | default: post.title }}
                     {% endif %}
+                    {{ kr_title }}
                   </span>
                 </div>
                 <div class="popular-item-footer">
@@ -249,6 +254,8 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in sec_posts limit:3 %}
+      {% assign kr_title = post.title %}
+      {% assign kr_excerpt = post.excerpt %}
       <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}
@@ -311,6 +318,8 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in eng_posts limit:3 %}
+      {% assign kr_title = post.title %}
+      {% assign kr_excerpt = post.excerpt %}
       <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}
@@ -373,6 +382,8 @@ layout: default
     </div>
     <div class="post-grid">
       {% for post in ai_posts limit:3 %}
+      {% assign kr_title = post.title %}
+      {% assign kr_excerpt = post.excerpt %}
       <a href="{{ post.url | relative_url }}" class="post-card {% if post.published == false %}unpublished{% endif %}">
         {% if post.image %}
           {% assign thumb = post.image.path | default: post.image %}

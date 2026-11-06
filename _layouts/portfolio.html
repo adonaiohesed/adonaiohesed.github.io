@@ -5,7 +5,7 @@ layout: nil
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=1280">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | Portfolio</title>
   <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -558,7 +558,7 @@ layout: nil
       {% if projects.size > 0 %}
         {% assign private_projects = projects | where: "private", true | sort: "order" %}
         {% for project in private_projects %}
-        <div class="conf-card reveal rise-up">
+        <div id="project-{{ project.path | split: '/' | last | remove: '.md' }}" class="conf-card reveal rise-up portfolio-search-target">
           <div class="conf-icon"><span class="material-symbols-outlined">business_center</span></div>
           <div class="conf-content">
             {% assign title_parts = project.title | split: ' | ' %}
@@ -594,7 +594,7 @@ layout: nil
       {% assign public_projects = projects | where: "private", false | sort: "order" %}
       {% for project in public_projects %}
         {% capture cycle_anim %}{% cycle 'slide-in-right', 'slide-in-left' %}{% endcapture %}
-        <div class="p-feature-row">
+        <div id="project-{{ project.path | split: '/' | last | remove: '.md' }}" class="p-feature-row portfolio-search-target">
           <div class="p-feature-text reveal rise-up">
             <span class="tech-breadcrumb">MODULE_PHASE: {{ forloop.index | prepend: '0' }}</span>
             {% assign title_parts = project.title | split: ' | ' %}
@@ -679,7 +679,7 @@ layout: nil
   <!-- CTF Achievement Log -->
   <section id="section-ctfs" class="p-section theme-anchor" data-theme="theme-ctf" style="position: relative; overflow: hidden;">
     <div id="ctf-three-container"></div>
-    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px;">
+    <div class="ctf-section-heading" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px;">
       <h2 class="reveal" style="font-size: 48px; font-weight: 900; letter-spacing: -0.04em;">
         <span class="lang-section ctf-typing-title" data-lang="en">CTF Rankings</span>
         <span class="lang-section ctf-typing-title" data-lang="kr">CTF 랭킹</span>
@@ -697,7 +697,7 @@ layout: nil
       {% if ctfs %}
         {% assign sorted_ctfs = ctfs | sort: 'date' | reverse %}
         {% for ctf in sorted_ctfs %}
-        <div class="ctf-row reveal">
+        <div id="ctf-{{ ctf.path | split: '/' | last | remove: '.md' }}" class="ctf-row reveal portfolio-search-target">
           <div class="ctf-rank-big">#{{ ctf.rank }}</div>
           <div class="ctf-info">
             {% assign ctf_title_parts = ctf.title | split: ' | ' %}

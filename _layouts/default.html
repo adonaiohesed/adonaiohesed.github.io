@@ -2,7 +2,7 @@
 <html lang="{{ site.lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=1280">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   
@@ -59,7 +59,7 @@
         <div style="display: flex; align-items: center; gap: 16px;">
           <div class="gh-search">
             <span class="material-symbols-outlined search-icon">search</span>
-            <input type="text" id="search-input" placeholder="Search wiki...">
+            <input type="text" id="search-input" placeholder="Search wiki..." aria-label="Search wiki">
             <ul id="results-container"></ul>
           </div>
           <div class="lang-toggle-group">
@@ -73,11 +73,11 @@
     <div class="gh-nav-sub">
       {% for nav in site.data.navigation %}
         <div class="gh-sub-item-wrapper">
-          <div class="gh-sub-item">
+          <button type="button" class="gh-sub-item" aria-expanded="false" aria-controls="topic-menu-{{ forloop.index }}">
             {{ nav.title }}
             <span class="material-symbols-outlined nav-toggle-icon">expand_more</span>
-          </div>
-          <div class="mega-menu">
+          </button>
+          <div class="mega-menu" id="topic-menu-{{ forloop.index }}">
             <div class="mega-menu-content">
               <div class="mega-menu-left">
                 <a href="{{ nav.url | default: '#' | relative_url }}" class="mega-category-title">{{ nav.title }} <span class="material-symbols-outlined">chevron_right</span></a>
@@ -221,15 +221,33 @@
           items.forEach(otherItem => {
             if (otherItem !== item) {
               otherItem.classList.remove('active');
+              otherItem.querySelector('.gh-sub-item').setAttribute('aria-expanded', 'false');
             }
           });
 
-          item.classList.toggle('active');
+          const menu = item.querySelector('.mega-menu');
+          menu.style.setProperty('--mobile-menu-top', document.querySelector('.gh-header').getBoundingClientRect().bottom + 'px');
+          const expanded = item.classList.toggle('active');
+          trigger.setAttribute('aria-expanded', String(expanded));
         });
       });
 
       document.addEventListener('click', (e) => {
-        items.forEach(item => item.classList.remove('active'));
+        items.forEach(item => {
+          item.classList.remove('active');
+          item.querySelector('.gh-sub-item').setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        items.forEach(item => {
+          if (!item.classList.contains('active')) return;
+          item.classList.remove('active');
+          const trigger = item.querySelector('.gh-sub-item');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        });
       });
 
       const megaMenus = document.querySelectorAll('.mega-menu');

@@ -128,10 +128,10 @@ def create_blog_post_with_ai(topic, category="Personal"):
 
     # Frontmatter 생성
     frontmatter = f"""---
-title: {topic}
-tags: [{topic.lower()}]
+title: {json.dumps(topic, ensure_ascii=False)}
+tags: [{json.dumps(topic.lower(), ensure_ascii=False)}]
 key: page-{slug}
-categories: [{category}]
+categories: [{json.dumps(category, ensure_ascii=False)}]
 author: hyoeun
 math: false
 mathjax_autoNumber: false
