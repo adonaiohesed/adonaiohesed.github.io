@@ -166,6 +166,7 @@ exclude:
   - scripts
   - tests
   - README.md
+  - AGENTS.md
   - LICENSE
   - "*.config.js"
   - package*.json

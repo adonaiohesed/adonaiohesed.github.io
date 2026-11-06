@@ -111,7 +111,7 @@ Google Cloud's infrastructure security adopts a multi-layered and thorough appro
 
 ## 1. 클라우드 보안의 공유 책임 모델
 
-클라우드 보안은 더 이상 단일 주체의 책임이 아닙니다. Google Cloud는 '공유된 책임(Shared Responsibility)'을 넘어 '공동의 운명(Shared Fate)'이라는 새로운 보안 접근 방식을 제시합니다.
+클라우드 보안은 더 이상 단일 주체의 책임이 아니다. Google Cloud는 '공유된 책임(Shared Responsibility)'을 넘어 '공동의 운명(Shared Fate)'이라는 새로운 보안 접근 방식을 제시한다.
 
 ### 공유된 책임의 핵심
 - 클라우드 제공자: 인프라 보안 책임
@@ -125,7 +125,7 @@ Google Cloud's infrastructure security adopts a multi-layered and thorough appro
 
 ## 2. 인프라 보안
 
-Google Cloud의 인프라 보안은 다층적이고 철저한 접근 방식을 채택하고 있습니다.
+Google Cloud의 인프라 보안은 다층적이고 철저한 접근 방식을 채택하고 있다.
 
 ### 주요 보안 특징
 - 맞춤형 하드웨어 인프라 설계

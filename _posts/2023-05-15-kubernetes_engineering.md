@@ -472,32 +472,32 @@ Option C: Virtual clusters (vcluster)
 
 ## Kubernetes: 제로부터 프로덕션까지
 
-스탠드업에서 "우리 Kubernetes 써요"라는 말에 고개를 끄덕였지만 실제로 무슨 뜻인지 몰랐다면, 이 포스트가 바로 당신을 위한 글입니다. 프로덕션 수준의 패턴을 빠르게 정리하고 싶은 시니어라면, 계속 읽어보세요.
+스탠드업에서 "우리 Kubernetes 써요"라는 말에 고개를 끄덕였지만 실제로 무슨 뜻인지 몰랐다면, 이 포스트가 바로 당신을 위한 글이다. 프로덕션 수준의 패턴을 빠르게 정리하고 싶은 시니어라면, 계속 읽어보라.
 
-Kubernetes(K8s)는 **컨테이너 오케스트레이션 플랫폼**입니다. 교과서적인 정의죠. 실용적인 정의는 이렇습니다: Docker 컨테이너를 *어디서* 실행할지, *몇 개*를 유지할지, 그리고 *죽었을 때 어떻게 할지*를 결정해주는 시스템입니다.
+Kubernetes(K8s)는 **컨테이너 오케스트레이션 플랫폼**이다. 교과서적인 정의이다. 실용적인 정의는 이렇다: Docker 컨테이너를 *어디서* 실행할지, *몇 개*를 유지할지, 그리고 *죽었을 때 어떻게 할지*를 결정해주는 시스템이다.
 
 ## Part 1: 핵심 개념 (주니어 레벨)
 
 ### Kubernetes가 존재하는 이유
 
-로컬에서 Docker 컨테이너 하나 실행하는 건 쉽습니다:
+로컬에서 Docker 컨테이너 하나 실행하는 건 쉽다:
 
 ```bash
 docker run -p 3000:3000 my-app:v1
 ```
 
-하지만 프로덕션에서는 다음이 필요합니다:
+하지만 프로덕션에서는 다음이 필요하다:
 - 고가용성을 위한 **복수 복제본**
 - 크래시 시 **자동 재시작**
 - 다운타임 없는 **롤링 업데이트**
 - 인스턴스 간 **로드 밸런싱**
 - 하나의 앱이 CPU를 독점하지 못하게 하는 **리소스 제한**
 
-Kubernetes는 이 모든 것을 선언적으로 해결합니다. *원하는 상태*를 선언하면, Kubernetes가 *실현 방법*을 찾아냅니다.
+Kubernetes는 이 모든 것을 선언적으로 해결한다. *원하는 상태*를 선언하면, Kubernetes가 *실현 방법*을 찾아낸다.
 
 ### 클러스터 구조
 
-YAML 파일을 단 한 줄도 작성하기 전에, 먼저 이 계층 구조를 머릿속에 새기세요.
+YAML 파일을 단 한 줄도 작성하기 전에, 먼저 이 계층 구조를 머릿속에 새긴다.
 
 ![Kubernetes 클러스터 아키텍처 — Control Plane, Worker Node, Pod, Container의 관계](/assets/images/k8s_node_pod_container.png)
 
@@ -509,22 +509,22 @@ YAML 파일을 단 한 줄도 작성하기 전에, 먼저 이 계층 구조를 �
 | **Pod** | 네트워크와 스토리지를 공유하는 하나 이상의 컨테이너 | 화물 컨테이너 |
 | **Container** | 실제로 실행되는 애플리케이션 프로세스 | 컨테이너 안의 화물 |
 
-핵심 통찰: **컨테이너를 노드에 직접 배포하는 일은 없습니다.** Kubernetes는 항상 Pod 단위로 스케줄링합니다. Pod는 Kubernetes가 스케줄링, 확장, 재시작할 수 있는 최소 단위입니다.
+핵심 통찰: **컨테이너를 노드에 직접 배포하는 일은 없다.** Kubernetes는 항상 Pod 단위로 스케줄링한다. Pod는 Kubernetes가 스케줄링, 확장, 재시작할 수 있는 최소 단위이다.
 
 **왜 Pod라는 개념이 존재하는가?**
-때로는 두 프로세스가 나란히 실행되면서 동일한 네트워크 인터페이스를 공유해야 합니다 (예: 앱 컨테이너 + 로그 전송 사이드카). Pod는 이들을 묶어서 `localhost`로 통신하고 마운트된 볼륨을 공유하게 해줍니다 — 하나의 거대한 단일 컨테이너가 되지 않으면서도요.
+때로는 두 프로세스가 나란히 실행되면서 동일한 네트워크 인터페이스를 공유해야 한다 (예: 앱 컨테이너 + 로그 전송 사이드카). Pod는 이들을 묶어서 `localhost`로 통신하고 마운트된 볼륨을 공유하게 해준다 — 하나의 거대한 단일 컨테이너가 되지 않으면서도 말이다.
 
-- **Control Plane**: 모든 결정을 내리는 두뇌. API Server가 그 관문입니다.
-- **Node**: 실제로 컨테이너를 실행하는 워커 머신(VM 또는 물리 서버)입니다.
-- **Pod**: 가장 작은 배포 단위. 네트워크와 스토리지를 공유하는 하나 이상의 컨테이너입니다.
+- **Control Plane**: 모든 결정을 내리는 두뇌. API Server가 그 관문이다.
+- **Node**: 실제로 컨테이너를 실행하는 워커 머신(VM 또는 물리 서버)이다.
+- **Pod**: 가장 작은 배포 단위. 네트워크와 스토리지를 공유하는 하나 이상의 컨테이너이다.
 
 ### 반드시 알아야 할 핵심 오브젝트
 
-**Pod**는 컨테이너를 감싸는 단위입니다. 하지만 Pod를 직접 생성하는 일은 거의 없습니다. 대신 **Deployment**를 사용합니다.
+**Pod**는 컨테이너를 감싸는 단위이다. 하지만 Pod를 직접 생성하는 일은 거의 없다. 대신 **Deployment**를 사용한다.
 
-**Deployment**는 Pod를 관리하고, 롤아웃과 레플리카 수를 제어합니다. `replicas: 3`으로 설정하면 항상 3개의 Pod가 실행되도록 유지합니다.
+**Deployment**는 Pod를 관리하고, 롤아웃과 레플리카 수를 제어한다. `replicas: 3`으로 설정하면 항상 3개의 Pod가 실행되도록 유지한다.
 
-**Service**는 Pod에 안정적인 네트워크 주소를 부여합니다. Pod는 언제든 죽고 다시 생성되므로, IP가 바뀌어도 Service를 통해 안정적으로 접근할 수 있습니다.
+**Service**는 Pod에 안정적인 네트워크 주소를 부여한다. Pod는 언제든 죽고 다시 생성되므로, IP가 바뀌어도 Service를 통해 안정적으로 접근할 수 있다.
 
 Service 타입 비교:
 
@@ -534,7 +534,7 @@ Service 타입 비교:
 | `NodePort` | 외부 (Node IP + 포트) | 개발/테스트 환경 |
 | `LoadBalancer` | 외부 (클라우드 LB) | 프로덕션 외부 트래픽 |
 
-**Namespace**는 하나의 클러스터 안에서 가상의 클러스터를 만드는 방법입니다. 팀이나 환경(production, staging)별로 격리할 때 사용합니다.
+**Namespace**는 하나의 클러스터 안에서 가상의 클러스터를 만드는 방법이다. 팀이나 환경(production, staging)별로 격리할 때 사용한다.
 
 ### 필수 kubectl 명령어
 
@@ -568,13 +568,13 @@ kubectl rollout undo deployment/my-app   # 롤백
 
 ### ConfigMap & Secret
 
-절대 설정값을 이미지에 하드코딩하지 마세요. 외부화해야 합니다. ConfigMap은 민감하지 않은 설정을, Secret은 DB 비밀번호 같은 민감한 값을 저장합니다.
+절대 설정값을 이미지에 하드코딩하지 말라. 외부화해야 한다. ConfigMap은 민감하지 않은 설정을, Secret은 DB 비밀번호 같은 민감한 값을 저장한다.
 
-> 실제 프로덕션에서는 Kubernetes Secret의 base64 인코딩은 암호화가 아닙니다. **Sealed Secrets**, **AWS Secrets Manager**, **HashiCorp Vault** 사용을 강력히 권장합니다.
+> 실제 프로덕션에서는 Kubernetes Secret의 base64 인코딩은 암호화가 아니다. **Sealed Secrets**, **AWS Secrets Manager**, **HashiCorp Vault** 사용을 강력히 권장한다.
 
 ### 헬스 체크: Liveness & Readiness Probe
 
-컨테이너의 상태를 Kubernetes에 알려주는 가장 중요한 설정 중 하나입니다.
+컨테이너의 상태를 Kubernetes에 알려주는 가장 중요한 설정 중 하나이다.
 
 | Probe | 실패 시 동작 | 사용 목적 |
 |:---|:---|:---|
@@ -584,20 +584,20 @@ kubectl rollout undo deployment/my-app   # 롤백
 
 ### Ingress — 엣지에서의 HTTP 라우팅
 
-앱마다 LoadBalancer Service를 쓰면 비용이 급증합니다. 대신 Ingress Controller 하나로 도메인/경로 기반 라우팅을 처리하세요. `api.example.com/users`는 user-service로, `/orders`는 order-service로 라우팅하는 식입니다.
+앱마다 LoadBalancer Service를 쓰면 비용이 급증한다. 대신 Ingress Controller 하나로 도메인/경로 기반 라우팅을 처리한다. `api.example.com/users`는 user-service로, `/orders`는 order-service로 라우팅하는 식이다.
 
 ### HPA (수평 Pod 자동 확장)
 
-CPU 70% 이상이면 Pod를 자동으로 늘리고, 낮아지면 줄입니다. 항상 `minReplicas`(가용성 보장)와 `maxReplicas`(비용 제어)를 함께 설정하세요.
+CPU 70% 이상이면 Pod를 자동으로 늘리고, 낮아지면 줄인다. 항상 `minReplicas`(가용성 보장)와 `maxReplicas`(비용 제어)를 함께 설정한다.
 
 ## Part 3: 심화 엔지니어링 (시니어 레벨)
 
 ### 리소스 관리: Requests vs. Limits
 
-프로덕션에서 팀들이 가장 많이 실수하는 부분입니다.
+프로덕션에서 팀들이 가장 많이 실수하는 부분이다.
 
 - **Requests**: 스케줄링 결정에 사용하는 보장된 양. "이 Pod를 실행하려면 최소 이 정도가 필요해"
-- **Limits**: 하드 상한선. 초과하면 메모리는 OOMKilled, CPU는 쓰로틀링됩니다.
+- **Limits**: 하드 상한선. 초과하면 메모리는 OOMKilled, CPU는 쓰로틀링된다.
 
 **흔한 실수들:**
 - **Limits 미설정** → 하나의 Pod가 노드 전체 리소스를 독점
@@ -607,23 +607,23 @@ CPU 70% 이상이면 Pod를 자동으로 늘리고, 낮아지면 줄입니다. �
 
 ### Pod Disruption Budget (PDB)
 
-노드 업그레이드, 스케일 다운 등의 자발적 중단(voluntary disruption) 중에도 최소 가용성을 보장합니다. PDB 없이 노드를 drain하면 해당 노드의 Pod가 한꺼번에 내려갈 수 있습니다.
+노드 업그레이드, 스케일 다운 등의 자발적 중단(voluntary disruption) 중에도 최소 가용성을 보장한다. PDB 없이 노드를 drain하면 해당 노드의 Pod가 한꺼번에 내려갈 수 있다.
 
 ### 배포 전략
 
-**Rolling Update** (기본값): `maxUnavailable: 0`으로 설정하면 항상 원하는 레플리카 수를 유지하면서 순차적으로 교체합니다.
+**Rolling Update** (기본값): `maxUnavailable: 0`으로 설정하면 항상 원하는 레플리카 수를 유지하면서 순차적으로 교체한다.
 
-**Blue-Green**: 두 Deployment(v1, v2)를 동시에 실행하고, Service의 selector를 전환하는 방식으로 즉각적인 전환 및 즉각적인 롤백이 가능합니다.
+**Blue-Green**: 두 Deployment(v1, v2)를 동시에 실행하고, Service의 selector를 전환하는 방식으로 즉각적인 전환 및 즉각적인 롤백이 가능하다.
 
-**Canary**: 레플리카 비율로 트래픽을 분산합니다. 세밀한 트래픽 분할이 필요하면 Istio, Linkerd 같은 서비스 메시를 사용하세요.
+**Canary**: 레플리카 비율로 트래픽을 분산한다. 세밀한 트래픽 분할이 필요하면 Istio, Linkerd 같은 서비스 메시를 사용한다.
 
 ### RBAC — 누가 무엇을 할 수 있는가
 
-Role은 어떤 리소스에 어떤 행위가 허용되는지를 정의하고, RoleBinding은 그 Role을 사용자 또는 서비스 어카운트에 연결합니다. **최소 권한 원칙**을 철저히 지키세요. 모든 서비스 어카운트는 실제로 필요한 권한만 가져야 합니다.
+Role은 어떤 리소스에 어떤 행위가 허용되는지를 정의하고, RoleBinding은 그 Role을 사용자 또는 서비스 어카운트에 연결한다. **최소 권한 원칙**을 철저히 지킨다. 모든 서비스 어카운트는 실제로 필요한 권한만 가져야 한다.
 
 ### 관찰 가능성 (Observability)
 
-프로덕션 클러스터에는 세 가지 축이 필요합니다:
+프로덕션 클러스터에는 세 가지 축이 필요하다:
 
 | 축 | 내용 | 일반적인 스택 |
 |:---|:---|:---|

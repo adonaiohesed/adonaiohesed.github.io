@@ -233,24 +233,24 @@ The platform attestation APIs shift the trust anchor from the app binary (attack
 
 ## App Attest & Play Integrity: 서버 측 원격 증명
 
-앱 바이너리에 내장된 Anti-Tamper 검사는 본질적으로 자기 참조적입니다. 변조를 탐지해야 하는 코드 자체가 변조될 수 있는 바이너리의 일부이기 때문입니다. 다음 단계의 방어는 **원격 증명(Remote Attestation)**입니다. 신뢰할 수 있는 제3자(Apple 또는 Google)에게 앱과 기기가 진본임을 암호학적으로 인증받은 뒤, 서버의 민감한 리소스에 접근을 허용하는 방식입니다.
+앱 바이너리에 내장된 Anti-Tamper 검사는 본질적으로 자기 참조적이다. 변조를 탐지해야 하는 코드 자체가 변조될 수 있는 바이너리의 일부이기 때문이다. 다음 단계의 방어는 **원격 증명(Remote Attestation)**이다. 신뢰할 수 있는 제3자(Apple 또는 Google)에게 앱과 기기가 진본임을 암호학적으로 인증받은 뒤, 서버의 민감한 리소스에 접근을 허용하는 방식이다.
 
-**Apple App Attest**(iOS 14+)와 **Google Play Integrity API**(Android)는 이 문제에 대한 플랫폼 네이티브 솔루션입니다. 서버가 다음 질문을 할 수 있게 해줍니다: *"이 요청이 정상적인 기기에서 실행 중인, 변조되지 않은 내 앱에서 오는 것인가?"*
+**Apple App Attest**(iOS 14+)와 **Google Play Integrity API**(Android)는 이 문제에 대한 플랫폼 네이티브 솔루션이다. 서버가 다음 질문을 할 수 있게 해준다: *"이 요청이 정상적인 기기에서 실행 중인, 변조되지 않은 내 앱에서 오는 것인가?"*
 
 ## 핵심 개념
 
 ### 증명(Attestation)이란?
 
-증명은 기기가 플랫폼 벤더가 신뢰하는 하드웨어 기반 키로 서명된 암호학적 증명을 생성하는 과정입니다. 이를 통해 현재 소프트웨어와 기기 상태가 정해진 기준을 충족함을 증명합니다. 서버는 앱 자체가 주장하는 것을 신뢰하는 대신, 이 증명을 검증합니다.
+증명은 기기가 플랫폼 벤더가 신뢰하는 하드웨어 기반 키로 서명된 암호학적 증명을 생성하는 과정이다. 이를 통해 현재 소프트웨어와 기기 상태가 정해진 기준을 충족함을 증명한다. 서버는 앱 자체가 주장하는 것을 신뢰하는 대신, 이 증명을 검증한다.
 
 핵심 특성:
-- 서명 키는 기기의 **Secure Enclave**(iOS) 또는 **StrongBox / TEE**(Android) 내부에서 생성되며 외부로 내보낼 수 없습니다.
-- 서명은 특정 식별자(App ID, 번들 버전, 기기 ID 해시)를 포함하므로 다른 앱이나 기기에서 재사용할 수 없습니다.
-- 검증은 **서버 측**에서 이루어지므로, 공격자는 앱을 패치하는 방식으로 결과에 영향을 줄 수 없습니다.
+- 서명 키는 기기의 **Secure Enclave**(iOS) 또는 **StrongBox / TEE**(Android) 내부에서 생성되며 외부로 내보낼 수 없다.
+- 서명은 특정 식별자(App ID, 번들 버전, 기기 ID 해시)를 포함하므로 다른 앱이나 기기에서 재사용할 수 없다.
+- 검증은 **서버 측**에서 이루어지므로, 공격자는 앱을 패치하는 방식으로 결과에 영향을 줄 수 없다.
 
 ### Apple App Attest
 
-App Attest는 **DeviceCheck 프레임워크**와 Secure Enclave를 사용하여 두 가지 유형의 아티팩트를 생성합니다:
+App Attest는 **DeviceCheck 프레임워크**와 Secure Enclave를 사용하여 두 가지 유형의 아티팩트를 생성한다:
 
 | 아티팩트 | 사용 시점 | 목적 |
 |---|---|---|
@@ -264,7 +264,7 @@ App Attest는 **DeviceCheck 프레임워크**와 Secure Enclave를 사용하여 
 
 ### Google Play Integrity API
 
-Play Integrity는 SafetyNet Attestation API를 대체합니다. Google이 서명한 **JWT**를 반환하며, 세 가지 판정 카테고리를 포함합니다:
+Play Integrity는 SafetyNet Attestation API를 대체한다. Google이 서명한 **JWT**를 반환하며, 세 가지 판정 카테고리를 포함한다:
 
 | 판정 | 의미 |
 |---|---|
@@ -327,55 +327,55 @@ Play Integrity는 SafetyNet Attestation API를 대체합니다. Google이 서명
 
 ## 우회 방법
 
-공격자들이 이 검사를 어떻게 우회하는지 이해하는 것이 서버 측 임계값 설정에 필수적입니다.
+공격자들이 이 검사를 어떻게 우회하는지 이해하는 것이 서버 측 임계값 설정에 필수적이다.
 
 ### App Attest 우회
 
 **1. 패치된 프레임워크를 사용한 탈옥 기기**
 
-탈옥 기기에서도 Secure Enclave는 온전하지만, OS 수준의 증명 요청 과정을 가로챌 수 있습니다. **Shadow** 같은 도구나 커스텀 Substrate 트윅으로:
-- `DCAppAttestService` 메서드를 후킹하여 정상 기기에서 미리 캡처한 증명 객체를 반환합니다.
-- 클린 기기에서 얻은 유효한 증명 객체를 캐시하여 재전송합니다.
+탈옥 기기에서도 Secure Enclave는 온전하지만, OS 수준의 증명 요청 과정을 가로챌 수 있다. **Shadow** 같은 도구나 커스텀 Substrate 트윅으로:
+- `DCAppAttestService` 메서드를 후킹하여 정상 기기에서 미리 캡처한 증명 객체를 반환한다.
+- 클린 기기에서 얻은 유효한 증명 객체를 캐시하여 재전송한다.
 
-**대응책:** 모든 Attestation 및 Assertion 요청에 서버 생성 챌린지(`clientDataHash`)를 포함시킵니다. 다른 세션에서 재전송된 증명은 챌린지 검증에서 실패합니다.
+**대응책:** 모든 Attestation 및 Assertion 요청에 서버 생성 챌린지(`clientDataHash`)를 포함시킨다. 다른 세션에서 재전송된 증명은 챌린지 검증에서 실패한다.
 
 **2. Assertion 흐름에 대한 Frida 후킹**
 
-공격자가 클린 기기에서 앱을 실행하고 `generateAssertion`을 후킹하여 Assertion 요청을 프록시합니다. 앱은 클린 기기에서 정상 실행되지만, 네트워크 트래픽은 MITM 프록시를 통해 관찰되거나 재전송됩니다.
+공격자가 클린 기기에서 앱을 실행하고 `generateAssertion`을 후킹하여 Assertion 요청을 프록시한다. 앱은 클린 기기에서 정상 실행되지만, 네트워크 트래픽은 MITM 프록시를 통해 관찰되거나 재전송된다.
 
-**대응책:** Assertion을 세션 토큰에 바인딩하고 단 1회 사용 후 무효화합니다. 서버 측에서 토큰 발급에 속도 제한을 적용합니다.
+**대응책:** Assertion을 세션 토큰에 바인딩하고 단 1회 사용 후 무효화한다. 서버 측에서 토큰 발급에 속도 제한을 적용한다.
 
 **3. 에뮬레이터 / 시뮬레이터**
 
-Apple Simulator는 App Attest를 지원하지 않습니다. 시뮬레이터에서의 요청은 증명 단계에서 실패합니다. 그러나 공격자가 바이너리를 추출하여 커스텀 프로비저닝 프로파일로 정상 기기에 사이드로딩하면, 증명의 `appId`가 프로덕션 값과 달라집니다.
+Apple Simulator는 App Attest를 지원하지 않는다. 시뮬레이터에서의 요청은 증명 단계에서 실패한다. 그러나 공격자가 바이너리를 추출하여 커스텀 프로비저닝 프로파일로 정상 기기에 사이드로딩하면, 증명의 `appId`가 프로덕션 값과 달라진다.
 
-**대응책:** 증명의 `appId`가 정확히 프로덕션 Team ID + Bundle ID와 일치하는지 검증합니다.
+**대응책:** 증명의 `appId`가 정확히 프로덕션 Team ID + Bundle ID와 일치하는지 검증한다.
 
 ### Play Integrity 우회
 
 **1. Strong Integrity 다운그레이드**
 
-많은 앱이 소프트웨어 수준인 `MEETS_DEVICE_INTEGRITY`만 확인합니다. **Magisk**와 **Play Integrity Fix** 모듈이 설치된 루팅 기기에서는 실제로 루팅된 상태임에도 이 판정을 통과할 수 있습니다.
+많은 앱이 소프트웨어 수준인 `MEETS_DEVICE_INTEGRITY`만 확인한다. **Magisk**와 **Play Integrity Fix** 모듈이 설치된 루팅 기기에서는 실제로 루팅된 상태임에도 이 판정을 통과할 수 있다.
 
-**대응책:** 결제, 계정 변경 등 민감한 작업에는 `MEETS_STRONG_INTEGRITY`를 요구합니다. 위험도가 낮은 작업에만 `MEETS_BASIC_INTEGRITY`를 허용합니다.
+**대응책:** 결제, 계정 변경 등 민감한 작업에는 `MEETS_STRONG_INTEGRITY`를 요구한다. 위험도가 낮은 작업에만 `MEETS_BASIC_INTEGRITY`를 허용한다.
 
 **2. 논스 재사용 / 토큰 재전송**
 
-서버가 `nonce` 필드를 검증하지 않거나 유효 기간이 지난 토큰을 수락하면, 공격자가 클린 기기에서 캡처한 유효한 토큰을 재전송할 수 있습니다.
+서버가 `nonce` 필드를 검증하지 않거나 유효 기간이 지난 토큰을 수락하면, 공격자가 클린 기기에서 캡처한 유효한 토큰을 재전송할 수 있다.
 
-**대응책:** 요청마다 서버 측에서 고유한 논스를 생성하고, 검증 후 사용된 토큰을 무효화하며, 60초 이상 경과한 토큰을 거부합니다.
+**대응책:** 요청마다 서버 측에서 고유한 논스를 생성하고, 검증 후 사용된 토큰을 무효화하며, 60초 이상 경과한 토큰을 거부한다.
 
 **3. `requestIntegrityToken` 후킹**
 
-루팅 기기에서 Frida로 `IntegrityManager.requestIntegrityToken()`을 후킹하여 클린 기기에서 캡처한 토큰을 반환합니다.
+루팅 기기에서 Frida로 `IntegrityManager.requestIntegrityToken()`을 후킹하여 클린 기기에서 캡처한 토큰을 반환한다.
 
-**대응책:** 논스에 세션별 데이터(사용자 ID, 기기 핑거프린트)를 바인딩하여, 다른 기기에서 캡처한 토큰이 서버 측 논스 검증을 통과하지 못하도록 합니다.
+**대응책:** 논스에 세션별 데이터(사용자 ID, 기기 핑거프린트)를 바인딩하여, 다른 기기에서 캡처한 토큰이 서버 측 논스 검증을 통과하지 못하도록 한다.
 
 **4. Play Services가 없는 커스텀 ROM**
 
-AOSP 또는 Google Play Services가 없는 커스텀 ROM이 설치된 기기는 Play Integrity 토큰을 생성할 수 없습니다. 이러한 기기에서의 요청은 토큰 생성 단계에서 실패합니다.
+AOSP 또는 Google Play Services가 없는 커스텀 ROM이 설치된 기기는 Play Integrity 토큰을 생성할 수 없다. 이러한 기기에서의 요청은 토큰 생성 단계에서 실패한다.
 
-**대응책:** 토큰 생성 실패를 위험 신호로 처리합니다. 위협 모델에 따라 해당 기기를 차단하거나 추가 인증을 적용할지 결정합니다.
+**대응책:** 토큰 생성 실패를 위험 신호로 처리한다. 위협 모델에 따라 해당 기기를 차단하거나 추가 인증을 적용할지 결정한다.
 
 ## 테스트 방법
 
@@ -383,7 +383,7 @@ AOSP 또는 Google Play Services가 없는 커스텀 ROM이 설치된 기기는 
 
 **개발 환경**
 
-기본적으로 `DCAppAttestService.isSupported`는 시뮬레이터에서 `false`를 반환합니다. 실기기의 디버그 빌드에서 `DCAppAttestService.Environment.development`를 사용하면 Apple의 개발 증명 환경을 통해 테스트할 수 있습니다.
+기본적으로 `DCAppAttestService.isSupported`는 시뮬레이터에서 `false`를 반환한다. 실기기의 디버그 빌드에서 `DCAppAttestService.Environment.development`를 사용하면 Apple의 개발 증명 환경을 통해 테스트할 수 있다.
 
 ```swift
 guard DCAppAttestService.shared.isSupported else {
@@ -403,13 +403,13 @@ guard DCAppAttestService.shared.isSupported else {
 
 **실패 케이스 시뮬레이션**
 
-Xcode 스킴의 `launchArguments` 또는 환경 변수를 사용하여 App Attest 호출을 건너뛰고 실패 응답을 시뮬레이션하는 모드를 주입하면, 실제 Apple 서버 없이도 UI 테스트가 가능합니다.
+Xcode 스킴의 `launchArguments` 또는 환경 변수를 사용하여 App Attest 호출을 건너뛰고 실패 응답을 시뮬레이션하는 모드를 주입하면, 실제 Apple 서버 없이도 UI 테스트가 가능하다.
 
 ### Play Integrity 테스트
 
 **테스트 응답 코드**
 
-Google은 `IntegrityTokenRequest`에 `testingOptions` 파라미터를 제공하여 프로덕션 Play 서버를 거치지 않고 합성 판정을 반환받을 수 있습니다. CI/CD 파이프라인에서 활용합니다.
+Google은 `IntegrityTokenRequest`에 `testingOptions` 파라미터를 제공하여 프로덕션 Play 서버를 거치지 않고 합성 판정을 반환받을 수 있다. CI/CD 파이프라인에서 활용한다.
 
 ```kotlin
 val request = IntegrityTokenRequest.builder()
@@ -430,13 +430,13 @@ val request = IntegrityTokenRequest.builder()
 
 **루팅 기기에서의 테스트**
 
-Magisk + Play Integrity Fix가 설치된 루팅 기기를 사용하여 서버 측 임계값 로직을 검증합니다:
+Magisk + Play Integrity Fix가 설치된 루팅 기기를 사용하여 서버 측 임계값 로직을 검증한다:
 - `MEETS_DEVICE_INTEGRITY`를 스푸핑하는 루팅 기기가 `MEETS_STRONG_INTEGRITY`를 요구하는 엔드포인트에서 차단되는지 확인
 - 무결성 판정이 임계값 이하로 떨어질 때 서버 로그와 알림이 올바르게 작동하는지 확인
 
 ## 심층 방어
 
-App Attest와 Play Integrity는 강력하지만 절대적이지 않습니다. 다음과 결합하여 활용하세요:
+App Attest와 Play Integrity는 강력하지만 절대적이지 않다. 다음과 결합하여 활용한다:
 
 | 레이어 | 메커니즘 |
 |---|---|
@@ -445,4 +445,4 @@ App Attest와 Play Integrity는 강력하지만 절대적이지 않습니다. �
 | 서버 | 이상 감지 (비정상적인 요청 빈도, 지리적 이동 등) |
 | 백엔드 | 증명을 이진 게이트가 아닌 위험 신호로 취급 — 적응형 단계적 인증 적용 |
 
-플랫폼 증명 API는 신뢰 앵커를 공격자가 제어할 수 있는 앱 바이너리에서 기기의 하드웨어 보안 모듈과 플랫폼 벤더의 백엔드로 이동시킵니다. 이는 우회를 훨씬 더 어렵고 비용이 많이 들게 만들며, 탐지 가능하게 합니다.
+플랫폼 증명 API는 신뢰 앵커를 공격자가 제어할 수 있는 앱 바이너리에서 기기의 하드웨어 보안 모듈과 플랫폼 벤더의 백엔드로 이동시킨다. 이는 우회를 훨씬 더 어렵고 비용이 많이 들게 만들며, 탐지 가능하게 한다.

@@ -181,18 +181,18 @@ ls apk_out/assets/ | grep snapshot
 
 ## Flutter 앱 보안과 ReFutter: 왜 다른가, 어떻게 접근할 것인가
 
-일반적인 안드로이드 앱과 달리 Flutter 앱의 코드는 Jadx나 class-dump로 분석해도 의미 있는 내용이 거의 나오지 않습니다. 이는 ProGuard 난독화가 아니라 Flutter의 아키텍처 자체 때문입니다. 효과적으로 분석하려면 *왜* Flutter가 이렇게 보이는지를 이해해야 합니다.
+일반적인 안드로이드 앱과 달리 Flutter 앱의 코드는 Jadx나 class-dump로 분석해도 의미 있는 내용이 거의 나오지 않는다. 이는 ProGuard 난독화가 아니라 Flutter의 아키텍처 자체 때문이다. 효과적으로 분석하려면 *왜* Flutter가 이렇게 보이는지를 이해해야 한다.
 
 ## Flutter 아키텍처: 실제로 무엇을 보고 있는가
 
 ### Dart 컴파일 모델
 
-Flutter 앱은 **Dart 프로그래밍 언어**를 사용하지만, Dart가 컴파일되는 방식이 분석 방법을 근본적으로 바꿉니다:
+Flutter 앱은 **Dart 프로그래밍 언어**를 사용하지만, Dart가 컴파일되는 방식이 분석 방법을 근본적으로 바꾼다:
 
-*   **디버그 빌드** → Dart가 **Dart VM**이라는 JIT 가상 머신에서 실행됩니다. 코드가 런타임에 해석되어 속도는 느리지만 분석하기 쉽습니다.
-*   **릴리즈 빌드** → Dart가 네이티브 기계 코드로 **AOT(사전) 컴파일**됩니다. 결과는 공유 라이브러리: `libapp.so`(Android) 또는 Mach-O 바이너리(iOS)입니다.
+*   **디버그 빌드** → Dart가 **Dart VM**이라는 JIT 가상 머신에서 실행된다. 코드가 런타임에 해석되어 속도는 느리지만 분석하기 쉽다.
+*   **릴리즈 빌드** → Dart가 네이티브 기계 코드로 **AOT(사전) 컴파일**된다. 결과는 공유 라이브러리: `libapp.so`(Android) 또는 Mach-O 바이너리(iOS)이다.
 
-이것이 바로 분석이 막히는 지점입니다. Flutter 릴리즈 APK의 `libapp.so`는 본질적으로 ARM64 바이너리입니다. Jadx는 소용이 없습니다.
+이것이 바로 분석이 막히는 지점이다. Flutter 릴리즈 APK의 `libapp.so`는 본질적으로 ARM64 바이너리이다. Jadx는 소용이 없다.
 
 ### Flutter APK/IPA의 구조
 
@@ -216,11 +216,11 @@ Runner.app
 └── Runner                   ← 호스트 바이너리 (최소한)
 ```
 
-`classes.dex`와 `Runner`는 Flutter 엔진을 설정하고 실행을 넘겨주는 얇은 래퍼에 불과합니다. **분석 대상은 항상 `libapp.so` 또는 `App.framework/App`입니다.**
+`classes.dex`와 `Runner`는 Flutter 엔진을 설정하고 실행을 넘겨주는 얇은 래퍼에 불과하다. **분석 대상은 항상 `libapp.so` 또는 `App.framework/App`이다.**
 
 ## Flutter 앱 기초 정찰
 
-ReFutter를 사용하기 전 기초 정찰을 먼저 수행합니다:
+ReFutter를 사용하기 전 기초 정찰을 먼저 수행한다:
 
 ```bash
 # 1. Flutter 앱 여부 확인
@@ -240,7 +240,7 @@ cat apk_out/assets/flutter_assets/AssetManifest.json
 
 ## ReFutter: Flutter 바이너리에 심볼 복원하기
 
-**ReFutter**는 Flutter 스냅샷을 패치하여 사람이 읽을 수 있는 함수 이름을 복원하는 도구입니다. Ghidra나 Radare2에서의 후속 분석을 훨씬 더 생산적으로 만들어 줍니다.
+**ReFutter**는 Flutter 스냅샷을 패치하여 사람이 읽을 수 있는 함수 이름을 복원하는 도구이다. Ghidra나 Radare2에서의 후속 분석을 훨씬 더 생산적으로 만들어 준다.
 
 ### 설치 및 사용법
 
@@ -295,7 +295,7 @@ ls apk_out/assets/ | grep snapshot
 ```
 
 > [!TIP]
-> 디버그 빌드를 발견했다면, Dart Observatory (웹 기반 VM 인스펙터)에 접근할 수 있습니다. `adb forward tcp:8181 tcp:8181` 후 `http://localhost:8181`에 접속하면, 실행 중인 Dart isolate의 모든 객체 인스턴스, 메모리, 소스 코드까지 볼 수 있습니다.
+> 디버그 빌드를 발견했다면, Dart Observatory (웹 기반 VM 인스펙터)에 접근할 수 있다. `adb forward tcp:8181 tcp:8181` 후 `http://localhost:8181`에 접속하면, 실행 중인 Dart isolate의 모든 객체 인스턴스, 메모리, 소스 코드까지 볼 수 있다.
 
 ## 실전 ReFutter 워크플로우 요약
 

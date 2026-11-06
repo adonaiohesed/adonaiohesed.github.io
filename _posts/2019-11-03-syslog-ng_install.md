@@ -229,7 +229,7 @@ source s_network {
 <br>
 
 ### [Filter](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.16/administration-guide/51#TOPIC-956579)
-* log 문에 여러 개의 filter 문이 포함되어있는 경우 syslog-ng는 모든 필터가 true 인 경우에만 로그를 저장합니다.
+* log 문에 여러 개의 filter 문이 포함되어있는 경우 syslog-ng는 모든 필터가 true 인 경우에만 로그를 저장한다.
 ```conf
 filter demo_filter1 { host("example1"); };
 filter demo_filter2 { host("example2"); };
@@ -238,7 +238,7 @@ log {
     filter(demo_filter1); filter(demo_filter2);
     destination(d1); destination(d2); };
 ```
-host는 동시에 2개 일 수 없기에 위와 같은 코드는 로그 수집이 불가하고 따라서 아래와 같이 수정해야합니다.
+host는 동시에 2개 일 수 없기에 위와 같은 코드는 로그 수집이 불가하고 따라서 아래와 같이 수정해야한다.
 ```conf
 filter demo_filter { host("example1") or host("example2"); };
 log {

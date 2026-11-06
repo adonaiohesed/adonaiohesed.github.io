@@ -174,11 +174,11 @@ mitmproxy --ssl-insecure --listen-port 8080
 
 ## 개요
 
-모바일 결제 시스템은 연간 수십억 건의 거래를 처리하며 어디서나 볼 수 있게 되었습니다. 이러한 시스템의 보안 아키텍처를 이해하는 것은 모바일 보안 실무자에게 필수적입니다. 이 포스트는 보안 및 침투 테스트 관점에서 **Apple Pay, Google Pay, Samsung Pay, Alipay**를 다룹니다.
+모바일 결제 시스템은 연간 수십억 건의 거래를 처리하며 어디서나 볼 수 있게 되었다. 이러한 시스템의 보안 아키텍처를 이해하는 것은 모바일 보안 실무자에게 필수적이다. 이 포스트는 보안 및 침투 테스트 관점에서 **Apple Pay, Google Pay, Samsung Pay, Alipay**를 다룬다.
 
 ## 공통 아키텍처: 토큰화
 
-모든 주요 모바일 결제 시스템은 핵심 보안 메커니즘을 공유합니다: **결제 토큰화**. 실제 카드 번호(PAN) 대신 **DPAN(Device Primary Account Number)**이라는 토큰을 생성하여 각 거래에 사용합니다. **TSP가 서버 측에서 토큰을 실제 PAN에 매핑하므로 가맹점과 공격자는 실제 카드 번호를 볼 수 없습니다.**
+모든 주요 모바일 결제 시스템은 핵심 보안 메커니즘을 공유한다: **결제 토큰화**. 실제 카드 번호(PAN) 대신 **DPAN(Device Primary Account Number)**이라는 토큰을 생성하여 각 거래에 사용한다. **TSP가 서버 측에서 토큰을 실제 PAN에 매핑하므로 가맹점과 공격자는 실제 카드 번호를 볼 수 없다.**
 
 ## Apple Pay
 
@@ -200,7 +200,7 @@ mitmproxy --ssl-insecure --listen-port 8080
 ## Google Pay
 
 ### 아키텍처
-Google Pay는 Android에서 **HCE(Host Card Emulation)**를 사용합니다 — 전용 보안 요소가 필요 없는 소프트웨어 기반 카드 에뮬레이션입니다.
+Google Pay는 Android에서 **HCE(Host Card Emulation)**를 사용한다 — 전용 보안 요소가 필요 없는 소프트웨어 기반 카드 에뮬레이션이다.
 
 ### 보안 기능
 - Google의 TSP를 통한 **토큰화**
@@ -210,7 +210,7 @@ Google Pay는 Android에서 **HCE(Host Card Emulation)**를 사용합니다 — 
 ## Samsung Pay
 
 ### 아키텍처
-Samsung Pay는 **MST(자기 보안 전송)와 NFC 모두** 지원하여 사실상 모든 결제 단말기와 호환됩니다.
+Samsung Pay는 **MST(자기 보안 전송)와 NFC 모두** 지원하여 사실상 모든 결제 단말기와 호환된다.
 
 - **MST**: 자기 띠 긁기를 에뮬레이션 — 기존 카드 리더기와 호환
 - **Knox**: 하드웨어 기반 보안을 위한 Samsung의 보안 플랫폼
@@ -218,7 +218,7 @@ Samsung Pay는 **MST(자기 보안 전송)와 NFC 모두** 지원하여 사실�
 ## Alipay / WeChat Pay
 
 ### 아키텍처
-주로 **QR 코드 기반**(정적 또는 동적)이며 NFC 기반이 아닙니다.
+주로 **QR 코드 기반**(정적 또는 동적)이며 NFC 기반이 아니다.
 
 ### 보안 우려 사항
 - **정적 QR 코드 사기**: 가맹점의 QR 코드를 공격자의 코드로 교체

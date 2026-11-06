@@ -47,7 +47,7 @@ def generate_post_structure(topic, category="Personal"):
 
     template = f"""## Overview
 
-{topic}에 대한 기본 개념과 원리를 설명합니다.
+{topic}에 대한 기본 개념과 원리를 설명한다.
 
 ## Key Points
 
@@ -59,15 +59,15 @@ def generate_post_structure(topic, category="Personal"):
 
 ### 1. 기초
 
-{topic}의 기본 정의와 목적을 설명합니다.
+{topic}의 기본 정의와 목적을 설명한다.
 
 ### 2. 특징
 
-이 주제의 핵심 특징들을 나열합니다.
+이 주제의 핵심 특징들을 나열한다.
 
 ### 3. 실제 활용
 
-실제 사용 사례나 적용 방법을 설명합니다.
+실제 사용 사례나 적용 방법을 설명한다.
 
 ## 요약
 

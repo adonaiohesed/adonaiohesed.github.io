@@ -176,31 +176,31 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
 ## SSL Pinning 우회 완전 정복: 패키지 리패키징부터 자동화 도구까지
 
-모바일 앱 모의 해킹 시 가장 먼저 마주치는 장애물 중 하나는 바로 **SSL Pinning**입니다. SSL Pinning은 앱이 미리 지정된 서버의 인증서만 신뢰하도록 강제하여, 중간자 공격(MITM)을 통해 네트워크 트래픽을 가로채려는 시도를 무력화합니다. 하지만 보안 분석가와 모의 해커에게는 이 장벽을 우회해야만 앱의 통신 내용을 분석하고 취약점을 찾을 수 있습니다.
+모바일 앱 모의 해킹 시 가장 먼저 마주치는 장애물 중 하나는 바로 **SSL Pinning**이다. SSL Pinning은 앱이 미리 지정된 서버의 인증서만 신뢰하도록 강제하여, 중간자 공격(MITM)을 통해 네트워크 트래픽을 가로채려는 시도를 무력화한다. 하지만 보안 분석가와 모의 해커에게는 이 장벽을 우회해야만 앱의 통신 내용을 분석하고 취약점을 찾을 수 있다.
 
-이 글에서는 가장 전통적인 우회 기법인 **패키지 리패키징(Package Repackaging)**을 통한 수동 우회 방법과, `objection`이라는 강력한 도구를 사용하여 이 과정을 자동화하는 방법을 모두 다룹니다.
+이 글에서는 가장 전통적인 우회 기법인 **패키지 리패키징(Package Repackaging)**을 통한 수동 우회 방법과, `objection`이라는 강력한 도구를 사용하여 이 과정을 자동화하는 방법을 모두 다룬다.
 
 ### 1. 패키지 리패키징을 통한 우회 개요
 
-패키지 리패키징은 다음과 같은 단계로 진행됩니다.
+패키지 리패키징은 다음과 같은 단계로 진행된다.
 
-1.  **APK 추출:** 대상 안드로이드 애플리케이션의 APK 파일을 추출합니다.
-2.  **APK 디컴파일:** 추출된 APK를 Smali 코드로 디컴파일합니다. Smali는 Dalvik/ART 가상 머신의 어셈블리 언어와 유사한 형태입니다.
-3.  **Smali 코드 수정:** SSL Pinning 관련 코드를 찾아 우회 로직을 삽입하거나 기존 로직을 비활성화합니다.
-4.  **APK 리컴파일:** 수정된 Smali 코드를 다시 APK 파일로 리컴파일합니다.
-5.  **APK 서명:** 리컴파일된 APK에 새로운 서명을 합니다. 안드로이드 시스템은 서명되지 않은 앱의 설치를 허용하지 않습니다.
-6.  **APK 설치:** 서명된 APK를 대상 기기 또는 에뮬레이터에 설치합니다.
+1.  **APK 추출:** 대상 안드로이드 애플리케이션의 APK 파일을 추출한다.
+2.  **APK 디컴파일:** 추출된 APK를 Smali 코드로 디컴파일한다. Smali는 Dalvik/ART 가상 머신의 어셈블리 언어와 유사한 형태이다.
+3.  **Smali 코드 수정:** SSL Pinning 관련 코드를 찾아 우회 로직을 삽입하거나 기존 로직을 비활성화한다.
+4.  **APK 리컴파일:** 수정된 Smali 코드를 다시 APK 파일로 리컴파일한다.
+5.  **APK 서명:** 리컴파일된 APK에 새로운 서명을 한다. 안드로이드 시스템은 서명되지 않은 앱의 설치를 허용하지 않는다.
+6.  **APK 설치:** 서명된 APK를 대상 기기 또는 에뮬레이터에 설치한다.
 
-이 과정을 통해 우리는 앱의 내부 로직을 변경하여 SSL Pinning을 무력화하고, 프록시를 통해 앱의 네트워크 트래픽을 성공적으로 가로챌 수 있게 됩니다.
+이 과정을 통해 우리는 앱의 내부 로직을 변경하여 SSL Pinning을 무력화하고, 프록시를 통해 앱의 네트워크 트래픽을 성공적으로 가로챌 수 있게 된다.
 
 ### 2. 준비물 (macOS 환경)
 
-이 가이드에서는 **JDK**, **Android SDK Platform-Tools**가 이미 설치되어 있다고 가정합니다. 추가적으로 필요한 도구는 다음과 같습니다.
+이 가이드에서는 **JDK**, **Android SDK Platform-Tools**가 이미 설치되어 있다고 가정한다. 추가적으로 필요한 도구는 다음과 같다.
 
   * **수동 분석용 도구:**
 
-      * **APKTool:** APK를 디컴파일하고 리컴파일하는 데 필수적인 도구입니다.
-      * **Uber-APK-Signer:** APK 서명을 간편하게 처리해 주는 도구입니다.
+      * **APKTool:** APK를 디컴파일하고 리컴파일하는 데 필수적인 도구이다.
+      * **Uber-APK-Signer:** APK 서명을 간편하게 처리해 주는 도구이다.
         ```bash
         brew install uber-apk-signer
         ```
@@ -208,7 +208,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
   * **자동 분석용 도구:**
 
-      * **Objection:** Frida를 기반으로 하는 동적 분석 및 패치 도구입니다.
+      * **Objection:** Frida를 기반으로 하는 동적 분석 및 패치 도구이다.
         ```bash
         pip3 install objection
         ```
@@ -216,11 +216,11 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
 
 ### 3. [방법 1] 단계별 수동 우회: 패키지 리패키징
 
-이 가이드에서는 가상의 SSL Pinning이 적용된 `VulnerableApp.apk` 파일을 사용한다고 가정합니다.
+이 가이드에서는 가상의 SSL Pinning이 적용된 `VulnerableApp.apk` 파일을 사용한다고 가정한다.
 
 ### 3.1. 1단계: 대상 APK 추출
 
-먼저 테스트할 애플리케이션의 APK 파일을 추출해야 합니다. 앱이 이미 기기에 설치되어 있다면 `adb`를 사용하여 추출할 수 있습니다.
+먼저 테스트할 애플리케이션의 APK 파일을 추출해야 한다. 앱이 이미 기기에 설치되어 있다면 `adb`를 사용하여 추출할 수 있다.
 
 1.  **앱의 패키지 이름 확인:**
 
@@ -229,7 +229,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
     # 예시 출력: package:com.example.vulnerableapp
     ```
 
-    패키지 이름은 `com.example.vulnerableapp`이라고 가정합니다.
+    패키지 이름은 `com.example.vulnerableapp`이라고 가정한다.
 
 2.  **APK 경로 찾기:**
 
@@ -238,7 +238,7 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
     # 예시 출력: package:/data/app/~~xxxxx/com.example.vulnerableapp-yyyyyy==/base.apk
     ```
 
-    경로는 `/data/app/~~xxxxx/com.example.vulnerableapp-yyyyyy==/base.apk`라고 가정합니다.
+    경로는 `/data/app/~~xxxxx/com.example.vulnerableapp-yyyyyy==/base.apk`라고 가정한다.
 
 3.  **APK 추출:**
 
@@ -246,32 +246,32 @@ Objection's `patchapk` command automatically injects SSL Pinning bypass logic in
     adb pull /data/app/~~xxxxx/com.example.vulnerableapp-yyyyyy==/base.apk VulnerableApp.apk
     ```
 
-    이제 현재 디렉토리에 `VulnerableApp.apk` 파일이 있습니다.
+    이제 현재 디렉토리에 `VulnerableApp.apk` 파일이 있다.
 
 ### 3.2. 2단계: APK 디컴파일
 
-추출된 APK 파일을 `APKTool`을 사용하여 Smali 코드로 디컴파일합니다.
+추출된 APK 파일을 `APKTool`을 사용하여 Smali 코드로 디컴파일한다.
 
 ```bash
 apktool d VulnerableApp.apk -o VulnerableApp_decompiled
 ```
 
-이 명령을 실행하면 `VulnerableApp_decompiled`라는 새 디렉터리가 생성되고, 그 안에 앱의 리소스 및 Smali 코드(`smali/` 디렉터리)가 추출됩니다.
+이 명령을 실행하면 `VulnerableApp_decompiled`라는 새 디렉터리가 생성되고, 그 안에 앱의 리소스 및 Smali 코드(`smali/` 디렉터리)가 추출된다.
 
 ### 3.3. 3단계: Smali 코드 수정 (SSL Pinning 우회)
 
-이 단계가 가장 중요하고 어려울 수 있습니다. SSL Pinning 로직은 앱마다 구현 방식이 다르므로, 해당 로직을 찾아 수정해야 합니다. 일반적인 우회 전략은 다음과 같습니다.
+이 단계가 가장 중요하고 어려울 수 있다. SSL Pinning 로직은 앱마다 구현 방식이 다르므로, 해당 로직을 찾아 수정해야 한다. 일반적인 우회 전략은 다음과 같다.
 
-  * **`checkServerTrusted` 메서드 우회:** `X509TrustManager` 인터페이스의 `checkServerTrusted` 메서드는 서버 인증서의 유효성을 검사합니다. 이 메서드가 항상 정상 종료되도록 수정하면 어떤 인증서든 신뢰하게 만들 수 있습니다.
-  * **네트워크 보안 구성(Network Security Configuration) 수정:** Android 7.0 (API 24) 이상에서는 앱 내에서 네트워크 보안 구성 XML 파일을 통해 트러스트 앵커를 설정할 수 있습니다. 이 파일을 수정하여 모든 사용자 인증서를 신뢰하도록 할 수 있습니다.
+  * **`checkServerTrusted` 메서드 우회:** `X509TrustManager` 인터페이스의 `checkServerTrusted` 메서드는 서버 인증서의 유효성을 검사한다. 이 메서드가 항상 정상 종료되도록 수정하면 어떤 인증서든 신뢰하게 만들 수 있다.
+  * **네트워크 보안 구성(Network Security Configuration) 수정:** Android 7.0 (API 24) 이상에서는 앱 내에서 네트워크 보안 구성 XML 파일을 통해 트러스트 앵커를 설정할 수 있다. 이 파일을 수정하여 모든 사용자 인증서를 신뢰하도록 할 수 있다.
 
 **예시: 네트워크 보안 구성 수정**
 
-1.  `VulnerableApp_decompiled/AndroidManifest.xml` 파일을 열고 `<application>` 태그에 다음 속성을 추가합니다.
+1.  `VulnerableApp_decompiled/AndroidManifest.xml` 파일을 열고 `<application>` 태그에 다음 속성을 추가한다.
     ```xml
     android:networkSecurityConfig="@xml/network_security_config"
     ```
-2.  `VulnerableApp_decompiled/res/xml/` 디렉터리에 `network_security_config.xml` 파일을 생성하고 다음 내용을 추가합니다.
+2.  `VulnerableApp_decompiled/res/xml/` 디렉터리에 `network_security_config.xml` 파일을 생성하고 다음 내용을 추가한다.
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
     <network-security-config>
@@ -283,11 +283,11 @@ apktool d VulnerableApp.apk -o VulnerableApp_decompiled
         </base-config>
     </network-security-config>
     ```
-    `src="user"`를 추가함으로써, 앱이 프록시 도구(예: Burp Suite)의 CA 인증서와 같이 사용자가 설치한 인증서를 신뢰하게 되어 SSL Pinning을 우회할 수 있습니다.
+    `src="user"`를 추가함으로써, 앱이 프록시 도구(예: Burp Suite)의 CA 인증서와 같이 사용자가 설치한 인증서를 신뢰하게 되어 SSL Pinning을 우회할 수 있다.
 
 ### 3.4. 4단계: APK 리컴파일
 
-Smali 코드 수정이 완료되었다면, `APKTool`을 사용하여 수정된 디렉터리를 다시 APK 파일로 리컴파일합니다.
+Smali 코드 수정이 완료되었다면, `APKTool`을 사용하여 수정된 디렉터리를 다시 APK 파일로 리컴파일한다.
 
 ```bash
 apktool b VulnerableApp_decompiled -o VulnerableApp_repacked_unsigned.apk
@@ -295,24 +295,24 @@ apktool b VulnerableApp_decompiled -o VulnerableApp_repacked_unsigned.apk
 
 ### 3.5. 5단계: APK 서명 (Uber-APK-Signer 사용)
 
-리컴파일된 APK는 서명이 없으므로 설치가 불가능합니다. `uber-apk-signer`를 사용하여 서명합니다.
+리컴파일된 APK는 서명이 없으므로 설치가 불가능하다. `uber-apk-signer`를 사용하여 서명한다.
 
 ```bash
 java -jar /path/to/uber-apk-signer.jar --apks VulnerableApp_repacked_unsigned.apk
 ```
 
-이 명령을 실행하면 서명된 새 APK 파일(`VulnerableApp_repacked_unsigned-aligned-signed.apk`)이 생성됩니다. 이제 이 파일을 기기에 설치하면 됩니다.
+이 명령을 실행하면 서명된 새 APK 파일(`VulnerableApp_repacked_unsigned-aligned-signed.apk`)이 생성된다. 이제 이 파일을 기기에 설치하면 된다.
 
 
 ### 4. [방법 2] 자동화된 우회: Objection 사용
 
-위에서 설명한 디컴파일, XML 수정, 리컴파일, 서명 과정은 복잡하고 시간이 많이 소요됩니다. **Objection**은 이 모든 과정을 단 하나의 명령어로 자동화하여 SSL Pinning 우회를 매우 간단하게 만들어 줍니다.
+위에서 설명한 디컴파일, XML 수정, 리컴파일, 서명 과정은 복잡하고 시간이 많이 소요된다. **Objection**은 이 모든 과정을 단 하나의 명령어로 자동화하여 SSL Pinning 우회를 매우 간단하게 만들어 준다.
 
 ### 4.1. Objection을 이용한 APK 패치
 
-Objection의 `patchapk` 명령어는 SSL Pinning 우회 로직을 APK에 자동으로 삽입합니다. 특히 `-N` 또는 `--network-security-config` 옵션은 위에서 수동으로 했던 **네트워크 보안 구성(Network Security Configuration)** 방식을 자동으로 적용해 줍니다.
+Objection의 `patchapk` 명령어는 SSL Pinning 우회 로직을 APK에 자동으로 삽입한다. 특히 `-N` 또는 `--network-security-config` 옵션은 위에서 수동으로 했던 **네트워크 보안 구성(Network Security Configuration)** 방식을 자동으로 적용해 준다.
 
-1.  **APK 파일 준비:** 우회하려는 원본 APK 파일(`original.apk`)을 준비합니다.
+1.  **APK 파일 준비:** 우회하려는 원본 APK 파일(`original.apk`)을 준비한다.
 
 2.  **패치 명령어 실행:**
 
@@ -320,16 +320,16 @@ Objection의 `patchapk` 명령어는 SSL Pinning 우회 로직을 APK에 자동�
     objection patchapk --source original.apk -N
     ```
 
-    이 명령어를 실행하면 Objection이 내부적으로 다음 작업을 자동으로 수행합니다.
+    이 명령어를 실행하면 Objection이 내부적으로 다음 작업을 자동으로 수행한다.
 
-      * `apktool`을 사용하여 `original.apk`를 디컴파일합니다.
-      * `AndroidManifest.xml`에 `networkSecurityConfig` 속성을 추가합니다.
-      * 사용자 인증서를 신뢰하도록 설정된 `network_security_config.xml` 파일을 생성합니다.
-      * 수정된 내용을 다시 APK로 리컴파일합니다.
-      * 새로운 키로 APK에 서명합니다.
+      * `apktool`을 사용하여 `original.apk`를 디컴파일한다.
+      * `AndroidManifest.xml`에 `networkSecurityConfig` 속성을 추가한다.
+      * 사용자 인증서를 신뢰하도록 설정된 `network_security_config.xml` 파일을 생성한다.
+      * 수정된 내용을 다시 APK로 리컴파일한다.
+      * 새로운 키로 APK에 서명한다.
 
 3.  **결과 확인:**
-    명령 실행이 완료되면 현재 디렉터리에 `original.objection.apk` 와 같이 이름이 변경된 새로운 APK 파일이 생성됩니다. 이 파일은 이미 SSL Pinning 우회 로직이 적용되고 서명까지 완료된 상태이므로, 바로 기기에 설치하여 테스트할 수 있습니다.
+    명령 실행이 완료되면 현재 디렉터리에 `original.objection.apk` 와 같이 이름이 변경된 새로운 APK 파일이 생성된다. 이 파일은 이미 SSL Pinning 우회 로직이 적용되고 서명까지 완료된 상태이므로, 바로 기기에 설치하여 테스트할 수 있다.
 
     ```bash
     # 생성된 APK 설치

@@ -252,33 +252,33 @@ In this case, attackers need to create an SVG file with the below content. If th
 
 ---
 
-파일 업로드 기능이 있을때에는 다음과 같은 것들을 확인해보면 됩니다. 기본적으로 개발자 입장에서는 white-list or allowlist approach가 이상적입니다.
+파일 업로드 기능이 있을때에는 다음과 같은 것들을 확인해보면 된다. 기본적으로 개발자 입장에서는 white-list or allowlist approach가 이상적이다.
 
 ## Checklist
 1. 파일 확장자 확인하기.
-    - 압축파일일 경우 안의 내용도 확인해야합니다. target path, level of compression, estimated unzip size를 체크해야합니다.
-    - .jpg.php 와 같이 double extensions 체크합니다.
-    - Null bytes such as exploit.jpg%00.php or exploit.jpg\00.php 와 같이 .php가 실행되는지 체크합니다.
-    - 비즈니스 로직에 알맞은 확장자만 허용을 하고 least harmful and lowest risk file type으로 정합니다.
+    - 압축파일일 경우 안의 내용도 확인해야한다. target path, level of compression, estimated unzip size를 체크해야한다.
+    - .jpg.php 와 같이 double extensions 체크한다.
+    - Null bytes such as exploit.jpg%00.php or exploit.jpg\00.php 와 같이 .php가 실행되는지 체크한다.
+    - 비즈니스 로직에 알맞은 확장자만 허용을 하고 least harmful and lowest risk file type으로 정한다.
     - svg 파일을 허용할 경우 SSRF, XXE, XSS 공격에 취약할 수 있다.
-1. File size check - 한도보다 큰 사이즈의 파일을 올릴 수 있는건 아닌지 확인해야합니다.
+1. File size check - 한도보다 큰 사이즈의 파일을 올릴 수 있는건 아닌지 확인해야한다.
     - [Large size file download site](https://testing.taxi/blog/325-giant-file-generator-tool/)
-1. Eicar를 이용한 malicious content 기능이 있는지 확인합니다.
-1. Upload된 파일 Path가 client에서 정해지는지 확인해야합니다. file path는 server단에서 랜던하게 정해져야합니다.
-1. Content-type이 확장자와 제대로 매칭되어 있는지 확인합니다.
-1. 허용하는 파일 확장자 중에서 Web executable script files인 aspx, asp, css, swf, xhtml, rhtml, shtml, jsp, js, pl, php, cgi가 있는지 확인합니다. 있으면 관련 공격을 시도해봅니다.
-1. Image 업로드가 가능한 경우 악성 코드가 담긴 .php파일을 .jpg로 바꿔서 업로드 하거나 악성파일을 올린채 content-type을 image/jpeg로 바꿔서 공격해봅니다.
-1. 파일 이름의 길이제한을 확인합니다. 10000이상의 파일 이름으로 공격을 시도해봅니다.
-1. Authorized users만 file upload가 가능한지 체크합니다.
-1. File을 다른 서버에 저장한지 안 한지 확인하기. 최소한 webroot 밖에 다른 곳에 저장하는 것이 안전합니다.
-1. 파일 실행이 sanbox에서 이루어지는지 체크합니다.
-1. 파일 이름을 "/><svg onload = alert(document.cookie)> 와 같이 바꾸어서 업로드해봅니다.
+1. Eicar를 이용한 malicious content 기능이 있는지 확인한다.
+1. Upload된 파일 Path가 client에서 정해지는지 확인해야한다. file path는 server단에서 랜던하게 정해져야한다.
+1. Content-type이 확장자와 제대로 매칭되어 있는지 확인한다.
+1. 허용하는 파일 확장자 중에서 Web executable script files인 aspx, asp, css, swf, xhtml, rhtml, shtml, jsp, js, pl, php, cgi가 있는지 확인한다. 있으면 관련 공격을 시도해본다.
+1. Image 업로드가 가능한 경우 악성 코드가 담긴 .php파일을 .jpg로 바꿔서 업로드 하거나 악성파일을 올린채 content-type을 image/jpeg로 바꿔서 공격해본다.
+1. 파일 이름의 길이제한을 확인한다. 10000이상의 파일 이름으로 공격을 시도해본다.
+1. Authorized users만 file upload가 가능한지 체크한다.
+1. File을 다른 서버에 저장한지 안 한지 확인하기. 최소한 webroot 밖에 다른 곳에 저장하는 것이 안전하다.
+1. 파일 실행이 sanbox에서 이루어지는지 체크한다.
+1. 파일 이름을 "/><svg onload = alert(document.cookie)> 와 같이 바꾸어서 업로드해본다.
 
 ## Content Type
-Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형을 나타내며, MIME(Multipurpose Internet Mail Extensions) 타입을 기반으로 정의됩니다. Content-Type 값은 클라이언트와 서버가 데이터를 올바르게 처리하고 해석할 수 있도록 도움을 줍니다.
+Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형을 나타내며, MIME(Multipurpose Internet Mail Extensions) 타입을 기반으로 정의된다. Content-Type 값은 클라이언트와 서버가 데이터를 올바르게 처리하고 해석할 수 있도록 도움을 준다.
 
 ### 1. Text Types
-텍스트 데이터에 사용되며, 사람이 읽을 수 있는 콘텐츠를 나타냅니다.
+텍스트 데이터에 사용되며, 사람이 읽을 수 있는 콘텐츠를 나타낸다.
 
 - `text/plain`: 기본 텍스트 파일 (예: `.txt`)
 - `text/html`: HTML 문서 (예: `.html`)
@@ -287,7 +287,7 @@ Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형�
 - `text/csv`: CSV 파일 (예: `.csv`)
 
 ### 2. Application Types
-주로 바이너리 데이터나 특수 데이터를 나타냅니다.
+주로 바이너리 데이터나 특수 데이터를 나타낸다.
 
 - `application/json`: JSON 데이터 (예: API 응답)
 - `application/xml`: XML 데이터 (예: `.xml`)
@@ -300,7 +300,7 @@ Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형�
 - `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`: Excel Open XML 형식 (예: `.xlsx`)
 
 ### 3. Image Types
-이미지 데이터를 나타냅니다.
+이미지 데이터를 나타낸다.
 
 - `image/jpeg`: JPEG 이미지 (예: `.jpg`, `.jpeg`)
 - `image/png`: PNG 이미지 (예: `.png`)
@@ -309,7 +309,7 @@ Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형�
 - `image/webp`: WebP 이미지 (예: `.webp`)
 
 ### 4. Audio Types
-오디오 데이터를 나타냅니다.
+오디오 데이터를 나타낸다.
 
 - `audio/mpeg`: MP3 오디오 파일 (예: `.mp3`)
 - `audio/ogg`: Ogg Vorbis 오디오 파일 (예: `.ogg`)
@@ -317,21 +317,21 @@ Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형�
 - `audio/flac`: FLAC 오디오 파일 (예: `.flac`)
 
 ### 5. Video Types
-비디오 데이터를 나타냅니다.
+비디오 데이터를 나타낸다.
 
 - `video/mp4`: MP4 비디오 파일 (예: `.mp4`)
 - `video/webm`: WebM 비디오 파일 (예: `.webm`)
 - `video/ogg`: Ogg 비디오 파일 (예: `.ogv`)
 
 ### 6. Multipart Types
-복합적인 데이터를 전송하는 데 사용됩니다.
+복합적인 데이터를 전송하는 데 사용된다.
 
 - `multipart/form-data`: 파일 업로드를 포함한 폼 데이터
 - `multipart/alternative`: 다양한 표현 형식을 포함한 데이터 (예: HTML 이메일)
 - `multipart/mixed`: 텍스트와 바이너리 데이터 혼합
 
 ### 7. Font Types
-웹에서 사용하는 폰트 파일에 대한 Content-Type입니다.
+웹에서 사용하는 폰트 파일에 대한 Content-Type이다.
 
 - `font/woff`: WOFF 폰트 파일 (예: `.woff`)
 - `font/woff2`: WOFF2 폰트 파일 (예: `.woff2`)
@@ -339,7 +339,7 @@ Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형�
 - `font/otf`: OpenType 폰트 파일 (예: `.otf`)
 
 ### 8. Other Types
-특정 상황에서 사용되는 Content-Type입니다.
+특정 상황에서 사용되는 Content-Type이다.
 
 - `application/x-shockwave-flash`: Flash 파일 (예: `.swf`)
 - `application/wasm`: WebAssembly 파일 (예: `.wasm`)
@@ -348,7 +348,7 @@ Content-Type 헤더는 HTTP 프로토콜에서 전송되는 데이터의 유형�
 ## Security Vulnerabilities Due to Mismatch Between Actual File Content and Content-Type
 
 ### 1. File Execution Vulnerability
-Content-Type이 `image/png` 또는 `text/plain` 등으로 위장된 악성 파일이 서버에 업로드되면 다음과 같은 문제가 발생할 수 있습니다. 우리가 원하는 파일을 업로드 시키면서 Content-Type을 서버가 허용하는 것으로 변조하여 올리는 시도를 해보는 것이다.
+Content-Type이 `image/png` 또는 `text/plain` 등으로 위장된 악성 파일이 서버에 업로드되면 다음과 같은 문제가 발생할 수 있다. 우리가 원하는 파일을 업로드 시키면서 Content-Type을 서버가 허용하는 것으로 변조하여 올리는 시도를 해보는 것이다.
 
 ### 시나리오
 - 공격자가 PHP 코드를 포함한 파일을 `image/jpeg`으로 위장하여 업로드.
@@ -360,7 +360,7 @@ Content-Type이 `image/png` 또는 `text/plain` 등으로 위장된 악성 파�
 - **업로드 디렉토리 설정**: 업로드 디렉토리를 웹 서버에서 실행 불가능하게 설정.
 
 ### 2. MIME Sniffing Attack
-Content-Type 불일치를 악용하여 브라우저가 파일 내용을 잘못 해석하도록 유도하는 공격입니다.
+Content-Type 불일치를 악용하여 브라우저가 파일 내용을 잘못 해석하도록 유도하는 공격이다.
 
 ### 시나리오
 - 공격자가 악성 JavaScript 코드가 포함된 `.html` 파일을 `text/plain`으로 위장하여 업로드.
@@ -372,7 +372,7 @@ Content-Type 불일치를 악용하여 브라우저가 파일 내용을 잘못 �
 - **Content-Disposition 설정**: 파일 다운로드로만 처리되도록 `Content-Disposition: attachment`를 설정.
 
 ### 3. Evasion of Detection
-악성 파일이 특정 보안 솔루션(예: 안티바이러스, WAF)에서 탐지되지 않도록 Content-Type을 위조하여 업로드될 수 있습니다.
+악성 파일이 특정 보안 솔루션(예: 안티바이러스, WAF)에서 탐지되지 않도록 Content-Type을 위조하여 업로드될 수 있다.
 
 ### 시나리오
 - 공격자가 악성 스크립트를 포함한 `.exe` 파일을 `image/png`으로 위장하여 업로드.
@@ -383,7 +383,7 @@ Content-Type 불일치를 악용하여 브라우저가 파일 내용을 잘못 �
 - **파일 서명 검증**: 파일 헤더를 분석하여 파일 유형을 확인.
 
 ### 4. Denial of Service (DoS) Attack
-Content-Type 불일치로 인해 서버 리소스가 과도하게 사용되거나 비정상적인 처리가 발생할 수 있습니다.
+Content-Type 불일치로 인해 서버 리소스가 과도하게 사용되거나 비정상적인 처리가 발생할 수 있다.
 
 ### 시나리오
 - 공격자가 대용량 바이너리 데이터를 `application/json`으로 위장하여 업로드.
@@ -394,7 +394,7 @@ Content-Type 불일치로 인해 서버 리소스가 과도하게 사용되거�
 - **데이터 처리 로직 분리**: Content-Type과 파일 내용을 일치시키는 별도의 검증 단계 추가.
 
 ### 5. Client-Side Attack (Stored XSS)
-악성 파일이 잘못된 Content-Type으로 처리되어 클라이언트에 전달되면, 클라이언트 측 공격으로 이어질 수 있습니다.
+악성 파일이 잘못된 Content-Type으로 처리되어 클라이언트에 전달되면, 클라이언트 측 공격으로 이어질 수 있다.
 
 ### 시나리오
 - 공격자가 악성 JavaScript가 포함된 HTML 파일을 업로드하면서 Content-Type을 `image/png`으로 설정.

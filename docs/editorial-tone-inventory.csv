@@ -1,0 +1,241 @@
+﻿file,title,category,published,bilingual,worktree_state,korean_records,formal_endings,plain_endings,conversational_endings,self_instruction_endings,note_endings,other_segments,dominant_candidate,review_flags,sha256
+_posts/2018-01-01-mission.md,Who am I?,Personal,True,True,clean,15,38,0,0,0,0,0,formal,genre_review,420f32fc00d5bd36aa3c5a141d7bc1fcbb057d03f6ed4f10aacae71a36a3095d
+_posts/2018-01-15-engineer.md,Engineer?,Personal,True,True,clean,4,0,8,0,0,0,0,plain,genre_review,3b1124ef293809406a5644b8d9912c609e8dd641b92c45f4da018e9eb5ba997c
+_posts/2018-01-30-security_engineer.md,Cybersecurity?,Personal,True,True,clean,21,0,38,0,0,0,0,plain,genre_review,f74a3138c14739090c775a03da1fb663051fa3587bc8bda49da9474835b08c5a
+_posts/2018-02-13-milestone.md,내 삶의 주요 포인트,Personal,False,False,modified,15,2,26,0,0,0,0,plain,mixed_register_candidate;genre_review;unpublished;owner_wip_baseline_required,d01277f5a756a2ec1ec970ae8057aee5dca281786028df3af326bc10d5501c31
+_posts/2018-03-15-useful_site.md,A Collection of Useful Sites,Personal,True,False,clean,2,0,0,0,0,0,2,insufficient,genre_review,7f0d223deb75c885bc0c8a40a3e051ef53c3deca6575e32402f3c89b9da2d1c0
+_posts/2018-03-29-f1_visa.md,F1 비자 관련 알아두어야 할 것들,Personal,True,False,modified,29,0,33,0,1,0,5,plain,instruction_intent_review;genre_review;owner_wip_baseline_required,576f61ad574ccc758f45f8c3a0912a88efe65c1fb93c008322e8bb8ca44e15d8
+_posts/2018-04-13-h1b_greencard.md,H1B 비자와 Greencard에 관하여,Personal,False,False,modified,13,0,24,0,7,0,7,mixed,instruction_intent_review;genre_review;unpublished;owner_wip_baseline_required,7bc493c561ded3bc2a800649f5f369c7c268c4fbd755f473770e4932072a2114
+_posts/2018-04-27-car_maintain.md,Car Maintenance Guide,Personal,True,True,modified,25,0,19,0,2,0,11,plain,instruction_intent_review;genre_review;owner_wip_baseline_required,36fb352a1371def6f2b7923c153df5ea9412b253a495d7daf53d9865b8b82ddb
+_posts/2018-05-12-phone_in_korea.md,한국에서 휴대폰 개통할때,Personal,True,False,clean,35,0,0,1,0,2,11,insufficient,genre_review,c6dcf292421754f703e99ca8ac6bbed167605643b53dfe4e0ffe37772b50d7ea
+_posts/2018-05-27-problem_solve.md,Problem & Solve,Personal,True,True,clean,80,33,15,0,0,0,36,mixed,mixed_register_candidate;genre_review,0cd8cbc118b9063c6a879e06cf4e28fb711a1f87ae6af446812855ca370d38b5
+_posts/2018-06-10-life.md,The meaning of life,Personal,True,True,clean,13,0,37,0,0,0,28,plain,genre_review,92b8076bc38001235cfc8d228bc17a8b0374e1237202ef29ee02f200fbde0da8
+_posts/2018-06-25-money.md,Money,Personal,True,True,clean,14,0,52,0,1,0,7,plain,instruction_intent_review;genre_review,9e324838129ef9ad867e5839cd144f057149830d17d7814336b7d5a0e4e0f6c3
+_posts/2018-07-09-cyber_world.md,Cyber World,Personal,False,False,modified,6,0,23,0,0,0,9,plain,genre_review;unpublished;owner_wip_baseline_required,2cbb6b8203307530ca734022e13f6378e7dfdd0b64c463ccc9413010ec4f4669
+_posts/2018-07-24-data_trash.md,Data Waste & Dark Data,Personal,True,True,clean,6,0,26,0,0,0,0,plain,genre_review,bc8b09ec6b03a256abb46a464691c093123a9e5dfb26d7e032acb0fd1ce0caa3
+_posts/2018-08-08-ai_future.md,Future of AI,Personal,True,True,clean,21,0,74,0,0,0,6,plain,genre_review,9db9145f05a70fd33c97a6eba777daf155d9b37fdc367e9c27daa930b58e74ed
+_posts/2018-08-22-hacker.md,The world of hacker,Personal,True,False,clean,11,0,63,0,0,0,2,plain,genre_review,1309a2df33c45cb705713a7189fc0256d183ffc170ccf822f18945bf4efa98bd
+_posts/2018-09-06-cybersecurity_in_korea.md,한국의 사이버 보안에 대한 나의 시선,Personal,False,True,modified,25,0,51,0,0,0,6,plain,genre_review;unpublished;owner_wip_baseline_required,f50b7aae638e30187d677c1ba69ae1318dd7a7ac08975396f73a85db7451f8fa
+_posts/2018-10-05-general_behavior_questions.md,General Behavior Questions,Career,True,True,clean,5,15,0,0,0,0,0,formal,genre_review,44dbd1968125bfc7c3ed930cdd72afc83afef98fc769911b40bd56aee39540a2
+_posts/2018-10-20-amazon.md,Amazon LP,Career,True,True,clean,79,0,8,0,0,0,156,plain,genre_review,d103ed4e751f8f009c28be5739e2b40c907287b290178241c1553c64ac1672e5
+_posts/2018-11-03-googler.md,Google LP,Career,True,False,clean,1,1,2,0,0,0,1,mixed,genre_review,28a5c246344e002b20a2e2ba215c68625583dc2da0c45d735abe45c6e53a9bc4
+_posts/2018-12-02-interview_tip.md,During The Interview Process,Career,True,False,clean,24,0,37,0,12,0,6,mixed,instruction_intent_review;genre_review,1922aa4c94e14d8dc4a8847e1974c9b1f4eb74c4b8dc83073b1e3d0236b65dba
+_posts/2018-12-17-privacy_engineering.md,Privacy Engineering Position Interview,Career,True,False,clean,30,9,18,1,1,0,10,mixed,mixed_register_candidate;instruction_intent_review;genre_review,317f0b88f24267c688dfbf5394c66c27c3cbce695a94e84ee1f90b8fab911cb2
+_posts/2019-01-01-system_design_basic.md,System Design Interview,Career,True,False,clean,118,216,32,0,0,1,9,formal,mixed_register_candidate;genre_review,0e5236701e0b5ee3d31812c32994a092c5176509de736d36c144bd5ba1f39eb3
+_posts/2019-01-15-cybersecurity_questions.md,Cybersecurity Interview Questions,Career,True,False,clean,0,0,0,0,0,0,0,insufficient,genre_review;no_korean_prose_sample,dd8e52e90b1b817602938610461ca88bec596e0a87a5de0bed71d7f93f3618cd
+_posts/2019-01-30-job_hunting.md,Reflections on My Job Search Journey,Career,True,True,clean,18,0,74,0,5,0,3,plain,instruction_intent_review;genre_review,1570adbb65a833a65837bbdfb1b63fd295aa202d33e39945dea2dbbda28f8294
+_posts/2019-02-13-relocation.md,Relocation Considerations,Personal,True,True,clean,81,56,1,5,0,0,21,formal,conversational_voice_review;genre_review,da16bd447da8d9b285b3834c371b6f5a979cd904a6c06e58e5dcc3e18322998b
+_posts/2019-02-28-offer_negotiation.md,Offer Negotiation,Career,True,False,modified,60,1,49,0,6,0,3,plain,instruction_intent_review;genre_review;owner_wip_baseline_required,7e94f1807fcf3795a7354076a64f56e95f9b5fd4102568a93a374d75f58bb825
+_posts/2019-03-15-after_accept_offer.md,What To Do After Accepting An Offer,Career,True,True,clean,37,37,0,1,0,0,0,formal,genre_review,9ae777b320597c78cd23da9ddb327277bf1ba9c09a048da9b7942dca8bab9379
+_posts/2019-03-29-jekyll_post.md,Jekyll posting 관련,Tools,True,False,clean,18,0,6,0,0,0,5,plain,,2e53b670cf543e153401cb1db70889e42346cb112055e9ef2e9a4d1fec0233bc
+_posts/2019-04-13-cassandra_docker.md,Cassandra 설치 및 사용 방법,Engineering,True,False,clean,5,3,0,0,0,0,0,formal,,ec489e612dbeaf8e595009754cdf756ddfed727c0f9e1bc7f68f727e87fadfe8
+_posts/2019-04-27-influxdb.md,InfluxDB,Engineering,True,True,clean,30,21,1,1,0,0,8,formal,,7a5d348a1cf0b2577790c238ee0ad26ee51a87300025f9728e12058d240def68
+_posts/2019-05-12-linux_type.md,Linux Distribution Landscape,Engineering,True,True,clean,63,0,64,0,4,0,14,plain,instruction_intent_review,5e177c40c7d086a2c872df04219948573da5ea6cdbb9fc40e51e4026f97f4b2d
+_posts/2019-05-25-owasp_top_10_2017.md,OWASP Top 10 - 2017,Security,True,True,clean,146,241,0,0,0,0,38,formal,,b710a8bd560a955e644ef7d756836c29116069eaff656e7df46cee7c510ba5e2
+_posts/2019-05-27-linux_basic.md,Linux Fundamentals for Engineers,Engineering,True,True,clean,51,0,37,0,3,1,22,plain,instruction_intent_review,5619fc8cc17a6a4d0d688769e3974e215f7de7d011555832fd44e3507aa333f6
+_posts/2019-06-10-staticIP_setting.md,Configuring Static IP on Linux Servers,Engineering,True,True,clean,37,0,29,0,2,0,19,plain,instruction_intent_review,e598e27fb82e6dd72b3f15f5cb0891f1f8217f1cb18aed7f66ee80423d0db5cf
+_posts/2019-06-25-regex.md,Regular Expressions: The Practical Guide,Engineering,True,True,clean,73,0,12,0,0,0,18,plain,,45ddd84826d8c3388e83ab7f9bf21fd49e40ad5ce2944c948e962b4df489ed32
+_posts/2019-07-09-linux_redirection.md,Linux I/O Redirection and File Descriptors,Engineering,True,True,clean,47,15,2,4,0,0,6,mixed,mixed_register_candidate;conversational_voice_review,8112e114022a96a821d82bb5adb55d4c4681ff1118b789330344595b16578112
+_posts/2019-07-24-linux_command.md,Essential Linux Commands for Power Users,Engineering,True,True,clean,27,0,26,0,5,0,3,plain,instruction_intent_review,f902c3b203d4f3d4467e24da4ad417cfc46c42854f51928a252cf9de7123232a
+_posts/2019-08-08-shell_script.md,Shell Scripting That Actually Works in Production,Engineering,True,True,clean,37,0,21,0,8,1,11,mixed,instruction_intent_review,f57fb476b59562ba47e00d0a27a024577ab6bd33f4fb2c262cc2f606c29d3cfd
+_posts/2019-08-22-cs_release.md,c# 리눅스 배포 및 데몬 등록법,Engineering,True,False,clean,11,9,0,0,0,0,2,formal,,92cd6889525fe17c0008759ff7bafac9f624de57a32246eef831830ebe5ad825
+_posts/2019-09-06-linux_log.md,Linux Logging Architecture,Engineering,True,True,clean,44,0,32,0,4,0,11,plain,instruction_intent_review,cb9092d9806d5f137fbce2f03ba196087364a9f932829f4a8baf0817363209b9
+_posts/2019-09-21-nodejs_install.md,Nodejs 설치 및 사용 방법,Engineering,True,False,clean,7,0,5,0,0,0,1,plain,,802100f498581561b8f36ceea12cdd74a6a96185d4b7df2f5060460df220c271
+_posts/2019-10-05-nlog.md,NLog.Targets.Syslog 사용법,Engineering,True,False,clean,6,5,0,0,0,0,1,formal,,c3cd989312876a8f1803618b6a6a28d718371a859b9b0bb9849323fe38e6b0c6
+_posts/2019-10-12-ipv4_ipv6.md,IPv4 and IPv6,Security,True,True,clean,65,18,0,5,0,0,15,mixed,conversational_voice_review,f5a130c0e72f6a11820f2c35838b0cd8a0e0bac7e9065b41fd34db29a31d042f
+_posts/2019-10-20-syslog-ng_advanced.md,Syslog-Ng 심화 사용,Engineering,True,False,clean,8,0,5,0,0,0,0,plain,,23a8423d6e1e67f96981be9beb56617aa264fb395566eddc100cf15311aaa3d3
+_posts/2019-11-03-syslog-ng_install.md,Syslog-Ng 설치 및 사용 방법,Engineering,True,False,clean,59,2,28,0,0,0,26,plain,mixed_register_candidate,19049165012900649520e317c981111def60bec870c5d8c04154c773f1caefee
+_posts/2019-11-18-vim.md,Vim Shortcuts,Tools,True,True,clean,55,0,0,0,0,1,40,insufficient,,4cdd62d476c35d88d8dc1d4e3dd0b577fb22abeda03df40fb3f3b2e1d41b4c4b
+_posts/2019-12-03-putty.md,Putty 테마 설정,Tools,True,False,clean,18,0,9,0,0,0,7,plain,,17db292c35fc37710dc519d4d1c40c9d22ae62fdf3321edb00c7ceb23305b04b
+_posts/2019-12-17-emacs.md,Emacs 설치 및 사용법,Tools,True,False,clean,79,0,11,0,0,0,56,plain,,5b9364384d2f6904acd3dcd92af7e392694200896dfcf0ecd1efb1a1cc591c91
+_posts/2020-01-01-mac_automation.md,Automating Mac Mini and MacBook Air Setup - AirPlay Connect and Audio Device Switching,Tools,True,True,clean,18,19,0,0,0,0,10,formal,,2df87fc2b22ed6225646e93984379aa388d6ea07f5c4181806bb21c8d50ea39f
+_posts/2020-01-15-terminal_setup.md,Terminal Setting,Tools,True,True,clean,34,12,0,0,0,0,13,formal,,038e87948852a4bae19a6de4f87313e1631ae124ef3f502951441cb00fa2031c
+_posts/2020-01-30-vim_customizing.md,Vim Customizing,Tools,True,False,clean,2,0,2,0,0,0,0,insufficient,,d9a27905c16fb2efbde0d09eea64e41b3ae94be91ea8b03314219e3826ef11d8
+_posts/2020-02-14-linux_cheatsheet.md,Linux Cheatshhe,Tools,True,True,clean,31,15,0,0,0,2,12,formal,,a8f24e2951e7dfe217d754da6531e544b2945440ba32f13aff7adcb9b6788496
+_posts/2020-02-28-python_install.md,Python Environment Management Done Right,Engineering,True,True,clean,41,0,18,0,2,0,8,plain,instruction_intent_review,af08cadc1128ee1702b830ec83f9556f393cc982442cca302cf59db2a58abeed
+_posts/2020-03-14-python_data_type.md,Python Data Types: What Every Engineer Should Know,Engineering,True,True,clean,44,0,14,0,0,0,13,plain,,870c9488fd75a5ed5caf16df8a84631f0d9e7390886107fca85b25988e1c2424
+_posts/2020-03-28-python_control.md,Python Control Flow and Iteration Patterns,Engineering,True,True,clean,28,0,4,0,0,0,10,plain,,cccb32449d131c2997312f9e446063295b8f98652387585f2ce0ae46014252e2
+_posts/2020-04-12-python_function_class.md,Python Functions and Classes: The Complete Mental Model,Engineering,True,True,clean,24,0,7,0,0,0,8,plain,,99ef1337decbc444fd6feaaf59809c1e22c9c08d22ab720d206af107e493f16b
+_posts/2020-04-27-python_key_characteristics.md,Python's Distinctive Features: Pythonic Idioms That Actually Matter,Engineering,True,True,clean,25,0,4,0,0,2,7,plain,,8d8bbc57ae818ef1f565be304437ad866860873aef31d56bb9c424e68425d42d
+_posts/2020-05-11-python_algorithm.md,파이썬 알고리즘에 사용되는 함수,Engineering,True,False,clean,45,0,45,0,10,1,10,plain,instruction_intent_review,1352fd19f366d4091a5a363be45e0a9adca536329f598dc70bf9a93d7a99b4fe
+_posts/2020-05-26-xml_json_yaml.md,XML JSON YAML,Engineering,True,True,clean,81,11,0,0,0,2,51,formal,,7c76787ea4c4116d42d1ef00c30c3902916827a1d88728f6d4386edaf12d30d0
+_posts/2020-06-09-dom.md,DOM,Engineering,True,False,clean,54,44,0,2,0,0,3,formal,conversational_voice_review,2be5fd18bf426c806ac5e7f37c05534edc600bd3ada3cb66fd6e7a59e483ecf3
+_posts/2020-06-17-ajax.md,AJAX and Security,Security,True,True,clean,32,17,0,0,0,1,14,formal,,ae32d3ff8d05022909b3894fdcb27ac446f319fc15d37bdbab19809a258d6e5c
+_posts/2020-06-24-elasticsearch_concept.md,Elastic Search 개념,Tools,True,False,clean,35,11,10,0,0,2,11,mixed,mixed_register_candidate,f22d8f11b9898d1d34c7f9227a21a333b9705703ede2b0a1dd969364487d9d14
+_posts/2020-07-09-elasticsearch_install.md,Elastic Search 설치 및 실행(v 6.6.1),Tools,True,False,clean,35,3,14,0,0,0,19,plain,mixed_register_candidate,5de28e301f1f45bdc8f6018ea823b8f937cdfb77e23ed3c55706b9f6bcd16b56
+_posts/2020-07-23-elasticsearch_usage.md,Elastic Search 사용법(v 6.6.1),Tools,True,False,clean,42,5,41,0,0,0,8,plain,mixed_register_candidate,08fb0298b9ac939872b79bca6c5bbb46cbc303cd88f412db67ce8b28b311ec8c
+_posts/2020-08-07-elasticsearch_cluster.md,Elastic Search 클러스터 개념 및 구성,Tools,True,False,clean,31,50,3,0,0,2,11,formal,mixed_register_candidate,9f3619ccb81f7c34db034a203e27893bf3722181fd24c415bdad01742a1c5875
+_posts/2020-08-21-search_guard.md,Search Guard 설치 및 실행,Tools,True,False,clean,22,0,5,0,0,0,12,plain,,e01e021647d234b00d1b4a805e73c256a3bca480c7434c1c3a99082e9753a304
+_posts/2020-09-05-kibana_install.md,Kibana 설치 및 실행(v 7.0.1),Tools,True,False,clean,25,0,10,0,0,0,13,plain,,7d4d37fb6253fad5998bd67b8238765321e8e46b9206958f8113c4310ee7bf71
+_posts/2020-09-20-logstash.md,Logstash 설명 및 간단 사용법,Tools,True,False,clean,38,0,27,0,0,1,14,plain,,103d7782d8acd87dac8292fe52bb553813c4fe8cdaf947f4b00675aeae91a94c
+_posts/2020-10-04-elk_ssl_setting.md,ELK SSL 적용 (v 7.1.0),Tools,True,False,clean,31,27,0,0,0,0,0,formal,,df68ff33c34309025672ad819ade803f20ba04e4b290b54a21ecb9190c7213e6
+_posts/2020-10-19-git_flow.md,Git Flow,Engineering,True,False,clean,55,41,0,1,0,0,2,formal,,70ff964cbdd99872a6ab6840a0c302b512fc53f4cc99dc2b2f10f15ce6580791
+_posts/2020-11-02-git_pull_request.md,Git Pull Request,Engineering,True,False,clean,57,35,0,2,0,0,13,formal,conversational_voice_review,4173fb83540adc5b24ec0bdfeb7dd2b04865b78efeac313bfa2c0d92babebcff
+_posts/2020-11-17-git_action.md,Git Action,Engineering,True,False,clean,42,21,0,0,0,0,0,formal,,bf5bac401bcbfc6263a18e59dff6ada7d5e8e4f881f07acf99fcdec31c33d6b2
+_posts/2020-12-02-cybersecurity_certificates.md,What Cybersecurity Certifications Should I Get Next?,Career,True,True,clean,83,0,8,0,0,6,66,plain,genre_review,e3b6534b888d1bbff99f7c13d751a74351bae246f2ce6372df330c2724de9c79
+_posts/2020-12-16-oscp_report_automation.md,Automating OSCP Reports,Career,True,True,clean,73,76,0,1,0,1,12,formal,genre_review,f88e6e6a36e93f9cfc9c6252bf24fe86d5134203b5735526684ba8b3d63a5352
+_posts/2020-12-17-deserialization.md,Deserialization Attacks,Security,True,True,clean,32,13,0,0,0,0,17,formal,,8f09204385a926cd3a901311a58c521d76bbeaef5c5e439ca0792d627d90f155
+_posts/2020-12-31-introduction_to_forensics.md,Introduction to Forensics,Security,True,False,clean,23,0,27,0,0,0,1,plain,,a8e8d893d257c80bda0c14adf780fb722e780f11c039858f9121ecda1181dc74
+_posts/2021-01-01-http_desync_attack.md,HTTP Request Smuggling (Desync Attack),Security,True,True,clean,34,10,0,0,0,0,17,formal,,50405064b30d53ce6392d54d53b344e0629a90b02947f63515a13a3d8f90ff90
+_posts/2021-01-14-crime_investigation.md,Crime Investigation,Security,True,False,clean,23,0,25,0,0,0,2,plain,,b276bb3366260301b30cff2be967046c5a536a81c8e6ab0b0fd45ea5685d6853
+_posts/2021-01-29-evidence.md,Evidence,Security,True,False,clean,25,0,25,0,0,0,2,plain,,a2650a88d795ce3d1a65fee9d091bf463424b83c404619357260e37b230077f5
+_posts/2021-02-13-ftk_imager.md,FTK Imager,Tools,True,False,clean,11,0,13,0,0,0,0,plain,,60686c4a8c57b81ae15c9f390cb356dc9ab01c88f16f9759511676f65fbc32eb
+_posts/2021-02-27-autopsy.md,Autopsy,Tools,True,False,clean,8,0,8,0,0,0,0,plain,,5b125f84734323558d96524040e87ad122c29c1dcf0619aa1a016fd9856b5231
+_posts/2021-03-14-registry_analysis.md,Registry Analysis,Tools,True,False,clean,7,0,7,0,0,0,0,plain,,bdb5071bdf1a8d39a43c05214d6b13379cd173097fc92dd9cc85e29689805fd5
+_posts/2021-03-29-set_uid_program.md,SET-UID Program,Security,True,True,clean,19,0,21,0,0,0,3,plain,,bee8455e0391a62d57c77e047226ca1770fbc2d3c80676a4f2beb4eb9b318ec1
+_posts/2021-04-12-shellshock_attack.md,Shellshock Attack,Security,True,True,clean,30,0,30,0,0,0,0,plain,,784bd145a451e27107770e2b91192a785616838d143f235162c41237c939c85a
+_posts/2021-04-27-buffer_overflow_attack.md,Buffer overflow attack,Security,True,True,clean,43,0,56,0,0,0,6,plain,,6b718967914e86a00f517fad5f5f778eca491b1836aadb9c974a7ffe720b75cc
+_posts/2021-05-11-return_to_libc_attack.md,Return to libc Attack,Security,True,True,clean,30,0,33,0,0,1,2,plain,,8b61049cb44ba9b1e792d7f5363d95edf413fcd121d0676f7f419578a8ee7713
+_posts/2021-05-26-race_condition_vulnerability.md,Race Condition Vulnerability,Security,True,True,clean,20,0,29,0,0,0,0,plain,,25b0f56375cf642d0775f5f5158faabd7962b989b320402bc00764aeef5cfe36
+_posts/2021-06-10-owasp_top_10_mobile_2017.md,OWASP Top 10 Mobile- 2017,Security,True,True,clean,169,136,0,0,0,1,30,formal,,2616cd0193586daee2083a8203686dcb88be73cb51a65c3daec59538e197b7f4
+_posts/2021-06-10-the_dirty_cow_race_condition_attack.md,The Dirty COW Race Condition Attack,Security,True,True,clean,27,0,31,0,0,0,1,plain,,e76d91d1ffd56f92e7badfe90a8a3371045f763f4dfc2c2dcb1bdadbf6cba8a1
+_posts/2021-06-24-ssh.md,SSH 취약점,Security,True,False,clean,9,0,15,0,0,0,0,plain,,91d3e5cdfa51c36f497e946e7764632d02aea972879961fa79a70f1b5f6523b2
+_posts/2021-07-09-solarwinds.md,SolarWinds hack,Security,True,False,clean,5,0,8,0,0,0,0,plain,,a4e2215cfde6e5c94251754f2a1a5bbba2fd908f41fe23ef9036d606f33ad0a5
+_posts/2021-07-23-metasploit.md,Metasploit,Security,True,True,clean,27,0,10,0,0,0,15,plain,,8b7ff77092e7e745702bc73074f89f230911ffe24d191666b3ae7c3c4eebdbc6
+_posts/2021-08-07-burp_suite_scan.md,Brup Suite - Scan,Tools,True,True,clean,72,58,0,1,0,0,0,formal,,a55c71c7b349e400517907cb736ff07734d4815512d2d408c47aa85ffa3134bf
+_posts/2021-08-22-burp_suite_intruder.md,Brup Suite - Intruder,Tools,True,True,clean,168,217,0,0,0,0,23,formal,,9f3bde3538d7d7bff4f079ab4fad6e60820151142c459e15f186185fb3de8310
+_posts/2021-09-05-burp_suite_extensions.md,Brup Suite - Extensions,Tools,True,False,clean,0,0,0,0,0,0,0,insufficient,no_korean_prose_sample,fdfcbcebc228c347d3be748b568b87f4a8754c222eaff6a20ff56fb4949cc497
+_posts/2021-09-20-android_pentest.md,Android Pentesting Note,Security,False,True,clean,0,0,0,0,0,0,0,insufficient,no_korean_prose_sample;unpublished,bf7420db62a61a07cf241c260a6b1bc9450837ccff04779d71744604f7113b44
+_posts/2021-10-04-frida_install.md,Frida Install And Trouble Shooting,Tools,True,True,clean,39,39,0,4,0,0,7,formal,conversational_voice_review,b633b013148b7d596684363dcbb61910d0da4036616c99846f0e509dbf017d45
+_posts/2021-10-19-nmap.md,Nmap,Tools,True,True,clean,156,15,0,0,0,7,100,formal,,c748253395ef0ea533e89a8d3b5178a8202f0c42c39d59ad8cf792bc9a1f023f
+_posts/2021-11-03-nc.md,NetCat,Tools,True,True,clean,87,0,23,0,0,0,5,plain,,83719e70e0ac050af78463d7c7a6d1f71895dbada6b2e2d7e261e13413a9f1ff
+_posts/2021-11-17-hping.md,Hping,Tools,True,True,clean,25,3,0,0,0,0,14,formal,,da8e0a23bea784c8a6d5b1047fb3a1ab0154571a3ff2594b7543242af616ebae
+_posts/2021-12-02-nslookup_dig.md,Nslookup & Dig,Tools,True,False,clean,48,38,2,0,0,0,2,formal,mixed_register_candidate,802c73fd7b0c5e47dce8cfd88e1bd26d4c9634b69bd9d20fef67fafe0b3275ea
+_posts/2021-12-16-pdns.md,Passive DNS Tools,Tools,True,True,clean,18,0,27,0,1,0,0,plain,instruction_intent_review,27e13a7d9f9699c344dbdcc4746c293e2e12935ebd39363477edf60ca5c48db0
+_posts/2021-12-31-shodan.md,Shodan,Tools,True,True,clean,50,43,0,0,0,0,9,formal,,6f7ced7cbb318237b56199cc93884ddb26ded565704ffbaa0a6867e62aafad58
+_posts/2022-01-01-ios_security_tweaks.md,iOS Security Tweaks for Pentesters,Security,True,True,clean,34,12,0,0,0,0,24,formal,,34216b0e0bdc561823f981735795ed098744b544d55b5383e89067684a77c804
+_posts/2022-01-15-waybackurls.md,Waybackurls,Tools,True,True,clean,32,27,0,0,0,0,3,formal,,0aee51471ee7f0051ed5a168b7a0f888eb470e6d996c8fab12d56c4ec802c5af
+_posts/2022-01-29-tiny_url_case.md,Tiny URL case,Engineering,True,False,clean,10,13,1,0,0,0,1,formal,,56dad9655b7818f253796f27d691ee77b452ae19c72147470448b0ae9c13af52
+_posts/2022-02-13-htb_start.md,Hack the Box Introduction,Security,True,False,clean,8,8,0,0,0,0,1,formal,,fb74e93c137434f150c11052dd3837475aeeb7444ceb6c371bceaba6966e558e
+_posts/2022-02-27-hash_encryption.md,Hash & Encryption,Security,True,True,clean,94,149,0,0,0,0,7,formal,,f24e4c4989477088ab5526ff779e46c0aaee9a7902846a37f50b1bf884998091
+_posts/2022-03-01-qr_code_pentesting.md,QR Code Pentesting,Security,True,True,clean,34,9,0,0,0,2,14,formal,,fe5faf50c5046377a32cf2a99ec053a776c96da821925ebe0f0fc9b6d6161b8e
+_posts/2022-03-14-digitalsigniture.md,Digital Signatures and Certificates,Security,True,True,clean,59,61,1,2,0,0,16,formal,conversational_voice_review,3573a352fcc8c75094a105baef9bdb84f48bdc9c305adf699527cfe79abca123
+_posts/2022-03-29-encode_decode.md,Encoding And Decoding,Security,True,True,clean,34,56,0,0,0,0,1,formal,,656e1958c2d7f83a87ee3c52831acd2fb941382e1d8fc7f9d8d90d5853da7b8b
+_posts/2022-04-12-openssl.md,Certificate Generation By Using OpenSSL,Security,True,True,clean,28,27,0,0,0,0,0,formal,,129a299467463f2bd64cb56ee94f75ecb283a3eb10fa5e03c04d900d21e07664
+_posts/2022-04-27-pgp_smime.md,PGP and S/MIME,Security,True,True,clean,78,75,0,2,0,0,2,formal,conversational_voice_review,363f011766b106302e6f78e578c2ec2a9e5091d7f6dc2067e240dad7fe2b8387
+_posts/2022-05-11-tls.md,Everything about TLS,Security,True,True,clean,108,31,0,0,0,0,53,formal,,b10aa6031faeaca2b03c2e2d6cf6aa250427dc61a1c72c8afb49629926364ec5
+_posts/2022-05-26-open_network_vulnerabilties.md,Open Network Vulnerabilities,Security,True,True,clean,140,2,0,0,0,0,111,insufficient,,3b563dad247964dcad77341c759c46a922b56adbc92cb3bc46d09036191a62f7
+_posts/2022-06-10-packet_sniffing_and_spoofing.md,Packet Sniffing and Spoofing,Security,True,True,clean,32,44,0,0,0,0,0,formal,,e808171482bdb2924a7c0cbd14d56f1c86b2873f74f5aad1409d39519c7c089a
+_posts/2022-06-24-tcp_udp.md,TCP/UDP,Security,True,True,clean,179,30,0,0,0,4,88,formal,,bff9d074b2a0f4632fe73007af86512aebe0361c5726cf9f250398ebd11abc8c
+_posts/2022-07-09-dns_data_exfiltration.md,DNS Data Exfiltration,Security,True,True,clean,237,20,0,0,0,5,169,formal,,9e42093c30dbb0fc8a840ae7b3db024aaeba21e58dedc6c7ee317a8df4dcf6cd
+_posts/2022-07-23-vpn.md,Virtual Private Networks (VPN),Security,True,True,clean,103,32,0,0,0,1,71,formal,,b5f12e32f48dbfa78c21aea33012b882c84e063ddfdf8af6055327db9b5c24e5
+_posts/2022-08-07-osi7_tcpip.md,OSI 7 & TCP/IP,Security,True,True,clean,183,13,0,0,0,0,106,formal,,405dd83f1abb02e861480c794567ba2eae8e48329b3362f3b2c8c153a9ecfa66
+_posts/2022-08-22-zero_trust.md,Zero Trust Architecture,Security,True,True,clean,129,82,0,0,0,0,3,formal,,448d74efd7abc11990250a0c3c80b367815c1910af948a7f2592dab95c5ab21a
+_posts/2022-09-05-arp.md,Address Resolution Protocol (ARP),Security,True,True,clean,73,60,0,3,0,0,9,formal,conversational_voice_review,f8da56f0d778bab971392064a5c72ca5280c62bd2e1bbd169a7097e53b4ea1e6
+_posts/2022-09-20-wifi_pineapple.md,WiFi Pineapple,Security,True,True,clean,24,0,36,0,0,0,1,plain,,023643d82d44fa23a525755cec92f54b3868e9d814ebed7986c92182586a8a7d
+_posts/2022-10-04-lightning_network.md,Lightning Network,Security,True,True,clean,21,0,30,0,0,0,0,plain,,f0d14e502eed882c13f7f4cbd471a49236cdeee49491c25541b4f00c70617ad4
+_posts/2022-10-19-blockchain_ecosystem.md,What is Blockchain?,Security,True,True,clean,176,232,4,7,0,0,22,formal,mixed_register_candidate;conversational_voice_review,7410a63e491a4b2ff0c9f0c433fd7ee22caa5ed4735df2113f0a88d33673f5e8
+_posts/2022-11-03-smart_contract.md,Smart Contract,Security,True,True,clean,18,0,24,0,0,0,0,plain,,4ed16f0de98571823ea67c27ec7fe8864d4a2220addea17f51f41be248df8797
+_posts/2022-11-17-defi.md,Decentralized Finance (DeFi),Security,True,True,clean,47,29,0,0,0,0,0,formal,,bc8452e9b9fab1939c647f929d6832a27589fe85246833cd4d1a2b85fab0968d
+_posts/2022-12-02-mobile_code_signing.md,Mobile Code Signing,Security,True,True,clean,102,18,0,1,0,1,19,formal,,ca25bc9cc9f50f039865b0399779bffc5911a337bd69bbc0f684398c664d4c7d
+_posts/2022-12-17-proxy_protocol.md,Proxy Protocols,Security,True,True,clean,34,18,0,0,0,0,1,formal,,ee7147a888935ee51456f69b95af61a360526966752126d6d937e71e226b9613
+_posts/2022-12-31-mobile_app_types.md,Types of Mobile App,Security,True,True,clean,88,85,0,0,0,0,10,formal,,92de042cec09aafd8bcd11efc9ab1fac5a35f1e53b2a888313cd87ca575815af
+_posts/2023-01-01-thick_client_pentesting.md,Thick Client Penetration Testing,Security,True,True,clean,46,12,0,0,0,0,25,formal,,ef52077edaf8138c430f99fdac573acf20ddf8f079c5502786af61d072e62703
+_posts/2023-01-15-mobile_platform_security.md,Mobile Platform Security,Security,True,True,clean,33,36,0,0,0,0,0,formal,,7da3635fc994e85d7581979fa410367389c0cb08a88bf24620bc80ac79f5bda5
+_posts/2023-01-29-anatomy_mobile.md,The Anatomy of Mobile App,Security,True,True,clean,68,35,0,0,0,0,26,formal,,9e0c28f8c14110f771279fd7e131a1c2d3c5cd9c95980e7e9196ec5eda63070c
+_posts/2023-02-13-keystore_keychain.md,Android Key Store & iOS Keychain,Security,True,True,clean,67,51,0,0,0,0,19,formal,,38c91d300c99143923b81377c610a12fd549f2996a51b9ad0ebcdbd28c81ab52
+_posts/2023-02-28-rooting_jailbreak.md,Rooting & Jailbreak,Security,True,True,clean,119,105,0,4,0,2,15,formal,conversational_voice_review,d810bb383b4054e8bc533a1885de46d28db0aec9f7a1d3a8d88f35dc7de2381a
+_posts/2023-03-14-cert_pinning.md,Certificate Pinning,Security,True,True,clean,89,63,0,4,0,0,13,formal,conversational_voice_review,852578da66bb5ba5d2945af04d2c982f029b3bcf9246840e04a4401acc2f471d
+_posts/2023-03-29-pinning_bypass.md,Bypass pinning by repackaging - Android,Security,True,True,clean,59,55,0,0,0,0,9,formal,,9b806c24250b37a7afdfb1bad4fe5652db97ca755e7564c2a0de2464e7c57320
+_posts/2023-04-12-obfuscation.md,Obfuscation,Security,True,True,clean,29,0,53,0,0,0,4,plain,,94ab54448cae9a9341d5ed515179bfc496300bb04ec5419cbcec6079330680a4
+_posts/2023-04-27-frida.md,Frida,Security,True,True,clean,55,44,1,7,0,0,12,formal,conversational_voice_review,716e71f75792b28a6797cd5d173d202b23063c3692585020aa36ff7e77d79e91
+_posts/2023-05-12-anti_tamper.md,Anti-Tamper,Security,True,True,clean,78,56,0,1,0,0,11,formal,,a86d87f8dd16452eda0575bbabda0bcd6c9bafd7b8b39491ed43d49075fa4b00
+_posts/2023-05-15-kubernetes_engineering.md,Kubernetes: From Zero to Production,Engineering,True,True,clean,127,35,0,8,0,0,27,formal,conversational_voice_review,06f61bf49ab0a211d85b48ab8152f15f178d6e4aa5c35d4a274f8d4bc8c6a819
+_posts/2023-05-20-terraform_cloud_engineering.md,Infrastructure as Code: Mastering Terraform,Engineering,True,True,clean,29,27,0,4,0,0,3,formal,conversational_voice_review,aa4dd01c6f1e498e7c7d3ba98997cabcbd3a7a2968f6313341a9bc7d1386dd5f
+_posts/2023-05-26-app_attest_play_integrity.md,App Attest & Play Integrity,Security,True,True,clean,111,46,0,0,0,0,49,formal,,e7fd7f8e404f02f2064f7e89b4b9f03d2472dd0e12451143a3d549b3e0ed86da
+_posts/2023-06-09-owasp_top_10_2021.md,OWASP Top 10 - 2021,Security,True,True,clean,179,267,0,0,0,1,63,formal,,d6c1035ff26894814f642d1a5b0d4880bc76208881d0da73269bd8d79d58af94
+_posts/2023-06-24-flutter_security.md,Flutter App Security & ReFutter,Security,True,True,clean,26,14,0,0,0,0,8,formal,,98740877483a9ceb1443f8ccde55e83f2a2dc4abf4bccbd7b62e286525cfcabd
+_posts/2023-07-09-client_side_auth.md,Bypassing the Client-Side Authentication Mechanism,Security,True,True,clean,54,41,0,0,0,0,10,formal,,40d1d42a2670e48008fdbcb71ffa247f5c3d764416e2c9fd5e119fc7bad2acf9
+_posts/2023-07-24-android_penetration_test_check_list.md,Android Penetration Test Check List,Security,False,True,clean,99,0,0,0,0,0,0,insufficient,no_korean_prose_sample;unpublished,a90436a507f9f09835d8a56d7c170ee39a46cf794bdda39829c8ceaca1edc6da
+_posts/2023-08-07-array.md,Array,Engineering,True,True,clean,159,15,0,0,0,2,91,formal,,e5a4e5716272cd569a9fdf2f96c4bedc4a8dc2f65f1e4eb1a30fd1ff47535007
+_posts/2023-08-22-tress.md,Tree,Engineering,True,False,clean,3,0,3,0,0,0,0,plain,,573eca126eb794431dada417617fc6e36058cdee9c459a00c2f6473ff81c716c
+_posts/2023-09-05-string.md,String,Engineering,True,False,clean,0,0,0,0,0,0,0,insufficient,no_korean_prose_sample,e7449480123848f229dcc128fb5ed74fb557e1b7f6a8caa6ae20ea3d5cd11ffa
+_posts/2023-09-20-greedy.md,Greedy,Engineering,True,True,clean,43,42,0,4,0,0,12,formal,conversational_voice_review,bd91edbe7c608f9705fce86f2e485e43cbedcf241d6c2e22198a82bf7248ad5d
+_posts/2023-10-05-dp.md,Dynamic Progamming,Engineering,True,True,clean,4,0,4,0,0,0,0,plain,,b155785ced1f134b0104061b6e2b7e6ab05fba0d889d5f038b335e2c6e6c5124
+_posts/2023-10-12-owasp_masvs_mastg.md,OWASP MASVS and MASTG,Security,True,True,clean,41,10,0,0,0,0,21,formal,,b86e6d9ad7b7f64bc7e41a5647ddf68cddaf8b56325551b50b136257da8eb3dc
+_posts/2023-10-19-binary_search.md,Binary Search,Engineering,True,True,clean,1,0,0,0,0,0,0,insufficient,no_korean_prose_sample,0aad10c16be6c0d3e993ef3da713e26ecbfb8c66eaca87eafc2e04f9a6522114
+_posts/2023-11-03-heap.md,Heap,Engineering,True,True,clean,9,0,6,0,0,0,5,plain,,2d5da2ec025e5f02df582aee46bfaa5ac9e6560fe49fc734635c16089b2d20d4
+_posts/2023-11-17-backtracking.md,Backtracking,Engineering,True,True,clean,39,39,1,3,1,0,3,formal,conversational_voice_review;instruction_intent_review,16205403765b7e168188e3bb3b7598eb894fed6da9719d4457371e7f9c909383
+_posts/2023-12-02-ad_ldap.md,Active Directory and LDAP,Security,True,True,clean,15,0,11,0,0,0,6,plain,,1777b97a8dc319b3c80b4587937fb957eca6c92cefc2fb7e06c8e9e24f6bff61
+_posts/2023-12-17-authentication_authorization.md,Authentication and Authorization - JWT,Security,True,True,clean,34,6,21,0,0,1,14,mixed,mixed_register_candidate,3f90969b5122546c22d8b358a6524778672a1938eeeb80db71ee814e27c5c0d2
+_posts/2023-12-31-oidc_oauth2.md,OpenID Connect & OAuth 2.0,Security,True,True,clean,62,78,1,3,0,0,18,formal,conversational_voice_review,cc89570508ec1ed8b7625ff9cbd8123fabdb05748565437a81e5528c5a5d2d79
+_posts/2024-01-01-career_roadmap_2024.md,Career Roadmap & Reflection 2024,Personal,True,True,clean,20,13,0,0,0,0,7,formal,genre_review,991666d4b361b8b807dcc1bb4637baff444480f55271f51c6284b5998142c8a6
+_posts/2024-01-15-saml.md,Security Assertion Markup Language (SAML),Security,True,True,clean,48,31,0,0,0,0,6,formal,,991e11404ba6801d1958842c3ee16ae1269cf6fb8332a6e7d3ddc56459a14b3d
+_posts/2024-01-29-sso.md,Single Sign-On (SSO),Security,True,True,clean,97,96,0,2,0,0,33,formal,conversational_voice_review,926eff58802d5e66e9518b4570b45ccec674bf5e90551d958292093e705ffa8a
+_posts/2024-02-13-fido.md,Fast Identity Online (FIDO) & WebAuthn,Security,True,True,clean,26,25,0,0,0,1,7,formal,,4dd3b44e7e00f0a84176e15ee83a5352c82c3fadd0904978ee50c7058ef7a9ca
+_posts/2024-02-28-passkey.md,Passkey,Security,True,True,clean,122,108,0,0,0,0,19,formal,,d09d54f55c5b4e902bdd382f74876999b14bf9ebd495ca848f4a545bc62158ce
+_posts/2024-03-13-sql_injection_attack.md,SQL Injection,Security,True,True,clean,164,120,15,0,0,0,46,formal,mixed_register_candidate,51604d62847ceda366633219d37206d6bd6d72603299def80852f366e548d2b4
+_posts/2024-03-28-cross_site_scripting_attack.md,Cross-Site Scripting Attack (XSS),Security,True,True,clean,73,114,0,0,0,0,12,formal,,0ed948e2676c052608449ef3223a33c49e6dc66814fe204cd54951e16c076cf5
+_posts/2024-04-11-cross_site_request_forgery.md,Cross-Site Request Forgery (CSRF),Security,True,True,clean,93,110,3,1,0,0,12,formal,mixed_register_candidate,a365587dd1dc9b1401bb45b0989697479a2b023e8b9e42df332956cbe66b3423
+_posts/2024-04-26-ssrf.md,Server-Side Request Forgery (SSRF),Security,True,True,clean,91,76,0,2,0,2,35,formal,conversational_voice_review,4ed76dcd4e6b9ebbb8767df2c2fe9ea945e685ffbc1bd3e4bdeba7d86382e5d2
+_posts/2024-05-11-injection_attacks.md,Injection Attacks Beyond SQL and XSS,Security,True,True,clean,69,47,0,0,0,1,35,formal,,1a81a745c54043ef942db4fd715abe627a4133fd0e25373a84dd4fe49e51b7d7
+_posts/2024-05-26-ios_sideloading.md,iOS Sideloading with Xcode,Security,True,True,clean,48,9,0,0,0,0,13,formal,,b5290066be1690d35fd6dda044b80b43714b340bddb87834c01c143811362079
+_posts/2024-06-10-entra_id.md,Microsoft Entra ID (Azure AD) Security,Security,True,True,clean,43,11,0,0,0,1,23,formal,,61d8aa16e636884cd5a94fe9c69ebf25ee6f9946ac053f36a49d8641118492f2
+_posts/2024-06-24-cookie_and_session.md,Cookie & Seession Security,Security,True,True,clean,94,62,0,0,0,0,22,formal,,e588ac4bd41c9a24114eaf47a7ff29763cd87973f2ce29dd7537da95dd867fb9
+_posts/2024-06-24-owasp_top_10_mobile_2024.md,OWASP Top 10 Mobile- 2024,Security,True,True,clean,94,27,0,0,0,2,50,formal,,bffef1c6666c7a5a3de542646cfc2bd73cb0d081f8ffbf482bed93cb341450d0
+_posts/2024-07-08-dissecting_http_headers.md,Dissecting HTTP Headers,Security,True,True,clean,52,44,0,15,0,1,6,mixed,conversational_voice_review,e529daade17654d2e551d0618cc1425fb45e508f80f50e7f8bec59e3b455ca52
+_posts/2024-07-23-file_upload.md,File Upload Feature Penetration Test,Security,True,True,clean,101,36,2,0,0,3,58,formal,mixed_register_candidate,56e675b69938122236abc2999c5f24eb529ac5285fd669070bc88a69efbf7709
+_posts/2024-08-06-soap.md,Simple Object Access Protocol (SOAP),Security,True,True,clean,73,56,0,0,0,0,6,formal,,0a8faad568be4723944f2b70c58ce63a701337ff5453ee13a4d403024cf8953b
+_posts/2024-08-21-jwt_pentest.md,JWT Penetration Test,Security,True,True,clean,40,32,0,4,0,0,4,formal,conversational_voice_review,58e40157c6aede9f3bd0982e9497801f6d6c78d0196f96ce9ac69a21c4ca7e81
+_posts/2024-09-05-browser_extension_penetration_test.md,Browser Extension Penetration Test,Security,True,True,clean,65,61,0,0,0,0,14,formal,,8e7f59590dd85da06dfdda51f1ebf4748286b0f617fc65d7f1bb651a0b335c7f
+_posts/2024-09-12-docker_web_vulnerabilities.md,Docker and Web Server Vulnerabilities,Security,True,True,clean,32,7,0,0,0,1,15,formal,,b6c5aa5599a1d07ab3f26228b477301f852420927465e9044938ebe511a9c462
+_posts/2024-09-19-http_status_codes.md,HTTP Status Codes,Security,True,True,clean,20,38,0,0,0,0,0,formal,,c587d0738c89ce3b63df5c79ff4dcdb7d268c2b35e5d9f275224f7e1adbdb3d0
+_posts/2024-10-04-secure_code_review.md,Secure Code Review,Security,True,True,clean,48,42,2,0,0,0,24,formal,mixed_register_candidate,151ffd7cf0fa021c29f69d2dc707f2bb7fe0a5bb25487bc5393c45cede293bb0
+_posts/2024-10-18-web_shells_reverse_shells.md,Web Shells and Reverse Shells,Security,True,True,clean,67,56,0,0,0,0,16,formal,,e375d0755cbdd402c1481f058218e47a65c62252dbc68216440325c9ed7e6b29
+_posts/2024-10-25-rbac_principles_and_best_practices.md,Role-Based Access Control: Design Principles and Best Practices,Security,True,True,clean,57,39,1,1,0,0,7,formal,,591a888a534edae3531c5375cf0d018ac7fda86e6ae08a003d4279388c2760a4
+_posts/2024-11-02-waf.md,Web Application Firewall (WAF),Security,True,True,clean,93,88,1,0,0,0,25,formal,,d4809ee995f6b1de0da99a36025e899dc5c401143f29a05e0609e50e84b15945
+_posts/2024-11-10-zero_trust_security.md,"Zero Trust Security: Never Trust, Always Verify",Security,True,True,clean,93,47,0,3,1,0,23,formal,conversational_voice_review;instruction_intent_review,b32cd45f8ba37dc31226037c364a166cf04dc992c61d8df7951466d714172790
+_posts/2024-11-17-ssti.md,Server-Side Template Injection (SSTI),Security,True,True,clean,25,18,0,0,0,0,14,formal,,f2f4179e1c87b2a8802a0c69562aa3f37aa13e0d594636a1fb85f5c84eebb621
+_posts/2024-12-01-mitre_attck.md,MITRE ATT&CK,Security,True,True,clean,129,28,0,1,0,0,86,formal,,f0d4e7a1261e139cd4ff05de7f4d90059301478c302065062a7bbcd4072d1602
+_posts/2024-12-05-abac_attribute_based_access_control.md,Attribute-Based Access Control: Dynamic Authorization for Modern Systems,Security,True,True,clean,43,11,0,3,0,0,8,mixed,conversational_voice_review,df4a7af5e6625c9614201b51a71b709f1fe2d470125beb3164e1aa92dca14a40
+_posts/2024-12-16-ids_ips.md,IDS & IPS,Security,True,True,clean,60,51,0,0,0,0,5,formal,,734b19da5a6ade2be29c1f34c44d661c7ffaf9de679811cb457bf817013265f5
+_posts/2024-12-20-endpoint_protection_hardening.md,Endpoint Protection and Hardening: A Defense-in-Depth Guide,Security,True,True,clean,62,30,0,0,0,0,15,formal,,1ee54134bbf681a8a92d5fcb4b1811b3ff3631daeffdd32244c695dc67b76ea4
+_posts/2024-12-30-siem.md,Security Information and Event Management (SIEM),Security,True,True,clean,32,43,1,0,0,0,3,formal,,13523cd9988c26002555b456fe18a361a2fa29d2cb502661e7de54053954a1ff
+_posts/2025-01-01-mobile_payment_security.md,"Mobile Payment Security - Apple Pay, Google Pay, Samsung Pay, Alipay",Security,True,True,clean,37,8,0,0,0,2,21,formal,,e771d1b05b79ecab8355b6d71b4bf87995f80c502397da27e31cb3b043bccf08
+_posts/2025-01-14-threat_modeling.md,Threat Modeling,Security,True,True,clean,91,20,4,0,0,5,59,formal,mixed_register_candidate,836b12865de720d72a805d594fd2fbe3abde6ee6c99b1045e62959a21e37de5c
+_posts/2025-01-29-diamond_model.md,Diamond Model of Intrustion Analysis,Security,True,True,clean,20,23,0,0,0,0,5,formal,,627472556bf62b8d97eb6aeb55f494303b58c369b990b8f9a0f39333ad3f9e1c
+_posts/2025-02-12-Introduction_AI.md,Introduction to AI,AI & ML,True,True,clean,83,39,0,0,0,0,33,formal,,936106cfd9d6dc45adcae3282bed3a47d73d6af1dac03e1a0d2fb02d9b7cd0f3
+_posts/2025-02-20-soar_security_orchestration.md,"SOAR: Security Orchestration, Automation and Response",Security,True,True,clean,40,24,0,9,0,0,8,mixed,conversational_voice_review,38e297d2aaf11afdfd39e5fad2513b003eb57d8702a87b9b92ea45fce918cdc4
+_posts/2025-02-27-knn_algorithm.md,k-Nearest Neighbors (k-NN) Algorithm,AI & ML,True,True,clean,32,23,0,0,0,0,6,formal,,1eeea38fd5fe2a2c6c08607bef116262f4113e400327320a03573a7f686193a9
+_posts/2025-03-13-isolation_forest.md,Isolation Forest,AI & ML,True,True,clean,30,32,0,0,0,0,2,formal,,64d49a44c91dfb77b7c187eb379f069fed4541911c8f429fbb894e392d2d86aa
+_posts/2025-03-28-payment.md,Payment Ecosystem,Security,True,True,clean,37,51,0,0,0,0,4,formal,,4b7ea773646118d463feb3d01c3e3c72f36d8cdafef94a8162c3a1d41c9adc24
+_posts/2025-04-12-risk_management_methodology.md,Risk Management Methodology,Security,True,True,clean,31,35,0,0,0,0,6,formal,,e64203dcefce98267313e973df094b54ed19890590cb16c9527cead90fbf3c82
+_posts/2025-04-26-payments_industry_and_regulatory_concepts.md,Payments Industry and Regulatory Concepts,Security,True,True,clean,51,21,0,0,0,2,21,formal,,34b5319128f796b74f93ec59bd29ef3c51adc43b47ed1e66056e5d1e0f8e2ce4
+_posts/2025-05-11-security_control_domain.md,Security Control Domains and Associated Roles,Security,True,True,clean,83,0,1,0,0,2,58,insufficient,,e8b12dc99362952f7567a60f316d0b1a978530f4034c7fc2d43a31caa65a9d9f
+_posts/2025-05-25-cloud_security.md,Cloud Security Overview,Security,True,True,clean,64,3,2,0,0,2,37,mixed,mixed_register_candidate,00af81706a8cdebc32dcbbd3afdff411a87c5603e731ff8f95a491fc86a94808
+_posts/2025-06-09-nacl.md,AWS Network ACL (NACL),Security,True,True,clean,97,7,0,2,0,5,71,mixed,conversational_voice_review,07bde1dfdf315e952c17477993cb76e3ab33db3d0fbbfcdb60381a5bff8e80f3
+_posts/2025-06-24-edr.md,Endpoint Detection and Response (EDR),Security,True,True,clean,79,7,0,0,0,3,57,formal,,3c98d35e7b9e396a3aef324d01605e47899c483f3a3aa84dd43bdbe6efd6a254
+_posts/2025-07-08-edr_bypass.md,EDR Bypass,Security,True,True,clean,120,47,0,0,0,1,45,formal,,3fd6408bc523e70e8173feb0933dbce5f5abe727cdb601d84d8ba56d4bf87735
+_posts/2025-07-23-social_eigineering.md,Social Engineering,Security,True,True,clean,28,52,0,0,0,0,4,formal,,6b99a161aaa3ecd3b6b7d76ddd3fde695f58b55e790d4aef5f2f3740aee58b05
+_posts/2025-08-06-asumed_breach.md,Assumed Breach: Why Your Firewall Is No Longer Enough,Security,True,True,clean,43,0,60,0,3,0,15,plain,instruction_intent_review,e579f37bd559efa73a3898bc02c70935075458b93cb9656d78896e8b99fb37d2
+_posts/2025-08-21-gen_ai.md,Introduction of GenAI,AI & ML,True,True,clean,32,26,0,0,0,0,1,formal,,9705041f54eeaa9b948ed37e42687f1dd3989a6414a1c105696663aa9d58aade
+_posts/2025-09-05-mcp.md,Model Context Protocol (MCP),AI & ML,True,True,clean,68,71,0,8,0,0,13,formal,conversational_voice_review,6205db9b5f6267830f3e774d8aa5cc240f2d5bc8b67e18745bf67d1b4b8df624
+_posts/2025-09-19-rag.md,Retrieval-Augmented Generation (RAG),AI & ML,True,True,clean,37,48,0,1,0,0,12,formal,,1760322699584e34dd831b831aa4d6336f7fa0050ffcf1baf6f385b33ab5a314
+_posts/2025-10-04-agent.md,AI agent,AI & ML,True,True,clean,40,43,0,1,1,0,9,formal,instruction_intent_review,905f5653affbf49232da038b4cccc9fd4d83e86d665369b2c669a6dc43616cb6
+_posts/2025-10-18-gen_ai_penetration_check_list.md,Gen AI Penetration Test Check List,AI & ML,True,True,clean,142,32,0,0,0,1,67,formal,,b97d028d707472f43fff146719a0507ea04bbb6a0061b1c2749bf4746af04f4a
+_posts/2025-11-02-key_roles_in_data_governance.md,Key Roles in Data Governance and System Security,Security,True,True,clean,57,36,0,0,0,0,6,formal,,4827170b39dfd7d48daca5075da40d558fc9447122fa932a41f15659708e459f
+_posts/2025-11-17-cyber_kill_chain.md,Cyber Kill Chain,Security,True,True,clean,64,92,0,0,0,0,7,formal,,87d1bac7bd97157888b1b6d1668cb09e36f0c71447287b5859e4c9d1991bab64
+_posts/2025-11-18-coupang.md,Coupang LP,Career,False,False,clean,38,0,72,9,1,0,18,plain,conversational_voice_review;instruction_intent_review;genre_review;unpublished,a33a7bed9bf72baf9db0503a1b4328c7c57f01b82a06a0377f9ba30d5607d49d
+_posts/2025-12-01-opencti.md,OpenCTI,Security,True,True,clean,79,30,0,0,0,0,59,formal,,896c150b7baf435063ca142dee96e306b065610f7e8b97c70d907ffb7090b65e
+_posts/2025-12-02-owasp_10_smart_contract_2025.md,OWASP Smart Contract Top 10 - 2025,Security,True,True,clean,67,0,26,0,0,0,45,plain,,99b992e21b7689fff48f075e29ef38a453208d430a9b26fcac5d0c0782f79479
+_posts/2025-12-16-osint.md,Open Source Intelligence (OSINT),Security,True,True,clean,33,29,0,0,0,0,4,formal,,4383f0da7521c54f9f47d05d6056f187bfb55c0d6850ec7831787e4992c01d42
+_posts/2025-12-28-mobile_instance_call.md,"Mobile App Internals - Lifecycle, Instant App, IPC & Instance Call",Security,True,True,clean,134,38,0,0,0,7,42,formal,,e5353addf4f9149b9304bec159d155977c09b03c8bde72e8ddf4aa4a5cb9ba67
+_posts/2026-01-01-mindset_in_next.md,How I will work in 2026,Personal,True,True,clean,29,0,26,0,0,12,9,plain,genre_review,129a01fe61809e9fc52ef5ad17e5fd2b5d612c66f451a0958fa9eed4b651ee92
+_posts/2026-01-13-ui-ux-frontend-foundations.md,Advanced CSS Animations: Mastering Scroll-Triggered Narratives,Engineering,True,True,clean,10,11,0,0,0,0,0,formal,,d2258ea4f9b55a753cd9539b6ab83692dd322c35f7ed357bf7a22c918dda12f3
+_posts/2026-01-27-frontend-ui-terminology.md,Frontend & UI/UX Terminology: The Visual Language of the Web,Engineering,True,True,clean,153,52,0,2,0,0,26,formal,conversational_voice_review,83c8c37f8910f4261d1b1ac2d4c3fc0955f994165fa8813b371ff853e7b71f13
+_posts/2026-02-04-multi_agent_systems.md,Multi-Agent Systems,AI & ML,True,True,clean,53,28,0,4,0,0,18,formal,conversational_voice_review,b0d375aac7cdab4c2e09882ced77b676aac6963b924ab7f29bd115f9f2b28487
+_posts/2026-02-11-agent_orchestration.md,Agent Orchestration Patterns,AI & ML,True,True,clean,40,31,0,2,0,5,14,formal,conversational_voice_review,d7cc89db26e6d5e53a4c2bb85e0db70f020b2c4158c323489b45b7a4dd622c52
+_posts/2026-02-18-langchain_framework.md,LangChain Framework for AI Agents,AI & ML,True,True,clean,34,29,0,3,0,0,8,formal,conversational_voice_review,03604c1534903eaeb0f72bbf090c7da743cfc61946c30556fe877d73a82a1597
+_posts/2026-02-25-llm_comparison.md,Comparing LLMs for Agent Development - Claude vs Codex vs Gemini,AI & ML,True,True,clean,31,29,0,1,0,0,9,formal,,e2db09948effd69afce72b605ea918ecd172a7b4cab842fe6f18c9f97f4b5ff0
+_posts/2026-03-04-claude_code_agent.md,Claude Code as an AI Development Agent,AI & ML,True,True,clean,31,20,0,10,0,0,15,mixed,conversational_voice_review,514e372909e78c90cfde0619ceb55147e5b79c10737b5321655716804c33554b
+_posts/2026-03-11-agent_development_guide.md,Building AI Agents - Architecture and Best Practices,AI & ML,True,True,clean,36,19,0,11,1,0,14,mixed,conversational_voice_review;instruction_intent_review,ad3b09e790a6441ca3b67f1c365e2a873c92ebc139d9cf424315b69e2f59e9a4
+_posts/2026-03-18-claude_md_skill_md.md,Writing Effective CLAUDE.md and SKILL.md,AI & ML,True,True,clean,6,6,0,2,0,0,1,mixed,conversational_voice_review,5c5fd75afe72f6416e4f4b00d65e01655611dbccf1866445637223050bbbf727
+_posts/2026-03-25-agent_security.md,Security Considerations for AI Agents,AI & ML,True,True,clean,41,12,0,10,0,0,21,mixed,conversational_voice_review,28b1400bb2ed173fd354a32bfd4431a5364867633bc999f31d8be1efc97113fd
+_posts/2026-03-27-assumed_breach_methodology.md,Assumed Breach Methodology: Building the Technical Controls,Security,True,True,clean,36,0,17,0,2,0,8,plain,instruction_intent_review,e85b8f45b1d69ba33c40fc5931a46870991eedd4b75f44c48137f33e8c489e01
+_posts/2026-04-09-mobile_hacking_scenarios.md,How Attackers Hack Mobile Devices - Real Scenarios,Security,True,True,clean,67,28,0,0,0,1,32,formal,,6e65a6a82c1c15f94551810246de0ae85a924c2d0d0e807512125068113f238a
+_posts/2026-04-25-deeplink.md,Mobile Deep Links - Attack Surface and Pentesting Guide,Security,True,True,clean,71,22,0,0,0,0,12,formal,,d37fd009a6d19fab895cf1fd871f838a0b36afb9685c4e1fa4cd8e8060a0a914
+_posts/2026-04-27-api_pentesting_guide.md,API Pentesting: A Comprehensive Guide,Security,True,True,clean,29,24,0,11,0,0,0,mixed,conversational_voice_review,ef24b82d2bd2989a52c009b85944c2d5d91ad06b79b2fbb3011dbe6650f74fe3
+_posts/2026-05-05-career_roadmap_2026.md,Career Roadmap & Reflection 2026,Personal,True,True,clean,19,0,27,0,0,0,2,plain,genre_review,94c713c5f887f0d193e718b1db5e984c9ced0e15c8584a62b5f53b414e25fa6e
+_posts/2026-05-14-offensive_security_aws_k8s.md,Offensive Security Fundamentals in AWS & Kubernetes,Security,True,True,clean,65,33,0,2,0,0,22,formal,conversational_voice_review,9564daefc3d301627f518260df28b7b544a9b0d7ff283e5cc48a7ab796fad593
+_posts/2026-06-15-graceful_departure_checklist.md,Graceful Departure - What To Do at Your Current Company After Securing a New Job,Career,True,True,clean,80,0,38,0,3,15,25,plain,instruction_intent_review;genre_review,ce027d1386886a8199ddd577a173ef4de010c27e8bb9818fcf2cbbe0dc56a8d4
+_posts/2026-07-06-new_chapter_us_bank.md,How I will work at U.S. Bank,Personal,True,True,untracked,33,0,18,0,8,11,14,mixed,instruction_intent_review;genre_review;owner_wip_baseline_required,d866984359486a6f9c33636110b93ba770d472c0a311d224d2cae64557e10aa2

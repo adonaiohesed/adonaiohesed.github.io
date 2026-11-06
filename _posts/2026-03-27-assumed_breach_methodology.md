@@ -323,7 +323,7 @@ Teams celebrate "we reduced dwell time from 73 to 14 days." That's good, but it 
 
 ---
 
-> **시작 전:** 이 글은 실무 기술 가이드입니다. Assumed Breach 개념을 처음 접하신다면, 먼저 [Assumed Breach: 방어선이 더 이상 충분하지 않은 이유](/posts/asumed_breach/)를 읽고 개념을 이해한 후 구현에 들어오시길 권장합니다.
+> **시작 전:** 이 글은 실무 기술 가이드이다. Assumed Breach 개념을 처음 접하신다면, 먼저 [Assumed Breach: 방어선이 더 이상 충분하지 않은 이유](/posts/asumed_breach/)를 읽고 개념을 이해한 후 구현에 들어오시길 권장한다.
 
 ## 철학에서 운영으로
 

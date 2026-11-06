@@ -10,7 +10,7 @@ date: 2020-07-23 17:16:48
 ---
 ## 정보 확인
  
-* 실행 후 브라우저 혹은 curl로 elastic search에 담긴 정보를 확인 할 수 있습니다.
+* 실행 후 브라우저 혹은 curl로 elastic search에 담긴 정보를 확인 할 수 있다.
 
     |Elastic Search|Relational DB|CRUD|
     | :--------: | :-----------: | :-----------: |
@@ -19,11 +19,11 @@ date: 2020-07-23 17:16:48
     |POST|INSERT|CREATE|
     |DELETE|DELETE|DELETE|
 
-* curl로 위의 정보를 기본적으로 사용 할 수 있으며 my_index3(예시)의 mapping정보를 받고 싶을 때에는 아래와 같은 명령어로 확인 할 수 있습니다.<br>
+* curl로 위의 정보를 기본적으로 사용 할 수 있으며 my_index3(예시)의 mapping정보를 받고 싶을 때에는 아래와 같은 명령어로 확인 할 수 있다.<br>
 <img alt=" " src="/assets/images/date_mapping.png" width="500px">
-* localhost:9200/_mapping : 모든 index에 관한 mapping에 대한 정보를 보여줍니다.
-* localhost:9200/books/_search?pretty : books index에 있는 모든 정보를 예쁘게 보여줍니다.
-* 뒤에 ?pretty를 넣으면 JSON이 보기 좋게 출력됩니다.
+* localhost:9200/_mapping : 모든 index에 관한 mapping에 대한 정보를 보여준다.
+* localhost:9200/books/_search?pretty : books index에 있는 모든 정보를 예쁘게 보여준다.
+* 뒤에 ?pretty를 넣으면 JSON이 보기 좋게 출력된다.
 
 다양한 예제로 사용해보기 위해 [generator 사이트](https://next.json-generator.com/)를 이용
 

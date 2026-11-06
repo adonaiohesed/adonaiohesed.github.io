@@ -10,7 +10,7 @@ date: 2019-04-13 08:38:24
 ---
 ## Cassadnra에 대한 소개
 
-* 잘 정리된 [블로그](https://meetup.toast.com/posts/58) 가 있으니 참고하시기 바랍니다.
+* 잘 정리된 [블로그](https://meetup.toast.com/posts/58) 가 있으니 참고하시기 바란다.
 
 ## Docker에서 설치 후 실행
 
@@ -18,13 +18,13 @@ date: 2019-04-13 08:38:24
 $ sudo docker pull cassandra
 ```
 
-* 설치 후 컨테이너 실행을 합니다.
+* 설치 후 컨테이너 실행을 한다.
 
 ```console
 $ sudo docker run --name some-cassandra --network some-network -d cassandra:tag
 ```
 
-* 컨테이너 실행 후 정상 작동 확인을 위해 다음 명령어를 실행합니다.
+* 컨테이너 실행 후 정상 작동 확인을 위해 다음 명령어를 실행한다.
 ```console
 $ sudo docker exec -it <container name> cqlsh
 ```

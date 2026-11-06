@@ -103,17 +103,17 @@ prompt_context() {
 ## 1. Oh My Zsh로 터미널 변신하기
 
 ### Oh My Zsh란?
-Oh My Zsh는 터미널을 화려하고 강력하게 만들어주는 오픈소스 프레임워크입니다. Bash 대신 Zsh 셸을 사용하여 터미널의 생산성을 크게 향상시킬 수 있습니다.
+Oh My Zsh는 터미널을 화려하고 강력하게 만들어주는 오픈소스 프레임워크이다. Bash 대신 Zsh 셸을 사용하여 터미널의 생산성을 크게 향상시킬 수 있다.
 
 ### 설치 방법
-터미널에서 다음 커맨드를 실행하세요:
+터미널에서 다음 커맨드를 실행한다:
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ### 테마 설정
-Oh My Zsh의 가장 큰 장점 중 하나는 다양한 테마입니다. `.zshrc` 파일을 수정하여 테마를 변경할 수 있습니다.
+Oh My Zsh의 가장 큰 장점 중 하나는 다양한 테마이다. `.zshrc` 파일을 수정하여 테마를 변경할 수 있다.
 
 ```bash
 # ~/.zshrc 파일 열기
@@ -126,22 +126,22 @@ ZSH_THEME="agnoster"  # 인기 있는 테마 중 하나
 ## 2. 터미널 색상 커스터마이징
 
 ### iTerm2 설치
-기본 터미널 앱 대신 iTerm2를 사용하면 더 많은 커스터마이징 옵션을 얻을 수 있습니다.
+기본 터미널 앱 대신 iTerm2를 사용하면 더 많은 커스터마이징 옵션을 얻을 수 있다.
 
 1. [iTerm2 공식 웹사이트](https://iterm2.com/)에서 다운로드
 2. Homebrew로 설치: `brew install --cask iterm2`
 3. Fira code 폰트 설치: `brew install font-fira-code`
-4. 원하는 컬러 프리셋 찾기: [https://iterm2colorschemes.com/](https://iterm2colorschemes.com/) 원하는 컬러를 Save Link As로 저장합니다.
+4. 원하는 컬러 프리셋 찾기: [https://iterm2colorschemes.com/](https://iterm2colorschemes.com/) 원하는 컬러를 Save Link As로 저장한다.
 ![Color Save](/assets/images/terminal_color_save.png)
-5. iTerm2를 실행하여 설정창에 들어갑니다. 이후 Color 탭에서 저장한 Dracula+를 선택합니다.
+5. iTerm2를 실행하여 설정창에 들어간다. 이후 Color 탭에서 저장한 Dracula+를 선택한다.
 ![Color Setting](/assets/images/terminal_color.png)
-6. Text 탭에서는 Fira Code를 설정합니다. 그리고 Normalization을 HFS+로 바꿉니다.
+6. Text 탭에서는 Fira Code를 설정한다. 그리고 Normalization을 HFS+로 바꾼다.
 ![Text Setting](/assets/images/terminal_text.png)
-7. Session 탭에서 Status bar enabled를 체크하고 Configure Status Bar에서 원하는 셋팅들을 드래그 앤 드랍합니다. 위치는 Appearance
+7. Session 탭에서 Status bar enabled를 체크하고 Configure Status Bar에서 원하는 셋팅들을 드래그 앤 드랍한다. 위치는 Appearance
 ![Session Setting](/assets/images/terminal_session.png)
 ![Status bar Setting](/assets/images/terminal_status_bar.png)
 ![Status bar bottom Setting](/assets/images/terminal_status_bar_bottom.png)
-8. Window 탭에서 window title을 바꿀 수 있습니다.
+8. Window 탭에서 window title을 바꿀 수 있다.
 ![Window title customize](/assets/images/termianl_window_title.png) 
 
 ## 3. 유용한 플러그인

