@@ -60,4 +60,23 @@ root.glob('{index.html,page*/index.html}').each do |file|
   end
 end
 
-puts "Site regressions passed: #{entries.size} search destinations, viewports, and monolingual cards."
+category_pages = root.glob('categories/*/index.html')
+category_pages.each do |file|
+  document = read_document.call(file)
+  %w[.cat-hero-title .cat-hero-desc].each do |selector|
+    %w[en kr].each do |language|
+      content = document.at_css("#{selector} [data-lang='#{language}']")
+      raise "Missing #{language} category text: #{file} #{selector}" if content&.text.to_s.strip.empty?
+    end
+  end
+  document.css('.cat-featured-card, .post-card').each do |card|
+    title = card.at_css('.cat-featured-title, .post-title')
+    excerpt = card.at_css('.cat-featured-excerpt, .post-excerpt')
+    %w[en kr].each do |language|
+      raise "Missing #{language} category card title: #{file} #{card['href']}" if title.at_css("[data-lang='#{language}']")&.text.to_s.strip.empty?
+      raise "Missing #{language} category card excerpt: #{file} #{card['href']}" unless excerpt.at_css("[data-lang='#{language}']")
+    end
+  end
+end
+
+puts "Site regressions passed: #{entries.size} search destinations, viewports, monolingual cards, and #{category_pages.size} bilingual category pages."

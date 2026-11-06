@@ -3,6 +3,8 @@ layout: default
 ---
 
 {% assign cat_slug = page.title | downcase | replace: ' & ', '-' | replace: ' ', '-' %}
+{% assign cat_locale = site.data.category_locales[page.title] %}
+{% assign cat_kr_title = cat_locale.title | default: page.title %}
 
 {% comment %} Find matching nav entry for sub-category pills {% endcomment %}
 {% assign cat_nav = nil %}
@@ -28,18 +30,23 @@ layout: default
     <div class="cat-hero-glow"></div>
   </div>
   <div class="cat-hero-inner">
-    <p class="cat-hero-eyebrow">Explore</p>
-    <h1 class="cat-hero-title">{{ page.title }}</h1>
+    <p class="cat-hero-eyebrow"><span class="lang-section" data-lang="en">Explore</span><span class="lang-section lang-hidden" data-lang="kr">카테고리</span></p>
+    <h1 class="cat-hero-title">{% include category-name.html name=page.title %}</h1>
+    <p class="cat-hero-desc">
+    <span class="lang-section" data-lang="en">
     {% if cat_nav.desc and cat_nav.desc != '' %}
-    <p class="cat-hero-desc">{{ cat_nav.desc }}</p>
+    {{ cat_nav.desc }}
     {% else %}
-    <p class="cat-hero-desc">Articles, tutorials, and deep-dives about {{ page.title | downcase }}.</p>
+    Articles, tutorials, and deep-dives about {{ page.title | downcase }}.
     {% endif %}
+    </span>
+    <span class="lang-section lang-hidden" data-lang="kr">{% if cat_locale.description %}{{ cat_locale.description }}{% else %}{{ cat_kr_title }} 관련 글과 튜토리얼을 모았다.{% endif %}</span>
+    </p>
 
     {% if cat_nav and cat_nav.items.size > 0 %}
     <div class="cat-subcategory-pills">
       {% for item in cat_nav.items %}
-      <a href="{{ item.url | relative_url }}" class="cat-pill">{{ item.name }}</a>
+      <a href="{{ item.url | relative_url }}" class="cat-pill">{% include category-name.html name=item.name %}</a>
       {% endfor %}
     </div>
     {% endif %}
@@ -71,23 +78,25 @@ layout: default
       <div class="cat-featured-content">
         {% if featured_post.categories.size > 1 %}
         <span class="cat-featured-label" data-cat="{{ featured_post.categories | last | downcase }}">
-          {{ featured_post.categories | last }}
+          {% assign featured_category = featured_post.categories | last %}
+          {% include category-name.html name=featured_category %}
         </span>
         {% elsif featured_post.categories.size == 1 %}
         <span class="cat-featured-label" data-cat="{{ featured_post.categories[0] | downcase }}">
-          {{ featured_post.categories[0] }}
+          {% assign featured_category = featured_post.categories | first %}
+          {% include category-name.html name=featured_category %}
         </span>
         {% endif %}
-        <h2 class="cat-featured-title">{{ featured_post.title }}</h2>
-        <p class="cat-featured-excerpt">{{ featured_post.excerpt | strip_html | truncatewords: 35 }}</p>
+        <h2 class="cat-featured-title">{% include bilingual-post-text.html post=featured_post field='title' %}</h2>
+        <p class="cat-featured-excerpt">{% include bilingual-post-text.html post=featured_post field='excerpt' words=35 %}</p>
         <div class="cat-featured-meta">
           <span class="post-author-avatar">{{ site.social.name | slice: 0 }}</span>
           <span>{{ site.social.name }}</span>
           <span class="post-meta-sep">·</span>
-          <time datetime="{{ featured_post.date | date_to_xmlschema }}">{{ featured_post.date | date: "%b %-d, %Y" }}</time>
+          <time datetime="{{ featured_post.date | date_to_xmlschema }}"><span class="lang-section" data-lang="en">{{ featured_post.date | date: "%b %-d, %Y" }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ featured_post.date | date: "%Y년 %-m월 %-d일" }}</span></time>
         </div>
         <span class="cat-featured-readmore">
-          Read more <span class="material-symbols-outlined">arrow_forward</span>
+          <span class="lang-section" data-lang="en">Read more</span><span class="lang-section lang-hidden" data-lang="kr">글 읽기</span> <span class="material-symbols-outlined">arrow_forward</span>
         </span>
       </div>
     </a>
@@ -98,7 +107,7 @@ layout: default
   {% if rest_posts.size > 0 %}
   <section class="home-section">
     <div class="section-header">
-      <h2 class="section-heading">More in {{ page.title }}</h2>
+      <h2 class="section-heading"><span class="lang-section" data-lang="en">More in {{ page.title }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ cat_kr_title }}의 다른 글</span></h2>
     </div>
     <div class="post-grid">
       {% for post in rest_posts %}
@@ -116,17 +125,17 @@ layout: default
         {% endif %}
         <div class="post-content">
           {% if post.categories.size > 1 %}
-          <span class="post-category-label" data-cat="{{ post.categories | last | downcase }}">{{ post.categories | last }}</span>
+          <span class="post-category-label" data-cat="{{ post.categories | last | downcase }}">{% assign card_category = post.categories | last %}{% include category-name.html name=card_category %}</span>
           {% elsif post.categories.size == 1 %}
-          <span class="post-category-label" data-cat="{{ post.categories[0] | downcase }}">{{ post.categories[0] }}</span>
+          <span class="post-category-label" data-cat="{{ post.categories[0] | downcase }}">{% assign card_category = post.categories | first %}{% include category-name.html name=card_category %}</span>
           {% endif %}
-          <h3 class="post-title">{{ post.title }}</h3>
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          <h3 class="post-title">{% include bilingual-post-text.html post=post field='title' %}</h3>
+          <p class="post-excerpt">{% include bilingual-post-text.html post=post field='excerpt' words=20 %}</p>
           <div class="post-meta-row">
             <span class="post-author-avatar">{{ site.social.name | slice: 0 }}</span>
             <span class="post-author-name">{{ site.social.name }}</span>
             <span class="post-meta-sep">·</span>
-            <time class="post-meta-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+            <time class="post-meta-date" datetime="{{ post.date | date_to_xmlschema }}"><span class="lang-section" data-lang="en">{{ post.date | date: "%b %-d, %Y" }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ post.date | date: "%Y년 %-m월 %-d일" }}</span></time>
           </div>
         </div>
       </a>

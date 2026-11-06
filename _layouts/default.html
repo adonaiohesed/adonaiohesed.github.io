@@ -354,6 +354,7 @@
     });
 
     function updateLanguageSections(lang) {
+      document.documentElement.lang = lang === 'kr' ? 'ko' : '{{ site.lang | default: "en" }}';
       const langSections = document.querySelectorAll('.lang-section');
       langSections.forEach(section => {
         if (section.dataset.lang === lang) {

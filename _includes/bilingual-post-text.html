@@ -1,0 +1,27 @@
+{%- comment -%}Reset every value per call, including monolingual/missing-separator fallbacks.{%- endcomment -%}
+{%- assign preview_post = include.post -%}
+{%- assign preview_kr_title = preview_post.title -%}
+{%- assign preview_kr_excerpt = preview_post.excerpt -%}
+{%- assign preview_words = include.words | default: 20 -%}
+{%- if preview_post.bilingual -%}
+  {%- assign preview_sections = preview_post.content | split: '<hr />' -%}
+  {%- if preview_sections.size < 2 -%}
+    {%- assign preview_sections = preview_post.content | split: '<hr>' -%}
+  {%- endif -%}
+  {%- if preview_sections.size >= 2 -%}
+    {%- assign preview_kr_content = preview_sections | shift | join: '<hr />' -%}
+    {%- assign preview_kr_excerpt = preview_kr_content -%}
+    {%- if preview_kr_content contains '</h1>' or preview_kr_content contains '</h2>' or preview_kr_content contains '</h3>' -%}
+      {%- assign preview_heading = preview_kr_content | split: '</h' | first | split: '<h' | last -%}
+      {%- assign preview_heading_text = preview_heading | split: '>' | shift | join: '>' | strip_html | strip -%}
+      {%- if preview_heading_text != '' -%}
+        {%- assign preview_kr_title = preview_heading_text -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if include.field == 'title' -%}
+<span class="lang-section" data-lang="en">{{ preview_post.title | escape_once }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ preview_kr_title | escape_once }}</span>
+{%- else -%}
+<span class="lang-section" data-lang="en">{{ preview_post.excerpt | strip_html | truncatewords: preview_words | escape_once }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ preview_kr_excerpt | strip_html | truncatewords: preview_words | escape_once }}</span>
+{%- endif -%}

@@ -1,0 +1,2 @@
+{%- assign localized_category = site.data.category_locales[include.name] -%}
+<span class="lang-section" data-lang="en">{{ include.name | escape }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ localized_category.title | default: include.name | escape }}</span>
