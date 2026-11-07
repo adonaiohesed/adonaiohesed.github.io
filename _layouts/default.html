@@ -374,12 +374,21 @@
           searchInput: document.getElementById('search-input'),
           resultsContainer: document.getElementById('results-container'),
           json: '{{ "/search.json" | relative_url }}?v={{ site.time | date: "%Y%m%d%H%M%S" }}',
-          searchResultTemplate: '<li><a href="{url}"><span class="search-result-title">{title}</span><div class="search-result-meta"><span>{category}</span><span>{date}</span></div></a></li>',
-          noResultsText: '<li><div style="padding: 12px 16px; color: #7d8590; font-size: 13px;">No results found</div></li>'
+          searchResultTemplate: '<li><a href="{url}"><span class="search-result-title"><span class="lang-section" data-lang="en">{title}</span><span class="lang-section lang-hidden" data-lang="kr">{title_kr}</span></span><div class="search-result-meta"><span><span class="lang-section" data-lang="en">{category}</span><span class="lang-section lang-hidden" data-lang="kr">{category_kr}</span></span><span><span class="lang-section" data-lang="en">{date}</span><span class="lang-section lang-hidden" data-lang="kr">{date_kr}</span></span></div></a></li>',
+          noResultsText: '<li><div style="padding: 12px 16px; color: #7d8590; font-size: 13px;"><span class="lang-section" data-lang="en">No results found</span><span class="lang-section lang-hidden" data-lang="kr">검색 결과가 없다.</span></div></li>'
         });
 
         const searchInput = document.getElementById('search-input');
         const resultsContainer = document.getElementById('results-container');
+
+        // Search results are inserted after the page's initial language update.
+        const applySearchLanguage = () => {
+          const lang = document.documentElement.lang === 'ko' ? 'kr' : 'en';
+          resultsContainer.querySelectorAll('.lang-section').forEach(section => {
+            section.classList.toggle('lang-hidden', section.dataset.lang !== lang);
+          });
+        };
+        new MutationObserver(applySearchLanguage).observe(resultsContainer, { childList: true });
         
         searchInput.addEventListener('input', () => {
           if (searchInput.value.length > 0) {

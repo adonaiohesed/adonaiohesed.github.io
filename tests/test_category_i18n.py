@@ -1,6 +1,7 @@
-"""Build small real Jekyll archives to check language previews and fallbacks."""
+"""Build real Jekyll archives and search data to check language fallbacks."""
 
 import json
+import html
 from pathlib import Path
 import subprocess
 import tempfile
@@ -22,12 +23,16 @@ require 'nokogiri'
 require 'fileutils'
 require 'json'
 root, fixture = ARGV
-%w[_layouts _includes _data _posts].each { |dir| FileUtils.mkdir_p(File.join(fixture, dir)) }
+%w[_layouts _includes _data _posts _projects _ctfs].each { |dir| FileUtils.mkdir_p(File.join(fixture, dir)) }
 FileUtils.cp(File.join(root, '_layouts/category.html'), File.join(fixture, '_layouts/category.html'))
 %w[category-name.html bilingual-post-text.html].each do |name|
   FileUtils.cp(File.join(root, '_includes', name), File.join(fixture, '_includes', name))
 end
 FileUtils.cp(File.join(root, '_data/category_locales.yml'), File.join(fixture, '_data/category_locales.yml'))
+FileUtils.cp(File.join(root, 'search.json'), File.join(fixture, 'search.json'))
+%w[projects ctfs].each do |collection|
+  File.write(File.join(fixture, "_#{collection}", 'sample.md'), "---\ntitle: Collection title\n---\nCollection content.")
+end
 File.write(File.join(fixture, '_layouts/default.html'), "<!doctype html><html><body>{{ content }}</body></html>")
 posts = {
   '2000-01-05-featured.md' => ['English featured', true, "## English heading\n\nEnglish intro only.\n\n---\n\n## 한국어 *대표* 제목\n\n한국어 대표 요약이다.\n\n---\n\n두 번째 한국어 구간도 보존한다.\n"],
@@ -41,6 +46,7 @@ posts.each do |name, (title, bilingual, body)|
 end
 config = Jekyll.configuration('source' => fixture, 'destination' => File.join(fixture, '_site'),
   'quiet' => true, 'disable_disk_cache' => true, 'plugins' => ['jekyll-archives'],
+  'collections' => {'projects' => {}, 'ctfs' => {}},
   'defaults' => [{'scope' => {'type' => 'posts'}, 'values' => {'permalink' => '/posts/:title/'}}],
   'jekyll-archives' => {'enabled' => ['categories'], 'layouts' => {'category' => 'category'},
     'permalinks' => {'category' => '/categories/:name/'}})
@@ -56,7 +62,8 @@ cards = doc.css('.cat-featured-card, .post-card').map do |card|
 end
 puts JSON.generate({'hero_kr' => text.call(doc, '.cat-hero-title [data-lang=kr]'),
   'description_kr' => text.call(doc, '.cat-hero-desc [data-lang=kr]'),
-  'read_kr' => text.call(doc, '.cat-featured-readmore [data-lang=kr]'), 'cards' => cards})
+  'read_kr' => text.call(doc, '.cat-featured-readmore [data-lang=kr]'), 'cards' => cards,
+  'search' => JSON.parse(File.read(File.join(fixture, '_site/search.json')))})
 '''
         result = subprocess.run(['bundle', 'exec', 'ruby', '-e', script, str(ROOT), cls.temp.name],
                                 cwd=ROOT, capture_output=True, text=True)
@@ -91,6 +98,29 @@ puts JSON.generate({'hero_kr' => text.call(doc, '.cat-hero-title [data-lang=kr]'
         no_heading = self.cards['/posts/no-heading/']
         self.assertEqual(no_heading['kr_title'], 'Heading fallback')
         self.assertIn('제목 없는 한국어 요약', no_heading['kr_excerpt'])
+
+    def test_search_indexes_korean_titles_and_categories_once(self):
+        entries = self.data['search']
+        self.assertEqual(len(entries), 7)
+        self.assertEqual(len({entry['url'] for entry in entries}), 7)
+        featured = next(entry for entry in entries if entry['url'] == '/posts/featured/')
+        self.assertEqual(featured['title'], 'English featured')
+        self.assertEqual(featured['title_kr'], '한국어 대표 제목')
+        self.assertEqual(featured['category_kr'], '엔지니어링')
+        self.assertEqual(featured['date_kr'], '2000년 1월 5일')
+        nested = next(entry for entry in entries if entry['url'] == '/posts/nested/')
+        self.assertEqual(html.unescape(nested['title_kr']), '한국어 중첩 & 제목')
+
+    def test_search_preserves_fallback_titles_and_collection_anchors(self):
+        entries = {entry['url']: entry for entry in self.data['search']}
+        for slug in ('plain', 'no-separator', 'no-heading'):
+            entry = entries[f'/posts/{slug}/']
+            self.assertEqual(entry['title_kr'], entry['title'])
+        project = entries['/portfolio/#project-sample']
+        self.assertEqual(project['title_kr'], project['title'])
+        self.assertEqual(project['category'], 'Project')
+        self.assertEqual(project['category_kr'], '프로젝트')
+        self.assertEqual(entries['/portfolio/#ctf-sample']['category_kr'], 'CTF')
 
 
 if __name__ == '__main__':

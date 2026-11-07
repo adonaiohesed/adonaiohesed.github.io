@@ -16,6 +16,10 @@ end
 
 entries = JSON.parse(root.join('search.json').read)
 entries.each do |entry|
+  raise "Missing Korean search title: #{entry['url']}" if entry['title_kr'].to_s.strip.empty?
+  %w[category_kr date_kr].each do |field|
+    raise "Missing search field #{field}: #{entry['url']}" unless entry[field].is_a?(String)
+  end
   uri = URI.parse(entry.fetch('url'))
   raise "Search result must be local: #{uri}" if uri.host || uri.scheme
   file = root.join(uri.path.delete_prefix('/'))

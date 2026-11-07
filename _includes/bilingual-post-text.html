@@ -22,6 +22,8 @@
 {%- endif -%}
 {%- if include.field == 'title' -%}
 <span class="lang-section" data-lang="en">{{ preview_post.title | escape_once }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ preview_kr_title | escape_once }}</span>
+{%- elsif include.field == 'search_title_kr' -%}
+{{- preview_kr_title | escape_once | jsonify -}}
 {%- else -%}
 <span class="lang-section" data-lang="en">{{ preview_post.excerpt | strip_html | truncatewords: preview_words | escape_once }}</span><span class="lang-section lang-hidden" data-lang="kr">{{ preview_kr_excerpt | strip_html | truncatewords: preview_words | escape_once }}</span>
 {%- endif -%}
